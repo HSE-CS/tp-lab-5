@@ -2,6 +2,7 @@
 
 #include "Student.h"
 
+
 void Student::addToGroup(Group* group) {
     this->group = group;
 }
@@ -14,16 +15,15 @@ double Student::getAverageMark() {
     return (double)accumulate(marks.begin(), marks.end(), 0) / marks.size();
 }
 
+int Student::getId() const {
+    return id;
+}
 
-//
-//const std::string& Student::getName() const {
-//    return fio;
-//}
+const std::string& Student::getName() const {
+    return fio;
+}
 
 //bool Student::isHeadOfGroup() {
 //    return group->getHead().id == id;
 //}
 
-//int Student::getId() const {
-//    return id;
-//}

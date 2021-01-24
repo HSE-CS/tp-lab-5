@@ -6,6 +6,9 @@
 #include "Group.h"
 #include <vector>
 #include <string>
+#include <iostream>
+#include <numeric>
+#include <functional>
 
 class Group;
 
@@ -19,14 +22,12 @@ class Student {
     void addToGroup(Group*);
     void addmark(int);
  public:
-    Student(int id, std::string& fio): this->id(id), this->fio(fio) {}
-    
+    Student(int _id_, std::string& _fio_): id(_id_), fio(_fio_) {}
     double getAverageMark();
     bool isHeadOfGroup();
-
-    //Может понадобиться
-    //const std::string& getName() const;
-    //int getId() const;
+    int getId() const;
+    const std::string& getName() const;
+    
 };
 
 #endif  // LAB_5_STUDENT_H
