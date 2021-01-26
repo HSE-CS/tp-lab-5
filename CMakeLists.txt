@@ -30,9 +30,11 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp
         ${PROJECT_SOURCE_DIR}/src/Deanary.cpp
         ${PROJECT_SOURCE_DIR}/src/Group.cpp
         ${PROJECT_SOURCE_DIR}/src/Student.cpp
-        ${PROJECT_SOURCE_DIR}/include/Deanary.h
-        ${PROJECT_SOURCE_DIR}/include/Student.h
-        ${PROJECT_SOURCE_DIR}/include/Group.h)
+)
+
+# ${PROJECT_SOURCE_DIR}/include/Deanary.h
+# ${PROJECT_SOURCE_DIR}/include/Student.h
+# ${PROJECT_SOURCE_DIR}/include/Group.h
 
 add_library(task_lib ${SRC_FILES})
 
