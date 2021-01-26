@@ -2,17 +2,19 @@
 #include <string>
 #include <vector>
 
-class MyStack {
+class Student {
  private:
   int id;
-  string fio;
-  string group = "";
-  vector<int> marks;
-  bool isHead = false;
+  std::string fio;
+  std::string group;
+  std::vector<int> marks;
+  bool isHead;
 
   void addmark(int value);
-  void addToGroup(string value);
+  void addToGroup(const char* value);
 
  public:
+  Student(const char* name);
   float getAveragemark();
   bool isHeadOfGroup();
+};

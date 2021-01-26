@@ -1,23 +1,27 @@
 #include "Student.h"
 
-Student:: void addmark(int value) {
-  marks.push_back(value);
+#include <cstring>
+#include <iostream>
+#include <string>
+
+Student::Student(const char* name) {
+  fio = name;  // need be read from file
+  id = -1;     // need be read from file
+  group = "";
+  isHead = false;
 }
 
-Student:: void addToGroup(string value)
-{
-  group = value;
-}
+void Student::addmark(int value) { marks.push_back(value); }
 
-Student:: float getAveragemark() {
-    double mean = 0.0;
-    for (auto x : marks) {
-      mean += x;
+void Student::addToGroup(const char* value) { group = value; }
+
+float Student::getAveragemark() {
+  double mean = 0.0;
+  for (auto x : marks) {
+    mean += x;
   }
 
   return mean / marks.size();
- }
-
-Student:: bool isHeadOfGroup() {
-  return isHead;
 }
+
+bool Student::isHeadOfGroup() { return isHead; }
