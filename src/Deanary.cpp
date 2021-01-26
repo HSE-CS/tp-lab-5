@@ -1,5 +1,3 @@
-//
-// Created by stanislav on 19/01/2021.
-//
+// Copyright 2020 Stanislav Stoianov
 
 #include "../include/Deanary.h"
