@@ -177,7 +177,8 @@ TEST(Overall, VeryStrongTest) {
 
 TEST(Deanery, GroupsCreating) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   EXPECT_EQ(groups[0]->getTitle(), "Озеро");
   EXPECT_EQ(groups[0]->getSpec(), "Коррупция");
@@ -189,26 +190,34 @@ TEST(Deanery, GroupsCreating) {
 
 TEST(Deanery, StudentCreating) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   EXPECT_EQ(groups[0]->getStudents().size(), 11);
-  EXPECT_EQ(groups[0]->getStudents()[0]->getFullname(), "Владимир Владимирович Путин");
+  EXPECT_EQ(groups[0]->getStudents()[0]->getFullname(),
+            "Владимир Владимирович Путин");
 }
 
 TEST(Deanery, GetStatistics) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   deanery->hireStudents(groups[1],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/ФБК-Антикоррупция.csv");
   deanery->hireStudents(groups[2],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/191ПИ-Клоуны.csv");
   deanery->addMarksToAll();
-  deanery->getStatistics((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/output");
+  deanery->getStatistics((char *) "/home/stanislav/CLionProjects/"
+                                  "tp-lab-5/test/output");
   EXPECT_EQ(groups[0]->getStudents().size(), 11);
   EXPECT_EQ(groups[1]->getStudents().size(), 10);
   EXPECT_EQ(groups[2]->getStudents().size(), 13);
@@ -216,14 +225,18 @@ TEST(Deanery, GetStatistics) {
 
 TEST(Deanery, GetStatisticsToCout) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   deanery->hireStudents(groups[1],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/ФБК-Антикоррупция.csv");
   deanery->hireStudents(groups[2],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/191ПИ-Клоуны.csv");
   deanery->addMarksToAll();
   deanery->getStatistics();
   EXPECT_EQ(groups[0]->getStudents().size(), 11);
@@ -233,14 +246,18 @@ TEST(Deanery, GetStatisticsToCout) {
 
 TEST(Deanery, StudentMoving) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   deanery->hireStudents(groups[1],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/ФБК-Антикоррупция.csv");
   deanery->hireStudents(groups[2],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/191ПИ-Клоуны.csv");
   deanery->moveStudents(groups[1], groups[2]);
   EXPECT_EQ(groups[2]->getStudents().size(), 23);
   EXPECT_EQ(groups[1]->getStudents().size(), 0);
@@ -248,15 +265,20 @@ TEST(Deanery, StudentMoving) {
 
 TEST(Deanery, StudentSave) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   deanery->hireStudents(groups[1],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/ФБК-Антикоррупция.csv");
   deanery->hireStudents(groups[2],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
-  deanery->saveStaff((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/output");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/191ПИ-Клоуны.csv");
+  deanery->saveStaff(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/output");
   EXPECT_EQ(groups[0]->getStudents().size(), 11);
   EXPECT_EQ(groups[1]->getStudents().size(), 10);
   EXPECT_EQ(groups[2]->getStudents().size(), 13);
@@ -264,14 +286,18 @@ TEST(Deanery, StudentSave) {
 
 TEST(Deanery, StudentsFire) {
   auto *deanery = new Deanery();
-  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  deanery->createGroups(
+      (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
   deanery->hireStudents(groups[0],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/Озеро-Коррупция.csv");
   deanery->hireStudents(groups[1],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/ФБК-Антикоррупция.csv");
   deanery->hireStudents(groups[2],
-                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
+                        (char *) "/home/stanislav/CLionProjects/"
+                                 "tp-lab-5/test/data/191ПИ-Клоуны.csv");
   deanery->addMarksToAll();
   deanery->fireStudents(5);
   EXPECT_NE(groups[0]->getStudents().size(), 11);

@@ -59,7 +59,9 @@ void Deanery::getStatistics(char *dirpath) {
     if (g->getSpec().empty()) {
       string = g->getTitle() + "-" + std::to_string(g->getAverageMark());
     } else {
-      string = g->getTitle() + "-" + g->getSpec() + "-" + std::to_string(g->getAverageMark());
+      string = g->getTitle() + "-"
+          + g->getSpec() + "-"
+          + std::to_string(g->getAverageMark());
     }
     string += ".csv";
     out.open(std::string(dirpath) + "/" + string);
@@ -68,7 +70,9 @@ void Deanery::getStatistics(char *dirpath) {
       std::stringstream result;
       std::copy(s->getMarks().begin(), s->getMarks().end(),
                 std::ostream_iterator<int>(result, ";"));
-      out << std::to_string(s->getId()) + "," + s->getFullname() + "," + result.str() + ","
+      out << std::to_string(s->getId()) + ","
+          + s->getFullname() + ","
+          + result.str() + ","
           + std::to_string(s->getAverageMark()) << std::endl;
     }
     out.close();
@@ -108,7 +112,8 @@ void Deanery::saveStaff(char *dirpath) {
     out.open(std::string(dirpath) + "/" + string);
     out << "id,fullname" << std::endl;
     for (Student *s : g->getStudents()) {
-      out << std::to_string(s->getId()) + "," + s->getFullname() << std::endl;
+      out << std::to_string(s->getId()) + ","
+          + s->getFullname() << std::endl;
     }
     out.close();
   }
@@ -126,9 +131,12 @@ void Deanery::getStatistics() {
   for (Group *g : this->groups) {
     std::string string;
     if (g->getSpec().empty()) {
-      string = g->getTitle() + "-" + std::to_string(g->getAverageMark());
+      string = g->getTitle() + "-"
+          + std::to_string(g->getAverageMark());
     } else {
-      string = g->getTitle() + "-" + g->getSpec() + "-" + std::to_string(g->getAverageMark());
+      string = g->getTitle() + "-"
+          + g->getSpec() + "-"
+          + std::to_string(g->getAverageMark());
     }
     string += ".csv";
     std::cout << string << std::endl;
@@ -137,7 +145,9 @@ void Deanery::getStatistics() {
       std::stringstream result;
       std::copy(s->getMarks().begin(), s->getMarks().end(),
                 std::ostream_iterator<int>(result, ";"));
-      std::cout << std::to_string(s->getId()) + "," + s->getFullname() + "," + result.str() + ","
+      std::cout << std::to_string(s->getId()) + ","
+          + s->getFullname() + ","
+          + result.str() + ","
           + std::to_string(s->getAverageMark()) << std::endl;
     }
   }

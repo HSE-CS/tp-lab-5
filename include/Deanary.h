@@ -1,7 +1,7 @@
 // Copyright 2020 Stanislav Stoianov
 
-#ifndef TP_LAB_5_INCLUDE_DEANERY_H_
-#define TP_LAB_5_INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <vector>
 #include "Group.h"
@@ -23,4 +23,4 @@ class Deanery {
   std::vector<Group *> &getGroups();
 };
 
-#endif //TP_LAB_5_INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_

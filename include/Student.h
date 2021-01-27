@@ -1,7 +1,7 @@
 // Copyright 2020 Stanislav Stoianov
 
-#ifndef TP_LAB_5_INCLUDE_STUDENT_H_
-#define TP_LAB_5_INCLUDE_STUDENT_H_
+#ifndef  INCLUDE_STUDENT_H_
+#define  INCLUDE_STUDENT_H_
 
 #include <string>
 #include <vector>
@@ -14,28 +14,20 @@ class Student {
   int id;
   std::string fullname;
   Group *group;
-  std::vector<unsigned short> marks;
+  std::vector<int16_t> marks;
+
  public:
   Student(int id, std::string fullname);
-
   ~Student();
-
   void addToGroup(Group *g);
-
   void addMark(unsigned short mark);
-
   double getAverageMark();
-
   bool isHeadOfGroup();
-
   int getId() const;
-
   const std::string &getFullname() const;
-
   Group *getGroup() const;
-
-  const std::vector<unsigned short> &getMarks() const;
+  const std::vector<int16_t> &getMarks() const;
 
 };
 
-#endif //TP_LAB_5_INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

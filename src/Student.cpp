@@ -42,12 +42,12 @@ int Student::getId() const {
 
 const std::string &Student::getFullname() const {
   return fullname;
-
 }
+
 Group *Student::getGroup() const {
   return group;
 }
 
-const std::vector<unsigned short> &Student::getMarks() const {
+const std::vector<int16_t> &Student::getMarks() const {
   return marks;
 }
