@@ -42,7 +42,7 @@
 //  file.close();
 //}
 //
-//void Deanery::addMarksToAll() {
+// void Deanery::addMarksToAll() {
 //  for (Group *g : this->groups) {
 //    for (Student *s : g->getStudents()) {
 //      for (int i = 0; i < rng() % 10 + 5; ++i) {
