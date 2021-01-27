@@ -20,7 +20,7 @@ void Deanery::createGroups(char *dirpath) {
       title.erase(title.find_last_not_of(".csv") + 1);
       if (title.find('-') != std::string::npos) {
         std::string spec = title.substr(title.find('-') + 1);
-        auto *group = new Group(strtok(title.data(), "-"), spec);
+        auto *group = new Group(title.substr(0, title.find('-')), spec);
         this->groups.push_back(group);
       } else {
         auto *group = new Group(title);

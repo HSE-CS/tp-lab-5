@@ -196,6 +196,8 @@ TEST(Deanery, StudentCreating) {
   deanery->hireStudents(groups[0],
                         const_cast<char *>("/home/stanislav/CLionProjects/"
                                            "tp-lab-5/test/data/Озеро-Коррупция.csv"));
+
+  EXPECT_EQ(groups[0]->getTitle(), "Озеро");
   EXPECT_EQ(groups[0]->getStudents().size(), 11);
   EXPECT_EQ(groups[0]->getStudents()[0]->getFullname(),
             "Владимир Владимирович Путин");
