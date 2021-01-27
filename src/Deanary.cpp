@@ -6,10 +6,12 @@
 #include <iostream>
 #include <filesystem>
 #include <cstring>
+#include <fstream>
+#include <iterator>
 
-void Deanery::createGroups(char *filepath) {
+void Deanery::createGroups(char *dirpath) {
   setlocale(LC_ALL, "rus");
-  for (const auto &entry : std::filesystem::directory_iterator(filepath)) {
+  for (const auto &entry : std::filesystem::directory_iterator(dirpath)) {
     const std::filesystem::path &path = entry.path();
     if (path.extension() == ".csv") {
       std::string title = path.filename().filename();
@@ -26,20 +28,50 @@ void Deanery::createGroups(char *filepath) {
   }
 }
 
-void Deanery::hireStudents(char *filepath) {
+void Deanery::hireStudents(Group *group, char *filepath) {
   setlocale(LC_ALL, "rus");
+  std::string string;
+  std::ifstream file(filepath);
+  getline(file, string);
+  while (getline(file, string)) {
+    auto *s = new Student(std::stoi(string.substr(0, string.find(','))),
+                          string.substr(string.find(',') + 1));
+    group->addStudent(s);
+  }
+  file.close();
 }
 
 void Deanery::addMarksToAll() {
-  for (Group *g : groups) {
+  for (Group *g : this->groups) {
     for (Student *s : g->getStudents()) {
-      s->addMark(rand() % 10);
+      for (int i = 0; i < rand() % 10 + 5; ++i) {
+        s->addMark(rand() % 10);
+      }
     }
   }
 }
 
-void Deanery::getStatistics(char *filepath) {
+void Deanery::getStatistics(char *dirpath) {
   setlocale(LC_ALL, "rus");
+  for (Group *g : this->groups) {
+    std::ofstream out;
+    std::string string;
+    if (g->getSpec().empty()) {
+      string = g->getTitle() + "-" + std::to_string(g->getAverageMark());
+    } else {
+      string = g->getTitle() + "-" + g->getSpec() + "-" + std::to_string(g->getAverageMark());
+    }
+    string += ".csv";
+    out.open(std::string(dirpath) + "/" + string);
+    out << "id,fullname,marks,averagemark" << std::endl;
+    for (Student *s : g->getStudents()) {
+      std::stringstream result;
+      std::copy(s->getMarks().begin(), s->getMarks().end(),
+                std::ostream_iterator<int>(result, ";"));
+      out << std::to_string(s->getId()) + "," + s->getFullname() + "," + result.str() + ","
+          + std::to_string(s->getAverageMark()) << std::endl;
+    }
+  }
 }
 
 void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
@@ -49,28 +81,31 @@ void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
 }
 
 void Deanery::fireStudents(int lowMark) {
-  for (Group *g : groups) {
+  for (Group *g : this->groups) {
     for (Student *s : g->getStudents()) {
-      if (s->getAverageMark() < lowMark) s->addToGroup(nullptr);
+      if (s->getAverageMark() < lowMark) {
+        s->addToGroup(nullptr);
+      }
     }
   }
 }
 
 void Deanery::saveStaff(char *filepath) {
   setlocale(LC_ALL, "rus");
+  // todo
 }
 
 void Deanery::initHeads() {
-  for (Group *g : groups) {
+  for (Group *g : this->groups) {
     g->chooseHead(g->getStudents()
                       .at(rand() % g->getStudents().size()));
   }
 }
 
 void Deanery::getStatistics() {
-
+  // todo
 }
 
 const std::vector<Group *> &Deanery::getGroups() const {
-  return groups;
+  return this->groups;
 }

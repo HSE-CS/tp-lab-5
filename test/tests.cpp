@@ -1,9 +1,7 @@
 // Copyright 2020 GHA Test Team
 
 #include <gtest/gtest.h>
-#include <string>
 #include "../include/Student.h"
-#include "../include/Group.h"
 #include "../include/Deanary.h"
 
 TEST(Student, getterWithInstant) {
@@ -181,11 +179,37 @@ TEST(Deanery, GroupsCreating) {
   auto *deanery = new Deanery();
   deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
   std::vector<Group *> groups = deanery->getGroups();
-  EXPECT_EQ(groups.size(), 3);
   EXPECT_EQ(groups[0]->getTitle(), "Озеро");
   EXPECT_EQ(groups[0]->getSpec(), "Коррупция");
   EXPECT_EQ(groups[1]->getTitle(), "ФБК");
   EXPECT_EQ(groups[1]->getSpec(), "Антикоррупция");
   EXPECT_EQ(groups[2]->getTitle(), "191ПИ");
   EXPECT_EQ(groups[2]->getSpec(), "Клоуны");
+}
+
+TEST(Deanery, StudentCreating) {
+  auto *deanery = new Deanery();
+  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  std::vector<Group *> groups = deanery->getGroups();
+  deanery->hireStudents(groups[0],
+                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+  EXPECT_EQ(groups[0]->getStudents().size(), 11);
+  EXPECT_EQ(groups[0]->getStudents()[0]->getFullname(), "Владимир Владимирович Путин");
+}
+
+TEST(Deanery, GetStatistics) {
+  auto *deanery = new Deanery();
+  deanery->createGroups((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data");
+  std::vector<Group *> groups = deanery->getGroups();
+  deanery->hireStudents(groups[0],
+                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/Озеро-Коррупция.csv");
+  deanery->hireStudents(groups[1],
+                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/ФБК-Антикоррупция.csv");
+  deanery->hireStudents(groups[2],
+                        (char *) "/home/stanislav/CLionProjects/tp-lab-5/test/data/191ПИ-Клоуны.csv");
+  deanery->addMarksToAll();
+  deanery->getStatistics((char *) "/home/stanislav/CLionProjects/tp-lab-5/test/output");
+  EXPECT_EQ(groups[0]->getStudents().size(), 11);
+  EXPECT_EQ(groups[1]->getStudents().size(), 11);
+  EXPECT_EQ(groups[2]->getStudents().size(), 13);
 }

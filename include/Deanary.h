@@ -10,13 +10,13 @@ class Deanery {
  private:
   std::vector<Group *> groups;
  public:
-  void createGroups(char * filepath);
-  void hireStudents(char * filepath);
+  void createGroups(char *dirpath);
+  static void hireStudents(Group *group, char *filepath);
   void addMarksToAll();
-  void getStatistics(char * filepath);
-  static void moveStudents(Group * fromGroup, Group * toGroup);
+  void getStatistics(char *dirpath);
+  static void moveStudents(Group *fromGroup, Group *toGroup);
   void fireStudents(int lowMark);
-  void saveStaff(char * filepath);
+  void saveStaff(char *filepath);
   void initHeads();
   void getStatistics();
 
