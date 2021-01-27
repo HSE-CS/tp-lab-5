@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <utility>
 #include "../include/Group.h"
+#include <stdexcept>
 
 Group::Group(std::string t) {
   this->title = std::move(t);
@@ -26,14 +27,14 @@ Student *Group::containsStudent(int id) {
   for (Student *student : this->students) {
     if (student->getId() == id) return student;
   }
-  throw std::invalid_argument("Student does not exist");
+  throw std::logic_error("Student does not exist");
 }
 
 Student *Group::containsStudent(const std::string &fio) {
   for (Student *student : this->students) {
     if (student->getFullname() == fio) return student;
   }
-  throw std::invalid_argument("Student does not exist");
+  throw std::logic_error("Student does not exist");
 }
 
 double Group::getAverageMark() {
