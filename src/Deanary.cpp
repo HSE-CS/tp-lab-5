@@ -10,9 +10,16 @@ void Deanery::addMarksToAll() {
   }
 }
 
+void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
+  for (Student *s: fromGroup->getStudents()) {
+    s->addToGroup(toGroup);
+  }
+}
+
 void Deanery::initHeads() {
   for (Group *g : groups) {
     g->chooseHead(g->getStudents()
                       .at(rand() % g->getStudents().size()));
   }
 }
+

@@ -14,7 +14,7 @@ class Deanery {
   void hireStudents();
   void addMarksToAll();
   void getStatistics();
-  void moveStudents();
+  static void moveStudents(Group * fromGroup, Group * toGroup);
   void fireStudents();
   void saveStaff();
   void initHeads();
