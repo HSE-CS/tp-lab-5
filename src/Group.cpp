@@ -1,9 +1,9 @@
 // Copyright 2020 Stanislav Stoianov
 
-#include <algorithm>
-#include <utility>
 #include "../include/Group.h"
 #include <stdexcept>
+#include <algorithm>
+#include <utility>
 
 Group::Group(std::string t) {
   this->title = std::move(t);
