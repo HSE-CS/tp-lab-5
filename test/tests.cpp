@@ -175,7 +175,7 @@ TEST(Overall, VeryStrongTest) {
   EXPECT_EQ(4, group.getAverageMark());
 }
 
-//TEST(Deanery, GroupsCreating) {
+// TEST(Deanery, GroupsCreating) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -189,7 +189,7 @@ TEST(Overall, VeryStrongTest) {
 //  EXPECT_EQ(groups[2]->getSpec(), "Клоуны");
 //}
 //
-//TEST(Deanery, StudentCreating) {
+// TEST(Deanery, StudentCreating) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -206,7 +206,7 @@ TEST(Overall, VeryStrongTest) {
 //            "Владимир Владимирович Путин");
 //}
 //
-//TEST(Deanery, GetStatistics) {
+// TEST(Deanery, GetStatistics) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -233,7 +233,7 @@ TEST(Overall, VeryStrongTest) {
 //  EXPECT_EQ(groups[2]->getStudents().size(), 13);
 //}
 //
-//TEST(Deanery, GetStatisticsToCout) {
+// TEST(Deanery, GetStatisticsToCout) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -258,7 +258,7 @@ TEST(Overall, VeryStrongTest) {
 //  EXPECT_EQ(groups[2]->getStudents().size(), 13);
 //}
 //
-//TEST(Deanery, StudentMoving) {
+// TEST(Deanery, StudentMoving) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -281,7 +281,7 @@ TEST(Overall, VeryStrongTest) {
 //  EXPECT_EQ(groups[1]->getStudents().size(), 0);
 //}
 //
-//TEST(Deanery, StudentSave) {
+// TEST(Deanery, StudentSave) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
@@ -307,7 +307,7 @@ TEST(Overall, VeryStrongTest) {
 //  EXPECT_EQ(groups[2]->getStudents().size(), 13);
 //}
 //
-//TEST(Deanery, StudentsFire) {
+// TEST(Deanery, StudentsFire) {
 //  auto *deanery = new Deanery();
 //  deanery->createGroups(
 //      const_cast<char *>(
