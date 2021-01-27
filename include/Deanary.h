@@ -11,16 +11,16 @@ class Deanery {
   std::vector<Group *> groups;
  public:
   void createGroups(char *dirpath);
-  static void hireStudents(Group *group, char *filepath);
+  void hireStudents(Group *group, char *filepath);
   void addMarksToAll();
   void getStatistics(char *dirpath);
-  static void moveStudents(Group *fromGroup, Group *toGroup);
+  void moveStudents(Group *fromGroup, Group *toGroup);
   void fireStudents(int lowMark);
-  void saveStaff(char *filepath);
+  void saveStaff(char *dirpath);
   void initHeads();
   void getStatistics();
 
-  const std::vector<Group *> &getGroups() const;
+  std::vector<Group *> &getGroups();
 };
 
 #endif //TP_LAB_5_INCLUDE_DEANERY_H_

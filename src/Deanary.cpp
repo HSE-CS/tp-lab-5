@@ -71,28 +71,47 @@ void Deanery::getStatistics(char *dirpath) {
       out << std::to_string(s->getId()) + "," + s->getFullname() + "," + result.str() + ","
           + std::to_string(s->getAverageMark()) << std::endl;
     }
+    out.close();
   }
 }
 
 void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
-  for (Student *s: fromGroup->getStudents()) {
-    s->addToGroup(toGroup);
+  std::vector<Student *> fromStudent = fromGroup->getStudents();
+  for (auto &i : fromStudent) {
+    toGroup->addStudent(i);
   }
+  fromGroup->getStudents().clear();
+  delete fromGroup;
 }
 
 void Deanery::fireStudents(int lowMark) {
   for (Group *g : this->groups) {
     for (Student *s : g->getStudents()) {
       if (s->getAverageMark() < lowMark) {
-        s->addToGroup(nullptr);
+        g->removeStudent(s);
       }
     }
   }
 }
 
-void Deanery::saveStaff(char *filepath) {
+void Deanery::saveStaff(char *dirpath) {
   setlocale(LC_ALL, "rus");
-  // todo
+  for (Group *g : this->getGroups()) {
+    std::ofstream out;
+    std::string string;
+    if (g->getSpec().empty()) {
+      string = g->getTitle();
+    } else {
+      string = g->getTitle() + "-" + g->getSpec();
+    }
+    string += ".csv";
+    out.open(std::string(dirpath) + "/" + string);
+    out << "id,fullname" << std::endl;
+    for (Student *s : g->getStudents()) {
+      out << std::to_string(s->getId()) + "," + s->getFullname() << std::endl;
+    }
+    out.close();
+  }
 }
 
 void Deanery::initHeads() {
@@ -103,9 +122,27 @@ void Deanery::initHeads() {
 }
 
 void Deanery::getStatistics() {
-  // todo
+  setlocale(LC_ALL, "rus");
+  for (Group *g : this->groups) {
+    std::string string;
+    if (g->getSpec().empty()) {
+      string = g->getTitle() + "-" + std::to_string(g->getAverageMark());
+    } else {
+      string = g->getTitle() + "-" + g->getSpec() + "-" + std::to_string(g->getAverageMark());
+    }
+    string += ".csv";
+    std::cout << string << std::endl;
+    std::cout << "id,fullname,marks,averagemark" << std::endl;
+    for (Student *s : g->getStudents()) {
+      std::stringstream result;
+      std::copy(s->getMarks().begin(), s->getMarks().end(),
+                std::ostream_iterator<int>(result, ";"));
+      std::cout << std::to_string(s->getId()) + "," + s->getFullname() + "," + result.str() + ","
+          + std::to_string(s->getAverageMark()) << std::endl;
+    }
+  }
 }
 
-const std::vector<Group *> &Deanery::getGroups() const {
+std::vector<Group *> &Deanery::getGroups() {
   return this->groups;
 }
