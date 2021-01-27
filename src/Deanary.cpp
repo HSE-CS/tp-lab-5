@@ -3,18 +3,17 @@
 #include "../include/Deanary.h"
 #include <string>
 #include <iostream>
-#include <filesystem>
-#include <cstring>
 #include <fstream>
 #include <iterator>
 #include <random>
+#include <experimental/filesystem>
 
 static std::mt19937_64 rng;
 
 void Deanery::createGroups(char *dirpath) {
   setlocale(LC_ALL, "rus");
-  for (const auto &entry : std::filesystem::directory_iterator(dirpath)) {
-    const std::filesystem::path &path = entry.path();
+  for (const auto &entry : std::experimental::filesystem::directory_iterator(dirpath)) {
+    const  std::experimental::filesystem::path &path = entry.path();
     if (path.extension() == ".csv") {
       std::string title = path.filename().filename();
       title.erase(title.find_last_not_of(".csv") + 1);
