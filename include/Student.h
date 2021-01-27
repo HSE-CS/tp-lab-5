@@ -8,12 +8,11 @@ class Student {
   std::string fio;
   std::string group;
   std::vector<int> marks;
-  bool isHead;
-
   void addmark(int value);
   void addToGroup(const char* value);
 
  public:
+  bool isHead;
   Student(const char* name);
   float getAveragemark();
   bool isHeadOfGroup();
