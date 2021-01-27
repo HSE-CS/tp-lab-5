@@ -20,7 +20,7 @@ void Student::addToGroup(Group *g) {
   this->group = g;
 }
 
-void Student::addMark(unsigned short mark) {
+void Student::addMark(int16_t mark) {
   marks.push_back(mark);
 }
 

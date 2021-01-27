@@ -20,14 +20,13 @@ class Student {
   Student(int id, std::string fullname);
   ~Student();
   void addToGroup(Group *g);
-  void addMark(unsigned short mark);
+  void addMark(int16_t mark);
   double getAverageMark();
   bool isHeadOfGroup();
   int getId() const;
   const std::string &getFullname() const;
   Group *getGroup() const;
   const std::vector<int16_t> &getMarks() const;
-
 };
 
 #endif  // INCLUDE_STUDENT_H_

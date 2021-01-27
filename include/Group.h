@@ -29,7 +29,6 @@ class Group {
   const std::string &getSpec() const;
   std::vector<Student *> &getStudents();
   Student *getHead() const;
-
 };
 
 #endif  // INCLUDE_GROUP_H_

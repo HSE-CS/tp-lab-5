@@ -1,13 +1,15 @@
 // Copyright 2020 Stanislav Stoianov
 
 #include "../include/Deanary.h"
-#include <cstdio>
 #include <string>
 #include <iostream>
 #include <filesystem>
 #include <cstring>
 #include <fstream>
 #include <iterator>
+#include <random>
+
+static std::mt19937_64 rng;
 
 void Deanery::createGroups(char *dirpath) {
   setlocale(LC_ALL, "rus");
@@ -44,8 +46,8 @@ void Deanery::hireStudents(Group *group, char *filepath) {
 void Deanery::addMarksToAll() {
   for (Group *g : this->groups) {
     for (Student *s : g->getStudents()) {
-      for (int i = 0; i < rand() % 10 + 5; ++i) {
-        s->addMark(rand() % 10);
+      for (int i = 0; i < rng() % 10 + 5; ++i) {
+        s->addMark(rng() % 10);
       }
     }
   }
@@ -122,7 +124,7 @@ void Deanery::saveStaff(char *dirpath) {
 void Deanery::initHeads() {
   for (Group *g : this->groups) {
     g->chooseHead(g->getStudents()
-                      .at(rand() % g->getStudents().size()));
+                      .at(rng() % g->getStudents().size()));
   }
 }
 

@@ -19,7 +19,6 @@ class Deanery {
   void saveStaff(char *dirpath);
   void initHeads();
   void getStatistics();
-
   std::vector<Group *> &getGroups();
 };
 
