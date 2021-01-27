@@ -1,16 +1,16 @@
-//// Copyright 2020 Stanislav Stoianov
+// Copyright 2020 Stanislav Stoianov
+
+// #include "../include/Deanary.h"
+// #include <string>
+// #include <iostream>
+// #include <fstream>
+// #include <iterator>
+// #include <random>
+// #include <filesystem>
 //
-//#include "../include/Deanary.h"
-//#include <string>
-//#include <iostream>
-//#include <fstream>
-//#include <iterator>
-//#include <random>
-//#include <filesystem>
+// static std::mt19937_64 rng;
 //
-//static std::mt19937_64 rng;
-//
-//void Deanery::createGroups(char *dirpath) {
+// void Deanery::createGroups(char *dirpath) {
 //  setlocale(LC_ALL, "rus");
 //  for (const auto &entry : std::filesystem::directory_iterator(dirpath)) {
 //    const std::filesystem::path &path = entry.path();
@@ -29,7 +29,7 @@
 //  }
 //}
 //
-//void Deanery::hireStudents(Group *group, char *filepath) {
+// void Deanery::hireStudents(Group *group, char *filepath) {
 //  setlocale(LC_ALL, "rus");
 //  std::string string;
 //  std::ifstream file(filepath);
@@ -52,7 +52,7 @@
 //  }
 //}
 //
-//void Deanery::getStatistics(char *dirpath) {
+// void Deanery::getStatistics(char *dirpath) {
 //  setlocale(LC_ALL, "rus");
 //  for (Group *g : this->groups) {
 //    std::ofstream out;
@@ -80,7 +80,7 @@
 //  }
 //}
 //
-//void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
+// void Deanery::moveStudents(Group *fromGroup, Group *toGroup) {
 //  std::vector<Student *> fromStudent = fromGroup->getStudents();
 //  for (auto &i : fromStudent) {
 //    toGroup->addStudent(i);
@@ -89,7 +89,7 @@
 //  delete fromGroup;
 //}
 //
-//void Deanery::fireStudents(int lowMark) {
+// void Deanery::fireStudents(int lowMark) {
 //  for (Group *g : this->groups) {
 //    for (Student *s : g->getStudents()) {
 //      if (s->getAverageMark() < lowMark) {
@@ -99,7 +99,7 @@
 //  }
 //}
 //
-//void Deanery::saveStaff(char *dirpath) {
+// void Deanery::saveStaff(char *dirpath) {
 //  setlocale(LC_ALL, "rus");
 //  for (Group *g : this->getGroups()) {
 //    std::ofstream out;
@@ -120,14 +120,14 @@
 //  }
 //}
 //
-//void Deanery::initHeads() {
+// void Deanery::initHeads() {
 //  for (Group *g : this->groups) {
 //    g->chooseHead(g->getStudents()
 //                      .at(rng() % g->getStudents().size()));
 //  }
 //}
 //
-//void Deanery::getStatistics() {
+// void Deanery::getStatistics() {
 //  setlocale(LC_ALL, "rus");
 //  for (Group *g : this->groups) {
 //    std::string string;
@@ -154,6 +154,6 @@
 //  }
 //}
 //
-//std::vector<Group *> &Deanery::getGroups() {
+// std::vector<Group *> &Deanery::getGroups() {
 //  return this->groups;
 //}

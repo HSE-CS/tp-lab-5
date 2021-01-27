@@ -1,12 +1,12 @@
-//// Copyright 2020 Stanislav Stoianov
+// Copyright 2020 Stanislav Stoianov
+
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
+
+// #include <vector>
+// #include "Group.h"
 //
-//#ifndef INCLUDE_DEANARY_H_
-//#define INCLUDE_DEANARY_H_
-//
-//#include <vector>
-//#include "Group.h"
-//
-//class Deanery {
+// class Deanery {
 // private:
 //  std::vector<Group *> groups;
 // public:
@@ -21,5 +21,5 @@
 //  void getStatistics();
 //  std::vector<Group *> &getGroups();
 //};
-//
-//#endif  // INCLUDE_DEANARY_H_
+
+#endif  // INCLUDE_DEANARY_H_
