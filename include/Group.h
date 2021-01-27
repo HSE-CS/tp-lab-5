@@ -36,7 +36,7 @@ class Group {
 
   const std::string &getSpec() const;
 
-  const std::vector<Student *> &getStudents() const;
+  std::vector<Student *> &getStudents();
 
   Student *getHead() const;
 
