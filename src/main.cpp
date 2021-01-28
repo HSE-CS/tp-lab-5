@@ -15,7 +15,9 @@ int main() {
 	i.close();
 	auto students = j.get<std::vector<std::string>>();
 	std::string title;
+	int id = 0;
 	for (auto v : students) {
+		auto* student = new Student{ id++, v };
 		std::cout << v << '\n';
 	}
 

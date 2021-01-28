@@ -1,5 +1,4 @@
 // Copyright 2021 soda
-
 #ifndef LAB_5_STUDENT_H
 #define LAB_5_STUDENT_H
 
