@@ -30,15 +30,10 @@ void Deanery::hireStudents() {
     i.close();
     auto students = j.get<std::vector<std::string>>();
     for (auto v : students) {
-        std::cout << 1 << "\n";
         auto *student = new Student(id++, v);
-        std::cout << student->getName() << "\n";
         Group *g = groups->at(rand() % groups->size());
-        std::cout << g->getTitle() << "\n";
         g->addStudent(*student);
-        std::cout << 4 << "\n";
         student->addToGroup(g);
-        std::cout << 5 << "\n";
     }
 }
 
@@ -132,7 +127,7 @@ void Deanery::getStatistics() {
        << " (" << group->spec << ")\n";
        std::cout << "Student amount:\t" << group->students->size() << "\n";
        for (auto &student : *group->students) {
-           std::cout << student->getName() << " " << student->getId();
+           std::cout << student->getName() << " " << student->getId() << "\n";
        }
        std::cout << "\n Average mark:\t"
        << group->getAveragemark() << "\n";
@@ -142,7 +137,7 @@ void Deanery::getStatistics() {
        for (auto &student : *group->students) {
            float averageMark = student->getAveragemark();
            if (averageMark < 3.5) {
-               std:: cout << student->getName() << " " << student->getId() << "]\t"
+               std:: cout << student->getName() << " id: " << student->getId() << " "
                       << " " << averageMark << "\n";
            }
        }
@@ -168,7 +163,7 @@ Deanery::Deanery() {
     }
     std::cout << "\n";
     initHeads();
-    std::cout << "Heads was choosen:" << "\n";
+    std:: cout << "Heads was choosen: " << "\n";
     for (auto &group : *groups) {
         std::cout << group->getTitle() << ": " << group->getHead()->getName()
                   << " " << group->getHead()->getId() << "\n";

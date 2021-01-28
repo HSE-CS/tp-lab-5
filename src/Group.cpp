@@ -8,13 +8,16 @@ Group::Group(std::string tl, std::string sp) {
   title = tl;
   spec = sp;
   head = NULL;
+  students = new std::vector<Student*> ();
 }
 
 void Group::addStudent(Student &person) { students->push_back(&person); }
 
 void Group::chooseHead() {
-  Student& head = getStudent(0);
-  head.isHead = true;
+  Student& person = *students->at(0);
+  person.isHead = true;
+  head = &person;
+
 }
 
 void Group::removeStudent(Student &student) {
