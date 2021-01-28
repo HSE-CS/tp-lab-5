@@ -2,8 +2,7 @@
 #include <cstring>
 #include <iostream>
 #include <string>
-
-#include "Group.h"
+#include "Deanery.h"
 
 int main() {
   // Student check
@@ -12,16 +11,16 @@ int main() {
   // std::cout << student.isHeadOfGroup() << '\n';
 
   // Group check
-  Student student1("Ivan Dobryaev");
+  // Student student1("Ivan Dobryaev");
   // student1.addmark(10);
   // student1.addmark(9);
 
-  Student student2("Vladimir Putin");
+  // Student student2("Vladimir Putin");
   //
   // student1.addmark(3);
   // student1.addmark(5);
 
-  Group pmi("19-2", "pmi");
+  // Group pmi("19-2", "pmi");
   // std::cout << pmi.isEmpty() << '\n';
   //
   // pmi.addStudent(& student1);
@@ -37,4 +36,10 @@ int main() {
   // pmi.removeStudent(-1);
   //
   // std::cout << pmi.isEmpty() << '\n';
+
+  Deanery deanery{};
+    // поставим каждому студенту по три оценки во всех группах
+    deanery.addMarksToAll(3);
+    // напечатаем статистику
+    deanery.getStatistics();
 }

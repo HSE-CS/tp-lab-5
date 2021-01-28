@@ -10,30 +10,52 @@ Group::Group(std::string tl, std::string sp) {
   head = NULL;
 }
 
-void Group::addStudent(Student* person) { students.push_back(person); }
+void Group::addStudent(Student &person) { students->push_back(&person); }
 
-Student* Group::chooseHead() {
-  Student* head = getStudent(0);
-  head->isHead = true;
-  return head;
+void Group::chooseHead() {
+  Student& head = getStudent(0);
+  head.isHead = true;
 }
 
-void Group::removeStudent(int id) {
-  for (int i = 0; i < students.size(); ++i) {
-    if (students[i]->id == id) students.erase(students.begin() + i);
+void Group::removeStudent(Student &student) {
+  for (int i = 0; i < students->size(); ++i) {
+    if (students->at(i)->getId() == student.getId())
+      if(student.isHead)
+      {
+        students->erase(students->begin() + i);
+        chooseHead();
+      }
+      else
+      {
+        students->erase(students->begin() + i);
+      }
   }
 }
 
 float Group::getAveragemark() {
   float summ = 0;
-  for (auto person : students) summ += person->getAveragemark();
-  return summ / students.size();
+  for (auto person : *students) summ += person->getAveragemark();
+  return summ / students->size();
 }
 
-Student* Group::getStudent(int id) { return students[id]; }
-
-Student* Group::getStudent(std::string) {
-  return NULL;  // idk smth with files
+Student& Group::getStudent(int id) {
+  for (auto *student : *students) {
+          if (student->getId() == id) {
+              return *student;
+          }
+      }
 }
 
-bool Group::isEmpty() { return students.empty(); }
+Student& Group::getStudent(std::string name) {
+  for (auto *student : *students) {
+        if (student->getName() == name)
+            return *student;
+
+  }
+}
+
+bool Group::isEmpty() { return students->empty(); }
+
+std::string Group::getTitle() { return title; };
+
+  Student* Group::getHead() { return head;}
