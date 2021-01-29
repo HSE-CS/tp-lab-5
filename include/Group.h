@@ -12,18 +12,18 @@ class Student;
 class Deanery;
 
 class Group {
-    friend class Deanery;
+    friend class Deanary;
  private:
     std::string title;
     std::string spec;
     std::vector<Student*>* students;
+    Deanary* deanary;
     Student* head{};
-    void addStudent(Student& student);
     void removeStudent(Student& student);
-    void chooseHead(int oldHeadId = -1, bool silence = true);
+    void addStudent(Student& student);
  public:
-    Group(std::string& _title, std::string& _spec):
-        title(_title), spec(_spec),
+    Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_):
+        title(_title_), spec(_spec_), deanary(&_deanary_),
         students(new std::vector<Student*>()) {}
     double getAverageMark();
     Student& getStudent(int);

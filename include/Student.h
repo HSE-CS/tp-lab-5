@@ -12,7 +12,7 @@
 class Group;
 
 class Student {
-    friend class Deanery;
+    friend class Deanary;
  private:
     int id;
     std::string fio;
