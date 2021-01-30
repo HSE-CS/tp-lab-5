@@ -50,6 +50,7 @@ void Deanary::hireStudents() {
 
 Deanary::Deanary() {
     groups = new std::vector<Group*>();
+    move_num = 0;
     createGroups();
     hireStudents();
     get_create_inf();
@@ -77,6 +78,64 @@ Group& Deanary::getGroup(const std::string& title) {
             return *g;
         }
     }
+}
+
+void Deanary::addMarksToAll(int num_marks) {
+    srand(time(0));
+    for (int i = 0; i < num_marks; i++) {
+        for (auto group : *groups) {
+            for (auto student : *group->students) {
+                student->addmark(rand() % 4 + 2 * (rand() % 1) + (rand() % 1)
+                    + ((rand() % 6) - 3));
+            }
+        }
+    }
+}
+
+Group& Deanary::GetGroupByStudent(int id) {
+    for (auto& group : *groups) {
+        for (auto& student : *group->students) {
+            if (student->getId() == id) {
+                return *group;
+            }
+        }
+    }
+}
+
+Group& Deanary::GetGroupByStudent(const std::string& name) {
+    for (auto& group : *groups) {
+        for (auto& student : *group->students) {
+            if (student->getName() == name) {
+                return *group;
+            }
+        }
+    }
+}
+
+void Deanary::moveStudents(int id, std::string& title) {
+    Group& new_group = getGroup(title);
+    Group& old_group = GetGroupByStudent(id);
+    Student& student = old_group.getStudent(id);
+    student.group->removeStudent(student);
+    new_group.addStudent(student);
+    student.addToGroup(&new_group);
+    move_report(student, old_group, new_group);
+}
+
+void Deanary::moveStudents(std::string& name, std::string& title) {
+    Group& new_group = getGroup(title);
+    Group& old_group = GetGroupByStudent(name);
+    Student& student = old_group.getStudent(name);
+    student.group->removeStudent(student);
+    new_group.addStudent(student);
+    student.addToGroup(&new_group);
+    move_report(student, old_group, new_group);
+}
+
+void Deanary::move_report(Student& student, Group& old, Group& _new) {
+    move_num++;
+    std::cout << student.getName() << " move out "
+        << old.getTitle() << " in " << _new.getTitle() << "." << std::endl;
 }
 
 Deanary::~Deanary() {

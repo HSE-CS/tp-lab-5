@@ -16,8 +16,9 @@ private:
     std::vector<Group*>* groups;
     int group_num;
     int student_num;
-    //Group& GetGroupByStudent(int);
-    //Group& GetGroupByStudent(const std::string&);
+    int move_num;
+    Group& GetGroupByStudent(int);
+    Group& GetGroupByStudent(const std::string&);
     Group& getGroup(const std::string&);
 public:
     Deanary();
@@ -27,6 +28,7 @@ public:
     void addMarksToAll(int);
     void moveStudents(int, std::string&);
     void moveStudents(std::string&, std::string&);
+    void move_report(Student&, Group&, Group&);
     void saveStuff();
     void initHeads();
     void fireStudents(int);

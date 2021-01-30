@@ -27,6 +27,7 @@ class Group {
         students(new std::vector<Student*>()) {}
     double getAverageMark();
     Student& getStudent(int);
+    Student& getStudent(std::string&);
     int containsStudent(Student&);
     std::string getTitle();
     Student& getHead();
