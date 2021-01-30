@@ -9,11 +9,11 @@
 
 class Student;
 
-class Deanery;
+class Deanary;
 
 class Group {
     friend class Deanary;
- private:
+private:
     std::string title;
     std::string spec;
     std::vector<Student*>* students;
@@ -21,8 +21,8 @@ class Group {
     Student* head{};
     void removeStudent(Student& student);
     void addStudent(Student& student);
- public:
-    Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_):
+public:
+    Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_) :
         title(_title_), spec(_spec_), deanary(&_deanary_),
         students(new std::vector<Student*>()) {}
     double getAverageMark();
@@ -33,8 +33,6 @@ class Group {
     Student& getHead();
     bool isEmpty();
     ~Group();
-
-    //Student& getStudent(const std::string& fio);
 };
 
 

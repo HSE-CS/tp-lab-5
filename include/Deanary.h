@@ -16,7 +16,8 @@ private:
     std::vector<Group*>* groups;
     int group_num;
     int student_num;
-    int move_num;
+    int moved_num;
+    int fired_num;
     Group& GetGroupByStudent(int);
     Group& GetGroupByStudent(const std::string&);
     Group& getGroup(const std::string&);
@@ -33,6 +34,7 @@ public:
     void initHeads();
     void fireStudents(int);
     void fireStudents(std::string&);
+    void fire_report(Student&);
     ~Deanary();
 };
 

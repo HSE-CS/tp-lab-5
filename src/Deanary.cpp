@@ -50,7 +50,8 @@ void Deanary::hireStudents() {
 
 Deanary::Deanary() {
     groups = new std::vector<Group*>();
-    move_num = 0;
+    moved_num = 0;
+    fired_num = 0;
     createGroups();
     hireStudents();
     get_create_inf();
@@ -133,9 +134,30 @@ void Deanary::moveStudents(std::string& name, std::string& title) {
 }
 
 void Deanary::move_report(Student& student, Group& old, Group& _new) {
-    move_num++;
+    moved_num++;
     std::cout << student.getName() << " move out "
         << old.getTitle() << " in " << _new.getTitle() << "." << std::endl;
+}
+
+void Deanary::fireStudents(int id) {
+    Group& group = GetGroupByStudent(id);
+    Student& student = group.getStudent(id);
+    group.removeStudent(student);
+    fire_report(student);
+    delete& student;
+}
+
+void Deanary::fireStudents(std::string& name) {
+    Group& group = GetGroupByStudent(name);
+    Student& student = group.getStudent(name);
+    group.removeStudent(student);
+    fire_report(student);
+    delete& student;
+}
+
+void Deanary::fire_report(Student& student) {
+    fired_num++;
+    std::cout << student.getName() << "was fired." << std::endl;
 }
 
 Deanary::~Deanary() {

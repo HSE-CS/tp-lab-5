@@ -3,25 +3,15 @@
 #include "json.h"
 #include "fstream"
 #include "vector"
+#include "Student.h"
+#include "Deanary.h"
 
 using json = nlohmann::json;
 
 int main() {
-	std::ifstream i("T_1.json");
-	json j;
-	i >> j;
-
-	// getter/setter
-	i.close();
-	auto students = j.get<std::vector<std::string>>();
-	std::string title;
-	int id = 0;
-	for (auto v : students) {
-		auto* student = new Student{ id++, v };
-		std::cout << v << '\n';
-	}
-
-
-	//std::ofstream o("pretty.json");
-	//o << j << std::endl;
+	Deanary HSE;
+	HSE.addMarksToAll(2);
+	std::string str = "English Languages";
+	HSE.moveStudents(1, str);
+	HSE.fireStudents(1);
 }
