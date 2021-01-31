@@ -21,6 +21,7 @@ class Group {
     void chooseHead(Student *phead);
     Student *getStudent(int student_id);
     Student *getStudent(std::string student_fio);
+    std::vector<Student*> getStudents();
     double getAveragemark();
     bool containsStudent(Student *student);
     void removeStudents(Student *student);
@@ -28,6 +29,7 @@ class Group {
     bool isEmpty();
 
     Student *getHead();
+    std::string getTitle();
 };
 
 #endif  //  INCLUDE_GROUP_H_

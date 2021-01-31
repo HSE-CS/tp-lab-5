@@ -1,18 +1,47 @@
 // Copyright 2020 Dmitry Vargin
 
+#include <iostream>
 #include <string>
 #include <vector>
 
 #include "Student.h"
 
+unsigned int Student::last_student_id = 0;
+
+Student::Student(std::string fio) {
+    this->id = Student::last_student_id++;
+    this->fio = fio;
+    this->group = nullptr;
+    this->marks = {};
+}
+
 Student::Student(int id, std::string fio) {
+    if (id < Student::last_student_id) {
+        std::cout << id << "id can not be set\n";
+        std::cout << "Constructor arguments: ";
+        std::cout << id << ", " << fio << "\n";
+        throw;
+    }
     this->id = id;
-    this->fio = std::move(fio);
+    this->fio = fio;
     this->group = nullptr;
     this->marks = {};
 };
 
-int Student::getId() const {
+Student::Student(int id, std::string fio, Group *group) {
+    if (id < Student::last_student_id) {
+        std::cout << id << "id can not be set\n";
+        std::cout << "Constructor arguments: ";
+        std::cout << id << ", " << fio << "\n";
+        throw;
+    }
+    this->id = id;
+    this->fio = fio;
+    this->group = group;
+    this->marks = {};
+}
+
+unsigned int Student::getId() const {
     return this->id;
 }
 
@@ -49,4 +78,12 @@ double Student::getAveragemark() {
 
 bool Student::isHeadOfGroup() {
     return this->group->getHead()->id == this->id;
+}
+
+std::string Student::marksToString() {
+    std::string str;
+    for (int mark: this->marks) {
+        str.append(std::to_string(mark) + " ");
+    }
+    return str;
 }

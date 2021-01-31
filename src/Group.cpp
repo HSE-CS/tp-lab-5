@@ -7,11 +7,12 @@
 #include "Group.h"
 
 Group::Group(std::string title) {
-this->title = title;
+    this->title = title;
 }
 
 void Group::addStudent(Student *student) {
     this->students.push_back(student);
+    student->addToGroup(this);
 }
 
 void Group::chooseHead(Student *phead) {
@@ -70,4 +71,12 @@ bool Group::isEmpty() {
 
 Student *Group::getHead() {
     return this->head;
+}
+
+std::string Group::getTitle() {
+    return this->title;
+}
+
+std::vector<Student*> Group::getStudents() {
+    return this->students;
 }

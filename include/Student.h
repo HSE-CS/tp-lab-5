@@ -11,14 +11,17 @@ class Group;
 
 class Student {
 private:
-    int id;
+    unsigned int id;
     std::string fio;
     Group *group;
     std::vector<int> marks;
+    static unsigned int last_student_id;
   public:
+    Student(std::string fio);
     Student(int id, std::string fio);
+    Student(int id, std::string fio, Group *group);
 
-    int getId() const;
+    unsigned int getId() const;
     std::string getFio();
     Group* getGroup();
     std::vector<int> getMarks();
@@ -27,6 +30,8 @@ private:
     void addMark(int mark);
     double getAveragemark();
     bool isHeadOfGroup();
+
+    std::string marksToString();
 };
 
 #endif  //  INCLUDE_STUDENT_H_
