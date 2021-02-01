@@ -94,5 +94,5 @@ TEST(Deanery, test10) {
         std::string name = "student" + std::to_string(i);
         Student *student1 = new Student(name);
     }
-    EXPECT_EQ(10, group.ge)
+    EXPECT_EQ(10, group->getAmountOfStudents());
 }
