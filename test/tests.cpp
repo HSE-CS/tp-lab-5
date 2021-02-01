@@ -97,7 +97,8 @@ TEST(DeanaryTest, TestFunc6) {
 
 TEST(GroupTest, TestFunc1) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../src/students.txt", "../src/groups.txt", false);
+  Deanary* deanary = new Deanary(3, "../src/students.txt",
+   "../src/groups.txt", false);
   EXPECT_EQ("Group1", deanary->findGroupByTittle("Group1")->getTitle());
 }
 
@@ -119,7 +120,8 @@ TEST(GroupTest, TestFunc3) {
 
 TEST(GroupTest, TestFunc4) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../src/students.txt", "../src/groups.txt", false);
+  Deanary* deanary = new Deanary(3, "../src/students.txt",
+   "../src/groups.txt", false);
   Student* st = deanary->findGroupByTittle("Group1")->
     getStudentByFio("Karieva Anastasia Vladilenovna");
   EXPECT_EQ(true, deanary->findGroupByTittle("Group1")->containsStudent(st));
