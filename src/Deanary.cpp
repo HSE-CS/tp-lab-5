@@ -6,6 +6,7 @@
 #include <cstring>
 #include <ctime>
 #include <cstdlib>
+#include <map>
 
 #include "Deanary.h"
 
@@ -44,6 +45,10 @@ void Deanery::hireStudents(std::string filename) {
     }
 }
 
+void Deanery::hireStudents() {
+    this->hireStudents("studInput.txt");
+}
+
 void Deanery::createGroups(std::string filename) {
     setlocale(LC_ALL, "rus");
     std::string path = Deanery::getProjectPath() + "/data/" + filename;
@@ -61,6 +66,10 @@ void Deanery::createGroups(std::string filename) {
     input_file.close();
 }
 
+void Deanery::createGroups() {
+    this->createGroups("groupInput.txt");
+}
+
 void Deanery::addMarksToAll(int marks_per_student) {
     std::srand(std::time(nullptr));
     for (Group *group: this->groups) {
@@ -74,7 +83,6 @@ void Deanery::addMarksToAll(int marks_per_student) {
 
 void Deanery::moveStudents(Student *student, Group *group) {
     student->getGroup()->removeStudents(student);
-    student->addToGroup(group);
     group->addStudent(student);
 }
 
@@ -86,7 +94,7 @@ Student *Deanery::fireStudents(Student *student) {
             }
         }
     }
-    delete student;
+    return student;
 }
 
 void Deanery::initHeads() {
@@ -97,8 +105,12 @@ void Deanery::initHeads() {
     }
 }
 
-void Deanery::getStatistics() {
-    return;
+std::map<Group *, double> Deanery::getStatistics() {
+    std::map<Group *, double> m;
+    for (Group *group: this->getGroups()) {
+        m[group] = group->getAveragemark();
+    }
+    return m;
 }
 
 void Deanery::saveStaff() {

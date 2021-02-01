@@ -32,32 +32,55 @@ TEST(Group, test4) {
     Student *student2 = new Student("Rewq");
     group->addStudent(student1);
     group->addStudent(student2);
-
+    EXPECT_TRUE(group->getStudents()[0]->getId() == 0 &&
+    group->getStudents()[1]->getId() == 1);
 }
 
 TEST(Student, test5) {
     Student *student = new Student("Kamri3.5");
     student->addMark(6);
     student->addMark(8);
-    EXPECT_EQ(7, student->getAveragemark())
+    EXPECT_EQ(7, std::round(student->getAveragemark()));
 }
 
-TEST(, test6) {
-
+TEST(Group, test6) {
+    Group *group = new Group("Inglourious Basterds");
+    Student *student1 = new Student("Antonio Margaretti");
+    student1->addMark(2);
+    student1->addMark(4);
+    Student *student2 = new Student("Quentin Tarantino");
+    student2->addMark(6);
+    student2->addMark(8);
+    group->addStudent(student1);
+    group->addStudent(student2);
+    EXPECT_EQ(10, std::round(group->getAveragemark()));
 }
 
-TEST(, test7) {
-
+TEST(Deanery, test7) {
+    Deanery *deanery = new Deanery();
+    deanery->createGroups();
+    EXPECT_EQ(3, deanery->getGroups().size());
 }
 
-TEST(, test8) {
-
+TEST(Deanery, test8) {
+    Deanery *deanery = new Deanery();
+    deanery->hireStudents();
+    EXPECT_EQ(56, Student::getLastId());
 }
 
-TEST(, test9) {
-
+TEST(Deanery, test9) {
+    Deanery *deanery = new Deanery();
+    deanery->hireStudents();
+    deanery->addMarksToAll(5);
+    int a = deanery->getGroups()[0]->
+            getStudents()[0]->getMarks().size();
+    EXPECT_EQ(5, a);
 }
 
-TEST(, test10) {
-
+TEST(Deanery, test10) {
+    Deanery *deanery = new Deanery();
+    deanery->hireStudents();
+    Group *new_group = deanery->groups[0];
+    Student *me = deanery->groups[1]->getStudent(30);
+    deanery->moveStudents(me, new_group);
 }
