@@ -33,8 +33,8 @@ TEST(Group, test4) {
     group->addStudent(student1);
     group->addStudent(student2);
     bool ex1 = group->getStudents()[0]->getId() == 0;
-    bool ex2 = group->getStudents()[0]->getId() == 0;
-    EXPECT_TRUE(((ex1) && (ex2)));
+    bool ex2 = group->getStudents()[1]->getId() == 1;
+    EXPECT_EQ(1, ex1 && ex2);
 }
 
 TEST(Student, test5) {
@@ -59,21 +59,21 @@ TEST(Group, test6) {
 
 TEST(Deanery, test7) {
     Deanery *deanery = new Deanery();
-    deanery->path_to_data = "../../../data";
+    deanery->path_to_data = "../../../data/";
     deanery->createGroups("groupInput.txt");
     EXPECT_EQ(3, deanery->getGroups().size());
 }
 
 TEST(Deanery, test8) {
     Deanery *deanery = new Deanery();
-    deanery->path_to_data = "../../../data";
+    deanery->path_to_data = "../../../data/";
     deanery->hireStudents("studInput.txt");
     EXPECT_EQ(56, Student::getLastId());
 }
 
 TEST(Deanery, test9) {
     Deanery *deanery = new Deanery();
-    deanery->path_to_data = "../../../data";
+    deanery->path_to_data = "../../../data/";
     deanery->hireStudents("studInput.txt");
     deanery->addMarksToAll(5);
     int a = deanery->getGroups()[0]->
@@ -83,7 +83,7 @@ TEST(Deanery, test9) {
 
 TEST(Deanery, test10) {
     Deanery *deanery = new Deanery();
-    deanery->path_to_data = "../../../data";
+    deanery->path_to_data = "../../../data/";
     deanery->hireStudents("studInput.txt");
     Group *new_group = deanery->getGroups()[0];
     Student *me = deanery->getGroups()[1]->getStudent(30);
