@@ -1,4 +1,4 @@
-// Copyright 2020 Khoroshavina Ekaterina
+// Copyright 2021 Khoroshavina Ekaterina
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
@@ -10,6 +10,8 @@
 class Group;
 
 class Student {
+    friend class Group;
+    friend class Deanary;
  private:
      int id;
      std::string fio;
@@ -18,12 +20,13 @@ class Student {
      void addMark(int mark);
      void addToGroup(Group* group);
  public:
+     Student(int id, std::string FIO);
+     ~Student();
      int getId() const;
-     std::string& getFIO() const;
+     const std::string& getFIO() const;
      Group* getGroup() const;
      int getAverageMark();
      bool isHeadOfGroup();
 };
-
 
 #endif  // INCLUDE_STUDENT_H_

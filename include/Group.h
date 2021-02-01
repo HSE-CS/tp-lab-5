@@ -1,4 +1,4 @@
-// Copyright 2020 Khoroshavina Ekaterina
+// Copyright 2021 Khoroshavina Ekaterina
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
@@ -7,6 +7,7 @@
 class Student;
 
 class Group {
+    friend class Deanary;
 private:
     std::string title;
     std::string spec;
@@ -16,7 +17,9 @@ private:
     void chooseHead();
     void removeStudent(Student* student);
 public:
-    double getAveragemark();
+    Group(std::string name, std::string sp);
+    ~Group();
+    double getAverageMark();
     Student* getStudent(std::string ident);
     Student* getStudent(int id);
     Student* getHead();
@@ -26,6 +29,5 @@ public:
     bool containsStudent(int id);
     bool isEmpty();
 };
-
 
 #endif  // INCLUDE_GROUP_H_
