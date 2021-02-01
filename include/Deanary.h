@@ -24,4 +24,4 @@ class Deanary {
   const std::vector<Group *> &getGroups() const;
 };
 
-#endif //  INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

@@ -31,7 +31,6 @@ class Student{
   double calculateAverageMark();
 
   virtual ~Student();
-
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

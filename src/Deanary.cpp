@@ -35,7 +35,7 @@ void Deanary::createGroups() {
 }
 
 std::vector<Student *> Deanary::createStudents() {
-  std::vector<Student *> students;
+  std::vector < Student * > students;
 
   std::string line;
   std::ifstream in("Students.txt");
@@ -141,7 +141,9 @@ std::vector<Student *> Deanary::createStudents() {
   return students;
 }*/
 
-void Deanary::moveStudents(std::vector<Student *> students, Group *from, Group *to) {
+void Deanary::moveStudents(std::vector<Student *> students,
+                           Group *from,
+                           Group *to) {
   for (int i = 0; i < SIZE2 / 3; ++i) {
     from->removeStudent(students[i]);
     to->addStudent(students[i]);
@@ -154,7 +156,7 @@ const std::vector<Group *> &Deanary::getGroups() const {
 void Deanary::addRandomMarksToAll() {
   for (int i = 0; i < this->groups.size(); ++i) {
     for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-      this->getGroups().at(i)->getStudents().at(j)->addMark(rand() % 11);
+      this->getGroups().at(i)->getStudents().at(j)->addMark(rand_r() % 11);
     }
   }
 }
@@ -163,7 +165,8 @@ void Deanary::initHeads() {
   for (int i = 0; i < this->groups.size(); ++i) {
     int sizeOfArrOfSt = this->getGroups().at(i)->getStudents().size();
     if (sizeOfArrOfSt >= 1) {
-      this->getGroups().at(i)->chooseHead(this->getGroups().at(i)->getStudents().at(rand() % sizeOfArrOfSt));
+      this->getGroups().at(i)->chooseHead(this->getGroups().at(i)->
+          getStudents().at(rand_r() % sizeOfArrOfSt));
     }
   }
 }
@@ -175,14 +178,16 @@ void Deanary::getStatistics() {
     double avrGr = this->getGroups().at(i)->calculateAverageMark();
     std::cout << title << " -- " << spec << std::endl;
     std::cout << "Average mark of the group: " << avrGr << std::endl;
-    std::cout << "Head: " << this->getGroups().at(i)->getHead()->getFio() << std::endl;
+    std::cout << "Head: " <<
+              this->getGroups().at(i)->getHead()->getFio() << std::endl;
     std::cout << "{" << std::endl;
     for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
       std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
       std::string name = this->getGroups().at(i)->getStudents().at(j)->getFio();
-      double avr = this->getGroups().at(i)->getStudents().at(j)->calculateAverageMark();
-      std::cout << id << " --- " << name << " --- average: " << avr << std::endl;
-
+      double avr = this->getGroups().at(i)->getStudents().at(j)->
+          calculateAverageMark();
+      std::cout << id << " --- " << name <<
+                " --- average: " << avr << std::endl;
     }
     std::cout << "}" << std::endl;
   }
@@ -198,14 +203,16 @@ void Deanary::saveStaff() {
       double avrGr = this->getGroups().at(i)->calculateAverageMark();
       out << title << " -- " << spec << std::endl;
       out << "Average mark of the group: " << avrGr << std::endl;
-      out << "Head: " << this->getGroups().at(i)->getHead()->getFio() << std::endl;
+      out << "Head: " << this->getGroups().at(i)->getHead()->
+          getFio() << std::endl;
       out << "{" << std::endl;
       for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
         std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
-        std::string name = this->getGroups().at(i)->getStudents().at(j)->getFio();
-        double avr = this->getGroups().at(i)->getStudents().at(j)->calculateAverageMark();
+        std::string name = this->getGroups().at(i)->getStudents().at(j)->
+            getFio();
+        double avr = this->getGroups().at(i)->getStudents().at(j)->
+            calculateAverageMark();
         out << id << " --- " << name << " --- average: " << avr << std::endl;
-
       }
       out << "}" << std::endl;
     }
