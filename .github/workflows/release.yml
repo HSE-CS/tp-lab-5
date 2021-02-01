@@ -14,4 +14,4 @@ jobs:
     - name: make
       run: cd build && make
     - name: Run Test
-      run: /home/runner/work/tp-lab-5/tp-lab-5/build/test/tp-lab-5.test
+      run: sudo cp /home/runner/work/tp-lab-5/tp-lab-5/src/data/* /home/runner/work/tp-lab-5/tp-lab-5/build/test/ && cd /home/runner/work/tp-lab-5/tp-lab-5/build/test/ && /home/runner/work/tp-lab-5/tp-lab-5/build/test/tp-lab-5.test
