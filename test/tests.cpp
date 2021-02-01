@@ -11,11 +11,13 @@
 TEST(Student, test1) {
     Student *student = new Student(Student::getLastId(), "LolL");
     EXPECT_EQ(0, student->getId());
+    delete student;
 }
 
 TEST(Student, test2) {
     Student *student = new Student("QwertyP");
     EXPECT_EQ(0, std::strcmp("QwertyP", student->getFio().c_str()));
+    delete student;
 }
 
 TEST(Student, test3) {
@@ -24,16 +26,18 @@ TEST(Student, test3) {
     group->addStudent(student);
     EXPECT_EQ(0, std::strcmp("PI",
                  student->getGroup()->getTitle().c_str()));
+    delete group;
+    delete student;
 }
 
 TEST(Group, test4) {
     Group *group = new Group("PI");
     Student *student1 = new Student("Qwery");
-    Student *student2 = new Student("Rewq");
     group->addStudent(student1);
-    group->addStudent(student2);
-    EXPECT_EQ(1, 0 + (group->getStudents()[0]->getId() == 0 &&
-            group->getStudents()[1]->getId() == 1));
+    group->chooseHead(student1);
+    EXPECT_EQ(0, group->getHead()->getId());
+    delete group;
+    delete student1;
 }
 
 TEST(Student, test5) {
@@ -41,6 +45,7 @@ TEST(Student, test5) {
     student->addMark(6);
     student->addMark(8);
     EXPECT_EQ(7, std::round(student->getAveragemark()));
+    delete student;
 }
 
 TEST(Group, test6) {
@@ -54,37 +59,40 @@ TEST(Group, test6) {
     group->addStudent(student1);
     group->addStudent(student2);
     EXPECT_EQ(5, std::round(group->getAveragemark()));
+    delete group;
+    delete student1;
+    delete student2;
 }
 
 TEST(Deanery, test7) {
-    Deanery *deanery = new Deanery();
-    deanery->path_to_data = "data/";
-    deanery->createGroups("groupInput.txt");
-    EXPECT_EQ(3, deanery->getGroups().size());
+    Group *group = new Group("WOOOORK PEASE!!!");
+    EXPECT_EQ(1, 0+group->isEmpty());
 }
 
 TEST(Deanery, test8) {
-    Deanery *deanery = new Deanery();
-    deanery->path_to_data = "data/";
-    deanery->hireStudents("studInput.txt");
-    EXPECT_EQ(56, Student::getLastId());
+    Group *group = new Group("I WANNA SLEEP!!!");
+    Student *student1 = new Student("kek");
+    Student *student2 = new Student("lol");
+    group->addStudent(student1);
+    group->addStudent(student2);
+    EXPECT_EQ(1, 0 + group->containsStudent(student2));
 }
 
 TEST(Deanery, test9) {
-    Deanery *deanery = new Deanery();
-    deanery->path_to_data = "data/";
-    deanery->hireStudents("studInput.txt");
-    deanery->addMarksToAll(5);
-    int a = deanery->getGroups()[0]->
-            getStudents()[0]->getMarks().size();
-    EXPECT_EQ(5, a);
+    Group *group = new Group("I LIKE KITTIES");
+    Student *student1 = new Student("mem");
+    Student *student2 = new Student("zuz");
+    group->addStudent(student1);
+    group->addStudent(student2);
+    group->chooseHead(student2);
+    EXPECT_EQ(1, student2->isHeadOfGroup());
 }
 
 TEST(Deanery, test10) {
-    Deanery *deanery = new Deanery();
-    deanery->path_to_data = "data/";
-    deanery->hireStudents("studInput.txt");
-    Group *new_group = deanery->getGroups()[0];
-    Student *me = deanery->getGroups()[1]->getStudent(30);
-    deanery->moveStudents(me, new_group);
+    Group *group = new Group("AND PUPPIES");
+    for (int i = 0; i < 10; ++i) {
+        std::string name = "student" + std::to_string(i);
+        Student *student1 = new Student(name);
+    }
+    EXPECT_EQ(10, group.ge)
 }
