@@ -8,24 +8,24 @@
 
 TEST(PostfixTest, test1) {
   Student student("1", "Pavlov pavel Pavlovich");
-  ASSERT_STREQ("1", student.getId);
+  EXPECT_EQ("1", student.getId);
 }
 
 TEST(PostfixTest, test2) {
   Student student("1", "Pavlov pavel Pavlovich");
-  ASSERT_STREQ(student.getFio, "Pavlov pavel Pavlovich");
+  EXPECT_EQ(student.getFio, "Pavlov pavel Pavlovich");
 }
 
 TEST(PostfixTest, test3) {
   Student student("1", "Pavlov pavel Pavlovich");
-  ASSERT_STREQ(nullptr, student.getGroup);
+  EXPECT_EQ(nullptr, student.getGroup);
 }
 
 TEST(PostfixTest, test4) {
   Student student("1", "Pavlov pavel Pavlovich");
   Group group1("19SE-1", "SE");
   student1.addToGroup(&group1);
-  ASSERT_STREQ("19SE-1", student.getGroup()->GetTitle());
+  EXPECT_EQ("19SE-1", student.getGroup()->GetTitle());
 }
 
 
