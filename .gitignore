@@ -1,0 +1,7 @@
+.idea
+.github
+cmake-build-debug
+img
+gtest
+
+data/kek.py
