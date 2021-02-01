@@ -8,18 +8,6 @@
 #include "Deanary.h"
 
 int main() {
-    /*
-    Student *student = new Student(0, "Dima");
-    std::cout << student->getFio() << " " << student->getId() << std::endl;
-    student->addMark(4);
-    student->addMark(5);
-    std::vector<int> m = student->getMarks();
-    for (int i: m)
-        std::cout << i << " ";
-    std::cout << std::endl << student->getAveragemark();
-    return 0;
-     */
-
     Deanery *deanery = new Deanery();
     deanery->createGroups("groupInput.txt");
     deanery->hireStudents("studInput.txt");
@@ -29,11 +17,8 @@ int main() {
     deanery->addGroup(group1);
     Student *student = new Student("NavalnyA");
     group1->addStudent(student);
-    for (Student *student1: group1->getStudents()) {
-        std::cout << student1->getGroup()->getTitle();
-    }
     deanery->saveStaff();
-    /*
+
     for (Group *group: deanery->getGroups()) {
         std::cout << group->getTitle() << "\n";
         for (Student *student: group->getStudents()) {
@@ -42,11 +27,4 @@ int main() {
             std::cout << student->marksToString() << "\n";
         }
     }
-     */
-    /*
-    std::string s = "23 ДумаревскаяТ PI2";
-    std::string tmp = s.substr(s.find(' ')+1, s.length());
-    s = tmp.substr(0, tmp.find(' '));
-    std::cout << s;
-     */
 }

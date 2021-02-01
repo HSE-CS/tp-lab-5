@@ -23,6 +23,7 @@ Student::Student(int id, std::string fio) {
         throw;
     }
     this->id = id;
+    Student::last_student_id = id;
     this->fio = fio;
     this->group = nullptr;
     this->marks = {};
@@ -35,6 +36,7 @@ Student::Student(int id, std::string fio, Group *group) {
         std::cout << id << ", " << fio << "\n";
         throw;
     }
+    Student::last_student_id = id;
     this->id = id;
     this->fio = fio;
     this->group = group;
@@ -55,6 +57,10 @@ Group* Student::getGroup() {
 
 std::vector<int> Student::getMarks() {
     return this->marks;
+}
+
+unsigned int Student::getLastId() {
+    return Student::last_student_id;
 }
 
 void Student::addToGroup(Group *pgroup) {

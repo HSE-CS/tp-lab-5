@@ -25,6 +25,7 @@ private:
     std::string getFio();
     Group* getGroup();
     std::vector<int> getMarks();
+    static unsigned int getLastId();
 
     void addToGroup(Group *pgroup);
     void addMark(int mark);

@@ -111,7 +111,6 @@ void Deanery::saveStaff() {
         group_file << group->getTitle() << "\n";
     }
     group_file.close();
-    std::cout << "\nKEK\n";
     for (Group *group: this->groups) {
         for (Student *student: group->getStudents()) {
             student_file << std::to_string(student->getId()) << " ";
