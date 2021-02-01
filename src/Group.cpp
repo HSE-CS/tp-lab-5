@@ -20,7 +20,7 @@ void Group::chooseHead(Student *phead) {
 }
 
 Student *Group::getStudent(int student_id) {
-    for (Student *student: this->students) {
+    for (Student *student : this->students) {
         if (student->getId() == student_id) {
             return student;
         }
@@ -29,7 +29,7 @@ Student *Group::getStudent(int student_id) {
 }
 
 Student *Group::getStudent(std::string student_fio) {
-    for (Student *student: this->students) {
+    for (Student *student : this->students) {
         if (!strcmp(student->getFio().c_str(), student_fio.c_str())) {
             return student;
         }
@@ -40,7 +40,7 @@ Student *Group::getStudent(std::string student_fio) {
 double Group::getAveragemark() {
     if (!this->students.empty()) {
         double sum = 0;
-        for (Student *student: this->students) {
+        for (Student *student : this->students) {
             sum += student->getAveragemark();
         }
         return sum / this->students.size();
@@ -49,7 +49,7 @@ double Group::getAveragemark() {
 }
 
 bool Group::containsStudent(Student *student) {
-    for (Student *iter: this->students) {
+    for (Student *iter : this->students) {
         if (iter == student)
             return true;
     }

@@ -28,7 +28,7 @@ Student::Student(int id, std::string fio) {
     this->fio = fio;
     this->group = nullptr;
     this->marks = {};
-};
+}
 
 Student::Student(int id, std::string fio, Group *group) {
     if (id < Student::last_student_id) {
@@ -75,7 +75,7 @@ void Student::addMark(int mark) {
 double Student::getAveragemark() {
     if (!this->marks.empty()) {
         int sum = 0;
-        for (int mark: this->marks) {
+        for (int mark : this->marks) {
             sum += mark;
         }
         return 1.0 * sum / this->marks.size();
@@ -89,7 +89,7 @@ bool Student::isHeadOfGroup() {
 
 std::string Student::marksToString() {
     std::string str;
-    for (int mark: this->marks) {
+    for (int mark : this->marks) {
         str.append(std::to_string(mark) + " ");
     }
     return str;

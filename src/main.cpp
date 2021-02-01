@@ -19,9 +19,9 @@ int main() {
     group1->addStudent(student);
     deanery->saveStaff();
 
-    for (Group *group: deanery->getGroups()) {
+    for (Group *group : deanery->getGroups()) {
         std::cout << group->getTitle() << "\n";
-        for (Student *student: group->getStudents()) {
+        for (Student *student : group->getStudents()) {
             std::cout << "\t" << student->getId() << " ";
             std::cout << student->getFio() << " ";
             std::cout << student->marksToString() << "\n";

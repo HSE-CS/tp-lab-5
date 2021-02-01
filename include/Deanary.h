@@ -1,6 +1,6 @@
 // Copyright 2020 Dmitry Vargin
-#ifndef TP_LAB_5_DEANARY_H
-#define TP_LAB_5_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <map>
 #include <string>
@@ -10,14 +10,12 @@
 #include "Group.h"
 
 class Deanery {
-  private:
+ private:
     std::vector<Group*> groups;
     static std::string getProjectPath();
-  public:
+ public:
     Deanery();
-    void hireStudents();
     void hireStudents(std::string filename);
-    void createGroups();
     void createGroups(std::string filename);
     void addMarksToAll(int marks_per_student);
     void moveStudents(Student *student, Group *group);
@@ -30,4 +28,5 @@ class Deanery {
     void addGroup(Group *group);
 };
 
-#endif //TP_LAB_5_DEANARY_H
+
+#endif  // INCLUDE_DEANARY_H_

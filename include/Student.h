@@ -8,13 +8,13 @@
 class Group;
 
 class Student {
-private:
+ private:
     unsigned int id;
     std::string fio;
     Group *group;
     std::vector<int> marks;
     static unsigned int last_student_id;
-  public:
+ public:
     explicit Student(std::string fio);
     Student(int id, std::string fio);
     Student(int id, std::string fio, Group *group);

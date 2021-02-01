@@ -8,12 +8,12 @@
 #include "Student.h"
 
 class Group {
-  private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
     Student *head;
-  public:
+ public:
     explicit Group(std::string title);
     void addStudent(Student *student);
     void chooseHead(Student *phead);

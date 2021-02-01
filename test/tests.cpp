@@ -80,7 +80,7 @@ TEST(Deanery, test9) {
 TEST(Deanery, test10) {
     Deanery *deanery = new Deanery();
     deanery->hireStudents("studInput.txt");
-    Group *new_group = deanery->groups[0];
-    Student *me = deanery->groups[1]->getStudent(30);
+    Group *new_group = deanery->getGroups()[0];
+    Student *me = deanery->getGroups()[1]->getStudent(30);
     deanery->moveStudents(me, new_group);
 }

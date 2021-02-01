@@ -31,7 +31,7 @@ void Deanery::hireStudents(std::string filename) {
         std::string group_name = line.substr(line.rfind(' ')+1,
                                              line.size());
         Group *his_group = nullptr;
-        for (Group *group: this->groups) {
+        for (Group *group : this->groups) {
             if (!strcmp(group->getTitle().c_str(), group_name.c_str())) {
                 his_group = group;
                 break;
@@ -66,8 +66,8 @@ void Deanery::createGroups(std::string filename) {
 
 void Deanery::addMarksToAll(int marks_per_student) {
     std::srand(std::time(nullptr));
-    for (Group *group: this->groups) {
-        for (Student *student: group->getStudents()) {
+    for (Group *group : this->groups) {
+        for (Student *student : group->getStudents()) {
             for (int i = 0; i < marks_per_student; ++i) {
                 student->addMark(std::rand() % 10 + 1);
             }
@@ -81,8 +81,8 @@ void Deanery::moveStudents(Student *student, Group *group) {
 }
 
 Student *Deanery::fireStudents(Student *student) {
-    for (Group *group: this->groups) {
-        for (Student *student1: group->getStudents()) {
+    for (Group *group : this->groups) {
+        for (Student *student1 : group->getStudents()) {
             if (student == student1) {
                 group->removeStudents(student);
             }
@@ -93,7 +93,7 @@ Student *Deanery::fireStudents(Student *student) {
 
 void Deanery::initHeads() {
     std::srand(std::time(nullptr));
-    for (Group *group: this->groups) {
+    for (Group *group : this->groups) {
         int head_index = std::rand() % group->getStudents().size();
         group->chooseHead(group->getStudents()[head_index]);
     }
@@ -101,7 +101,7 @@ void Deanery::initHeads() {
 
 std::map<Group *, double> Deanery::getStatistics() {
     std::map<Group *, double> m;
-    for (Group *group: this->getGroups()) {
+    for (Group *group : this->getGroups()) {
         m[group] = group->getAveragemark();
     }
     return m;
@@ -115,12 +115,12 @@ void Deanery::saveStaff() {
     std::ofstream student_file(spath);
     std::ofstream group_file(gpath);
 
-    for (Group *group: this->groups) {
+    for (Group *group : this->groups) {
         group_file << group->getTitle() << "\n";
     }
     group_file.close();
-    for (Group *group: this->groups) {
-        for (Student *student: group->getStudents()) {
+    for (Group *group : this->groups) {
+        for (Student *student : group->getStudents()) {
             student_file << std::to_string(student->getId()) << " ";
             student_file << student->getFio() << " ";
             student_file << student->getGroup()->getTitle() << "\n";
