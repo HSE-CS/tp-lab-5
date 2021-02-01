@@ -15,7 +15,7 @@ class Deanery {
     static std::string getProjectPath();
  public:
     Deanery();
-    static std::string path_to_data;
+    std::string path_to_data;
     void hireStudents(std::string filename);
     void createGroups(std::string filename);
     void addMarksToAll(int marks_per_student);

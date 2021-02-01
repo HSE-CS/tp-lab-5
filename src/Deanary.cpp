@@ -10,14 +10,14 @@
 
 #include "Deanary.h"
 
-std::string Deanery::path_to_data = "../../data/";
-
-Deanery::Deanery() {}
+Deanery::Deanery() {
+    this->path_to_data = "../../data/";
+}
 
 void Deanery::hireStudents(std::string filename) {
     setlocale(LC_ALL, "rus");
     // std::string path = Deanery::getProjectPath() + "/data/" + filename;
-    std::string path = Deanery::path_to_data + filename;
+    std::string path = this->path_to_data + filename;
     std::ifstream input_file(path);
     if (!input_file.is_open()) {
         std::cout << filename << " did not open!\n";
@@ -51,10 +51,10 @@ void Deanery::hireStudents(std::string filename) {
 void Deanery::createGroups(std::string filename) {
     setlocale(LC_ALL, "rus");
     // std::string path = Deanery::getProjectPath() + "/data/" + filename;
-    std::string path = Deanery::path_to_data + filename;
+    std::string path = this->path_to_data + filename;
     std::ifstream input_file(path);
     if (!input_file.is_open()) {
-        std::cout << filename + " did not open!\n";
+        std::cout << path + " did not open!\n";
         throw;
     }
     while (!input_file.eof()) {
@@ -112,8 +112,8 @@ std::map<Group *, double> Deanery::getStatistics() {
 void Deanery::saveStaff() {
     // std::string spath = getProjectPath() + "/data/studOutput.txt";
     // std::string gpath = getProjectPath() + "/data/groupOutput.txt";
-    std::string spath = Deanery::path_to_data + "studOutput.txt";
-    std::string gpath = Deanery::path_to_data + "groupOutput.txt";
+    std::string spath = this->path_to_data + "studOutput.txt";
+    std::string gpath = this->path_to_data + "groupOutput.txt";
     std::ofstream student_file(spath);
     std::ofstream group_file(gpath);
 
