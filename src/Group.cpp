@@ -16,7 +16,7 @@ void Group::addStudent(Student *student) {
 
 void Group::chooseHead() {
     if (!isEmpty()) {
-        int index = rand() % numOfStudents();
+        int index = std::rand() % numOfStudents();
         head = students[index];
     }
 }
