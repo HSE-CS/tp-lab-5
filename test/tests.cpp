@@ -8,8 +8,8 @@
 
 TEST(PostfixTest, test1) {
   Student student("1", "Pavlov pavel Pavlovich");
-  std::string id = student.getId;
-  EXPECT_EQ("1", id;
+  std::string id = student.getId();
+  EXPECT_EQ("1", id);
 }
 
 TEST(PostfixTest, test2) {
@@ -19,7 +19,7 @@ TEST(PostfixTest, test2) {
 
 TEST(PostfixTest, test3) {
   Student student("1", "Pavlov pavel Pavlovich");
-  EXPECT_EQ(nullptr, student.getGroup);
+  EXPECT_EQ(nullptr, student.getGroup());
 }
 
 TEST(PostfixTest, test4) {
