@@ -19,6 +19,7 @@ class Group {
     void chooseHead(Student *phead);
     Student *getStudent(int student_id);
     Student *getStudent(std::string student_fio);
+    unsigned int getAmountOfStudents();
     std::vector<Student*> getStudents();
     double getAveragemark();
     bool containsStudent(Student *student);

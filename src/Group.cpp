@@ -37,6 +37,10 @@ Student *Group::getStudent(std::string student_fio) {
     return nullptr;
 }
 
+unsigned int Group::getAmountOfStudents() {
+    return this->students.size();
+}
+
 double Group::getAveragemark() {
     if (!this->students.empty()) {
         double sum = 0;
