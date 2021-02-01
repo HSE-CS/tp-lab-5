@@ -23,21 +23,21 @@ Deanary::Deanary(unsigned number_of_groups, std::string students_file_name,
 
 void Deanary::printDeanary(bool marks_on) {
   for (unsigned i = 0; i < this->number_of_groups; i++) {
-    std::cout << "Group: "<< groups[i].getTitle() << 
+    std::cout << "Group: "<< groups[i].getTitle() <<
       " \t\t\t\t\t\tHead: " << groups[i].getHead()->getFio() << std::endl;
     unsigned number_of_students = groups[i].students.size();
     for (unsigned j = 0; j < number_of_students; j++) {
       if (marks_on) {
-        std::cout << "Average Mark: " << 
+        std::cout << "Average Mark: " <<
           groups[i].students.at(j)->getAverageMark();
         std::cout << " \tMarks: ";
-        groups[i].students.at(j)->printMarks(); 
+        groups[i].students.at(j)->printMarks();
         std::cout << "\t" << groups[i].students.at(j)->getFio();
         std::cout << std::endl;
+      } else {
+        std::cout << "FIO: " << groups[i].students.at(j)->getFio() <<
+          std::endl;
       }
-      else
-        std::cout << "FIO: " << groups[i].students.at(j)->getFio() << 
-        std::endl;
     }
     std::cout << std::endl;
   }
@@ -84,7 +84,7 @@ std::vector<Student*> Deanary::findWorstStudents(Group* group) {
   unsigned number_of_students = group->students.size();
   for (unsigned i = 0; i < number_of_students; i++) {
     float mark = group->students.at(i)->getAverageMark();
-    if (mark < min_avg_mark) 
+    if (mark < min_avg_mark)
       min_avg_mark = mark;
   }
   for (unsigned i = 0; i < number_of_students; i++) {
@@ -116,7 +116,7 @@ unsigned* Deanary::findNumberOfCatigoriesOfStudents(Group* group) {
 
 void Deanary::printStatistics() {
   for (unsigned i = 0; i < this->number_of_groups; i++) {
-    unsigned* catigories_of_students = 
+    unsigned* catigories_of_students =
       this->findNumberOfCatigoriesOfStudents(&this->groups[i]);
     std::vector<Student*> best_students =
       this->findBestStudents(&this->groups[i]);
@@ -274,10 +274,11 @@ void  Deanary::createGroups(std::vector<Student*> students,
       this->groups[j].addStudent(students.at(i));
     }
   }
-  if (remains)
+  if (remains) {
     for (unsigned i = 0; i < remains; i++) {
       students.at(number_of_students - remains + i)->setGroup(&groups[i]);
       this->groups[number_of_groups - 1].addStudent(
         students.at(number_of_students - remains + i));
     }
+  }
 }

@@ -77,8 +77,7 @@ Student* Group::getStudentById(int id) {
   unsigned size = this->students.size();
   if (!size) {
     return nullptr;
-  }
-  else {
+  } else {
     for (unsigned i = 0; i < size; i++) {
       if (this->students.at(i)->getId() == id) {
         return this->students.at(i);
@@ -93,8 +92,7 @@ Student* Group::getStudentByFio(std::string fio) {
   unsigned size = this->students.size();
   if (!size) {
     return nullptr;
-  }
-  else {
+  } else {
     for (unsigned i = 0; i < size; i++) {
       if (this->students.at(i)->getFio() == fio) {
         return this->students.at(i);
