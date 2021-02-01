@@ -58,19 +58,19 @@ TEST(Group, test6) {
 
 TEST(Deanery, test7) {
     Deanery *deanery = new Deanery();
-    deanery->createGroups();
+    deanery->createGroups("groupInput.txt");
     EXPECT_EQ(3, deanery->getGroups().size());
 }
 
 TEST(Deanery, test8) {
     Deanery *deanery = new Deanery();
-    deanery->hireStudents();
+    deanery->hireStudents("studInput.txt");
     EXPECT_EQ(56, Student::getLastId());
 }
 
 TEST(Deanery, test9) {
     Deanery *deanery = new Deanery();
-    deanery->hireStudents();
+    deanery->hireStudents("studInput.txt");
     deanery->addMarksToAll(5);
     int a = deanery->getGroups()[0]->
             getStudents()[0]->getMarks().size();
@@ -79,7 +79,7 @@ TEST(Deanery, test9) {
 
 TEST(Deanery, test10) {
     Deanery *deanery = new Deanery();
-    deanery->hireStudents();
+    deanery->hireStudents("studInput.txt");
     Group *new_group = deanery->groups[0];
     Student *me = deanery->groups[1]->getStudent(30);
     deanery->moveStudents(me, new_group);

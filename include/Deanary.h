@@ -23,7 +23,7 @@ class Deanery {
     void moveStudents(Student *student, Group *group);
     Student *fireStudents(Student *student);
     void initHeads();
-    std::map<Group *, double> getStatistics() {
+    std::map<Group *, double> getStatistics();
     void saveStaff();
 
     std::vector<Group*> getGroups();

@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Student.h"
+#include "Group.h"
 
 unsigned int Student::last_student_id = 0;
 
@@ -83,7 +84,7 @@ double Student::getAveragemark() {
 }
 
 bool Student::isHeadOfGroup() {
-    return this->group->getHead()->id == this->id;
+    return this->group->getHead()->getId() == this->id;
 }
 
 std::string Student::marksToString() {

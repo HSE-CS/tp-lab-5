@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 
-#include "Group.h"
-
 class Group;
 
 class Student {
@@ -17,11 +15,11 @@ private:
     std::vector<int> marks;
     static unsigned int last_student_id;
   public:
-    Student(std::string fio);
+    explicit Student(std::string fio);
     Student(int id, std::string fio);
     Student(int id, std::string fio, Group *group);
 
-    unsigned int getId() const;
+    [[nodiscard]] unsigned int getId() const;
     std::string getFio();
     Group* getGroup();
     std::vector<int> getMarks();

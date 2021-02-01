@@ -45,10 +45,6 @@ void Deanery::hireStudents(std::string filename) {
     }
 }
 
-void Deanery::hireStudents() {
-    this->hireStudents("studInput.txt");
-}
-
 void Deanery::createGroups(std::string filename) {
     setlocale(LC_ALL, "rus");
     std::string path = Deanery::getProjectPath() + "/data/" + filename;
@@ -64,10 +60,6 @@ void Deanery::createGroups(std::string filename) {
         this->groups.push_back(group);
     }
     input_file.close();
-}
-
-void Deanery::createGroups() {
-    this->createGroups("groupInput.txt");
 }
 
 void Deanery::addMarksToAll(int marks_per_student) {
