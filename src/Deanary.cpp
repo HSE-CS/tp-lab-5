@@ -118,12 +118,12 @@ void Deanary::printStatistics() {
   for (unsigned i = 0; i < this->number_of_groups; i++) {
     unsigned* catigories_of_students = 
       this->findNumberOfCatigoriesOfStudents(&this->groups[i]);
-    std::vector<Student*> best_students = 
+    std::vector<Student*> best_students =
       this->findBestStudents(&this->groups[i]);
-    std::vector<Student*> worst_students = 
+    std::vector<Student*> worst_students =
       this->findWorstStudents(&this->groups[i]);
     std::cout << "Group: " << this->groups[i].getTitle() << std::endl;
-    std::cout << "The best students: "; 
+    std::cout << "The best students: ";
     for (unsigned i = 0; i < best_students.size(); i++)
       std::cout << best_students.at(i)->getFio() << ", ";
     std::cout << " \t\tAverage mark: " <<
@@ -149,7 +149,7 @@ bool Deanary::fireStudents() {
   bool result = false;
   for (unsigned i = 0; i < this->number_of_groups; i++) {
     bool remake_head = false;
-    unsigned* catigories_students = 
+    unsigned* catigories_students =
       this->findNumberOfCatigoriesOfStudents(&this->groups[i]);
     if (catigories_students[3] > 0) {
       result = true;
@@ -235,7 +235,7 @@ void Deanary::initHeads() {
   }
 }
 
-std::vector<Student*>  Deanary::hireStudents(std::string file_name, 
+std::vector<Student*>  Deanary::hireStudents(std::string file_name,
   std::string format) {
   std::vector<Student*> students;
   this->reader->readStudentsData(file_name);
@@ -261,8 +261,7 @@ void  Deanary::createGroups(std::vector<Student*> students,
           this->groups[i].addStudent(students.at(j));
         }
     }
-  }
-  else {
+  } else {
     unsigned j = 0, shift = 1;
     for (unsigned i = 0; i < number_of_groups; i++)
       this->groups[i] = *new Group(group_names.at(i));
@@ -282,19 +281,3 @@ void  Deanary::createGroups(std::vector<Student*> students,
         students.at(number_of_students - remains + i));
     }
 }
-
-//void Deanary::addGroup(const Group& group) {
-//  Group* new_groups = new Group[number_of_groups + 1];
-//  for (unsigned i = 0; i < number_of_groups; i++) {
-//    new_groups[i] = groups[i];
-//  }
-//  new_groups[number_of_groups] = group;
-//  number_of_groups++;
-//  delete groups;
-//  groups = new_groups;
-//}
-//
-//void Deanary::addStudentInLastGroup(Student& student) {
-//  groups[number_of_groups - 1].addStudent(&student);
-//  groups[number_of_groups - 1].chooseHead();
-//}

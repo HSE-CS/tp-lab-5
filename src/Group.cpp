@@ -75,8 +75,9 @@ int Group::getAvarageMark() const {
 
 Student* Group::getStudentById(int id) {
   unsigned size = this->students.size();
-  if (!size) 
+  if (!size) {
     return nullptr;
+  }
   else {
     for (unsigned i = 0; i < size; i++) {
       if (this->students.at(i)->getId() == id) {
@@ -90,8 +91,9 @@ Student* Group::getStudentById(int id) {
 
 Student* Group::getStudentByFio(std::string fio) {
   unsigned size = this->students.size();
-  if (!size) 
+  if (!size) {
     return nullptr;
+  }
   else {
     for (unsigned i = 0; i < size; i++) {
       if (this->students.at(i)->getFio() == fio) {

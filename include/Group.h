@@ -1,6 +1,8 @@
 // Copyright 2020 GHA Test Team
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
+#include <vector>
+#include <string>
 #include "Student.h"
 
 
@@ -13,7 +15,7 @@ class Group {
   std::vector <Student*> students;
   Student* head;
   void addStudent(Student*);
-  void chooseHead(bool random=false);
+  void chooseHead(bool random = false);
   void removeStudentById(int);
   void removeStudentByFio(std::string);
 

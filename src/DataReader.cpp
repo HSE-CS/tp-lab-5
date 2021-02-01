@@ -2,9 +2,7 @@
 #include "DataReader.h"
 
 
-DataReader::DataReader() {
-
-}
+DataReader::DataReader() {}
 
 DataReader::DataReader(std::string students_file_name,
   std::string groups_file_name, std::string students_format,
@@ -16,15 +14,14 @@ DataReader::DataReader(std::string students_file_name,
 void DataReader::readStudentsData(std::string file_name, std::string format) {
   if (format == "txt")
     this->readStudentsFromTxt(file_name);
-  else {
+  else
     std::cout << "ERROR: unsupported file format" << std::endl;
-  }
 }
 
 void DataReader::readGroupsData(std::string file_name, std::string format) {
   if (format == "txt")
     this->readGroupsFromTxt(file_name);
-  else 
+  else
     std::cout << "ERROR: unsupported file format" << std::endl;
 }
 

@@ -1,5 +1,5 @@
 // Copyright 2020 GHA Test Team
-//#include "pch.h"
+// #include "pch.h"
 #include "gtest/gtest.h"
 // #include "../Lab-5-source/DataReader.cpp"
 // #include "../Lab-5-source/Deanary.cpp"
@@ -10,9 +10,8 @@
 #include "Group.h"
 #include "Deanary.h"
 
-
 std::string dataDir = "src";
-//std::string dataDir = "Lab-5-source";
+// std::string dataDir = "Lab-5-source";
 
 
 TEST(StudentTest, TestInit1) {
@@ -42,73 +41,92 @@ TEST(DeanaryTest, TestInit1) {
 }
 
 TEST(DeanaryTest, TestInit2) {
-  Deanary deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
+  Deanary deanary(3, "../" + dataDir + "/students.txt", "../"
+    + dataDir + "/groups.txt", false);
   EXPECT_EQ(3, deanary.getNumberOfGroups());
 }
 
 TEST(DeanaryTest, TestFunc1) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  std::string str1 = "Лисов Савелий Кириллович";
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  std::string str1 = "Lisov Savely Kirillovich";
   EXPECT_EQ(str1, deanary->findStudentByFio(str1)->getFio());
 }
 
 TEST(DeanaryTest, TestFunc2) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  std::string str1 = "Кариева Анастасия Владиленовна";
-  EXPECT_EQ(str1, deanary->findBestStudents(deanary->findGroupByTittle("Группа1"))[0]->getFio());
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  std::string str1 = "Karieva Anastasia Vladilenovna";
+  EXPECT_EQ(str1, deanary->findBestStudents(deanary->
+    findGroupByTittle("Group1"))[0]->getFio());
 }
 
 TEST(DeanaryTest, TestFunc3) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
   EXPECT_EQ(false, deanary->fireStudents());
 }
 
 TEST(DeanaryTest, TestFunc4) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  std::string str1 = "Лешев Иван Проклович";
-  EXPECT_EQ(str1, deanary->findWorstStudents(deanary->findGroupByTittle("Группа1"))[1]->getFio());
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  std::string str1 = "Leshev Ivan Brockovich";
+  EXPECT_EQ(str1, deanary->findWorstStudents(deanary->
+    findGroupByTittle("Group1"))[1]->getFio());
 }
 
 TEST(DeanaryTest, TestFunc5) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  Student* st = deanary->findGroupByTittle("Группа1")->getStudentByFio("Кариева Анастасия Владиленовна");
-  deanary->moveStudents("Кариева Анастасия Владиленовна", "Группа2");
-  EXPECT_EQ(false, deanary->findGroupByTittle("Группа1")->containsStudent(st));
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  Student* st = deanary->findGroupByTittle("Group1")->
+    getStudentByFio("Karieva Anastasia Vladilenovna");
+  deanary->moveStudents("Karieva Anastasia Vladilenovna", "Group3");
+  EXPECT_EQ(false, deanary->findGroupByTittle("Group1")->containsStudent(st));
 }
 
 TEST(DeanaryTest, TestFunc6) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  deanary->moveStudents("Кариева Анастасия Владиленовна", "Группа3");
-  EXPECT_EQ("Кариева Анастасия Владиленовна", deanary->findGroupByTittle("Группа3")->getStudentByFio("Кариева Анастасия Владиленовна")->getFio());
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  deanary->moveStudents("Karieva Anastasia Vladilenovna", "Group3");
+  EXPECT_EQ("Karieva Anastasia Vladilenovna",
+    deanary->findGroupByTittle("Group3")->getStudentByFio(
+      "Karieva Anastasia Vladilenovna")->getFio());
 }
 
 TEST(GroupTest, TestFunc1) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  EXPECT_EQ("Группа1", deanary->findGroupByTittle("Группа1")->getTitle());
+  Deanary* deanary = new Deanary(3, "../" + dataDir
+    + "/students.txt", "../" + dataDir + "/groups.txt", false);
+  EXPECT_EQ("Group1", deanary->findGroupByTittle("Group1")->getTitle());
 }
 
 TEST(GroupTest, TestFunc2) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  EXPECT_EQ("Кариева Анастасия Владиленовна", deanary->findGroupByTittle("Группа1")->getHead()->getFio());
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  EXPECT_EQ("Karieva Anastasia Vladilenovna",
+    deanary->findGroupByTittle("Group1")->getHead()->getFio());
 }
 
 TEST(GroupTest, TestFunc3) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  EXPECT_FLOAT_EQ(5.0f, deanary->findGroupByTittle("Группа1")->getAvarageMark());
+  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt",
+    "../" + dataDir + "/groups.txt", false);
+  EXPECT_FLOAT_EQ(5.0f, deanary->findGroupByTittle(
+    "Group1")->getAvarageMark());
 }
 
 TEST(GroupTest, TestFunc4) {
   setlocale(LC_ALL, "Russian");
-  Deanary* deanary = new Deanary(3, "../" + dataDir + "/students.txt", "../" + dataDir + "/groups.txt", false);
-  Student* st = deanary->findGroupByTittle("Группа1")->getStudentByFio("Кариева Анастасия Владиленовна");
-  EXPECT_EQ(true, deanary->findGroupByTittle("Группа1")->containsStudent(st));
+  Deanary* deanary = new Deanary(3, "../" + dataDir +
+    "/students.txt", "../" + dataDir + "/groups.txt", false);
+  Student* st = deanary->findGroupByTittle("Group1")->
+    getStudentByFio("Karieva Anastasia Vladilenovna");
+  EXPECT_EQ(true, deanary->findGroupByTittle("Group1")->containsStudent(st));
 }

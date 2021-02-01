@@ -14,8 +14,8 @@ class DataReader {
 
  public:
   DataReader();
-  DataReader(std::string, std::string, std::string students_format="txt",
-    std::string groups_format="txt");
+  DataReader(std::string, std::string, std::string students_format = "txt",
+    std::string groups_format = "txt");
   void readStudentsData(std::string, std::string format = "txt");
   void readGroupsData(std::string, std::string format = "txt");
   void readStudentsFromTxt(std::string);

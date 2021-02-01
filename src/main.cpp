@@ -1,6 +1,7 @@
 // Copyright 2020 GHA Test Team
 #include <iostream>
 #include "Deanary.h"
+#include "DataReader.h"
 
 
 int main() {
@@ -11,8 +12,8 @@ int main() {
   deanary->fireStudents();
   deanary->printDeanary(true);
   deanary->printStatistics();
-  // deanary->moveStudents("Кулакова Ярослава Алексеевна", "Группа2");
-  // deanary->moveStudents("Убыша Оксана Захаровна", "Группа1");
+  // deanary->moveStudents("Kulakova Yaroslava Alekseevna", "Group2");
+  // deanary->moveStudents("Ubisa Oksana Zakharovna", "Group1");
   // deanary->printDeanary(true);
   deanary->saveStaff("new_students.txt", "new_groups.txt");
   // DataReader* reader = new DataReader("students.txt", "groups.txt");
