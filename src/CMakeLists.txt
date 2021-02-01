@@ -1,5 +1,5 @@
 set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include")
-set(header ${header_path}/Student.h ${header_path}/Group.h ${header_path}/Deanary.h)
+set(header ${header_path}/Student.h ${header_path}/Group.h ${header_path}/Deanary.h ${header_path}/DataReader.h)
 set(src Student.cpp Group.cpp Deanary.cpp DataReader.cpp )
 
 
