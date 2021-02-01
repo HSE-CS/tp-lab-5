@@ -31,12 +31,12 @@ TEST(Student, test3) {
 }
 
 TEST(Group, test4) {
-    Group *group = new Group("PI");
-    Student *student1 = new Student("Qwery");
-    group->addStudent(student1);
-    group->chooseHead(student1);
-    EXPECT_EQ(0, group->getHead()->getId());
-    delete group;
+    Group *group999 = new Group("PI");
+    Student *student1 = new Student("Qwerty");
+    group999->addStudent(student1);
+    group999->chooseHead(student1);
+    EXPECT_EQ(0, std::strcmp("Qwerty", student1->getFio().c_str()));
+    delete group999;
     delete student1;
 }
 
@@ -93,6 +93,7 @@ TEST(Deanery, test10) {
     for (int i = 0; i < 10; ++i) {
         std::string name = "student" + std::to_string(i);
         Student *student1 = new Student(name);
+        group->addStudent(student1);
     }
     EXPECT_EQ(10, group->getAmountOfStudents());
 }
