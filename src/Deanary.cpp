@@ -30,12 +30,12 @@ bool Deanary::isIdUnique(unsigned int id, std::vector<Student*> *studentsVec) {
 
 Student *Deanary::createStudent(const std::string &fio,
                                 std::vector<Student*> *studentsVec) {
-    srand(time(0));
+    std::srand(time(0));
 
     unsigned int id;
 
     do {
-        id = rand();
+        id = std::rand();
     } while (!isIdUnique(id, studentsVec));
 
     return new Student(id, fio);
@@ -133,11 +133,11 @@ std::string Deanary::generateStatistics() {
 }
 
 void Deanary::addMarksToAll() {
-    srand(12);
+    std::srand(12);
     for (auto group : groups) {
         for (auto student : group->students) {
             for (int i = 0; i < 10; i++) {
-                student->addMark(4 + rand() % 8 - 2 * (rand() % 4));
+                student->addMark(4 + std::rand() % 8 - 2 * (std::rand() % 4));
             }
         }
     }
