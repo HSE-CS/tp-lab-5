@@ -30,7 +30,7 @@ TEST(PostfixTest, test4) {
   Student student("1", "Pavlov pavel Pavlovich");
   Group group1("19SE-1", "SE");
   student.addToGroup(&group1);
-  EXPECT_EQ("Pavlov pavel Pavlovich", group1.getStudents()[0].getFio());
+  EXPECT_EQ("Pavlov pavel Pavlovich", group1.getStudents()[0]->getFio());
 }
 
 TEST(PostfixTest, test5) {
@@ -44,7 +44,7 @@ TEST(PostfixTest, test6) {
   Student student("1", "Pavlov pavel Pavlovich");
   Group group1("19SE-1", "SE");
   group1.addStudent(&student);
-  EXPECT_EQ("Pavlov pavel Pavlovich", group1.getStudents()[0].getFio());
+  EXPECT_EQ("Pavlov pavel Pavlovich", group1.getStudents()[0]->getFio());
 }
 
 TEST(PostfixTest, test7) {
