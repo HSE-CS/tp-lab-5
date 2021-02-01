@@ -32,8 +32,9 @@ TEST(Group, test4) {
     Student *student2 = new Student("Rewq");
     group->addStudent(student1);
     group->addStudent(student2);
-    EXPECT_TRUE(group->getStudents()[0]->getId() == 0 &&
-    group->getStudents()[1]->getId() == 1);
+    bool ex1 = group->getStudents()[0]->getId() == 0;
+    bool ex2 = group->getStudents()[0]->getId() == 0;
+    EXPECT_TRUE(ex1 && ex2);
 }
 
 TEST(Student, test5) {
@@ -53,7 +54,7 @@ TEST(Group, test6) {
     student2->addMark(8);
     group->addStudent(student1);
     group->addStudent(student2);
-    EXPECT_EQ(10, std::round(group->getAveragemark()));
+    EXPECT_EQ(5, std::round(group->getAveragemark()));
 }
 
 TEST(Deanery, test7) {
