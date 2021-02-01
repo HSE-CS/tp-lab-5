@@ -14,14 +14,14 @@ const std::string &Group::GetTitle() const {
 void Group::addStudent(Student *student) {
   this->students.reserve(this->students.size() + 1);
   this->students.push_back(student);
-  if (student->getGroup() != this){
+  if (student->getGroup() != this) {
     student->addToGroup(this);
   }
 }
 
 Student * Group::getStudent(std::string stId) {
   for (int i = 0; i < this->students.size(); ++i) {
-    if (this->students[i]->getId() == stId){
+    if (this->students[i]->getId() == stId) {
       return this->students[i];
     }
   }
@@ -53,7 +53,7 @@ const std::vector<Student *> &Group::getStudents() const {
 void Group::removeStudent(Student *student) {
   student->setGroup(nullptr);
   for (int i = 0; i < this->students.size(); ++i) {
-    if (this->students[i] == student){
+    if (this->students[i] == student) {
       this->students.erase(this->students.begin() + i);
     }
   }

@@ -10,7 +10,7 @@ void addMark();
 double calculateAverageGrade();
 
 Student::Student(std::string id, std::string fio)
-    : id(std::move(id)), fio(std::move(fio)) {};
+    : id(std::move(id)), fio(std::move(fio)) {}
 
 void Student::addToGroup(Group *group) {
   this->group = group;

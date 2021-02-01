@@ -68,10 +68,11 @@ int main() {
   std::cout << deanary1.getGroups()[2]->GetTitle() << std::endl << std::endl;
 
   //  Test-case 8
-  std::vector<Student *> students;
+  std::vector < Student * > students;
   students = Deanary::createStudents();
   for (int i = 0; i < SIZE; ++i) {
-    std::cout << students[i]->getId() << " --- " << students[i]->getFio() << std::endl;
+    std::cout << students[i]->getId() << " --- " <<
+              students[i]->getFio() << std::endl;
   }
   std::cout << std::endl;
 
@@ -80,22 +81,25 @@ int main() {
     deanary1.getGroups()[0]->addStudent(students[i]);
   }
   for (int i = 0; i < deanary1.getGroups()[0]->getStudents().size(); ++i) {
-    std::cout << deanary1.getGroups()[0]->getStudents()[i]->getFio() << std::endl;
+    std::cout << deanary1.getGroups()[0]->
+        getStudents()[i]->getFio() << std::endl;
     std::cout << students.at(i)->getGroup()->GetTitle() << std::endl;
   }
   std::cout << std::endl;
 
   //  Test-case 10
-  //auto **studentsToMove = new Student*[SIZE/3];
-  std::vector<Student *> studentsToMove;
+  std::vector < Student * > studentsToMove;
 
   studentsToMove.reserve(SIZE / 3);
   for (int i = 0; i < SIZE / 3; ++i) {
     studentsToMove.push_back(students.at(i));
   }
-  Deanary::moveStudents(studentsToMove, deanary1.getGroups()[0], deanary1.getGroups()[1]);
+  Deanary::moveStudents(studentsToMove,
+                        deanary1.getGroups()[0],
+                        deanary1.getGroups()[1]);
   for (int i = 0; i < deanary1.getGroups()[1]->getStudents().size(); ++i) {
-    std::cout << deanary1.getGroups()[1]->getStudents()[i]->getFio() << std::endl;
+    std::cout << deanary1.getGroups()[1]->
+        getStudents()[i]->getFio() << std::endl;
     std::cout << students.at(i)->getGroup()->GetTitle() << std::endl;
   }
   std::cout << std::endl;
@@ -111,7 +115,8 @@ int main() {
   deanary1.addRandomMarksToAll();
   for (int i = 0; i < deanary1.getGroups().size(); ++i) {
     for (int j = 0; j < deanary1.getGroups().at(i)->getStudents().size(); ++j) {
-      std::cout << deanary1.getGroups().at(i)->getStudents().at(j)->getMarks().at(0) << std::endl;
+      std::cout << deanary1.getGroups().at(i)->
+          getStudents().at(j)->getMarks().at(0) << std::endl;
     }
   }
   std::cout << std::endl;
@@ -120,11 +125,10 @@ int main() {
   deanary1.initHeads();
   std::cout << deanary1.getGroups().at(0)->getHead()->getFio() << std::endl;
   std::cout << deanary1.getGroups().at(1)->getHead()->getFio() << std::endl;
-  std::cout << deanary1.getGroups().at(2)->getHead()->getFio() << std::endl << std::endl;
+  std::cout << deanary1.getGroups().at(2)->getHead()->getFio() <<
+            std::endl << std::endl;
 
   // Test-case 13
   deanary1.getStatistics();
   deanary1.saveStaff();
-
-
 }
