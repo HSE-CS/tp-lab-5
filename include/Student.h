@@ -34,4 +34,4 @@ class Student {
     unsigned int getId() const;
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

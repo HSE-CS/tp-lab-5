@@ -40,4 +40,4 @@ class Group {
     void setHead(const std::string& fio);
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

@@ -28,7 +28,8 @@ bool Deanary::isIdUnique(unsigned int id, std::vector<Student*> *studentsVec) {
     return true;
 }
 
-Student *Deanary::createStudent(const std::string &fio, std::vector<Student*> *studentsVec) {
+Student *Deanary::createStudent(const std::string &fio,
+                                std::vector<Student*> *studentsVec) {
     srand(time(0));
 
     unsigned int id;
@@ -40,7 +41,7 @@ Student *Deanary::createStudent(const std::string &fio, std::vector<Student*> *s
     return new Student(id, fio);
 }
 
-static std::vector <std::string> split(std::string& line, char delim) {
+static std::vector <std::string> split(const std::string& line, char delim) {
     std::stringstream ss(line);
     std::string item;
     std::vector<std::string> elems;
@@ -110,16 +111,19 @@ std::string Deanary::generateStatistics() {
     std::stringbuf stats;
     std::ostream stream(&stats);
     stream << "-----Statistics-----" << std::endl;
-    for (auto group: groups) {
+    for (auto group : groups) {
         stream << "Group: " << group->title << " " << group->spec << std::endl;
         if (group->getHead() != nullptr) {
             stream << "Head of group: " << group->head->getFio()
-                    << "\t(id: " << group->head->getId() << ")" << std::endl;
+            << "\t(id: " << group->head->getId() << ")" << std::endl;
         }
-        stream << "Average mark of group: " << group->getAverageMark() << std::endl;
+        stream << "Average mark of group: "
+        << group->getAverageMark() << std::endl;
+
         stream << "Average marks: " << std::endl;
         for (auto student : group->students) {
-            stream << student->getFio() << "\t(id: " << student->getId() << "):\t"
+            stream << student->getFio() << "\t(id: "
+            << student->getId() << "):\t"
             << student->getAverageMark() << std::endl;
         }
         stream << "---------" << std::endl;
@@ -143,7 +147,8 @@ void Deanary::getStatistics() {
     std::cout << generateStatistics();
 }
 
-void Deanary::moveStudent(const std::string &fio, const std::string& from, const std::string& to) {
+void Deanary::moveStudent(const std::string &fio,
+                          const std::string& from, const std::string& to) {
     if (containsGroup(from)) {
         auto groupFrom = getGroup(from);
 
@@ -153,7 +158,8 @@ void Deanary::moveStudent(const std::string &fio, const std::string& from, const
     }
 }
 
-void Deanary::moveStudent(const unsigned int id, const std::string &from, const std::string &to) {
+void Deanary::moveStudent(const unsigned int id,
+                          const std::string &from, const std::string &to) {
     if (containsGroup(from) && containsGroup(to)) {
         auto groupFrom = getGroup(from);
         auto groupTo = getGroup(to);
@@ -166,7 +172,6 @@ void Deanary::moveStudent(const unsigned int id, const std::string &from, const 
             groupTo->addStudent(student);
         }
     }
-
 }
 
 void Deanary::saveStaff(const std::string &fileName) {
@@ -188,7 +193,8 @@ void Deanary::addGroup(const std::string &title, const std::string &spec) {
     }
 }
 
-void Deanary::addStudent(const std::string &fio, const std::string &groupTitle) {
+void Deanary::addStudent(const std::string &fio,
+                         const std::string &groupTitle) {
     if (containsGroup(groupTitle)) {
         addStudent(createStudent(fio), getGroup(groupTitle));
     }

@@ -46,8 +46,10 @@ TEST(Deanary, test4) {
     deanary.addGroup("18PI", "SE");
     deanary.addStudent("Максимов Максим Максимович", "19PI");
     deanary.moveStudent("Максимов Максим Максимович", "19PI", "18PI");
-    EXPECT_EQ(0, deanary.getGroup("19PI")->containsStudent("Максимов Максим Максимович"));
-    EXPECT_EQ(1, deanary.getGroup("18PI")->containsStudent("Максимов Максим Максимович"));
+    EXPECT_EQ(0, deanary.getGroup("19PI")
+    ->containsStudent("Максимов Максим Максимович"));
+    EXPECT_EQ(1, deanary.getGroup("18PI")
+    ->containsStudent("Максимов Максим Максимович"));
 }
 
 TEST(Deanary, test5) {
@@ -57,8 +59,10 @@ TEST(Deanary, test5) {
     deanary.addStudent("Максимов Максим Максимович", "19PI");
     deanary.addStudent("Бычков Илья Сергеевич", "18PI");
     deanary.initHeads();
-    EXPECT_EQ(1, deanary.getGroup("19PI")->getStudent("Максимов Максим Максимович")->isHeadOfGroup());
-    EXPECT_EQ(1, deanary.getGroup("18PI")->getStudent("Бычков Илья Сергеевич")->isHeadOfGroup());
+    EXPECT_EQ(1, deanary.getGroup("19PI")
+    ->getStudent("Максимов Максим Максимович")->isHeadOfGroup());
+    EXPECT_EQ(1, deanary.getGroup("18PI")
+    ->getStudent("Бычков Илья Сергеевич")->isHeadOfGroup());
 }
 
 TEST(Deanary, test6) {

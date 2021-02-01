@@ -22,7 +22,9 @@ void Student::addMark(unsigned int mark) {
 }
 
 double Student::getAverageMark() {
-    return (double)sumOfMarks()/numOfMarks();
+    if (numOfMarks() == 0)
+        return 0;
+    return static_cast<double>(sumOfMarks())/numOfMarks();
 }
 
 unsigned int Student::sumOfMarks() {

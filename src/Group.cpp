@@ -21,7 +21,7 @@ void Group::chooseHead() {
     }
 }
 
-unsigned int Group::numOfStudents() const{
+unsigned int Group::numOfStudents() const {
     return students.size();
 }
 
@@ -48,7 +48,7 @@ void Group::removeStudent(const std::string& fio) {
     removeStudent(student->getId());
 }
 
-int Group::studentIndex(unsigned int id) const{
+int Group::studentIndex(unsigned int id) const {
     for (int i = 0; i < numOfStudents(); i++) {
         if (id == students[i]->getId()) {
             return i;
@@ -57,7 +57,7 @@ int Group::studentIndex(unsigned int id) const{
     return -1;
 }
 
-int Group::studentIndex(const std::string& fio) const{
+int Group::studentIndex(const std::string& fio) const {
     for (int i = 0; i < numOfStudents(); i++) {
         if (fio == students[i]->getFio()) {
             return i;
