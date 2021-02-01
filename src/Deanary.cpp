@@ -154,19 +154,21 @@ const std::vector<Group *> &Deanary::getGroups() const {
 }
 
 void Deanary::addRandomMarksToAll() {
+  unsigned int seed;
   for (int i = 0; i < this->groups.size(); ++i) {
     for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-      this->getGroups().at(i)->getStudents().at(j)->addMark(rand_r() % 11);
+      this->getGroups().at(i)->getStudents().at(j)->addMark(rand_r(&seed) % 11);
     }
   }
 }
 
 void Deanary::initHeads() {
+  unsigned int seed;
   for (int i = 0; i < this->groups.size(); ++i) {
     int sizeOfArrOfSt = this->getGroups().at(i)->getStudents().size();
     if (sizeOfArrOfSt >= 1) {
       this->getGroups().at(i)->chooseHead(this->getGroups().at(i)->
-          getStudents().at(rand_r() % sizeOfArrOfSt));
+          getStudents().at(rand_r(&seed) % sizeOfArrOfSt));
     }
   }
 }
