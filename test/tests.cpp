@@ -20,7 +20,7 @@ TEST(PostfixTest, test2) {
 
 TEST(PostfixTest, test3) {
   Student student("1", "Pavlov pavel Pavlovich");
-  EXPECT_TRUE(nullptr == student.getGroup());
+  EXPECT_EQ("", student.getGroup()->GetTitle());
 }
 
 TEST(PostfixTest, test4) {
