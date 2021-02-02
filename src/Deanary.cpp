@@ -2,11 +2,11 @@
 #include "Deanary.h"
 
 Deanary::Deanary(std::string filename) {
-  //std::ifstream fin(filename);
+  // std::ifstream fin(filename);
   curr_id = 1;
   createGroups(filename);
   initHeads();
-  //fin.close();
+  // fin.close();
 }
 /*
 Deanary::~Deanary(){
@@ -26,8 +26,8 @@ void Deanary::createGroups(std::string filename) {
     title = input.substr(pos + 1, input.size() - pos - 1);
     std::cout << spec << "\n";
     Group* g = new Group(title, spec);
-    //std::cout << groups.size() << " " << g->getSpec() << "\n";
-    //groups.push_back(new Group(spec, title));
+    // std::cout << groups.size() << " " << g->getSpec() << "\n";
+    // groups.push_back(new Group(spec, title));
     groups.push_back(g);
   }
   fin.close();
@@ -48,7 +48,7 @@ void Deanary::hireStudents(std::string filename) {
 }
 void Deanary::addMarksToAll() {
   for (auto g : groups) {
-    for(auto s : g->containsStudents()) {
+    for (auto s : g->containsStudents()) {
       std::mt19937 gen(time(0));
       std::uniform_int_distribution<> uid(0, 100);
       int mark = uid(gen);
@@ -65,10 +65,11 @@ void Deanary::getStatistics(std::string filename) {
     fout << "Average mark: " << g->getAveragemark() << "\n";
     auto list_group = g->containsStudents();
     for (auto s : list_group) {
-      fout << s->getId() << " " << s->getFio() << " " << s->getAveragemark() << "\n";
+      fout << s->getId() << " " << s->getFio() << " "
+      << s->getAveragemark() << "\n";
     }
   }
-};
+}
 void Deanary::moveStudents(unsigned int id, std::string title) {
   Student* s = getStudent(id);
   Group* g = getGroup(title);
@@ -76,7 +77,8 @@ void Deanary::moveStudents(unsigned int id, std::string title) {
   g->addStudent(s);
   s->addToGroup(g);
 }
-void Deanary::saveStaff(std::string filename_groups, std::string filename_students) {
+void Deanary::saveStaff(std::string filename_groups,
+                        std::string filename_students) {
   std::ofstream fgr(filename_groups);
   std::ofstream fst(filename_students);
   for (auto g : groups) {

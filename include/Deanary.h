@@ -26,9 +26,8 @@ class Deanary {
     void saveStaff(std::string filename_groups, std::string filename_students);
     void initHeads();
     void fireStudents();
-    Group* getGroup (std::string title);
+    Group* getGroup(std::string title);
     Student* getStudent(unsigned int id);
-
 };
 #endif  // INCLUDE_DEANARY_H_
 
