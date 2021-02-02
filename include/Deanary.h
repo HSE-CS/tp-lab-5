@@ -18,7 +18,7 @@ class Deanary {
   Deanary() {}
   void hireStudents(std::string file_name);
   void createGroups(std::string file_name);
-  void addMarksToAll(int marks_num=10, int bias=5);
+  void addMarksToAll(int marks_num = 10, int bias = 5);
   void getStatistics();
   void moveStudent(Student* student, Group* new_group);
   void saveStuff(std::string path);
@@ -26,7 +26,7 @@ class Deanary {
   void fireStudent(float min_avg_mark);
   int getStudentsNum() const { return all_students_.size(); }
   int getGroupsNum() const { return groups_.size(); }
-  Group getGroup(int index=-1, std::string title="") const;
+  Group getGroup(int index = -1, std::string title = "") const;
 };
 
 #endif  // INCLUDE_DEANARY_H_

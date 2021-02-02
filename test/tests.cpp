@@ -7,27 +7,27 @@
 #include "Deanary.h"
 
 TEST(StudentTest, Test1) {
-  Student st (1122, "Ivan Ivanov");
+  Student st(1122, "Ivan Ivanov");
   EXPECT_EQ(1122, st.getID());
 }
 
 TEST(StudentTest, Test2) {
-  Student st (1122, "Ivan Ivanov");
+  Student st(1122, "Ivan Ivanov");
   EXPECT_EQ("Ivan Ivanov", st.getFio());
 }
 
 TEST(StudentTest, Test3) {
-  Student st (1122, "Ivan Ivanov");
+  Student st(1122, "Ivan Ivanov");
   EXPECT_EQ(0, st.getMarks().size());
 }
 
 TEST(GroupTest, Test4) {
-  Group gp ("TestGroup", "PI");
+  Group gp("TestGroup", "PI");
   EXPECT_EQ(0, gp.getStudentsNum());
 }
 
 TEST(GroupTest, Test5) {
-  Group gp ("TestGroup", "PI");
+  Group gp("TestGroup", "PI");
   EXPECT_EQ("PI", gp.getSpec());
 }
 

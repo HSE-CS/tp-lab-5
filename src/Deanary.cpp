@@ -26,17 +26,17 @@ void Deanary::createGroups(std::string file_name) {
   std::ifstream infile(file_name);
   std::string new_title, new_spec, ids_line;
 
-  while (infile >> new_title >> new_spec){
-    getline (infile, ids_line);
+  while (infile >> new_title >> new_spec) {
+    getline(infile, ids_line);
     // create group
     Group* new_group = new Group(new_title, new_spec);
 
     int new_id;
-    std::stringstream ss (ids_line);
+    std::stringstream ss(ids_line);
     // add students by ID
-    while (ss >> new_id){
-      for (auto& st : this-> all_students_){
-        if (st->ID_ == new_id){
+    while (ss >> new_id) {
+      for (auto& st : this-> all_students_) {
+        if (st->ID_ == new_id) {
           new_group->addStudent(st);
           break;
         }
@@ -47,10 +47,10 @@ void Deanary::createGroups(std::string file_name) {
 }
 
 void Deanary::addMarksToAll(int marks_num, int bias) {
-  std::srand(std::time(nullptr));
+//  std::srand(std::time(nullptr));
   for (auto& st : this->all_students_) {
     int target_mark = (std::rand() % bias - 1) + 2;
-    for (int i = 0; i < marks_num; i++){
+    for (int i = 0; i < marks_num; i++) {
       int offset = std::rand() % 2;
       st->addMark(target_mark - 1 * offset);
     }
@@ -70,7 +70,7 @@ void Deanary::getStatistics() {
     else
       std::cout << " > head student NO_STUDENTS" << std::endl;
     std::cout << std::endl;
-    if (gp->getAverageMark() != NULL)
+//    if (gp->getAverageMark() != NULL)
       avg_mark += gp->getAverageMark();
   }
   std::cout << "_____________" << std::endl;
@@ -87,13 +87,13 @@ void Deanary::moveStudent(Student* student, Group* group) {
 }
 
 void Deanary::initHeads() {
-  std::srand(std::time(nullptr));
+//  std::srand(std::time(nullptr));
   for (auto& gp : this->groups_) {
-    if (gp->students_.size() == 0){
+    if (gp->students_.size() == 0) {
       gp->head_ = nullptr;
       continue;
     }
-    int head_index = rand() % gp->students_.size();
+    int head_index = rand_r() % gp->students_.size();
     gp->head_ = gp->students_[head_index];
   }
 }
@@ -101,9 +101,9 @@ void Deanary::initHeads() {
 void Deanary::fireStudent(float min_avg_mark) {
   unsigned students_num = this->all_students_.size();
   for (int i = 0; i < students_num; i++){
-    if(this->all_students_[i]->getAverageMark() < min_avg_mark) {
+    if (this->all_students_[i]->getAverageMark() < min_avg_mark) {
       this->all_students_[i]->group_->removeStudent(this->all_students_[i]);
-      if (this->all_students_[i]->isHeadOfGroup()){
+      if (this->all_students_[i]->isHeadOfGroup()) {
         this->all_students_[i]->group_ = nullptr;
         this->initHeads();
       }
@@ -114,7 +114,7 @@ void Deanary::fireStudent(float min_avg_mark) {
     }
   }
 }
-  
+
 void Deanary::saveStuff(std::string path) {
   std::ofstream out;
   std::ofstream out2;
@@ -135,7 +135,7 @@ void Deanary::saveStuff(std::string path) {
   // Groups
   out.open(path + "newGroups.txt");
   if (out.is_open()) {
-    for (auto& gp : this->groups_){
+    for (auto& gp : this->groups_) {
       out << gp->title_ << " " << gp->spec_;
       for (auto st : gp->students_)
         out << " " << st->ID_;
@@ -148,22 +148,22 @@ void Deanary::saveStuff(std::string path) {
 Group Deanary::getGroup(int index, std::string title) const {
   if (index == -1 && title == "")
      throw std::invalid_argument("no arguments");
-  
+
   Group* obj_of_copy = nullptr;
   if (index != -1 && index < this->groups_.size()) {
         obj_of_copy = this->groups_[index];
   } else {
-    for (auto& gp : this->groups_){
-      if (gp->title_ == title){
+    for (auto& gp : this->groups_) {
+      if (gp->title_ == title) {
         obj_of_copy = gp;
         break;
       }
     }
   }
-  
+
   if (obj_of_copy == nullptr)
      throw std::invalid_argument("no such group in deanary");
 
-  Group copy (*(obj_of_copy));
+  Group copy(*(obj_of_copy));
   return copy;
 }

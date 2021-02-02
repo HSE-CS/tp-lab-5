@@ -32,8 +32,8 @@ class Group {
   std::string getTitle() const { return title_; }
   std::string getSpec() const { return spec_; }
   int getStudentsNum() const { return this->students_.size(); }
-  int containsStudent(int studentID=-1, std::string fio="") const;
-  Student getStudent(int index=-1, int studentID=-1, std::string fio="") const;
+  int containsStudent(int studentID = -1, std::string fio = "") const;
+  Student getStudent(int index = -1, int studentID = -1, std::string fio="") const;
   Student getHead();
   float getAverageMark() const;
   bool isEmpty() const;

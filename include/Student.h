@@ -29,7 +29,7 @@ class Student {
   int getID() const { return ID_; }
   std::string getFio() const { return fio_; }
   Group getGroup() const;
-  std::vector<int> getMarks () const;
+  std::vector<int> getMarks() const;
   bool isHeadOfGroup() const;
   float getAverageMark() const;
 };
