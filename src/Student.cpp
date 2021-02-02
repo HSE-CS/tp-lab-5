@@ -28,7 +28,7 @@ std::vector<int> Student::getMarks() const {
 }
 
 bool Student::isHeadOfGroup() const {
-  return (this->group_->head_ == this);
+  return (this->group_->head_->ID_ == this->ID_);
 }
 
 float Student::getAverageMark() const {
