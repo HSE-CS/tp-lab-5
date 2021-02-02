@@ -21,7 +21,7 @@ void Group::removeStudent(Student* student) {
     this->students.erase(this->students.begin() + index);
     if (this->head == student) {
         this->head = nullptr;
-        chooseHead;
+        chooseHead();
     }
 }
 
@@ -30,15 +30,14 @@ Group::Group(std::string name, std::string sp) {
     this->spec = std::move(sp);
 }
 
-Group::~Group() {
-    for (Student* student : this->students) {
-        delete student;
-    }
-    delete &students;
-}
+//Group::~Group() {
+//    for (Student* student : this->students) {
+//        delete student;
+//    }
+//}
 
 double Group::getAverageMark() {
-    if (isEmpty) {
+    if (isEmpty()) {
         return 0.0;
     } else {
         double result = 0.0;
@@ -49,7 +48,7 @@ double Group::getAverageMark() {
     }
 }
 
-Student* Group::getStudent(std::string ident) {
+Student* Group::getStudent(const std::string &ident) {
     for (Student* student : this->students) {
         if (student->getFIO() == ident) {
             return student;
@@ -69,11 +68,11 @@ Student* Group::getHead() {
     return this->head;
 }
 
-std::string& Group::getTitle() {
+std::string Group::getTitle() {
     return this->title;
 }
 
-std::string& Group::getSpec() {
+std::string Group::getSpec() {
     return this->spec;
 }
 

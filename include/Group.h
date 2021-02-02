@@ -13,18 +13,18 @@ private:
     std::string spec;
     std::vector<Student*> students;
     Student* head;
+public:
     void addStudent(Student* student);
     void chooseHead();
     void removeStudent(Student* student);
-public:
     Group(std::string name, std::string sp);
-    ~Group();
+    //~Group();
     double getAverageMark();
-    Student* getStudent(std::string ident);
+    Student* getStudent(const std::string& ident);
     Student* getStudent(int id);
     Student* getHead();
-    std::string& getTitle();
-    std::string& getSpec();
+    std::string getTitle();
+    std::string getSpec();
     bool containsStudent(std::string ident);
     bool containsStudent(int id);
     bool isEmpty();

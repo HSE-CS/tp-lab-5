@@ -8,6 +8,7 @@ void Student::addMark(int mark) {
 
 void Student::addToGroup(Group* group) {
     this->group = group;
+    group->addStudent(this);
 }
 
 Student::Student(int id, std::string FIO) {
@@ -16,18 +17,24 @@ Student::Student(int id, std::string FIO) {
     this->group = nullptr;
 }
 
-Student::~Student() {
-    this->id = 0;
-    this->fio.clear();
-    this->marks.clear();
-    this->group = nullptr;
+Student::Student(int id, std::string fio, Group* group) {
+    this->id = id;
+    this->fio = std::move(fio);
+    this->group = group;
 }
+
+//Student::~Student() {
+//    this->id = 0;
+//    this->fio.clear();
+//    this->marks.clear();
+//    this->group = nullptr;
+//}
 
 int Student::getId() const {
     return this->id;
 }
 
-const std::string& Student::getFIO() const {
+const std::string Student::getFIO() const {
     return this->fio;
 }
 

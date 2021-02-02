@@ -1,24 +1,27 @@
-// Copyright 2020 Khoroshavina Ekaterina
+// Copyright 2021 Khoroshavina Ekaterina
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
 #include "Group.h"
 
-class Deanery {
+class Deanary {
 private:
     std::vector<Group*> groups;
+    int num_gr;
 public:
-    void createGroup(std::string groupName);
+    Deanary();
+    //~Deanary();
+    void createGroup(std::string name, std::string sp);
+    void addGroup(Group* group);
     void hireStudents(Group* group, std::string fio);
     void addMarksToAll(int mark);
     void getStatistics();
-    void moveStudents(Group *fromGroup, Group *toGroup);
+    void moveStudent(Group* fromGroup, Group* toGroup, Student* student);
     void fireStudents(int lowMark);
     void saveStaff();
     void initHeads();
-    void getStatistics();
+    void initHeadsIfNone();
     std::vector<Group*> &getGroups();
 };
-
 
 #endif  // INCLUDE_DEANARY_H_
