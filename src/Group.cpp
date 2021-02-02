@@ -4,13 +4,11 @@
 
 Group::Group(std::string _title) {
   title = _title;
-  //students = new std::vector<Student*>();
 }
 
 Group::Group(std::string _title, std::string _spec) {
   title = _title;
   spec = _spec;
-  //students = new std::vector<Student*>();
 }
 
 void Group::addStudent(Student* _student) {
