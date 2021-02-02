@@ -21,6 +21,7 @@ private:
     Group& GetGroupByStudent(int);
     Group& GetGroupByStudent(const std::string&);
     Group& getGroup(const std::string&);
+    std::stringbuf createStat();
 public:
     Deanary();
     void get_create_inf();
@@ -31,6 +32,7 @@ public:
     void moveStudents(std::string&, std::string&);
     void move_report(Student&, Group&, Group&);
     void saveStuff();
+    void printStat();
     void initHeads();
     void fireStudents(int);
     void fireStudents(std::string&);

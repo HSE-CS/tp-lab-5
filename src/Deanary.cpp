@@ -144,6 +144,7 @@ void Deanary::fireStudents(int id) {
     Student& student = group.getStudent(id);
     group.removeStudent(student);
     fire_report(student);
+    student_num--;
     delete& student;
 }
 
@@ -152,12 +153,66 @@ void Deanary::fireStudents(std::string& name) {
     Student& student = group.getStudent(name);
     group.removeStudent(student);
     fire_report(student);
+    student_num--;
     delete& student;
 }
 
 void Deanary::fire_report(Student& student) {
     fired_num++;
     std::cout << student.getName() << "was fired." << std::endl;
+}
+
+void Deanary::initHeads() {
+    for (auto& group : *groups) {
+        group->chooseHead();
+    }
+}
+
+std::stringbuf Deanary::createStat() {
+    std::stringbuf stat;
+    std::ostream stream(&stat);
+    stream << "Deanary statistick:\n";
+    stream << "Students now - " << student_num << "\n";
+    stream << "Students moved - " << moved_num << "\n";
+    stream << "Students fired - " << fired_num << "\n";
+    stream << "\n";
+    for (auto& group : *groups) {
+        stream << group->getTitle() << " [" << group->spec << "]\n";
+        stream << "Num of students:\t" << group->students->size() << "\n";
+        stream << "List of group:\n";
+        for (auto& student : *group->students) {
+            stream << student->getId() << ". " << student->getName() << ";\n";
+        }
+        stream << "\nAverage rating\t" << group->getAverageMark() << "\n";
+        stream << "The best students:\n";
+        double averageMark;
+        for (auto& student : *group->students) {
+            averageMark = student->getAverageMark();
+            if (averageMark > 7.9) {
+                stream << student->getId() << ". " << student->getName()
+                    << "\t " << averageMark << "\n";
+            }
+        }
+        stream << "\nThe worst students:\n";
+        for (auto& student : *group->students) {
+            averageMark = student->getAverageMark();
+            if (averageMark < 4.5) {
+                stream << student->getId() << ". " << student->getName()
+                    << "\t " << averageMark << "\n";
+            }
+        }
+        stream << "\n";
+    }
+    return stat;
+}
+
+void Deanary::printStat() {
+    std::cout << createStat().str();
+}
+
+void Deanary::saveStuff() {
+    std::ofstream file("statistic.txt");
+    file << createStat().str();
 }
 
 Deanary::~Deanary() {
