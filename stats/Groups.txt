@@ -1,0 +1,29 @@
+Applied Math and Informatics:19PMI-1
+Applied Math and Informatics:19PMI-2
+Applied Math and Informatics:19PMI-3
+Software Engineering:19PI-1
+Software Engineering:19PI-2
+Software Engineering:19PI-3
+Fundamental Math:19FM
+Business-Informatics:19BI-1
+Business-Informatics:19BI-2
+Business-Informatics:19BI-3
+Fundamental and applied Linguistics:19FIPL-1
+Fundamental and applied Linguistics:19FIPL-2
+Economics:19E-1
+Economics:19E-2
+Economics:19E-3
+Economics:19E-4
+Economics:19E-5
+Business management:19UB-1
+Business management:19UB-2
+Business management:19UB-3
+Business management:19UB-4
+Business management:19UB-5
+Philology:19FIL-1
+Philology:19FIL-2
+Jurisprudence:19U-1
+Jurisprudence:19U-2
+Jurisprudence:19U-3
+Jurisprudence:19U-4
+Jurisprudence:19U-5

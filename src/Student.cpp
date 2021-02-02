@@ -16,12 +16,12 @@ void Student::addMark(int _mark) {
   marks.push_back(_mark);
 }
 
-float Student::getAverage() {
+float Student::getAveragemark() {
   int sum = 0;
   for (auto m : marks) {
     sum += m;
   }
-  return marks.size() ? (float)sum / marks.size() : 0;
+  return marks.size() ? static_cast<float>(sum) / marks.size() : 0;
 }
 
 unsigned int Student::getId() {
@@ -30,6 +30,10 @@ unsigned int Student::getId() {
 
 std::string Student::getFio() {
   return fio;
+}
+
+Group* Student::getGroup() {
+  return group;
 }
 /*
 bool Student::isHeadOfGroup() {

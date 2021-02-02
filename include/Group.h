@@ -10,6 +10,7 @@
 #include <ctime>
 #include "Student.h"
 
+class Student;
 
 class Group {
  private:
@@ -27,6 +28,8 @@ class Group {
     Student* getStudent(unsigned int _id);
     Student* getStudent(std::string _fio);
     std::vector <Student*> containsStudents();
+    std::string getTitle();
+    std::string getSpec();
     void removeStudent(Student *_student);
     bool isEmpty();
 };

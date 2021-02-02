@@ -6,6 +6,8 @@
 #include <string>
 #include "Group.h"
 
+class Group;
+
 class Student {
  private:
     unsigned int id;
@@ -20,7 +22,8 @@ class Student {
     float getAveragemark();
     unsigned int getId();
     std::string getFio();
-    //bool isHeadOfGroup();
+    Group* getGroup();
+    //  bool isHeadOfGroup();
 };
 
 #endif  // INCLUDE_STUDENT_H_

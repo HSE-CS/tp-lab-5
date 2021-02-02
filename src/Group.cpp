@@ -4,11 +4,13 @@
 
 Group::Group(std::string _title) {
   title = _title;
+  //students = new std::vector<Student*>();
 }
 
 Group::Group(std::string _title, std::string _spec) {
   title = _title;
   spec = _spec;
+  //students = new std::vector<Student*>();
 }
 
 void Group::addStudent(Student* _student) {
@@ -54,11 +56,20 @@ std::vector <Student*> Group::containsStudents() {
   return students;
 }
 
-void Group::removeStudent(Student *_student) {
-   _student->addToGroup(nullptr);
-   students.erase(std::remove(students.begin(), students.end(), _student), students.end());
+std::string Group::getTitle() {
+  return title;
 }
 
-bool isEmpty() {
+std::string Group::getSpec() {
+  return spec;
+}
+
+void Group::removeStudent(Student *_student) {
+  _student->addToGroup(nullptr);
+  students.erase(std::remove(students.begin(), students.end(), _student),
+                  students.end());
+}
+
+bool Group::isEmpty() {
   return !students.size();
 }
