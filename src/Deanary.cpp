@@ -110,13 +110,13 @@ void Deanary::fireStudents() {
   }
 }
 
-Group* Deanary::getGroup (std::string title) {
-    for (auto g : groups) {
-        if (g->getTitle() == title) {
-            return g;
-        }
+Group* Deanary::getGroup(std::string title) {
+  for (auto g : groups) {
+    if (g->getTitle() == title) {
+      return g;
     }
-    return nullptr;
+  }
+  return nullptr;
 }
 
 Student* Deanary::getStudent(unsigned int id) {
