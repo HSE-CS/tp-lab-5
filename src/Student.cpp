@@ -18,12 +18,12 @@ void Student::addToGroup(Group* group) {
 Group Student::getGroup() const {
   Group copy;
   if (this->group_ != nullptr)
-    Group copy (*(this->group_));
+    Group copy(*(this->group_));
   return copy;
 }
 
 std::vector<int> Student::getMarks() const {
-  std::vector<int> copy (this->marks_);
+  std::vector<int> copy(this->marks_);
   return copy;
 }
 
@@ -34,7 +34,7 @@ bool Student::isHeadOfGroup() const {
 float Student::getAverageMark() const {
   float sum = 0;
   for (int i = 0; i < this->marks_.size(); i++) {
-    sum += (float)this->marks_[i];
+    sum += static_cast<float>this->marks_[i];
   }
   if (this->marks_.size() != 0)
     return sum/this->marks_.size();

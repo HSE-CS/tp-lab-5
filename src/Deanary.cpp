@@ -62,7 +62,8 @@ void Deanary::getStatistics() {
   std::cout << " *** DEANARY STATS *** " << std::endl;
   std::cout << "_______________________" << std::endl;
   for (auto& gp : this->groups_) {
-    std::cout << "Group '" << gp->title_ << "' in " << gp->spec_ << " specialization :" << std::endl;
+    std::cout << "Group '" << gp->title_ << "' in "
+      << gp->spec_ << " specialization :" << std::endl;
     std::cout << " > student number " << gp->students_.size() << std::endl;
     std::cout << " > average mark " << gp->getAverageMark() << std::endl;
     if (gp->head_ != nullptr)
@@ -93,14 +94,14 @@ void Deanary::initHeads() {
       gp->head_ = nullptr;
       continue;
     }
-    int head_index = rand_r() % gp->students_.size();
+    int head_index = std:rand() % gp->students_.size();
     gp->head_ = gp->students_[head_index];
   }
 }
 
 void Deanary::fireStudent(float min_avg_mark) {
   unsigned students_num = this->all_students_.size();
-  for (int i = 0; i < students_num; i++){
+  for (int i = 0; i < students_num; i++) {
     if (this->all_students_[i]->getAverageMark() < min_avg_mark) {
       this->all_students_[i]->group_->removeStudent(this->all_students_[i]);
       if (this->all_students_[i]->isHeadOfGroup()) {

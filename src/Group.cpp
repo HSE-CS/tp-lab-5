@@ -30,7 +30,7 @@ int Group::containsStudent(int studentID, std::string fio_) const {
     if (studentID == -1 && fio_ == "")
         return -1;
 
-    for (int i = 0; i < this->students_.size(); i++){
+    for (int i = 0; i < this->students_.size(); i++) {
         if (this->students_[i]->ID_ == studentID
             || this->students_[i]->fio_ == fio_)
             return i;
@@ -47,7 +47,7 @@ Student Group::getStudent(int index, int studentID, std::string fio_) const {
     if (new_index == -1)
         throw std::invalid_argument("no sush student in this group");
 
-    Student copy (*(this->students_[new_index]));
+    Student copy(*(this->students_[new_index]));
     return copy;
 }
 
@@ -56,7 +56,7 @@ Student Group::getHead() {
        throw std::out_of_range("group is empty");
     if (this->head_ == nullptr)
         this->chooseHead(this->students_[0]);
-    Student copy (*(this->head_));
+    Student copy(*(this->head_));
     return copy;
 }
 
