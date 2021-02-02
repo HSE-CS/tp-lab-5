@@ -24,7 +24,7 @@ TEST(DeaneryDemoTest, test3) {
   std::string fio = "Modric Luka";
   Student student(id, fio);
   student.addMark(3);
-  ASSERT_NEAR(3.0, student.getAveragemark());
+  EXPECT_NEAR(3.0, student.getAveragemark(), 1e-6);
 }
 
 TEST(DeaneryDemoTest, test4) {
@@ -55,7 +55,7 @@ TEST(DeaneryDemoTest, test5) {
   student2.addToGroup(&group);
   student1.addMark(94);
   student2.addMark(96);
-  ASSERT_NEAR(95.0, group.getAveragemark());
+  EXPECT_NEAR(95.0, group.getAveragemark(), 1e-6);
 }
 
 TEST(DeaneryDemoTest, test6) {
