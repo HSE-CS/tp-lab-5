@@ -94,7 +94,7 @@ void Deanary::initHeads() {
       gp->head_ = nullptr;
       continue;
     }
-    int head_index = std:rand() % gp->students_.size();
+    int head_index = std::rand() % gp->students_.size();
     gp->head_ = gp->students_[head_index];
   }
 }
