@@ -34,7 +34,7 @@ bool Student::isHeadOfGroup() const {
 float Student::getAverageMark() const {
   float sum = 0;
   for (int i = 0; i < this->marks_.size(); i++) {
-    sum += static_cast<float>this->marks_[i];
+    sum += static_cast<float>(this->marks_[i]);
   }
   if (this->marks_.size() != 0)
     return sum/this->marks_.size();
