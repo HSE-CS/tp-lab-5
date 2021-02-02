@@ -68,7 +68,7 @@ TEST(DeanaryTest, Test10) {
   dn.createGroups("groupsData.txt");
   dn.addMarksToAll();
   Student st_test = dn.getGroup(0).getHead();
-  EXPECT_TRUE(st_test.isHeadOfGroup());
+  EXPECT_TRUE(dn.getGroup(0).containsStudent(st_test.getID()));
 }
 
 
