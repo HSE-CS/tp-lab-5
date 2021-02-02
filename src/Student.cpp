@@ -6,8 +6,6 @@
 #include "Student.h"
 #include "Group.h"
 
-//Student::Student(int new_ID, std::string new_fio):
-//ID_(new_ID), fio_(new_fio), ID(ID_), fio(fio_), marks(marks_), group_(nullptr) {}
 
 void Student::addMark(int mark) {
   this->marks_.push_back(mark);
@@ -17,8 +15,20 @@ void Student::addToGroup(Group* group) {
   this->group_ = group;
 }
 
+Group Student::getGroup() const {
+  Group copy;
+  if (this->group_ != nullptr)
+    Group copy (*(this->group_));
+  return copy;
+}
+
+std::vector<int> Student::getMarks() const {
+  std::vector<int> copy (this->marks_);
+  return copy;
+}
+
 bool Student::isHeadOfGroup() const {
-  return (this->group_->getHead() == this);
+  return (this->group_->head_ == this);
 }
 
 float Student::getAverageMark() const {
@@ -26,5 +36,8 @@ float Student::getAverageMark() const {
   for (int i = 0; i < this->marks_.size(); i++) {
     sum += (float)this->marks_[i];
   }
-  return sum/this->marks_.size();
+  if (this->marks_.size() != 0)
+    return sum/this->marks_.size();
+  else
+    return 0.0;
 }

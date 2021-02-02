@@ -1,2 +1,0 @@
-Group1 PI 0 1
-Group2 PI 2 3

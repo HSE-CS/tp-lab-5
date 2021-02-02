@@ -15,6 +15,7 @@ class Deanary {
   std::vector<Group*> groups_;
   std::vector<Student*> all_students_;
  public:
+  Deanary() {}
   void hireStudents(std::string file_name);
   void createGroups(std::string file_name);
   void addMarksToAll(int marks_num=10, int bias=5);
@@ -23,6 +24,9 @@ class Deanary {
   void saveStuff(std::string path);
   void initHeads();
   void fireStudent(float min_avg_mark);
+  int getStudentsNum() const { return all_students_.size(); }
+  int getGroupsNum() const { return groups_.size(); }
+  Group getGroup(int index=-1, std::string title="") const;
 };
 
 #endif  // INCLUDE_DEANARY_H_

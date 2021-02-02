@@ -26,7 +26,7 @@ void Group::chooseHead(Student* student) {
     this->head_ = student;
 }
 
-int Group::containsStudent(int studentID, std::string fio_) {
+int Group::containsStudent(int studentID, std::string fio_) const {
     if (studentID == -1 && fio_ == "")
         return -1;
 
@@ -39,7 +39,7 @@ int Group::containsStudent(int studentID, std::string fio_) {
     return -1;
 }
 
-Student* Group::getStudent(int index, int studentID, std::string fio_) {
+Student Group::getStudent(int index, int studentID, std::string fio_) const {
     int new_index = index;
     if (index == -1)
         index = this->containsStudent(studentID, fio_);
@@ -47,24 +47,26 @@ Student* Group::getStudent(int index, int studentID, std::string fio_) {
     if (new_index == -1)
         throw std::invalid_argument("no sush student in this group");
 
-    return this->students_[new_index];
+    Student copy (*(this->students_[new_index]));
+    return copy;
 }
 
-Student* Group::getHead() {
+Student Group::getHead() {
     if (this->isEmpty())
-        return nullptr;
+       throw std::out_of_range("group is empty");
     if (this->head_ == nullptr)
         this->chooseHead(this->students_[0]);
-    return this->head_;
+    Student copy (*(this->head_));
+    return copy;
 }
 
-float Group::getAverageMark() {
+float Group::getAverageMark() const {
     float sum = 0.0;
     for (auto& st : this->students_)
         sum += st->getAverageMark();
     return sum/this->students_.size();
 }
 
-bool Group::isEmpty() {
+bool Group::isEmpty() const {
     return this->students_.size() == 0;
 }

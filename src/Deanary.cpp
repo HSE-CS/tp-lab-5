@@ -65,12 +65,13 @@ void Deanary::getStatistics() {
     std::cout << "Group '" << gp->title_ << "' in " << gp->spec_ << " specialization :" << std::endl;
     std::cout << " > student number " << gp->students_.size() << std::endl;
     std::cout << " > average mark " << gp->getAverageMark() << std::endl;
-    if (gp->getHead() != nullptr)
-      std::cout << " > head student " << gp->getHead()->fio_ << std::endl;
+    if (gp->head_ != nullptr)
+      std::cout << " > head student " << gp->head_->fio_ << std::endl;
     else
       std::cout << " > head student NO_STUDENTS" << std::endl;
     std::cout << std::endl;
-    avg_mark += gp->getAverageMark();
+    if (gp->getAverageMark() != NULL)
+      avg_mark += gp->getAverageMark();
   }
   std::cout << "_____________" << std::endl;
   std::cout << "Common stats:" << std::endl;
@@ -88,26 +89,24 @@ void Deanary::moveStudent(Student* student, Group* group) {
 void Deanary::initHeads() {
   std::srand(std::time(nullptr));
   for (auto& gp : this->groups_) {
+    if (gp->students_.size() == 0){
+      gp->head_ = nullptr;
+      continue;
+    }
     int head_index = rand() % gp->students_.size();
     gp->head_ = gp->students_[head_index];
   }
 }
 
 void Deanary::fireStudent(float min_avg_mark) {
-//  std::vector<Student>::iterator st_it;
-//  for(st_it = this->all_students_.begin(); st_it != this->all_students_.end();) {
-//    if((*st_it).getAverageMark() < min_avg_mark) {
-//      (*st_it).group_->removeStudent(*st_it);
-//      (*st_it).~Student();
-//      this->all_students_.erase(st_it);
-//     } else {
-//        ++st_it;
-//     }
-//  }
   unsigned students_num = this->all_students_.size();
   for (int i = 0; i < students_num; i++){
     if(this->all_students_[i]->getAverageMark() < min_avg_mark) {
-      (this->all_students_[i])->group_->removeStudent(this->all_students_[i]);
+      this->all_students_[i]->group_->removeStudent(this->all_students_[i]);
+      if (this->all_students_[i]->isHeadOfGroup()){
+        this->all_students_[i]->group_ = nullptr;
+        this->initHeads();
+      }
       (this->all_students_[i])->~Student();
       this->all_students_.erase(this->all_students_.begin() + i);
       i--;
@@ -146,3 +145,25 @@ void Deanary::saveStuff(std::string path) {
   out.close();
 }
 
+Group Deanary::getGroup(int index, std::string title) const {
+  if (index == -1 && title == "")
+     throw std::invalid_argument("no arguments");
+  
+  Group* obj_of_copy = nullptr;
+  if (index != -1 && index < this->groups_.size()) {
+        obj_of_copy = this->groups_[index];
+  } else {
+    for (auto& gp : this->groups_){
+      if (gp->title_ == title){
+        obj_of_copy = gp;
+        break;
+      }
+    }
+  }
+  
+  if (obj_of_copy == nullptr)
+     throw std::invalid_argument("no such group in deanary");
+
+  Group copy (*(obj_of_copy));
+  return copy;
+}

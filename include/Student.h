@@ -10,9 +10,9 @@ class Group;
 
 class Student {
  private:
-  int ID_;
-  std::string fio_;
-  Group* group_;
+  int ID_ = 0;
+  std::string fio_ = "";
+  Group* group_ = nullptr;
   std::vector<int> marks_;
   void addMark(int mark);
   void addToGroup(Group* group);
@@ -20,6 +20,7 @@ class Student {
   friend class Deanary;
 
  public:
+  Student() {}
   Student(int new_ID, std::string new_fio):
   ID_(new_ID), fio_(new_fio), group_(nullptr) {}
   Student(const Student& another_student):
@@ -27,8 +28,8 @@ class Student {
   group_(another_student.group_), marks_(another_student.marks_) {}
   int getID() const { return ID_; }
   std::string getFio() const { return fio_; }
-//  Group* getGroup() const { return group_; }
-  std::vector<int> getMarks () { return marks_; }
+  Group getGroup() const;
+  std::vector<int> getMarks () const;
   bool isHeadOfGroup() const;
   float getAverageMark() const;
 };
