@@ -12,18 +12,19 @@ void Student::addmark(int mark) {
 }
 
 double Student::getAverageMark() {
-    return (double)accumulate(marks.begin(), marks.end(), 0) / marks.size();
+    return static_cast<double>(accumulate(marks.begin(),
+        marks.end(), 0) / marks.size());
 }
 
-int Student::getId() const {
+int Student::getId() {
     return id;
 }
 
-const std::string& Student::getName() const {
+const std::string& Student::getName() {
     return fio;
 }
 
-//bool Student::isHeadOfGroup() {
-//    return group->getHead().id == id;
-//}
+bool Student::isHeadOfGroup() {
+    return group->getHead().id == id;
+}
 

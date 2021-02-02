@@ -41,7 +41,7 @@ void Deanary::hireStudents() {
     for (auto index : students) {
         auto* student = new Student{ student_id++, index };
         Group* group = groups->at(rand() % group_num);
-        group->addStudent(*student);
+        group->addStudent(student);
         student->addToGroup(group);
         student_num++;
     }
@@ -54,6 +54,7 @@ Deanary::Deanary() {
     fired_num = 0;
     createGroups();
     hireStudents();
+    initHeads();
     get_create_inf();
 }
 
@@ -71,6 +72,11 @@ void Deanary::get_create_inf() {
         std::cout << group->getTitle() << " - "
             << group->students->size() << std::endl;
     }
+    std::cout << "Chosen of boss:" << std::endl;
+    for (auto& group : *groups) {
+        std::cout << group->getTitle() << " - " << group->getHead().getId()
+            << ". " << group->getHead().getName() << ";" << std::endl;
+    }
 }
 
 Group& Deanary::getGroup(const std::string& title) {
@@ -86,8 +92,10 @@ void Deanary::addMarksToAll(int num_marks) {
     for (int i = 0; i < num_marks; i++) {
         for (auto group : *groups) {
             for (auto student : *group->students) {
-                student->addmark(rand() % 4 + 2 * (rand() % 1) + (rand() % 1)
-                    + ((rand() % 6) - 3));
+                int mark = 5 + ((student->getId()) % 10 - 5) + (rand() % 5);
+                if (mark > 10) mark = 10;
+                if (mark < 0) mark = 0;
+                student->addmark(mark);
             }
         }
     }
@@ -117,8 +125,8 @@ void Deanary::moveStudents(int id, std::string& title) {
     Group& new_group = getGroup(title);
     Group& old_group = GetGroupByStudent(id);
     Student& student = old_group.getStudent(id);
-    student.group->removeStudent(student);
-    new_group.addStudent(student);
+    student.group->removeStudent(&student);
+    new_group.addStudent(&student);
     student.addToGroup(&new_group);
     move_report(student, old_group, new_group);
 }
@@ -127,8 +135,8 @@ void Deanary::moveStudents(std::string& name, std::string& title) {
     Group& new_group = getGroup(title);
     Group& old_group = GetGroupByStudent(name);
     Student& student = old_group.getStudent(name);
-    student.group->removeStudent(student);
-    new_group.addStudent(student);
+    student.group->removeStudent(&student);
+    new_group.addStudent(&student);
     student.addToGroup(&new_group);
     move_report(student, old_group, new_group);
 }
@@ -142,7 +150,7 @@ void Deanary::move_report(Student& student, Group& old, Group& _new) {
 void Deanary::fireStudents(int id) {
     Group& group = GetGroupByStudent(id);
     Student& student = group.getStudent(id);
-    group.removeStudent(student);
+    group.removeStudent(&student);
     fire_report(student);
     student_num--;
     delete& student;
@@ -151,7 +159,7 @@ void Deanary::fireStudents(int id) {
 void Deanary::fireStudents(std::string& name) {
     Group& group = GetGroupByStudent(name);
     Student& student = group.getStudent(name);
-    group.removeStudent(student);
+    group.removeStudent(&student);
     fire_report(student);
     student_num--;
     delete& student;
@@ -184,19 +192,19 @@ std::stringbuf Deanary::createStat() {
             stream << student->getId() << ". " << student->getName() << ";\n";
         }
         stream << "\nAverage rating\t" << group->getAverageMark() << "\n";
-        stream << "The best students:\n";
+        stream << "The best students (>6.5):\n";
         double averageMark;
         for (auto& student : *group->students) {
             averageMark = student->getAverageMark();
-            if (averageMark > 7.9) {
+            if (averageMark > 6.5) {
                 stream << student->getId() << ". " << student->getName()
                     << "\t " << averageMark << "\n";
             }
         }
-        stream << "\nThe worst students:\n";
+        stream << "\nThe Dean's office wishes to expel (<3.5):\n";
         for (auto& student : *group->students) {
             averageMark = student->getAverageMark();
-            if (averageMark < 4.5) {
+            if (averageMark < 3.5) {
                 stream << student->getId() << ". " << student->getName()
                     << "\t " << averageMark << "\n";
             }
@@ -213,6 +221,21 @@ void Deanary::printStat() {
 void Deanary::saveStuff() {
     std::ofstream file("statistic.txt");
     file << createStat().str();
+}
+
+void Deanary::fireWeakStudents() {
+    for (auto& group : *groups) {
+        double averageMark;
+        std::cout << "\nThe Dean's office fired worst students:\n";
+        for (auto& student : *group->students) {
+            averageMark = student->getAverageMark();
+            if (averageMark < 4.0) {
+                std::cout << student->getId() << ". " << student->getName()
+                    << "\t " << averageMark << "\n";
+                fireStudents(student->getId());
+            }
+        }
+    }
 }
 
 Deanary::~Deanary() {

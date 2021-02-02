@@ -19,20 +19,24 @@ private:
     std::vector<Student*>* students;
     Deanary* deanary;
     Student* head{};
-    void removeStudent(Student& student);
-    void addStudent(Student& student);
+    int head_id;
+    void addStudent(Student* student);
+    void removeStudent(Student* student);
+    void chooseHead();
 public:
     Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_) :
-        title(_title_), spec(_spec_), deanary(&_deanary_),
+        title(_title_), spec(_spec_), head_id(-1), deanary(&_deanary_),
         students(new std::vector<Student*>()) {}
-    double getAverageMark();
     Student& getStudent(int);
     Student& getStudent(std::string&);
-    int containsStudent(Student&);
-    std::string getTitle();
     Student& getHead();
+    std::string getTitle();
+    std::vector<Student*>* getGroupStudents();
+    int containsStudent(Student&);
+    double getAverageMark();
     bool isEmpty();
     ~Group();
+
 };
 
 

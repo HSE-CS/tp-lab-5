@@ -37,6 +37,7 @@ public:
     void fireStudents(int);
     void fireStudents(std::string&);
     void fire_report(Student&);
+    void fireWeakStudents();
     ~Deanary();
 };
 
