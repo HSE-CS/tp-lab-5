@@ -1,5 +1,8 @@
 // Copyright 2020 GHA Test Team
 
+#include "../include/Student.h"
+#include "../include/Group.h"
+#include "../include/Deanary.h"
 #include <gtest/gtest.h>
 #include <string>
 
