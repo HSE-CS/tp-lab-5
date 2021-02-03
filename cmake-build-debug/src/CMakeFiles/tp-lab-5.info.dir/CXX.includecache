@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+string
+-
+vector
+-
+
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
+string
+-
+iostream
+-
+fstream
+-
+vector
+-
+
+/home/toliman/Projects/HSE-CS/tp-lab-5/src/main.cpp
+../include/Student.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
+../include/Group.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+../include/Deanary.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
+
