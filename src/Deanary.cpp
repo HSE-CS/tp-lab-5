@@ -25,7 +25,8 @@ void Deanary::hireStudents(std::string filename) {
   std::string line;
   while (getline(fin, line)) {
     Student* s = new Student(id++, line);
-    // unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    // unsigned seed = std::chrono::system_clock::
+    // now().time_since_epoch().count();
     static std::default_random_engine generator(time(0));
     // static std::default_random_engine generator;
     std::uniform_real_distribution<double> distribution(0, groups.size());

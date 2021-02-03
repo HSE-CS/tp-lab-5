@@ -15,7 +15,7 @@ class Group {
   Student* head;
  public:
   void chooseHead();
-  void addStudent(Student*);  
+  void addStudent(Student*);
   void removeStudent(Student*);
   Group(std::string title, std::string spec);
   std::string getTitle();
@@ -26,7 +26,6 @@ class Group {
   std:: vector <Student *> containsStudent();
   bool isEmpty();
   friend class Student;
-  
 };
 
 #endif  // INCLUDE_GROUP_H_
