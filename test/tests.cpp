@@ -1,10 +1,10 @@
 // Copyright 2020 GHA Test Team
 
+#include <gtest/gtest.h>
+#include <string>
 #include "../include/Student.h"
 #include "../include/Group.h"
 #include "../include/Deanary.h"
-#include <gtest/gtest.h>
-#include <string>
 
 TEST(Deanary, test1) {
     Student st("00000", "William Garcia");
