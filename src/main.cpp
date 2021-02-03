@@ -5,9 +5,14 @@
 #include "Student.h"
 #include "Deanary.h"
 int main() {
-  // Deanary deanary("../stats/Groups.txt");
-  // deanary.addMarksToAll();
-  // deanary.getStatistics("../stats/Stat.txt");
-  // deanary.saveStaff("../stats/Groups.txt", "../stats/Students.txt");
+  Deanary deanary("../stats/Groups.txt");
+  deanary.hireStudents("../stats/Students.txt");
+  deanary.addMarksToAll();
+  deanary.addMarksToAll();
+  deanary.addMarksToAll();
+  deanary.addMarksToAll();
+  deanary.getStatistics("../stats/Stat.txt");
+  deanary.fireStudents();
+  deanary.saveStaff("../stats/Groups.txt", "../stats/Students.txt");
   return 0;
 }
