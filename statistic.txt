@@ -1,0 +1,36 @@
+19PMI-1 Average mark: 4.25
+58797526 Bykov Osip Lukievich: 3
+58797527 Arkhipov Tikhon Vladlenovich: 6
+58797533 Samsonov Lavrenty Valerievich: 3
+58797535 Kopylov Sergey Danilovich: 4
+58797542 Doronin Svyatoslav Lavrentievich: 3
+58797543 Savelyev Miron Petrovich: 3
+58797547 Potapov Gayane Veniaminovich: 7
+58797551 Lobanov Fyodor Mironovich: 5
+
+19PMI-2 Average mark: 4.77778
+58797524 Shchukin Venedikt Rudolfovich: 9
+58797525 Medvedev Mikhail Semenovich: 7
+58797528 Mikhailov Vladlen Kupriyanovich: 1
+58797534 Rodionov Roman Leonidovich: 0
+58797536 Prokhorov Aristarkh Gennadievich: 8
+58797537 Isakov, Justinian Gordeevich: 3
+58797538 Rozhkov David Germanovich: 4
+58797541 Emelyanov Artur Avksentievich: 2
+58797548 Melnikov Veloriy Aristarkhovich: 9
+
+19PMI-3 Average mark: 4.23077
+58797522 Maslov Andrey Olegovich: 1
+58797523 Volkov Benedict Martynovich: 9
+58797529 Bolshakov Modest Vladlenovich: 8
+58797530 Yudin Svyatoslav Romanovich: 0
+58797531 Belozerov Leonty Avdeevich: 6
+58797532 Tsvetkov Vlas Yurievich: 10
+58797539 Kapustin Vasily Grigorievich: 1
+58797540 Pestov Valery Alekseevich: 10
+58797544 Baranov Maximilian Alexandrovich: 2
+58797545 Teterin Emelyan Lukyanovich: 4
+58797546 Dmitriev Maxim Stepanovich: 1
+58797549 Pavlov Demyan Proklovich: 2
+58797550 Ivanov Valery Stanislavovich: 1
+
