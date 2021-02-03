@@ -1,0 +1,18 @@
+[
+  {
+  "Title": "Business Informatics",
+  "Spec": "BI"
+  },
+  {
+    "Title": "Applied Mathematics and Computer Science",
+    "Spec": "PMI"
+  },
+  {
+    "Title": "Software Engineering",
+    "Spec": "PI"
+  },
+  {
+    "Title": "Mathematics",
+    "Spec": "PM"
+  }
+]
