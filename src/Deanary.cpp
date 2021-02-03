@@ -55,20 +55,22 @@ std::vector<Student *> Deanary::hireStudents() {
 }
 
 void Deanary::addMarksToAll() {
-    for (Group *g: this->getGroups()) {
-        for (Student *st: g->getStudents()) {
-            st->addMark(rand() % 10 + 1);
+    unsigned int rrr = 1;
+    for (Group *g : this->getGroups()) {
+        for (Student *st : g->getStudents()) {
+            st->addMark(rand_r(&rrr) % 10 + 1);
         }
     }
 }
 
 void Deanary::getStatistics() {
-    for (Group *gr:this->getGroups()) {
+    for (Group *gr : this->getGroups()) {
         std::cout << gr->getTitle() << ", " << gr->getSpec() << std::endl;
         std::cout << "Head: " << gr->getHead()->getFIO() << std::endl;
         std::cout << "AvMarkOfGroup: " << gr->getAverageMark() << std::endl;
-        for (Student *stud:gr->getStudents()) {
-            std::cout << "Name: " << stud->getFIO() << ", ID:" << stud->getId() << ", ";
+        for (Student *stud : gr->getStudents()) {
+            std::cout << "Name: " << stud->getFIO() <<
+            ", ID:" << stud->getId() << ", ";
             std::cout << "AvMark: " << stud->getAverageMark() << std::endl;
         }
         std::cout << std::endl;
@@ -76,7 +78,7 @@ void Deanary::getStatistics() {
 }
 
 void Deanary::moveStudents(Group *f, Group *t, std::vector<Student *> stds) {
-    for (Student *st: stds) {
+    for (Student *st : stds) {
         f->removeStudent(st);
         t->addStudent(st);
     }
@@ -86,12 +88,13 @@ void Deanary::saveStaff() {
     std::ofstream output;
     output.open(R"(C:\Users\Dns\CLionProjects\dekanat\Stat.txt)");
     if (output.is_open()) {
-        for (Group *gr:this->getGroups()) {
+        for (Group *gr : this->getGroups()) {
             output << gr->getTitle() << ", " << gr->getSpec() << std::endl;
             output << "Head: " << gr->getHead()->getFIO() << std::endl;
             output << "AvMarkOfGroup: " << gr->getAverageMark() << std::endl;
-            for (Student *stud:gr->getStudents()) {
-                output << "Name: " << stud->getFIO() << ", ID:" << stud->getId() << ", ";
+            for (Student *stud : gr->getStudents()) {
+                output << "Name: " << stud->getFIO() <<
+                ", ID:" << stud->getId() << ", ";
                 output << "AvMark: " << stud->getAverageMark() << std::endl;
             }
             output << std::endl;
@@ -100,14 +103,15 @@ void Deanary::saveStaff() {
 }
 
 void Deanary::initHeads() {
-    for (Group *g: this->getGroups()) {
-        g->chooseHead(g->getStudents()[rand() % g->getStudents().size()]);
+    unsigned int rrr = 1;
+    for (Group *g : this->getGroups()) {
+        g->chooseHead(g->getStudents()[rand_r(&rrr) % g->getStudents().size()]);
     }
 }
 
 void Deanary::fireStudents(std::vector<Student *> stds) {
-    for (Group *g: this->getGroups()) {
-        for (Student *st:stds) {
+    for (Group *g : this->getGroups()) {
+        for (Student *st : stds) {
             if (g->containsStudent(st)) {
                 g->removeStudent(st);
             }

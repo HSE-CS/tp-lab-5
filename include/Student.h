@@ -40,7 +40,6 @@ class Student {
     std::vector<int> getMarks() const;
 
     ~Student();
-
 };
 
 #endif  // INCLUDE_STUDENT_H_

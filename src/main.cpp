@@ -20,11 +20,11 @@ int main() {
     deanary.saveStaff();
     std::vector<Student *> movstds = {new Student("00000", "Allison Berry")};
     deanary.moveStudents(deanary.getGroups()[0],
-            deanary.getGroups()[1], movstds);
+                         deanary.getGroups()[1], movstds);
     deanary.getStatistics();
 
     Group gr("PI", "software engineering");
-    Student st ("00000", "William Garcia");
+    Student st("00000", "William Garcia");
     gr.addStudent(&st);
-    std::cout<<st.getGr()->getSpec();
+    std::cout << st.getGr()->getSpec();
 }
