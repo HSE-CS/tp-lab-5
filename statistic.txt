@@ -1,0 +1,36 @@
+19PMI-1 Average mark: 5
+35602938 Volkov Benedict Martynovich: 3
+35602939 Shchukin Venedikt Rudolfovich: 9
+35602946 Belozerov Leonty Avdeevich: 3
+35602952 Isakov, Justinian Gordeevich: 6
+35602955 Pestov Valery Alekseevich: 8
+35602957 Doronin Svyatoslav Lavrentievich: 1
+35602958 Savelyev Miron Petrovich: 6
+35602959 Baranov Maximilian Alexandrovich: 9
+35602961 Dmitriev Maxim Stepanovich: 0
+
+19PMI-2 Average mark: 5.11111
+35602937 Maslov Andrey Olegovich: 3
+35602941 Bykov Osip Lukievich: 3
+35602942 Arkhipov Tikhon Vladlenovich: 6
+35602945 Yudin Svyatoslav Romanovich: 2
+35602947 Tsvetkov Vlas Yurievich: 10
+35602948 Samsonov Lavrenty Valerievich: 10
+35602949 Rodionov Roman Leonidovich: 8
+35602950 Kopylov Sergey Danilovich: 4
+35602965 Ivanov Valery Stanislavovich: 0
+
+19PMI-3 Average mark: 4.75
+35602940 Medvedev Mikhail Semenovich: 10
+35602943 Mikhailov Vladlen Kupriyanovich: 3
+35602944 Bolshakov Modest Vladlenovich: 9
+35602951 Prokhorov Aristarkh Gennadievich: 3
+35602953 Rozhkov David Germanovich: 5
+35602954 Kapustin Vasily Grigorievich: 1
+35602956 Emelyanov Artur Avksentievich: 3
+35602960 Teterin Emelyan Lukyanovich: 1
+35602962 Potapov Gayane Veniaminovich: 6
+35602963 Melnikov Veloriy Aristarkhovich: 6
+35602964 Pavlov Demyan Proklovich: 10
+35602966 Lobanov Fyodor Mironovich: 0
+
