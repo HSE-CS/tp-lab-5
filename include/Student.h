@@ -12,12 +12,12 @@ class Group;
 
 class Student {
   friend class Group;
-private:
+ private:
   int id;
   std::string fio;
   Group* group;
   std::vector <int> marks;
-public:
+ public:
   void addMark(int);
   void addToGroup(Group*);
   Student(unsigned int id, std::string fio);
@@ -28,4 +28,4 @@ public:
   std::string getfio();
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

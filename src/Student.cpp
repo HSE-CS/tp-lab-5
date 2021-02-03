@@ -26,16 +26,16 @@ bool Student::isHeadOfGroup() {
   return false;
 }
 
-float Student::getAveragemark(){
+float Student::getAveragemark() {
   float average = 0;
-  for (auto mark: marks) {
+  for (auto mark : marks) {
     average += mark;
   }
   if (marks.size())
     return average / marks.size();
 }
 
-int Student::getId(){
+int Student::getId() {
   return this->id;
 }
 

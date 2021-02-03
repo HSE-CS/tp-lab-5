@@ -13,7 +13,7 @@ void Deanary::createGroups(std::string filename) {
   std::string title;
   while (fin >> spec >> title) {
     // std::cout << spec << std::endl;
-    // std::cout << title << std::endl; 
+    // std::cout << title << std::endl;
     Group* gr = new Group(title, spec);
     groups.push_back(gr);
   }
@@ -25,12 +25,12 @@ void Deanary::hireStudents(std::string filename) {
   std::string line;
   while (getline(fin, line)) {
     Student* s = new Student(id++, line);
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    static std::default_random_engine generator (seed);
-    //static std::default_random_engine generator;
-    std::uniform_real_distribution<double> distribution (0, groups.size());
-    int ind=distribution(generator);
-    // std::cout << ind << std::endl; 
+    // unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    static std::default_random_engine generator(time(0));
+    // static std::default_random_engine generator;
+    std::uniform_real_distribution<double> distribution(0, groups.size());
+    int ind = distribution(generator);
+    // std::cout << ind << std::endl;
     groups[ind]->addStudent(s);
     s->addToGroup(groups[ind]);
   }
@@ -49,22 +49,22 @@ void Deanary::addMarksToAll() {
 
 void Deanary::getStatistics(std::string filename) {
   std::ofstream fout(filename);
-  for (auto g: groups) {
+  for (auto g : groups) {
     fout << g->getTitle() << " Average mark: " << g->getAveragemark() << "\n";
-    for (auto student: g->containsStudent()) {
+    for (auto student : g->containsStudent()) {
       fout << student->getId() << " " << student->getfio() << ": "
       << student->getAveragemark() << "\n";
-      // std::cout << student->getId() << std::endl; 
+      // std::cout << student->getId() << std::endl;
     }
     fout << "\n";
   }
-  std::cout << "success" << std::endl; 
+  std::cout << "success" << std::endl;
   fout.close();
 }
 
 void Deanary::moveStudents(int id, std::string title) {
   Student* student = nullptr;
-  Group* group = nullptr; 
+  Group* group = nullptr;
   for (auto g : groups) {
     student = g->getStudentById(id);
     if (student != nullptr) {
@@ -116,6 +116,6 @@ void Deanary::fireStudents() {
 int Deanary::randomId() {
   std::srand(time(0));
   int id = 10000000 + std::rand() % 90000000;
-  // std::cout << id << std::endl; 
+  // std::cout << id << std::endl;
   return id;
 }

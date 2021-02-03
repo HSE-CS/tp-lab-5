@@ -7,8 +7,8 @@
 #include <string>
 #include <fstream>
 #include <random>
-#include <chrono>
-#include "Group.h" 
+// #include <chrono>
+#include "Group.h"
 
 class Student;
 
@@ -20,7 +20,7 @@ class Deanary {
   int randomId();
   unsigned int id = randomId();
  public:
-  Deanary(std::string filename);
+  explicit Deanary(std::string filename);
   void createGroups(std::string filename);
   void hireStudents(std::string filename);
   void addMarksToAll();
@@ -33,4 +33,4 @@ class Deanary {
   friend class Student;
 };
 
-#endif
+#endif  // INCLUDE_DEANARY_H_

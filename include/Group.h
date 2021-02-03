@@ -8,12 +8,12 @@
 class Student;
 
 class Group {
-private:
+ private:
   std::string title;
   std::string spec;
   std::vector <Student*> students;
   Student* head;
-public:
+ public:
   void chooseHead();
   void addStudent(Student*);  
   void removeStudent(Student*);
@@ -29,4 +29,4 @@ public:
   
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

@@ -2,17 +2,19 @@
 
 #include "Group.h"
 
-void Group::addStudent(Student* student){
+void Group::addStudent(Student* student) {
   this->students.push_back(student);
   student->addToGroup(this);
 }
 
 void Group::chooseHead() {
   std::srand(time(0));
-  head = students[std::rand() % students.size()];
+  if (students.size()) {
+    head = students[std::rand() % students.size()];
+  }
 }
 
-void Group::removeStudent(Student* student){
+void Group::removeStudent(Student* student) {
   for (int i = 0; i < students.size(); i++) {
     if (students[i] == student)
       students.erase(students.begin() + i);
@@ -34,7 +36,7 @@ std::string Group::getSpec() {
 }
 
 Student* Group::getStudentById(int id) {
-  for (auto s: students) {
+  for (auto s : students) {
     if (s ->id == id) {
       return s;
     }
@@ -43,17 +45,17 @@ Student* Group::getStudentById(int id) {
 }
 
 Student* Group::getStudentByFio(std::string fio) {
-  for (auto s: students) {
+  for (auto s : students) {
     if (s->fio == fio) {
       return s;
-    } 
+    }
   }
   return nullptr;
 }
 
 float Group::getAveragemark() {
   float average = 0;
-  for (auto student: students) {
+  for (auto student : students) {
     average += student->getAveragemark();
   }
   if (students.size())
@@ -67,4 +69,3 @@ std::vector<Student *> Group::containsStudent() {
 bool Group::isEmpty() {
   return students.size() ? true : false;
 }
-

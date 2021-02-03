@@ -6,9 +6,9 @@
 #include "Deanary.h"
 
 int main() {
-  // Deanary deanary("groups.txt");
-  // deanary.hireStudents("students.txt");
-  // deanary.addMarksToAll();
-  // deanary.getStatistics("statistic.txt");
+  Deanary deanary("groups.txt");
+  deanary.hireStudents("students.txt");
+  deanary.addMarksToAll();
+  deanary.getStatistics("statistic.txt");
   return 0;
 }
