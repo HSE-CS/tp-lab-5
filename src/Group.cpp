@@ -14,8 +14,13 @@ Group::~Group() {
 		}
 }
 
+int Group::getNumberOfStudents() {
+	return students.size();
+}
+
 void Group::addStudent(Student* newPerson) {
-	this->students.push_back(newPerson);
+  this->students.push_back(newPerson);
+  newPerson->addToGroup(this);
 }
 
 std::string Group::getTitle() {
@@ -98,4 +103,11 @@ bool Group::isEmpty() {
 
 Student* Group::getHead() {
 	return this->head;
+}
+
+std::string Group::getGroupInfo() {
+	std::string result;
+	for (auto student : students)
+		result = result + student->getFio() + " " + std::to_string(student->getId()) + "\n"; //will replace to getInfo()
+	return result;
 }

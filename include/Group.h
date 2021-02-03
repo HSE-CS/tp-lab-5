@@ -2,6 +2,7 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 #include <random>
+#include <cmath>
 #include "Student.h"
 
 class Group {
@@ -25,5 +26,8 @@ class Group {
   void removeStudent(std::string fio);
   bool isEmpty();
   Student* getHead();
+  int getNumberOfStudents();
+  std::string getGroupInfo();
+  friend class Deanery;
 };
 #endif  // INCLUDE_GROUP_H_

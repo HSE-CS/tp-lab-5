@@ -1,6 +1,7 @@
 // Copyright 2021 Smirnov Grigory
-#ifndef INCLUDE_DEANARY_H_
-#define INCLUDE_DEANARY_H_
+#ifndef INCLUDE_DEANERY_H_
+#define INCLUDE_DEANERY_H_
+#include <fstream>
 #include "Group.h"
 
 class Deanery {
@@ -8,8 +9,14 @@ class Deanery {
   std::vector<Group*> groups;
   
  public:
-   Deanery();
-   void addRandomMarks(int n);
-
+  void initHeads();
+  Deanery(std::vector<Group*> groups);
+  void addRandomMarks(int n);
+  Group* getGroup(std::string title);
+  void academicPerformance();
+  void moveStudent(Student* forMove, std::string oldGroup, std::string newGroup); //если перевели старосту - надо перевыбирать его
+  void fireBadStudents();
+  void saveStaff(std::string fileName);
+  void printInfo();
 };
-#endif  // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANERY_H_
