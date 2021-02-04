@@ -23,8 +23,9 @@ class Deanary {
      void createGroups(const std::string& input);
      void addMarksToAll();
      void getStatistics(const std::string& output);
-     void moveStudents(Student* student, std::string& title);
-     void saveStaff(const std::string& students_file, const std::string& groups_file);
+     void moveStudents(Student* student, const std::string& title);
+     void saveStaff(const std::string& students_file, 
+     const std::string& groups_file);
      void initHeads();
      void fireStudents();
      void chooseGroup(Student* student);

@@ -32,7 +32,7 @@ void Deanary::createGroups(const std::string& filename) {
 void Deanary::addMarksToAll() {
     std::srand(time(0));
     for (auto student : students) {
-        student->addmark(rand_r() % 10 + 1);
+        student->addmark(std::rand() % 10 + 1);
     }
 }
 
@@ -78,7 +78,8 @@ void Deanary::moveStudents(Student* student, std::string& title) {
     }
 }
 
-void Deanary::saveStaff(const std::string& students_file, const std::string& groups_file) {
+void Deanary::saveStaff(const std::string& students_file, 
+const std::string& groups_file) {
     std::ofstream file1(students_file);
     std::ofstream file2(groups_file);
 
@@ -99,7 +100,7 @@ void Deanary::saveStaff(const std::string& students_file, const std::string& gro
 void Deanary::initHeads() {
     std::srand(time(0));
     for (auto gr : groups) {
-        gr->chooseHead(students[std::rand_r() % students.size()]);
+        gr->chooseHead(students[std::rand() % students.size()]);
     }
 }
 

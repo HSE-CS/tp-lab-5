@@ -4,7 +4,6 @@
 Student::Student(int id_, const std::string& name_)
     : id {id_}, fio {name_}
 {
-
 }
 
 void Student::addToGroup(Group* group_) {

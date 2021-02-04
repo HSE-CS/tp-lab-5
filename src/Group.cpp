@@ -6,7 +6,6 @@
 Group::Group(const std::string& title_, const std::string& spec_)
     : title {title_}, spec {spec_}
 {
-
 }
 
 void Group::addStudent(Student* student) {
