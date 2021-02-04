@@ -23,7 +23,7 @@ class Student {
     unsigned int getId();
     std::string getFio();
     Group* getGroup();
-    //  bool isHeadOfGroup();
+    bool isHeadOfGroup();
 };
 
 #endif  // INCLUDE_STUDENT_H_

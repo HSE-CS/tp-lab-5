@@ -30,6 +30,7 @@ class Group {
     std::vector <Student*> containsStudents();
     std::string getTitle();
     std::string getSpec();
+    Student* getHead();
     void removeStudent(Student *_student);
     bool isEmpty();
 };
