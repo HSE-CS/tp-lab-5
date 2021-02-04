@@ -14,7 +14,7 @@ TEST(student_test, test1) {
 
 TEST(student_test, test2) {
     Student s {12, "Egor Bodrov"};
-    EXPECT_EQ(12, st.get_id());
+    EXPECT_EQ(12, s.get_id());
 }
 
 TEST(student_test, test3) {
@@ -22,7 +22,7 @@ TEST(student_test, test3) {
     s.addmark(5);
     s.addmark(6);
     s.addmark(10);
-    EXPECT_EQ(7.0, s.getAverageMark());
+    EXPECT_EQ(7.0, s.getAveragemark());
 }
 
 TEST(group_test, test4) {
@@ -92,5 +92,5 @@ TEST(group_test, test10) {
     gr1.removeStudent(&s2);
     gr1.removeStudent(&s3);
     gr1.removeStudent(&s4);
-    EXPECT_EQ(true, gr.isEmpty());
+    EXPECT_EQ(true, gr1.isEmpty());
 }
