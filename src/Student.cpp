@@ -17,7 +17,7 @@ double Student::getAvarageMark() {
   int aver = 0;
   for (auto mark : marks)
     aver += mark;
-  return marks.size() ? aver / static_cast<double> marks.size() : 0;
+  return marks.size() ? aver / static_cast<double>(marks.size()) : 0;
 }
 
 void Student::addToGroup(Group *group) {
