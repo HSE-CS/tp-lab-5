@@ -19,7 +19,7 @@ TEST(StudentTest, test2) {
 TEST(StudentTest, test3) {
     std::string name = "Name_test";
     Student test(10, name);
-    EXPECT_NEAR(0.00, test.getAverageMark(), 0.01)
+    EXPECT_NEAR(0.00, test.getAverageMark(), 0.01);
 }
 
 TEST(GroupTest, test4) {
