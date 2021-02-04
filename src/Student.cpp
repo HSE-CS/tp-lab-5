@@ -1,6 +1,6 @@
 // Copyright 2021 soda
 
-#include <Student.h>
+#include "Student.h"
 
 
 void Student::addToGroup(Group* group) {

@@ -1,6 +1,6 @@
 // Copyright 2021 soda
 
-#include <Deanary.h>
+#include "Deanary.h"
 
 int main() {
     Deanary HSE{};
@@ -14,7 +14,7 @@ int main() {
     // Move student with fio
     std::string stu = "Jacobs John Oliver";
     HSE.moveStudents(stu, str);
-    // Print stat 
+    // Print stat
     HSE.printStat();
     // Fire all weak students
     HSE.fireWeakStudents();

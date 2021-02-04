@@ -3,10 +3,11 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-#include <json.hpp>
 #include <sstream>
 #include <ctime>
-#include <Deanary.h>
+#include <cstdlib>
+#include "Deanary.h"
+#include "json.hpp"
 
 
 using json = nlohmann::json;
@@ -21,7 +22,7 @@ void Deanary::createGroups() {
     for (const auto& index : groups_json) {
         auto Title = index["Title"].get<std::string>();
         auto Spec = index["Spec"].get<std::string>();
-        auto* group = new Group{ Title, Spec, *this };
+        auto* group = new Group{ &Title, &Spec, *this };
         groups->push_back(group);
         group_num++;
     }
@@ -34,12 +35,12 @@ void Deanary::hireStudents() {
     i.close();
     auto students = json_students.get<std::vector<std::string>>();
     std::string title;
-    srand(time(0));
+    unsigned int seed = time(NULL);
     int student_id = 0;
     student_num = 0;
     for (auto index : students) {
         auto* student = new Student{ student_id++, index };
-        Group* group = groups->at(rand() % group_num);
+        Group* group = groups->at(rand_r(&seed) % group_num);
         group->addStudent(student);
         student->addToGroup(group);
         student_num++;
@@ -87,11 +88,11 @@ Group& Deanary::getGroup(const std::string& title) {
 }
 
 void Deanary::addMarksToAll(int num_marks) {
-    srand(time(0));
+    unsigned int seed = time(NULL);
     for (int i = 0; i < num_marks; i++) {
         for (auto group : *groups) {
             for (auto student : *group->students) {
-                int mark = 5 + ((student->getId()) % 10 - 5) + (rand() % 5);
+                int mark = 5 + ((student->getId()) % 10 - 5) + (rand_r(&seed) % 5);
                 if (mark > 10) mark = 10;
                 if (mark < 0) mark = 0;
                 student->addmark(mark);

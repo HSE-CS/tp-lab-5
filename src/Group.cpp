@@ -1,8 +1,9 @@
 // Copyright 2021 soda
 #include <iostream>
-#include <Group.h>
-#include <Deanary.h>
 #include <ctime>
+#include <cstdlib>
+#include "Group.h"
+#include "Deanary.h"
 
 
 void Group::addStudent(Student* student) {
@@ -25,12 +26,12 @@ void Group::removeStudent(Student* student) {
 }
 
 void Group::chooseHead() {
-    srand(time(0));
+    unsigned int seed = time(NULL);
     if (!isEmpty()) {
         if (head_id != -1) {
             int head_id_old = head_id;
             while (head_id == head_id_old) {
-                Student& _student = *students->at(rand() % students->size());
+                Student& _student = *students->at(rand_r(&seed) % students->size());
                 head = &_student;
                 head_id = _student.getId();
             }
