@@ -238,6 +238,22 @@ void Deanary::fireWeakStudents() {
     }
 }
 
+int Deanary::get_gr_num() {
+    return group_num;
+}
+
+int Deanary::get_st_num() {
+    return student_num;
+}
+
+int Deanary::get_mv_num() {
+    return moved_num;
+}
+
+int Deanary::get_fi_num() {
+    return fired_num;
+}
+
 Deanary::~Deanary() {
     for (auto group : *groups) {
         delete group;

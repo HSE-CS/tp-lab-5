@@ -25,6 +25,10 @@ private:
 public:
     Deanary();
     void get_create_inf();
+    int get_gr_num();
+    int get_st_num();
+    int get_mv_num();
+    int get_fi_num();
     void createGroups();
     void hireStudents();
     void addMarksToAll(int);

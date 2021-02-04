@@ -27,6 +27,9 @@ public:
     Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_) :
         title(_title_), spec(_spec_), head_id(-1), deanary(&_deanary_),
         students(new std::vector<Student*>()) {}
+    Group(std::string& _title_, std::string& _spec_) :
+        title(_title_), spec(_spec_), head_id(-1), deanary(nullptr),
+        students(new std::vector<Student*>()) {}
     Student& getStudent(int);
     Student& getStudent(std::string&);
     Student& getHead();
