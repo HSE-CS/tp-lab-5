@@ -26,7 +26,7 @@ void Deanary::createGroups() {
 void Deanary::studentRegistration() {
     srand(time(NULL));
     for (int i = 0; i < allStudents.size(); i++) {
-        int index = rand() % groups.size() + 0;
+        int index = std::rand() % groups.size() + 0;
         groups[index].addStudent(&allStudents[i]);
     }
 }
@@ -35,7 +35,7 @@ void Deanary::addMarks() {
     for (int gr_i = 0; gr_i < groups.size(); gr_i++) {
         for (int st_i = 0; st_i < groups[gr_i].students.size(); st_i++) {
             for (int i = 0; i < 10; i++) {
-                groups[gr_i].students[st_i]->addMark(rand() % 10 + 1);
+                groups[gr_i].students[st_i]->addMark(std::rand() % 10 + 1);
             }
         }
     }
