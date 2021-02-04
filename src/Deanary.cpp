@@ -21,7 +21,7 @@ void Deanary::createGroups() {
 }
 
 void Deanary::createStudents() {
-  for (auto group: groups) {
+  for (auto group : groups) {
     std::ifstream students(group->title + ".txt");
     if (students.is_open()) {
       int i = 0;
@@ -46,7 +46,7 @@ void Deanary::AddRandomMarks() {
 void Deanary::GetStatistics() {
   for (auto group : groups)
     for (auto student : group->students)
-      std::cout << student->fio << " average mark: " 
+      std::cout << student->fio << " average mark: "
       << student->getAvarageMark() << std::endl;
 }
 
@@ -67,9 +67,9 @@ void Deanary::saveStaff() {
       groupList << group->title << "\n";
     }
   }
-  for (auto group: groups) {
+  for (auto group : groups) {
     std::ofstream studentsList(group->title + ".txt");
-      for (auto student : group->students) 
+      for (auto student : group->students)
         studentsList << student->fio << "\n";
   }
 }
