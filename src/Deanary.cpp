@@ -79,7 +79,7 @@ const std::string& title) {
     }
 }
 
-void Deanary::saveStaff(const std::string& students_file, 
+void Deanary::saveStaff(const std::string& students_file,
 const std::string& groups_file) {
     std::ofstream file1(students_file);
     std::ofstream file2(groups_file);
