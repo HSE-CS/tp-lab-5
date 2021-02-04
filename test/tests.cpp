@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "Deanary.h"
-#include "Group.h"
-#include "Student.h"
+// #include "Group.h"
+// #include "Student.h"
 #include <string>
 
 TEST(StudentTest, test1) {
@@ -93,7 +93,7 @@ TEST(DeanaryTest, test10) {
     test_gr.addStudent(&test_st);
     Deanary test_dr;
     test_dr.addGroup(test_gr);
-    EXPECT_EQ(3.5, test_gr.getStatisticByStudents(name));
+    EXPECT_EQ(3.5, test_dr.getStatisticByStudents(name));
 }
 
 TEST(DeanaryTest, test11) {
@@ -109,5 +109,5 @@ TEST(DeanaryTest, test11) {
     test_gr.addStudent(&test_st);
     Deanary test_dr;
     test_dr.addGroup(test_gr);
-    EXPECT_EQ(3.5, test_gr.getStatisticByGroups(spec));
+    EXPECT_EQ(3.5, test_dr.getStatisticByGroups(spec));
 }
