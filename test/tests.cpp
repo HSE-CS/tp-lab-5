@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
 #include "Deanary.h"
-// #include "Group.h"
-// #include "Student.h"
 #include <string>
 
 TEST(StudentTest, test1) {
@@ -34,7 +32,7 @@ TEST(GroupTest, test5) {
     std::string title = "Applied Mathematics and Informatics";
     std::string spec = "AMI";
     Group test(title, spec);
-    EXPECT_EQ(title, test.getSpec());
+    EXPECT_EQ(spec, test.getSpec());
 }
 
 TEST(GroupTest, test6) {
@@ -73,19 +71,6 @@ TEST(DeanaryTest, test9) {
     Group test_gr(title, spec);
     std::string name = "Ivanov Ivan";
     Student test_st(101, name);
-    test_gr.addStudent(&test_st);
-    Deanary test_dr;
-    test_dr.addGroup(test_gr);
-    test_dr.initOfHeadElection();
-    EXPECT_EQ(name, test_gr.getHead().getName());
-}
-
-TEST(DeanaryTest, test10) {
-    std::string title = "Applied Mathematics and Informatics";
-    std::string spec = "AMI";
-    Group test_gr(title, spec);
-    std::string name = "Ivanov Ivan";
-    Student test_st(101, name);
     test_st.addMark(7);
     test_st.addMark(4);
     test_st.addMark(3);
@@ -96,7 +81,7 @@ TEST(DeanaryTest, test10) {
     EXPECT_EQ(3.5, test_dr.getStatisticByStudents(name));
 }
 
-TEST(DeanaryTest, test11) {
+TEST(DeanaryTest, test10) {
     std::string title = "Applied Mathematics and Informatics";
     std::string spec = "AMI";
     Group test_gr(title, spec);
