@@ -59,12 +59,13 @@ double Deanary::getStatisticByGroups(std::string spc_) {
 void Deanary::transferStudent(std::string fio_, std::string spc_) {
     for (int gr_i = 0; gr_i < groups.size(); gr_i++) {
         for (int st_i = 0; st_i < groups[gr_i].students.size(); st_i++) {
-            if (groups[gr_i].students[st_i]->getName() == fio_ && groups[gr_i].getSpec()!=spc_) {
+            if (groups[gr_i].students[st_i]->getName() \
+                == fio_ && groups[gr_i].getSpec() != spc_) {
                 for (int gr_i1 = 0; gr_i1 < groups.size(); gr_i1++) {
                     if (groups[gr_i1].getSpec() == spc_) {
                         groups[gr_i1].addStudent(groups[gr_i].students[st_i]);
                     }
-                };
+                }
                 groups[gr_i].delStudent(groups[gr_i].students[st_i]);
             }
         }
@@ -73,7 +74,8 @@ void Deanary::transferStudent(std::string fio_, std::string spc_) {
 void Deanary::printAllInfo() {
     for (int gr_i = 0; gr_i < groups.size(); gr_i++) {
         std::cout << groups[gr_i].getName() << std::endl;
-        std::cout << "Head of group is " << groups[gr_i].getHead().getName() << std::endl;
+        std::cout << "Head of group is " \
+            << groups[gr_i].getHead().getName() << std::endl;
         for (int st_i = 0; st_i < groups[gr_i].students.size(); st_i++) {
             std::cout << groups[gr_i].students[st_i]->getName() << std::endl;
         }
@@ -106,9 +108,11 @@ void Deanary::saveToFiles() {
     for (int gr_i = 0; gr_i < groups.size(); gr_i++) {
         fout << "----------New group----------" << std::endl;
         fout << groups[gr_i].getName() << std::endl;
-        fout << "Head of group is " << groups[gr_i].getHead().getName() << std::endl;
+        fout << "Head of group is " << \
+            groups[gr_i].getHead().getName() << std::endl;
         for (int st_i = 0; st_i < groups[gr_i].students.size(); st_i++) {
-            fout << st_i+1<<") " << groups[gr_i].students[st_i]->getName() << std::endl;
+            fout << st_i+1 << ") " << \
+                groups[gr_i].students[st_i]->getName() << std::endl;
         }
     }
     fout.close();

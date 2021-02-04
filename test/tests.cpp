@@ -1,3 +1,4 @@
+// Copyright 2021 GN
 #include <gtest/gtest.h>
 #include "Deanary.h"
 #include <string>

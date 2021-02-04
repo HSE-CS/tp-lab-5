@@ -22,7 +22,7 @@ Student& Group::getStudent(int id) {
 void Group::initHead() {
     srand(time(NULL));
     Student*st;
-    st=students[rand() % students.size()];
+    st = students[rand() % students.size()];
     head = st;
 }
 Student& Group::getHead() {
@@ -34,7 +34,6 @@ double Group::av_mark() {
         sum += student->avMark();
     }
     return sum / students.size();
-
 }
 void Group::delStudent(Student* st_) {
     for (int i = 0; i < students.size(); i++) {
