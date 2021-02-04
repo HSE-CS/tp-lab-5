@@ -53,7 +53,8 @@ void Deanary::getStatistics(const std::string& output) {
     file.close();
 }
 
-void Deanary::moveStudents(Student* student, std::string& title) {
+void Deanary::moveStudents(Student* student,
+const std::string& title) {
     Group* gr {nullptr};
     Student* st {nullptr};
 
