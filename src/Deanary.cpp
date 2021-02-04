@@ -1,7 +1,7 @@
 // Copyright 2021 GN
+#include <Deanary.h>
 #include <string>
 #include <iostream>
-#include <Deanary.h>
 #include <fstream>
 void Deanary::acceptStudents() {
     std::string s;
