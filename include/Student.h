@@ -8,7 +8,6 @@
 #include <string>
 #include <iostream>
 #include <numeric>
-#include <functional>
 
 class Group;
 
