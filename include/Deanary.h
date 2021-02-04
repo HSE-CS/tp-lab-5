@@ -2,17 +2,17 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <vector>
 #include <Student.h>
 #include <Group.h>
 class Student;
 class Group;
 class Deanary {
-private:
+ private:
     std::vector<Group> groups;
     std::vector<Student> allStudents;
-public:
+ public:
     void addGroup(Group gr_);
     void acceptStudents();
     void createGroups();
@@ -27,4 +27,4 @@ public:
     void initOfHeadElection();
     void printAllInfo();
 };
-#endif // INCLUDE_Deanary_H_
+#endif  // INCLUDE_DEANARY_H_

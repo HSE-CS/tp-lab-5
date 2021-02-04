@@ -2,16 +2,15 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <vector>
 #include <Student.h>
-//#include <Group.h>
 class Student;
 class Group {
     friend class Deanary;
  private:
     std::string title;
-    std::string spec;   
+    std::string spec;
     Student* head;
 
  public:
@@ -30,4 +29,4 @@ class Group {
     double av_mark();
     void delStudent(Student* st_);
 };
-#endif // INCLUDE_GROUP_H_
+#endif //  INCLUDE_GROUP_H_

@@ -6,8 +6,8 @@
 void Deanary::acceptStudents() {
     std::string s;
     std::ifstream file("students.txt");
-    int id = 1; 
-    while (getline(file, s)) { 
+    int id = 1;
+    while (getline(file, s)) {
         Student st(id, s);
         allStudents.push_back(st);
         id++;

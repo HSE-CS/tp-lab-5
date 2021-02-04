@@ -3,7 +3,7 @@
 #define INCLUDE_STUDENT_H_
 #include "Group.h"
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <vector>
 class Group;
 class Student {
@@ -24,4 +24,4 @@ class Student {
     int getId();
     std::string getName();
 };
-#endif // INCLUDE_STUDENT_H_
+#endif //  INCLUDE_STUDENT_H_
