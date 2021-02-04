@@ -31,7 +31,8 @@ void Group::chooseHead() {
         if (head_id != -1) {
             int head_id_old = head_id;
             while (head_id == head_id_old) {
-                Student& _student = *students->at(rand_r(&seed) % students->size());
+                Student& _student = *students->at(rand_r(&seed)
+                    % students->size());
                 head = &_student;
                 head_id = _student.getId();
             }
@@ -39,7 +40,8 @@ void Group::chooseHead() {
                 << head->getName() << std::endl;
         } else {
             while (head_id == -1) {
-                Student& _student = *students->at(rand() % students->size());
+                Student& _student = *students->at(rand_r(&seed)
+                    % students->size());
                 head = &_student;
                 head_id = _student.getId();
             }

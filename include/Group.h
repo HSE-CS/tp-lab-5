@@ -26,7 +26,7 @@ class Group {
 
  public:
     Group(std::string* _title_, std::string* _spec_, const Deanary& _deanary_) :
-        title(*_title_), spec(*_spec_), head_id(-1), 
+        title(*_title_), spec(*_spec_), head_id(-1),
         deanary(const_cast<Deanary*>(&_deanary_)),
         students(new std::vector<Student*>()) {}
     Group(std::string* _title_, std::string* _spec_) :

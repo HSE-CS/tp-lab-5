@@ -92,7 +92,8 @@ void Deanary::addMarksToAll(int num_marks) {
     for (int i = 0; i < num_marks; i++) {
         for (auto group : *groups) {
             for (auto student : *group->students) {
-                int mark = 5 + ((student->getId()) % 10 - 5) + (rand_r(&seed) % 5);
+                int mark = 5 + ((student->getId()) % 10 - 5)
+                    + (rand_r(&seed) % 5);
                 if (mark > 10) mark = 10;
                 if (mark < 0) mark = 0;
                 student->addmark(mark);

@@ -25,21 +25,21 @@ TEST(StudentTest, test3) {
 TEST(GroupTest, test4) {
     std::string title = "Name_of_Group";
     std::string spec = "Spec_of_Group";
-    Group test{ title, spec };
+    Group test{ &title, &spec };
     EXPECT_EQ(title, test.getTitle());
 }
 
 TEST(GroupTest, test5) {
     std::string title = "Name_of_Group";
     std::string spec = "Spec_of_Group";
-    Group test{ title, spec };
+    Group test{ &title, &spec };
     EXPECT_EQ(0, test.getGroupStudents()->size());
 }
 
 TEST(GroupTest, test6) {
     std::string title = "Name_of_Group";
     std::string spec = "Spec_of_Group";
-    Group test{ title, spec };
+    Group test{ &title, &spec };
     EXPECT_EQ(1, static_cast<int>(test.isEmpty()));
 }
 
@@ -47,7 +47,7 @@ TEST(GroupTest, test7) {
     std::vector<std::string> students_name{ "test_1", "test_2.", "test_3" };
     std::string title = "Name_of_Group";
     std::string spec = "Spec_of_Group";
-    Group test{ title, spec };
+    Group test{ &title, &spec };
     test.getGroupStudents()->push_back(new Student(1, students_name[0]));
     test.getGroupStudents()->push_back(new Student(2, students_name[1]));
     test.getGroupStudents()->push_back(new Student(3, students_name[2]));
@@ -58,7 +58,7 @@ TEST(GroupTest, test8) {
     std::vector<std::string> students_name{ "test_1", "test_2.", "test_3" };
     std::string title = "Name_of_Group";
     std::string spec = "Spec_of_Group";
-    Group test{ title, spec };
+    Group test{ &title, &spec };
     test.getGroupStudents()->push_back(new Student(1, students_name[0]));
     test.getGroupStudents()->push_back(new Student(2, students_name[1]));
     test.getGroupStudents()->push_back(new Student(3, students_name[2]));
