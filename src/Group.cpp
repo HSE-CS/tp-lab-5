@@ -3,7 +3,7 @@
 #include "Group.h"
 #include "Student.h"
 
-Group::Group(const std::string& title_, const std::string& spec_) 
+Group::Group(const std::string& title_, const std::string& spec_)
     : title {title_}, spec {spec_}
 {
 
@@ -60,4 +60,3 @@ Student* Group::getStudent(const std::string& name) {
 bool Group::isEmpty() {
     return students.size() < 1;
 }
-

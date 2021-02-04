@@ -9,8 +9,7 @@
 #include "Group.h"
 #include "Deanary.h"
 
-int main()
-{
+int main() {
     Student s1 {12, "Egor Bodrov"};
     Student s2 {50, "Michele Bekuson"};
     Student s3 {11, "Bodrov Egor"};
