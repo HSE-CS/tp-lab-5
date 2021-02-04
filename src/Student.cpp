@@ -19,6 +19,17 @@ void Student::addToGroup(Group* destinationGroup) {
 void Student::addMarkToStudent(int newMark) { 
     this->marks.push_back(newMark);
 }
+void Student::getInfo() { 
+    std::cout << "FIO = " << this->fio << std::endl;
+    std::cout << "ID = " << this->id << std::endl;
+    std::cout << "Group address" << &this->group << std::endl;
+}
+void Student::printMarks() {
+    for (size_t i = 0; i < this->marks.size(); ++i) {
+        std::cout << this->marks[i] << "\t";
+    }
+    std::cout << std::endl;
+}
 double Student::getAverageMark() {
     double averageMark = 0;
     for (size_t i = 0; i < this->marks.size(); ++i) {

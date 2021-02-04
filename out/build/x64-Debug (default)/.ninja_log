@@ -1,0 +1,9 @@
+# ninja log v5
+19	366	634178114	src/CMakeFiles/tp-lab-5.dir/Deanary.cpp.obj	78759250f855e3ff
+27	369	634178114	src/CMakeFiles/tp-lab-5.info.dir/main.cpp.obj	4c072f03dd308f4e
+1	420	634178587	src/CMakeFiles/tp-lab-5.dir/Group.cpp.obj	ade91275f7710d5b
+10	422	634178587	src/CMakeFiles/tp-lab-5.dir/test.cpp.obj	29e23cae88fa8fff
+19	424	634178587	src/CMakeFiles/tp-lab-5.info.dir/test.cpp.obj	ef6d16f6f8078cbd
+13	65	634178827	test/CMakeFiles/tp-lab-5.test.dir/AllTests.cpp.obj	f4786853ee451d69
+22	255	634178828	test/CMakeFiles/tp-lab-5.test.dir/tests.cpp.obj	81512224e94d3827
+0	661	634180138	src/CMakeFiles/tp-lab-5.info.dir/main.cpp.obj	4c072f03dd308f4e

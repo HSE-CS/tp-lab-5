@@ -4,6 +4,8 @@
 
 #include "Student.h"
 
+class Student;
+
 class Group {
  public:
   Group();

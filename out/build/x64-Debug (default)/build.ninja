@@ -131,15 +131,6 @@ build src\CMakeFiles\tp-lab-5.dir\Deanary.cpp.obj: CXX_COMPILER__tp-lab-5_Debug 
   TARGET_COMPILE_PDB = src\CMakeFiles\tp-lab-5.dir\
   TARGET_PDB = src\tp-lab-5.pdb
 
-build src\CMakeFiles\tp-lab-5.dir\test.cpp.obj: CXX_COMPILER__tp-lab-5_Debug ..\..\..\src\test.cpp || cmake_object_order_depends_target_tp-lab-5
-  DEFINES = -Dtp_lab_5_EXPORTS
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -Isrc -I..\..\..\include
-  OBJECT_DIR = src\CMakeFiles\tp-lab-5.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\tp-lab-5.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\tp-lab-5.dir\
-  TARGET_PDB = src\tp-lab-5.pdb
-
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target tp-lab-5
@@ -148,7 +139,7 @@ build src\CMakeFiles\tp-lab-5.dir\test.cpp.obj: CXX_COMPILER__tp-lab-5_Debug ..\
 #############################################
 # Link the shared library src\tp-lab-5.dll
 
-build src\tp-lab-5.dll src\tp-lab-5.lib: CXX_SHARED_LIBRARY_LINKER__tp-lab-5_Debug src\CMakeFiles\tp-lab-5.dir\Group.cpp.obj src\CMakeFiles\tp-lab-5.dir\Deanary.cpp.obj src\CMakeFiles\tp-lab-5.dir\test.cpp.obj
+build src\tp-lab-5.dll src\tp-lab-5.lib: CXX_SHARED_LIBRARY_LINKER__tp-lab-5_Debug src\CMakeFiles\tp-lab-5.dir\Group.cpp.obj src\CMakeFiles\tp-lab-5.dir\Deanary.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
   LINK_LIBRARIES = pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -178,14 +169,6 @@ build src\CMakeFiles\tp-lab-5.info.dir\main.cpp.obj: CXX_COMPILER__tp-lab-5.2ein
   TARGET_COMPILE_PDB = src\CMakeFiles\tp-lab-5.info.dir\
   TARGET_PDB = src\tp-lab-5.info.pdb
 
-build src\CMakeFiles\tp-lab-5.info.dir\test.cpp.obj: CXX_COMPILER__tp-lab-5.2einfo_Debug ..\..\..\src\test.cpp || cmake_object_order_depends_target_tp-lab-5.info
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -Isrc -I..\..\..\include
-  OBJECT_DIR = src\CMakeFiles\tp-lab-5.info.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\tp-lab-5.info.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\tp-lab-5.info.dir\
-  TARGET_PDB = src\tp-lab-5.info.pdb
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tp-lab-5.info
@@ -194,7 +177,7 @@ build src\CMakeFiles\tp-lab-5.info.dir\test.cpp.obj: CXX_COMPILER__tp-lab-5.2ein
 #############################################
 # Link the executable src\tp-lab-5.info.exe
 
-build src\tp-lab-5.info.exe: CXX_EXECUTABLE_LINKER__tp-lab-5.2einfo_Debug src\CMakeFiles\tp-lab-5.info.dir\main.cpp.obj src\CMakeFiles\tp-lab-5.info.dir\test.cpp.obj | src\tp-lab-5.lib || src\tp-lab-5.dll
+build src\tp-lab-5.info.exe: CXX_EXECUTABLE_LINKER__tp-lab-5.2einfo_Debug src\CMakeFiles\tp-lab-5.info.dir\main.cpp.obj | src\tp-lab-5.lib || src\tp-lab-5.dll
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = src\tp-lab-5.lib  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
