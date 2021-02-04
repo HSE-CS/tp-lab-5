@@ -29,4 +29,4 @@ class Group {
     double av_mark();
     void delStudent(Student* st_);
 };
-#endif //  INCLUDE_GROUP_H_
+#endif  //  INCLUDE_GROUP_H_

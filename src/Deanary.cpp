@@ -1,7 +1,8 @@
 // Copyright 2021 GN
 #include <string>
+#include <stdlib.h>
 #include <iostream>
-#include <Deanary.h>
+#include "Deanary.h"
 #include <fstream>
 void Deanary::acceptStudents() {
     std::string s;
@@ -26,7 +27,7 @@ void Deanary::createGroups() {
 void Deanary::studentRegistration() {
     srand(time(NULL));
     for (int i = 0; i < allStudents.size(); i++) {
-        int index = rand() % groups.size() + 0;
+        int index = rand_r() % groups.size() + 0;
         groups[index].addStudent(&allStudents[i]);
     }
 }
@@ -35,7 +36,7 @@ void Deanary::addMarks() {
     for (int gr_i = 0; gr_i < groups.size(); gr_i++) {
         for (int st_i = 0; st_i < groups[gr_i].students.size(); st_i++) {
             for (int i = 0; i < 10; i++) {
-                groups[gr_i].students[st_i]->addMark(rand() % 10 + 1);
+                groups[gr_i].students[st_i]->addMark(rand_r() % 10 + 1);
             }
         }
     }

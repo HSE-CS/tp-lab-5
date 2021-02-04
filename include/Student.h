@@ -24,4 +24,4 @@ class Student {
     int getId();
     std::string getName();
 };
-#endif //  INCLUDE_STUDENT_H_
+#endif  //  INCLUDE_STUDENT_H_
