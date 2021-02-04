@@ -87,7 +87,7 @@ void Group::removeStudent(int id) {
 void Group::removeStudent(std::string fio) {
 	int headFlag = 0;
 	for (int i = 0; i < students.size(); i++)
-		if (students[i]->getFio() == fio) {
+		if (students[i]->getFio()==fio) {
 			if (students[i]->isHeadOfGroup())
 				headFlag = 1;
 			students.erase(students.cbegin() + i);

@@ -26,14 +26,14 @@ void Deanery::addRandomMarks(int n) {
   for (auto group : groups)
     for (auto student : group->students) {
       std::random_device seed;
-      int modificator = seed() % 4;
+      int modificator = seed() % 5;
       int isBad = seed() % 2;
       if (isBad)
         for (int i = 0; i < n; i++)
           student->addMark(seed() % (10 - modificator));
       else
         for (int i = 0; i < n; i++)
-          student->addMark((seed() % (10-modificator))+modificator);
+          student->addMark((seed() % (10-modificator))+modificator+2);
     }
 }
 
@@ -41,10 +41,10 @@ void Deanery::academicPerformance() {
   if (groups.empty())
     throw "There are no groups";
   for (int i = 0; i < groups.size(); i++) {
-    if (!groups[i]->isEmpty()) {
-      std::cout << groups[i]->getTitle() + "Average mark: " + std::to_string(groups[i]->getAverageMark()) << std::endl;
+    if (!(groups[i]->isEmpty())) {
+      std::cout << std::endl << groups[i]->getTitle() + "   Average mark: " + std::to_string(groups[i]->getAverageMark()) << std::endl;
       for (auto student : groups[i]->students)
-        std::cout << std::to_string(student->getAverageMark())<<std::endl;
+        std::cout << student->getFio() + "  " + std::to_string(student->getAverageMark())<<std::endl;
     }
   }
 }

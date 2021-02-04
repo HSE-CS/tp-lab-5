@@ -5,28 +5,36 @@ Group* groupReader(std::string path) {
   std::ifstream file(path);
   std::string title;
   std::string spec;
-  file >> title;
-  file >> spec;
+  std::getline(file, title);
+  std::getline(file, spec);
   Group* result = new Group(title, spec);
-
   std::random_device seed;
   std::string fio;
-  file >> fio;
-  while (fio!="EOF") {
-    Student* newbie = new Student((seed()), fio);
+  std::getline(file, fio);
+  while (fio != "EOF") {
+    Student* newbie = new Student((seed()%100000), fio);
     result->addStudent(newbie);
-    file >> fio;
+    std::getline(file, fio);
   }
   return result;
 }
 
 int main() {
-  std::string name = "Seledkin Valentin Andreevich";
-  Student test = Student(123, name);
-  test.addMark(1);
-  test.addMark(10);
-  test.addMark(2);
-  std::cout << test.getAverageMark() << std::endl;
   Group* eco1 = groupReader("..\\..\\test\\groups_input\\eco1.txt");
-  std::cout << eco1->getNumberOfStudents()<<std::endl<<eco1->getGroupInfo()<<std::endl<<eco1->getNumberOfStudents();
+  Group* eco2 = groupReader("..\\..\\test\\groups_input\\eco2.txt");
+  Group* prog1 = groupReader("..\\..\\test\\groups_input\\prog1.txt");
+  Group* prog2 = groupReader("..\\..\\test\\groups_input\\prog2.txt");
+  //std::cout << eco2->getNumberOfStudents()<<std::endl<<eco2->getGroupInfo()<<std::endl;
+  std::vector<Group*> groups(4);
+  groups[0] = eco1;
+  groups[1] = eco2;
+  groups[2] = prog1;
+  groups[3] = prog2;
+  Deanery D(groups);
+
+  D.addRandomMarks(10);
+  D.initHeads();
+  //D.academicPerformance();
+  D.fireBadStudents();
+  D.academicPerformance();
 }

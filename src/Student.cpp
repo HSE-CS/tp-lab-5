@@ -16,6 +16,10 @@ std::string Student::getFio() {
 }
 
 void Student::addMark(int mark) {
+	if (mark < 0)
+		mark = 0;
+	if (mark > 10)
+		mark = 10;
   this->marks.push_back(mark);
 }
 
