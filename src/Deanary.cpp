@@ -115,7 +115,7 @@ void Deanary::chooseGroup(Student* student) {
     if (groups.size() < 1)
         return;
 
-    unsigned int min {groups[0]->students.size()};
+    unsigned int min {51};
     int index {0};
     for (int i = 1; i < groups.size(); i++) {
         if (groups[i]->students.size() < min) {
