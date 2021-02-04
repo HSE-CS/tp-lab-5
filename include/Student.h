@@ -6,13 +6,14 @@ class Group;
 
 class Student {
   friend class Deanery;
+
  private:
   int id;
   std::string fio;
-  Group * group;
+  Group *group;
   std::vector<int> marks;
   void addmark(int value);
-  void addToGroup(Group * value);
+  void addToGroup(Group *value);
 
  public:
   bool isHead;

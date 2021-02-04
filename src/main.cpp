@@ -2,6 +2,7 @@
 #include <cstring>
 #include <iostream>
 #include <string>
+
 #include "Deanery.h"
 
 int main() {
@@ -38,8 +39,8 @@ int main() {
   // std::cout << pmi.isEmpty() << '\n';
 
   Deanery deanery{};
-    // поставим каждому студенту по три оценки во всех группах
-    deanery.addMarksToAll(3);
-    // напечатаем статистику
-    deanery.getStatistics();
+  deanery.addMarksToAll(5);
+  deanery.getStatistics();
+  deanery.fireStudents(0);
+  deanery.saveStuff();
 }
