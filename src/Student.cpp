@@ -35,9 +35,9 @@ std::string Student::getFio() {
 Group* Student::getGroup() {
   return group;
 }
-/*
+
 bool Student::isHeadOfGroup() {
-  return this == this->group->
+  return this == group->getHead();
 }
-*/
+
 

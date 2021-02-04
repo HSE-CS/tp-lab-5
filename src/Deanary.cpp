@@ -2,18 +2,10 @@
 #include "Deanary.h"
 
 Deanary::Deanary(std::string filename) {
-  // std::ifstream fin(filename);
   curr_id = 1;
   createGroups(filename);
   initHeads();
-  // fin.close();
 }
-/*
-Deanary::~Deanary(){
-   for(auto g: groups)
-    delete group;
-}
-*/
 
 void Deanary::createGroups(std::string filename) {
   std::ifstream fin(filename);
@@ -26,8 +18,6 @@ void Deanary::createGroups(std::string filename) {
     title = input.substr(pos + 1, input.size() - pos - 1);
     std::cout << spec << "\n";
     Group* g = new Group(title, spec);
-    // std::cout << groups.size() << " " << g->getSpec() << "\n";
-    // groups.push_back(new Group(spec, title));
     groups.push_back(g);
   }
   fin.close();

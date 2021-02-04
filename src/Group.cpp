@@ -49,7 +49,9 @@ Student* Group::getStudent(std::string _fio) {
     }
     return nullptr;
 }
-
+Student* Group::getHead() {
+  return head;
+}
 std::vector <Student*> Group::containsStudents() {
   return students;
 }
