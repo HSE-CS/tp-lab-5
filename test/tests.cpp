@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 #include "Deanary.h"
+#include "Group.h"
+#include "Student.h"
 #include <string>
 
 TEST(StudentTest, test1) {
