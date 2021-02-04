@@ -3,11 +3,10 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-#include "json.hpp"
-#include "json.h"
+#include <json.hpp>
 #include <sstream>
 #include <ctime>
-#include "Deanary.h"
+#include <Deanary.h>
 
 
 using json = nlohmann::json;

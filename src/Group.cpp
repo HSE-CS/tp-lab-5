@@ -1,7 +1,7 @@
 // Copyright 2021 soda
 #include <iostream>
-#include "Group.h"
-#include "Deanary.h"
+#include <Group.h>
+#include <Deanary.h>
 #include <ctime>
 
 
@@ -36,8 +36,7 @@ void Group::chooseHead() {
             }
             std::cout << "In group " << title << " - new boss - "
                 << head->getName() << std::endl;
-        }
-        else {
+        } else {
             while (head_id == -1) {
                 Student& _student = *students->at(rand() % students->size());
                 head = &_student;

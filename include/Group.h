@@ -1,7 +1,7 @@
 // Copyright 2021 soda
 
-#ifndef LAB_5_GROUP_H
-#define LAB_5_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include <string>
 #include <vector>
@@ -13,7 +13,7 @@ class Deanary;
 
 class Group {
     friend class Deanary;
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*>* students;
@@ -23,12 +23,13 @@ private:
     void addStudent(Student* student);
     void removeStudent(Student* student);
     void chooseHead();
-public:
-    Group(std::string& _title_, std::string& _spec_, Deanary& _deanary_) :
-        title(_title_), spec(_spec_), head_id(-1), deanary(&_deanary_),
+
+ public:
+    Group(std::string* _title_, std::string* _spec_, const Deanary& _deanary_) :
+        title(*_title_), spec(*_spec_), head_id(-1), deanary(const_cast<Deanary*>(&_deanary_)),
         students(new std::vector<Student*>()) {}
-    Group(std::string& _title_, std::string& _spec_) :
-        title(_title_), spec(_spec_), head_id(-1), deanary(nullptr),
+    Group(std::string* _title_, std::string* _spec_) :
+        title(*_title_), spec(*_spec_), head_id(-1), deanary(nullptr),
         students(new std::vector<Student*>()) {}
     Student& getStudent(int);
     Student& getStudent(std::string&);
@@ -39,8 +40,6 @@ public:
     double getAverageMark();
     bool isEmpty();
     ~Group();
-
 };
 
-
-#endif  // LAB_5_GROUP_H
+#endif  // INCLUDE_GROUP_H_

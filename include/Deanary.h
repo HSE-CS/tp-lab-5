@@ -1,10 +1,10 @@
 // Copyright 2021 soda
-#ifndef LAB_5_DEANERY_H
-#define LAB_5_DEANERY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <vector>
 #include <string>
-#include "Student.h"
+#include <Student.h>
 
 
 class Student;
@@ -12,7 +12,7 @@ class Student;
 class Group;
 
 class Deanary {
-private:
+ private:
     std::vector<Group*>* groups;
     int group_num;
     int student_num;
@@ -22,7 +22,8 @@ private:
     Group& GetGroupByStudent(const std::string&);
     Group& getGroup(const std::string&);
     std::stringbuf createStat();
-public:
+
+ public:
     Deanary();
     void get_create_inf();
     int get_gr_num();
@@ -45,4 +46,4 @@ public:
     ~Deanary();
 };
 
-#endif  // LAB_5_DEANERY_H
+#endif  // INCLUDE_DEANARY_H_

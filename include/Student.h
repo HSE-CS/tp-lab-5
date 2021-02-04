@@ -1,9 +1,9 @@
 // Copyright 2021 soda
 
-#ifndef LAB_5_STUDENT_H
-#define LAB_5_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
-#include "Group.h"
+#include <Group.h>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -13,20 +13,19 @@ class Group;
 
 class Student {
     friend class Deanary;
-private:
+ private:
     int id;
     std::string fio;
     Group* group{};
     std::vector<int>marks;
     void addToGroup(Group*);
     void addmark(int);
-public:
+ public:
     Student(int _id_, std::string& _fio_) : id(_id_), fio(_fio_) {}
     double getAverageMark();
     bool isHeadOfGroup();
     int getId();
     const std::string& getName();
-
 };
 
-#endif  // LAB_5_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_
