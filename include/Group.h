@@ -3,12 +3,13 @@
 #define INCLUDE_GROUP_H_
 
 #include "Student.h"
+#include <vector>
+#include <string>
 
 class Student;
 class Deanary;
 
-class Group
-{
+class Group {
  private:
   std::string title;
   std::string spec;

@@ -2,7 +2,7 @@
 
 #include "Deanary.h"
 #include <random>
-#include <time.h>
+#include <ctime>
 #include <iostream>
 #include <fstream>
 
@@ -25,8 +25,7 @@ void Deanary::createStudents() {
     std::ifstream students(group->title + ".txt");
     if (students.is_open()) {
       int i = 0;
-      while (!students.eof())
-      {
+      while (!students.eof()) {
         char *name = new char[50];
         students.getline(name, 50, '\n');
         if (name[0] == '\0')
@@ -39,15 +38,16 @@ void Deanary::createStudents() {
 
 void Deanary::AddRandomMarks() {
   std::srand(time(0));
-  for (auto group: groups)
-    for (auto student: group->students)
+  for (auto group : groups)
+    for (auto student : group->students)
       for (int i = 0; i < 10; i++)
         student->addMark(std::rand() % 11 + 1);
 }
 void Deanary::GetStatistics() {
-  for (auto group: groups)
-    for (auto student: group->students)
-      std::cout << student->fio << " average mark: " << student->getAvarageMark() << std::endl; 
+  for (auto group : groups)
+    for (auto student : group->students)
+      std::cout << student->fio << " average mark: " 
+      << student->getAvarageMark() << std::endl;
 }
 
 void Deanary::moveStudent(Student *student, Group *dest) {
@@ -56,27 +56,27 @@ void Deanary::moveStudent(Student *student, Group *dest) {
 }
 
 void Deanary::initHeads() {
-  for (auto group: groups)
+  for (auto group : groups)
     group->chooseHead();
 }
 
 void Deanary::saveStaff() {
   std::ofstream groupList("group.txt");
   if (groupList.is_open()) {
-    for (auto group: groups) {
+    for (auto group : groups) {
       groupList << group->title << "\n";
     }
   }
   for (auto group: groups) {
     std::ofstream studentsList(group->title + ".txt");
-      for (auto student: group->students) 
+      for (auto student : group->students) 
         studentsList << student->fio << "\n";
   }
 }
 
 void Deanary::fireStudents() {
-  for (auto group: groups)
-    for (auto student: group->students)
+  for (auto group : groups)
+    for (auto student : group->students)
       if (student->getAvarageMark() < 4)
         student->group->removeStudent(student);
 }

@@ -3,9 +3,9 @@
 #define INCLUDE_DEANARY_H_
 
 #include "Group.h"
+#include <vector>
 
-class Deanary
-{
+class Deanary {
  private:
   std::vector<Group *> groups;
   friend class Group;

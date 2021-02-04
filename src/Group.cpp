@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <iterator>
 #include <random>
-#include <time.h>
+#include <ctime>
 
 Group::Group(std::string title, std::string spec) {
   this->title = title;
@@ -12,14 +12,14 @@ Group::Group(std::string title, std::string spec) {
 }
 
 Student * Group::getStudent(int id) {
-  for (auto student: students)
+  for (auto student : students)
       if (student->id == id)
           return student;
   return new Student(0, "error");
 }
 
 Student * Group::getStudent(std::string fio) {
-  for (auto student: students)
+  for (auto student : students)
       if (student->fio == fio)
           return student;
   return new Student(0, "error");
@@ -50,7 +50,7 @@ void Group::chooseHead() {
 
 double Group::getAverageMark() {
   double aver = 0;
-  for (auto student: students)
+  for (auto student : students)
     aver += student->getAvarageMark();
   return students.size() ? aver / students.size() : 0;
 }

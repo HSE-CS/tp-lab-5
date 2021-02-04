@@ -9,7 +9,6 @@
 class Group;
 
 class Student {
-
  private:
   Group *group;
   int id;
