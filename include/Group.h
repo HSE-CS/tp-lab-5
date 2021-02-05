@@ -21,11 +21,10 @@ class Group {
   std::vector<Student*> students;
   Student* head;
 
-  void add_student(Student* student);
+ public:
   void choice_head();
   void remove_student(Student* student);
-
- public:
+  void add_student(Student* student);
   Group(std::string title, std::string spec);
   bool find_student(int id);
   bool find_student(std::string fio);

@@ -21,10 +21,9 @@ class Student {
   Group* group;
   std::vector<int> marks;
 
+ public:
   void add_to_group(Group* group);
   void add_mark(int mark);
-
- public:
   Student(int id, std::string fio);
   double average_mark();
   int get_id();
