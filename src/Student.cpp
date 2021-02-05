@@ -12,8 +12,8 @@ mark -= 4;
 marks.push_back(mark);
 }
 
-void Student::addToGroup(Group& A) {
-*group = A;
+void Student::addToGroup(Group* A) {
+group = A;
 }
 
 double Student::getAvearagemark() {
