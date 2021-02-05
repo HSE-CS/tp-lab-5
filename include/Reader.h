@@ -15,7 +15,7 @@ public:
     std::string spec;
     std::vector <std::pair<std::string, std::string>> groups;
     std::vector <std::pair<std::string, std::string>> ids;
-    std::vector <std::pair<std::string, std::string>> marks; //pair vectors
+    std::vector <std::pair<std::string, std::string>> marks;
     void StudentsReader(std::string fileName);
     void MarksReader(std::string fileName);
     void GroupsReader(std::string fileName);
