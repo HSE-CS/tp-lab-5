@@ -24,7 +24,7 @@ bufGroup.students.reserve(10);
 fin.open(path);
 if (!fin.is_open())
 return;
-std::string buffer = "♣-♣♣-☼♫";
+std::string buffer;
 std::getline(fin, buffer);
 while (buffer != "") {
 bufGroup.title = buffer;
