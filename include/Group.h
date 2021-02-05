@@ -22,7 +22,6 @@ class Group {
   double getAverageGroupMark();
   void fireStudentFromGroup(unsigned);
   void printInfoAboutGroup();
-
  private:
   std::string title;
   std::string spec;

@@ -18,14 +18,17 @@ class Student {
   void getInfo();
   void printMarks();
   double getAverageMark();
+  void addMarkToStudent(int);
  private:
+  //private variables
   unsigned id;
   std::string fio;
   Group* group;
   std::vector<int> marks;
   bool isHead;
+  //private methods
   void makeHead();
-  void addMarkToStudent(int);
+
   void addToGroup(Group* destinationGroup);
   friend class Group;
 };

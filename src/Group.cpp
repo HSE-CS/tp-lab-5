@@ -18,8 +18,25 @@ void Group::addStudentToGroup(Student* studentToAdd) {
 }
 std::string Group::getTitle() { return this->title; }
 void Group::setHead(Student* newHead) { 
-    (*newHead).makeHead();
-    this->head = newHead;
+    if (this->head == nullptr) {
+        (*newHead).makeHead();
+        this->head = newHead;
+    } else if ((this->head) == (newHead)) {
+        return;
+    } else {
+      unsigned oldHead = (this->head)->id;
+      unsigned oldHeadId = -1;
+      for (size_t i = 0; i < this->students.size(); ++i) {
+        if ((this->students[i])->id == oldHead) {
+          oldHeadId = i;
+          break;
+        }
+      }
+      (this->students[oldHeadId])->isHead = false;
+      (*newHead).makeHead();
+      this->head = nullptr;
+      this->head = newHead;
+    }
 }
 bool Group::findStudentByID(unsigned id) { 
     for (size_t i = 0; i < this->students.size(); ++i) {
@@ -38,6 +55,9 @@ bool Group::findStudentByFIO(std::string fio) {
     return false;
 }
 double Group::getAverageGroupMark() {
+  if (!(this->students.size())) {
+    return -1;
+  }
   double averageGroupMark = 0;
   for (size_t i = 0; i < this->students.size(); ++i) {
     averageGroupMark += (this->students[i])->getAverageMark();
@@ -48,7 +68,7 @@ void Group::fireStudentFromGroup(unsigned id) {
     bool isInGroup = findStudentByID(id);
     unsigned neededInd = -1;
     if (!isInGroup) {    //Handle exception if student is not in the group
-      std::cout << "This student is not in current group";
+      std::cout << "This student is not in current group\n";
       return;
     }
 
@@ -58,17 +78,21 @@ void Group::fireStudentFromGroup(unsigned id) {
         }
     }
     (this->students[neededInd])->group = nullptr;
+    if ((this->students[neededInd])->isHead) {
+        (this->students[neededInd])->isHead = false;
+        this->head = nullptr;
+    }
     this->students.erase(students.begin() + neededInd);
 }
 void Group::printInfoAboutGroup() {
-  std::cout << this->title << std::endl;
-  std::cout << this->spec;
-  std::cout << "Amount of students " << this->students.size() << std::endl;
+  std::cout << "Group name : " <<this->title << std::endl;
+  std::cout << "Group specialty : " << this->spec << std::endl;
+  std::cout << "Amount of students: " << this->students.size() << std::endl;
   std::cout << "Current group head [ ";
   if (this->head == nullptr) {
     std::cout << "None" << " ] " << std::endl;
   } else {
-    std::cout << (this->head)->fio << "\t" << (this->head)->id
-        << " ] " << std::endl;
+    std::cout << "FIO : " << (this->head)->fio << "\t" <<
+        "| ID : " <<(this->head)->id << " ] " << std::endl;
   }
 }

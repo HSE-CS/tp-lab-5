@@ -28,14 +28,30 @@ void Student::getInfo() {
   } else {
     std::cout << "Group " << "None" << std::endl;
   }
+  if (this->group != nullptr) {
+    std::cout << "Are they a head of group: ";
+    if (this->isHead) {
+      std::cout << "Yes\n";
+    } else {
+      std::cout << "No\n";
+    }
+  }
+
 }
 void Student::printMarks() {
-  for (size_t i = 0; i < this->marks.size(); ++i) {
-    std::cout << this->marks[i] << "\t";
+  if (this->marks.size()) {
+    for (size_t i = 0; i < this->marks.size(); ++i) {
+      std::cout << this->marks[i] << "\t";
+    }
+    std::cout << std::endl;
+  } else {
+    std::cout << "The student have no one mark now\n";
   }
-  std::cout << std::endl;
 }
 double Student::getAverageMark() {
+  if (!(this->marks.size())) {
+    return -1;
+  }
   double averageMark = 0;
   for (size_t i = 0; i < this->marks.size(); ++i) {
     averageMark += this->marks[i];
