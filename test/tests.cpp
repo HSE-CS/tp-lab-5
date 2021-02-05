@@ -4,6 +4,7 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
+#include "Reader.h"
 
 
 TEST(GroupTest, Test1) {
