@@ -1,0 +1,31 @@
+//  Copyright 2020 Baklanov
+
+#ifndef INCLUDE_Group_
+#define INCLUDE_Group_
+
+#include "Student.h"
+#include "Deanary.h"
+#include <iostream>
+#include <vector>
+
+class Student;
+
+class Group {
+private:
+	std::string title;
+	std::string spec;
+	std::vector<Student*> students;
+	Student* head {};
+	int acadPerform;
+	void addStudent(Student* s);
+	void removeStudent(Student* a);
+	void chooseHead(int number);
+public:
+	double getAveragemark();
+	Student* getStudent();
+	bool containsStudent(std::string student);
+	bool isEmpty();
+	friend class Deanary;
+};
+
+#endif
