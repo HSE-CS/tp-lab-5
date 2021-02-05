@@ -5,6 +5,7 @@ Student::Student(unsigned id, std::string fio) {
   this->id = id;
   this->fio = fio;
   this->group = nullptr;
+  this->isHead = false;
 }
 
 Student::~Student() {
@@ -41,3 +42,4 @@ double Student::getAverageMark() {
   }
   return (averageMark / (double)this->marks.size());
 }
+void Student::makeHead() { this->isHead = true; }

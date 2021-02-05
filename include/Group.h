@@ -15,12 +15,13 @@ class Group {
   Group(std::string title);
   ~Group();
   void addStudentToGroup(Student*);
-  void setHead();
+  void setHead(Student* newHead);
   std::string getTitle();
   bool findStudentByID(unsigned id);
   bool findStudentByFIO(std::string fio);
   double getAverageGroupMark();
-  void fireStudentFromGroup();
+  void fireStudentFromGroup(unsigned);
+  void printInfoAboutGroup();
 
  private:
   std::string title;

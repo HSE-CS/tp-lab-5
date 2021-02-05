@@ -15,17 +15,19 @@ class Student {
  public:
   Student(unsigned, std::string);
   ~Student();
-  void addToGroup(Group* destinationGroup);
-  void addMarkToStudent(int);
   void getInfo();
   void printMarks();
   double getAverageMark();
-
  private:
   unsigned id;
   std::string fio;
   Group* group;
   std::vector<int> marks;
+  bool isHead;
+  void makeHead();
+  void addMarkToStudent(int);
+  void addToGroup(Group* destinationGroup);
+  friend class Group;
 };
 
 #endif  // !INCLUDE_STUDENT_H_
