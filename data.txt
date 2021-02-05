@@ -1,0 +1,40 @@
+19_1
+Software engineering
+101 Yevgeny Karasev - 5,3,4,;
+102 Nikolay Petrov - 4,4,2,;
+103 Diana Titova - 5,2,3,;
+104 Kirill Lapshin - 5,5,5,;
+105 Alexey Komissarov - 5,4,5,;
+106 Osipova Daria - 5,3,5,;
+107 Erik Anisimov - 5,5,5,;
+108 Maxim Khudyakov - 5,5,4,;
+109 Lev Korolev - 5,4,5,;
+203 Eliseeva Polina - 5,5,4,;
+***
+19_2
+Philisophy 
+201 Oleg Komarov - 5,;
+202 Emily Andreeva - 4,;
+204 Solovyova Ekaterina - 3,;
+205 Maksimov Vsevolod - 3,;
+206 Makarova Ekaterina - 4,;
+207 Sofia Moiseeva - 5,;
+208 Emma Grigorieva - 5,;
+209 Korolev Gleb - 4,;
+110 Victoria Kuznetsova - 5,;
+301 Anastasia Gracheva - 5,;
+***
+19_3
+International relationships
+302 Denis Krylov - 4,;
+303 Maltseva Maya - 3,;
+304 Demid Krasnov - 2,;
+305 Grigorieva Eva - 3,;
+306 Maria Kuznetsova - 4,;
+307 Filimonov Vsevolod - 5,;
+308 Ivan Kryukov - 3,;
+309 Demin Demid - 3,;
+310 Valeria Volkova - 4,;
+210 Ruslan Bolshakov - 4,;
+***
+
