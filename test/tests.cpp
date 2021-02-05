@@ -21,7 +21,8 @@ TEST(Student_Test, test3) {
 
 TEST(Student_Test, test4) {
   Student number1(1, "Ivanov Ivan Ivanovich");
-  EXPECT_EQ(0.0, number1.average_mark());
+  double res = 0;
+  EXPECT_EQ(res, number1.average_mark());
 }
 
 TEST(Student_Test, test5) {
@@ -29,7 +30,8 @@ TEST(Student_Test, test5) {
   number1.add_mark(9);
   number1.add_mark(9);
   number1.add_mark(9);
-  EXPECT_EQ(9.0, number1.average_mark());
+  double res = 9;
+  EXPECT_EQ(res, number1.average_mark());
 }
 
 TEST(Group_Test, test6) {
@@ -44,7 +46,8 @@ TEST(Group_Test, test7) {
 
 TEST(Group_Test, test8) {
   Group number1("EC", "Economy");
-  EXPECT_EQ(0.0, number1.avarage_mark());
+  double res = 0;
+  EXPECT_EQ(res, number1.avarage_mark());
 }
 
 TEST(Deanary_Test, test9) {
@@ -63,7 +66,8 @@ TEST(Deanary_Test, test9) {
   only.add_group(num1);
   only.add_student(&number1, "Economy");
   only.add_student(&number2, "Economy");
-  EXPECT_EQ(9, only.get_statistic_students("Ivanov Ivan Ivanovich"));
+  double res = 9;
+  EXPECT_EQ(res, only.get_statistic_students("Ivanov Ivan Ivanovich"));
 }
 
 TEST(Deanary_Test, test10) {
@@ -82,5 +86,6 @@ TEST(Deanary_Test, test10) {
   only.add_group(num1);
   only.add_student(&number1, "Economy");
   only.add_student(&number2, "Economy");
-  EXPECT_EQ(8, only.get_statistic_groups("Economy"));
+  double res = 8;
+  EXPECT_EQ(res, only.get_statistic_groups("Economy"));
 }
