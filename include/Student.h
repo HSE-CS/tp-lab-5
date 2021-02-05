@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <string>
 
 class Group;
 
