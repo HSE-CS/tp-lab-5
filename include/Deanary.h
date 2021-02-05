@@ -30,4 +30,4 @@ return &groups[number];
 }
 };
 
-#endif // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_
