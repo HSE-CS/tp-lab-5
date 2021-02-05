@@ -13,16 +13,20 @@ class Student;
 
 class Group {
  private:
-std::string title = "";
+std::string title;
 std::string spec;
 std::vector<Student*> students;
-Student* head {};
+Student* head = nullptr;
 int acadPerform;
 void addStudent(Student* s);
 void removeStudent(Student* a);
 void chooseHead(int number);
 	
  public:
+explicit Group(const std::string& title, const std::string& spec) {
+title = titlE;
+spec = speC;
+}
 void chooseHeadTest(int number);
 double getAveragemark();
 void AddStudent(Student* s);
