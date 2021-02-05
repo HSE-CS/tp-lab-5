@@ -1,9 +1,16 @@
 # ninja log v5
-19	366	634178114	src/CMakeFiles/tp-lab-5.dir/Deanary.cpp.obj	78759250f855e3ff
-27	369	634178114	src/CMakeFiles/tp-lab-5.info.dir/main.cpp.obj	4c072f03dd308f4e
-1	420	634178587	src/CMakeFiles/tp-lab-5.dir/Group.cpp.obj	ade91275f7710d5b
-10	422	634178587	src/CMakeFiles/tp-lab-5.dir/test.cpp.obj	29e23cae88fa8fff
-19	424	634178587	src/CMakeFiles/tp-lab-5.info.dir/test.cpp.obj	ef6d16f6f8078cbd
-13	65	634178827	test/CMakeFiles/tp-lab-5.test.dir/AllTests.cpp.obj	f4786853ee451d69
-22	255	634178828	test/CMakeFiles/tp-lab-5.test.dir/tests.cpp.obj	81512224e94d3827
-0	661	634180138	src/CMakeFiles/tp-lab-5.info.dir/main.cpp.obj	4c072f03dd308f4e
+10	82	634219025	src/CMakeFiles/tp-lab-5.dir/Deanary.cpp.obj	78759250f855e3ff
+27	82	634219025	test/CMakeFiles/tp-lab-5.test.dir/AllTests.cpp.obj	f4786853ee451d69
+36	273	634219025	test/CMakeFiles/tp-lab-5.test.dir/tests.cpp.obj	81512224e94d3827
+18	423	634219025	src/CMakeFiles/tp-lab-5.info.dir/main.cpp.obj	4c072f03dd308f4e
+0	423	634219025	src/CMakeFiles/tp-lab-5.dir/Group.cpp.obj	ade91275f7710d5b
+423	733	634219025	src/tp-lab-5.dll	28965401d37acdd7
+423	733	634219025	src/tp-lab-5.lib	28965401d37acdd7
+1	304	634219025	src/tp-lab-5.dll	28965401d37acdd7
+1	304	634219025	src/tp-lab-5.lib	28965401d37acdd7
+1	162	634219025	src/tp-lab-5.dll	28965401d37acdd7
+1	162	634219025	src/tp-lab-5.lib	28965401d37acdd7
+0	153	634219025	src/tp-lab-5.dll	28965401d37acdd7
+0	153	634219025	src/tp-lab-5.lib	28965401d37acdd7
+0	156	634219025	src/tp-lab-5.dll	28965401d37acdd7
+0	156	634219025	src/tp-lab-5.lib	28965401d37acdd7

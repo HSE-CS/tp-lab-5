@@ -1,11 +1,12 @@
-//Copyright 2021 Nikita Naumov
+// Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
-#include <typeinfo>
 #include <iostream>
 #include <string>
+#include <typeinfo>
 #include <vector>
+
 #include "Group.h"
 
 class Group;
@@ -26,6 +27,5 @@ class Student {
   Group* group;
   std::vector<int> marks;
 };
-
 
 #endif  // !INCLUDE_STUDENT_H_
