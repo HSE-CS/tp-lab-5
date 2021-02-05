@@ -24,7 +24,7 @@ class Group {
 
  public:
   explicit Group(const std::string& titlE, const std::string& speC) :
-		title(titlE), spec(speC), head(nullptr), acadPerform(0) {}
+  title(titlE), spec(speC), head(nullptr), acadPerform(0) {}
   void chooseHeadTest(int number);
   double getAveragemark();
   void AddStudent(Student* s);
