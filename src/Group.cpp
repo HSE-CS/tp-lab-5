@@ -57,7 +57,11 @@ double Group::avarage_mark() {
     sum += student->average_mark();
     num++;
   }
-  return sum / num;
+  if (sum == 0) {
+    return 0;  
+  } else {
+    return sum / num;
+  }
 }
 
 std::string Group::get_title() {

@@ -22,12 +22,15 @@ void Student::add_mark(int mark) {
 double Student::average_mark() {
   int sum = 0;
   int num = 0;
-	
 	for (int i = 0; i < marks.size(); i++) {
 	      sum += marks[i];
           num++;
      }
-        return sum / num;
+        if (sum == 0) {
+          return 0;
+        } else {
+          return sum / num;
+        }
 }
 
 int Student::get_id() {
