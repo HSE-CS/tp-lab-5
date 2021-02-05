@@ -6,7 +6,7 @@
 #include "Deanary.h"
 #include <iostream>
 #include <vector>
-#include <string>
+#include <cstring>
 
 class Group;
 
@@ -36,4 +36,4 @@ friend class Deanary;
 friend class Group;
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
