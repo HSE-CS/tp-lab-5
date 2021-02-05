@@ -1,0 +1,33 @@
+SE-1
+101:Wilfrid Hutchinson - 1 10 5 9 9 3 5 6 6 2 
+102:Gordon Dennis - 8 2 2 6 3 8 7 2 5 3 
+103:Russell Reed - 4 3 3 2 7 9 6 8 7 2 
+104:Pierce Ryan - 9 10 3 8 10 6 5 4 2 3 
+105:Marcus Short - 4 4 5 2 2 4 9 8 5 3 
+106:Isaac Parsons - 8 8 10 4 2 10 9 7 6 1 
+107:Wayne Rooney - 3 9 7 1 3 5 9 7 6 1 
+108:Mercy Booth - 10 1 1 7 2 4 9 10 4 5 
+109:Judith Gallagher - 5 7 1 7 7 2 9 5 10 7 
+110:Leona Shelton - 4 8 9 9 3 10 2 4 6 10 
+SE-2
+201:Clyde French - 9 5 1 8 7 4 7 2 6 5 
+202:Bethanie Horton - 3 1 10 8 4 8 3 7 1 2 
+203:Frank Wright - 7 6 8 6 5 2 3 1 1 2 
+204:Marylou Kelley - 5 7 1 8 2 8 8 8 8 4 
+205:Bennett Carter - 4 6 10 10 9 2 9 3 7 7 
+206:Willa Cobb - 1 4 9 1 2 3 6 1 10 5 
+207:Adam Barker - 8 9 4 6 2 3 1 2 7 5 
+208:Naomi Dawson - 1 7 2 9 10 9 5 2 5 4 
+209:Justin Griffin - 10 9 9 1 9 8 8 9 4 9 
+210:Lebron James - 4 8 2 1 8 4 5 10 7 6 
+SE-3
+301:Jared Goodman - 2 1 10 10 7 9 4 5 9 5 
+302:Cassandra Daniel - 10 10 3 6 6 4 4 4 8 5 
+303:Cynthia Jordan - 4 9 1 9 9 1 7 9 2 10 
+304:Quentin Norris - 9 10 8 3 3 9 3 9 10 1 
+305:Mary Spencer - 8 9 2 6 9 7 2 3 5 3 
+306:Reginald Hunter - 6 9 7 3 7 6 4 10 3 5 
+307:Hollie Ferguson - 7 2 9 3 2 2 10 8 7 3 
+308:Nancy Harper - 10 6 3 1 1 4 10 2 9 2 
+309:Cristiano Ronaldo - 10 6 4 3 6 3 6 9 7 8 
+310:Lionel Messi - 8 3 3 10 5 2 10 7 10 9 
