@@ -21,6 +21,9 @@ double Student::getAvearagemark() {
 	for (int i = 0; i < mount; ++i) {
 		sum += this->marks[i];
 	}
+	if (mount == 0) {
+		return 0;
+	}
 	return sum / mount;
 }
 bool Student::isHeadOfGroup() {
