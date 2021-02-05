@@ -5,6 +5,10 @@ void Group::addStudent(Student *s) {
 	students.push_back(s);
 }
 
+void Group::AddStudent(Student* s) {
+	students.push_back(s);
+}
+
 //void Group::chooseHead(int st) {
 //	students[st]->isHead = true;
 //	head = students[st];
@@ -34,24 +38,25 @@ double Group::getAveragemark() {
 	double sum = 0;
 	int size = this->students.size();
 	for (int i = 0; i < size; ++i) {
-		if (!students[i]->getAvearagemark()) {
-			continue;
+		if (students[i]->getAvearagemark()) {
+			sum += students[i]->getAvearagemark();
 		}
-		sum += students[i]->getAvearagemark();
+	}
+	if (size == 0 or sum == 0) {
+		return 0;
 	}
 	return sum / size;
 }
 
-Student* Group::getStudent() {
-	std::string student;
-	std::cin >> student;
+Student* Group::getStudent(std::string student) {
 	if (!containsStudent(student))
 		return NULL;
 	int size = this->students.size();
 	if (student[0] >= '0' or student[0] <= '9') {
 		int idGetToInt = 0;
 		for (int i = 0; i < student.length(); ++i) {
-			idGetToInt = ((int)student[0] - 48) * pow(10, student.length() - i - 1);
+			static_cast<int>(student[0]);
+			idGetToInt = (student[0] - 48) * pow(10, student.length() - i - 1);
 		}
 		for (int i = 0; i < size; ++i) {
 			if (idGetToInt == students[i]->id) {
@@ -69,6 +74,11 @@ Student* Group::getStudent() {
 }
 
 void Group::chooseHead(int number) {
+	students[number]->isHead = true;
+	head = students[number];
+}
+
+void Group::chooseHeadTest(int number) {
 	students[number]->isHead = true;
 	head = students[number];
 }
