@@ -15,15 +15,21 @@ private:
 	std::string title;
 	std::string spec;
 	std::vector<Student*> students;
-	Student* head {};
-	int acadPerform;
+	Student* head;
 	void addStudent(Student* s);
 	void removeStudent(Student* a);
 	void chooseHead(int number);
 public:
+	explicit Group(const std::string& titlE, const std::string& speC) :
+		title(titlE), spec(speC), head(nullptr) {}
+	void chooseHeadTest(int number);
 	double getAveragemark();
-	Student* getStudent();
+	void AddStudent(Student* s);
+	Student* getStudent(std::string student);
 	bool containsStudent(std::string student);
+	Student* getHead() {
+		return head;
+	}
 	bool isEmpty();
 	friend class Deanary;
 };

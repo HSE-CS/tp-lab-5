@@ -1,4 +1,5 @@
 //  Copyright 2020 Baklanov
+
 #ifndef INCLUDE_Student_
 #define INCLUDE_Student_
 
@@ -15,14 +16,16 @@ private:
 	std::string fio;
 	Group *group;
 	std::vector<int> marks;
-	std::string intel = "";
 	void addToGroup(Group& A);
 	bool isHead = 0;
 public:
-	void addmark(int mark);
-	Student(int num, std::string fi, Group* gr, int intellect);
+	Student(int num, std::string fi, Group* gr);
 	Student(int num, std::string fi);
 	double getAvearagemark();
+	void addmark(int mark);
+	std::string getFio() {
+		return fio;
+	}
 	bool isHeadOfGroup();
 	int getId() {
 		return id;

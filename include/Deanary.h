@@ -13,7 +13,7 @@ class Student;
 
 class Deanary {
 private:
-	std::vector<Group> groups;
+	std::vector<Group*> groups;
 public:
 	void createGroups(std::string path);
 	void hireStudents(std::string path);
@@ -24,7 +24,7 @@ public:
 	void initHeads();
 	void fireStudents(int number);
 	Group* getGroup(int number) {
-		return &groups[number];
+		return groups[number];
 	}
 };
 
