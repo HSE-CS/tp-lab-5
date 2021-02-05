@@ -35,6 +35,8 @@ class Group {
   bool isEmpty();
   void printGroup(bool);
   std::string getGroupAsString();
+  std::string getTittle();
+  std::string getSpec();
 };
 
 #endif  // INCLUDE_GROUP_H_
