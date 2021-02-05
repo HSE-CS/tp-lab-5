@@ -11,9 +11,9 @@ Group::Group(std::string new_title, std::string new_spec) {
 }
 
 bool Group::containsStudent(int id) {
-    if(!this->students.empty()){
-        for(int i = 0; i < this->students.size(); i++){
-            if(students[i]->getId() == id){
+    if (!this->students.empty()) {
+        for (int i = 0; i < this->students.size(); i++) {
+            if (students[i]->getId() == id) {
                 return false;
             }
         }
@@ -23,9 +23,9 @@ bool Group::containsStudent(int id) {
 }
 
 bool Group::containsStudent(std::string fio) {
-    if(!this->students.empty()){
-        for(int i = 0; i < this->students.size(); i++){
-            if(students[i]->fio == fio){
+    if (!this->students.empty()) {
+        for (int i = 0; i < this->students.size(); i++) {
+            if (students[i]->fio == fio) {
                 return false;
             }
         }
@@ -35,9 +35,9 @@ bool Group::containsStudent(std::string fio) {
 }
 
 Student* Group::findStudent(int id) {
-    if(!this->students.empty()){
-        for(int i = 0; i < this->students.size(); i++){
-            if(this->students[i]->getId() == id){
+    if (!this->students.empty()) {
+        for (int i = 0; i < this->students.size(); i++) {
+            if (this->students[i]->getId() == id) {
                 return this->students[i];
             }
         }
@@ -46,9 +46,9 @@ Student* Group::findStudent(int id) {
 }
 
 Student* Group::findStudent(std::string fio) {
-    if(!this->students.empty()){
-        for(int i = 0; i < this->students.size(); i++){
-            if(this->students[i]->fio == fio){
+    if (!this->students.empty()) {
+        for (int i = 0; i < this->students.size(); i++) {
+            if (this->students[i]->fio == fio) {
                 return this->students[i];
             }
         }
@@ -57,13 +57,14 @@ Student* Group::findStudent(std::string fio) {
 }
 
 void Group::removeStudent(Student* stud) {
-    if(this->students.size() != 0){
-        if(stud == this->head){
+    if (this->students.size() != 0) {
+        if (stud == this->head) {
             this->head = nullptr;
         }
         std::cout<< stud->fio <<" was deleted"<<std::endl;
         this->students.erase(
-                std::remove(this->students.begin(), this->students.end(), stud),
+                std::remove(this->students.begin(),
+                this->students.end(), stud),
                 this->students.end());
     }
 }
@@ -84,7 +85,7 @@ Student* Group::getHead() {
 double Group::getAverageMark() {
     double marks_sum = 0.0;
     double average;
-    for(int i = 0; i < this->students.size(); i++){
+    for (int i = 0; i < this->students.size(); i++) {
         marks_sum += this->students[i]->getAveragemark();
     }
     average = marks_sum / this->students.size();
@@ -96,8 +97,8 @@ void Group::chooseHead(Student *stud) {
 }
 
 void Group::printHead() {
-    std::cout<<getHead()->group->title<<std::endl;
-    std::cout<<getHead()->getId()<<":"<<getHead()->fio<<std::endl;
+    std::cout << getHead()->group->title<<std::endl;
+    std::cout << getHead()->getId() << ":" << getHead()->fio << std::endl;
 }
 
 
