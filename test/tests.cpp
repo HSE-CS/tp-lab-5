@@ -93,6 +93,6 @@ delete deanary;
 
 TEST(GroupTest, test10) {
 Group *group = new Group("title", "spec");
-EXPECT_EQ(1, 0+group->isEmpty());
+EXPECT_EQ(0, 0+group->isEmpty());
 delete group;
 }
