@@ -21,7 +21,7 @@ class Group {
   void addStudent(Student* s);
   void removeStudent(Student* a);
   void chooseHead(int number);
-	
+
  public:
   explicit Group(const std::string& titlE, const std::string& speC);
   void chooseHeadTest(int number);
@@ -36,4 +36,4 @@ bool isEmpty();
 friend class Deanary;
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_
