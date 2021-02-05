@@ -7,7 +7,7 @@
 
 int main(){
     Deanary dec = Deanary();
-    dec.createGroups("D:\\lab\\Students.txt", "D:\\lab\\Groups.txt");
+    dec.createGroups("Students.txt", "Groups.txt");
     dec.initHeads();
     std::cout<<"------"<<std::endl;
     dec.printGroupsHeads();
