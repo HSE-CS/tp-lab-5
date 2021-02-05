@@ -17,12 +17,15 @@ private:
 	std::vector<int> marks;
 	std::string intel = "";
 	void addToGroup(Group& A);
-	void addmark(int mark);
 	bool isHead = 0;
 public:
 	Student(int num, std::string fi, Group* gr, int intellect);
 	Student(int num, std::string fi);
 	double getAvearagemark();
+	void addmark(int mark);
+	std::string getFio() {
+		return fio;
+	}
 	bool isHeadOfGroup();
 	int getId() {
 		return id;
