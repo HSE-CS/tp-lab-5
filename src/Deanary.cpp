@@ -3,7 +3,7 @@
 #include "Deanary.h"
 #include <fstream>
 #include <vector>
-#include <string>
+#include <cstring>
 #include <cmath>
 
 int id = 0;
@@ -11,7 +11,8 @@ int id = 0;
 int markGetToInt(std::string mark) {
 int intmark = 0;
 for (int i = 0; i < mark.length(); ++i) {
-intmark += ((int)mark[i] - 48) * pow(10, mark.length() - i - 1);
+static_cast<int>(mark[i]);
+intmark += (mark[i] - 48) * pow(10, mark.length() - i - 1);
 }
 return intmark;
 }
@@ -73,7 +74,7 @@ getline(fin, buffer);
 if (buffer[7]) {
 int i = 7;
 std::string mark;
-while(i<buffer.length()) {
+while(i < buffer.length()) {
 while ((buffer[i] != ' ') && (i < buffer.length())) {
 mark.push_back(buffer[i]);
 ++i;
