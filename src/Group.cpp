@@ -3,9 +3,8 @@
 #include "Group.h"
 #include <random>
 
-explicit Group(const std::string& titlE, const std::string& speC) 
-  : title(titlE), spec(speC), head(nullptr), acadPerform(0) 
-{
+explicit Group(const std::string& titlE, const std::string& speC)
+  : title(titlE), spec(speC), head(nullptr), acadPerform(0) {
 }
 
 void Group::addStudent(Student *s) {
