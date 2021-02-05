@@ -19,14 +19,12 @@ return intmark;
 
 void Deanary::createGroups(std::string path) {
 std::ifstream fin;
-Group bufGroup;
+Group bufGroup("something", "something");
 bufGroup.students.reserve(10);
 fin.open(path);
 if (!fin.is_open())
 return;
-std::string buffer;
-std::string NewGroup = "";
-buffer = "♣-♣♣-☼♫";
+std::string buffer = "♣-♣♣-☼♫";
 std::getline(fin, buffer);
 while (buffer != "") {
 bufGroup.title = buffer;
