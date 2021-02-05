@@ -23,14 +23,14 @@ EXPECT_EQ(6, student.getAvearagemark());
 }
 
 TEST(Group, TEST4) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 gr.AddStudent(student);
 EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getStudent("1")->getFio());
 }
 
 TEST(Group, TEST5) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 gr.AddStudent(student);
 gr.chooseHeadTest(0);
@@ -38,7 +38,7 @@ EXPECT_EQ(true, gr.getStudent("1")->isHeadOfGroup());
 }
 
 TEST(Group, TEST6) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 gr.AddStudent(student);
 gr.chooseHeadTest(0);
@@ -46,7 +46,7 @@ EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getHead()->getFio());
 }
 
 TEST(Group, TEST7) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 auto* student2 = new Student(2, "Petrov Petr Petrovich");
 gr.AddStudent(student);
@@ -55,7 +55,7 @@ EXPECT_EQ(0, gr.getAveragemark());
 }
 
 TEST(Group, TEST8) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 auto* student2 = new Student(2, "Petrov Petr Petrovich");
 gr.AddStudent(student);
@@ -78,7 +78,7 @@ EXPECT_EQ(0, dec.getStatistics());
 }
 
 TEST(Group, TEST10) {
-Group gr;
+Group gr("One", "Math");
 auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 auto* student2 = new Student(2, "Petrov Petr Petrovich");
 gr.AddStudent(student);
