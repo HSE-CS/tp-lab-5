@@ -20,10 +20,10 @@ class Group {
     void removeStudent(Student* student_);
 
  public:
-	explicit Group() {
-		this->title = "";
-		this->spec = "";
-		this->head = nullptr;
+    Group() {
+        this->title = "";
+        this->spec = "";
+        this->head = nullptr;
     }
     explicit Group(std::string title_, std::string spec_) {
         this->title = title_;

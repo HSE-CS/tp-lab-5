@@ -27,7 +27,7 @@ TEST(TestDeanary, Test3) {
 
 TEST(TestDeanary, Test4) {
     Deanary dr(3, "data.txt");
-    EXPECT_STREQ("Oleg Komarov", dr.findSudentId(201)->getFio());
+    EXPECT_EQ("Oleg Komarov", dr.findSudentId(201)->getFio());
 }
 
 TEST(TestDeanary, Test5) {

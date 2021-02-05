@@ -15,7 +15,7 @@ class Deanary {
     int count;
 
  public:
-    explicit Deanary();
+    Deanary();
     explicit Deanary(int c, std::string file_name);
     void createGroups(std::vector<Student*>st, std::string file_name);
     std::vector<Student*> hireStudents(std::string filename);

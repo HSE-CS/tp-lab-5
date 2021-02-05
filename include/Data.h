@@ -14,4 +14,4 @@ std::vector<std::string> read_data(std::string filename);
 std::string join(std::vector<int> mk);
 int getid(std::string buff);
 
-#endif  // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DATA_H_

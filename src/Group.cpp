@@ -9,7 +9,7 @@ void Group::addStudent(Student* student_) {
     student_->addToGroup(this);
 }
 void Group::chooseHead() {
-	int head_i = 0;
+    int head_i = 0;
     if (students.size()) {
         head_i = std::rand() % students.size();
     }
@@ -20,7 +20,7 @@ std::string Group::getTitle() {
 }
 void Group::removeStudent(Student* student_) {
     bool head_flag = false;
-    for (int i = 0;i < this->students.size();i++) {
+    for (int i = 0; i < this->students.size(); i++) {
         if (students[i]->getId() == student_->getId()) {
             if (students[i]->getFio() == this->head->getFio())
                  head_flag = true;
@@ -36,23 +36,23 @@ void Group::removeStudent(Student* student_) {
 
 double Group::getAvaragemark() {
     double sum = 0.0;
-	if (students.size()) {
-		for (int i = 0;i < students.size();i++) {
-			sum += students[i]->getAveragemark();
-		}
-		return sum / students.size();
+    if (students.size()) {
+        for (int i = 0; i < students.size(); i++) {
+            sum += students[i]->getAveragemark();
+        }
+        return sum / students.size();
     }
     return 0.0;
 }
 Student* Group::getStudent(int id_) {
-    for (int i = 0;i < students.size();i++) {
+    for (int i = 0; i < students.size(); i++) {
         if (students[i]->getId() == id_)
             return students[i];
     }
     return nullptr;
 }
 bool Group::containsStudents(Student* st) {
-    for (int i = 0;i < students.size();i++) {
+    for (int i = 0; i < students.size(); i++) {
         if (students[i]->getId() == st->id)
             return true;
     }

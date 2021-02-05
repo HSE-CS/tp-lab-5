@@ -5,8 +5,8 @@ std::vector<std::string> read_data(std::string filename) {
     std::string line;
     std::vector<std::string> buff;
     std::ifstream fin(filename);
-	while (getline(fin, line)) {
-		buff.push_back(line);
+    while (getline(fin, line)) {
+        buff.push_back(line);
     }
     fin.close();
     return buff;
@@ -24,24 +24,24 @@ std::vector<int> getmarks(std::string buff) {
 }
 std::string join(std::vector<int> mk) {
     std::string res;
-    for (int i = 0;i < mk.size();i++) {
+    for (int i = 0; i < mk.size(); i++) {
         res = res + std::to_string(mk[i]) + ',';
     }
     return res + ';';
 }
 std::string getfio(std::string buff) {
-	std::string fio;
-	int ind = buff.find(" - ");
-	fio = buff.substr(4, ind - 4);
-	return fio;
+    std::string fio;
+    int ind = buff.find(" - ");
+    fio = buff.substr(4, ind - 4);
+    return fio;
 }
 int getid(std::string buff) {
     std::string id;
     int ind = 0;
-    for (int i = 0;i < buff.size();i++) {
+    for (int i = 0; i < buff.size(); i++) {
         if (isspace(buff[i])) {
             ind = i;
-			break;
+            break;
         }
     }
     id = buff.substr(0, ind);
