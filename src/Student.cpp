@@ -31,3 +31,19 @@ Student::Student(int id, std::string fio) {
   this->fio = fio;
   this->group = nullptr;
 }
+
+int Student::GetId() const {
+  return id;
+}
+
+Group *Student::GetGroup() const {
+  return group;
+}
+
+const std::string &Student::GetFio() const {
+  return fio;
+}
+
+const std::vector<int> &Student::GetMarks() const {
+  return marks;
+}

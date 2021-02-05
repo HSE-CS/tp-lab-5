@@ -55,3 +55,16 @@ Group::Group(std::string title, std::string spec) {
   this->title = title;
   this->spec = spec;
 }
+
+Student *Group::GetHead() const {
+  return head;
+}
+const std::string &Group::GetSpec() const {
+  return spec;
+}
+const std::string &Group::GetTitle() const {
+  return title;
+}
+const std::vector<Student *> &Group::GetStudents() const {
+  return students;
+}

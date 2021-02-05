@@ -24,12 +24,16 @@ class Group {
   bool isEmpty();
   void chooseHeadmen();
   double getAverageMark();
+  Student *GetHead() const;
   Student * getStudent(int id);
   void setStudent(Student *student);
+  const std::string &GetSpec() const;
+  const std::string &GetTitle() const;
   void removeStudent(Student *student);
   Student * getStudent(std::string fio);
   std::vector<Student *> includeStudents();
   Group(std::string title, std::string spec);
+  const std::vector<Student *> &GetStudents() const;
 };
 
 #endif  // INCLUDE_GROUP_H_
