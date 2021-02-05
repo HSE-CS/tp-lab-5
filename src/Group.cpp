@@ -1,9 +1,10 @@
 //  Copyright © 2021 Ksuvot. All rights reserved.
 
 #include "Group.h"
-#include <ctime>
-#include <random>
+#include <algorithm>
 #include <iterator>
+#include <random>
+#include <ctime>
 
 bool Group::isEmpty() {
   return students.size() ? true : false;
