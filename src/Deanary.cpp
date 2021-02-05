@@ -111,11 +111,15 @@ double Deanary::getStatistics() {
 	for (int i = 0; i < this->groups.size(); ++i) {
 			//std::cout << groups[i].students[j]->fio << std::endl;
 		if (groups[i].getAveragemark()) {
-			sum += groups[i].getAveragemark();
-			++mount;
+			if (groups[i].getAveragemark()) {
+				sum += groups[i].getAveragemark();
+				++mount;
+			}
 		}
 	}
-	std::cout << sum / mount << std::endl;
+	if (mount == 0) {
+		return 0;
+	}
 	return sum / mount;
 }
 
