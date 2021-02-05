@@ -11,7 +11,7 @@ int id = 0;
 int markGetToInt(std::string mark) {
     int intmark = 0;
     for (int i = 0; i < mark.length(); ++i) {
-        intmark += (static_cast<int>(mark[i]) - 48) 
+        intmark += (static_cast<int>(mark[i]) - 48)
         * pow(10, mark.length() - i - 1);
     }
     return intmark;
