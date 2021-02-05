@@ -9,7 +9,7 @@
 class Group;
 
 class Student {
-private:
+ private:
   int id;
   std::vector<int> marks;
   Group* group;
@@ -19,7 +19,7 @@ private:
   friend class Deanary;
   friend class Group;
 
-public:
+ public:
   Student(int curr_id, std::string fullName);
   double getAveragemark();
   bool  isHeadOfGroup();
@@ -27,5 +27,5 @@ public:
   std::string getFIO();
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
 

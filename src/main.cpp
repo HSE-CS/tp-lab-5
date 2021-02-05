@@ -5,13 +5,13 @@
 #include "Deanary.h"
 #include "Student.h"
 
-int main(){
+int main() {
     Deanary dec = Deanary();
     dec.createGroups("Students.txt", "Groups.txt");
     dec.initHeads();
-    std::cout<<"------"<<std::endl;
+    std::cout << "------" << std::endl;
     dec.printGroupsHeads();
-    std::cout<<"------"<<std::endl;
+    std::cout << "------" << std::endl;
     dec.addMarksToAll();
     dec.fireStudents();
     dec.getStatistics();

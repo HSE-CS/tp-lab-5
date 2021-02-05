@@ -17,11 +17,11 @@ class Deanary {
  public:
     Deanary();
   void fireStudents();
-  Group* hireStudents(std::string StudentFile, 
+  Group* hireStudents(std::string StudentFile,
                       Group *someGroup, std::string groupId);
   void createGroups(std::string StudentsFile, std::string GroupsFile);
   void addMarksToAll();
-  void moveStudent(const Student& student,const Group& other_group);
+  void moveStudent(const Student& student , const Group& other_group);
   void getStatistics();
   void saveStuff(std::string filePath);
   void initHeads();
@@ -31,4 +31,4 @@ class Deanary {
 };
 
 
-#endif // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

@@ -21,9 +21,9 @@ void Deanary::createGroups(std::string StudentsFile, std::string GroupsFile) {
     std::cout << this->number_of_groups << std::endl;
     for (int i = 0; i < this->number_of_groups; i++) {
         this->groups.push_back(this->hireStudents(StudentsFile,
-                                                  new Group(read.groups[i].second, 
-                                                  read.groups[i].first),
-                                                  std::to_string(i + 1)));
+                               new Group(read.groups[i].second,
+                               read.groups[i].first),
+                               std::to_string(i + 1)));
     }
 }
 
@@ -31,7 +31,7 @@ void Deanary::addMarksToAll() {
     for (int i = 0; i < this->number_of_groups; i++) {
         for (int j = 0; j < this->groups[i]->students.size(); j++) {
             for (int k = 0; k < number_of_marks; k++) {
-                int t = 1 + rand_r() % 10;
+                int t = 1 + std::rand() % 10;
                 this->groups[i]->students[j]->addMark(t);
             }
         }
@@ -40,7 +40,7 @@ void Deanary::addMarksToAll() {
 
 void Deanary::initHeads() {
     for (int i = 0; i < this->number_of_groups; i++) {
-        int stud = 0 + rand() % this->groups[i]->students.size();
+        int stud = 0 + std::rand() % this->groups[i]->students.size();
         this->groups[i]->chooseHead(this->groups[i]->students.at(stud));
     }
 }
@@ -52,8 +52,9 @@ Group* Deanary::hireStudents(std::string StudentFile, Group *someGroup,
     for (int j = 0; j < Students.names.size(); j++) {
         if (Students.names[j].first[0] == Students.ids[j].second[0]
            && Students.names[j].first[0] == groupId[0]){
-            someGroup->addStudent(new Student(atoi(Students.ids[j].second.c_str()),
-                                  Students.names[j].second));
+        someGroup->addStudent(new Student(
+        atoi(Students.ids[j].second.c_str()),
+        Students.names[j].second));
         }
     }
     return someGroup;
@@ -65,18 +66,18 @@ void Deanary::fireStudents() {
             double stud_aver = this->groups[i]->students.at(j)->getAveragemark();
             if (stud_aver < 3.5) {
                 if (this->groups[i]->students.at(j)->isHeadOfGroup()) {
-                    int stud = 0 + rand() % this->groups[i]->students.size();
-                    groups[i]->removeStudent(this->groups[i]->students.at(j));
-                    this->groups[i]->chooseHead(this->groups[i]->students.at(stud));
+                int stud = 0 + std::rand() % this->groups[i]->students.size();
+                groups[i]->removeStudent(this->groups[i]->students.at(j));
+                this->groups[i]->chooseHead(this->groups[i]->students.at(stud));
                 } else {
-                    groups[i]->students.erase(this->groups[i]->students.begin() + j);
+                groups[i]->students.erase(this->groups[i]->students.begin() + j);
                 }
             }
         }
     }
 }
 
-void Deanary::moveStudent(Student &student, Group &other_group) {
+void Deanary::moveStudent(static Student &student, static Group &other_group) {
     for (auto group : groups) {
         if (group == &other_group) {
             if (!group->containsStudent(student.getId())) {
@@ -97,15 +98,15 @@ void Deanary::moveStudent(Student &student, Group &other_group) {
 }
 
 void Deanary::getStatistics() {
-    std::cout << "Mark statistics:"<< std::endl;
+    std::cout << "Mark statistics:" << std::endl;
     for (auto group : groups) {
         for (auto student : group->students) {
-            std::cout<<student->fio <<" has average mark: "
+            std::cout << student->fio <<" has average mark: "
             << student->getAveragemark() << std::endl;
         }
     }
 
-    for(auto group : groups){
+    for(auto group : groups) {
         std::cout<<group->title << " has average mark: "
         << group->getAverageMark() << std::endl;
     }

@@ -61,7 +61,8 @@ void Group::removeStudent(Student* stud) {
         if (stud == this->head) {
             this->head = nullptr;
         }
-        std::cout<< stud->fio <<" was deleted"<<std::endl;
+        std::cout << stud->fio << " was deleted"
+        << std::endl;
         this->students.erase(
                 std::remove(this->students.begin(),
                 this->students.end(), stud),
@@ -97,8 +98,9 @@ void Group::chooseHead(Student *stud) {
 }
 
 void Group::printHead() {
-    std::cout << getHead()->group->title<<std::endl;
-    std::cout << getHead()->getId() << ":" << getHead()->fio << std::endl;
+    std::cout << getHead()->group->title << std::endl;
+    std::cout << getHead()->getId() << ":"
+    << getHead()->fio << std::endl;
 }
 
 
@@ -106,7 +108,7 @@ int Group::getNumStudents() {
     return this->students.size();
 }
 
-std::string Group::getTitle(){
+std::string Group::getTitle() {
     return this->title;
 }
 

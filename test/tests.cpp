@@ -54,10 +54,11 @@ TEST(DeanaryTest, Test9) {
   Deanary decanat;
   decanat.createGroups("Students.txt", "Groups.txt");
   decanat.addMarksToAll();
-  EXPECT_TRUE(decanat.getGroup(0).getAverageMark() <=6 && decanat.getGroup(0).getAverageMark() > 0);
+  EXPECT_TRUE(decanat.getGroup(0).getAverageMark() <=6
+          && decanat.getGroup(0).getAverageMark() > 0);
 }
 
 TEST(HeadTest, Test10) {
   Student stud(101, "Osmanov Islam");
-  EXPECT_EQ(false,stud.isHeadOfGroup());
+  EXPECT_EQ(false, stud.isHeadOfGroup());
 }

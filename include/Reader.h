@@ -1,15 +1,17 @@
-#ifndef WORK_READER_H
-#define WORK_READER_H
+// Copyright 2020 Osmanov Islam
+#ifndef INCLUDE_READER_H
+#define INCLUDE_READER_H
 
 #include <iostream>
 #include <vector>
 #include <string>
+#include <utility>
 #include <algorithm>
 #include "Deanary.h"
 
 
-class Reader{
-public:
+class Reader {
+  public:
     std::vector <std::pair<std::string, std::string>> names;
     int num_groups = 0;
     std::string spec;
@@ -21,4 +23,5 @@ public:
     void GroupsReader(std::string fileName);
 };
 
-#endif //WORK_READER_H
+
+#endif  //INCLUDE_READER_H
