@@ -57,5 +57,5 @@ TEST(DeanaryTest, Test9) {
 
 TEST(HeadTest, Test10) {
 	Student stud(101, "Osmanov Islam");
-	EXPECT_FALSE(stud.isHeadOfGroup);
+	EXPECT_EQ(false,stud.isHeadOfGroup);
 }
