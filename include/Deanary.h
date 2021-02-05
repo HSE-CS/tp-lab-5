@@ -24,4 +24,4 @@ class Deanary {
   void moveStudent(Student *student, Group *group);
 };
 
-#endif // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

@@ -7,7 +7,8 @@
 #include "Deanary.h"
 
 void Deanary::saveData() {
-  std::ofstream groupList("C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\List_of_groups.txt");
+  std::ofstream groupList(
+      "C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\List_of_groups.txt");
   if (groupList.is_open()) {
     for (auto group : groups) {
       groupList << group->title << "\n";
@@ -15,7 +16,8 @@ void Deanary::saveData() {
   }
 
   for (auto group : groups) {
-    std::ofstream studentsList("C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\" + group->title + ".txt");
+    std::ofstream studentsList(
+        "C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\" + group->title + ".txt");
     for (auto student : group->students)
       studentsList << student->fio << "\n";
   }
@@ -23,11 +25,12 @@ void Deanary::saveData() {
 
 void Deanary::initHeadmen() {
   for (auto group : groups)
-    group->chooseHead();
+    group->chooseHeadmen();
 }
 
 void Deanary::createGroups() {
-  std::ifstream groupsList("C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\List_of_groups.txt");
+  std::ifstream groupsList(
+      "C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\List_of_groups.txt");
   if (groupsList.is_open()) {
     while (!groupsList.eof()) {
       std::string name;
@@ -49,7 +52,8 @@ void Deanary::getStatistics() {
 
 void Deanary::createStudents() {
   for (auto group : groups) {
-    std::ifstream students("C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\" + group->title + ".txt");
+    std::ifstream students(
+        "C:\\Repositories\\Shtanyuk PO\\tp-lab-5\\data\\" + group->title + ".txt");
     if (students.is_open()) {
       int i = 0;
       while (!students.eof()) {
@@ -57,7 +61,7 @@ void Deanary::createStudents() {
         students.getline(name, 9999, '\n');
         if (name[0] == '\0')
           continue;
-        group->addStudent(new Student(i++, std::string(name)));
+        group->setStudent(new Student(i++, std::string(name)));
       }
     }
   }
@@ -80,5 +84,5 @@ void Deanary::expulsionStudents() {
 
 void Deanary::moveStudent(Student *student, Group *group) {
   student->group->removeStudent(student);
-  group->addStudent(student);
+  group->setStudent(student);
 }

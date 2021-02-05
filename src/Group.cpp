@@ -1,8 +1,8 @@
 //  Copyright © 2021 Ksuvot. All rights reserved.
 
+#include "Group.h"
 #include <ctime>
 #include <random>
-#include "Group.h"
 #include <iterator>
 
 bool Group::isEmpty() {
