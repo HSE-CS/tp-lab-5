@@ -70,31 +70,19 @@ TEST(Group, TEST8) {
 }
 
 
-TEST(Student, TEST10) {
+TEST(Student, TEST9) {
 	Deanary dec;
 	dec.createGroups("Groups.txt");
 	dec.hireStudents("Students.txt");
 	EXPECT_EQ(0, dec.getStatistics());
 }
 
-TEST(Student, TEST11) {
-	Deanary dec;
-	dec.createGroups("Groups.txt");
-	dec.hireStudents("Students.txt");
-	Group* a = dec.getGroup(0);
-	EXPECT_EQ("Owen Joseph Charles", a->getStudent("1")->getFio());
-}
-
-TEST(Student, TEST12) {
-	Deanary dec;
-	dec.createGroups("Groups.txt");
-	dec.hireStudents("Students.txt");
-	Group* gr = dec.getGroup(0);
-	gr->getStudent("1")->addmark(1);
-	gr->getStudent("1")->addmark(3);
-	gr->getStudent("1")->addmark(5);
-	gr->getStudent("2")->addmark(1);
-	gr->getStudent("2")->addmark(3);
-	gr->getStudent("2")->addmark(5);
-	EXPECT_EQ(3, dec.getStatistics());
+TEST(Group, TEST10) {
+	Group gr;
+	auto* student = new Student(1, "Ivanov Ivan Ivanovich");
+	auto* student2 = new Student(2, "Petrov Petr Petrovich");
+	gr.AddStudent(student);
+	gr.AddStudent(student2);
+	gr.chooseHeadTest(1);
+	EXPECT_EQ("Petrov Petr Petrovich", gr.getHead()->getFio());
 }
