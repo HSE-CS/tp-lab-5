@@ -31,7 +31,7 @@ if (students[i]->getAvearagemark()) {
 sum += students[i]->getAvearagemark();
 }
 }
-if (size == 0 or sum == 0) {
+if ((size == 0) || (sum == 0)) {
 return 0;
 }
 return sum / size;
@@ -44,7 +44,8 @@ int size = this->students.size();
 if ((student[0] >= '0') || (student[0] <= '9')) {
 int idGetToInt = 0;
 for (int i = 0; i < student.length(); ++i) {
-idGetToInt = ((int)student[0] - 48) * pow(10, student.length() - i - 1);
+static_cast<int>(student[0]);
+idGetToInt = (student[0] - 48) * pow(10, student.length() - i - 1);
 }
 for (int i = 0; i < size; ++i) {
 if (idGetToInt == students[i]->id) {
@@ -75,7 +76,8 @@ int size = this->students.size();
 if ((student[0] >= '0') || (student[0] <= '9')) {
 int idGetToInt = 0;
 for (unsigned int i = 0; i < student.length(); ++i) {
-idGetToInt = ((int)student[0] - 48) * pow(10, student.length() - i - 1);
+static_cast<int>(student[0]);
+idGetToInt = (student[0] - 48) * pow(10, student.length() - i - 1);
 }
 for (int i = 0; i < size; ++i) {
 if (idGetToInt == students[i]->id) {
