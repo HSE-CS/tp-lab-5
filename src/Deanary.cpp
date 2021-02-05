@@ -67,7 +67,7 @@ void Deanary::addMarksToAll(std::string gr) {
     Group* group = findGroupTitle(gr);
     if (group != nullptr) {
         for (int i = 0; i < group->students.size(); i++) {
-            std::cout << group->students[i]->getId() << " " 
+            std::cout << group->students[i]->getId() << " "
                 << group->students[i]->getFio() << "\n";
             std::cin >> mark;
             group->students[i]->addmark(mark);
@@ -83,7 +83,7 @@ void Deanary::getStatistic() {
             std::cout << groups[i].students[j]->getFio() << " - "
                  << statictic << std::endl;
         }
-        std::cout << "Group  statistic:" << groups[i].getAvaragemark() 
+        std::cout << "Group  statistic:" << groups[i].getAvaragemark()
             << std::endl;
     }
 }
@@ -91,8 +91,8 @@ void Deanary::printGroups() {
     for (int i = 0; i < this->count; i++) {
         std::cout << groups[i].title << "\n" << groups[i].spec << "\n";
         for (int j = 0; j < groups[i].students.size(); j++) {
-            std::cout << groups[i].students[j]->getId() << " " 
-                << groups[i].students[j]->getFio() << " - " 
+            std::cout << groups[i].students[j]->getId() << " "
+                << groups[i].students[j]->getFio() << " - "
                 << join(groups[i].students[j]->marks) << "\n";
         }
         std::cout << "\n";
@@ -111,7 +111,7 @@ void Deanary::moveStudents(int id_, std::string gr) {
     bool head_flag = false;
     Student* student = findSudentId(id_);
     Group* now_group = student->group;
-    int	new_group = 0;
+    int new_group = 0;
     for (int i = 0; i < this->count; i++) {
         if (groups[i].getTitle() == gr) {
             new_group = i;

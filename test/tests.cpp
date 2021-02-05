@@ -45,8 +45,8 @@ TEST(TestDeanary, Test6) {
 }
 
 TEST(TestDeanary, Test7) {
-	Deanary dr(3, "data.txt");
-	EXPECT_EQ(5.0, dr.findSudentId(201)->getAveragemark());
+    Deanary dr(3, "data.txt");
+    EXPECT_EQ(5.0, dr.findSudentId(201)->getAveragemark());
 }
 
 TEST(TestDeanary, Test8) {
@@ -55,8 +55,8 @@ TEST(TestDeanary, Test8) {
 }
 
 TEST(TestDeanary, Test9) {
-	Student st(203, "Igumnova Natasha", nullptr, { 5, 3, 4 });
-	EXPECT_EQ(false, st.isHeadOfGroup());
+    Student st(203, "Igumnova Natasha", nullptr, { 5, 3, 4 });
+    EXPECT_EQ(false, st.isHeadOfGroup());
 }
 
 TEST(TestDeanary, Test10) {

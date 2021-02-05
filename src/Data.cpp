@@ -14,7 +14,6 @@ std::vector<std::string> read_data(std::string filename) {
 std::vector<int> getmarks(std::string buff) {
     std::vector<int> marks;
     int i = buff.find('-') + 2;
-    std::cout << i << '\n';
     while (buff[i] != ';') {
         if (buff[i] != ',')
             marks.push_back((buff[i] - '0'));
