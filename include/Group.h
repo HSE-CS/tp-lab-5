@@ -13,7 +13,7 @@ class Student;
 
 class Group {
  private:
-std::string title;
+std::string title = "";
 std::string spec;
 std::vector<Student*> students;
 Student* head {};
