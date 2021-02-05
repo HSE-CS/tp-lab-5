@@ -57,7 +57,7 @@ student2.setMark(7);
 EXPECT_EQ(8.5, student2.getAverageMark());
 }
 
-TEST(DeanaryTest, test9) {
+/*TEST(DeanaryTest, test9) {
 Group group3("title", "spec");
 Student student4(8, "name");
 student4.setMark(10);
@@ -81,4 +81,4 @@ group4.setStudent(&student5);
 Deanary denary1;
 denary1.createGroups();
 EXPECT_EQ(8.5, denary1.getStatistics());
-}
+}*/
