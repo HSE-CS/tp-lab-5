@@ -20,67 +20,71 @@ EXPECT_EQ("Ksuvot", student->GetFio());
 delete student;
 }
 
-/*TEST(StudentTest, test3) {
-Student student(1, "Ksuvot");
-EXPECT_EQ(0, student.GetMarks());
+TEST(StudentTest, test3) {
+Student *student = new Student(0, "Ksuvot");
+EXPECT_EQ(0, student->GetMarks());
+delete student;
 }
 
 TEST(GroupTest, test4) {
-Group group("title", "spec");
-EXPECT_EQ("spec", group.GetSpec());
+Group *group = new Group("title", "spec");
+EXPECT_EQ("spec", group->GetSpec());
+delete group;
 }
 
 TEST(GroupTest, test5) {
-Group group("title", "spec");
-EXPECT_EQ("title", group.GetTitle());
+Group *group = new Group("title", "spec");
+EXPECT_EQ("title", group->GetTitle());
+delete group;
 }
 
 TEST(GroupTest, test6) {
-Group group1("title", "spec");
-Student student1(11, "name");
-group1.setStudent(&student1);
-group1.chooseHeadmen();
-EXPECT_EQ("name", group1.GetHead()->GetFio());
+Group *group = new Group("title", "spec");
+Student *student = new Student(1, "name");
+group->setStudent(student);
+group->chooseHeadmen();
+EXPECT_EQ("name", group->GetHead()->GetFio());
+delete group;
+delete student;
 }
 
 TEST(GroupTest, test7) {
-Group group2("title", "spec");
-Student student3(1, "name");
-group2.setStudent(&student3);
-EXPECT_EQ("name", group2.getStudent(1)->GetFio());
+Group *group = new Group("title", "spec");
+Student *student = new Student(1, "name");
+group->setStudent(student);
+EXPECT_EQ("name", group->getStudent(1)->GetFio());
+delete group;
+delete student;
 }
 
 TEST(StudentTest, test8) {
-Student student2(121, "name");
-student2.setMark(10);
-student2.setMark(9);
-student2.setMark(8);
-student2.setMark(7);
-EXPECT_EQ(8.5, student2.getAverageMark());
-}*/
+Student *student = new Student(1, "name");
+student->setMark(10);
+student->setMark(9);
+student->setMark(8);
+student->setMark(7);
+EXPECT_EQ(8.5, student->getAverageMark());
+delete student;
+}
 
-/*TEST(DeanaryTest, test9) {
-Group group3("title", "spec");
-Student student4(8, "name");
-student4.setMark(10);
-student4.setMark(9);
-student4.setMark(8);
-student4.setMark(7);
-group3.setStudent(&student4);
-Deanary deanary;
-deanary.createGroups();
-EXPECT_EQ(8.5, deanary.getStatistics());
+TEST(DeanaryTest, test9) {
+Group *group = new Group("title", "spec");
+Student *student = new Student(1, "name");
+student->setMark(10);
+student->setMark(9);
+student->setMark(8);
+student->setMark(7);
+group->setStudent(student);
+Deanary *deanary = new Deanary();
+deanary->createGroups();
+EXPECT_EQ(8.5, deanary->getStatistics());
+delete group;
+delete student;
+delete deanary;
 }
 
 TEST(DeanaryTest, test10) {
-Group group4("title", "spec");
-Student student5(101, "name");
-student5.setMark(10);
-student5.setMark(9);
-student5.setMark(8);
-student5.setMark(7);
-group4.setStudent(&student5);
-Deanary denary1;
-denary1.createGroups();
-EXPECT_EQ(8.5, denary1.getStatistics());
-}*/
+Group *group = new Group("title", "spec");
+EXPECT_EQ(1, 0+group->isEmpty());
+delete group;
+}
