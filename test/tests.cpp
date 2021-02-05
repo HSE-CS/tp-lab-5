@@ -5,7 +5,7 @@
 // #include "../Students/Deanary.cpp"
 // #include "../Students/Group.cpp"
 // #include "../Students/Student.cpp"
-#include "DataReader.h"
+#include "Data.h"
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
