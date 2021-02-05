@@ -24,7 +24,7 @@ public:
 	void initHeads();
 	void fireStudents(int number);
 	Group* getGroup(int number) {
-		return *groups[number];
+		return &groups[number];
 	}
 };
 
