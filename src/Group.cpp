@@ -38,10 +38,12 @@ double Group::getAveragemark() {
 	double sum = 0;
 	int size = this->students.size();
 	for (int i = 0; i < size; ++i) {
-		if (!students[i]->getAvearagemark()) {
-			continue;
+		if (students[i]->getAvearagemark()) {
+			sum += students[i]->getAvearagemark();
 		}
-		sum += students[i]->getAvearagemark();
+	}
+	if (size == 0 or sum == 0) {
+		return 0;
 	}
 	return sum / size;
 }
