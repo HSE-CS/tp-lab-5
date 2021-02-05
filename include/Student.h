@@ -18,7 +18,7 @@ class Student {
   void getInfo();
   void printMarks();
   double getAverageMark();
-  void addMarkToStudent(int);
+
  private:
   //private variables
   unsigned id;
@@ -28,7 +28,7 @@ class Student {
   bool isHead;
   //private methods
   void makeHead();
-
+  void addMarkToStudent(int);
   void addToGroup(Group* destinationGroup);
   friend class Group;
 };

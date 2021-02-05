@@ -53,22 +53,22 @@ int main() {
   delimiter();
   group.printInfoAboutGroup();  // working
   delimiter();
-  std::cout << "===TEST OF .GETAVERAGEGROUPMARK()\n";
-  std::cout << "*add second student\n";
+  //std::cout << "===TEST OF .GETAVERAGEGROUPMARK()\n";
+  //std::cout << "*add second student\n";
   Student test2(1, "Nam Surname");
   group.addStudentToGroup(&test2);
   group.printInfoAboutGroup();  // working
-  delimiter();
-  std::cout << "If students in the group have no marks average mark is ";
-  std::cout << group.getAverageGroupMark() << std::endl;  // working
-  delimiter();
-  for (size_t i = 0; i < 5; ++i) {
-    test1.addMarkToStudent(i + 5);
-    test2.addMarkToStudent(i + 3);
-  }
-  std::cout << "If students in the group have marks average mark is ";
-  std::cout << group.getAverageGroupMark() << std::endl;  // working
-  delimiter();
+  //delimiter();
+  //std::cout << "If students in the group have no marks average mark is ";
+  //std::cout << group.getAverageGroupMark() << std::endl;  // working
+  //delimiter();
+  //for (size_t i = 0; i < 5; ++i) {
+  //  test1.addMarkToStudent(i + 5);
+  //  test2.addMarkToStudent(i + 3);
+  //}
+  //std::cout << "If students in the group have marks average mark is ";
+  //std::cout << group.getAverageGroupMark() << std::endl;  // working
+  //delimiter();
   std::cout << "\n\n";
   std::cout << "===Test of changing head of group\n";
   group.setHead(&test2);  //fully working
