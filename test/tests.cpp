@@ -89,10 +89,10 @@ EXPECT_EQ(8.5, deanary->getStatistics());
 delete group;
 delete student;
 delete deanary;
-}
+}*/
 
-TEST(DeanaryTest, test10) {
+TEST(GroupTest, test10) {
 Group *group = new Group("title", "spec");
 EXPECT_EQ(1, 0+group->isEmpty());
 delete group;
-}*/
+}
