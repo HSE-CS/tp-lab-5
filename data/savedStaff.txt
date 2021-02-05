@@ -1,0 +1,32 @@
+Group1 HSE_PI_1
+1 Antonova Anastasiia Egorovna
+2 Bezrukova Anastasiia Artemovna
+3 Beliakova Elizaveta Artemevna
+4 Biriukova Aleksandra Vladislavovna
+6 Gusev Matvei Glebovich
+7 Gusev Daniil Daniilovich
+8 Dmitrieva Aleksandra Kirillovna
+10 Egorov Arsenii Timurovich
+
+Group2 HSE_PI_2
+11 Efimova Polina Mikhailovna
+12 Kalinin Demid Adamovich
+13 Kniazev Maksim Matveevich
+14 Kuznetsova Anna Artemovna
+15 Latyshev Lev Mikhailovich
+16 Meshcheriakova Sofiia Alekseevna
+17 Muratov Mikhail Denisovich
+18 Naumov Nikita Daniilovich
+19 Novikov Artem Petrovich
+20 Potapov Aleksandr Aleksandrovich
+
+Group3 HSE_PI_3
+21 Rozanova Aleksandra Artemovna
+22 Samoilov Makar Mikhailovich
+24 Fedorova Milana Vadimovna
+25 Filippova Sofiia Igorevna
+26 Frolov Artem Evgenevich
+28 Sharov Stepan Ruslanovich
+29 Iakovlev Andrey Ivanovich
+30 Iakovleva Sergey Mikhailovna
+
