@@ -1,6 +1,6 @@
 // Copyright 2020 Osmanov Islam
-#ifndef INCLUDE_READER_H
-#define INCLUDE_READER_H
+#ifndef INCLUDE_READER_H_
+#define INCLUDE_READER_H_
 
 #include <iostream>
 #include <vector>
@@ -11,7 +11,7 @@
 
 
 class Reader {
-  public:
+ public:
     std::vector <std::pair<std::string, std::string>> names;
     int num_groups = 0;
     std::string spec;
@@ -24,4 +24,4 @@ class Reader {
 };
 
 
-#endif  //INCLUDE_READER_H
+#endif  // INCLUDE_READER_H_

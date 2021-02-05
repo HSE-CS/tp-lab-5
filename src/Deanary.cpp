@@ -77,7 +77,7 @@ void Deanary::fireStudents() {
     }
 }
 
-void Deanary::moveStudent(static Student &student, static Group &other_group) {
+void Deanary::moveStudent(const Student &student, const Group &other_group) {
     for (auto group : groups) {
         if (group == &other_group) {
             if (!group->containsStudent(student.getId())) {
