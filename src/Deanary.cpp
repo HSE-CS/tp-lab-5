@@ -45,13 +45,13 @@ void Deanary::initHeads() {
     }
 }
 
-Group* Deanary::hireStudents(std::string StudentFile, Group *someGroup, 
+Group* Deanary::hireStudents(std::string StudentFile, Group *someGroup,
                              std::string groupId) {
     Reader Students;
     Students.StudentsReader(StudentFile);
     for (int j = 0; j < Students.names.size(); j++) {
         if (Students.names[j].first[0] == Students.ids[j].second[0]
-           && Students.names[j].first[0] == groupId[0]){
+           && Students.names[j].first[0] == groupId[0]) {
         someGroup->addStudent(new Student(
         atoi(Students.ids[j].second.c_str()),
         Students.names[j].second));
@@ -77,7 +77,7 @@ void Deanary::fireStudents() {
     }
 }
 
-void Deanary::moveStudent(const Student &student, const Group &other_group) {
+void Deanary::moveStudent(Student &student, Group &other_group) {
     for (auto group : groups) {
         if (group == &other_group) {
             if (!group->containsStudent(student.getId())) {
@@ -106,8 +106,8 @@ void Deanary::getStatistics() {
         }
     }
 
-    for(auto group : groups) {
-        std::cout<<group->title << " has average mark: "
+    for (auto group : groups) {
+        std::cout << group->title << " has average mark: "
         << group->getAverageMark() << std::endl;
     }
 }
@@ -128,8 +128,8 @@ void Deanary::saveStuff(std::string filePath) {
                 for (auto mark : student->marks) {
                     marks = marks + std::to_string(mark) + " ";
                 }
-                DeanFile << std::to_string(student->getId())<<":"
-                <<student->getFIO()<<" -"<<marks<<"\n";
+                DeanFile << std::to_string(student->getId()) << ":"
+                << student->getFIO() << " -" << marks << "\n";
             }
         }
     }

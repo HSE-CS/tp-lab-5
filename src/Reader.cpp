@@ -1,5 +1,4 @@
-// Created by islam on 02.02.2021.
-
+// Copyright 2020 Osmanov Islam
 #include <iostream>
 #include <string>
 #include <vector>

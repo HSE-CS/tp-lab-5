@@ -1,3 +1,4 @@
+// Copyright 2020 Osmanov Islam
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
