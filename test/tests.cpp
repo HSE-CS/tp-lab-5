@@ -26,7 +26,7 @@ TEST(Group, TEST4) {
 	Group gr;
 	auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 	gr.AddStudent(student);
-	EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getStudent(0)->fio);
+	EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getStudent(0)->getFio());
 }
 
 TEST(Group, TEST5) {
@@ -34,7 +34,7 @@ TEST(Group, TEST5) {
 	auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 	gr.AddStudent(student);
 	gr.chooseHead(0);
-	EXPECT_EQ(true, gr.getStudent(0)->isHead);
+	EXPECT_EQ(true, gr.getStudent(0)->isHeadOfGroup());
 }
 
 TEST(Group, TEST6) {
@@ -42,7 +42,7 @@ TEST(Group, TEST6) {
 	auto* student = new Student(1, "Ivanov Ivan Ivanovich");
 	gr.AddStudent(student);
 	gr.chooseHeadTest(0);
-	EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getHead()->fio);
+	EXPECT_EQ("Ivanov Ivan Ivanovich", gr.getHead()->getFio());
 }
 
 TEST(Group, TEST7) {
@@ -82,7 +82,7 @@ TEST(Student, TEST11) {
 	dec.createGroups("Groups.txt");
 	dec.hireStudents("Students.txt");
 	Group* a = dec.getGroup(0);
-	EXPECT_EQ("Owen Joseph Charles", a.getStudent(0)->fio);
+	EXPECT_EQ("Owen Joseph Charles", a.getStudent(0)->getFio());
 }
 
 TEST(Student, TEST12) {
