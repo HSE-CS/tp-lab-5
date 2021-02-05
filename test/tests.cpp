@@ -82,7 +82,7 @@ TEST(Student, TEST11) {
 	dec.createGroups("Groups.txt");
 	dec.hireStudents("Students.txt");
 	Group* a = dec.getGroup(0);
-	EXPECT_EQ("Owen Joseph Charles", a.getStudent("1")->getFio());
+	EXPECT_EQ("Owen Joseph Charles", a->getStudent("1")->getFio());
 }
 
 TEST(Student, TEST12) {
@@ -90,11 +90,11 @@ TEST(Student, TEST12) {
 	dec.createGroups("Groups.txt");
 	dec.hireStudents("Students.txt");
 	Group* gr = dec.getGroup(0);
-	gr.getStudent("1")->addmark(1);
-	gr.getStudent("1")->addmark(3);
-	gr.getStudent("1")->addmark(5);
-	gr.getStudent("2")->addmark(1);
-	gr.getStudent("2")->addmark(3);
-	gr.getStudent("2")->addmark(5);
+	gr->getStudent("1")->addmark(1);
+	gr->getStudent("1")->addmark(3);
+	gr->getStudent("1")->addmark(5);
+	gr->getStudent("2")->addmark(1);
+	gr->getStudent("2")->addmark(3);
+	gr->getStudent("2")->addmark(5);
 	EXPECT_EQ(3, dec.getStatistics());
 }
