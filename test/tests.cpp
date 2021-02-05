@@ -84,8 +84,8 @@ TEST(DeanaryTest, test9) {
 
   EXPECT_STREQ(d.get_statistics().c_str(), "Overall statistics:\n"
                                            "TestGroup (2 students)\n"
-                                           "2312412 John Doe        0.000000\n"
-                                           "3142132 Jinn Doe        0.000000");
+                                           "2312412\tJohn Doe\t0.000000\n"
+                                           "3142132\tJinn Doe\t0.000000\n\n");
 }
 
 TEST(DeanaryTest, test10) {

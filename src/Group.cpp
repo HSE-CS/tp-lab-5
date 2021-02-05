@@ -19,7 +19,7 @@ double Group::get_average_mark() const {
   for (auto s : students)
     result += s->get_average_mark();
 
-  return result;
+  return students.empty() ? 0 : result / students.size();
 }
 
 Student* Group::get_student(uint64_t _id) const {
