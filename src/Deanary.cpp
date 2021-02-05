@@ -11,8 +11,7 @@ int id = 0;
 int markGetToInt(std::string mark) {
  int intmark = 0;
  for (int i = 0; i < mark.length(); ++i) {
-  static_cast<int>(mark[i]);
-  intmark += (mark[i] - 48) * pow(10, mark.length() - i - 1);
+  intmark += (static_cast<int>(mark[i]) - 48) * pow(10, mark.length() - i - 1);
  }
  return intmark;
 }
@@ -54,42 +53,42 @@ void Deanary::hireStudents(std::string path) {
    getline(fin, buffer);
    continue;
   }
- ++id;
- switch (groups[number].acadPerform) {
-  case(1):
-  studentPerform = rand() % 3 + 1;
-  break;
-  case(2):
-  studentPerform = rand() % 4 + 1;
-  break;
-  case(3):
-  studentPerform = rand() % 4 + 2;
-  break;
- }
- auto* s = new Student(id, buffer, &groups[number], studentPerform);
- groups[number].addStudent(s);
- getline(fin, buffer);
- if (buffer[7]) {
-  int i = 7;
-  std::string mark;
-  while(i < buffer.length()) {
-   while ((buffer[i] != ' ') && (i < buffer.length())) {
-    mark.push_back(buffer[i]);
-    ++i;
+  ++id;
+  switch (groups[number].acadPerform) {
+   case(1):
+   studentPerform = rand() % 3 + 1;
+   break;
+   case(2):
+   studentPerform = rand() % 4 + 1;
+   break;
+   case(3):
+   studentPerform = rand() % 4 + 2;
+   break;
+  }
+  auto* s = new Student(id, buffer, &groups[number], studentPerform);
+  groups[number].addStudent(s);
+  getline(fin, buffer);
+  if (buffer[7]) {
+   int i = 7;
+   std::string mark;
+   while(i < buffer.length()) {
+    while ((buffer[i] != ' ') && (i < buffer.length())) {
+     mark.push_back(buffer[i]);
+     ++i;
     }
-   int markInt = markGetToInt(mark);
-   groups[number].students[groups[number].
-   students.size() - 1]->addmark(markInt);
-   mark.clear();
-   ++i;
+    int markInt = markGetToInt(mark);
+    groups[number].students[groups[number].
+    students.size() - 1]->addmark(markInt);
+    mark.clear();
+    ++i;
+   }
+  }
+  getline(fin, buffer);
+  if (buffer == "") {
+   getline(fin, buffer);
+   ++number;
   }
  }
- getline(fin, buffer);
- if (buffer == "") {
-  getline(fin, buffer);
-  ++number;
- }
-}
 }
 
 void Deanary::addMarksToAll() {
@@ -97,62 +96,62 @@ void Deanary::addMarksToAll() {
  for (Group g : groups) {
   for (int j = 0; j < g.students.size(); ++j) {
    mount = rand() % 5 + 2;
-    for (int k = 0; k < mount; ++k) {
-     g.students[j]->addmark(rand() % 11);
-    }
+   for (int k = 0; k < mount; ++k) {
+    g.students[j]->addmark(rand() % 11);
    }
   }
+ }
 }
 
 double Deanary::getStatistics() {
-double sum = 0;
-int mount = 0;
-for (int i = 0; i < this->groups.size(); ++i) {
-if (groups[i].getAveragemark()) {
-if (groups[i].getAveragemark()) {
-sum += groups[i].getAveragemark();
-++mount;
-}
-}
-}
-if (mount == 0) {
-return 0;
-}
-return sum / mount;
+ double sum = 0;
+ int mount = 0;
+ for (int i = 0; i < this->groups.size(); ++i) {
+  if (groups[i].getAveragemark()) {
+   if (groups[i].getAveragemark()) {
+    sum += groups[i].getAveragemark();
+    ++mount;
+   }
+  }
+ }
+ if (mount == 0) {
+  return 0;
+ }
+ return sum / mount;
 }
 
 
 
 void Deanary::moveStudents() {
-int number1, number2;
-int numIntel;
-std::string studentnumber = 0;
-std::cin >> number1 >> number2;
-Group* from = &groups[number1 - 1];
-Group* to = &groups[number2 - 1];
-std::cin >> studentnumber;
-Student* a = from->getStudent(studentnumber);
-if (a == NULL)
-return;
-if (a->intel == "low") {
-numIntel = 1;
-} else if (a->intel == "average") {
-numIntel = 2;
-} else {
-numIntel = 4;
-}
-Student* buf = new Student(a->id, a->fio, a->group, numIntel);
-buf->isHead = a->isHead;
-from->removeStudent(a);
-to->addStudent(buf);
-std::cout << buf->fio << std::endl;
+ int number1, number2;
+ int numIntel;
+ std::string studentnumber = 0;
+ std::cin >> number1 >> number2;
+ Group* from = &groups[number1 - 1];
+ Group* to = &groups[number2 - 1];
+ std::cin >> studentnumber;
+ Student* a = from->getStudent(studentnumber);
+ if (a == NULL)
+  return;
+ if (a->intel == "low") {
+  numIntel = 1;
+ } else if (a->intel == "average") {
+    numIntel = 2;
+ } else {
+    numIntel = 4;
+ }
+ Student* buf = new Student(a->id, a->fio, a->group, numIntel);
+ buf->isHead = a->isHead;
+ from->removeStudent(a);
+ to->addStudent(buf);
+ std::cout << buf->fio << std::endl;
 }
 
 void Deanary::initHeads() {
-for (Group g : groups) {
-int choise = rand() % g.students.size();
-g.chooseHead(choise);
-}
+ for (Group g : groups) {
+  int choise = rand() % g.students.size();
+  g.chooseHead(choise);
+ }
 }
 
 void Deanary::fireStudents(int number) {
@@ -184,12 +183,12 @@ void Deanary::saveStaff(std::string pathGroup, std::string pathStudent) {
  for (Group g : groups) {
   for (Student* s : g.students) {
    foutSt << s->fio << std::endl << "marks: ";
-    for (int mark : s->marks) {
-     foutSt << mark << " ";
-    }
-    foutSt << std::endl;
+   for (int mark : s->marks) {
+    foutSt << mark << " ";
    }
    foutSt << std::endl;
   }
   foutSt << std::endl;
+ }
+ foutSt << std::endl;
 }
