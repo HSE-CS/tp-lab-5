@@ -23,10 +23,8 @@ void removeStudent(Student* a);
 void chooseHead(int number);
 	
  public:
-explicit Group(const std::string& title, const std::string& spec) {
-title = titlE;
-spec = speC;
-}
+explicit Group(const std::string& titlE, const std::string& speC) :
+		title(titlE), spec(speC), head(nullptr), acadPerform(0) {}
 void chooseHeadTest(int number);
 double getAveragemark();
 void AddStudent(Student* s);
