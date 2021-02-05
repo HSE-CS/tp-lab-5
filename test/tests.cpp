@@ -22,11 +22,19 @@ delete student;
 
 TEST(StudentTest, test3) {
 Student *student = new Student(0, "Ksuvot");
-EXPECT_EQ(0, student->GetMarks());
+EXPECT_EQ(false, student->GetMarks().empty());
 delete student;
 }
 
-TEST(GroupTest, test4) {
+TEST(StudentTest, test4) {
+Student *student = new Student(0, "Ksuvot");
+student->setMark(0);
+student->setMark(1);
+EXPECT_EQ(1, student->GetMarks()[1]);
+delete student;
+}
+
+/*TEST(GroupTest, test4) {
 Group *group = new Group("title", "spec");
 EXPECT_EQ("spec", group->GetSpec());
 delete group;
@@ -61,9 +69,9 @@ TEST(StudentTest, test8) {
 Student *student = new Student(1, "name");
 student->setMark(10);
 student->setMark(9);
-student->setMark(8);
+student->setMark(6);
 student->setMark(7);
-EXPECT_EQ(8.5, student->getAverageMark());
+EXPECT_EQ(8, student->getAverageMark());
 delete student;
 }
 
@@ -87,4 +95,4 @@ TEST(DeanaryTest, test10) {
 Group *group = new Group("title", "spec");
 EXPECT_EQ(1, 0+group->isEmpty());
 delete group;
-}
+}*/
