@@ -63,21 +63,21 @@ Group* Deanary::hireStudents(std::string StudentFile, Group *someGroup,
 void Deanary::fireStudents() {
     for (int i = 0; i < this->number_of_groups; i++) {
         for (int j = 0; j < this->groups[i]->students.size(); j++) {
-            double stud_aver = this->groups[i]->students.at(j)->getAveragemark();
+        double stud_aver = this->groups[i]->students.at(j)->getAveragemark();
             if (stud_aver < 3.5) {
                 if (this->groups[i]->students.at(j)->isHeadOfGroup()) {
                 int stud = 0 + std::rand() % this->groups[i]->students.size();
                 groups[i]->removeStudent(this->groups[i]->students.at(j));
                 this->groups[i]->chooseHead(this->groups[i]->students.at(stud));
                 } else {
-                groups[i]->students.erase(this->groups[i]->students.begin() + j);
+               groups[i]->students.erase(this->groups[i]->students.begin() + j);
                 }
             }
         }
     }
 }
 
-void Deanary::moveStudent(Student &student, Group &other_group) {
+void Deanary::moveStudent(Student *student, Group *other_group) {
     for (auto group : groups) {
         if (group == &other_group) {
             if (!group->containsStudent(student.getId())) {

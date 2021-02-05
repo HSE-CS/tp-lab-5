@@ -21,7 +21,7 @@ class Deanary {
                       Group *someGroup, std::string groupId);
   void createGroups(std::string StudentsFile, std::string GroupsFile);
   void addMarksToAll();
-  void moveStudent(Student& student , Group& other_group);
+  void moveStudent(Student* student , Group* other_group);
   void getStatistics();
   void saveStuff(std::string filePath);
   void initHeads();
