@@ -65,31 +65,15 @@ delete group;
 delete student;
 }
 
-/*TEST(StudentTest, test8) {
+TEST(StudentTest, test9) {
 Student *student = new Student(1, "name");
 student->setMark(10);
 student->setMark(9);
 student->setMark(6);
 student->setMark(7);
-EXPECT_EQ(8, student->getAverageMark());
+EXPECT_EQ(8.0, student->getAverageMark());
 delete student;
 }
-
-TEST(DeanaryTest, test9) {
-Group *group = new Group("title", "spec");
-Student *student = new Student(1, "name");
-student->setMark(10);
-student->setMark(9);
-student->setMark(8);
-student->setMark(7);
-group->setStudent(student);
-Deanary *deanary = new Deanary();
-deanary->createGroups();
-EXPECT_EQ(8.5, deanary->getStatistics());
-delete group;
-delete student;
-delete deanary;
-}*/
 
 TEST(GroupTest, test10) {
 Group *group = new Group("title", "spec");
