@@ -11,7 +11,8 @@ int id = 0;
 int markGetToInt(std::string mark) {
     int intmark = 0;
     for (int i = 0; i < mark.length(); ++i) {
-        intmark += (static_cast<int>(mark[i]) - 48) * pow(10, mark.length() - i - 1);
+        intmark += (static_cast<int>(mark[i]) - 48) 
+        * pow(10, mark.length() - i - 1);
     }
     return intmark;
 }
@@ -30,8 +31,8 @@ void Deanary::createGroups(std::string path) {
         std::getline(fin, buffer);
         bufGroup.spec = buffer;
         buffer = "♣-♣♣-☼♫";
-        bufGroup.acadPerform = rand() % 3 + 1;
-        this->groups.push_back(bufGroup);    
+        bufGroup.acadPerform = std::rand() % 3 + 1;
+        this->groups.push_back(bufGroup);
         std::getline(fin, buffer);
         std::getline(fin, buffer);
     }
@@ -56,13 +57,13 @@ void Deanary::hireStudents(std::string path) {
         ++id;
         switch (groups[number].acadPerform) {
         case(1):
-        studentPerform = rand() % 3 + 1;
+        studentPerform = std::rand() % 3 + 1;
         break;
         case(2):
-        studentPerform = rand() % 4 + 1;
+        studentPerform = std::rand() % 4 + 1;
         break;
         case(3):
-        studentPerform = rand() % 4 + 2;
+        studentPerform = std::rand() % 4 + 2;
         break;
         }
         auto* s = new Student(id, buffer, &groups[number], studentPerform);
@@ -71,7 +72,7 @@ void Deanary::hireStudents(std::string path) {
         if (buffer[7]) {
             int i = 7;
             std::string mark;
-            while(i < buffer.length()) {
+            while (i < buffer.length()) {
                 while ((buffer[i] != ' ') && (i < buffer.length())) {
                     mark.push_back(buffer[i]);
                     ++i;
@@ -95,9 +96,9 @@ void Deanary::addMarksToAll() {
     int mount = 0;
     for (Group g : groups) {
         for (int j = 0; j < g.students.size(); ++j) {
-            mount = rand() % 5 + 2;
+            mount = std::rand() % 5 + 2;
             for (int k = 0; k < mount; ++k) {
-                g.students[j]->addmark(rand() % 11);
+                g.students[j]->addmark(std::rand() % 11);
             }
         }
     }
@@ -149,7 +150,7 @@ void Deanary::moveStudents() {
 
 void Deanary::initHeads() {
     for (Group g : groups) {
-        int choise = rand() % g.students.size();
+        int choise = std::rand() % g.students.size();
         g.chooseHead(choise);
     }
 }
