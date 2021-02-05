@@ -5,7 +5,7 @@
 #include "Deanary.h"
 #include "Group.h"
 #include "Student.h"
-int main() { 
+int main() {
     Student number1_student(63, "Makarov Denis Aleksandrovich");
     Student number2_student(65, "Ivanov Ivan Ivanovich");
     Deanary only;
