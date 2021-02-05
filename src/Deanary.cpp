@@ -79,9 +79,9 @@ void Deanary::fireStudents() {
 
 void Deanary::moveStudent(Student *student, Group *other_group) {
     for (auto group : groups) {
-        if (group == &other_group) {
+        if (group == other_group) {
             if (!group->containsStudent(student.getId())) {
-                group->addStudent(&student);
+                group->addStudent(student);
             }
             return;
         }
@@ -89,7 +89,7 @@ void Deanary::moveStudent(Student *student, Group *other_group) {
     for (auto group : groups) {
         if (group == student.group) {
             for (int i = 0; group->students.size(); i++) {
-                if (group->students[i] == &student) {
+                if (group->students[i] == student) {
                     group->students.erase(group->students.begin() + i);
                 }
             }
