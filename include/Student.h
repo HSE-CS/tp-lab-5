@@ -17,9 +17,9 @@ private:
 	std::vector<int> marks;
 	std::string intel = "";
 	void addToGroup(Group& A);
-	void addmark(int mark);
 	bool isHead = 0;
 public:
+	void addmark(int mark);
 	Student(int num, std::string fi, Group* gr, int intellect);
 	Student(int num, std::string fi);
 	double getAvearagemark();
