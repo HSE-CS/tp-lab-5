@@ -48,7 +48,8 @@ void Deanary::add_marks() {
         number_student < groups[number_group].students.size();
         number_student++) {
       for (int i = 0; i < 10; i++) {
-        groups[number_group].students[number_student]->add_mark(std::rand() % 10 + 1);
+        groups[number_group].students[number_student]->add_mark(
+            std::rand() % 10 + 1);
       }
     }
   }
@@ -111,7 +112,8 @@ void Deanary::save_to_file() {
   fout.open("output.txt");
   for (int number_group = 0; number_group < groups.size(); number_group++) {
     fout << groups[number_group].get_title() << std::endl;
-    for (int number_student = 0; number_student < groups[number_group].students.size(); number_student++) {
+    for (int number_student = 0; number_student <
+        groups[number_group].students.size(); number_student++) {
       fout << groups[number_group].students[number_student]->get_fio()
            << std::endl;
     }
@@ -133,7 +135,8 @@ void Deanary::print() {
               << std::endl;
     std::cout << "Head of group is " << groups[number_group].head->get_fio()
               << std::endl;
-    for (int number_student = 0; number_student < groups[number_group].students.size(); number_student++) {
+    for (int number_student = 0; number_student <
+        groups[number_group].students.size(); number_student++) {
       std::cout << groups[number_group].students[number_student]->get_fio()
                 << std::endl;
     }

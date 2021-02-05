@@ -24,7 +24,8 @@ int main() {
               << only.get_statistic_groups("Economy")
               << std::endl;
     std::cout << "Statistic_students Ivanov = "
-              << only.get_statistic_students("Ivanov Ivan Ivanovich") << std::endl;
+              << only.get_statistic_students("Ivanov Ivan Ivanovich")
+        << std::endl;
 
     return 0;
 }

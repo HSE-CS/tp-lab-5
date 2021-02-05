@@ -58,7 +58,7 @@ double Group::avarage_mark() {
     num++;
   }
   if (sum == 0) {
-    return 0;  
+    return 0;
   } else {
     return sum / num;
   }

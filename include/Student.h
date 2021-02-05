@@ -12,8 +12,8 @@
 class Group;
 
 class Student {
-	friend class Group;
-	friend class Deanary;
+    friend class Group;
+    friend class Deanary;
 
  private:
   int id;
@@ -28,6 +28,5 @@ class Student {
   double average_mark();
   int get_id();
   std::string get_fio();
-
 };
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
