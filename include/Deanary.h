@@ -3,12 +3,14 @@
 #define INCLUDE_DEANARY_H_
 
 #include "Group.h"
+#include <string>
+#include <vector>
 
 class Deanary {
-private:
+ private:
     std::vector<Group*> groups;
     int num_gr;
-public:
+ public:
     Deanary();
     ~Deanary();
     void createGroup(std::string name, std::string sp);
