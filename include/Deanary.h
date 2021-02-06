@@ -6,6 +6,7 @@
 #include"Student.h"
 #include"Group.h"
 
+class Group;
 class Deanary {
   friend class Student;
   friend class Group;

@@ -8,6 +8,7 @@
 
 class Deanary;
 
+class Student;
 class Group {
   friend class Deanary;
   friend class Student;
