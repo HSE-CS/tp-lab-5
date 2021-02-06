@@ -3,11 +3,13 @@
 #define INCLUDE_STUDENT_H_
 #include<vector>
 #include<string>
-//#include"Group.h"
+#include"Group.h"
 
 class Group;
 
 class Student{
+  friend class Group;
+  friend class Deanary;
  private:
   std::string id;
   std::string fio;
@@ -15,17 +17,12 @@ class Student{
   std::vector<int>marks;
 
  public:
-  Student(std::string id, std::string fio){
-    this->id = id;
-    this->fio = fio;
-    this->group=NULL;
-    this->marks={};
-  }
+  Student(std::string id, std::string fio);
   double getAverageMark();
   bool isHeadOfGroup();
 
  private:
-//  void addToGroup(Group* group);
+  void addToGroup(Group* group);
   void addMark(int mark);
 };
 
