@@ -53,8 +53,7 @@ double Group::mark_avarage() {
     }
     if (sum != 0) {
         res = sum / count;
-    }
-    else {
+    } else {
         res = 0;
     }
     return res;

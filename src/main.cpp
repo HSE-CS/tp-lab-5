@@ -19,17 +19,24 @@ int main() {
     FIMIKN.student_hire(&student_4, "Math");
     FIMIKN.marks_adding();
     FIMIKN.student_head();
-    FIMIKN.student_moving("Matsovkin Artem Demyanovich","PMI");
+    FIMIKN.student_moving("Matsovkin Artem Demyanovich", "PMI");
     FIMIKN.student_moving("Efremova Yulia Vissarionovna", "PI");
     FIMIKN.student_moving("Greshnev Eduard Emilevich", "Math");
     FIMIKN.student_moving("Pudina Yunona Pakhomovna", "PI");
     FIMIKN.print();
-    std::cout << "Group_statistic PI =  " << FIMIKN.group_statistic("PI") << std::endl;
-    std::cout << "Group_statistic PMI =  " << FIMIKN.group_statistic("PMI") << std::endl;
-    std::cout << "Group_statistic Math =  " << FIMIKN.group_statistic("Math") << std::endl;
-    std::cout << "Statistic Matsovkin Artem Demyanovich  = " << FIMIKN.student_statistic("Matsovkin Artem Demyanovich") << std::endl;
-    std::cout << "Statistic Efremova Yulia Vissarionovna  = " << FIMIKN.student_statistic("Efremova Yulia Vissarionovna") << std::endl;
-    std::cout << "Statistic Greshnev Eduard Emilevich  = " << FIMIKN.student_statistic("Greshnev Eduard Emilevich") << std::endl;
-    std::cout << "Statistic Pudina Yunona Pakhomovna  = " << FIMIKN.student_statistic("Pudina Yunona Pakhomovna") << std::endl;
+    std::cout << "Group_statistic PI =  " 
+        << FIMIKN.group_statistic("PI") << std::endl;
+    std::cout << "Group_statistic PMI =  " 
+        << FIMIKN.group_statistic("PMI") << std::endl;
+    std::cout << "Group_statistic Math =  "
+        << FIMIKN.group_statistic("Math") << std::endl;
+    std::cout << "Statistic Matsovkin Artem Demyanovich  = " 
+        << FIMIKN.student_statistic("Matsovkin Artem Demyanovich") << std::endl;
+    std::cout << "Statistic Efremova Yulia Vissarionovna  = " 
+        << FIMIKN.student_statistic("Efremova Yulia Vissarionovna") << std::endl;
+    std::cout << "Statistic Greshnev Eduard Emilevich  = " 
+        << FIMIKN.student_statistic("Greshnev Eduard Emilevich") << std::endl;
+    std::cout << "Statistic Pudina Yunona Pakhomovna  = " 
+        << FIMIKN.student_statistic("Pudina Yunona Pakhomovna") << std::endl;
     return 0;
 }

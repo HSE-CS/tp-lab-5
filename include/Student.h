@@ -14,14 +14,12 @@ class Group;
 class Deanary;
 
 class Student {
-
-private:
+ private:
     int ID;
     std::string FIO;
     Group* group;
     std::vector<int> marks;
-
-public:
+ public:
     Student(int ID, std::string FIO);
     int student_ID();
     std::string student_FIO();
