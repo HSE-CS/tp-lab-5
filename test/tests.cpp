@@ -36,7 +36,7 @@ TEST(DeaneryTest, test4) {
   Deanery decan{};
   auto *name = new std::string{"Титов Д.Д"};
   auto *title = new std::string{"19PMI-2"};
-  decan.moveStudents(*name, *title);
+  decan.moveStudent(*name, *title);
 
   EXPECT_EQ(decan.groupByStudent("Титов Д.Д"), decan.getGroup("19PMI-2"));
 }
@@ -45,7 +45,7 @@ TEST(DeaneryTest, test5) {
   Deanery decan{};
   int _id = 42;
   auto *title = new std::string{"19PMI-2"};
-  decan.moveStudents(_id * title);
+  decan.moveStudent(_id, * title);
 
   EXPECT_EQ(decan.groupByStudent(_id), decan.getGroup("19PMI-2"));
 }
@@ -54,7 +54,7 @@ TEST(DeaneryTest, test6) {
   Deanery decan{};
   int cnt = 0;
   for (auto group : *decan.getGroups()) {
-    EXPECT_NE(" ", group->getHead().getName());
+    EXPECT_NE(" ", group->getHead()->getName());
   }
 }
 
@@ -69,7 +69,7 @@ TEST(DeaneryTest, test7) {
 TEST(DeaneryTest, test8) {
   Deanery deanery{};
   deanery.addMarksToAll(3);
-  double average = deanery.getGroups()->at(2)->getAverageMark();
+  double average = deanery.getGroups()->at(2)->getAveragemark();
   int ans = 0;
   if (average > 0)
     ans = 1;
@@ -81,13 +81,13 @@ TEST(DeaneryTest, test8) {
 TEST(DeaneryTest, test9) {
   Deanery decan{};
   decan.addMarksToAll(3);
-  double average = decan.getGroups()->at(1)->getHead().getAverageMark();
+  double average = decan.getGroups()->at(1)->getHead()->getAveragemark();
   EXPECT_NE(0, average);
 }
 
 TEST(DeaneryTest, test10) {
   Deanery decan{};
   decan.addMarksToAll(0);
-  double average = decan.getGroups()->at(2)->getAverageMark();
+  double average = decan.getGroups()->at(2)->getAveragemark();
   EXPECT_EQ(0, average);
 }
