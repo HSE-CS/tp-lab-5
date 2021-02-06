@@ -7,9 +7,9 @@
 #include <vector>
 
 class Deanary {
-private:
+ private:
     std::vector<Group*> groups;
-public:
+ public:
     std::vector<Group*> getGroups();
     void createGroups();
     std::vector<Student*> hireStudents();

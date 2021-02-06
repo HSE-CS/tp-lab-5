@@ -10,12 +10,12 @@
 class Student;
 
 class Group {
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
     Student* head{ nullptr };
-public:
+ public:
     Group(const std::string& t, const std::string& s);
     std::string getTitle();
     std::string getSpec();

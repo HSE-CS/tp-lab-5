@@ -10,12 +10,12 @@
 class Group;
 
 class Student {
-private:
+ private:
     std::string fio;
     std::string id;
     std::vector<int> marks;
     Group* group{};
-public:
+ public:
     Student(const std::string& i, const std::string& f);
     void addToGroup(Group* g);
     void addMark(int mark);
