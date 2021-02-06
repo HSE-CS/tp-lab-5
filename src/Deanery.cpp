@@ -1,4 +1,4 @@
-#include "Deanary.h"
+#include "Deanery.h"
 
 #include <fstream>
 #include <iostream>
