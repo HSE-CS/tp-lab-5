@@ -54,23 +54,23 @@ TEST(group_test, test1) {
 
 TEST(group_test, test2) {
   Group group(std::string("19PI-1"), std::string("PI"));
-  group.addStudent(Student(100, std::string("Egor Trukhin")));
-  group.addStudent(Student(101, std::string("Ilya Bychkov")));
+  group.addStudent(new Student(100, std::string("Egor Trukhin")));
+  group.addStudent(new Student(101, std::string("Ilya Bychkov")));
   EXPECT_EQ(2, group.getStudents().size());
 }
 
 TEST(group_test, test3) {
   Group group(std::string("19PI-1"), std::string("PI"));
-  group.addStudent(Student(100, std::string("Egor Trukhin")));
-  group.addStudent(Student(101, std::string("Ilya Bychkov")));
+  group.addStudent(new Student(100, std::string("Egor Trukhin")));
+  group.addStudent(new Student(101, std::string("Ilya Bychkov")));
   group.removeStudent(101);
   EXPECT_EQ(1, group.getStudents().size());
 }
 
 TEST(group_test, test4) {
   Group group(std::string("19PI-1"), std::string("PI"));
-  group.addStudent(Student(100, std::string("Egor Trukhin")));
-  group.addStudent(Student(101, std::string("Ilya Bychkov")));
+  group.addStudent(new Student(100, std::string("Egor Trukhin")));
+  group.addStudent(new Student(101, std::string("Ilya Bychkov")));
   group.removeStudent(std::string("Egor Trukhin"));
   EXPECT_EQ(1, group.getStudents().size());
 }
