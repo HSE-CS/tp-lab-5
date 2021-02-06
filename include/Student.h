@@ -22,7 +22,7 @@ class Student {
      void addToGroup(Group* group);
      Student(int id, std::string FIO);
      Student(int id, std::string fio, Group* group);
-     ~Student();
+     //~Student();
      int getId() const;
      const std::string getFIO() const;
      Group* getGroup() const;

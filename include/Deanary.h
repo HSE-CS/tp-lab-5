@@ -12,7 +12,7 @@ class Deanary {
     int num_gr;
  public:
     Deanary();
-    ~Deanary();
+    //~Deanary();
     void createGroup(std::string name, std::string sp);
     void addGroup(Group* group);
     void hireStudents(Group* group, std::string fio);

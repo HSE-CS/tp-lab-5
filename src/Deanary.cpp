@@ -8,11 +8,11 @@ Deanary::Deanary() {
     this->num_gr = 0;
 }
 
-Deanary::~Deanary() {
-    for (Group* group : this->groups) {
-        group->~Group();
-    }
-}
+//Deanary::~Deanary() {
+//    for (Group* group : this->groups) {
+//        group->~Group();
+//    }
+//}
 
 void Deanary::createGroup(std::string name, std::string sp) {
     Group group(name, sp);
