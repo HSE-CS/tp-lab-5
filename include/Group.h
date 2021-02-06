@@ -18,7 +18,7 @@ class Group {
   Student *head;
 
  public:
-  Group(std::string title, std::string spec);
+  Group(std::string title="", std::string spec="");
   double getAverageMark();
   Student *getStudent(const std::string &id);
   bool isEmpty();
