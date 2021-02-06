@@ -51,8 +51,7 @@ void Group::removeStudent(Student* s) {
     }
     if (flag && !this->isEmpty()) {
         this->chooseHead(this->students[0]);
-    }
-    else if (this->isEmpty()) {
+    } else if (this->isEmpty()) {
         this->chooseHead(nullptr);
     }
 }
