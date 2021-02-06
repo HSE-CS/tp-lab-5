@@ -23,9 +23,7 @@ TEST(DeanaryTest, Test3) {
 
 TEST(DeanaryTest, Test4) {
     Group group("19SE-1", "SE");
-    Student student(1, "Ivanov Ivan Sergeevich");
-    student.addToGroup(&group);
-    EXPECT_EQ("Ivanov Ivan Sergeevich", group.getStudent(1)->getFIO());
+    EXPECT_EQ("SE", group.getSpec());
 }
 
 TEST(DeanaryTest, Test5) {
