@@ -13,7 +13,7 @@ void Deanary::addMarksToAll() {
 //      srand(std::chrono::system_clock::now().time_since_epoch().count());
 //      srand(time(0));
       std::default_random_engine generator;
-      std::uniform_int_distribution<int> distribution(1,5);
+      std::uniform_int_distribution<int> distribution(1, 5);
       student->addMark(distribution(generator));  // max mark is 5
       student->addMark(distribution(generator));
       student->addMark(distribution(generator));
@@ -39,7 +39,7 @@ void Deanary::getStatistics() {
     for (auto &student : group->students) {
       if (student->getAverageMark() == max) {
         std::cout << student->id << '\t' <<
-        student->fio << '\t' << max << std::endl;
+                  student->fio << '\t' << max << std::endl;
       }
     }
   }
@@ -48,7 +48,7 @@ void Deanary::getStatistics() {
     for (auto &student : group->students) {
       if (student->getAverageMark() == min) {
         std::cout << student->id << '\t' <<
-        student->fio << '\t' << min << std::endl;
+                  student->fio << '\t' << min << std::endl;
       }
     }
   }
@@ -84,7 +84,7 @@ void Deanary::saveStaff(std::string outfile) {
       out << group->title << ' ' << group->spec << std::endl;
       for (auto &student : group->students) {
         out << '\t' << student->id << ' ' << student->fio
-        << ' ' << student->getAverageMark() << std::endl;
+            << ' ' << student->getAverageMark() << std::endl;
       }
     }
   }
@@ -111,10 +111,10 @@ void Deanary::printData() {
   std::cout << std::endl;
   for (auto &group : groups) {
     std::cout << group->title << ' ' << group->spec <<
-    std::endl;
+              std::endl;
     for (auto &student : group->students) {
       std::cout << '\t' << student->id << ' ' <<
-      student->fio << ' ' << student->getAverageMark() << std::endl;
+                student->fio << ' ' << student->getAverageMark() << std::endl;
     }
   }
 }

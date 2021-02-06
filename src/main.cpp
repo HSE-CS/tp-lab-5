@@ -10,8 +10,8 @@ int main() {
   std::vector<std::string> specs = {};
   parse_groups(&titles, &specs,
                "C:\\Users\\Marina\\CLionProjects\\tp-lab-5\\data\\groups.txt");
-  std::string stfile = "C:\\Users\\Marina\\CLionProjects\\tp-lab-5\\data\\students.txt";
-  parse_students(&fios, &ids, stfile);
+  std::string s = "C:\\Users\\Marina\\CLionProjects\\tp-lab-5\\data\\students.txt";
+  parse_students(&fios, &ids, s);
   Deanary mse;
   mse.createGroups(titles, specs);
   mse.hireStudents(fios, ids);

@@ -41,7 +41,7 @@ void Group::chooseHead() {
     return;
   }
   std::default_random_engine generator;
-  std::uniform_int_distribution<int> distribution(0,n);
+  std::uniform_int_distribution<int> distribution(0, n);
   int pos = distribution(generator);
   this->head = students[pos];
 }
