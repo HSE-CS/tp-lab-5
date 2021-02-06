@@ -25,7 +25,7 @@ void Deanary::addGroup(Group* group) {
 
 void Deanary::hireStudents(Group* group, std::string fio) {
     srand(0);
-    int id = rand();
+    int id = rand_r();
     Student student(id, fio, group);
     group->addStudent(&student);
 }
@@ -41,9 +41,9 @@ void Deanary::addMarksToAll(int mark) {
 void Deanary::getStatistics() {
     std::cout << "=====Statistics:=====\n";
     for (Group* group : this->groups) {
-        std::cout << "Title: " << group->getTitle() << "  Spec: " 
+        std::cout << "Title: " << group->getTitle() << "  Spec: "
             << group->getSpec() << std::endl;
-        std::cout << "Average mark of group: " 
+        std::cout << "Average mark of group: "
             << group->getAverageMark() << std::endl;
         std::cout << "Head of group: " << group->getHead()->getFIO()
             << ". Id: " << group->getHead()->getId() << std::endl;
@@ -86,7 +86,8 @@ void Deanary::saveStaff() {
             out << "Students:" << std::endl;
             for (Student* student : group->students) {
                 out << student->getFIO() << " " << student->getId()
-                    << ". Average mark: " << student->getAverageMark() << std::endl;
+                    << ". Average mark: " << student->getAverageMark()
+                    << std::endl;
             }
             out << "==========" << std::endl;
         }
