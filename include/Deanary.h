@@ -1,6 +1,6 @@
 // Copyright 2020 LongaBonga
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <random>
 #include <string>
@@ -34,4 +34,4 @@ class Deanery {
   Group& groupByStudent(const std::string& name);  // Done
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_

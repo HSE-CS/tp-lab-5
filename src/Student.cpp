@@ -1,3 +1,5 @@
+// Copyright 2020 LongaBonga
+
 #include "Student.h"
 
 #include <cstring>
