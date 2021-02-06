@@ -1,4 +1,4 @@
-#include "Deanery.h"
+#include "Deanary.h"
 
 #include <chrono>
 #include <fstream>
@@ -170,13 +170,14 @@ Deanery::Deanery() {
 }
 
 void Deanery::saveStuff() {
-    std::string s = R"(./data/statistic.txt)";
-    std::ofstream file(s);
-    for (auto &group : *groups) {
-      file << group->getTitle() << ": " << group->students->size() << "\n";
-      for (auto &student : *group->students) {
-        file << student->getName() << " id: " << student->getId() <<  " Average Mark: " << student->getAveragemark() << "\n" ;
-      }
-      file << '\n';
-   }
+  std::string s = R"(./data/statistic.txt)";
+  std::ofstream file(s);
+  for (auto &group : *groups) {
+    file << group->getTitle() << ": " << group->students->size() << "\n";
+    for (auto &student : *group->students) {
+      file << student->getName() << " id: " << student->getId()
+           << " Average Mark: " << student->getAveragemark() << "\n";
+    }
+    file << '\n';
+  }
 }

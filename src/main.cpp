@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "Deanery.h"
+#include "Deanary.h"
 
 int main() {
   // Student check
