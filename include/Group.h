@@ -3,17 +3,19 @@
 #define INCLUDE_GROUP_H_
 
 #include "Student.h"
+#include <vector>
+#include <string>
 
 class Student;
 
 class Group {
     friend class Deanary;
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
     Student* head;
-public:
+ public:
     void addStudent(Student* student);
     void chooseHead();
     void removeStudent(Student* student);
