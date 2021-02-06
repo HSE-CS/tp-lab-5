@@ -30,11 +30,11 @@ Group::Group(std::string name, std::string sp) {
     this->spec = std::move(sp);
 }
 
-//Group::~Group() {
-//    for (Student* student : this->students) {
-//        delete student;
-//    }
-//}
+Group::~Group() {
+    for (Student* student : this->students) {
+        student->~Student();
+    }
+}
 
 double Group::getAverageMark() {
     if (isEmpty()) {
@@ -44,7 +44,8 @@ double Group::getAverageMark() {
         for (Student* student : this->students) {
             result += student->getAverageMark();
         }
-        return result / this->students.size();
+        result /= this->students.size();
+        return result;
     }
 }
 

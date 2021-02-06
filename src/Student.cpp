@@ -23,12 +23,12 @@ Student::Student(int id, std::string fio, Group* group) {
     this->group = group;
 }
 
-//Student::~Student() {
-//    this->id = 0;
-//    this->fio.clear();
-//    this->marks.clear();
-//    this->group = nullptr;
-//}
+Student::~Student() {
+    this->id = 0;
+    this->fio.clear();
+    this->marks.clear();
+    this->group = nullptr;
+}
 
 int Student::getId() const {
     return this->id;
@@ -42,7 +42,7 @@ Group* Student::getGroup() const {
     return this->group;
 }
 
-int Student::getAverageMark() {
+double Student::getAverageMark() {
     if (this->marks.empty()) {
         return 0.0;
     } else {
@@ -52,7 +52,8 @@ int Student::getAverageMark() {
             result += mark;
             size++;
         }
-        return result / size;
+        result /= size;
+        return result;
     }
 }
 

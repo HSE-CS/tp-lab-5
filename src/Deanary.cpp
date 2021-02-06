@@ -8,11 +8,11 @@ Deanary::Deanary() {
     this->num_gr = 0;
 }
 
-//Deanary::~Deanary() {
-//    for (Group* group : this->groups) {
-//        delete group;
-//    }
-//}
+Deanary::~Deanary() {
+    for (Group* group : this->groups) {
+        group->~Group();
+    }
+}
 
 void Deanary::createGroup(std::string name, std::string sp) {
     Group group(name, sp);
@@ -46,7 +46,7 @@ void Deanary::getStatistics() {
         std::cout << "Average mark of group: " 
             << group->getAverageMark() << std::endl;
         std::cout << "Head of group: " << group->getHead()->getFIO()
-            << " " << group->getHead()->getId() << std::endl;
+            << ". Id: " << group->getHead()->getId() << std::endl;
         std::cout << "Students:" << std::endl;
         for (Student* student : group->students) {
             std::cout << student->getFIO() << ". Id: " << student->getId()
