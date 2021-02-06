@@ -36,5 +36,7 @@ int main() {
   D.initHeads();
   //D.academicPerformance();
   D.fireBadStudents();
-  D.academicPerformance();
+  //D.academicPerformance();
+  D.printInfo();
+  D.saveStaff("..\\..\\test\\archive\\archive_deanery.txt");
 }

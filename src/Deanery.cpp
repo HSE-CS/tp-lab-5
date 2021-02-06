@@ -68,5 +68,29 @@ void Deanery::fireBadStudents() {
       }
 }
 
-void Deanery::saveStaff(std::string fileName) {}
-void Deanery::printInfo() {}
+void Deanery::saveStaff(std::string path) {
+  std::ofstream file(path);
+  if (groups.empty())
+    throw "There are no groups";
+  for (int i = 0; i < groups.size(); i++) {
+    if (!(groups[i]->isEmpty())) {
+      file << std::endl << groups[i]->getSpec() << std::endl << groups[i]->getTitle() << std::endl;
+      for (auto student : groups[i]->students)
+        file << student->getFio() << std::endl;
+    }
+  }
+  file << "EOF";
+}
+
+void Deanery::printInfo() {
+  if (groups.empty())
+    throw "There are no groups";
+  for (int i = 0; i < groups.size(); i++) {
+    if (!(groups[i]->isEmpty())) {
+      std::cout << std::endl << groups[i]->getTitle() + "   Average mark: " + std::to_string(groups[i]->getAverageMark()) << std::endl;
+      std::cout << "Head:  " << groups[i]->getHead()->getFio() << std::endl;
+      for (auto student : groups[i]->students)
+        std::cout << std::to_string(student->getId()) + " " + student->getFio() + "  Mark:  " + std::to_string(student->getAverageMark()) << std::endl;
+    }
+  }
+}

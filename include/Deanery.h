@@ -16,7 +16,7 @@ class Deanery {
   void academicPerformance();
   void moveStudent(Student* forMove, std::string oldGroup, std::string newGroup); //если перевели старосту - надо перевыбирать его
   void fireBadStudents();
-  void saveStaff(std::string fileName);
+  void saveStaff(std::string path);
   void printInfo();
 };
 #endif  // INCLUDE_DEANERY_H_
