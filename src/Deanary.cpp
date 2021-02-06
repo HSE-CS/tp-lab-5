@@ -21,14 +21,19 @@ std::vector<Student*> DeanFactory::createStudents() {
   std::vector<Student*> students;
   std::string fio;
   std::ifstream fin(this->filename);
-  for (std::string name, surname, patronymic; fin >> surname
-                                          >> name >> patronymic;) {
-    fio = surname += std::string(" ") += name += std::string(" ") += patronymic;
-    Student* st = new Student(fio, this->createId());
-    students.push_back(st);
+  if (fin.is_open()) {
+    for (std::string name, surname, patronymic;
+         fin >> surname >> name >> patronymic;) {
+      fio = surname += std::string(" ") += name += std::string(" ") +=
+          patronymic;
+      Student* st = new Student(fio, this->createId());
+      students.push_back(st);
+    }
+    fin.close();
+    return students;
+  } else {
+    throw "Bad file";
   }
-  fin.close();
-  return students;
 }
 
 void DeanFactory::returnStudents(std::vector<Student*> students) {
@@ -43,12 +48,16 @@ void DeanFactory::returnStudents(std::vector<Student*> students) {
 std::vector<Group*> DeanFactory::createGroups() {
   std::vector<Group*> groups;
   std::ifstream fin(this->filename);
-  for (std::string name, spec; fin >> name >> spec; ) {
-    Group* gr = new Group(name, spec);
-    groups.push_back(gr);
+  if (fin.is_open()) {
+    for (std::string name, spec; fin >> name >> spec;) {
+      Group* gr = new Group(name, spec);
+      groups.push_back(gr);
+    }
+    fin.close();
+    return groups;
+  } else {
+    throw "Bad file";
   }
-  fin.close();
-  return groups;
 }
 
 void DeanFactory::returnGroups(std::vector<Group*> groups) {
