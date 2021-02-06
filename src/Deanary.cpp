@@ -11,10 +11,12 @@ void Deanary::addMarksToAll() {
   for (auto &group : groups) {
     for (auto &student : group->students) {
 //      srand(std::chrono::system_clock::now().time_since_epoch().count());
-      srand(time(0));
-      student->addMark(rand_r() % 5 + 1);  // max mark is 5
-      student->addMark(rand_r() % 5 + 1);
-      student->addMark(rand_r() % 5 + 1);
+//      srand(time(0));
+      std::default_random_engine generator;
+      std::uniform_int_distribution<int> distribution(1,5);
+      student->addMark(distribution(generator));  // max mark is 5
+      student->addMark(distribution(generator));
+      student->addMark(distribution(generator));
     }
   }
 }

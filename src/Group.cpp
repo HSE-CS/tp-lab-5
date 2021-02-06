@@ -1,6 +1,7 @@
 // Copyright 2021 mkhorosh
 #include"Group.h"
 #include <ctime>
+#include <random>
 
 Group::Group(std::string title, std::string spec) {
   this->title = title;
@@ -34,12 +35,14 @@ void Group::addStudent(Student *new_student) {
   students.push_back(new_student);
 }
 void Group::chooseHead() {
-  srand(time(nullptr));
+//  srand(time(nullptr));
   int n = this->students.size();
   if (n == 0) {
     return;
   }
-  int pos = rand_r() % n;
+  std::default_random_engine generator;
+  std::uniform_int_distribution<int> distribution(0,n);
+  int pos = distribution(generator);
   this->head = students[pos];
 }
 void Group::removeStudent(const std::string &id) {
