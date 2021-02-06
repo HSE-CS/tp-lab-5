@@ -8,25 +8,25 @@
 
 class Deanary;
 
-class Group{
+class Group {
   friend class Deanary;
   friend class Student;
  private:
   std::string title;
   std::string spec;
-  std::vector<Student*>students;
-  Student* head;
+  std::vector<Student *> students;
+  Student *head;
 
  public:
-  Group(std::string title,std::string spec);
+  Group(std::string title, std::string spec);
   double getAverageMark();
-  Student* getStudent(const std::string& id);
+  Student *getStudent(const std::string &id);
   bool isEmpty();
 
  private:
-  void addStudent(Student* new_student);
+  void addStudent(Student *new_student);
   void chooseHead();
-  void removeStudent(const std::string& id);
+  void removeStudent(const std::string &id);
 };
 
 #endif  // INCLUDE_GROUP_H_

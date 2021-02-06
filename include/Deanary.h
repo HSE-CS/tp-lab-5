@@ -6,11 +6,11 @@
 #include"Student.h"
 #include"Group.h"
 
-class Deanary{
+class Deanary {
   friend class Student;
   friend class Group;
  private:
-  std::vector<Group*>groups={};
+  std::vector<Group *> groups = {};
 
  public:
   void createGroups(std::vector<std::string> titles, std::vector<std::string> specs);

@@ -7,14 +7,14 @@
 
 class Group;
 
-class Student{
+class Student {
   friend class Group;
   friend class Deanary;
  private:
   std::string id;
   std::string fio;
-  Group* group;
-  std::vector<int>marks;
+  Group *group;
+  std::vector<int> marks;
 
  public:
   Student(std::string id, std::string fio);
@@ -22,7 +22,7 @@ class Student{
   bool isHeadOfGroup();
 
  private:
-  void addToGroup(Group* group);
+  void addToGroup(Group *group);
   void addMark(int mark);
 };
 
