@@ -12,7 +12,7 @@ TEST(deanary, test1) {
 }
 
 TEST(deanary, test2) {
-  Group team_no_7("team_no_7","shinobi");
+  Group team_no_7("team_no_7", "shinobi");
   EXPECT_EQ(true, team_no_7.isEmpty());
 }
 
@@ -22,8 +22,8 @@ TEST(deanary, test3) {
 }
 
 TEST(deanary, test4) {
-  Group team_no_7("team_no_7","shinobi");
-  Student newbie("1","Kakashi Hataki");
+  Group team_no_7("team_no_7", "shinobi");
+  Student newbie("1", "Kakashi Hataki");
   EXPECT_DOUBLE_EQ(0, team_no_7.getAverageMark());
 }
 
@@ -48,16 +48,16 @@ TEST(deanary, test8) {
 }
 
 TEST(deanary, test9) {
-  Group gr("","sport");
+  Group gr("", "sport");
   EXPECT_DOUBLE_EQ(0, gr.getAverageMark());
 }
 
 TEST(deanary, test10) {
-  Group gr("sport","sport");
+  Group gr("sport", "sport");
   EXPECT_EQ(true, gr.isEmpty());
 }
 
 TEST(deanary, test11) {
-  Group gr("sport","sport");
+  Group gr("sport", "sport");
   EXPECT_DOUBLE_EQ(0, gr.getAverageMark());
 }

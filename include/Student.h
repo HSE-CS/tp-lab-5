@@ -17,7 +17,7 @@ class Student {
   std::vector<int> marks;
 
  public:
-  Student(std::string id="", std::string fio="");
+  explicit Student(std::string id = "", std::string fio = "");
   double getAverageMark();
   bool isHeadOfGroup();
 

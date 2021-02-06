@@ -39,7 +39,7 @@ void Group::chooseHead() {
   if (n == 0) {
     return;
   }
-  int pos = rand() % n;
+  int pos = rand_r() % n;
   this->head = students[pos];
 }
 void Group::removeStudent(const std::string &id) {

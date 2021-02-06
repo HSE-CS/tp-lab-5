@@ -3,16 +3,18 @@
 #include <ctime>
 #include<iostream>
 #include <random>
-#include <chrono>
+#include <stdlib.h>
+//#include <chrono>
 #include <fstream>
 
 void Deanary::addMarksToAll() {
   for (auto &group : groups) {
     for (auto &student : group->students) {
-      srand(std::chrono::system_clock::now().time_since_epoch().count());
-      student->addMark(rand() % 5 + 1);  // max mark is 5
-      student->addMark(rand() % 5 + 1);
-      student->addMark(rand() % 5 + 1);
+//      srand(std::chrono::system_clock::now().time_since_epoch().count());
+      srand(time(0));
+      student->addMark(rand_r() % 5 + 1);  // max mark is 5
+      student->addMark(rand_r() % 5 + 1);
+      student->addMark(rand_r() % 5 + 1);
     }
   }
 }
@@ -34,7 +36,8 @@ void Deanary::getStatistics() {
   for (auto &group : groups) {
     for (auto &student : group->students) {
       if (student->getAverageMark() == max) {
-        std::cout << student->id << '\t' << student->fio << '\t' << max << std::endl;
+        std::cout << student->id << '\t' <<
+        student->fio << '\t' << max << std::endl;
       }
     }
   }
@@ -42,7 +45,8 @@ void Deanary::getStatistics() {
   for (auto &group : groups) {
     for (auto &student : group->students) {
       if (student->getAverageMark() == min) {
-        std::cout << student->id << '\t' << student->fio << '\t' << min << std::endl;
+        std::cout << student->id << '\t' <<
+        student->fio << '\t' << min << std::endl;
       }
     }
   }
@@ -72,12 +76,13 @@ void Deanary::moveStudent(std::string id, std::string group) {
 }
 void Deanary::saveStaff(std::string outfile) {
   std::ofstream out;          // поток для записи
-  out.open(outfile); // окрываем файл для записи
+  out.open(outfile);  // окрываем файл для записи
   if (out.is_open()) {
     for (auto &group : groups) {
       out << group->title << ' ' << group->spec << std::endl;
       for (auto &student : group->students) {
-        out << '\t' << student->id << ' ' << student->fio << ' ' << student->getAverageMark() << std::endl;
+        out << '\t' << student->id << ' ' << student->fio
+        << ' ' << student->getAverageMark() << std::endl;
       }
     }
   }
@@ -103,19 +108,23 @@ void Deanary::fireStudents() {
 void Deanary::printData() {
   std::cout << std::endl;
   for (auto &group : groups) {
-    std::cout << group->title << ' ' << group->spec << std::endl;
+    std::cout << group->title << ' ' << group->spec <<
+    std::endl;
     for (auto &student : group->students) {
-      std::cout << '\t' << student->id << ' ' << student->fio << ' ' << student->getAverageMark() << std::endl;
+      std::cout << '\t' << student->id << ' ' <<
+      student->fio << ' ' << student->getAverageMark() << std::endl;
     }
   }
 }
-void Deanary::createGroups(std::vector<std::string> titles, std::vector<std::string> specs) {
+void Deanary::createGroups(std::vector<std::string> titles,
+                           std::vector<std::string> specs) {
   for (int i = 0; i < titles.size(); i++) {
     Group *gr = new Group(titles[i], specs[i]);
     this->groups.push_back(gr);
   }
 }
-void Deanary::hireStudents(std::vector<std::string> fios, std::vector<std::string> ids) {
+void Deanary::hireStudents(std::vector<std::string> fios,
+                           std::vector<std::string> ids) {
   srand(time(0));
   for (int i = 0; i < fios.size(); i++) {
     Student *st = new Student(ids[i], fios[i]);

@@ -1,6 +1,6 @@
 // Copyright 2021 mkhorosh
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include<vector>
 #include<string>
 #include"Student.h"
@@ -14,8 +14,10 @@ class Deanary {
   std::vector<Group *> groups = {};
 
  public:
-  void createGroups(std::vector<std::string> titles, std::vector<std::string> specs);
-  void hireStudents(std::vector<std::string> fios, std::vector<std::string> ids);
+  void createGroups(std::vector<std::string> titles,
+                    std::vector<std::string> specs);
+  void hireStudents(std::vector<std::string> fios,
+                    std::vector<std::string> ids);
   void addMarksToAll();
   void getStatistics();
   void moveStudent(std::string id, std::string group);
@@ -25,4 +27,4 @@ class Deanary {
   void printData();
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_
