@@ -1,0 +1,44 @@
+20m  management
+	6 Astahov M.M. 2.33333
+	10 Birjukova A.T. 4.33333
+	12 Borisov D.B. 4.33333
+	13 Borodina A.V. 3.66667
+	19 Golubeva P.E. 2.66667
+	21 Grekova V.B. 2.66667
+	24 Davydov A.F. 2
+	34 Ivanova K.A. 3
+	37 Komarova A.M. 2
+	1 Agapova A.L. 3.66667
+20d  design
+	2 Andreeva A.D. 3.66667
+	5 Beslikiy 1.33333
+	9 Beljaev I.A. 4
+	15 Vinogradov I.S. 2
+	18 Golubev I.G. 1.33333
+	22 Guseva E.D. 3.66667
+	23 Gushhina S.G. 3
+	28 Dolgova A.M. 2.33333
+	30 Evdokimov V.M. 3.66667
+	31 Egorov Ja.A. 3.66667
+	33 Ivanov D.E. 2.66667
+	35 Kalashnikov P.Ja. 3.66667
+	36 Karpova E.M. 3.66667
+20ch  chemistry
+	3 Slava Marlow 1.66667
+	4 Olesya Sergeeva 3.66667
+	7 Afanas'ev A.A. 3.66667
+	8 Babushkina D.A. 3
+	11 Bogdanova V.R. 3.33333
+	14 Vasilev A.K. 1.66667
+	16 Volkov S.I. 2
+	17 Gladkov F.D. 4.33333
+	20 Gorohova D.D. 3.66667
+	25 Demin A.P. 4.33333
+	26 Denisova N.P. 1.66667
+	27 Dmitriev I.K. 3.33333
+	29 D'jakova Ju.M. 3.66667
+	32 Zubkov Ja.V. 3.33333
+	38 Korolev T.V. 4.33333
+	39 Korolev K.A. 1.33333
+	40 Korotkova M.G. 4.33333
+	41 Samsonov G.E. 3.66667
