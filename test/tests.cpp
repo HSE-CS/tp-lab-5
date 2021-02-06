@@ -45,8 +45,8 @@ TEST(Deanary_Test, test_7) {
 }
 
 TEST(Deanary_Test, test_8) {
-	Group test_8("19PMI-1", "PMI");
-	EXPECT_EQ("19PMI-1", test_8.get_title());
+    Group test_8("19PMI-1", "PMI");
+    EXPECT_EQ("19PMI-1", test_8.get_title());
 }
 
 TEST(Deanary_Test, test_9) {

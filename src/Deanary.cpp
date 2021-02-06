@@ -117,7 +117,7 @@ void Deanary::information_save() {
 void Deanary::print() {
     for (int i = 0; i < groups.size(); i++) {
         std::cout << "The programm is " << groups[i].get_spec() << std::endl;
-        std::cout << "The name of group is " 
+        std::cout << "The name of group is "
             << groups[i].get_title() << std::endl;
         std::cout << "Head is " << groups[i].head->student_FIO() << std::endl;
         std::cout << "-------------list-----------------" << std::endl;

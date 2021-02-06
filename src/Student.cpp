@@ -22,7 +22,7 @@ void Student::student_group(Group* group) {
 }
 
 void Student::add_mark(int mark) {
-        marks.push_back(mark);   
+        marks.push_back(mark);
 }
 
 double Student::student_mark_avarage() {
