@@ -24,6 +24,7 @@ class Group {
   void removeStudent(Student& student);
 
  public:
+  std::vector<Student *> *getStudents() const;
   Group(std::string tl, std::string sp);
   float getAveragemark();
   Student& getStudent(int id);

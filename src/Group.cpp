@@ -53,6 +53,10 @@ Student& Group::getStudent(std::string name) {
   }
 }
 
+std::vector<Student *> *Group::getStudents() const {
+    return students;
+}
+
 bool Group::isEmpty() { return students->empty(); }
 
 std::string Group::getTitle() { return title; };
