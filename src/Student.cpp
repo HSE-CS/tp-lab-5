@@ -23,12 +23,12 @@ Student::Student(int id, std::string fio, Group* group) {
     this->group = group;
 }
 
-//Student::~Student() {
-//    this->id = 0;
-//    this->fio.clear();
-//    this->marks.clear();
-//    this->group = nullptr;
-//}
+// Student::~Student() {
+//     this->id = 0;
+//     this->fio.clear();
+//     this->marks.clear();
+//     this->group = nullptr;
+// }
 
 int Student::getId() const {
     return this->id;
