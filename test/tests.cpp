@@ -1,5 +1,4 @@
 // Copyright 2021 Dev-will-work
-
 #include <gtest/gtest.h>
 #include <string>
 #include <cstdlib>

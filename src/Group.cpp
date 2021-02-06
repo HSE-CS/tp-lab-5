@@ -1,7 +1,7 @@
 // Copyright 2021 Dev-will-work
 #include <random>
-#include "Group.h"
-#include "Student.h"
+#include "../include/Group.h"
+#include "../include/Student.h"
 
 Group::Group(std::string name, std::string spec) {
   this->title = name;

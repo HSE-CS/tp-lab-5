@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <random>
-#include "Deanary.h"
-#include "Group.h"
-#include "Student.h"
+#include "../include/Deanary.h"
+#include "../include/Group.h"
+#include "../include/Student.h"
 
 Group* Deanary::operator[](int index) {
   if (index < 0 || index >= this->groups.size()) return nullptr;
@@ -35,6 +35,7 @@ void DeanFactory::returnStudents(std::vector<Student*> students) {
   std::ofstream fwrite(this->filename);
   for (size_t i = 0; i < students.size(); i++) {
     fwrite << students[i]->getName() << std::endl;
+    delete students[i];
   }
   fwrite.close();
 }
@@ -54,6 +55,7 @@ void DeanFactory::returnGroups(std::vector<Group*> groups) {
   std::ofstream fwrite(this->filename);
   for (size_t i = 0; i < groups.size(); i++) {
     fwrite << groups[i]->getName() << " " << groups[i]->getSpec() << std::endl;
+    delete groups[i];
   }
   fwrite.close();
 }
@@ -98,7 +100,7 @@ void Deanary::getLastState() {
 
 void Deanary::hireStudents(int students_count) {
   if (students_count <= 0) return;
-  DeanFactory df("../src/students.txt", FileFormat::TXT);
+  DeanFactory df("students.txt", FileFormat::TXT);
   std::vector<Student*> students = df.createStudents();
   for (size_t i = 0; i < this->groups.size(); i++) {
     for (size_t j = 0; j < students_count; j++) {
@@ -108,18 +110,18 @@ void Deanary::hireStudents(int students_count) {
     }
     this->groups[i]->chooseHead();
   }
-  // df.returnStudents(students);
+  df.returnStudents(students);
 }
 
 void Deanary::createGroups(int num_groups) {
   if (num_groups <= 0) return;
-  DeanFactory df("../src/groups.txt", FileFormat::TXT);
+  DeanFactory df("groups.txt", FileFormat::TXT);
   std::vector<Group*> groups = df.createGroups();
   for (size_t i = 0; i < num_groups; i++) {
     this->groups.push_back(groups.front());
     groups.erase(groups.begin());
   }
-  // df.returnGroups(groups);
+  df.returnGroups(groups);
 }
 
 void Deanary::addMarksToAll(int count) {

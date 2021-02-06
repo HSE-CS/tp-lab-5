@@ -1,8 +1,8 @@
 // Copyright 2021 Dev-will-work
 #include <ctime>
 #include <iostream>
-#include "Student.h"
-#include "Group.h"
+#include "../include/Student.h"
+#include "../include/Group.h"
 
 Student::Student(std::string& fio, uint64_t id) {
   this->fio = fio;
