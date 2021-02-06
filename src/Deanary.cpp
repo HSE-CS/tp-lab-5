@@ -98,7 +98,7 @@ void Deanary::getLastState() {
 
 void Deanary::hireStudents(int students_count) {
   if (students_count <= 0) return;
-  DeanFactory df("students.txt", FileFormat::TXT);
+  DeanFactory df("../src/students.txt", FileFormat::TXT);
   std::vector<Student*> students = df.createStudents();
   for (size_t i = 0; i < this->groups.size(); i++) {
     for (size_t j = 0; j < students_count; j++) {
@@ -108,18 +108,18 @@ void Deanary::hireStudents(int students_count) {
     }
     this->groups[i]->chooseHead();
   }
-  df.returnStudents(students);
+  // df.returnStudents(students);
 }
 
 void Deanary::createGroups(int num_groups) {
   if (num_groups <= 0) return;
-  DeanFactory df("groups.txt", FileFormat::TXT);
+  DeanFactory df("../src/groups.txt", FileFormat::TXT);
   std::vector<Group*> groups = df.createGroups();
   for (size_t i = 0; i < num_groups; i++) {
     this->groups.push_back(groups.front());
     groups.erase(groups.begin());
   }
-  df.returnGroups(groups);
+  // df.returnGroups(groups);
 }
 
 void Deanary::addMarksToAll(int count) {
