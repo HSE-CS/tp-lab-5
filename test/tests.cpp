@@ -5,11 +5,11 @@
 #include <fstream>
 #include <string>
 
-#include "Deanary.h"
+#include "Deanery.h"
 #include "Group.h"
 #include "Student.h"
 
-TEST(DeanaryTest, test1) {
+TEST(DeaneryTest, test1) {
   Deanery deanery{};
   EXPECT_EQ(3, deanery.group.size());
 }

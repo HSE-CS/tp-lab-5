@@ -1,3 +1,7 @@
+// Copyright 2020 LongaBonga
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -28,3 +32,5 @@ class Group {
   std::string getTitle();
   Student* getHead();
 };
+
+#endif  // INCLUDE_GROUP_H_

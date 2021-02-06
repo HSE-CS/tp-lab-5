@@ -1,3 +1,8 @@
+// Copyright 2020 LongaBonga
+
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,3 +28,5 @@ class Student {
   bool isHeadOfGroup();
   const std::string &getName() const;
 };
+
+#endif  // INCLUDE_STUDENT_H_
