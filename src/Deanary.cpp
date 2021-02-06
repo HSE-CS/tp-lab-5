@@ -71,9 +71,11 @@ void Deanary::createGroups(const std::vector<std::string>& groups_info) {
 // Setters
 
 void Deanary::setRandomMarks(uint32_t count) {
+  std::random_device rd;
+  std::mt19937 gen(rd());
   for (auto group : groups)
     for (auto student : group->getStudents())
-      for (uint8_t i = 0; i < count; ++i) student->addMark(rand_r() % 11);
+      for (uint8_t i = 0; i < count; ++i) student->addMark(gen() % 11);
 }
 
 void Deanary::setHeads() {

@@ -3,6 +3,7 @@
 #define INCLUDE_DEANARY_H_
 
 #include <cstdint>
+#include <cstdlib>
 #include <fstream>
 #include <random>
 #include <sstream>
