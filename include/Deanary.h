@@ -17,7 +17,7 @@ class Deanary {
   std::vector<Group*> groups;
 
  public:
-  Deanary(){};  // for unit tests
+  Deanary() {}  // for unit tests
   Deanary(const char* filename_groups, const char* filename_students);
   ~Deanary();
 

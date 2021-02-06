@@ -9,30 +9,30 @@
 
 TEST(student_test, test1) {
   Student student(101, std::string("Egor Trukhin"));
-  EXPECT_EQ(101, student->getId());
+  EXPECT_EQ(101, student.getId());
 }
 
 TEST(student_test, test2) {
   Student student(101, std::string("Egor Trukhin"));
-  EXPECT_STREQ("Egor Trukhin", student->getName().c_str());
+  EXPECT_STREQ("Egor Trukhin", student.getName().c_str());
 }
 
 TEST(student_test, test3) {
   Student student(101, std::string("Egor Trukhin"));
-  EXPECT_EQ(nullptr, student->getGroup());
+  EXPECT_EQ(nullptr, student.getGroup());
 }
 
 TEST(student_test, test4) {
   Student student(101, std::string("Egor Trukhin"));
   student.addMark(5);
-  EXPECT_DOUBLE_EQ(5.0, student->getMeanMark());
+  EXPECT_DOUBLE_EQ(5.0, student.getMeanMark());
 }
 
 TEST(student_test, test5) {
   Student student(101, std::string("Egor Trukhin"));
   student.addMark(5);
   student.addMark(10);
-  EXPECT_DOUBLE_EQ(7.5, student->getMeanMark());
+  EXPECT_DOUBLE_EQ(7.5, student.getMeanMark());
 }
 
 TEST(student_test, test6) {
@@ -49,14 +49,14 @@ TEST(student_test, test7) {
 
 TEST(group_test, test1) {
   Group group(std::string("19PI-1"), std::string("PI"));
-  EXPECT_EQ(0, group->getStudents().size());
+  EXPECT_EQ(0, group.getStudents().size());
 }
 
 TEST(group_test, test2) {
   Group group(std::string("19PI-1"), std::string("PI"));
   group.addStudent(Student(100, std::string("Egor Trukhin")));
   group.addStudent(Student(101, std::string("Ilya Bychkov")));
-  EXPECT_EQ(2, group->getStudents().size());
+  EXPECT_EQ(2, group.getStudents().size());
 }
 
 TEST(group_test, test3) {
@@ -64,7 +64,7 @@ TEST(group_test, test3) {
   group.addStudent(Student(100, std::string("Egor Trukhin")));
   group.addStudent(Student(101, std::string("Ilya Bychkov")));
   group.removeStudent(101);
-  EXPECT_EQ(1, group->getStudents().size());
+  EXPECT_EQ(1, group.getStudents().size());
 }
 
 TEST(group_test, test4) {
@@ -72,7 +72,7 @@ TEST(group_test, test4) {
   group.addStudent(Student(100, std::string("Egor Trukhin")));
   group.addStudent(Student(101, std::string("Ilya Bychkov")));
   group.removeStudent(std::string("Egor Trukhin"));
-  EXPECT_EQ(1, group->getStudents().size());
+  EXPECT_EQ(1, group.getStudents().size());
 }
 
 TEST(group_test, test5) {
@@ -88,7 +88,7 @@ TEST(group_test, test5) {
   group.addStudent(student1);
   group.addStudent(student2);
 
-  EXPECT_DOUBLE_EQ(8.5, group->getMeanMark());
+  EXPECT_DOUBLE_EQ(8.5, group.getMeanMark());
 }
 
 TEST(group_test, test6) {
@@ -106,7 +106,7 @@ TEST(group_test, test6) {
 
   group.setHead();
 
-  EXPECT_EQ(200, group->getHead()->getId());
+  EXPECT_EQ(200, group.getHead()->getId());
 }
 
 TEST(deanary_test, test1) {

@@ -87,7 +87,6 @@ int main() {
 
     // Информация по новому деканату
     std::cout << LOBACHEVSKY.getInfo() << std::endl;
-
   } catch (std::exception& error) {
     std::cerr << error.what() << std::endl;
   }
