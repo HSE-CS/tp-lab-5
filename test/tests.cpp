@@ -38,7 +38,7 @@ TEST(DeaneryTest, test4) {
   auto *title = new std::string{"19PMI-2"};
   decan.moveStudent(*name, *title);
 
-  EXPECT_EQ(decan.groupByStudent("Титов Д.Д"), decan.getGroup("19PMI-2"));
+  EXPECT_EQ(decan.groupByStudent("Титов Д.Д")->getTitle(), "19PMI-2");
 }
 
 TEST(DeaneryTest, test5) {
@@ -61,9 +61,13 @@ TEST(DeaneryTest, test6) {
 TEST(DeaneryTest, test7) {
   Deanery decan{};
   decan.saveStuff();
-  ifstream f("./data/statistic.txt");
-
-  EXPECT_EQ(1, f.good());
+  int ans = 0;
+  // ifstream f("./data/statistic.txt");
+  if (FILE *file = fopen("./data/statistic.txt", "r")) {
+        fclose(file);
+        ans = 1;
+  }
+  EXPECT_EQ(1, ans);
 }
 
 TEST(DeaneryTest, test8) {
