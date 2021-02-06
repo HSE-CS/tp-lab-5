@@ -31,7 +31,8 @@ class Deanery {
   void fireStudents(std::string& student_fio);     // Done
   Group& getGroup(const std::string& title);       // Done
   Group& groupByStudent(int _id);                  // Done
-  Group& groupByStudent(const std::string& name);  // Done
+  Group& groupByStudent(const std::string& name);
+  std::vector<Group *> *getGroups() const;  // Done
 };
 
 #endif  // INCLUDE_DEANERY_H_

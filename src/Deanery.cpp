@@ -168,6 +168,10 @@ Deanery::Deanery() {
   }
 }
 
+std::vector<Group *> *Deanery::getGroups() const {
+    return groups;
+}
+
 void Deanery::saveStuff() {
   std::string s = R"(./data/statistic.txt)";
   std::ofstream file(s);
