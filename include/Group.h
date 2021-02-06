@@ -20,7 +20,7 @@ class Group {
     void chooseHead();
     void removeStudent(Student* student);
     Group(std::string name, std::string sp);
-    //~Group();
+    // ~Group();
     double getAverageMark();
     Student* getStudent(const std::string& ident);
     Student* getStudent(int id);
