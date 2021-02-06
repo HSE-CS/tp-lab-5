@@ -1,0 +1,22 @@
+Groups :
+PMI : 3.5
+PMI : 3.5
+BI : 3.5
+BI : 3.5
+KA : 0
+Students :
+Johanna Martinez : 3.5
+William Austin : 3.5
+Lory Ellington : 3.5
+Dorothy Hamphrey : 3.5
+Gemma Baker : 3.5
+Trevor Berrington : 3.5
+Andrew Mitchell : 3.5
+Evan Edwards : 3.5
+Colin Phillips : 3.5
+Stephen Bishop : 3.5
+Kiel Fitzgerald : 3.5
+Lloyd Ellington : 3.5
+Clover Gustman : 3.5
+Francis Archibald : 3.5
+Linda Brown : 3.5
