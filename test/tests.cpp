@@ -30,14 +30,14 @@ TEST(DeanaryTest, Test5) {
     Group group("19SE-1", "SE");
     Student student(1, "Ivanov Ivan Sergeevich");
     student.addToGroup(&group);
-    EXPECT_EQ(0, group.containsStudent(2));
+    EXPECT_EQ(false, group.containsStudent(2));
 }
 
 TEST(DeanaryTest, Test6) {
     Group group("19SE-1", "SE");
     Student student(1, "Ivanov Ivan Sergeevich");
     student.addToGroup(&group);
-    EXPECT_EQ(1, group.containsStudent(1));
+    EXPECT_EQ(true, group.containsStudent(1));
 }
 
 TEST(DeanaryTest, Test7) {
