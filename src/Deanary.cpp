@@ -24,8 +24,7 @@ void Deanary::addGroup(Group* group) {
 }
 
 void Deanary::hireStudents(Group* group, std::string fio) {
-    srand(0);
-    int id = rand_r();
+    int id = group->students.size() + 1;
     Student student(id, fio, group);
     group->addStudent(&student);
 }
