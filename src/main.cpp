@@ -1,9 +1,9 @@
 // Copyright 2021 Dev-will-work
 #include <iostream>
 #include <string>
-#include "../include/Deanary.h"
-#include "../include/Group.h"
-#include "../include/Student.h"
+#include "Deanary.h"
+#include "Group.h"
+#include "Student.h"
 
 int main() {
   Deanary d;

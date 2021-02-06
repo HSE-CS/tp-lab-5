@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <random>
-#include "../include/Deanary.h"
-#include "../include/Group.h"
-#include "../include/Student.h"
+#include "Deanary.h"
+#include "Group.h"
+#include "Student.h"
 
 Group* Deanary::operator[](int index) {
   if (index < 0 || index >= this->groups.size()) return nullptr;
