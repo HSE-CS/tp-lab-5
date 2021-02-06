@@ -9,7 +9,7 @@
 
 TEST(Deanary, test1) {
     Student st("00000", "Donald Trump");
-    EXPECT_EQ("William Garcia", st.getFIO());
+    EXPECT_EQ("Donald Trump", st.getFIO());
 }
 
 TEST(Deanary, test2) {
