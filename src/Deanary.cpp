@@ -3,8 +3,8 @@
 #include <ctime>
 #include<iostream>
 #include <random>
-#include <stdlib.h>
-//#include <chrono>
+// #include <stdlib.h>
+// #include <chrono>
 #include <fstream>
 
 void Deanary::addMarksToAll() {
