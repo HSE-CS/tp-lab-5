@@ -93,7 +93,9 @@ void Deanary::fireStudents() {
   for (auto &group : groups) {
     for (auto &student : group->students) {
       if (student->getAverageMark() <= inappropriate) {
-        student->group->removeStudent(student->id);
+        if (student->group != nullptr) {
+          student->group->removeStudent(student->id);
+        }
       }
     }
   }

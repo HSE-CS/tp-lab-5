@@ -19,6 +19,8 @@ int main() {
   mse.printData();
   mse.moveStudent(ids[0], titles[0]);
   mse.printData();
+  mse.fireStudents();
+  mse.printData();
   mse.saveStaff("C:\\Users\\Marina\\CLionProjects\\tp-lab-5\\data\\staff.txt");
   return 0;
 }
