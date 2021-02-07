@@ -1,12 +1,12 @@
 // Copyright 2021 LongaBonga
 #include "Deanery.h"
 #include <stdlib.h>
-#include <fstream>
-#include <nlohmann/json.hpp>
 #include <sstream>
 #include <string>
 #include <iostream>
 #include <random>
+#include <fstream>
+#include <nlohmann/json.hpp>
 
 
 void Deanery::createGroups() {
