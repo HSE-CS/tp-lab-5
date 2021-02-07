@@ -2,8 +2,8 @@
 #include "../include/Group.h"
 
 Group::Group(std::string title, std::string spec) {
-  this->title=std::move(title);
-  this->spec=std::move(spec);
+  this->title = std::move(title);
+  this->spec = std::move(spec);
 }
 
 int Group::getNumberOfStudents() {
@@ -31,7 +31,7 @@ void Group::chooseHead() {
 }
 
 double Group::getAverageMark() {
-  if (students.empty()) 
+  if (students.empty())
     throw "There are no students";
   double sumAverages = 0;
   for (int i = 0; i < students.size(); i++)
@@ -40,7 +40,7 @@ double Group::getAverageMark() {
 }
 
 Student* Group::getStudent(int id) {
-  Student* result=nullptr;
+  Student* result = nullptr;
   for (int i = 0; i < students.size(); i++)
     if (students[i]->getId() == id) {
       result = students[i];
@@ -77,16 +77,16 @@ void Group::removeStudent(int id) {
 }
 
 void Group::removeStudent(std::string fio) {
-	int headFlag = 0;
-	for (int i = 0; i < students.size(); i++)
-		if (students[i]->getFio()==fio) {
-			if (students[i]->isHeadOfGroup())
-				headFlag = 1;
-			students.erase(students.cbegin() + i);
-			break;
-		}
-	if (headFlag == 1)
-		chooseHead();
+  int headFlag = 0;
+  for (int i = 0; i < students.size(); i++)
+    if (students[i]->getFio() == fio) {
+      if (students[i]->isHeadOfGroup())
+        headFlag = 1;
+        students.erase(students.cbegin() + i);
+        break;
+    }
+  if (headFlag == 1)
+    chooseHead();
 }
 
 bool Group::isEmpty() {
@@ -100,6 +100,7 @@ Student* Group::getHead() {
 std::string Group::getGroupInfo() {
   std::string result;
   for (auto student : students)
-    result = result + student->getFio() + " " + std::to_string(student->getId()) + "\n";
+    result = result + student->getFio() + " "
+    + std::to_string(student->getId()) + "\n";
   return result;
 }
