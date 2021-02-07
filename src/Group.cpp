@@ -4,10 +4,10 @@
 #include "Group.h"
 
 
-std::string get_header() {
+std::string Group::get_header() {
         return head->get_fio();
     }
-std::string get_students() {
+std::string Group::get_students() {
         return students[0]->fio;
     }
 
