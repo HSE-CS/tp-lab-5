@@ -15,7 +15,7 @@ class Group;
 
 class Deanery {
  private:
-     std::vector <Group *> groups{};
+     std::vector <Group *> *groups{};
      std::vector <std::pair<size_t, std::string>> unalloc;
 
  public:
