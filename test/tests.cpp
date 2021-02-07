@@ -13,6 +13,7 @@ TEST(StudentTest, Test1) {
 TEST(StudentTest, Test2) {
 	Student st("Ivan Ivanov", 1);
 	std::vector<int> marks = { 4,2,5,4,5 };
+	st.setMarks(marks);
 	EXPECT_EQ(4, st.getAverageMark());
 }
 
