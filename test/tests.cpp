@@ -136,7 +136,7 @@ TEST(DeanaryTest, test10) {
 
   newgr.removeStudent(777);
   bool find = false;
-  for (auto students: newgr.students)
+  for (auto students : newgr.students)
     if (students->getID() == 777)
       find = true;
 
