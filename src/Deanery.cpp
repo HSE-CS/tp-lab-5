@@ -5,6 +5,9 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <random>
+#include <stdlib.h>
+#include <stdio.h>
 
 
 void Deanery::createGroups() {
@@ -31,7 +34,7 @@ void Deanery::hireStudents() {
   auto students = j.get<std::vector<std::string>>();
   for (auto v : students) {
     auto *student = new Student(id++, v);
-    Group *g = groups->at(rand_r(42) % groups->size());
+    Group *g = groups->at(rand() % groups->size());
     g->addStudent(*student);
     student->addToGroup(g);
   }
@@ -41,7 +44,7 @@ void Deanery::addMarksToAll(int cnt) {
   for (int i = 0; i < cnt; i++) {
     for (auto group : *groups) {
       for (auto student : *group->students) {
-        student->addmark(rand_r(42) % 10 + 1);
+        student->addmark(rand() % 10 + 1);
       }
     }
   }
@@ -81,7 +84,7 @@ Group &Deanery::groupByStudent(const std::string &name) {
   }
 }
 
-void Deanery::moveStudent(int _id, std::string &title) {
+void Deanery::moveStudent(int _id, const std::string& title) {
   Group &new_group = getGroup(title);
   Group &old_group = groupByStudent(_id);
   Student &student = old_group.getStudent(_id);
@@ -93,7 +96,8 @@ void Deanery::moveStudent(int _id, std::string &title) {
             << std::endl;
 }
 
-void Deanery::moveStudent(std::string &name, std::string &title) {
+void Deanery::moveStudent(const std::string&
+                          name, const std::string& title) {
   Group &new_group = getGroup(title);
   Group &old_group = groupByStudent(name);
   Student &student = old_group.getStudent(name);
@@ -113,7 +117,7 @@ void Deanery::fireStudents(int _id) {
   delete &student;
 }
 
-void Deanery::fireStudents(std::string &name) {
+void Deanery::fireStudents(const std::string &name) {
   Group &group = groupByStudent(name);
   Student &student = group.getStudent(name);
   group.removeStudent(student);

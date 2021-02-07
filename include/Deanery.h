@@ -4,6 +4,8 @@
 
 #include "Group.h"
 #include <random>
+#include <stdlib.h>
+#include <stdio.h>
 #include <string>
 #include <vector>
 
@@ -23,9 +25,9 @@ class Deanery {
   void hireStudents();                                             // Done
   void addMarksToAll(int value);                                   // Done
   void getStatistics();                                            // Done
-  void moveStudent(int student_id, const std::string& title);            // Done
+  void moveStudent(int _id, const std::string& title);            // Done
   void moveStudent(const std::string&
-                  student_fio, const std::string& title);  // Done
+                  name, const std::string& title);  // Done
   // void saveStaff();
   void initHeads();
   void saveStuff();                              // Done
