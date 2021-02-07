@@ -83,7 +83,7 @@ TEST(GroupTest, test6) {
 }
 
 TEST(GroupTest, test7) {
-  unsigned int id = 09876543;
+  unsigned int id = 89876543;
   std::string Fio = "Tarasov Kazimir Mikhailovich";
   Student student(id, Fio);
   std::string spec = "PI";
@@ -116,7 +116,7 @@ TEST(DeaneryTest, test9) {
   group.addStudent(&student1);
   student1.addToGroup(&group);
   group.removeStudent(&student1);
-  EXPECT_EQ(nullptr, group.getStudent(Fio));
+  EXPECT_EQ(nullptr, group.getStudentByFio(Fio));
 }
 
 TEST(DeaneryTest, test10) {
@@ -128,7 +128,7 @@ TEST(DeaneryTest, test10) {
   Group group(title, spec);
   group.addStudent(&student1);
   student1.addToGroup(&group);
-  EXPECT_EQ(&student, group.getStudent(Fio));
+  EXPECT_EQ(&student, group.getStudentByFio(Fio));
 }
 
 
