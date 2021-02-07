@@ -13,7 +13,7 @@ void Student::addMark(int iteration) {
   std::random_device rd;
   std::mt19937 mersenne(rd());
   for (size_t i = 0; i < this->FinSenThn.size(); ++i) {
-    coef_rand += static_cast<unsigned int>(this->FinSenThn.at(i));
+    coef_rand += static_cast<unsigned int>(this->FinSenThn[i]);
   }
   coef_rand = ((coef_rand) / (this->id + 1) * (iteration + 46328));
   if (iteration <= 2) {

@@ -18,18 +18,18 @@ void Deanary::hireStudent() {
   size_t amountGroups{groups.size()};
   for (size_t i = 0; i < amountGroups; ++i) {
     for (size_t j = 0; j < 20; ++j) {
-      groups.at(i)->addStudent(create_student.parseStudent());
+      groups[i]->addStudent(create_student.parseStudent());
     }
   }
 }
 void Deanary::initHeaders() {
   for (size_t i = 0; i < groups.size(); ++i) {
-    groups.at(i)->chooseHeader();
+    groups[i]->chooseHeader();
   }
 }
 void Deanary::fireStudent(int _id) {
   for (size_t i = 0; i < groups.size(); ++i) {
-    if (groups.at(i)->delStudent(groups.at(i)->getStudent(_id))) {
+    if (groups[i]->delStudent(groups[i]->getStudent(_id))) {
       return;
     }
   }
@@ -38,10 +38,10 @@ void Deanary::moveStudent(int _id, int number_group) {
   Student* removingStudent;
   for (size_t i = 0; i < groups.size(); ++i) {
     removingStudent =
-        groups.at(i)->removeStudent(groups.at(i)->getStudent(_id));
+        groups[i]->removeStudent(groups[i]->getStudent(_id));
     if (removingStudent) {
-      if (removingStudent->group != groups.at(number_group)) {
-        groups.at(number_group)->addStudent(removingStudent);
+      if (removingStudent->group != groups[(number_group)]) {
+        groups[(number_group)]->addStudent(removingStudent);
         return;
       } else {
         std::cout << "Student is there already!" << std::endl;
@@ -62,19 +62,19 @@ void Deanary::addMarksToAll() {
 }
 void Deanary::getStatistics() {
   for (size_t i = 0; i < groups.size(); ++i) {
-    std::cout << groups.at(i)->title << ": "
-    << groups.at(i)->getAverageMark() << std::endl;
-    for (size_t j = 0; j < groups.at(i)->students.size(); ++j) {
-      std::cout << "  " << groups.at(i)->students.at(j)->FinSenThn << ": "
-      << groups.at(i)->students.at(j)->getAverageMark() << std::endl;
+    std::cout << groups[i]->title << ": "
+    << groups[i]->getAverageMark() << std::endl;
+    for (size_t j = 0; j < groups[i]->students.size(); ++j) {
+      std::cout << "  " << groups[i]->students[j]->FinSenThn << ": "
+      << groups[i]->students[j]->getAverageMark() << std::endl;
     }
   }
 }
 void Deanary::fireBadStudents() {
   for (size_t i = 0; i < groups.size(); ++i) {
-    for (size_t j = 0; j < groups.at(i)->students.size(); ++j) {
-      if (groups.at(i)->students.at(j)->getAverageMark() <= 2) {
-        fireStudent(groups.at(i)->students.at(j)->id);
+    for (size_t j = 0; j < groups[i]->students.size(); ++j) {
+      if (groups[i]->students[j]->getAverageMark() <= 2) {
+        fireStudent(groups[i]->students[j]->id);
       }
     }
   }

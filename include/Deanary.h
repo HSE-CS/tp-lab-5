@@ -34,7 +34,7 @@ class Deanary {
     }
     Group* parseGroup() {
       static int iter{0};
-      auto *gr_p = new Group(title_vector.at(iter));
+      auto *gr_p = new Group(title_vector[iter]);
       iter++;
       return gr_p;
     }
@@ -56,7 +56,7 @@ class Deanary {
     }
     Student* parseStudent() {
       static int it{0};
-      auto* st_p = new Student(fio_student.at(it));
+      auto* st_p = new Student(fio_student[it]);
       it++;
       return st_p;
     }

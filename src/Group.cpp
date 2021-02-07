@@ -14,7 +14,7 @@ void Group::chooseHeader() {
   }
   std::random_device rd;
   std::mt19937 mersenne(rd());
-  header = students.at(static_cast<unsigned int>((mersenne() % students.size())) );
+  header = students[(static_cast<unsigned int>((mersenne() % students.size())))];
   header->isHead = true;
 }
 Student* Group::removeStudent(Student *st) {
@@ -23,8 +23,8 @@ Student* Group::removeStudent(Student *st) {
   }
   if (!(this->isEmpty())) {
     for (size_t i = 0; i < students.size(); ++i) {
-      if (st->getId() == students.at(i)->getId()) {
-        if (students.at(i)->isHead) {
+      if (st->getId() == students[i]->getId()) {
+        if (students[i]->isHead) {
           students.erase(students.begin() + i);
           st->group = nullptr;
           st->isHead = false;
@@ -58,7 +58,7 @@ Student* Group::getStudent(int _id) {
 }
 bool Group::containsStudent(Student *st) {
   for (size_t i = 0; i < students.size(); ++i) {
-    if (st->getId() == students.at(i)->getId()) {
+    if (st->getId() == students[i]->getId()) {
       return true;
     }
   }
@@ -72,8 +72,8 @@ bool Group::delStudent(Student *st) {
     return false;
   }
   for (size_t i = 0; i < students.size(); ++i) {
-    if (st->getId() == students.at(i)->getId()) {
-      if (students.at(i)->isHead) {
+    if (st->getId() == students[i]->getId()) {
+      if (students[i]->isHead) {
         students.erase(students.begin() + i);
         st->group = nullptr;
         st->marks.clear();
