@@ -21,7 +21,6 @@ class Group {
   explicit Group(const std::string &t, const std::string &s);
   std::string getTitle();
   std::string getSpec();
-  Student *getStudentByFio(std::string fio);
   float getAverageMark();
   Student *getStudentById(unsigned int id);
   Student *getStudentByFio(const std::string &f);

@@ -20,9 +20,9 @@ void Group::chooseHead(unsigned int id) {
 std::string Group::getTitle() { return title; }
 std::string Group::getSpec() { return spec; }
 
-Student *Group::getStudentByFio(const std::string fio) {
+Student *Group::getStudentByFio(const std::string& f) {
   for (Student *st : students) {
-    if (st->fio == fio) {
+    if (st->fio == f) {
       return st;
     }
   }
@@ -58,17 +58,6 @@ Student *Group::getStudentById(unsigned int id) {
   Student *res = nullptr;
   for (Student *st : students) {
     if (st->id == id) {
-      res = st;
-      break;
-    }
-  }
-  return res;
-}
-
-Student *Group::getStudentByFio(const std::string &f) {
-  Student *res = nullptr;
-  for (Student *st : students) {
-    if (st->fio == f) {
       res = st;
       break;
     }
