@@ -12,7 +12,6 @@ Deanery::Deanery() {
 }
 
 void Deanery::createStudents() {
-    SetConsoleCP(1251);
     std::ifstream in("D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\students.txt");
     std::string line;
     size_t i = 1;
@@ -39,7 +38,6 @@ void Deanery::printAllStudents() {
 }
 
 void Deanery::createGroups() {
-    SetConsoleCP(1251);
     std::ifstream in("D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\groups.txt");
     std::string line1, line2;
     size_t i = 0;

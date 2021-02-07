@@ -2,7 +2,6 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
-#include "Group.h"
 #include "Student.h"
 #include <cstdlib>
 #include <cstdio>
@@ -11,8 +10,8 @@
 #include <sstream>
 #include <string>
 
-class Group;
 class Student;
+class Group;
 
 class Deanery {
  private:

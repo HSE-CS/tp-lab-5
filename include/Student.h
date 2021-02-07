@@ -2,18 +2,18 @@
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
+#include "Group.h"
 #include <string>
 #include <vector>
-#include "Group.h"
-#include "Deanary.h"
+
+class Group;
 
 class Student {
-    friend class Group;
     friend class Deanery;
  private:
      size_t id;
      std::string fio;
-     Group *group;
+     Group *group{};
      std::vector <size_t> marks;
      void addToGroup(Group *group);
      void addmark(size_t mark);

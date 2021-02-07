@@ -2,8 +2,6 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
-#include "Student.h"
-#include "Deanary.h"
 #include <string>
 #include <vector>
 
@@ -11,7 +9,6 @@ class Student;
 class Deanery;
 
 class Group {
-    friend class Student;
     friend class Deanery;
 
  private:
