@@ -6,7 +6,7 @@ double  Student::average_mark() {
   int result = 0;
   int size = marks.size();
   for (int i : marks) {
-	result = result + i;
+    result = result + i;
   }
   return result / size;
 }
