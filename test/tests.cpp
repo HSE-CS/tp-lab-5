@@ -122,11 +122,11 @@ TEST(DeaneryTest, test9) {
 TEST(DeaneryTest, test10) {
   unsigned int id = 12345678;
   std::string Fio = "Morozov Innokenty Sergeevich";
-  Student student1(id, Fio);
+  Student student(id, Fio);
   std::string spec = "PI";
   std::string title = "19PI-1";
   Group group(title, spec);
-  group.addStudent(&student1);
+  group.addStudent(&student);
   student1.addToGroup(&group);
   EXPECT_EQ(&student, group.getStudentByFio(Fio));
 }
