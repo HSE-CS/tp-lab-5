@@ -9,4 +9,6 @@ int main() {
     testd.createGroups();
     testd.createStudents();
     testd.saveStaff();
+    Group gr("test", "test");
+    std::cout << gr.isEmpty();
 }

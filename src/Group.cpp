@@ -31,7 +31,7 @@ std::vector<Student *> Group::containsStudents() {
 }
 
 bool Group::isEmpty() {
-  return students.size() ? true : false;
+  return students.empty() ? true : false;
 }
 void Group::addStudent(Student *student) {
   students.push_back(student);
