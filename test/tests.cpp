@@ -9,7 +9,7 @@
 #include "../include/rapidjson/stringbuffer.h"
 #include "../include/Student.h"
 #include "../include/Group.h"
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 
 TEST(AllTests, test1) {
     Student *st = new Student(1, "Student A");

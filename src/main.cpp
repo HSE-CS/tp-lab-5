@@ -7,7 +7,7 @@
 #include "../include/rapidjson/stringbuffer.h"
 #include "../include/Student.h"
 #include "../include/Group.h"
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 
 int main() {
     Deanery dn = Deanery();

@@ -8,7 +8,7 @@
 #include <fstream>
 #include "../include/Student.h"
 #include "../include/Group.h"
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 #include "../include/rapidjson/document.h"
 #include "../include/rapidjson/writer.h"
 #include "../include/rapidjson/stringbuffer.h"
