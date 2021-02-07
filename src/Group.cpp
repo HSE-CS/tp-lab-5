@@ -35,10 +35,10 @@ double Group::calculate_of_avarage_mark() {
     return sum / students.size();
 }
 
-void Group::remove_student(Student* student) {
-    if (head == student) head = nullptr;
+void Group::remove_student(Student* st) {
+    if (head == st) head = nullptr;
     for (int j = 0; j < this->students.size(); j++) {
-        if (students[j]->id == student->id && students[j]->fio == student->fio) {
+        if (students[j]->id == st->id && students[j]->fio == st->fio) {
             students.erase(students.begin() + j);
             break;
         }
