@@ -8,7 +8,7 @@ void Deanery::initHeads() {
     groups[i]->chooseHead();
 }
 
-explicit Deanery::Deanery(std::vector<Group*> forAdd) {
+Deanery::Deanery(std::vector<Group*> forAdd) {
   for (auto group : forAdd)
     this->groups.push_back(group);
 }
