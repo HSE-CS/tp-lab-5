@@ -10,7 +10,7 @@ class Group;
 
 class Student {
     friend class Deanery;
-    friend class Student;
+    friend class Group;
  private:
      size_t id;
      std::string fio;
