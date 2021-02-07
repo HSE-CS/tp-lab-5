@@ -91,4 +91,14 @@ int Deanary::getAmountStudents(int _num) {
 Group* Deanary::getGroup(int _num) {
   return groups[_num];
 }
+Deanary::~Deanary() {
+  for (size_t i = 0; i < groups.size(); ++i) {
+    for (size_t j = 0; j < groups[i]->students.size(); ++j) 
+      delete groups[i]->students[j];
+      groups[i]->students[j] = nullptr;
+    }
+    delete groups[i]
+    groups[i] = nullptr;
+  }
+}
 
