@@ -43,7 +43,7 @@ TEST(DeanaryTest, test7) {
   group->AddStudent(new Student(1, "TestName"));
   Deanary dean;
   dean.AddGroup(group);
-  EXPECT_EQ(true, dean.getGroup("FundamentalMathematics")->containsStudent(1););
+  EXPECT_EQ(true, dean.getGroup("FundamentalMathematics")->containsStudent(1));
 }
 
 TEST(DeanaryTest, test8) {
@@ -59,10 +59,7 @@ TEST(DeanaryTest, test8) {
 
 TEST(DeanaryTest, test9) {
   Group *group = new Group("FundamentalMathematics", "FM");
-  group->AddStudent(new Student(1, "TestName"));
   Deanary dean;
   dean.AddGroup(group);
-  dean.getGroup("FundamentalMathematics")
-      ->removeStudent(dean.getGroup("FundamentalMathematics")->getStudent(1));
   EXPECT_EQ(true, group->isEmpty());
 }
