@@ -2,10 +2,13 @@
 // Created by mila on 27.01.2021.
 //
 
+#include "Student.h"
+/*
 //Разработать класс Student для хранения информации о студенте.
 class Student {
 private:
-    /* data */
+    *//* data */
+/*
 //Примерный перечень полей:
     int id; // - идентификационный номер
     char[100] fio; // - фамилия и инициалы
@@ -18,20 +21,34 @@ public:
     //virtual Students ();
 
     //создание студента с указанием ИД и ФИО
-
+*/
     //зачисление в группу
-    addToGroup();
+    void Student::addToGroup(Group* hisGroup) {
+        this -> group = hisGroup;
+    };
+
     //добавление оценки
-    addMark();
+    void Student::addMark(int mark) {
+        this -> marks.push_back(mark);
+    };
+
     //вычисление средней оценки
-    getAverageMark();
+    double Student::getAverageMark() {
+        double sum = 0;
+        int num = marks.size();
+        for (int i = 0; i < num; ++i) {
+            sum += marks[i];
+        }
 
-    isHeadOfGroup();
-};ToGroup();
-//добавление оценки
-addMark();
-//вычисление средней оценки
-getAverageMark();
+        return sum / num;
+    };
 
-isHeadOfGroup();
-};
+    bool Student::isHeadOfGroup() {
+        if ( group != NULL && id == group->head->id) {
+            return true;
+        } else {
+            return false;
+        }
+
+    };
+
