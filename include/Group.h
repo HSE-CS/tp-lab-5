@@ -19,7 +19,7 @@ class Group {
   void addStudent(Student *st);
   void chooseHeader();
   Student* removeStudent(Student *st);
-  bool delStudent(Student *st);
+  void delStudent(Student *st);
 
  public:
   std::vector<Student*> getStudentsInGroup();

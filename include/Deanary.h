@@ -67,7 +67,6 @@ class Deanary {
   };
 
  public:
-  int getAmountGroup();
   void createGroups();
   void hireStudent();
   void addMarksToAll();
@@ -76,6 +75,7 @@ class Deanary {
   void initHeaders();
   void fireStudent(int _id);
   void fireBadStudents();
+  int getAmountGroup();
   std::vector<Group*> getGroup();
 };
 

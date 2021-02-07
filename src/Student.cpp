@@ -8,7 +8,7 @@ int Student::m_id = 0;
 void Student::addToGroup(Group* _gr) {
   group = _gr;
 }
-void Student::addMark() {
+void Student::addMark(int j) {
   unsigned int coef_rand{0};
   std::random_device rd;
   std::mt19937 mersenne(rd());
@@ -16,18 +16,17 @@ void Student::addMark() {
     coef_rand += static_cast<unsigned int>(this->FinSenThn[i]);
   }
   coef_rand = ((coef_rand) / (this->id + 1) * 46328);
-  if (this->getAmountMarks() == 0) {
+  if (j <= 2) {
     marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 11));
-  } else {
-    if (this->getAverageMark() <= 10 && this->getAverageMark() >= 7) {
-      marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 6);
-    } else if (this->getAverageMark() <= 7 && this->getAverageMark() >= 5) {
-      marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 5);
-    } else if (this->getAverageMark() <= 5 && this->getAverageMark() >= 3) {
-      marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 4);
-    } else if (this->getAverageMark() <= 3 && this->getAverageMark() >= 0) {
-      marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 3);
-    }
+  }
+  if (this->getAverageMark() <= 10 && this->getAverageMark() >= 7) {
+    marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 6);
+  } else if (this->getAverageMark() <= 7 && this->getAverageMark() >= 5) {
+    marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 5);
+  } else if (this->getAverageMark() <= 5 && this->getAverageMark() >= 3) {
+    marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 4);
+  } else if (this->getAverageMark() <= 3 && this->getAverageMark() >= 0) {
+    marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 5) + 3);
   }
 }
 double Student::getAverageMark() {

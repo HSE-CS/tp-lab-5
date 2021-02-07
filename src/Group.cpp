@@ -67,26 +67,26 @@ bool Group::containsStudent(Student *st) {
 bool Group::isEmpty() const {
   return !(students.size());
 }
-bool Group::delStudent(Student *st) {
+void Group::delStudent(Student *st) {
   if (st == nullptr) {
-    return false;
+    return;
   }
   for (size_t i = 0; i < students.size(); ++i) {
     if (st->getId() == students[i]->getId()) {
       if (students[i]->isHead) {
-        this->students.erase(students.begin() + i);
+        students.erase(students.begin() + i);
         st->group = nullptr;
         st->marks.clear();
         st->isHead = false;
         st->id = -1;
         header = nullptr;
         chooseHeader();
-        return true;
+        return;
       } else {
-        this->students.erase(students.begin() + i);
+        students.erase(students.begin() + i);
         st->group = nullptr;
         st->marks.clear();
-        return true;
+        return;
       }
     }
   }

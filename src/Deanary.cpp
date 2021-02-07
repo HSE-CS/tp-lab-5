@@ -55,7 +55,7 @@ void Deanary::moveStudent(int _id, int number_group) {
 void Deanary::addMarksToAll() {
   for (size_t i = 0; i < groups.size(); ++i) {
     for (size_t j = 0; j < groups[i]->students.size(); ++j) {
-      groups[i]->students[j]->addMark();
+      groups[i]->students[j]->addMark(j);
     }
   }
 }
@@ -80,8 +80,5 @@ void Deanary::fireBadStudents() {
 }
 std::vector<Group*> Deanary::getGroup() {
   return groups;
-}
-int Deanary::getAmountGroup() {
-  return groups.size();
 }
 
