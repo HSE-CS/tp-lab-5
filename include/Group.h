@@ -19,9 +19,9 @@ class Group {
   std::string spec;
   std::vector<Student*>* students;
   Student* head;
-  void addStudent(Student& person);
+  void addStudent(Student* person);
   void chooseHead();
-  void removeStudent(Student& student);
+  void removeStudent(Student* student);
 
  public:
   std::vector<Student *> *getStudents() const;

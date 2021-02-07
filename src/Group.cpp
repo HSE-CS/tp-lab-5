@@ -12,7 +12,7 @@ Group::Group(std::string tl, std::string sp) {
   students = new std::vector<Student*>();
 }
 
-void Group::addStudent(Student& person) { students->push_back(&person); }
+void Group::addStudent(Student* person) { students->push_back(person); }
 
 void Group::chooseHead() {
   Student& person = *students->at(0);
@@ -20,10 +20,10 @@ void Group::chooseHead() {
   head = &person;
 }
 
-void Group::removeStudent(Student& student) {
+void Group::removeStudent(Student* student) {
   for (int i = 0; i < students->size(); ++i) {
-    if (students->at(i)->getId() == student.getId()) {
-      if (student.isHead) {
+    if (students->at(i)->getId() == student->getId()) {
+      if (student->isHead) {
         students->erase(students->begin() + i);
         chooseHead();
 

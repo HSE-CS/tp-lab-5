@@ -35,7 +35,7 @@ void Deanery::hireStudents() {
   for (auto v : students) {
     auto *student = new Student(id++, v);
     Group *g = groups->at(rand_r(&seed) % groups->size());
-    g->addStudent(*student);
+    g->addStudent(student);
     student->addToGroup(g);
   }
 }
@@ -89,8 +89,8 @@ void Deanery::moveStudent(int _id, const std::string& title) {
   Group &new_group = getGroup(title);
   Group &old_group = groupByStudent(_id);
   Student &student = old_group.getStudent(_id);
-  student.group->removeStudent(student);
-  new_group.addStudent(student);
+  student.group->removeStudent(&student);
+  new_group.addStudent(&student);
   student.addToGroup(&new_group);
   std::cout << "Student " << student.getName() << " was move from \""
             << old_group.getTitle() << "\" to \"" << title << "\"."
@@ -102,8 +102,8 @@ void Deanery::moveStudent(const std::string&
   Group &new_group = getGroup(title);
   Group &old_group = groupByStudent(name);
   Student &student = old_group.getStudent(name);
-  student.group->removeStudent(student);
-  new_group.addStudent(student);
+  student.group->removeStudent(&student);
+  new_group.addStudent(&student);
   student.addToGroup(&new_group);
   std::cout << "Student " << student.getName() << " was move from \""
             << old_group.getTitle() << "\" в группу \"" << title << "\"."
@@ -113,7 +113,7 @@ void Deanery::moveStudent(const std::string&
 void Deanery::fireStudents(int _id) {
   Group &group = groupByStudent(_id);
   Student &student = group.getStudent(_id);
-  group.removeStudent(student);
+  group.removeStudent(&student);
   std::cout << "Student " << student.getName() << " fired." << std::endl;
   delete &student;
 }
@@ -121,7 +121,7 @@ void Deanery::fireStudents(int _id) {
 void Deanery::fireStudents(const std::string &name) {
   Group &group = groupByStudent(name);
   Student &student = group.getStudent(name);
-  group.removeStudent(student);
+  group.removeStudent(&student);
   std::cout << "Student " << student.getName() << " fired." << std::endl;
   delete &student;
 }
