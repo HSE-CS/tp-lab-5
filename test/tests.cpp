@@ -31,15 +31,6 @@ TEST(InteractionTest, testAddStudent) {
     EXPECT_TRUE(g.containsStudent(1));
 }
 
-TEST(InteractionTest, testSetHead) {
-    auto s = new Student(1, "Test name");
-    Group g("Test group");
-    g.addStudent(s);
-    g.chooseHead(1);
-    EXPECT_TRUE(g.containsStudent(1));
-    EXPECT_TRUE(s->isHeadOfGroup());
-}
-
 TEST(InteractionTest, testGroupAverage) {
     auto s1 = new Student(1, "Test name");
     s1->addMark(4);

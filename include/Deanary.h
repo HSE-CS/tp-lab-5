@@ -10,7 +10,7 @@
 #include <vector>
 
 class Deanary {
-   public:
+ public:
     ~Deanary();
 
     void createGroups(std::ifstream& ifs);
@@ -23,7 +23,7 @@ class Deanary {
     void initHeads();
     void fireStudent(const std::string& groupName, const int studentId);
 
-    private:
+ private:
     std::vector<Group*> groups;
 
     std::vector<Group*>::const_iterator findGroup(const std::string& name);

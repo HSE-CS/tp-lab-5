@@ -11,7 +11,7 @@ class Student;
 class Deanary;
 
 class Group {
-    public:
+ public:
     friend class Student;
     friend class Deanary;
 
@@ -26,7 +26,7 @@ class Group {
     void removeStudent(int id);
     bool isEmpty() const;
 
-    private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
