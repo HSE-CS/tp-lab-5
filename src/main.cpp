@@ -6,17 +6,11 @@
 
 int main() {
     Deanery dec;
-    //dec.createGroups();
-    /*std::vector<Student*> stud;
-    std::string name;
-    stud = dec.hireStudents();
-    for (int i = 0; i < stud.size(); i++) {
-        std::cout << stud.getFio() << std::endl;
-    }*/
-    //dec.hireStudents();
-    //dec.addMarksToAll();
-    //dec.fireStudent();
-    //dec.getStatistics();
+    // dec.createGroups();
+    // dec.hireStudents();
+    // dec.addMarksToAll();
+    // dec.fireStudent();
+    // dec.getStatistics();
 
     std::string fname1 = "Shherbakov Aleksey";
     Student stud1(21, fname1);
@@ -38,7 +32,7 @@ int main() {
 
     dec.getStatistics();
 
-    //std::cout << gr2.getAveragemark_Gr();
+    // std::cout << gr2.getAveragemark_Gr();
 
 
     return 0;
