@@ -27,7 +27,7 @@ TEST(DeaneryTest, test3) {
   int st = 0;
   int ans = 0;
   Deanery decan{};
-  int cnt = *decan.getGroups()->at(0)->getStudents()->size();
+  int cnt = *decan.getGroups()->at(0)->getStudents().size();
   if (cnt > 0) ans = 1;
   EXPECT_EQ(1, ans);
 }
@@ -47,7 +47,7 @@ TEST(DeaneryTest, test5) {
   auto *title = new std::string{"19PMI-2"};
   decan.moveStudent(_id, * title);
 
-  EXPECT_EQ(decan.groupByStudent(_id).getTitle(), decan.getGroup("19PMI-2"));
+  EXPECT_EQ(decan.groupByStudent(_id).getTitle(), "19PMI-2");
 }
 
 TEST(DeaneryTest, test6) {
