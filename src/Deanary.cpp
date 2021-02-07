@@ -23,7 +23,6 @@ void Deanary::createGroups(std::string filename) {
     groups.push_back(gr);
   }
   fin.close();
-
 }
 
 void Deanary::hireStudents(std::string filename) {
