@@ -149,7 +149,7 @@ void Deanary::fireStudents(unsigned st_id) {
   for (auto gr : *groups) {
     Student* st = gr->getStudentById(st_id);
     if (st != nullptr) {
-      gr->removeStudent(st);
+      gr->removeStudentByAdress(st);
     }
   }
 }
