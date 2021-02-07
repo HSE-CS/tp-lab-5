@@ -1,8 +1,7 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <stdlib.h>
 #include "cmath"
 #include "Deanary.h"
 
@@ -49,9 +48,10 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
         }
         size_of_gr = floor(size / s) + 1;
         while (i < students.size() && j < groups.size()) {
-          while (groups[j]->students.size() < size_of_gr && i < students.size()) {
+          while (groups[j]->students.size() < size_of_gr && 
+              i < students.size()) {
                 this->groups[j]->addStudent(students.at(i));
-                i += 1; 
+                i += 1;
           }
           j += 1;
         }
@@ -188,7 +188,8 @@ void Deanary::fireStudents() {
                << std::endl;
       for (int j = 0; j < groups[i]->students.size(); ++j) {
         Student* st = groups[i]->students[j];
-        std::cout << "   " << st->id << ' ' << st->fio << ": " << st->getAverageMark() << std::endl;
+        std::cout << "   " << st->id << ' ' << st->fio << ": " <<
+            st->getAverageMark() << std::endl;
       }
       std::cout << "Average mark: " << groups[i]->getAverageMark() << std::endl;
       std::cout << std::endl << std::endl;
@@ -209,6 +210,19 @@ void Deanary::fireStudents() {
     return st;
   }
 
+  Student* Deanary::findFio(std::string fio) {
+    Student* st = nullptr;
+    for (int i = 0; i < groups.size(); ++i) {
+      for (int j = 0; j < groups[i]->students.size(); ++j) {
+        if (groups[i]->students[j]->fio == fio) {
+          st = groups[i]->getStudent(fio);
+          break;
+        }
+      }
+    }
+    return st;
+  }
+
   Group* Deanary::findGr(std::string title, std::string spec) {
     Group* gr = nullptr;
     for (int i = 0; i < groups.size(); ++i) {
@@ -220,3 +234,6 @@ void Deanary::fireStudents() {
     return gr;
   }
 
+  int Deanary::return_gr_num() {
+      return groups.size();
+  }

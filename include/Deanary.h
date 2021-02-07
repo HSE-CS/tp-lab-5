@@ -1,7 +1,6 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #ifndef INCLUDE_DEANARY_H_
 #define  INCLUDE_DEANARY_H_
- 
 #include <string>
 #include <vector>
 #include "Group.h"
@@ -24,8 +23,10 @@ class Deanary {
      bool saveChangesInFile(const char*);
      void initHeads();
      void showData();
+     int return_gr_num();
      Student* findId(int);
      Group* findGr(std::string, std::string);
+     Student* findFio(std::string);
 };
 
 

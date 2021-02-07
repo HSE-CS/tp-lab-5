@@ -1,4 +1,4 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #include <iostream>
 #include <fstream>
 #include "Deanary.h"

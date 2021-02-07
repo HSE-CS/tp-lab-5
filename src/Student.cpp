@@ -42,3 +42,6 @@ bool Student::isHeadOfGroup() {
     }
 }
 
+std::string Student::getFio() {
+    return this->fio;
+}

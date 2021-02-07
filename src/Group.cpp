@@ -1,6 +1,7 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #include <iostream>
 #include <random>
+#include <stdlib.h>
 #include "Group.h"
 
 Group::Group() {
@@ -34,7 +35,7 @@ Student* Group::chooseRandHead() {
     srand(time(0));
     int num = 0;
     if (this->students.size() != 0) {
-        num = rand() % this->students.size();
+        num = std::rand() % this->students.size();
         this->head = this->students.at(num);
     }
     return this->head;
@@ -45,7 +46,7 @@ void Group::chooseHead(Student* st) {
     this->head = st;
     }
 }
-    
+
 void Group::removeStudent(Student* st) {
     if (this->containsStudent(st)) {
         for (int i = 0; i < this->students.size(); i++) {
@@ -104,7 +105,7 @@ bool Group::containsStudent(Student* st) {
 }
 
 bool Group::isEmpty() {
-    if (this->students.size() != 0) {    
+    if (this->students.size() != 0) {
         return false;
     }
     return true;
