@@ -28,7 +28,7 @@ Student& Group::getStudent(unsigned id) const {
     }
   }
   throw "No such student";
-} 
+}
 
 Student& Group::getStudent(std::string fio) const {
   for (auto i : students) {
