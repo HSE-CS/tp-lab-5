@@ -77,6 +77,7 @@ TEST(quickTests, test6) {
 
 TEST(quickTests, test7) {
   Student* newStudent = new Student(123456, "Monicheva Arina Aleksandrovna");
+  Student* newStudent2 = new Student(123457, "Monichev Alex Borisovich");
   Group* newGroup = new Group("19PI-2");
   Group* newGroup2 = new Group("19PI-1");
   Deanery newDeanary;
@@ -84,11 +85,12 @@ TEST(quickTests, test7) {
   newDeanary.addNewGroup(newGroup);
   newDeanary.addNewGroup(newGroup2);
 
+  newGroup->addStudent(newStudent2);
   newGroup->addStudent(newStudent);
 
   newDeanary.moveStudents(newStudent, newGroup2);
 
-  int itMustnt = newGroup->containsStudent("Monicheva Arina Aleksandrovna");
+  int itMustnt = newGroup->containsStudent(123456);
 
   EXPECT_EQ(-1, itMustnt);
 }
