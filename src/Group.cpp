@@ -30,7 +30,7 @@ void Group::chooseHead() {
         head->isHead = false;
         head = nullptr;
     }
-    unsigned choose = rand() % (students->size() - 1);
+    unsigned choose = std::rand() % (students->size() - 1);
     this->head = (*students)[choose];
     (*students)[choose]->isHead = true;
 }
@@ -86,10 +86,8 @@ void Group::removeStudent(Student *st) {
         }
     }
     if (ind == -1) {
-        //throw "No such student in group!";
         return;
-    }
-    else {
+    } else {
         students->erase(students->begin() + ind);
         st->group = nullptr;
     }

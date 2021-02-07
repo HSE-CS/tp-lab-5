@@ -1,7 +1,7 @@
 // Copyright 2021 Sozinov Kirill
 
 #include "Deanary.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include <string>
 #include <vector>
 
