@@ -28,7 +28,6 @@ TEST(TestStudent, check_st_name) {
 TEST(TestStudent, check_st_spec) {
   UniqueID *newId1 = new UniqueID;
   Student *student1 = new Student("Mitchel Mia", newId1);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   Student *newHead = student1;
@@ -41,7 +40,6 @@ TEST(TestStudent, check_st_spec) {
 TEST(TestStudent, check_st_av_mark) {
   UniqueID *newId1 = new UniqueID;
   Student *student1 = new Student("Mitchel Mia", newId1);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   Student *newHead = student1;
