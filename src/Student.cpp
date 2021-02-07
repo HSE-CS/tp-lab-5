@@ -25,7 +25,7 @@ double Student::getAverageMark() {
     j++;
   }
 
-  return (static_cast<double>averageMark) / j;
+  return (static_cast<double>(averageMark)) / j;
 }
 
 bool Student::isHeadOfGroup() {
