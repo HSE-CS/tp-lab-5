@@ -84,7 +84,7 @@ TEST(TestingDeanary, test8) {
   int i = 0;
   std::vector<Student*> st = v[i]->getStudentsInGroup();
   Student *b = st[i];
-  int c = 3;
+  int c = 6;
   EXPECT_EQ(c, b->getAmountMarks());
 }
 TEST(TestingDeanary, test9) {
