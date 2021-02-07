@@ -16,7 +16,7 @@ class Student {
  private:
   Group* group;
   unsigned id;
-  unsigned short iq;
+  unsigned iq;
   static unsigned count;
   std::string fio;
   std::vector<unsigned int> marks;
@@ -26,7 +26,7 @@ class Student {
   void addToGroup(Group* gr);
 
  public:
-  Student(std::string new_fio, unsigned short new_iq = 90) {
+  explicit Student(std::string new_fio, unsigned new_iq = 90) {
       fio = new_fio;
       id = count;
       iq = new_iq;

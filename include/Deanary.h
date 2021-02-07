@@ -3,7 +3,9 @@
 #define INCLUDE_DEANARY_H_
 
 #include <fstream>
-#include "json/include/nlohmann/json.hpp"
+#include <vector>
+#include<string>
+#include "nlohmann/json.hpp"
 #include "Group.h"
 
 class Group;
@@ -14,7 +16,7 @@ class Deanary {
   std::vector<Group*> *groups;
 
  public:
-  Deanary(std::string path = "") {
+  explicit Deanary(std::string path = "") {
     groups = new std::vector<Group *>();
     if (path != "") {
       createGroups(path);
