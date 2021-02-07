@@ -24,7 +24,7 @@ class Group {
  public:
   double getAverageMark();
   Student *getStudent(int);
-  bool containsStudent(Student *);
+  bool containsStudent(int);
   bool isEmpty();
   Student *getHead();
   friend class Deanary;

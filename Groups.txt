@@ -3,6 +3,6 @@ FM
 AppliedMathematicsAndInformatics
 AMI
 SoftwareEngineering
-Se
+SE
 BusinessInformatics
 BI

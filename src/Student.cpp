@@ -1,6 +1,6 @@
 // Copyright 2021 Egor Buzanov
 
-#include "Student.h"
+#include "../include/Student.h"
 
 Student::Student(int _id, std::string _fio) {
   id = _id;

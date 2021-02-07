@@ -8,18 +8,21 @@
 
 #include "Group.h"
 
+class Student;
+class Group;
+
 class Deanary {
  private:
-  std::vector<Group*> groups;
+  std::vector<Group *> groups;
   unsigned int id;
 
  public:
   Deanary();
-  void CreateGroups(std::string _filename);
+  void createGroups(std::string _filename);
   void hireStudents(std::string _filename);
   void addMarksToAll();
   void getStatistics(std::string _filename);
-  void MoveStudents(Student*, Group*);
+  void MoveStudents(unsigned int, std::string title);
   void saveStaff(std::string, std::string);
   void initHeads();
   void fireStudents();
