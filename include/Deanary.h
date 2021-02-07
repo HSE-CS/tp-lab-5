@@ -6,8 +6,8 @@
 //  Copyright © 2021 Daniil Ivanov. All rights reserved.
 //
 
-#ifndef Deanary_h
-#define Deanary_h
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <stdio.h>
 #include <iostream>
@@ -35,5 +35,5 @@ class Deanary {
     void saveToFiles();
     void initOfHeadElection();
     void printAllInfo();
-}
-#endif
+};
+#endif  // INCLUDE_DEANARY_H_

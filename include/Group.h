@@ -6,8 +6,8 @@
 //  Copyright © 2021 Daniil Ivanov. All rights reserved.
 //
 
-#ifndef Group_hpp
-#define Group_hpp
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include <iostream>
 #include <string>
@@ -38,4 +38,4 @@ class Group {
     void delStudent(Student* st_);
 };
 
-#endif
+#endif  // INCLUDE_GROUP_H_

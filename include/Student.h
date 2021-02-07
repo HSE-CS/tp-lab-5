@@ -6,8 +6,8 @@
 //  Copyright © 2021 Daniil Ivanov. All rights reserved.
 //
 
-#ifndef Student_hpp
-#define Student_hpp
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 #include "Group.h"
 #include <iostream>
 #include <string>
@@ -31,4 +31,4 @@ class Student {
     int getId();
     std::string getName();
 };
-#endif
+#endif  // INCLUDE_STUDENT_H_
