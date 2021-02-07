@@ -1,0 +1,62 @@
+
+economic
+eco1
+Konrad O'Connor
+Ewan Villegas
+Alayna Gould
+Dustin Kennedy
+Neel Guerrero
+Ishaq Samuels
+Rohit Mcphee
+Christos Tanner
+Alessia Molina
+Morwenna Hackett
+Iqrah Hampton
+Sarah-Jane Rudd
+Braxton Adkins
+Ayat Alvarado
+
+economic
+eco2
+Makenzie Lloyd
+Leon Welch
+Izabela Reader
+Chance Serrano
+Georgia Church
+Loretta Chaney
+Luke Mcmahon
+Ananya French
+Kerry Clifford
+Marwah Weir
+Mahima Bob
+Christina Kane
+Fatema Benton
+Zac Bonner
+
+software engineering
+prog1
+Teejay Rowe
+Neive Tang
+Antonina Kendall
+Alexia Charlton
+Juniper Thatcher
+Teri Shepherd
+Ela Alcock
+Khadeeja Plant
+Iwan Krause
+Frank Patterson
+
+software engineering
+prog1
+Kelan Short
+Gabriel Mayo
+Edison Hodgson
+Aaisha Rasmussen
+Yaqub Schultz
+Ian Tran
+Juno Mosley
+Nikhil Higgins
+Laith Garza
+Neriah Blundell
+Sidrah Connelly
+EOF
