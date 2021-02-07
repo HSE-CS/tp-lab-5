@@ -2,9 +2,9 @@
 #pragma once
 #define GROUP_H
 #ifdef GROUP_H
+#include<time.h>
 #include <string>
 #include <vector>
-#include<time.h>
 #include <iostream>
 #include <cstdlib>
 

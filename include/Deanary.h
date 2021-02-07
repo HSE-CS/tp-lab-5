@@ -2,10 +2,10 @@
 #pragma once
 #define DEANARY_H
 #ifdef DEANARY_H
+#include <time.h>
+#include <iostream>
 #include "Group.h"
 #include "Student.h"
-#include <iostream>
-#include<time.h>
 #include <sstream>
 #include <string>
 #include <vector>
