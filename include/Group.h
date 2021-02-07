@@ -20,7 +20,7 @@ class  Group {
      void delStudent(Student* student);
      void chooseHead();
      Student* getStudent_id(int id);
-     Student* getStudent_fio(std::string& fio);
+     Student* getStudent_fio(std::string fio);
      double getAveragemark_Gr();
      void removeStudent(Student* student);
      bool isEmpty();
