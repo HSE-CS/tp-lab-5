@@ -101,4 +101,15 @@ TEST(TestingDeanary, test9) {
   int size2 = st1.size();
   EXPECT_EQ(size2 - 1, size1);
 }
+TEST(TestingDeanary, test10) {
+  Deanary deanary;
+  deanary.createGroups();
+  deanary.hireStudent();
+  deanary.initHeaders();
+  std::vector<Group*> v = deanary.getGroup();
+  Student* st_1 = v[0]->getHeader();
+  bool c = true;
+  bool a = st_1->isHeadOfGroup();
+  EXPECT_EQ(c, a);
+}
 
