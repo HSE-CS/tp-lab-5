@@ -55,12 +55,15 @@ void Deanery::addMarksToAll() {
 
 void Deanery::getStatistics() {
     for (int gri = 0; gri < groups.size(); gri++) {
-        std::cout << groups[gri]->getTitle() << " " << groups[gri]->getSpec() << " ";
-        std::cout << "Average mark - " << groups[gri]->getAveragemark_Gr() << std::endl;
+        std::cout << groups[gri]->getTitle() << " ";
+        std::cout << groups[gri]->getSpec() << " ";
+        std::cout << "Average mark - ";
+        std::cout << groups[gri]->getAveragemark_Gr() << std::endl;
         for (int sti = 0; sti < groups[gri]->students.size(); sti++) {
             std::cout << groups[gri]->students[sti]->getFio() << " ";
             std::cout << groups[gri]->students[sti]->getId() << " ";
-            std::cout << "Average mark - " << groups[gri]->students[sti]->getAveragemark() << std::endl;
+            std::cout << "Average mark - ";
+            std::cout << groups[gri]->students[sti]->getAveragemark() << std::endl;
         }
         std::cout << std::endl;
     }
