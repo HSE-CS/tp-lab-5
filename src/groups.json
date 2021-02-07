@@ -1,0 +1,15 @@
+[
+    
+    {
+        "group": "PMI",
+        "spec": "Applied mathematics and computer science"
+    },
+    {
+        "group": "PI",
+        "spec": "Software engineering"
+    },
+    {
+        "group": "FM",
+        "spec": "Fundamental mathematics"
+    }
+]
