@@ -33,7 +33,7 @@ TEST(TastingDeanary, test3) {
 TEST(TestingDeanary, test4) {
   Deanary deanary;
   deanary.createGroups();
-  //deanary.hireStudent();
+  deanary.hireStudent();
   std::vector<Group*> v = deanary.getGroup();
   int i = 0;
   std::vector<Student*> st = v[i]->getStudentsInGroup();
