@@ -29,7 +29,8 @@ void Deanary::initHeaders() {
 }
 void Deanary::fireStudent(int _id) {
   for (size_t i = 0; i < groups.size(); ++i) {
-    if (groups[i]->delStudent(groups[i]->getStudent(_id))) {
+    if (groups[i]->getStudent(_id)) {
+      groups[i]->delStudent(groups[i]->getStudent(_id));
       return;
     }
   }
