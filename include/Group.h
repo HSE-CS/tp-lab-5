@@ -22,6 +22,7 @@ class Group {
   void delStudent(Student *st);
 
  public:
+  int getAmountGroup();
   std::vector<Student*> getStudentsInGroup();
   std::string getTitle();
   explicit Group(const std::string& _title);

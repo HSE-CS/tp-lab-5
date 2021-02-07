@@ -83,3 +83,6 @@ void Deanary::fireBadStudents() {
 std::vector<Group*> Deanary::getGroup() {
   return groups;
 }
+int Deanary::getAmountGroup() {
+  return groups.size();
+}
