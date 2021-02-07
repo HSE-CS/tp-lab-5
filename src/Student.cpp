@@ -16,7 +16,7 @@ void Student::addMark() {
     coef_rand += static_cast<unsigned int>(this->FinSenThn[i]);
   }
   coef_rand = ((coef_rand) / (this->id + 1) * 46328);
-  if (this->getAmountMarks == 0) {
+  if (this->getAmountMarks() == 0) {
     marks.push_back(static_cast<unsigned int>((mersenne() * coef_rand) % 11));
   } else {
     if (this->getAverageMark() <= 10 && this->getAverageMark() >= 7) {
