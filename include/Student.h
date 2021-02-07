@@ -25,7 +25,7 @@ class Student {
   bool isTheyHead();
 
  private:
-  //private variables
+  //  private variables
   unsigned id;
   std::string fio;
   Group* group;

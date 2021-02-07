@@ -6,7 +6,7 @@ Group::Group(std::string title) {
     this->title = title;
     this->head = nullptr;
 }
-Group::~Group() { 
+Group::~Group() {
     this->title.clear();
     this->spec.clear();
     this->head = nullptr;

@@ -36,7 +36,6 @@ void Student::printInfoAboutStudent() {
       std::cout << "No\n";
     }
   }
-
 }
 void Student::printMarks() {
   if (this->marks.size()) {

@@ -60,9 +60,9 @@ TEST(Group_test, test10) {
   StudentObj.addMarkToStudent(10);
   StudentObj.addMarkToStudent(9);
   Student StudentObj1(1, "Nam Surname");
-  StudentObj.addMarkToStudent(10);
-  StudentObj.addMarkToStudent(10);
-  StudentObj.addMarkToStudent(10);
+  StudentObj1.addMarkToStudent(10);
+  StudentObj1.addMarkToStudent(10);
+  StudentObj1.addMarkToStudent(10);
   Group GroupObj((std::string)"19AMI");
   GroupObj.addStudentToGroup(&StudentObj);
   GroupObj.addStudentToGroup(&StudentObj1);

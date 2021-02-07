@@ -111,7 +111,6 @@ int main() {
   Deanary DeanaryObj;
   DeanaryObj.createGroups();  //  working
   DeanaryObj.initialiseStudents();  //  working
-  //DeanaryObj.printAllInfo();  //  working
   delimiter();
   DeanaryObj.initialiseElection();  //  working
   DeanaryObj.printAllInfo();  //  working
@@ -123,7 +122,7 @@ int main() {
     std::cout << DeanaryObj.getStudentStatistic(tmp) << std::endl;  //  working
     delimiter();
   }
-  for (size_t i = 0; i < DeanaryObj.getCurrentAmoutOfGroups(); ++i) {  //  working
+  for (size_t i = 0; i < DeanaryObj.getCurrentAmoutOfGroups(); ++i) {
     Group* tmp = DeanaryObj.getGroupAddress(i);  //  working
     std::cout << DeanaryObj.getGroupStatistic(tmp) << std::endl;  //  working
     delimiter();

@@ -72,7 +72,7 @@ void Deanary::initialiseStudents() {
     studentNameAndSurname += " ";
     FileIn >> studentNameAndSurname2;
     studentNameAndSurname += studentNameAndSurname2;
-    Student* studentToAdd = new Student(this->numberOfStudents, 
+    Student* studentToAdd = new Student(this->numberOfStudents,
                                         studentNameAndSurname);
     (this->allStudents).push_back(&(*studentToAdd));
     addStudentToRandomGroup(&(*studentToAdd));
@@ -117,7 +117,7 @@ void Deanary::fireForAcademicFailure() {
 void Deanary::initialiseElection() {
   for (size_t i = 0; i < (this->groups).size(); ++i) {
     if ((this->groups[i])->students.size() != 0) {
-      unsigned newHead = rand() % ((this->groups[i])->students.size());
+      unsigned newHead = std::rand() % ((this->groups[i])->students.size());
       (this->groups[i])->setHead((this->groups[i])->students[newHead]);
     }
   }
