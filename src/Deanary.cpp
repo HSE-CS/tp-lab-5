@@ -86,3 +86,4 @@ std::vector<Group*> Deanary::getGroup() {
 int Deanary::getAmountGroup() {
   return groups.size();
 }
+
