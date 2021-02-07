@@ -1,17 +1,9 @@
 // Copyright 2021 Smirnov Grigory
-#include "Group.h"
+#include "../include/Group.h"
 
 Group::Group(std::string title, std::string spec) {
 	this->title=std::move(title);
 	this->spec=std::move(spec);
-}
-
-Group::~Group() {
-	for (int i = 0; i < students.size(); i++)
-		if (students[i] != NULL) {
-			delete students[i];
-			students[i] == NULL;
-		}
 }
 
 int Group::getNumberOfStudents() {

@@ -14,7 +14,7 @@ class Group {
 
  public:
   Group(std::string title, std::string spec);
-  ~Group();
+  //~Group();
   std::string getTitle();
   std::string getSpec();
   void addStudent(Student* newPerson);
