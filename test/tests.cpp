@@ -60,3 +60,50 @@ TEST(PostfixTest, test7) {
   stud.addToGroup(&gr);
   EXPECT_EQ(title, stud.getGroup()->getTitle());
 }
+
+TEST(PostfixTest, test8) {
+  Deanery dec;
+  dec.createGroups();
+  std::string fname1 = "Shherbakov Aleksey";
+  Student stud1(21, fname1);
+  stud1.addMark(6);
+  dec.groups[0]->addStudent(&stud1);
+  std::string fname2 = "Osipova Anna";
+  Student stud2(13, fname2);
+  stud2.addMark(7);
+  dec.groups[1]->addStudent(&stud2);
+  dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(), dec.groups[0]->getTitle());
+  EXPECT_EQ(6.5, dec.groups[0]->getAveragemark_Gr());
+}
+
+TEST(PostfixTest, test9) {
+    Deanery dec;
+    dec.createGroups();
+    std::string fname1 = "Shherbakov Aleksey";
+    Student stud1(21, fname1);
+    stud1.addMark(6);
+    std::string fname3 = "Klimov Daniil";
+    Student stud3(17, fname3);
+    stud3.addMark(5);
+    dec.groups[0]->addStudent(&stud1);
+    dec.groups[0]->addStudent(&stud3);
+  EXPECT_EQ(5.5, dec.groups[0]->getAveragemark_Gr());
+}
+
+TEST(PostfixTest, test10) {
+    Deanery dec;
+    dec.createGroups();
+    std::string fname1 = "Shherbakov Aleksey";
+    Student stud1(21, fname1);
+    stud1.addMark(6);
+    std::string fname3 = "Klimov Daniil";
+    Student stud3(17, fname3);
+    stud3.addMark(5);
+    dec.groups[0]->addStudent(&stud1);
+    dec.groups[0]->addStudent(&stud3);
+    std::string fname2 = "Osipova Anna";
+    Student stud2(13, fname2);
+    stud2.addMark(7);
+    dec.groups[1]->addStudent(&stud2);
+    dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(), dec.groups[0]->getTitle());
+  EXPECT_EQ(6, dec.groups[0]->getAveragemark_Gr());
