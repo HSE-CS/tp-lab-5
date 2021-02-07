@@ -24,7 +24,6 @@ class Student {
 
  protected:
   void addToGroup(Group* gr);
-  void addMark(int mark);
 
  public:
   Student(std::string new_fio, unsigned short new_iq = 90) {
@@ -41,6 +40,7 @@ class Student {
   unsigned getId();
   float getAveragemark();
   bool isHeadOfGroup();
+  void addMark(int mark);
 };
 
 #endif  // INCLUDE_STUDENT_H_

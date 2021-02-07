@@ -4,8 +4,11 @@
 
 
 int main() {
+  Student stud("Person", 100);
   Deanary dean;
   dean.createGroups("../tp-lab-5/src/groups.json");
+  Group *PMI = dean.getGroupByTitle("PMI");
+  PMI->addStudent(&stud);
   dean.hireStudents("../tp-lab-5/src/data.json", 100);
   dean.initHeads();
   dean.addMarksToAll();

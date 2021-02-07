@@ -1,8 +1,9 @@
 // Copyright 2020 me
-#include "..\include\Group.h"
-#include "..\include\Student.h"
+#include "../include/Group.h"
+#include "../include/Student.h"
 
 void Group::addStudent(Student *new_student) {
+  new_student->group = this;
   students->push_back(new_student);
 }
 

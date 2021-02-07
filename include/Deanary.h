@@ -12,7 +12,6 @@ class Deanary {
  private:
   std::vector<Group*> specList;
   std::vector<Group*> *groups;
-  std::vector<Group *> group;
 
  public:
   Deanary(std::string path = "") {
@@ -27,6 +26,7 @@ class Deanary {
   }
   void createGroups(std::string path = "groups.json");
   void createGroups(std::string spec, std::string title);
+  void createGroups(Group* gr);
   void hireStudents(std::string path = "data.json", int num = -1);
   void addMarksToAll();
   void getStatistics(std::string path = "statistic.txt");

@@ -16,13 +16,6 @@ class Group {
   std::vector<Student*> *students;
   Student* head;
 
- protected:
-  void addStudent(Student *new_student);
-  void chooseHead();
-  void removeStudent(unsigned st_id);
-  void removeStudent(Student* st);
-
-
  public:
   Group(std::string sp, std::string tit) {
     students = new std::vector<Student*>();
@@ -35,6 +28,10 @@ class Group {
     }
       students->clear();
   }
+  void chooseHead();
+  void removeStudent(unsigned st_id);
+  void removeStudent(Student* st);
+  void addStudent(Student* new_student);
   double getAveragemark();
   Student* getStudentById(unsigned id);
   std::vector<Student*> containsStudent();

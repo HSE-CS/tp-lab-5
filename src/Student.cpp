@@ -1,5 +1,5 @@
 // Copyright 2020 me
-#include "..\include\Student.h"
+#include "../include/Student.h"
 
 unsigned Student::count = 0;
 

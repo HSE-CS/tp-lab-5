@@ -1,5 +1,5 @@
 // Copyright 2020 me
-#include "..\include\Deanary.h"
+#include "../include/Deanary.h"
 
 unsigned getmark(unsigned short iq) {
   if (iq < 90) {
@@ -29,6 +29,8 @@ void Deanary::createGroups(std::string spec, std::string title) {
   Group* gr = new Group(spec, title);
   groups->push_back(gr);
 }
+
+void Deanary::createGroups(Group* gr) { groups->push_back(gr); }
 
 void Deanary::hireStudents(std::string path, int num) {
   std::ifstream read(path);
