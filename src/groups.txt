@@ -1,0 +1,4 @@
+19PI - 1:Software Engeneering
+19PI - 2:Software Engeneering
+19PMI - 1:Applied Mathematics and Informatics
+19PMI - 2:Applied Mathematics and Informatics
