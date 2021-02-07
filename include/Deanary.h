@@ -1,7 +1,7 @@
 // Copyright 2021 ArinaMonicheva
 
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <fstream>
 #include <string>
@@ -25,16 +25,16 @@ class Deanery {
   void hireStudents(std::ifstream &studentsFile);
   void addMarksToAll();
   stats& getStatistics();
-  void moveStudents(Student& toMove, Group& destination);
+  void moveStudents(const Student& toMove, const Group& destination);
   void fireStudents();
   void safeStaff(std::ofstream &groupFile, std::ofstream &studentFile);
-  void initHeads(Group& Where);
-  void printToConsole(Student& toPrint);
-  void printToConsole(Group& toPrint);
-  void printToConsole(stats& toPrint);
+  void initHeads(const Group& Where);
+  void printToConsole(const Student& toPrint);
+  void printToConsole(const Group& toPrint);
+  void printToConsole(const stats& toPrint);
   const std::vector<Group*> getGroups();
   void addNewGroup(Group* newGroup);
   ~Deanery();
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_
