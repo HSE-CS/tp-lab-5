@@ -38,7 +38,7 @@ Student* Group::getStudent_id(int id) {
     return nullptr;
 }
 
-Student* Group::getStudent_fio(std::string& fio) {
+Student* Group::getStudent_fio(std::string fio) {
     for (int i = 0; i < students.size(); i++) {
         if (students[i]->getFio() == fio) {
             return students[i];
