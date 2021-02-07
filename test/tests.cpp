@@ -96,21 +96,6 @@ TEST(TestGroup, check_sts_size_in_gr) {
   EXPECT_EQ(rez, newGr->getStudents().size());
 }
 
-TEST(TestGroup, check_get_st) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  UniqueID *newId2 = new UniqueID;
-  Student * student2 = new Student("Greich Mark", newId2);
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  newStudents.push_back(student2);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  std::string rez = "Greich Mark";
-  EXPECT_EQ(rez, newGr->getStudent(2)->getStNamed());
-}
-
 TEST(TestGroup, check_gr_not_empty) {
   UniqueID *newId1 = new UniqueID;
   Student *student1 = new Student("Mitchel Mia", newId1);
@@ -123,21 +108,6 @@ TEST(TestGroup, check_gr_not_empty) {
   Group *newGr = new Group("PI", "1st",
                            newStudents, newHead);
   ASSERT_FALSE(newGr->isEmpty());
-}
-
-TEST(TestGroup, check_get_st_name) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  UniqueID *newId2 = new UniqueID;
-  Student * student2 = new Student("Greich Mark", newId2);
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  newStudents.push_back(student2);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  std::string rez = "Greich Mark";
-  EXPECT_EQ(rez, newGr->getStudent(2)->getStNamed());
 }
 
 TEST(TestDeanary, check_empty_dean_size) {
