@@ -92,10 +92,11 @@ TEST(TestingDeanary, test9) {
   deanary.createGroups();
   deanary.hireStudent();
   std::vector<Group*> v = deanary.getGroup();
-  std::vector<Student*> st = v[0]->getStudentsInGroup();
+  int i = 0;
+  std::vector<Student*> st = v[i]->getStudentsInGroup();
   int size1 = st.size();
   deanary.fireStudent(0);
-  std::vector<Student*> st1 = v[0]->getStudentsInGroup();
+  std::vector<Student*> st1 = v[i]->getStudentsInGroup();
   int size2 = st1.size();
   EXPECT_EQ(size1 - 1, size2);
 }
