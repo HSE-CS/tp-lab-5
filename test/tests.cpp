@@ -1,6 +1,6 @@
 // Copyright 2021 ArinaMonicheva
 #include "Deanary.h"
-//#include <gtest/gtest.h>
+#include <gtest/gtest.h>
 
 TEST(quickTests, test1) {
   Student* newStudent = new Student(123456, "Monicheva Arina Aleksandrovna");
