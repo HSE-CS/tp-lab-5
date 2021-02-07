@@ -8,17 +8,17 @@ void Deanary::createGroups() {
   create_group.readFile();
   size_t size{create_group.getTitle().size()};
   for (size_t i = 0; i < size; ++i) {
-    groups.push_back(create_group.parseGroup());
+    groups.push_back(create_group.parseGroup(i));
   }
 }
 void Deanary::hireStudent() {
   CreateStudent_F create_student;
   create_student.readFile();
-  size_t size{create_student.getFio().size()};
   size_t amountGroups{groups.size()};
+  int k{0};
   for (size_t i = 0; i < amountGroups; ++i) {
-    for (size_t j = 0; j < 20; ++j) {
-      groups[i]->addStudent(create_student.parseStudent());
+    for (size_t j = 0; j < 20; ++j, ++k) {
+      groups[i]->addStudent(create_student.parseStudent(k));
     }
   }
 }
@@ -62,11 +62,11 @@ void Deanary::addMarksToAll() {
 }
 void Deanary::getStatistics() {
   for (size_t i = 0; i < groups.size(); ++i) {
-    std::cout << groups[i]->title << ": "
-    << groups[i]->getAverageMark() << std::endl;
+    std::cout << "Groups" << i << ": "
+              << groups[i]->getAverageMark() << std::endl;
     for (size_t j = 0; j < groups[i]->students.size(); ++j) {
       std::cout << "  " << groups[i]->students[j]->FinSenThn << ": "
-      << groups[i]->students[j]->getAverageMark() << std::endl;
+                << groups[i]->students[j]->getAverageMark() << std::endl;
     }
   }
 }
