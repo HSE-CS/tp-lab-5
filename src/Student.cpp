@@ -5,11 +5,11 @@
 #include"Group.h"
 
 std::string get_fio() {
-    return fio;
+    return this->fio;
 }
 
 int get_id() {
-    return id;
+    return this->id;
 }
 
 std::string get_group() {
