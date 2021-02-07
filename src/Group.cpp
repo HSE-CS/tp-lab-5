@@ -92,7 +92,7 @@ bool Group::delStudent(Student *st) {
   }
 }
 std::string Group::getTitle() {
-    return title;
+  return title;
 }
 Group::Group(const std::string& _title) {
   title = _title;
@@ -102,3 +102,7 @@ Group::Group(const std::string& _title) {
 Student* Group::getHeader() {
   return header;
 }
+std::vector<Student *> Group::getStudentsInGroup() {
+  return students;
+}
+

@@ -52,13 +52,11 @@ void Deanary::moveStudent(int _id, int number_group) {
   std::cout << "He leave the university!" << std::endl;
 }
 void Deanary::addMarksToAll() {
-  static int iteration{0};
   for (size_t i = 0; i < groups.size(); ++i) {
     for (size_t j = 0; j < groups[i]->students.size(); ++j) {
-      groups[i]->students[j]->addMark(iteration);
+      groups[i]->students[j]->addMark();
     }
   }
-  iteration++;
 }
 void Deanary::getStatistics() {
   for (size_t i = 0; i < groups.size(); ++i) {
@@ -79,27 +77,8 @@ void Deanary::fireBadStudents() {
     }
   }
 }
-int Deanary::getAmountGroup() {
-  return groups.size();
-}
-std::string Deanary::getTitleGroup(int _num) {
-  return groups[_num]->getTitle();
-}
-int Deanary::getAmountStudents(int _num) {
-  return groups[_num]->students.size();
-}
-Group* Deanary::getGroup(int _num) {
-  return groups[_num];
-}
-Deanary::~Deanary() {
-  for (size_t i = 0; i < groups.size(); ++i) {
-    for (size_t j = 0; j < groups[i]->students.size(); ++j) {
-      delete groups[i]->students[j];
-      groups[i]->students[j] = nullptr;
-    }
-    delete groups[i];
-    groups[i] = nullptr;
-  }
+std::vector<Group*> Deanary::getGroup() {
+  return groups;
 }
 
 

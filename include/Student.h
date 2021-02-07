@@ -19,7 +19,7 @@ class Student {
   std::vector<unsigned int> marks;
   bool isHead{false};
   void addToGroup(Group* _gr);
-  void addMark(int iteration);
+  void addMark();
 
  public:
   explicit Student(const std::string& fio);
