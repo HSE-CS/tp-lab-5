@@ -37,7 +37,7 @@ std::vector<Student*> Group::getStudents() const {
 }
 
 void Group::chooseHead() {
-    int num = rand_r() % (students.size());
+    int num = rand() % (students.size());
     head = students[num];
 }
 
