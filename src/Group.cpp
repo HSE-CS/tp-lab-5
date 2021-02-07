@@ -77,7 +77,6 @@ Student *Group::getStudentByFio(std::string &f) {
 }
 
 bool Group::containsStudentById(unsigned int id) {
-
   for (Student *st : students) {
     if (st->id == id) {
       return true;

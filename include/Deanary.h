@@ -1,7 +1,11 @@
 // Copyright 2021 Artem Danyaev
 #pragma once
 #include "Group.h"
-
+#include <string>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
 class Group;
 
 class Deanary {

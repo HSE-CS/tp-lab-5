@@ -1,8 +1,5 @@
 // Copyright 2021 Artem Danyaev
 #include "Deanary.h"
-#include <cstdlib>
-#include <ctime>
-#include <fstream>
 
 void Deanary::createGroupsFromFile(std::string path) {
   std::ifstream file(path);
@@ -59,11 +56,11 @@ void Deanary::hireStudentsFromFile(std::string path) {
 }
 
 void Deanary::addMarksToAll() {
-  srand(static_cast<unsigned int>(time(0)));
+  std::srand(static_cast<unsigned int>(time(0)));
   for (Group *group : groups) {
     for (Student *student : group->students) {
       for (int i = 0; i < 10; i++) {
-        student->addMark(rand() % 5 + 1);
+        student->addMark(std::rand() % 5 + 1);
       }
     }
   }
@@ -87,7 +84,6 @@ void Deanary::getStatistics(std::string path) {
 }
 
 void Deanary::moveStudent(Student *student, std::string name) {
-
   for (Group *group : groups) {
     if (group->title == name) {
       Student *st = new Student(student->id, student->fio);

@@ -2,7 +2,6 @@
 #include "Deanary.h"
 #include <iostream>
 int main() {
-
   Deanary d;
   d.createGroupsFromFile("groups.txt");
   d.hireStudentsFromFile("students.txt");
