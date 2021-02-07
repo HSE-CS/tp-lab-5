@@ -1,0 +1,36 @@
+Group: pony
+Twilight Sparkle Pony
+Apple Jack Pony
+Flutter Shy Pony
+Flutter Shy Second
+Ra Rity Pony
+Pinkie Pie Pony
+Pinkie Pie Second
+Rainbow Dash Pony
+Rainbow Dash Second
+S Pike Pony
+
+Group: pokemons
+Bulba Saur Poke
+Ivy Saur Poke
+Venu Saur Poke
+Venu Saur Second
+Char Mander Poke
+Char Mander Second
+Char Meleon Poke
+Chari Zard Poke
+S Quirtle Poke
+S Quirtle Second
+War Tortle Poke
+
+Group: transformers
+Bumble Bee Tr
+Cliff Jumper Tr
+Wheel Jack Tr
+Wheel Jack Second
+Prowl Empty Tr
+Sides Wipe Tr
+Iron Hide Tr
+Spring Er Tr
+Spring Er Second
+Blur R Tr
