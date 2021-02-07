@@ -1,0 +1,34 @@
+//
+//  Student.hpp
+//  programming-technologies
+//
+//  Created by Даниил Иванов on 07.02.2021.
+//  Copyright © 2021 Daniil Ivanov. All rights reserved.
+//
+
+#ifndef Student_hpp
+#define Student_hpp
+#include "Group.h"
+#include <iostream>
+#include <string>
+#include <vector>
+class Group;
+class Student {
+    friend class Deanary;
+ private:
+    int id;
+    std::string fio;
+    Group* group;
+    std::vector<int> marks;
+
+ public:
+    explicit Student(int id_, std::string fio_) {
+        id = id_;
+        fio = fio_;
+    }
+    double avMark();
+    void addMark(int m_);
+    int getId();
+    std::string getName();
+};
+#endif
