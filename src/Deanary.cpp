@@ -115,3 +115,12 @@ void Deanary::fireStudents() {
     }
   }
 }
+
+Group *Deanary::getGroup(std::string _title) {
+  for (auto &group : groups) {
+    if (group->title == _title) {
+      return group;
+    }
+  }
+  return nullptr;
+}

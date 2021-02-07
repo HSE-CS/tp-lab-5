@@ -12,13 +12,16 @@ void Student::AddToGroup(Group* _group) { group = _group; }
 void Student::AddMark(int _mark) { marks.push_back(_mark); }
 
 bool Student::isHeadOfGroup() {
-  if (group->getHead() == this) {
+  if (group != nullptr && group->getHead() == this) {
     return true;
   }
   return false;
 }
 
 double Student::getAverageMark() {
+  if (marks.size() == 0) {
+    return 0.0;
+  }
   double average_mark = 0.0;
   for (const int& mark : marks) {
     average_mark += static_cast<double>(mark);

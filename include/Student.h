@@ -15,11 +15,11 @@ class Student {
   std::string fio;
   std::vector<int> marks;
   Group *group;
-  explicit Student(int, std::string);
   void AddToGroup(Group *);
   void AddMark(int);
 
  public:
+  explicit Student(int, std::string);
   bool isHeadOfGroup();
   double getAverageMark();
   int getId();

@@ -13,8 +13,8 @@ class Group;
 
 class Deanary {
  private:
-  std::vector<Group *> groups;
   unsigned int id;
+  std::vector<Group *> groups;
 
  public:
   Deanary();
@@ -26,6 +26,7 @@ class Deanary {
   void saveStaff(std::string, std::string);
   void initHeads();
   void fireStudents();
+  Group *getGroup(std::string);
 };
 
 #endif  // INCLUDE_DEANARY_H_
