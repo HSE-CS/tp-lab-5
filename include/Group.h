@@ -15,17 +15,17 @@ class Group {
   Student* head;
 
  public:
-  Group(std::string newTitle);
-  void addStudent(Student& newStudent);
+  explicit Group(std::string newTitle);
+  void addStudent(const Student& newStudent);
   void chooseHead(Student* candidate);
   Student& getStudent(unsigned id) const;
   Student& getStudent(std::string fio) const;
   int containsStudent(unsigned id);
   int containsStudent(std::string fio);
   double getAverageMark();
-  void removeStudent(Student& removalOne);
+  void removeStudent(const Student& removalOne);
 
- friend class Deanery;
+  friend class Deanery;
 };
 
 #endif  // INCLUDE_GROUP_H_
