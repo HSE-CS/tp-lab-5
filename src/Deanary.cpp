@@ -83,7 +83,7 @@ int Deanary::getAmountGroup() {
   return groups.size();
 }
 std::string Deanary::getTitleGroup(int _num) {
-  return groups[_num]->title;
+  return groups[_num]->getTitle();
 }
 int Deanary::getAmountStudents(int _num) {
   return groups[_num]->students.size();

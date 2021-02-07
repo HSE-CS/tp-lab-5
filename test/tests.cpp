@@ -19,21 +19,28 @@ TEST(TestingDeanary, test2) {
   int b = deanary.getAmountGroup();
   EXPECT_EQ(a, b);
 }
-TEST(TastingDeanary, test3) {
+TEST(TestingDeanary, test3) {
+  Deanary deanary;
+  deanary.createGroups();
+  std::string a = "15PMI-2";
+  std::string b = deanary.getTitleGroup(1);
+  EXPECT_EQ(a, b);
+}
+TEST(TastingDeanary, test4) {
   Deanary deanary;
   deanary.createGroups();
   int a = 0;
   int b = deanary.getAmountStudents(0);
   EXPECT_EQ(a, b);
 }
-TEST(TestingDeanary, test4) {
+TEST(TestingDeanary, test5) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
   int a = deanary.getAmountStudents(0);
   EXPECT_EQ(a, deanary.getAmountStudents(0));
 }
-TEST(TestingDeanary, test5) {
+TEST(TestingDeanary, test6) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
@@ -41,7 +48,7 @@ TEST(TestingDeanary, test5) {
   bool b = deanary.getGroup(1);
   EXPECT_EQ(a, b);
 }
-TEST(TestingDeanary, test6) {
+TEST(TestingDeanary, test7) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
@@ -50,7 +57,7 @@ TEST(TestingDeanary, test6) {
   bool c = false;
   EXPECT_EQ(c, b->isHeadOfGroup());
 }
-TEST(TestingDeanary, test7) {
+TEST(TestingDeanary, test8) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
@@ -60,7 +67,7 @@ TEST(TestingDeanary, test7) {
   bool c = true;
   EXPECT_EQ(c, b->isHeadOfGroup());
 }
-TEST(TestingDeanary, test8) {
+TEST(TestingDeanary, test9) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
@@ -68,25 +75,13 @@ TEST(TestingDeanary, test8) {
   Student* b = a->getStudent(4);
   EXPECT_EQ(b->getGroup(), a);
 }
-TEST(TestingDeanary, test9) {
+TEST(TestingDeanary, test10) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
   Group* a = deanary.getGroup(0);
   Student* b = a->getStudent(4);
   int c = 0;
-  EXPECT_EQ(c, b->getAverageMark());
-}
-TEST(TestingDeanary, test10) {
-  Deanary deanary;
-  deanary.createGroups();
-  deanary.hireStudent();
-  deanary.addMarksToAll();
-  deanary.addMarksToAll();
-  deanary.addMarksToAll();
-  Group* a = deanary.getGroup(0);
-  Student* b = a->getStudent(4);
-  double c = b->getAverageMark();
   EXPECT_EQ(c, b->getAverageMark());
 }
 TEST(TestingDeanary, test11) {
@@ -98,10 +93,22 @@ TEST(TestingDeanary, test11) {
   deanary.addMarksToAll();
   Group* a = deanary.getGroup(0);
   Student* b = a->getStudent(4);
+  double c = b->getAverageMark();
+  EXPECT_EQ(c, b->getAverageMark());
+}
+TEST(TestingDeanary, test12) {
+  Deanary deanary;
+  deanary.createGroups();
+  deanary.hireStudent();
+  deanary.addMarksToAll();
+  deanary.addMarksToAll();
+  deanary.addMarksToAll();
+  Group* a = deanary.getGroup(0);
+  Student* b = a->getStudent(4);
   int c = 3;
   EXPECT_EQ(c, b->getAmountMarks());
 }
-TEST(TestingDeanary, test12) {
+TEST(TestingDeanary, test13) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();
@@ -113,7 +120,7 @@ TEST(TestingDeanary, test12) {
   int size2 = deanary.getAmountStudents(0);
   EXPECT_EQ(size1 - 1, size2);
 }
-TEST(TestingDeanary, test13) {
+TEST(TestingDeanary, test14) {
   Deanary deanary;
   deanary.createGroups();
   deanary.hireStudent();

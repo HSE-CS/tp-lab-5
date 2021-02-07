@@ -91,6 +91,9 @@ bool Group::delStudent(Student *st) {
     }
   }
 }
+std::string Group::getTitle() {
+    return title;
+}
 Group::Group(const std::string& _title) {
   title = _title;
   special_on = "IMIKN";

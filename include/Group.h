@@ -22,6 +22,7 @@ class Group {
   bool delStudent(Student *st);
 
  public:
+  std::string getTitle();
   explicit Group(const std::string& _title);
   double getAverageMark();
   Student* getStudent(int _id);
