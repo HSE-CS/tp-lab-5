@@ -28,6 +28,7 @@ class Deanary {
     void fireStudents();
     Group* getGroup(std::string title);
     Student* getStudent(unsigned int id);
+    void printData();
 };
 #endif  // INCLUDE_DEANARY_H_
 

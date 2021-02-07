@@ -16,7 +16,6 @@ void Deanary::createGroups(std::string filename) {
     int pos = input.find(':');
     spec = input.substr(0, pos);
     title = input.substr(pos + 1, input.size() - pos - 1);
-    std::cout << spec << "\n";
     Group* g = new Group(title, spec);
     groups.push_back(g);
   }
@@ -117,5 +116,19 @@ Student* Deanary::getStudent(unsigned int id) {
       return find;
   }
   return nullptr;
+}
+
+void Deanary::printData() {
+  std::cout.precision(2);
+  std::cout << std::fixed;
+  for (auto g : groups) {
+    std::cout << g->getSpec() << "\n" << g->getTitle() << "\n";
+    std::cout << "Average mark: " << g->getAveragemark() << "\n";
+    auto list_group = g->containsStudents();
+    for (auto s : list_group) {
+      std::cout << s->getId() << " " << s->getFio() << " "
+      << s->getAveragemark() << "\n";
+    }
+  }
 }
 
