@@ -1,4 +1,4 @@
-﻿// Copyright 2021 Stifeev Nikita
+// Copyright 2021 Stifeev Nikita
 
 #include "Deanary.h"
 
