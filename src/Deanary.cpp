@@ -40,7 +40,7 @@ double Deanary::get_statistic_students(const std::string& _name) {
 
 double Deanary::get_statistic_groups(const std::string& _spec) {
   for (auto & group : groups) {
-    if (group.get_spec() = _spec)
+    if (group.get_spec() == _spec)
       return group.average_mark();
   }
 }
