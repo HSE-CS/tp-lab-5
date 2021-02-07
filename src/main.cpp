@@ -2,8 +2,8 @@
 #include "Group.h"
 #include "Deanary.h"
 #include <string>
-int main() 
-{
+
+int main() {
 	Student st("1", 1);
 	auto s = st.getFio();
 	Deanary dr;
@@ -17,5 +17,4 @@ int main()
 	dr.fireStudent();
 	dr.printInfo();
 	dr.saveStuff("out.txt");
-
 }
