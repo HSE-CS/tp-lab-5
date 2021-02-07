@@ -14,7 +14,7 @@ std::vector<Student> Deanery::createStudentsFromFile(std::string fileName) {
     std::ifstream MyReadFile(fileName);
 
     while (std::getline(MyReadFile, myText)) {
-        cout << myText;
+        std::cout << myText;
     }
 
     MyReadFile.close();

@@ -1,6 +1,7 @@
 // Copyright 2021 Bogomazov
 #include <iostream>
 #include <vector>
+#include <string>
 #include "../include/rapidjson/document.h"
 #include "../include/rapidjson/writer.h"
 #include "../include/rapidjson/stringbuffer.h"
@@ -21,9 +22,14 @@ int main() {
     // d.Accept(writer);
 
     // std::cout << buffer.GetString() << std::endl;
-    std::vector<int> marksOne = {1, 2, 3};
-    Student st = Student(123, "JijA", marksOne);
-    std::cout << st.calculateMeanMark() << std::endl;
-    Deanery dnry = Deanery();
+    std::vector<int> marksOne = {4, 6, 12};
+    Student *st = new Student(123, "JijA", marksOne);
+    std::string name = "Test";
+    std::string spec = "JiJA";
+    std::vector<Student*> students;
+    students.push_back(st);
+    Group gr = Group(name, spec, students);
+    std::cout << gr.calculateMeanMark() << std::endl;
+    // Deanery dnry = Deanery();
     return 0;
 }
