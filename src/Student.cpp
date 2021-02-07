@@ -19,8 +19,9 @@ std::string Student::getFiofromId(int id) {
     if (st) {
         Student stu = *st;
         return stu.getFio();
-    } else
+    } else {
         return "No such Student";
+    }
 }
 
 int Student::getId() {

@@ -87,7 +87,7 @@ TEST(Deanary, test8) {
     gr = deanary.getLastGroup();
     st = Student(543, "Liza Kraeva");
     gr.addStudent(&st);
-    EXPECT_EQ(1, gr.isEmpty());
+    EXPECT_EQ(0, gr.isEmpty());
 }
 
 TEST(Group, test9) {
