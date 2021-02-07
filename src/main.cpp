@@ -6,7 +6,6 @@
 #include <vector>
 
 int main() {
-    setlocale(LC_ALL, "rus");
     Deanery deanery{};
     std::cout << std::endl;
     deanery.moveStudents(std::vector<Student *>

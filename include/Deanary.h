@@ -39,7 +39,7 @@ class Deanery {
      void initHeads();
      std::stringbuf getHeads();
      void printHeads();
-     std::vector<Group *> getGroups() const;
+     std::vector<Group *> *getGroups() const;
 };
 
 #endif  // INCLUDE_DEANARY_H_

@@ -6,6 +6,7 @@
 #include <sstream>
 
 Deanery::Deanery() {
+    groups = new std::vector<Group *>();
     createStudents();
     createGroups();
     hireStudents();
@@ -44,7 +45,7 @@ void Deanery::createGroups() {
     if (in.is_open()) {
         while (getline(in, line1) && getline(in, line2)) {
             Group *gr_ptr = new Group(line1, line2);
-            groups.push_back(gr_ptr);
+            groups->push_back(gr_ptr);
             i++;
         }
     }
@@ -58,15 +59,15 @@ std::string Deanery::getNameOfGroup(Group *group) {
 std::stringbuf Deanery::getNameOfGroups() {
     std::stringbuf str;
     std::ostream stream(&str);
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         stream << getNameOfGroup(group) << '\n';
     }
     return str;
 }
 
 void Deanery::hireStudents() {
-    size_t sizeOfGroup = unalloc.size() / groups.size();
-    for (auto &group : groups) {
+    size_t sizeOfGroup = unalloc.size() / groups->size();
+    for (auto &group : *groups) {
         for (size_t i = 0; i < sizeOfGroup; ++i) {
             Student *st_ptr = new Student(unalloc[0].first, unalloc[0].second);
             group->students.push_back(st_ptr);
@@ -76,8 +77,8 @@ void Deanery::hireStudents() {
     }
     while (!unalloc.empty()) {
         Student *st_ptr = new Student(unalloc[0].first, unalloc[0].second);
-        groups[groups.size()-1]->students.push_back(st_ptr);
-        st_ptr->addToGroup(groups[groups.size() - 1]);
+        (*groups)[groups->size() - 1]->students.push_back(st_ptr);
+        st_ptr->addToGroup((*groups)[groups->size() - 1]);
         unalloc.erase(unalloc.begin());
     }
     initHeads();
@@ -86,7 +87,7 @@ void Deanery::hireStudents() {
 std::stringbuf Deanery::getGroupsWithStudents() {
     std::stringbuf str;
     std::ostream stream(&str);
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         stream << group->title << '\t' << group->spec << ':' << '\n';
         for (auto &student : group->students) {
             stream << student->id << ": " << student->fio << '\n';
@@ -102,7 +103,7 @@ void Deanery::printGroups() {
 
 void Deanery::addMarksToAll() {
     srand(time(NULL));
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         for (auto &student : group->students) {
             for (size_t i = 4; i < (std::rand() % 10 + 5); ++i) {
                 student->addmark(std::rand() % 5 + 2);
@@ -115,7 +116,7 @@ std::stringbuf Deanery::makeStatistics() {
     std::stringbuf str;
     std::ostream stream(&str);
     stream << "Average marks:" << '\n';
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         stream << group->title << ": " << group->getAverageMark() << '\n';
     }
     stream << '\n';
@@ -135,11 +136,11 @@ void Deanery::moveStudents(std::vector<Student *> moving, Group *group) {
 }
 
 Group *Deanery::getGroup(size_t ind) {
-    return groups[ind];
+    return (*groups)[ind];
 }
 
 void Deanery::fireStudents(double min_avg) {
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         for (auto &student : group->students) {
             if (student->getAverageMark() <= min_avg) {
                 if (student->isHeadOfGroup())
@@ -158,7 +159,7 @@ void Deanery::saveStaff() {
 }
 
 void Deanery::initHeads() {
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         group->chooseHead();
     }
 }
@@ -167,7 +168,7 @@ std::stringbuf Deanery::getHeads() {
     std::stringbuf str;
     std::ostream stream(&str);
     stream << "Heads of groups" << '\n';
-    for (auto &group : groups) {
+    for (auto &group : *groups) {
         stream <<  group->title << '\n' << '\t' <<
             group->getHead()->getID() << ": " <<
             group->getHead()->getFIO() << '\n';
@@ -179,6 +180,6 @@ void Deanery::printHeads() {
     std::cout << getHeads().str();
 }
 
-std::vector<Group *> Deanery::getGroups() const {
+std::vector<Group *>* Deanery::getGroups() const {
     return groups;
 }
