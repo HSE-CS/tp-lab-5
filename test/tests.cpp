@@ -15,7 +15,7 @@ TEST(PostfixTest, test1) {
 TEST(PostfixTest, test2) {
 	Student student("1", "Ivanov Ivan Ivanovich");
 	std::string fio = student.getFio();
-	EXPECT_EQ("Pavlov pavel Pavlovich", fio);
+	EXPECT_EQ("Ivanov Ivan Ivanovich", fio);
 }
 
 
