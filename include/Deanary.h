@@ -2,6 +2,7 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
+#include <iostream>
 #include <fstream>
 #include <vector>
 #include<string>
@@ -31,10 +32,12 @@ class Deanary {
   void createGroupByAdress(Group* gr);
   void hireStudents(std::string path = "data.json", int num = -1);
   void addMarksToAll();
+  void AcademicFailure();
   void getStatistics(std::string path = "statistic.txt");
   void moveStudents(unsigned st_id, std::string gr_title);
   Group* getGroupByTitle(std::string title);
   void saveStaff(std::string path = "save.txt");
+  void getInfo();
   void initHeads();
   void fireStudents(unsigned st_id);
 };

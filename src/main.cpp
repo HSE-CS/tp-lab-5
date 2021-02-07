@@ -20,4 +20,6 @@ int main() {
   dean.saveStaff("save1.txt");
   dean.fireStudents(84);
   dean.saveStaff("save2.txt");
+  dean.AcademicFailure();
+  dean.getInfo();
 }

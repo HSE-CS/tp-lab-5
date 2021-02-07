@@ -58,6 +58,16 @@ void Deanary::addMarksToAll() {
   }
 }
 
+void Deanary::AcademicFailure() {
+  for (auto gr : *groups) {
+    for (auto st : *gr->students) {
+      if (st->getAveragemark() < 4.0) {
+        gr->removeStudent(st->id);
+      }
+    }
+  }
+}
+
 void Deanary::getStatistics(std::string path) {
   std::ofstream out(path);
   for (auto gr : *groups) {
@@ -136,6 +146,20 @@ void Deanary::saveStaff(std::string path) {
       count++;
     }
     out << "\n\n";
+  }
+}
+
+void Deanary::getInfo() {
+  for (auto gr : *groups) {
+    std::cout << gr->spec << " " << gr->title << "\nHead: " << gr->head->fio
+        << " id: " << gr->head->id << "\nStudents:\n";
+    unsigned count = 1;
+    for (auto st : *gr->students) {
+      std::cout << count << ") " << st->fio << " id: " << st->id
+          << " AM: " << st->getAveragemark() << "\n";
+      count++;
+    }
+    std::cout << "\n\n";
   }
 }
 
