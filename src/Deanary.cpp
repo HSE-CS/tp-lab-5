@@ -39,7 +39,8 @@ void Deanary::addMarksToAll(uint64_t mark, std::string name_group) {
   }
 }
 
-void Deanary::moveStudents(std::string stu, std::string gr_from, std::string gr_to) {
+void Deanary::moveStudents(std::string stu, std::string gr_from, 
+  std::string gr_to) {
   for (auto i : groups) {
     if (i->title == gr_from) {
       for (auto j : groups) {
@@ -106,7 +107,7 @@ Student* Deanary::getStudent(std::string name, std::string group) {
           return j;
         }
       }
-      std::cout << "there is no such student in the " << i->title 
+      std::cout << "there is no such student in the " << i->title
         << " group" << std::endl;
       return new Student("error", "error");
     }

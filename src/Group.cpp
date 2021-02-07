@@ -1,5 +1,6 @@
 // Copyright 2020 Dumarevskaya
 #include "Group.h"
+#include <algorithm>
 
 void Group::addStudent(Student* student) {
   students.push_back(student);

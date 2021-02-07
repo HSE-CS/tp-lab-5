@@ -1,4 +1,4 @@
-// Copyright 2020 Dumarevskaya 
+// Copyright 2020 Dumarevskaya
 #include "Student.h"
 
 void Student::addToGroup(Group* name_group) {
