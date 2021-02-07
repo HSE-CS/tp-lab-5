@@ -9,6 +9,7 @@
 Group::Group(std::string title, std::string spec) {
   this->title = title;
   this->spec = spec;
+  students.resize(0);
 }
 
 Student * Group::getStudent(int id) {
