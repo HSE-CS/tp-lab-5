@@ -52,8 +52,8 @@ TEST(TestGroup, testAdd) {
   std::string spec = "Software Engineering";
   Group g(title, spec);
   std::string name = "Pupkin Egor Fedorovich";
-  Student s(100, name);
-  g.addStudent(&s);
+  Student* s = new Student(100, name);
+  g.addStudent(s);
   EXPECT_EQ(g.getNumberOfStudents(), 1);
 }
 
@@ -66,5 +66,47 @@ TEST(TestGroup, testGHead) {
   g.addStudent(&s);
   g.chooseHead();
   EXPECT_TRUE(s.isHeadOfGroup());
+}
+
+TEST(TestGroup, testGAvg) {
+  std::string title = "SE1";
+  std::string spec = "Software Engineering";
+  Group g(title, spec);
+  std::string name = "Pupkin Egor Fedorovich";
+  Student s(100, name);
+  s.addMark(5);
+  std::string name2 = "Pupkin Vasilii Fedorovich";
+  Student s1(112, name2);
+  s1.addMark(6);
+  g.addStudent(&s);
+  g.addStudent(&s1);
+  ASSERT_NEAR(5.5, g.getAverageMark(), 0.0001);
+}
+
+TEST(TestDeanery, testMove) {
+  std::string title = "SE1";
+  std::string spec = "Software Engineering";
+  Group g(title, spec);
+  std::string name = "Pupkin Egor Fedorovich";
+  Student s(100, name);
+  std::string name2 = "Pupkin Vasilii Fedorovich";
+  Student s1(112, name2);
+  g.addStudent(&s);
+  g.addStudent(&s1);
+
+  std::string title2 = "SE2";
+  std::string spec2 = "Software Engineering";
+  Group g2(title2, spec2);
+
+  std::vector<Group*> groups(2);
+  groups[0] = &g;
+  groups[1] = &g2;
+
+  Deanery D(groups);
+  D.moveStudent(&s, title, title2);
+  D.moveStudent(&s1, title, title2);
+
+  EXPECT_TRUE(g.isEmpty());
+  EXPECT_EQ(2, g2.getNumberOfStudents());
 }
 
