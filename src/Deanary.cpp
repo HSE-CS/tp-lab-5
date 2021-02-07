@@ -152,7 +152,7 @@ void Deanary::addRandomMarksToAll() {
   unsigned int seed;
   for (int i = 0; i < this->groups.size(); ++i) {
       for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-          this->getGroups().at(i)->getStudents().at(j)->addMark(rand_r(&seed) % 11);
+     this->getGroups().at(i)->getStudents().at(j)->addMark(rand_r(&seed) % 11);
       }
   }
 }
@@ -179,8 +179,8 @@ void Deanary::getStatistics() {
           this->getGroups().at(i)->getHead()->getFio() << std::endl;
       std::cout << "{" << std::endl;
       for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-          std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
-          std::string name = this->getGroups().at(i)->getStudents().at(j)->getFio();
+        std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
+     std::string name = this->getGroups().at(i)->getStudents().at(j)->getFio();
           double avr = this->getGroups().at(i)->getStudents().at(j)->
               calculateAverageMark();
           std::cout << id << " --- " << name <<
@@ -203,13 +203,13 @@ void Deanary::saveStaff() {
           out << "Head: " << this->getGroups().at(i)->getHead()->
               getFio() << std::endl;
           out << "{" << std::endl;
-          for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-              std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
+      for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
+        std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
               std::string name = this->getGroups().at(i)->getStudents().at(j)->
                   getFio();
               double avr = this->getGroups().at(i)->getStudents().at(j)->
                   calculateAverageMark();
-              out << id << " --- " << name << " --- average: " << avr << std::endl;
+          out << id << " --- " << name << " --- average: " << avr << std::endl;
           }
           out << "}" << std::endl;
       }
