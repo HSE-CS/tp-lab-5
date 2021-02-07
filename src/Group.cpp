@@ -20,18 +20,6 @@ double Group::getAverageMark() {
   return double(sum) / students.size();
 }
 
-Student &Group::getStudent(int id_) {
-  for (auto &student : this->students)
-    if (student->id == id_)
-      return *student;
-}
-
-Student &Group::getStudent(const std::string &fio_) {
-  for (auto &student : this->students)
-    if (student->fio == fio_)
-      return *student;
-}
-
 int Group::containsStudent(Student student) {
   int iter = 0;
   for (auto students_ : students) {
