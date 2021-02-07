@@ -26,9 +26,7 @@ void Group::setTitle(std::string title) {
 void Group::setSpec(std::string spec) {
     _spec = spec;
 }
-// Group Group::createGroup(std::string title) {
 
-// }
 void Group::addStudentToGroup(Student* student) {
     student->setGroup(this);
     _students.push_back(student);

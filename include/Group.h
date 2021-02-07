@@ -14,7 +14,7 @@ class Group{
 
  public:
     Group(std::string title,
-        std::string spec,
+        std::string spec = "",
         std::vector<Student*> students = std::vector<Student*>(),
         Student *head = NULL):
         _title(title),
