@@ -92,7 +92,7 @@ TEST(DeaneryTest, test9) {
 
 TEST(DeaneryTest, test10) {
   Deanery decan{};
-  decan.addMarksToAll(0);
+  decan.addMarksToAll(200);
   double average = decan.getGroups()->at(2)->getAveragemark();
-  EXPECT_EQ(0, average);
+  EXPECT_NEAR(5, average, 1);
 }
