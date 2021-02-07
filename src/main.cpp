@@ -116,8 +116,6 @@ int main() {
   DeanaryObj.initialiseElection();  //  working
   DeanaryObj.printAllInfo();  //  working
   delimiter();
-  //std::cout << DeanaryObj.getCurrentAmountOfStudents() << std::endl;  //  working
-  //std::cout << DeanaryObj.getCurrentAmoutOfGroups() << std::endl;  //  working
   for (size_t i = 0; i < DeanaryObj.getCurrentAmountOfStudents(); ++i) {
     Student* tmp = DeanaryObj.getStudentAddress(i);  //  working
     DeanaryObj.addRandomMarks(tmp, 10);  //  working
@@ -131,10 +129,6 @@ int main() {
     delimiter();
   }
   std::cout << "\n\n==================================================\n\n";
-  //DeanaryObj.printAllInfo();  //  working
-  //Student* tmp_student = DeanaryObj.getStudentAddress(0);  //  working
-  //Group* tmp_group = DeanaryObj.getGroupAddress(3);  //  working
-  //DeanaryObj.moveStudent(tmp_student, tmp_group);  //  working
   DeanaryObj.printAllInfo();  //  working
   DeanaryObj.fireForAcademicFailure();
   DeanaryObj.printAllInfo();

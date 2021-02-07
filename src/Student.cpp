@@ -56,7 +56,7 @@ double Student::getAverageMark() {
   for (size_t i = 0; i < this->marks.size(); ++i) {
     averageMark += this->marks[i];
   }
-  return (averageMark / (double)this->marks.size());
+  return (averageMark / static_cast<double>(this->marks.size()));
 }
 void Student::makeHead() { this->isHead = true; }
 unsigned Student::getId() { return (this->id); }

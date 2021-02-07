@@ -3,6 +3,8 @@
 #include "Student.h"
 #include "Group.h"
 
+static unsigned int producerseed = 54321;
+
 std::string getFileName() {
   std::cout << "Please, print file name (Without spaces and with extencion)\n";
   std::string fileName;
@@ -39,7 +41,7 @@ void Deanary::createGroups() {
   FileIn.close();
 }
 void Deanary::addStudentToRandomGroup(Student* studentToAdd) {
-    unsigned groupNum = rand() % (this->groups).size();
+    unsigned groupNum = std::rand() % (this->groups).size();
     int minSize = INT8_MAX;
     int minInd = INT8_MAX;
     if ((this->groups[groupNum])->students.size() < 31) {
@@ -70,7 +72,8 @@ void Deanary::initialiseStudents() {
     studentNameAndSurname += " ";
     FileIn >> studentNameAndSurname2;
     studentNameAndSurname += studentNameAndSurname2;
-    Student* studentToAdd = new Student(this->numberOfStudents, studentNameAndSurname);
+    Student* studentToAdd = new Student(this->numberOfStudents, 
+                                        studentNameAndSurname);
     (this->allStudents).push_back(&(*studentToAdd));
     addStudentToRandomGroup(&(*studentToAdd));
     studentNameAndSurname.clear();
@@ -80,7 +83,7 @@ void Deanary::initialiseStudents() {
 }
 void Deanary::addRandomMarks(Student* studentToAdd, int quantity) {
   for (size_t i = 0; i < quantity; ++i) {
-    (*studentToAdd).addMarkToStudent(rand() % 11);
+    (*studentToAdd).addMarkToStudent(std::rand() % 11);
   }
 }
 double Deanary::getStudentStatistic(Student* student) {
@@ -148,8 +151,8 @@ void Deanary::saveChanges() {
           << "Average mark\t"
           << "Is student head of group?\n";
   for (size_t i = 0; i < (this->allStudents).size(); ++i) {
-    FileOut << (this->allStudents[i])->fio << "\t" 
-            << (this->allStudents[i])->id << "\t" 
+    FileOut << (this->allStudents[i])->fio << "\t"
+            << (this->allStudents[i])->id << "\t"
             << ((this->allStudents[i])->group)->getTitle() << "\t"
             << (this->allStudents[i])->getAverageMark() << "\t";
     if ((this)->allStudents[i]->isHead) {
@@ -167,13 +170,13 @@ Student* Deanary::getStudentAddress(unsigned index) {
   return (this->allStudents[index]);
 }
 Group* Deanary::getGroupAddress(unsigned index) {
-    return (this->groups[index]); 
+    return (this->groups[index]);
 }
 void Deanary::addStudent(Student* StudentObj) {
   this->allStudents.push_back(StudentObj);
 }
 void Deanary::addGroup(Group* GroupObj) {
-    this->groups.push_back(GroupObj); 
+    this->groups.push_back(GroupObj);
 }
 void Deanary::addStudentToGroup(Student* StudentObj, Group* GroupObj) {
   GroupObj->addStudentToGroup(StudentObj);
