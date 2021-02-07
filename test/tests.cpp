@@ -21,3 +21,46 @@ TEST(StudentTest, test2) {
   EXPECT_EQ(10.0, student.getAveragemark());
 }
 
+TEST(GroupTest, test3) {
+  unsigned int id = 98765432;
+  std::string fio = "Naumov Velor Iosifovich";
+  Student student(id, fio);
+  std::string spec = "PI";
+  std::string title = "19PI-1";
+  Group group(title, spec);
+  student.addMark(10);
+  group.addStudent(&student);
+  student.addToGroup(&group);
+  EXPECT_EQ(&student, group.getStudentById(98765432);
+}
+
+TEST(GroupTest, test4) {
+  unsigned int id = 98765432;
+  std::string fio = "Naumov Velor Iosifovich";
+  Student student(id, fio);
+  std::string spec = "PI";
+  std::string title = "19PI-1";
+  Group group(title, spec);
+  student.addMark(10);
+  group.addStudent(&student);
+  student.addToGroup(&group);
+  EXPECT_EQ(&group, student.getGroup());
+}
+
+TEST(GroupTest, test5) {
+  unsigned int id = 98765432;
+  std::string fio = "Naumov Velor Iosifovich";
+  Student student(id, fio);
+  std::string spec = "PI";
+  std::string title = "19PI-1";
+  Group group(title, spec);
+  student.addMark(10);
+  student.addMark(10);
+  student.addMark(10);
+  student.addMark(10);
+  group.addStudent(&student);
+  student.addToGroup(&group);
+  student.getAveragemark();
+  EXPECT_EQ(10.0, group.getAveragemark());
+}
+
