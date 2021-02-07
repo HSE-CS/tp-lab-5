@@ -1,9 +1,8 @@
+// Copyright 2021 Tatsenko Ilya
 #include<iostream>
 #include"Deanary.h"
 #include"Group.h"
-// Copyright 2021 Tatsenko Ilya
 #include"Student.h"
-#include<time.h>
 
 int main() {
     Deanary decanat;
@@ -13,9 +12,8 @@ int main() {
     decanat.add_marks_to_all();
     decanat.init_heads();
     decanat.get_statistic();
-    // decanat.fire_student("Акимов Борис Алексеевич");
-    // decanat.save_data_in_file("D:\\files\\students.txt", "D:\\files\\groups.txt");
-    decanat.move_students("Акимов Борис Сергеевич", "19PI");
+    // decanat.fire_student("ГЂГЄГЁГ¬Г®Гў ГЃГ®Г°ГЁГ± ГЂГ«ГҐГЄГ±ГҐГҐГўГЁГ·");
+    decanat.move_students("Tatsenko Ilya Michailovich", "19PI");
     decanat.get_statistic();
     return 0;
 }

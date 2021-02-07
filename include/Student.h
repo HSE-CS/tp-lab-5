@@ -2,6 +2,7 @@
 #pragma once
 #include<iostream>
 #include <vector>
+#include<string>
 #include"Group.h"
 
 class Group;
@@ -13,9 +14,9 @@ class Student {
     std::string fio;
     Group* group = nullptr;
     std::vector<int> marks;
- public:
 
-    Student() {};
+ public:
+    Student() {}
     Student(int id, std::string fio) {
         this->id = id;
         this->fio = fio;
@@ -23,15 +24,9 @@ class Student {
     void add_to_group(Group* group);
     void add_mark(int mark);
     double get_avarage_mark();
-    std::string get_fio() {
-        return fio;
-    }
-    int get_id() {
-        return id;
-    }
-    std::string get_group() {
-        return group->title;
-    }
+    std::string get_fio();
+    int get_id();
+    std::string get_group();
     friend Group;
     friend Deanary;
 };
