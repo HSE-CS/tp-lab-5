@@ -1,3 +1,5 @@
+// Copyright 2021 dmitrycvetkov2000
+
 #include "Deanary.h"
 
 #include <algorithm>
@@ -8,7 +10,7 @@
 #include <random>
 #include <sstream>
 
-std::vector<Group*>::const_iterator Deanary::findGroup(const std::string &name) {
+std::vector<Group*>::const_iterator Deanary::findGroup(const std::string& name) {
     return std::find_if(std::begin(groups), std::end(groups), [&name](Group* const group) {
         return group->title == name;
         });
@@ -19,7 +21,7 @@ Deanary::~Deanary() {
         delete g;
 }
 
-void Deanary::createGroups(std::ifstream &ifs) {
+void Deanary::createGroups(std::ifstream& ifs) {
     std::string name;
     while (ifs >> name) {
         Group* group = new Group(name);
@@ -83,7 +85,8 @@ void Deanary::getStatistics() const {
         std::cout << g->title << std::endl;
         if (g->isEmpty()) {
             std::cout << "В группе нет студентов" << std::endl;
-        } else {
+        }
+        else {
             std::cout << "Староста: " << g->getStudent(g->headId)->name << std::endl;
             std::cout << "Средняя оценка: " << g->getAverageMark() << std::endl;
 
@@ -100,7 +103,7 @@ void Deanary::getStatistics() const {
     }
 }
 
-void Deanary::moveStudent(const std::string &groupName, const int studentId, const std::string& targetGroupName) {
+void Deanary::moveStudent(const std::string& groupName, const int studentId, const std::string& targetGroupName) {
     auto srcIter = findGroup(groupName);
     auto dstIter = findGroup(targetGroupName);
     Student* student = (*srcIter)->getStudent(studentId);
@@ -108,12 +111,13 @@ void Deanary::moveStudent(const std::string &groupName, const int studentId, con
     (*dstIter)->addStudent(student);
 }
 
-void Deanary::saveStaff(std::ofstream &ofs) const {
+void Deanary::saveStaff(std::ofstream& ofs) const {
     for (const auto& g : groups) {
         ofs << g->title << std::endl;
         if (g->isEmpty()) {
             ofs << "Нет студентов" << std::endl;
-        } else {
+        }
+        else {
             ofs << "Староста: " << g->getStudent(g->headId)->name << std::endl;
             ofs << "Средний балл: " << g->getAverageMark() << std::endl;
             ofs << "Студенты:" << std::endl;
@@ -126,7 +130,8 @@ void Deanary::saveStaff(std::ofstream &ofs) const {
                         ofs << mark << " ";
                     }
                     ofs << "(" << student->getAverageMark() << ")" << std::endl;
-                } else {
+                }
+                else {
                     ofs << std::endl;
                 }
             }

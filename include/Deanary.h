@@ -1,23 +1,32 @@
-﻿#pragma once
+﻿// Copyright 2021 dmitrycvetkov2000
+
+#ifndef DEANERY_H
+#define DEANERY_H
 
 #include <Student.h>
 #include <Group.h>
 
+#include <string>
+#include <vector>
+
 class Deanary {
-public:
+ public:
     ~Deanary();
 
     void createGroups(std::ifstream& ifs);
     void hireStudents(std::ifstream& ifs);
     void addMarksToAll();
     void getStatistics() const;
-    void moveStudent(const std::string& groupName, const int studentId, const std::string& targetGroupName);
+    void moveStudent(const std::string& groupName, const int studentId,
+        const std::string& targetGroupName);
     void saveStaff(std::ofstream& ofs) const;
     void initHeads();
     void fireStudent(const std::string& groupName, const int studentId);
 
-private:
+ private:
     std::vector<Group*> groups;
 
     std::vector<Group*>::const_iterator findGroup(const std::string& name);
 };
+
+#endif  // DEANERY_H

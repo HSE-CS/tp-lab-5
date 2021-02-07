@@ -1,3 +1,5 @@
+// Copyright 2021 dmitrycvetkov2000
+
 #ifndef GROUP_H
 #define GROUP_H
 
@@ -8,7 +10,7 @@ class Student;
 class Deanary;
 
 class Group {
-public:
+  public:
     friend class Student;
     friend class Deanary;
 
@@ -23,7 +25,7 @@ public:
     void removeStudent(int id);
     bool isEmpty() const;
 
-private:
+  private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
@@ -32,4 +34,4 @@ private:
     std::vector<Student*>::const_iterator findStudent(int id) const;
 };
 
-#endif // GROUP_H
+#endif  // GROUP_H

@@ -1,10 +1,13 @@
+// Copyright 2021 dmitrycvetkov2000
+
 #include "Group.h"
 #include "Student.h"
 
+#include <algorithm>
 #include <cstdint>
 #include <numeric>
 
-Group::Group(const std::string& name) : title{ name } {
+Group::Group(const std::string& name) : title(name) {
 }
 
 Group::~Group() {
@@ -22,7 +25,8 @@ void Group::chooseHead(int id) {
 
 double Group::getAverageMark() const {
     size_t marksCount = 0;
-    int sum = std::accumulate(std::begin(students), std::end(students), 0.0, [&marksCount](unsigned short a, Student* const student) {
+    int sum = std::accumulate(std::begin(students), std::end(students),
+        0.0, [&marksCount](unsigned short a, Student* const student) {
         const std::vector<int> marks = student->marks;
         marksCount += marks.size();
         return  a + std::accumulate(std::begin(marks), std::end(marks), 0.0);
@@ -31,7 +35,8 @@ double Group::getAverageMark() const {
 }
 
 std::vector<Student*>::const_iterator Group::findStudent(int id) const {
-    return std::find_if(std::begin(students), std::end(students), [&id](Student* const student) {
+    return std::find_if(std::begin(students), std::end(students),
+        [&id](Student* const student) {
         return student->id == id;
         });
 }

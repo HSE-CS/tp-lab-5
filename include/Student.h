@@ -1,3 +1,5 @@
+// Copyright 2021 dmitrycvetkov2000
+
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -8,7 +10,7 @@ class Group;
 class Deanary;
 
 class Student {
-public:
+  public:
     friend class Group;
     friend class Deanary;
 
@@ -20,12 +22,11 @@ public:
     double getAverageMark() const;
     bool isHeadOfGroup() const;
 
-private:
-
+  private:
     int id;
     std::string name;
     Group* group;
     std::vector<int> marks;
 };
 
-#endif // STUDENT_H
+#endif  // STUDENT_H
