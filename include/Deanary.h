@@ -29,6 +29,7 @@ class Deanary {
   void saveStaff(std::string filename_groups, std::string filename_students);
   void initHeads();
   void fireStudents();
+  void printAllInfo();
   friend class Group;
   friend class Student;
 };

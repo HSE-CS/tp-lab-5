@@ -66,6 +66,21 @@ std::vector<Student *> Group::containsStudent() {
   return this->students;
 }
 
+Student* Group::getHead() {
+  return this->head;
+}
+
 bool Group::isEmpty() {
   return students.size() ? false : true;
+}
+
+void Group::printAllAboutGroup() {
+  std::cout << "name: " << this->title << "\nspecialty: " << this->spec <<
+  "\nsize of group: " << this->students.size() << "\ngroup head:\n";
+  if (this->head == nullptr) {
+    std::cout << "None" << std::endl;
+  } else {
+    std::cout << "FIO: " << (this->head)->fio << " | ID : "
+    << (this->head)->id << std::endl;
+  }
 }

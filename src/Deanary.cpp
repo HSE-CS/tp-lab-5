@@ -2,9 +2,14 @@
 
 #include "Deanary.h"
 
+void Deanary::initHeads() {
+  for (auto group : groups) {
+    group->chooseHead();
+  }
+}
+
 Deanary::Deanary(std::string filename) {
   createGroups(filename);
-  initHeads();
 }
 
 void Deanary::createGroups(std::string filename) {
@@ -18,6 +23,7 @@ void Deanary::createGroups(std::string filename) {
     groups.push_back(gr);
   }
   fin.close();
+
 }
 
 void Deanary::hireStudents(std::string filename) {
@@ -98,12 +104,6 @@ void Deanary::saveStaff(std::string fileGroups, std::string fileStudents) {
   fstudent.close();
 }
 
-void Deanary::initHeads() {
-  for (auto group : groups) {
-    group->chooseHead();
-  }
-}
-
 void Deanary::fireStudents() {
   for (auto group : groups) {
     for (auto student : group->containsStudent()) {
@@ -119,4 +119,21 @@ int Deanary::randomId() {
   int id = 10000000 + std::rand() % 90000000;
   // std::cout << id << std::endl;
   return id;
+}
+
+void Deanary::printAllInfo() {
+  std::cout << "Information about groups\n" << std::endl;
+  std::cout << "-------------------------------------------\n" << std::endl;
+  for (auto g : groups) {
+    g->printAllAboutGroup();
+    std::cout << "\n";
+  }
+  std::cout << "Information about students\n" << std::endl;
+  std::cout << "-------------------------------------------\n" << std::endl;
+  for (auto g : groups) {
+    for (auto s : g->containsStudent()) {
+      s->printAllAboutStudent();
+      std::cout << "\n\n";
+    }
+  }
 }

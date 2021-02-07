@@ -24,7 +24,9 @@ class Group {
   Student* getStudentByFio(std::string);
   float getAveragemark();
   std:: vector <Student *> containsStudent();
+  void printAllAboutGroup();
   bool isEmpty();
+  Student* getHead();
   friend class Student;
 };
 

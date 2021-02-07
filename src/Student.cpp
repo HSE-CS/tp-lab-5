@@ -42,3 +42,18 @@ int Student::getId() {
 std::string Student::getfio() {
   return this->fio;
 }
+
+void Student::printAllAboutStudent() {
+  std::cout << "FIO: " << this->fio << " | ID : " << this->id << "\nGROUP: ";
+  std::string str = (this->group != nullptr) ? (this->group->getTitle()) : "None";
+  std::cout << str;
+  if (this->isHeadOfGroup()) {
+    std::cout << " [HEAD]";
+  }
+  // if (this->group != nullptr) {
+  //   std::cout << "Group " << (this->group->getTitle()) << std::endl;
+  // } else {
+  //   std::cout << "Group " << "None" << std::endl;
+  // }
+}
+

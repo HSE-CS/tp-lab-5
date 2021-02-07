@@ -26,6 +26,7 @@ class Student {
   float getAveragemark();
   int getId();
   std::string getfio();
+  void printAllAboutStudent();
 };
 
 #endif  // INCLUDE_STUDENT_H_
