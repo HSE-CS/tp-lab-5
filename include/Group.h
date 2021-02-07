@@ -29,7 +29,7 @@ class Group {
   }
   void chooseHead();
   void removeStudent(unsigned st_id);
-  void removeStudent(Student* st);
+  void removeStudentByAdress(Student* st);
   void addStudent(Student *new_student);
   double getAveragemark();
   Student* getStudentById(unsigned id);

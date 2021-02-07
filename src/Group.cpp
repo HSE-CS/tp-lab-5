@@ -26,7 +26,7 @@ void Group::removeStudent(unsigned st_id) {
   }
 }
 
-void Group::removeStudent(Student *st) {
+void Group::removeStudentByAdress(Student *st) {
   unsigned st_id = st->id;
   removeStudent(st->id);
 }

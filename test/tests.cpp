@@ -25,7 +25,7 @@ TEST(DeanaryTest, test3) {
   stud.addMark(0);
   double expected = 5.;
   double result = stud.getAveragemark();
-  EXPECT_NEAR(expected, result);
+  EXPECT_NEAR(expected, result, 0.001);
 }
 
 TEST(DeanaryTest, test4) {
@@ -66,14 +66,14 @@ TEST(DeanaryTest, test7) {
   st2.addMark(1);
   double expected = ((10 + 9) / 2. + (0 + 1) / 2.) / 2.;
   double result = gr.getAveragemark();
-  EXPECT_NEAR(expected, result);
+  EXPECT_NEAR(expected, result, 0.001);
 }
 
 TEST(DeanaryTest, test8) {
   Group gr("PMI", "<3");
   Student st1("Person", 100);
   gr.addStudent(&st1);
-  gr.removeStudent(&st1);
+  gr.removeStudentByAdress(&st1);
   bool expected = true;
   bool result = gr.isEmpty();
   EXPECT_EQ(expected, result);
@@ -84,9 +84,9 @@ TEST(DeanaryTest, test9) {
   Group gr("PMI", "<3");
   Student st("Person", 100);
   dean.createGroupByAdress(&gr);
-  gr.addStudent(st);
+  gr.addStudent(&st);
   dean.initHeads();
-  Student* expected = *st;
+  Student* expected = &st;
   Student* result = gr.getHead();
   EXPECT_EQ(expected, result);
 }
@@ -96,8 +96,8 @@ TEST(DeanaryTest, test10) {
   Group gr("PMI", "<3");
   Student st("Person", 100);
   dean.createGroupByAdress(&gr);
-  gr.addStudent(st);
-  dean.fireStudents(st.id);
+  gr.addStudent(&st);
+  dean.fireStudents(st.getId());
   bool expected = true;
   bool result = gr.isEmpty();
   EXPECT_EQ(expected, result);
