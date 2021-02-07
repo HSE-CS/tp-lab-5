@@ -22,7 +22,7 @@ void Deanery::addRandomMarks() {
 }
 
 void Deanery::createStudents() {
-    for (auto group: this->groups) {
+    for (auto group : this->groups) {
         std::ifstream students(group->getTitle() + ".txt");
         while (!students.eof()) {
             int id = 0;
@@ -89,7 +89,7 @@ void Deanery::saveNewData() {
 
     for (auto group : this->groups) {
         std::fstream f_out(group->getTitle() + ".txt");
-        for (auto student: group->students) {
+        for (auto student : group->students) {
             f_out << student->getName() << '\n';
         }
     }

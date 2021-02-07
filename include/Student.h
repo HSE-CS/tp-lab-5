@@ -23,4 +23,4 @@ class Student {
     double getAverageMark();
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

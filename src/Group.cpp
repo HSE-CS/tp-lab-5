@@ -24,12 +24,13 @@ double Group::getAverageGroupMark() {
 }
 
 void Group::removeStudent(Student *student) {
-    auto stud = std::find(this->students.begin(), this->students.end(), student);
+    auto stud = std::find(this->students.begin(),
+                          this->students.end(), student);
     this->students.erase(stud);
 }
 
 Student* Group::searchStudentById(int id) {
-    for (auto & student : this->students){
+    for (auto & student : this->students) {
         if (student->getId() == id) return student;
     }
     return new Student(0, "ERROR");

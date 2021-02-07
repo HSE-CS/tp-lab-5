@@ -28,4 +28,4 @@ class Group {
     double getAverageGroupMark();
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_
