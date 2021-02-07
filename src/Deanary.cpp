@@ -23,7 +23,7 @@ void Deanery::distribStud(std::vector<Student*> new_students) {
     srand(time(NULL));
     int ind = 0;
     for (int i = 0; i < new_students.size(); i++) {
-        ind = rand() % groups.size();
+        ind = std::rand() % groups.size();
         groups[ind]->addStudent(new_students[i]);
     }
 }
@@ -47,7 +47,7 @@ void Deanery::addMarksToAll() {
     for (int gri = 0; gri < groups.size(); gri++) {
         for (int sti = 0; sti < groups[gri]->students.size(); sti++) {
             for (int i = 0; i < 7; i++) {
-                groups[gri]->students[sti]->addMark(rand() % 11);
+                groups[gri]->students[sti]->addMark(std::rand() % 11);
             }
         }
     }
@@ -63,13 +63,16 @@ void Deanery::getStatistics() {
             std::cout << groups[gri]->students[sti]->getFio() << " ";
             std::cout << groups[gri]->students[sti]->getId() << " ";
             std::cout << "Average mark - ";
-            std::cout << groups[gri]->students[sti]->getAveragemark() << std::endl;
+            std::cout << groups[gri]->students[sti]
+                ->getAveragemark() << std::endl;
         }
         std::cout << std::endl;
     }
 }
 
-void Deanery::moveStudents(int id, std::string title_from, std::string title_to) {
+void Deanery::moveStudents(int id, 
+                           std::string title_from, 
+                           std::string title_to) {
     for (int gri = 0; gri < groups.size(); gri++) {
         if (groups[gri]->getTitle() == title_from) {
             for (int sti = 0; sti < groups[gri]->students.size(); sti++) {
@@ -101,7 +104,8 @@ void Deanery::saveStaff() {
     std::ofstream file_st("students.txt");
     if ((file_gr.is_open()) && (file_st.is_open())) {
         for (int gri = 0; gri < groups.size(); gri++) {
-            file_gr << groups[gri]->getSpec() << " " << groups[gri]->getTitle() << "\n";
+            file_gr << groups[gri]->getSpec() << " ";
+            file_gr << groups[gri]->getTitle() << "\n";
             for (int sti = 0; sti < groups[gri]->students.size(); sti++) {
                 file_st << groups[gri]->students[sti]->getFio() << "\n";
             }
