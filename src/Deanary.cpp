@@ -76,29 +76,29 @@ void Deanary::addMarksToAll() {
 }
 
 void Deanary::getStatistics() const {
-    std::cout << "Всего групп: " << groups.size() << std::endl;
-    std::cout << "Всего студентов: " << std::accumulate(std::begin(groups), std::end(groups), 0, [](auto a, const Group* const group) {
+    std::cout << "Total groups: " << groups.size() << std::endl;
+    std::cout << "Total students: " << std::accumulate(std::begin(groups), std::end(groups), 0, [](auto a, const Group* const group) {
         return a + group->students.size();
         }) << std::endl;
-    std::cout << "Информация по группам: " << std::endl;
+    std::cout << "Group info: " << std::endl;
     for (const auto& g : groups) {
         std::cout << g->title << std::endl;
         if (g->isEmpty()) {
-            std::cout << "В группе нет студентов" << std::endl;
+            std::cout << "Group has no students" << std::endl;
         }
         else {
-            std::cout << "Староста: " << g->getStudent(g->headId)->name << std::endl;
-            std::cout << "Средняя оценка: " << g->getAverageMark() << std::endl;
+            std::cout << "Head: " << g->getStudent(g->headId)->name << std::endl;
+            std::cout << "Avg: " << g->getAverageMark() << std::endl;
 
             auto worst = std::min_element(std::begin(g->students), std::end(g->students), [](const Student* const lhs, const Student* const rhs) {
                 return lhs->getAverageMark() < rhs->getAverageMark();
                 });
-            std::cout << "Худший студент: " << (*worst)->name << ", средний балл: " << (*worst)->getAverageMark() << std::endl;
+            std::cout << "Worst: " << (*worst)->name << ", avg: " << (*worst)->getAverageMark() << std::endl;
 
             auto best = std::max_element(std::begin(g->students), std::end(g->students), [](const Student* const lhs, const Student* const rhs) {
                 return lhs->getAverageMark() < rhs->getAverageMark();
                 });
-            std::cout << "Лучший студент: " << (*best)->name << ", средний балл: " << (*best)->getAverageMark() << std::endl;
+            std::cout << "Best: " << (*best)->name << ", avg: " << (*best)->getAverageMark() << std::endl;
         }
     }
 }
@@ -115,12 +115,12 @@ void Deanary::saveStaff(std::ofstream& ofs) const {
     for (const auto& g : groups) {
         ofs << g->title << std::endl;
         if (g->isEmpty()) {
-            ofs << "Нет студентов" << std::endl;
+            ofs << "No students" << std::endl;
         }
         else {
-            ofs << "Староста: " << g->getStudent(g->headId)->name << std::endl;
-            ofs << "Средний балл: " << g->getAverageMark() << std::endl;
-            ofs << "Студенты:" << std::endl;
+            ofs << "Head: " << g->getStudent(g->headId)->name << std::endl;
+            ofs << "Avg: " << g->getAverageMark() << std::endl;
+            ofs << "Students:" << std::endl;
             const auto students = g->students;
             for (const auto& student : students) {
                 ofs << student->id << " " << student->name << " ";

@@ -20,7 +20,7 @@ TEST(StudentTest, averageMarkTest) {
 
 TEST(GroupTest, isInitiallyEmpty) {
     Group g("Test group");
-    EXPECT_TRUE(g.isEmpty);
+    EXPECT_TRUE(g.isEmpty());
 }
 
 TEST(InteractionTest, testAddStudent) {
