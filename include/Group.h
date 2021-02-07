@@ -16,11 +16,11 @@ class Group {
   std::string spec;
   std::vector<Student *> students;
   Student *head;
-  void AddStudent(Student *);
   void chooseHead();
   void removeStudent(Student *);
 
  public:
+  void AddStudent(Student *);
   Group(std::string, std::string);
   double getAverageMark();
   Student *getStudent(int);

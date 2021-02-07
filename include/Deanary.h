@@ -27,6 +27,7 @@ class Deanary {
   void initHeads();
   void fireStudents();
   Group *getGroup(std::string);
+  void AddGroup(Group *);
 };
 
 #endif  // INCLUDE_DEANARY_H_

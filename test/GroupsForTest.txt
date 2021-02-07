@@ -1,4 +1,0 @@
-FundamentalMathematics
-FM
-AppliedMathematicsAndInformatics
-AMI

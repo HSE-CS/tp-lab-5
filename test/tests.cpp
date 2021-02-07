@@ -35,5 +35,40 @@ TEST(DeanaryTest, test5) {
 
 TEST(DeanaryTest, test6) {
   Group group("TestTitle", "TestSpec");
-  EXPECT_EQ(true, group.isEmpty());
+  EXPECT_EQ(false, group.containsStudent());
 }
+
+TEST(DeanaryTest, test7) {
+  Group *group = new Group("FundamentalMathematics", "FM");
+  group->AddStudent(new Student(1, "TestName"));
+  Deanary dean(0);
+  dean.AddGroup(group);
+  EXPECT_EQ(true, dean.getGroup("FundamentalMathematics")->containsStudent(1););
+}
+
+TEST(DeanaryTest, test8) {
+  Group *group = new Group("FundamentalMathematics", "FM");
+  group->AddStudent(new Student(1, "TestName"));
+  Deanary dean(0);
+  dean.AddGroup(group);
+  dean.initHeads();
+  EXPECT_EQ(
+      true,
+      dean.getGroup("FundamentalMathematics")->getHead()->isHeadOfGroup());
+}
+
+TEST(DeanaryTest, test9) {
+  Group *group = new Group("FundamentalMathematics", "FM");
+  group->AddStudent(new Student(1, "TestName"));
+  Deanary dean(0);
+  dean.AddGroup(group);
+  dean.getGroup("FundamentalMathematics")
+      ->removeStudent(dean.getGroup("FundamentalMathematics")->getStudent(1));
+  EXPECT_EQ(true, group->isEmpty());
+}
+
+TEST(DeanaryTest, test10) { EXPECT_EQ(); }
+
+TEST(DeanaryTest, test11) { EXPECT_EQ(); }
+
+TEST(DeanaryTest, test12) { EXPECT_EQ(); }

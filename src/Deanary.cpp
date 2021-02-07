@@ -124,3 +124,5 @@ Group *Deanary::getGroup(std::string _title) {
   }
   return nullptr;
 }
+
+void Deanary::AddGroup(Group *_group) { groups.push_back(_group); }
