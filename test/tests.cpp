@@ -31,7 +31,7 @@ TEST(GroupTest, test3) {
   student.addMark(10);
   group.addStudent(&student);
   student.addToGroup(&group);
-  EXPECT_EQ(&student, group.getStudentById(98765432);
+  EXPECT_EQ(&student, group.getStudentById(98765432));
 }
 
 TEST(GroupTest, test4) {
