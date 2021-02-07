@@ -1,6 +1,6 @@
 // Copyright 2021 Egor Buzanov
 
-#include "../include/Group.h"
+#include "Group.h"
 
 Group::Group(std::string _title, std::string _spec) {
   title = _title;

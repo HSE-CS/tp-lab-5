@@ -1,6 +1,6 @@
 // Copyright 2021 Egor Buzanov
 
-#include "../include/Deanary.h"
+#include "Deanary.h"
 
 Deanary::Deanary() { id = 0; }
 
