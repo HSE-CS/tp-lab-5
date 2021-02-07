@@ -2,6 +2,7 @@
 #include <vector>
 #include <numeric>
 #include "../include/Student.h"
+#include "../include/Group.h"
 
 int Student::getId() {
     return _id;
@@ -26,4 +27,9 @@ void Student::addMark(int mark) {
 
 float Student::calculateMeanMark() {
     return std::accumulate(_marks.begin(), _marks.end(), 0) / _marks.size();
+}
+
+void Student::enrollInGroup(Group* group) {
+    _group = group;
+    group->addStudentToGroup(this);
 }

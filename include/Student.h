@@ -3,6 +3,7 @@
 #define _INCLUDE_STUDENT_H
 #include <vector>
 #include <string>
+// #include "../include/Group.h"
 
 class Group;
 class Student {
@@ -14,14 +15,14 @@ class Student {
 
  public:
     Student(int id, std::string fio,
-            std::vector<int> marks, Group* group = NULL):
+            std::vector<int> marks = std::vector<int>(), Group* group = NULL):
         _id(id),
         _fio(fio),
         _group(group),
         _marks(marks) {}
     void addMark(int mark);
     float calculateMeanMark();
-    bool enrollInGroup(Group* group);
+    void enrollInGroup(Group* group);
     int getId();
     std::string getFio();
     std::vector<int> getMarks();
