@@ -30,7 +30,6 @@ TEST(DeanaryTest, test3) {
 
 TEST(DeanaryTest, test4) {
   Group group("Group", "IT");
-  Student st(101, "Test_name Test_surname", &group);
   bool expected = false;
   EXPECT_EQ(expected, group.ContainsStudent(101));
 }
