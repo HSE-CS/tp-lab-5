@@ -40,8 +40,8 @@ void Deanary::createGroups() {
 }
 void Deanary::addStudentToRandomGroup(Student* studentToAdd) {
     unsigned groupNum = rand() % (this->groups).size();
-    int minSize = INT_MAX;
-    int minInd = INT_MAX;
+    int minSize = INT8_MAX;
+    int minInd = INT8_MAX;
     if ((this->groups[groupNum])->students.size() < 31) {
       (this->groups[groupNum])->addStudentToGroup(studentToAdd);
     } else {
