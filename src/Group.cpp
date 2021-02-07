@@ -7,7 +7,7 @@ void Group::addStudent(Student* student) {
 }
 
 void Group::chooseHead(Student* head_name) {
-  head = head_name ;
+  head = head_name;
 }
 
 double Group::getAveragemark() {
@@ -26,7 +26,8 @@ Student* Group::getStudent(std::string student) {
       return i;
     }
   }
-  std::cout << "there is no such student in the " << title << "group" << std::endl;
+  std::cout << "there is no such student in the " << title
+    << "group" << std::endl;
   return new Student("error", "error");
 }
 
@@ -41,7 +42,7 @@ bool Group::containsStudent(std::string student) {
 
 void Group::removeStudent(Student* student) {
   auto index = std::find(students.begin(), students.end(), student);
-  students.erase(index); 
+  students.erase(index);
 }
 
 bool Group::isEmpty() {

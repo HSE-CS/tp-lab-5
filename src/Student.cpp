@@ -6,7 +6,7 @@ void Student::addToGroup(Group* name_group) {
   name_group->students.push_back(this);
 }
 
-void Student::addmark(us mark) {
+void Student::addmark(uint64_t mark) {
   marks.push_back(mark);
 }
 

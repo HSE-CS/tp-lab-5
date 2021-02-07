@@ -1,3 +1,4 @@
+// Copyright 2020 Dumarevskaya
 #include"Deanary.h"
 
 int main() {

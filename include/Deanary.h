@@ -3,16 +3,18 @@
 #define INCLUDE_DEANARY_H_
 
 #include <fstream>
+#include <vector>
+#include <string>
 #include "Group.h"
-typedef unsigned short us;
 
 class Deanary {
   friend class Student;
   friend class Group;
-private:
+ private:
   std::vector<Group*> groups;
-public:
-  explicit Deanary() {};
+
+ public:
+  Deanary() {}
   explicit Deanary(std::ifstream file) {
     std::string gro, title, spec;
     while (getline(file, gro)) {
@@ -20,12 +22,12 @@ public:
       spec = gro.substr(gro.find(', ') + 1);
       groups.push_back(new Group (title, spec));
     }
-  };
-  ~Deanary() {};
+  }
+  ~Deanary() {}
   void createGroup();
   void addGroup(Group*);
   void hireStudents(Student*, std::string);
-  void addMarksToAll(us, std::string);
+  void addMarksToAll(uint64_t, std::string);
   void getStatistic();
   void moveStudents(std::string, std::string, std::string);
   void saveStaff();
@@ -35,4 +37,4 @@ public:
   Group* getGroup(std::string);
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_DEANARY_H_

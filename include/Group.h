@@ -3,20 +3,23 @@
 #define INCLUDE_GROUP_H_
 
 #include "Student.h"
+#include <vector>
+#include <string>
 class Student;
 class Deanary;
 
 class Group {
   friend class Student;
   friend class Deanary;
-private:
+ private:
   std::string title;
   std::string spec;
   std::vector<Student*> students;
   Student* head;
-public:
-  Group(std::string title, std::string spec) : title{ title }, spec{ spec } {};
-  ~Group() {};
+
+ public:
+  Group(std::string title, std::string spec) : title{ title }, spec{ spec } {}
+  ~Group() {}
   void addStudent(Student*);
   void chooseHead(Student*);
   double getAveragemark();
@@ -24,7 +27,6 @@ public:
   bool containsStudent(std::string);
   void removeStudent(Student*);
   bool isEmpty();
-  //friend bool Student::isHeadGroup(Group& group);
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

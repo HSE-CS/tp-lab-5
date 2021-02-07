@@ -8,26 +8,26 @@
 
 #include "Group.h"
 
-typedef unsigned short us;
 class Group;
 
 class Student {
-private:
+ private:
   std::string id;
   std::string fio;
   Group* group;
-  std::vector<us> marks;
+  std::vector<uint64_t> marks;
   friend class Group;
   friend class Deanary;
-public:
+
+ public:
   Student(std::string id, std::string fio) : id{ id }, fio{ fio } {
     group = nullptr;
-  };
-  ~Student() {};
+  }
+  ~Student() {}
   void addToGroup(Group*);
-  void addmark(us);
+  void addmark(uint64_t);
   double getAveragemark();
   bool isHeadGroup();
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
