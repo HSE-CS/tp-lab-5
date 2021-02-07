@@ -2,6 +2,9 @@
 
 #include <gtest/gtest.h>
 #include <string>
+#include "Student.h"
+#include "Group.h"
+#include "Deanary.h"
 
 TEST(PostfixTest, test1) {
   std::string fname = "Shherbakov Aleksey";
