@@ -109,11 +109,13 @@ int main() {
   delimiter();
   */
   Deanary DeanaryObj;
+  std::cout << "Name of file with groups\n";
   DeanaryObj.createGroups();  //  working
+  std::cout << "Name of file with students\n";
   DeanaryObj.initialiseStudents();  //  working
   delimiter();
   DeanaryObj.initialiseElection();  //  working
-  DeanaryObj.printAllInfo();  //  working
+  //DeanaryObj.printAllInfo();  //  working
   delimiter();
   for (size_t i = 0; i < DeanaryObj.getCurrentAmountOfStudents(); ++i) {
     Student* tmp = DeanaryObj.getStudentAddress(i);  //  working

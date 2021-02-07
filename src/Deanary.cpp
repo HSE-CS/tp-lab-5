@@ -145,20 +145,25 @@ void Deanary::saveChanges() {
     throw -1;
   }
   FileOut.clear();
-  FileOut << "Student's name and surname\t"
-          << "Student's ID\t"
-          << "Student's group\t"
-          << "Average mark\t"
+  FileOut << std::setw(30) << std::left <<"Student's name and surname"
+          << std::setw(13) << std::left << std::left
+          << "Student's ID" << std::setw(16) << std::left
+          << "Student's group" << std::setw(15) << std::left
+          << "Average mark" << std::setw(26) << std::left
           << "Is student head of group?\n";
   for (size_t i = 0; i < (this->allStudents).size(); ++i) {
-    FileOut << (this->allStudents[i])->fio << "\t"
-            << (this->allStudents[i])->id << "\t"
-            << ((this->allStudents[i])->group)->getTitle() << "\t"
-            << (this->allStudents[i])->getAverageMark() << "\t";
+    FileOut << std::setw(30) << std::left 
+            << (this->allStudents[i])->fio
+            << std::setw(13) << std::left
+            << (this->allStudents[i])->id
+            << std::setw(16) << std::left
+            << ((this->allStudents[i])->group)->getTitle()
+            << std::setw(15) << std::left
+            << (this->allStudents[i])->getAverageMark();
     if ((this)->allStudents[i]->isHead) {
-      FileOut << "True" << "\n";
+      FileOut << std::setw(26) << std::left << "True" << "\n";
     } else {
-      FileOut << "False" << "\n";
+      FileOut << std::setw(26) << std::left << "False" << "\n";
     }
   }
 }

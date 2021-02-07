@@ -1,4 +1,4 @@
-﻿  //  Copyright 2021 Nikita Naumov
+﻿//  Copyright 2021 Nikita Naumov
 #include "Group.h"
 #include "Student.h"
 
@@ -85,14 +85,15 @@ void Group::fireStudentFromGroup(unsigned id) {
     this->students.erase(students.begin() + neededInd);
 }
 void Group::printInfoAboutGroup() {
-  std::cout << "Group name : " <<this->title << std::endl;
+  std::cout << "Group name : " << this->title << std::endl;
   std::cout << "Group specialty : " << this->spec << std::endl;
-  std::cout << "Amount of students: " << this->students.size() << std::endl;
+  std::cout << "Amount of students: "
+      << this->students.size() << std::endl;
   std::cout << "Current group head [ ";
   if (this->head == nullptr) {
     std::cout << "None" << " ] " << std::endl;
   } else {
-    std::cout << "FIO : " << (this->head)->fio << "\t" <<
-        "| ID : " <<(this->head)->id << " ] " << std::endl;
+    std::cout << "FIO : " << (this->head)->fio << "\t| ID : "
+        << (this->head)->id << " ] " << std::endl;
   }
 }

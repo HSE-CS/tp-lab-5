@@ -1,4 +1,4 @@
-﻿  //  Copyright 2021 Nikita Naumov
+﻿//  Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 

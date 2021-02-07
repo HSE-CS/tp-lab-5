@@ -1,4 +1,4 @@
-﻿  //  Copyright 2021 Nikita Naumov
+﻿//  Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
