@@ -6,6 +6,7 @@
 #include "Student.h"
 #include "Group.h"
 #include <iostream>
+#include <string>
 #include <vector>
 #include <istream>
 #include <fstream>
@@ -25,7 +26,7 @@ class Deanary {
       return this->title_vector;
     }
     void readFile() {
-      std::ifstream fin("groups.json");
+      std::ifstream fin("img/groups.json");
       json j;
       j = json::parse(fin);
       j["title"].get_to<std::vector<std::string>>(this->title_vector);
@@ -47,7 +48,7 @@ class Deanary {
       return this->fio_student;
     }
     void readFile() {
-      std::ifstream oin("students.json");
+      std::ifstream oin("img/students.json");
       json j;
       j = json::parse(oin);
       j["fio"].get_to<std::vector<std::string>>(this->fio_student);
