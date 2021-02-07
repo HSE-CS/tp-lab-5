@@ -25,7 +25,7 @@ TEST(DeanaryTest, test3) {
 
 TEST(DeanaryTest, test4) {
   Student student(1, "TestName");
-  EXPECT_EQ(0, static_cast<int> (student.getAverageMark());
+  EXPECT_EQ(0, static_cast<int>(student.getAverageMark()));
 }
 
 TEST(DeanaryTest, test5) {
