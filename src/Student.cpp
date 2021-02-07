@@ -6,7 +6,7 @@ Student::Student(const std::string newFio, const unsigned int newId) {
   id = newId;
   srand(rand());
   iq = rand() % 40 + 90;
- }
+  }
 double Student::getAverageMark() const {
   double sum{0};
   for (auto mark : marks) {

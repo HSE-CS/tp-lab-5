@@ -16,7 +16,8 @@ double Group::getAverageMark() {
 }
 void Group::choseHead() {
   srand(rand());
-  unsigned int indHead = rand() % students.size();
+  unsigned int seed = 1;
+  unsigned int indHead = rand_r(&seed) % students.size();
   this->head = students[indHead];
 }
 void Group::removeStudent(std::string fio) {

@@ -1,16 +1,17 @@
 // Copyright Nikita Demashow 2021
-#ifndef GROUP_H_
-#define GROUP_H_
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include<string>
 #include<vector>
+#include<random>
 #include<iostream>
 
 class Student;
 class Deanary;
 
 class Group {
- private:
   const static unsigned int limit{5};
+ private:
   std::string title;
   std::string spec;
   std::vector<Student*> students;
@@ -21,9 +22,9 @@ class Group {
   void removeStudent(std::string);
 
  public:
-  explicit Group(){};
+  Group(){}
   explicit Group(const std::string newTitle, const std::string newSpec):
-	  title(newTitle), spec(newSpec) {};
+  title(newTitle), spec(newSpec) {};
   Student* getHead() const;
   double getAverageMark();
   Student* getStudentById(const unsigned int id);
@@ -36,4 +37,4 @@ class Group {
   friend Deanary;
 };
 
-#endif // GROUP_H_
+#endif  // INCLUDE_GROUP_H_

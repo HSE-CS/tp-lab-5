@@ -1,6 +1,6 @@
 // Copyright Nikita Demashow 2021
-#ifndef DEANARY_H_
-#define DEANARY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include<vector>
 #include<string>
 #include<fstream>
@@ -24,4 +24,4 @@ class Deanary {
   void addGroup(Group*);
 };
 
-#endif // DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

@@ -11,8 +11,7 @@ int main() {
   for (auto i{0}; i < 10; ++i) {
     HSENN.addMarksToAll();
   }
- HSENN.getStatistics();
- HSENN.initHeads();
- HSENN.moveStudets(6, "еп2");
- HSENN.saveStaff("statistic.txt");
+  HSENN.getStatistics();
+  HSENN.initHeads();
+  HSENN.saveStaff("statistic.txt");
 }

@@ -61,7 +61,7 @@ void Deanary::hireStudents(const std::string& dir) {
 void Deanary::addMarksToAll() {
   for (auto group : groups) {
     for (auto student : group->students) {
-      int16_t mark{rand() % 11};
+      int mark{rand() % 11};
       if (student->iq >= 110 && mark < 6 || student->iq < 110 && mark >= 6) {
         mark = rand() % 11;
       }
@@ -114,7 +114,7 @@ void Deanary::moveStudets(const unsigned int id, const std::string title) {
     if (group->title == title) {
       gr = group;
       if (group->isFull()) {
-        std::cout << "Группа " << title << " заполнена" <<  std::endl;
+        std::cout << "Group " << title << " id full" <<  std::endl;
         break;
       }
     }
@@ -126,10 +126,10 @@ void Deanary::moveStudets(const unsigned int id, const std::string title) {
     }
   }
   if (!gr) {
-    std::cout << "Группа не найдена" << std::endl;
+    std::cout << "There is not group" << std::endl;
   } else if (!gr->isFull()) {
     if (!st) {
-      std::cout << "Студент не найден" << std::endl;
+      std::cout << "There is not student" << std::endl;
     } else {
       st->group->removeStudent(st->fio);
       st->addToGroup(gr);
@@ -137,12 +137,12 @@ void Deanary::moveStudets(const unsigned int id, const std::string title) {
     }
   }
  }
-void Deanary::saveStaff(const std::string dir) { 
+void Deanary::saveStaff(const std::string dir) {
     std::ofstream file(dir);
   for (auto group : this->groups) {
       for (auto student : group->students) {
-      file << student->getFio() << " Группа: " << student->group->title
-           << " Оценки: " << student->getMarks() << std::endl;
+      file << student->getFio() << " Group: " << student->group->title
+           << " Marks: " << student->getMarks() << std::endl;
       }
   }
 }

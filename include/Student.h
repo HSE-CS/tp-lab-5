@@ -1,9 +1,10 @@
 // Copyright Nikita Demashow 2021
-#ifndef STUDENT_H_
-#define STUDENT_H_
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 #include<string>
 #include<iostream>
 #include<sstream>
+#include <stdlib.h>
 #include<vector>
 
 class Group;
@@ -31,4 +32,4 @@ class Student {
   std::string getFio() const;
   friend Deanary;
 };
-#endif // STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
