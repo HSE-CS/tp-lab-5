@@ -37,7 +37,7 @@ std::vector<Student*> Group::getStudents() const {
 }
 
 void Group::chooseHead() {
-    int num = rand() % (students.size());
+    int num = rand_r() % (students.size());
     head = students[num];
 }
 
@@ -47,7 +47,7 @@ unsigned int Group::AverageMarkofGroup() const {
         res += students[i]->AverageMark();
     }
     res /= students.size();
-    std::cout << " Average mark of " << 
+    std::cout << " Average mark of " <<
     getTitle() << " is " << res << std::endl;
     return res;
 }

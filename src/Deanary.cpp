@@ -53,7 +53,7 @@ void Deanary::set_random_marks(unsigned int number) {
     for (Group* group : this->groups) {
         for (Student* student : group->getStudents()) {
             for (unsigned int i = 0; i < number; i++) {
-                student->addMark(rand() % 10 + 1);
+                student->addMark(rand_r() % 10 + 1);
             }
         }
     }
@@ -70,12 +70,12 @@ void Deanary::getStatistics() const {
                 index = i;
             }
         }
-        std::cout << "Best student : " << 
+        std::cout << "Best student : " <<
         students[index]->getName() << std::endl;
     }
 }
 
-void Deanary::changeGroup(std::string name, 
+void Deanary::changeGroup(std::string name,
     std::string oldGroup, std::string newGroup) {
     Group* group1 = nullptr;
     Group* group2 = nullptr;
@@ -84,7 +84,7 @@ void Deanary::changeGroup(std::string name,
         if (group->getTitle() == newGroup) group2 = group;
     }
     Student* student = group1->findbyName(name);
-	if ((group1 == nullptr) || (group2 == nullptr)) {
+    if ((group1 == nullptr) || (group2 == nullptr)) {
         std::cout << "Error. Try again" << std::endl;
         return;
     } else {
@@ -94,23 +94,23 @@ void Deanary::changeGroup(std::string name,
 }
 
 void Deanary::expelStudents() {
-	for (Group* group : groups) {
+    for (Group* group : groups) {
         for (Student* student : group->getStudents()) {
             if (student->AverageMark() < 4) {
-            	group->expelStudent(student);
+                group->expelStudent(student);
                 }
             }
     }
 }
 
-void Deanary::rewriteData(std::string names_output, 
+void Deanary::rewriteData(std::string names_output,
     std::string groups_output) const {
     std::ofstream file;
     file.open(names_output, std::ios::out);
     if (file.is_open()) {
         for (Group* group : groups) {
             for (Student* student : group->getStudents()) {
-                std::cout << student->getName() << " : " << 
+                std::cout << student->getName() << " : " <<
                     group->getTitle() << std::endl;
             }
         }
@@ -119,7 +119,7 @@ void Deanary::rewriteData(std::string names_output,
     file.open(groups_output, std::ios::out);
     if (file.is_open()) {
         for (Group* group : groups) {
-            std::cout << group->getTitle() << " : " << 
+            std::cout << group->getTitle() << " : " <<
                 group->getSpec() << std::endl;
         }
     } else { std::cout << "File can't be opened" << std::endl; }
