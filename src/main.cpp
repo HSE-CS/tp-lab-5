@@ -1,4 +1,14 @@
-//
-// Created by vladimir on 03.02.2021.
-//
+#include <iostream>
+#include "Student.h"
+#include "Group.h"
+#include "Deanary.h"
 
+
+int main() {
+    Student student(1, "Vladimir");
+    student.getName();
+    student.getAverageMark();
+
+
+    return 0;
+}
