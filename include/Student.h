@@ -4,8 +4,8 @@
 
 #include <string>
 #include <vector>
-#include <Group.h>
-#include <Deanary.h>
+#include "Group.h"
+#include "Deanary.h"
 
 class Student {
     friend class Group;

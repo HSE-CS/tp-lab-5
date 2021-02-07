@@ -1,5 +1,5 @@
 // Copyright 2021 Sozinov Kirill
-#include <Deanary.h>
+#include "Deanary.h"
 #include <locale>
 #include <iostream>
 #include <fstream>

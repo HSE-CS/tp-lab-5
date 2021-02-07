@@ -2,8 +2,8 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
-#include <Group.h>
-#include <Student.h>
+#include "Group.h"
+#include "Student.h"
 #include <cstdlib>
 #include <cstdio>
 #include <utility>

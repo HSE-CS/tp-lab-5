@@ -1,6 +1,6 @@
 // Copyright 2021 Sozinov Kirill
-#include <Group.h>
-#include <Student.h>
+#include "Group.h"
+#include "Student.h"
 #include <time.h>
 #include <cstdlib>
 
