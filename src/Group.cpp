@@ -50,8 +50,8 @@ double Group::getAverageMark() {
 }
 Student* Group::getStudent(int _id) {
   for (size_t i = 0; i < students.size(); ++i) {
-    if (_id == students.at(i)->getId()) {
-      return students.at(i);
+    if (_id == students[i]->getId()) {
+      return students[i];
     }
   }
   return nullptr;

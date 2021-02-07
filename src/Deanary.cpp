@@ -54,8 +54,8 @@ void Deanary::moveStudent(int _id, int number_group) {
 void Deanary::addMarksToAll() {
   static int iteration{0};
   for (size_t i = 0; i < groups.size(); ++i) {
-    for (size_t j = 0; j < groups.at(i)->students.size(); ++j) {
-      groups.at(i)->students.at(j)->addMark(iteration);
+    for (size_t j = 0; j < groups[i]->students.size(); ++j) {
+      groups[i]->students[j]->addMark(iteration);
     }
   }
   iteration++;
@@ -83,12 +83,12 @@ int Deanary::getAmountGroup() {
   return groups.size();
 }
 std::string Deanary::getTitleGroup(int _num) {
-  return groups.at(_num)->title;
+  return groups[_num]->title;
 }
 int Deanary::getAmountStudents(int _num) {
-  return groups.at(_num)->students.size();
+  return groups[_num]->students.size();
 }
 Group* Deanary::getGroup(int _num) {
-  return groups.at(_num);
+  return groups[_num];
 }
 

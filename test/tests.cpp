@@ -81,7 +81,8 @@ TEST(TestingDeanary, test10) {
   deanary.hireStudent();
   Group* a = deanary.getGroup(0);
   Student* b = a->getStudent(4);
-  EXPECT_EQ(0, b->getAverageMark());
+  int c = 0;
+  EXPECT_EQ(c, b->getAverageMark());
 }
 TEST(TestingDeanary, test11) {
   Deanary deanary;
@@ -104,7 +105,8 @@ TEST(TestingDeanary, test12) {
   deanary.addMarksToAll();
   Group* a = deanary.getGroup(0);
   Student* b = a->getStudent(4);
-  EXPECT_EQ(3, b->getAmountMarks());
+  int c = 3;
+  EXPECT_EQ(c, b->getAmountMarks());
 }
 TEST(TestingDeanary, test13) {
   Deanary deanary;
@@ -117,4 +119,13 @@ TEST(TestingDeanary, test13) {
   deanary.fireStudent(0);
   int size2 = deanary.getAmountStudents(0);
   EXPECT_EQ(size1 - 1, size2);
+}
+TEST(TestingDeanary, test14) {
+  Deanary deanary;
+  deanary.createGroups();
+  deanary.hireStudent();
+  int size1 = deanary.getAmountStudents(1);
+  deanary.moveStudent(0, 1);
+  int size2 = deanary.getAmountStudents(1);
+  EXPECT_EQ(size2 - 1, size1);
 }
