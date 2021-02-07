@@ -17,19 +17,19 @@ double Group::average_mark_group() {
   int sum = 0;
   int result = 0;
   for (auto* student : students) {
-   	sum = sum + student->average_mark();
+    sum = sum + student->average_mark();
   }
   return sum / s_s;
 }
 
 void Group::delete_student(Student* del_student) {
   for (int i = 0; i < students.size(); i++) {
-   	  if (students[i]->get_fio() == del_student->get_fio()) {
-		  for (int k = i + 1; k < students.size(); k++) {
-			students[k - 1] = students[k];
+   	if (students[i]->get_fio() == del_student->get_fio()) {
+		for (int k = i + 1; k < students.size(); k++) {
+		  students[k - 1] = students[k];
   }
       students.pop_back();
-	  break;
+      break;
   }
   }
 }

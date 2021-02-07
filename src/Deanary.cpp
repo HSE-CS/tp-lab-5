@@ -34,8 +34,8 @@ void Deanary::add_marks() {
     int size_gr = groups.size();
     int mark;
     for (num_gr = 0; num_gr < size_gr; num_gr++) {
-        for (num_stud = 0; 
-            num_stud < groups[num_gr].students.size(); 
+        for (num_stud = 0;
+            num_stud < groups[num_gr].students.size();
             num_stud++) {
             for (int i = 0; i < 10; i++) {
                 mark = std::rand() % 10 + 1;
@@ -49,8 +49,8 @@ double Deanary::stat_st(std::string fio) {
     int num_gr;
     int num_stud;
     for (num_gr = 0; num_gr < groups.size(); num_gr++) {
-        for (int num_stud = 0; 
-            num_stud < groups[num_gr].students.size(); 
+        for (int num_stud = 0;
+            num_stud < groups[num_gr].students.size();
             num_stud++) {
             if (fio == groups[num_gr].students[num_stud]->get_fio()) {
                 return groups[num_gr].students[num_stud]->average_mark();
@@ -72,8 +72,8 @@ void Deanary::relocat_st(std::string fio, std::string spec) {
     int num_gr;
     int num_stud;
     for (num_gr = 0; num_gr < groups.size(); num_gr++) {
-        for (num_stud = 0; 
-            num_stud < groups[num_gr].students.size(); 
+        for (num_stud = 0;
+            num_stud < groups[num_gr].students.size();
             num_stud++) {
             if (fio == groups[num_gr].students[num_stud]->get_fio()) {
                 for (int i = 0; i < groups.size(); i++) {
@@ -93,12 +93,13 @@ void Deanary::deduction(std::string fio) {
     int num_gr;
     int num_stud;
     for (num_gr = 0; num_gr < groups.size(); num_gr++) {
-        for (num_stud = 0; 
-            num_stud < groups[num_gr].students.size(); 
+        for (num_stud = 0;
+            num_stud < groups[num_gr].students.size();
             num_stud++) {
             if (fio == groups[num_gr].students
                 [num_stud]->get_fio()) {
-                groups[num_gr].delete_student(groups[num_gr].students[num_stud]);
+                groups[num_gr].delete_student
+                (groups[num_gr].students[num_stud]);
             }
         }
     }
@@ -112,7 +113,7 @@ void Deanary::save() {
     if ((f_groups.is_open()) && (f_stud.is_open())) {
         for (num_gr = 0; num_gr < groups.size(); num_gr++) {
             f_groups << groups[num_gr].get_spec() << " ";
-            f_groups << groups[num_gr].get_title() << "\n";
+            f_groups << groups[num_gr].get_title() <<"\n";
             for (num_stud = 0; 
                 num_stud < groups[num_gr].students.size();
                 num_stud++) {
@@ -141,7 +142,7 @@ void Deanary::output() {
         std::cout << "Head: " << groups[num_gr].head->get_fio()
             << std::endl;
 
-        for (int num_stud = 0; 
+        for (int num_stud = 0;
             num_stud < groups[num_gr].students.size();
             num_stud++) {
             std::cout << groups[num_gr].students[num_stud]->get_fio()
