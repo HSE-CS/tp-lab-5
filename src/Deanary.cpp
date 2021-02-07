@@ -1,11 +1,11 @@
 // Copyright 2021 Tatsenko Ilya
-#include"Deanary.h"
-#include"Group.h"
-#include"Student.h"
 #include<fstream>
 #include<time.h>
 #include<locale.h>
 #include<Windows.h>
+#include"Deanary.h"
+#include"Group.h"
+#include"Student.h"
 
 void Deanary::create_students_from_file(std::string filen) {
     std::srand(time(0));
@@ -104,7 +104,7 @@ void Deanary::get_statistic() {
         std::cout << x->calculate_of_avarage_mark() << std::endl;
         std::cout << x->head->fio << std::endl;
         std::cout << "Students :" << std::endl;
-            for (auto& student : x->students ) {
+            for (auto& student : x->students) {
                 std::cout << student->id << " " << student->fio << " ";
                 std::cout << student->get_avarage_mark() << std::endl;
             }
@@ -112,11 +112,11 @@ void Deanary::get_statistic() {
     }
 }
 
-void Deanary::save_data_in_file(std::string student_file, std::string group_file) {
+void Deanary::save_data_in_file(std::string file1, std::string file2) {
     std::ofstream f1;
     std::ofstream f2;
-    f1.open(student_file, std::ofstream::out | std::ofstream::trunc);
-    f2.open(group_file, std::ofstream::out | std::ofstream::trunc);
+    f1.open(file1, std::ofstream::out | std::ofstream::trunc);
+    f2.open(file2, std::ofstream::out | std::ofstream::trunc);
 
     for (auto& x : students) {
         f1 << x->id << " " << x->fio << std::endl;
