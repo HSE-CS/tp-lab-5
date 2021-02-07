@@ -13,7 +13,6 @@ int main() {
     decanat.init_heads();
     decanat.get_statistic();
     // decanat.fire_student("Àêèìîâ Áîðèñ Àëåêñååâè÷");
-    // decanat.save_data_in_file("D:\\files\\students.txt", "D:\\files\\groups.txt");
     decanat.move_students("Tatsenko Ilya Michailovich", "19PI");
     decanat.get_statistic();
     return 0;
