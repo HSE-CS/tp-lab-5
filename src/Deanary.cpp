@@ -193,12 +193,3 @@ void Deanery::addNewGroup(Group* newGroup) {
     groups.push_back(newGroup);
   }
 }
-
-Deanery::~Deanery() {
-  for (auto i : groups) {
-    for (int j = 0; j < i->students.size(); j++) {
-      delete i->students[j];
-    }
-    delete i;
-  }
-}
