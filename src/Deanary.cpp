@@ -87,8 +87,8 @@ void Deanary::saveStaff(const std::string& fileName) {
     if (outFile.is_open()) {
         for (Group gr : groups) {
             data = data + gr.gettitle() + " ";
-			data = data + std::to_string(gr.getAveragemark());
-			data = data +  + "\n";
+            data = data + std::to_string(gr.getAveragemark());
+            data = data +  + "\n";
         }
         outFile << data;
         outFile.close();

@@ -17,7 +17,7 @@ class Group {
     std::string spec;
     std::string title;
     std::vector<Student*> students;
-    Student* head;// {};
+    Student* head;
  public:
     std::string gettitle();
     Group(std::string titl, std::string sp);

@@ -43,8 +43,8 @@ Student* Group::chooseHead() {
 
 bool Group::isEmpty() {
     if (size(students) == 0) return 1;
-    else 
-		return 0;
+    else
+        return 0;
 }
 
 Student* Group::containsStudent(int id) {

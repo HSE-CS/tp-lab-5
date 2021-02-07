@@ -19,9 +19,8 @@ std::string Student::getFiofromId(int id) {
     if (st) {
         Student stu = *st;
         return stu.getFio();
-    }
-    else 
-		return "No such Student";
+    } else
+        return "No such Student";
 }
 
 int Student::getId() {
@@ -49,8 +48,8 @@ int Student::isHeadOfGroup() {
     Student* head = gr.gethead();
     Student st = *head;
     if (this->id == st.getId()) return 1;
-    else 
-		return 0;
+    else
+        return 0;
 }
 
 Group* Student::getGroup() {
