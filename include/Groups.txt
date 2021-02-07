@@ -1,0 +1,8 @@
+FundamentalMathematics
+FM
+AppliedMathematicsAndInformatics
+AMI
+SoftwareEngineering
+Se
+BusinessInformatics
+BI
