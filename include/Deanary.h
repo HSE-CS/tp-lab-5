@@ -13,13 +13,15 @@ class Deanary {
   std::vector<Group *> groups;
 
  public:
+  void create_group_from_file(std::string);
   void create_group(std::string title, std::string spec);
   void hire_student(Student* student, std::string title);
   void add_marks_to_all();
   void get_statistics();
-  void move_student(int id, std::string group);
+  void move_student(int id, std::string title);
   void init_heads();
   void fire_student(Student* student);
+  Group* get_group(std::string title);
 };
 
 #endif  // INCLUDE_DEANARY_H_

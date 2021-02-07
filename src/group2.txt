@@ -1,0 +1,17 @@
+management
+MG-1
+Ponomareva Yulia Arsentievna 30001
+Volkov Nikita Alexandrovich 30002
+Fedorov Makar Georgievich 30003
+Stolyarov Tikhon Stepanovich 30004
+Anisimova Svetlana Platonovna 30005
+Novikova Nicole Eliseevna 30006
+Nikolaeva Victoria Danilovna 30007
+Romanov Timur Petrovich 30008
+Plotnikova Nadezhda Romanovna 30009
+Yakovlev Nikita Makarovich 30010
+Maksimov Stepan Dmitrievich 30011
+Sakharova Eva Igorevna 30012
+Zakharova Maya Mikhailovna 30013
+Litvinov Maxim Fedorovich 30014
+Chernykh Zlata Matveevna 30015
