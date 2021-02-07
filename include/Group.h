@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+unsigned int SEED = 256;
+
 class Student;
 
 class Group {

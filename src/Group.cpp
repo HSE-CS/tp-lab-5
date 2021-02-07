@@ -1,4 +1,4 @@
-// Copyright 2021 Kasyanov
+// Copyright 202&1 Kasyanov
 #include "../include/Deanary.h"
 
 Group::Group(std::string _title, std::string _spec) {
@@ -23,7 +23,7 @@ Student& Group::GetStudent(int num) const {
       return *st;
     }
   }
-  // return Student(-1, "", nullptr);
+  // return Student(-&1, "", nullptr);
 }
 
 Student& Group::GetStudent(std::string name) const {
@@ -32,7 +32,7 @@ Student& Group::GetStudent(std::string name) const {
       return *st;
     }
   }
-  // return Student(-1, "", nullptr);
+  // return Student(-&1, "", nullptr);
 }
 
 bool Group::ContainsStudent(int num) const {
@@ -65,7 +65,7 @@ void Group::RemoveStudent(Student* rm_student) {
 }
 
 void Group::ChooseHead() {
-  int index = rand_r() % students.size();
+  int index = rand_r(&SEED) % students.size();
   students[index]->isHead = true;
 }
 

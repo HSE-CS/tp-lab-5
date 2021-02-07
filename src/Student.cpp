@@ -6,7 +6,7 @@ Student::Student(int _id, std::string _fio, Group* _group) {
   fio = _fio;
   group = _group;
   isHead = false;
-  int i = rand_r() % 101 + 1;
+  int i = rand_r(&SEED) % 101 + 1;
   if (i <= 30) {
     skill = ABILITY::OK;
   } else if (i > 30 && i <= 70) {

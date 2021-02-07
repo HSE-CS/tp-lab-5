@@ -12,7 +12,7 @@ void Deanary::AddMarksToAll(int marks_number) {
     for (auto student : group->students) {
       if (student->skill == ABILITY::OK) {
         for (int i = 0; i < marks_number; ++i) {
-          int prob = rand_r() % 101 + 1;
+          int prob = rand_r(&SEED) % 101 + 1;
           if (prob <= 20) {
             student->AddMark(2);
           } else if (prob > 20 && prob <= 70) {
@@ -26,7 +26,7 @@ void Deanary::AddMarksToAll(int marks_number) {
       }
       if (student->skill == ABILITY::GOOD) {
         for (int i = 0; i < marks_number; ++i) {
-          int prob = rand_r() % 101 + 1;
+          int prob = rand_r(&SEED) % 101 + 1;
           if (prob <= 5) {
             student->AddMark(2);
           } else if (prob > 5 && prob <= 15) {
@@ -40,7 +40,7 @@ void Deanary::AddMarksToAll(int marks_number) {
       }
       if (student->skill == ABILITY::EXCELLENT) {
         for (int i = 0; i < marks_number; ++i) {
-          int prob = rand_r() % 101 + 1;
+          int prob = rand_r(&SEED) % 101 + 1;
           if (prob <= 1) {
             student->AddMark(2);
           } else if (prob > 1 && prob <= 6) {
