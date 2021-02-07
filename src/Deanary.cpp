@@ -3,7 +3,7 @@
 #include <iostream>
 
 Deanary::Deanary(ReadGroup& reader, std::string spec) {
-  groups = reader.CreateGroups(1, spec);
+  groups = reader.CreateGroups(spec);
   InitHead();
 }
 
