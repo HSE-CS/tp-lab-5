@@ -86,9 +86,3 @@ TEST(AllTests, test10) {
     EXPECT_EQ(stats[0], 6);
 }
 
-TEST(AllTests, test11) {
-    Deanery dn = Deanery();
-    std::vector<Group*> groups = dn.createGroupsFromFile("../../src/input.json");
-    EXPECT_EQ(groups[0]->getStudents()[0]->getFio(), "Marcia Herring");
-}
-
