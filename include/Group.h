@@ -6,19 +6,26 @@
 #include "../include/Student.h"
 
 class Group{
+ private:
+    std::string _title;
+    std::string _spec;
+    Student *_head;
+
  public:
-    std::string title;
-    std::string spec;
     std::vector<Student*> students;
-    Student *head;
-    Group(std::string _title,
-        std::string _spec,
+    Group(std::string title,
+        std::string spec,
         std::vector<Student*> _students = std::vector<Student*>(),
-        Student *_head = NULL):
-        title(_title),
-        spec(_spec),
-        students(_students),
-        head(_head) {}
+        Student *head = NULL):
+        _title(title),
+        _spec(spec),
+        _head(head),
+        students(_students) {}
+    std::string getTitle();
+    std::string getSpec();
+    Student* getHeadman();
+    void setTitle(std::string title);
+    void setSpec(std::string spec);
     Group createGroup(std::string title);
     void addStudentToGroup(Student* student);
     void chooseHeadman(Student* student);

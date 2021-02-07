@@ -6,20 +6,27 @@
 
 class Group;
 class Student {
+ private:
+    int _id;
+    std::string _fio;
+    Group *_group;
+    std::vector<int> _marks;
+
  public:
-    int id;
-    std::string fio;
-    Group *group;
-    std::vector<int> marks;
-    Student(int _id, std::string _fio,
-            std::vector<int> _marks, Group* _group = NULL):
-        id(_id),
-        fio(_fio),
-        group(_group),
-        marks(_marks) {}
+    Student(int id, std::string fio,
+            std::vector<int> marks, Group* group = NULL):
+        _id(id),
+        _fio(fio),
+        _group(group),
+        _marks(marks) {}
     void addMark(int mark);
     float calculateMeanMark();
     bool enrollInGroup(Group* group);
+    int getId();
+    std::string getFio();
+    std::vector<int> getMarks();
+    void setId(int id);
+    void setFio(std::string fio);
 };
 
 #endif  // _INCLUDE_STUDENT_H
