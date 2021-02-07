@@ -67,5 +67,5 @@ std::vector<Student *> Group::containsStudent() {
 }
 
 bool Group::isEmpty() {
-  return students.size() ? true : false;
+  return students.size() ? false : true;
 }
