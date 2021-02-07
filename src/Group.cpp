@@ -1,4 +1,4 @@
-﻿//  Copyright 2021 Nikita Naumov
+﻿  //  Copyright 2021 Nikita Naumov
 #include "Group.h"
 #include "Student.h"
 

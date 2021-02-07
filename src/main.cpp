@@ -115,7 +115,7 @@ int main() {
   DeanaryObj.initialiseStudents();  //  working
   delimiter();
   DeanaryObj.initialiseElection();  //  working
-  //DeanaryObj.printAllInfo();  //  working
+  //  DeanaryObj.printAllInfo();  //  working
   delimiter();
   for (size_t i = 0; i < DeanaryObj.getCurrentAmountOfStudents(); ++i) {
     Student* tmp = DeanaryObj.getStudentAddress(i);  //  working

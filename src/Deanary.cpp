@@ -152,7 +152,7 @@ void Deanary::saveChanges() {
           << "Average mark" << std::setw(26) << std::left
           << "Is student head of group?\n";
   for (size_t i = 0; i < (this->allStudents).size(); ++i) {
-    FileOut << std::setw(30) << std::left 
+    FileOut << std::setw(30) << std::left
             << (this->allStudents[i])->fio
             << std::setw(13) << std::left
             << (this->allStudents[i])->id
