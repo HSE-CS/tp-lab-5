@@ -7,7 +7,6 @@
 
 
 int main() {
-    //system("chcp 65001");
     Deanary* fimicn = new Deanary();
     fimicn->addGroups("output.txt", "groups.txt");
     fimicn->chooseHeads();

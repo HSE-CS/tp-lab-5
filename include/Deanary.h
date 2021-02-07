@@ -1,4 +1,4 @@
-// Copyright 2021 Kartseva Masha 
+// Copyright 2021 Kartseva Masha
 #pragma once
 #define DEANARY_H
 #ifdef DEANARY_H
@@ -12,8 +12,7 @@
 
 class Student;
 class Group;
-class Deanary
-{
+class Deanary {
  public:
     friend class Group;
     friend class Student;
@@ -21,7 +20,8 @@ class Deanary
     void addGroups(std::string names_input, std::string groups_input);
     void set_random_marks(unsigned int number);
     void getStatistics() const;
-    void changeGroup(std::string name, std::string oldGroup, std::string newGroup);
+    void changeGroup(std::string name, std::string oldGroup, 
+    std::string newGroup);
     void expelStudents();
     void rewriteData(std::string students, std::string groups) const;
     void chooseHeads();
@@ -30,4 +30,4 @@ class Deanary
     unsigned int dean_id;
 };
 
-#endif // DEANARY_H
+#endif  // DEANARY_H

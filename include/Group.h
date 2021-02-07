@@ -1,17 +1,14 @@
-// Copyright 2021 Kartseva Masha 
+// Copyright 2021 Kartseva Masha
 #pragma once
 #define GROUP_H
 #ifdef GROUP_H
 #include <string>
 #include <vector>
 #include <iostream>
-#include <vector>
-#include <string>
 #include <cstdlib>
 
 class Student;
-class Group
-{
+class Group {
  public:
     Group(std::string title, std::string spec);
     void addStudent(Student* student);
@@ -31,4 +28,4 @@ class Group
     Student* head;
 };
 
-#endif // GROUP_H
+#endif  // GROUP_H

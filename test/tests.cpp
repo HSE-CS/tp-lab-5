@@ -4,8 +4,7 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
-TEST(lab5, task1)
-{
+TEST(lab5, task1) {
     Student* st = new Student("Ivanov Petr", 1);
     st->addMark(7);
     st->addMark(5);
@@ -14,16 +13,14 @@ TEST(lab5, task1)
     EXPECT_EQ(5.0, res);
 }
 
-TEST(lab5, task2)
-{
+TEST(lab5, task2) {
     Student* st = new Student("Ivanov Petr", 1);
     Group* gr = new Group("19FM-1", "Fund Maths");
     st->setGroup(gr);
     EXPECT_EQ("19FM-1", st->getGroup());
 }
 
-TEST(lab5, task3)
-{
+TEST(lab5, task3) {
     Student* st1 = new Student("Ivanov Petr", 1);
     Student* st2 = new Student("Petrov Ivan", 2);
     st1->addMark(5);
@@ -37,8 +34,7 @@ TEST(lab5, task3)
     EXPECT_EQ(2, gr->getStudents().size());
 }
 
-TEST(lab5, task4)
-{
+TEST(lab5, task4) {
     Student* st1 = new Student("Ivanov Petr", 1);
     Student* st2 = new Student("Petrov Ivan", 2);
     Group* gr1 = new Group("19FM-1", "Fund Maths");
