@@ -49,20 +49,16 @@ TEST(DeanaryTest, test3) {
 }
 
 TEST(DeanaryTest, test4) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
+  std::string title = "transformers";
+  std::string spec = "who knows";
+  Group newgr(title, spec);
 
   std::string fio = "Rainbow Dasha Pony";
-  std::string title = "transformers";
   Student newbie(666, fio);
 
-  for (auto group : den.groups)
-    if (group->getTitle() == title)
-      newbie.addToGroup(group);
+  newgr.addStudents(&newbie);
 
-  EXPECT_EQ(title, newbie.group_->getTitle());
+  EXPECT_EQ(title, newgr.getTitle());
 }
 
 TEST(DeanaryTest, test5) {
@@ -88,11 +84,6 @@ TEST(DeanaryTest, test6) {
 }
 
 TEST(DeanaryTest, test7) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
-
   std::string title = "transformers";
   std::string spec = "who knows";
   Group newgr(title, spec);
@@ -109,73 +100,45 @@ TEST(DeanaryTest, test7) {
 }
 
 TEST(DeanaryTest, test8) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
-
   std::string title = "transformers";
-  std::string fio = "Rainbow Dasha Pony";
-  Student newbie(666, fio);
+  std::string spec = "who knows";
+  Group newgr(title, spec);
 
-  for (auto group : den.groups)
-    if (group->getTitle() == title)
-      newbie.addToGroup(group);
-
-
-  EXPECT_EQ(false, newbie.isHeadOfGroup());
+  EXPECT_EQ("who knows", newgr.getSpec());
 }
 
 TEST(DeanaryTest, test9) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
-
   std::string title = "transformers";
-  std::string fio = "Rainbow Dasha Pony";
-  int id = 666;
-  Student newbie(id, fio);
-  int count = 0;
-  for (auto group : den.groups) {
-    for (auto student : group->students)
-      count++;
-  }
+  std::string spec = "who knows";
+  Group newgr(title, spec);
+  int count = newgr.students.size();
 
-  int new_count = 0;
-  for (auto group : den.groups)
-    if (group->getTitle() == title) {
-      newbie.addToGroup(group);
-      group->addStudents(&newbie);
-    }
-  for (auto group : den.groups) {
-    for (auto student : group->students)
-      new_count++;
-  }
+  std::string fio = "Rainbow Dasha Pony";
+  Student newbie(666, fio);
+  newgr.addStudents(&newbie);
+  int new_count = newgr.students.size();
 
   EXPECT_EQ(new_count, count+1);
 }
 
 TEST(DeanaryTest, test10) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
+  std::string title = "transformers";
+  std::string spec = "who knows";
+  Group newgr(title, spec);
 
-  int id = 10;
+  std::string fio1 = "Rainbow Dasha Pony";
+  std::string fio2 = "Rainbow Dasha Pony2";
+  Student newbie(666, fio1);
+  Student newbie2(777, fio2);
 
-  for (auto group : den.groups) {
-    for (auto student : group->students)
-      if (student->getID() == id)
-        group->removeStudent(id);
-  }
+  newgr.addStudents(&newbie);
+  newgr.addStudents(&newbie2);
 
+  newgr.removeStudent(777);
   bool find = false;
-  for (auto group : den.groups) {
-    for (auto student : group->students)
-      if (student->getID() == id)
-        find = true;
-  }
+  for (auto students: newgr.students)
+    if (students->getID() == 777)
+      find = true;
 
   EXPECT_EQ(false, find);
 }
