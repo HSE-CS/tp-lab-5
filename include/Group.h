@@ -12,19 +12,19 @@ class Group {
  private:
   std::string title;
   std::string spec;
-  std::vector<Student*> students;
-  Student* head;
+  std::vector<Student *> students;
+  Student *head;
   Group(std::string, std::string);
-  void AddStudent(Student*);
+  void AddStudent(Student *);
   void chooseHead();
-  void removeStudent(Student*);
+  void removeStudent(Student *);
 
  public:
   double getAverageMark();
-  Student* getStudent(int);
-  bool containsStudent(Student*);
+  Student *getStudent(int);
+  bool containsStudent(Student *);
   bool isEmpty();
-  Student* getHead();
+  Student *getHead();
   friend class Deanary;
 };
 

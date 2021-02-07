@@ -8,7 +8,7 @@ Group::Group(std::string _title, std::string _spec) {
   head = nullptr;
 }
 
-void Group::AddStudent(Student* _student) { students.push_back(_student); }
+void Group::AddStudent(Student *_student) { students.push_back(_student); }
 
 void Group::chooseHead() {
   if (!isEmpty()) {
@@ -20,7 +20,7 @@ void Group::chooseHead() {
   }
 }
 
-void Group::removeStudent(Student* _student) {
+void Group::removeStudent(Student *_student) {
   for (size_t i = 0; i < students.size(); i++) {
     if (students[i] == _student) {
       students.erase(students.begin() + i);
@@ -40,8 +40,8 @@ double Group::getAverageMark() {
   return average_mark;
 }
 
-Student* Group::getStudent(int _id) {
-  for (const auto& student : students) {
+Student *Group::getStudent(int _id) {
+  for (const auto &student : students) {
     if (student->getId() == _id) {
       return student;
     }
@@ -49,8 +49,8 @@ Student* Group::getStudent(int _id) {
   return nullptr;
 }
 
-bool Group::containsStudent(Student* _student) {
-  for (const auto& student : students) {
+bool Group::containsStudent(Student *_student) {
+  for (const auto &student : students) {
     if (student == _student) {
       return true;
     }
@@ -60,4 +60,4 @@ bool Group::containsStudent(Student* _student) {
 
 bool Group::isEmpty() { return !(students.size()); }
 
-Student* Group::getHead() { return head; }
+Student *Group::getHead() { return head; }
