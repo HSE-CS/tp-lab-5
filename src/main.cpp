@@ -14,6 +14,8 @@ int main() {
   deanary.getStatistics("../stats/Stat.txt");
   deanary.printData();
   deanary.fireStudents();
+  deanary.getStatistics("../stats/Stat.txt");
+  deanary.printData();
   deanary.saveStaff("../stats/Groups.txt", "../stats/Students.txt");
   return 0;
 }
