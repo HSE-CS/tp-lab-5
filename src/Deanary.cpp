@@ -7,7 +7,7 @@
 
 Deanery::Deanery() {
     groups = new std::vector<Group *>();
-    createStudents();
+    // createStudents();
     createGroups();
     hireStudents();
 }
