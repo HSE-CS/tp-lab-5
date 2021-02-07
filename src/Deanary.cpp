@@ -109,7 +109,7 @@ void Deanary::moveStudents(unsigned st_id, std::string gr_title) {
     for (auto gr : *groups) {
       Student* st = gr->getStudentById(st_id);
       if (st != nullptr) {
-         gr->removeStudent(st);
+        gr->removeStudentByAdress(st);
          to->addStudent(st);
       }
     }
