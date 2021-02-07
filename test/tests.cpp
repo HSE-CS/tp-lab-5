@@ -1,11 +1,16 @@
 // Copyright 2021 Sozinov Kirill
 
 #include "Deanary.h"
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include <string>
 #include <vector>
 
 TEST(DeaneryTest, test1) {
+    Deanery deanery{};
+    EXPECT_EQ(3, deanery.getGroups().size());
+}
+
+TEST(DeaneryTest, test1_1) {
     Deanery deanery{};
     int n = 0;
     for (auto &group : deanery.getGroups()) {
