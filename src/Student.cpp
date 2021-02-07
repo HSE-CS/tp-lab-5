@@ -1,6 +1,6 @@
 // Copyright 2021 Smirnov Grigory
-#include "..\include\Student.h"
-#include "..\include\Group.h"
+#include "Student.h"
+#include "Group.h"
 
 Student::Student(int id, std::string fio) {
 	this->id = id;

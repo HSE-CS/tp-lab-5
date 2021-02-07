@@ -1,5 +1,5 @@
 // Copyright 2021 Smirnov Grigory
-#include "../include/Deanery.h"
+#include "Deanery.h"
 
 void Deanery::initHeads() {
   if (groups.empty())
