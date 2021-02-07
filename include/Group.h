@@ -2,9 +2,9 @@
 
 #ifndef TP_LAB_5_INCLUDE_GROUP_H_
 #define TP_LAB_5_INCLUDE_GROUP_H_
-#include "Student.h"
 #include <string>
 #include <vector>
+#include "../include/Student.h"
 
 class Group {
  private:
@@ -23,5 +23,9 @@ class Group {
   bool containsStudent(unsigned int id);
   bool isEmpty();
   bool isHeadChoosen();
+  int getNumOfStudents();
+  Student* getStudentByIndex(int i);
+  std::string getName();
+  Student* getHead();
 };
-#endif //TP_LAB_5_INCLUDE_GROUP_H_
+#endif  // TP_LAB_5_INCLUDE_GROUP_H_

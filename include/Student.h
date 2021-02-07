@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <string>
+
 class Group;
 class Student {
  private:
@@ -17,11 +18,14 @@ class Student {
  public:
   Student(unsigned int id, std::string fio);
   void add2group(Group *group);
-  void removeFromGroup(Group* group);
+  void remove();
   void addMark(int mark);
   double getAverage();
   void setHead(bool isTrue);
   bool isHead();
   unsigned int getId();
+  bool isAnyMarks();
+  std::string getName();
+  std::string getMarks2String();
 };
-#endif  //TP_LAB_5_INCLUDE_STUDENT_H_
+#endif  // TP_LAB_5_INCLUDE_STUDENT_H_

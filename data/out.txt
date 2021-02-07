@@ -1,0 +1,73 @@
+Specialization - Software Engineering
+Total Groups - 5
+ 
+Group 1 Name - 19SE1
+   Group head - Краснова Екатерина Арсеньевна id - 21
+   >>> 0. Id - 11  Захаров Михаил Владиславович  Average mark - 5.3  All marks:  3 9 8 6 5 7 6 2 7 0
+   >>> 1. Id - 16  Калинин Кирилл Александрович  Average mark - 5.4  All marks:  3 9 9 9 1 7 2 3 6 5
+   >>> 2. Id - 21  Краснова Екатерина Арсеньевна  Average mark - 4.9  All marks:  5 8 1 4 7 1 3 8 4 8
+   >>> 3. Id - 26  Лапин Никита Русланович  Average mark - 3.5  All marks:  0 4 6 0 3 2 6 9 4 1
+   >>> 4. Id - 31  Наумова Милана Святославовна  Average mark - 5.1  All marks:  3 7 8 8 3 8 1 5 3 5
+   >>> 5. Id - 36  Селезнев Савелий Сергеевич  Average mark - 5.3  All marks:  4 3 6 5 9 5 4 9 1 7
+   >>> 6. Id - 41  Соболева Алиса Максимовна  Average mark - 4.3  All marks:  5 5 4 1 8 8 3 5 2 2
+   >>> 7. Id - 46  Тарасова Алёна Михайловна  Average mark - 5.5  All marks:  6 6 7 8 4 1 7 1 8 7
+
+ 
+Group 2 Name - 19SE2
+   Group head - Титова Мария Михайловна id - 47
+   >>> 0. Id - 2  Авдеев Даниил Георгиевич  Average mark - 5.5  All marks:  8 7 7 4 4 9 1 5 5 5
+   >>> 1. Id - 7  Васильев Даниил Максимович  Average mark - 5.3  All marks:  8 2 9 8 2 0 7 4 8 5
+   >>> 2. Id - 12  Зыкова Кристина Львовна  Average mark - 3.7  All marks:  8 3 0 6 2 2 5 2 2 7
+   >>> 3. Id - 17  Карасев Илья Максимович  Average mark - 3.2  All marks:  1 5 2 1 1 0 1 8 7 6
+   >>> 4. Id - 22  Крылов Фёдор Артемьевич  Average mark - 4.8  All marks:  0 0 9 5 6 2 8 5 9 4
+   >>> 5. Id - 27  Максимова Елизавета Мироновна  Average mark - 4.3  All marks:  3 9 0 5 6 3 6 3 0 8
+   >>> 6. Id - 32  Никольский Илья Андреевич  Average mark - 4.3  All marks:  4 0 4 6 4 6 4 3 8 4
+   >>> 7. Id - 37  Сергеев Ярослав Артёмович  Average mark - 4.9  All marks:  0 0 9 3 7 5 7 2 9 7
+   >>> 8. Id - 42  Соколова Валерия Глебовна  Average mark - 4.6  All marks:  5 6 5 3 0 4 8 5 5 5
+   >>> 9. Id - 47  Титова Мария Михайловна  Average mark - 4.3  All marks:  4 2 1 9 2 4 5 8 6 2
+   >>> 10. Id - 6  Булгаков Владимир Ярославович  Average mark - 4.9  All marks:  3 7 9 0 2 3 9 9 7 0
+
+ 
+Group 3 Name - 19SE3
+   Group head - Киреева Виктория Ивановна id - 18
+   >>> 0. Id - 3  Александров Фёдор Глебович  Average mark - 4.2  All marks:  5 1 3 9 7 3 7 5 0 2
+   >>> 1. Id - 8  Власова Нина Артёмовна  Average mark - 5.3  All marks:  1 8 7 1 5 5 8 5 6 7
+   >>> 2. Id - 13  Иванова Анна Олеговна  Average mark - 3.6  All marks:  9 4 1 6 1 2 0 4 4 5
+   >>> 3. Id - 18  Киреева Виктория Ивановна  Average mark - 5.2  All marks:  9 7 5 3 9 0 5 5 6 3
+   >>> 4. Id - 23  Кузнецов Иван Сергеевич  Average mark - 5.4  All marks:  2 6 8 9 1 4 8 8 7 1
+   >>> 5. Id - 28  Масленникова Ника Марковна  Average mark - 5  All marks:  9 3 1 1 4 9 5 9 0 9
+   >>> 6. Id - 33  Новикова Елизавета Владиславовна  Average mark - 4.1  All marks:  3 4 0 7 5 7 5 0 6 4
+   >>> 7. Id - 38  Сидорова Александра Всеволодовна  Average mark - 4.2  All marks:  7 8 4 0 0 6 2 4 7 4
+   >>> 8. Id - 43  Соловьев Пётр Никитич  Average mark - 6.2  All marks:  1 8 5 8 9 9 9 3 3 7
+   >>> 9. Id - 48  Тихомиров Савелий Маркович  Average mark - 3.6  All marks:  7 3 2 5 6 3 4 0 6 0
+
+ 
+Group 4 Name - 19SE4
+   Group head - Степанов Егор Святославович id - 44
+   >>> 0. Id - 4  Баранова София Львовна  Average mark - 5.2  All marks:  4 0 5 6 8 5 3 7 6 8
+   >>> 1. Id - 9  Егорова Варвара Павловна  Average mark - 4.6  All marks:  6 7 1 8 4 9 7 3 1 0
+   >>> 2. Id - 14  Ильин Михаил Глебович  Average mark - 5.2  All marks:  2 3 7 1 8 9 3 7 4 8
+   >>> 3. Id - 19  Ковалев Владимир Дмитриевич  Average mark - 3.4  All marks:  0 4 0 5 7 0 0 5 6 7
+   >>> 4. Id - 24  Кузнецов Артемий Маркович  Average mark - 4  All marks:  8 0 6 5 7 3 4 3 0 4
+   >>> 5. Id - 29  Моисеева Ульяна Алексеевна  Average mark - 5.8  All marks:  8 7 5 9 5 3 2 7 3 9
+   >>> 6. Id - 34  Петрова Анастасия Александровна  Average mark - 5.8  All marks:  7 7 9 5 3 3 3 8 5 8
+   >>> 7. Id - 39  Синицын Артём Андреевич  Average mark - 3.4  All marks:  9 6 0 4 2 3 3 7 0 0
+   >>> 8. Id - 44  Степанов Егор Святославович  Average mark - 2.4  All marks:  1 0 3 0 0 3 8 3 6 0
+   >>> 9. Id - 49  Ткачев Максим Даниилович  Average mark - 4  All marks:  4 0 9 2 4 9 2 9 1 0
+   >>> 10. Id - 51  Александров Александр Александрович  Average mark - 0  All marks: 
+
+ 
+Group 5 Name - 19SE5
+   Group head - Болдырева Диана Михайловна id - 5
+   >>> 0. Id - 5  Болдырева Диана Михайловна  Average mark - 3.9  All marks:  9 3 0 0 3 0 1 9 8 6
+   >>> 1. Id - 10  Жданова Елизавета Евгеньевна  Average mark - 4.3  All marks:  9 0 1 6 4 4 8 6 1 4
+   >>> 2. Id - 15  Казаков Игорь Павлович  Average mark - 2.7  All marks:  0 8 1 0 3 1 1 5 0 8
+   >>> 3. Id - 20  Колпакова Александра Серафимовна  Average mark - 4.9  All marks:  4 9 3 0 5 2 3 8 7 8
+   >>> 4. Id - 25  Кулешов Антон Ярославович  Average mark - 2.9  All marks:  0 4 5 7 1 0 6 0 3 3
+   >>> 5. Id - 30  Мухина Евгения Александровна  Average mark - 2.9  All marks:  5 0 2 3 2 7 1 0 0 9
+   >>> 6. Id - 35  Розанова Виктория Леонидовна  Average mark - 4.7  All marks:  7 1 7 4 5 1 7 8 2 5
+   >>> 7. Id - 40  Снегирева Вероника Ильинична  Average mark - 4.3  All marks:  4 5 3 0 1 9 4 5 9 3
+   >>> 8. Id - 45  Тарасов Михаил Андреевич  Average mark - 4.1  All marks:  9 6 6 4 0 8 2 0 6 0
+   >>> 9. Id - 50  Юдина Василиса Степановна  Average mark - 4.4  All marks:  7 2 9 8 1 1 6 1 1 8
+
+ 
