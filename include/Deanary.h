@@ -1,4 +1,4 @@
-﻿//  Copyright 2021 dmitrycvetkov2000
+﻿// Copyright 2021 dmitrycvetkov2000  // NOLINT
 
 
 #ifndef INCLUDE_DEANARY_H_
