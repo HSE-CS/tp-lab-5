@@ -30,7 +30,7 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
     while (i < students.size() && j < groups.size()) {
         while (groups[j]->students.size() < size_of_gr && i < students.size()) {
             this->groups[j]->addStudent(students.at(i));
-            i += 1;                                     
+            i += 1;                                  
         }
         j += 1;
     }
@@ -48,7 +48,7 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
         }
         size_of_gr = floor(size / s) + 1;
         while (i < students.size() && j < groups.size()) {
-          while (groups[j]->students.size() < size_of_gr && 
+          while (groups[j]->students.size() < size_of_gr &&
               i < students.size()) {
                 this->groups[j]->addStudent(students.at(i));
                 i += 1;

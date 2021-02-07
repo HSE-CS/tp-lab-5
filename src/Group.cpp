@@ -1,7 +1,6 @@
 // Copyright 2020 Uskova
 #include <iostream>
 #include <random>
-#include <stdlib.h>
 #include "Group.h"
 
 Group::Group() {

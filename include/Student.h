@@ -1,4 +1,4 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #ifndef INCLUDE_STUDENT_H_
 #define  INCLUDE_STUDENT_H_
 #include <string>

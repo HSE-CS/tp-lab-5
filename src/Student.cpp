@@ -1,4 +1,4 @@
-//Copyright 2020 Uskova
+// Copyright 2020 Uskova
 #include "Student.h"
 
 Student::Student() {
