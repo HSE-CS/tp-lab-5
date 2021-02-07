@@ -48,6 +48,7 @@ public:
     void saveStuff();
     //инициация выборов старост в группах
     void initHeads();
+
     //вывод данных на консоль
     void output();
 
