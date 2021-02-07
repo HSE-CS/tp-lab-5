@@ -1,3 +1,4 @@
+// Copyright 2021
 #include "Deanary.h"
 #include <string>
 #include <iostream>
@@ -20,22 +21,20 @@ void Deanary::hireStudents(std::string path) {
     std::string fio;
     std::ifstream file(path);
     while (getline(file, fio)) {
-        Student student(fio,i);
+        Student student(fio, i);
         students.push_back(student);
         i++;
     }
 }
 
 void Deanary::addMarkToAll() {
-    srand(time(NULL));
-    int count = rand() % 20;
+    int count = std::rand() % 20;
     std::vector<int> marks;
     for (int i = 0; i < students.size(); i++) {
         for (int j = 0; j < count; j++) {
-            marks.push_back(rand() % 10);
+            marks.push_back(std::rand() % 10);
         }
         students[i].setMarks(marks);
-
     }
 }
 
@@ -43,7 +42,8 @@ std::string Deanary::getStatisticsByStudent(std::string fio) {
     std::stringstream stream;
     for (int i = 0; i < students.size(); i++) {
         if (students[i].getFio() == fio) {
-            stream << "Fio: " << fio << ", group: " << students[i].getGroupTitle() << ", average mark: " << students[i].getAverageMark() << "\n";
+            stream << "Fio: " << fio << ", group: " << students[i].getGroupTitle() << ", average mark: " 
+                << students[i].getAverageMark() << "\n";
             return stream.str();
         }
     }
@@ -54,7 +54,8 @@ std::string Deanary::getStatisticsByGroup(std::string title) {
     std::stringstream stream;
     for (int i = 0; i < groups.size(); i++) {
         if (groups[i].getTitle() == title) {
-            stream << "Title: " << groups[i].getTitle() << " spec: " << groups[i].getSpec() << " average mark: " << groups[i].getAverageMark() << "\n";
+            stream << "Title: " << groups[i].getTitle() << " spec: " << groups[i].getSpec() 
+                << " average mark: " << groups[i].getAverageMark() << "\n";
             return stream.str();
         }
     }
@@ -68,7 +69,7 @@ void Deanary::moveStudent(std::string fio, std::string title) {
             if (t != "-1") {
                 for (int j = 0; j < groups.size(); j++) {
                     if (groups[j].getTitle() == t) {
-                        groups[j].removeStudent(students[i]);
+                        groups[j].removeStudent(students[i].getId());
                     }
                 }
             }
@@ -84,7 +85,7 @@ void Deanary::moveStudent(std::string fio, std::string title) {
 void Deanary::moveStudents() {
     srand(time(NULL));
     for (int i = 0; i < students.size(); i++) {
-        int num = rand() % (groups.size());
+        int num = std::rand() % (groups.size());
         moveStudent(students[i].getFio(), groups[num].getTitle());
     }
 }
@@ -100,7 +101,8 @@ void Deanary::saveStuff(std::string path) {
     fout.open(path);
     for (int i = 0; i < groups.size(); i++) {
         fout << "-------------Group--------------------" << std::endl;
-        fout << "Title: " << groups[i].getTitle() << ", spec: " << groups[i].getSpec() << std::endl;
+        fout << "Title: " << groups[i].getTitle() << ", spec: " 
+            << groups[i].getSpec() << std::endl;
         fout << "Head of group: " << groups[i].getHead()->getFio() << std::endl;
         for (int j = 0; j < groups[i].getStudents().size(); j++) {
             fout << "Fio: " << groups[i].getStudents()[j].getFio() << std::endl;
@@ -123,13 +125,13 @@ void Deanary::fireStudent() {
         auto students = groups[i].getStudents();
         for (int j = 0; j < students.size(); j++) {
             if (students[j].getAverageMark() < 3) {
-                groups[i].removeStudent(students[j]);
+                groups[i].removeStudent(students[j].getId());
             }
         }
     }
 }
 
-void Deanary::addGroup(Group& group) {
+void Deanary::addGroup(const Group& group) {
     groups.push_back(group);
 }
 
@@ -137,6 +139,6 @@ std::vector<Group> Deanary::getGroups() {
     return groups;
 }
 
-void Deanary::addStudent(Student& student) {
+void Deanary::addStudent(const Student& student) {
     students.push_back(student);
 }

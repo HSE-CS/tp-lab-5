@@ -10,10 +10,12 @@ class Student;
 class Group;
 
 class Deanary {
-private:
+
+ private:
     std::vector<Group> groups;
     std::vector<Student> students;
-public:
+
+ public:
     void createGroups(std::string path);
     void hireStudents(std::string path);
     void addMarkToAll();
@@ -25,8 +27,8 @@ public:
     void saveStuff(std::string path);
     void printInfo();
     void fireStudent();
-    void addGroup(Group& group);
+    void addGroup(const Group& group);
     std::vector<Group> getGroups();
-    void addStudent(Student& student);
+    void addStudent(const Student& student);
 };
-#endif // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

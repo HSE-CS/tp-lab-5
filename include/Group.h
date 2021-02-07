@@ -6,25 +6,25 @@
 #include "Student.h"
 class Student;
 
-class Group
-{
-private:
+class Group {
+
+ private:
     std::string title;
     std::string spec;
     std::vector<Student> students;
     Student* head;
 
-public:
+ public:
     Group(std::string title, std::string spec);
-    void addStudent(Student& student);
+    void addStudent(const Student& student);
     void chooseHead();
     Student& getStudent(int id);
     Student& getStudent(std::string fio);
     double getAverageMark();
-    void removeStudent(Student& student);
+    void removeStudent(int id);
     std::string getTitle();
     std::string getSpec();
     Student* getHead();
     std::vector<Student> getStudents();
 };
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

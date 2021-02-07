@@ -1,3 +1,4 @@
+// Copyright 2021
 #include "Group.h"
 #include <iostream>
 
@@ -6,16 +7,14 @@ Group::Group(std::string title, std::string spec) {
     this->spec = spec;
 }
 
-void Group::addStudent(Student& student) {
-    student.addToGroup(this);
+void Group::addStudent(const Student& student) {
     students.push_back(student);
+    students[students.size() - 1].addToGroup(this);
 }
 
 void Group::chooseHead() {
-    srand(time(NULL));
-    int num = rand() % (students.size());
+    int num = std::rand() % (students.size());
     this->head = &(students[num]);
-
 }
 
 Student& Group::getStudent(int id) {
@@ -42,12 +41,13 @@ double Group::getAverageMark() {
     return sum / students.size();
 }
 
-void Group::removeStudent(Student& student) {
+void Group::removeStudent(int id) {
     auto iter = students.begin();
     for (int i = 0; i < students.size(); i++) {
-        if (students[i].getId() == student.getId()) {
+        if (students[i].getId() == id) {
             students.erase(iter + i);
-            student.removeGroup();
+            students[i].removeGroup();
+            return;
         }
     }
 }

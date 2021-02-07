@@ -7,12 +7,13 @@
 class Group;
 
 class Student {
-private:
+
+ private:
     int id;
     std::string fio;
     std::vector<int> marks;
     Group* group;
-public:
+ public:
     Student(std::string fio, int id);
     void addToGroup(Group* group);
     void addMark(int mark);
@@ -23,4 +24,4 @@ public:
     void setMarks(std::vector<int> marks);
     std::string getGroupTitle();
 };
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

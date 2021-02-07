@@ -1,3 +1,4 @@
+// Copyright 2021
 #include "Student.h"
 
 Student::Student(std::string fio, int id) {
