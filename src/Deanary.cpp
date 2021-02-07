@@ -25,12 +25,12 @@ void Deanary::createGroups(std::string path) {
     }
 }
 
-void Deanary::createGroups(std::string spec, std::string title) {
+void Deanary::createGroupByName(std::string spec, std::string title) {
   Group* gr = new Group(spec, title);
   groups->push_back(gr);
 }
 
-void Deanary::createGroups(Group* gr) { groups->push_back(gr); }
+void Deanary::createGroupByAdress(Group* gr) { groups->push_back(gr); }
 
 void Deanary::hireStudents(std::string path, int num) {
   std::ifstream read(path);
