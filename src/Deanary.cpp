@@ -21,6 +21,7 @@ void Deanery::createGroups(std::ifstream &groupsFile) {
 
 void Deanery::hireStudents(std::ifstream &studentsFile) {
   time_t* n = NULL;
+  int* whyyy = 0;
   srand(time(n));
 
   int nGroups = groups.size();
@@ -39,20 +40,21 @@ void Deanery::hireStudents(std::ifstream &studentsFile) {
       fio = fio + temp + ' ';
     }
     Student* tempObj = new Student(id, fio);
-    int Where = rand_r(n) % nGroups;
+    int Where = rand_r(whyyy) % nGroups;
     groups[Where]->students.push_back(tempObj);
   }
 }
 
 void Deanery::addMarksToAll() {
   time_t* n = NULL;
+  int* whyyy = 0;
   srand(time(n));
 
   for (auto i : groups) {
     for (unsigned j = 0; j < i->students.size(); j++) {
-      int times = 5 + rand_r(n) % 5;
+      int times = 5 + rand_r(whyyy) % 5;
       for (int k = 0; k <= times; k++) {
-          i->students[j]->addMark(1 + rand_r(n) % 10);
+          i->students[j]->addMark(1 + rand_r(whyyy) % 10);
       }
     }
   }
