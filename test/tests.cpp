@@ -72,7 +72,7 @@ TEST(quickTests, test6) {
 
   bool isHead = newStudent->isHeadOfGroup();
 
-  EXPECT_EQ(false, itHead);
+  EXPECT_EQ(false, isHead);
 }
 
 TEST(quickTests, test7) {
@@ -82,7 +82,7 @@ TEST(quickTests, test7) {
   Deanery newDeanary;
 
   newDeanary.addNewGroup(newGroup);
-  newDeanary.addNewGroup(newGroup1);
+  newDeanary.addNewGroup(newGroup2);
 
   newGroup->addStudent(newStudent);
 
@@ -100,7 +100,7 @@ TEST(quickTests, test8) {
   Deanery newDeanary;
 
   newDeanary.addNewGroup(newGroup);
-  newDeanary.addNewGroup(newGroup1);
+  newDeanary.addNewGroup(newGroup2);
 
   newGroup->addStudent(newStudent);
 
