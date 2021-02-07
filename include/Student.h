@@ -25,6 +25,7 @@ class Student {
   int getId();
   std::string getFio();
   friend class Deanary;
+  friend class Group;
 };
 
 #endif  // INCLUDE_STUDENT_H_

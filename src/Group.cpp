@@ -8,7 +8,10 @@ Group::Group(std::string _title, std::string _spec) {
   head = nullptr;
 }
 
-void Group::AddStudent(Student *_student) { students.push_back(_student); }
+void Group::AddStudent(Student *_student) {
+  students.push_back(_student);
+  _student->group = this;
+}
 
 void Group::chooseHead() {
   if (!isEmpty()) {

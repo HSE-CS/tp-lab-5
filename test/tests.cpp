@@ -61,5 +61,12 @@ TEST(DeanaryTest, test9) {
   Group *group = new Group("FundamentalMathematics", "FM");
   Deanary dean;
   dean.AddGroup(group);
-  EXPECT_EQ(true, group->isEmpty());
+  EXPECT_EQ(true, dean.getGroup(" FundamentalMathematics")->isEmpty());
+}
+
+TEST(DeanaryTest, test10) {
+  Group *group = new Group("FundamentalMathematics", "FM");
+  Deanary dean;
+  dean.AddGroup(group);
+  EXPECT_EQ(nullptr, dean.getGroup(" FundamentalMathematics")->getHead());
 }
