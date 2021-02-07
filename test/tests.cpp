@@ -70,6 +70,7 @@ TEST(DeanaryTest, test9) {
 }
 
 TEST(DeanaryTest, test10) {
-  ReadGroup reader({"Test1.txt", "Test2.txt"}) auto expected = {
-      "Test1.txt", "Test2.txt"} EXPECT_EQ(expected, reader.GetFileNames());
+  ReadGroup reader({"Test1.txt", "Test2.txt"});
+  std::vector<std::string> expected = {"Test1.txt", "Test2.txt"};
+  EXPECT_EQ(expected, reader.GetFileNames());
 }
