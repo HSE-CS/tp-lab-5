@@ -79,7 +79,6 @@ std::vector<Group*> Deanery::createGroupsFromFile(std::string fileName) {
         groups.push_back(gr);
     }
     return groups;
-
 }
 
 void Deanery::printInfo() {
@@ -114,7 +113,7 @@ void Deanery::addMarksToAll() {
     }
 }
 
-std::vector<float> Deanery::getStatistics(bool byGroup = true) {
+std::vector<float> Deanery::getStatistics(bool byGroup) {
     std::vector<float> stats;
     if (byGroup) {
         for (unsigned int i = 0; i != _groups.size(); ++i) {
@@ -201,7 +200,6 @@ bool Deanery::saveData(std::string fileName) {
     writer.EndArray();
     writer.EndObject();
 
-    std::cout << s.GetString() << std::endl;
     std::ofstream file(fileName);
     std::string my_string = s.GetString();
     file << my_string;

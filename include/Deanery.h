@@ -20,7 +20,7 @@ class Deanery {
      std::vector<Group*> getGroups();
      void setGroups(std::vector<Group*> groups);
      void printInfo();
-     std::vector<float> getStatistics(bool byGroup);
+     std::vector<float> getStatistics(bool byGroup = true);
      void moveStudents(Student *student, Group *newGroup);
      void fireStudents();
      void addMarksToAll();

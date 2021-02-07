@@ -32,9 +32,10 @@ class Group{
     Group createGroup(std::string title);
     void addStudentToGroup(Student* student);
     void chooseHeadman(Student* student);
-    Student* findStudent(std::string fio, int id);
+    Student* findStudent(std::string fio = "", int id = -1);
     float calculateMeanMark();
     bool removeStudentFromGroup(Student* student);
+    bool isEmpty();
 };
 
 

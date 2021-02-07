@@ -38,7 +38,7 @@ void Group::chooseHeadman(Student* student) {
     _head = student;
 }
 
-Student* Group::findStudent(std::string fio = "", int id = -1) {
+Student* Group::findStudent(std::string fio, int id) {
     if (!fio.empty()) {
         for (unsigned int i = 0; i < _students.size(); i++) {
         if (_students[i]->getFio().compare(fio) == 0)
@@ -62,8 +62,10 @@ float Group::calculateMeanMark() {
             sum += _students[i]->getMarks()[j];
         total += sum / _students[i]->getMarks().size();
     }
+    total /= static_cast<float>(_students.size());
     return total;
 }
+
 bool Group::removeStudentFromGroup(Student* student) {
     for (unsigned int i = 0; i < _students.size(); i++) {
         if (_students[i]->getId() == student->getId()) {
@@ -73,4 +75,8 @@ bool Group::removeStudentFromGroup(Student* student) {
         }
     }
     return false;
+}
+
+bool Group::isEmpty() {
+    return _students.empty();
 }

@@ -10,16 +10,8 @@
 #include "../include/Deanery.h"
 
 int main() {
-    std::vector<int> marksOne = {1, 2, 3};
-    Student *st = new Student(123, "JijA", marksOne);
-    std::vector<Student*> students;
-    students.push_back(st);
-    Group *gr = new Group("test", "JiJA");
-    st->enrollInGroup(gr);
-    st->addMark(1);
-    std::cout << st->calculateMeanMark() << std::endl;
     Deanery dn = Deanery();
-    std::vector<Group*> groups = dn.createGroupsFromFile("test.json");
+    std::vector<Group*> groups = dn.createGroupsFromFile("input.json");
     dn.setGroups(groups);
     dn.printInfo();
     dn.saveData("output.json");
