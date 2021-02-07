@@ -14,7 +14,7 @@ class Group {
  private:
      std::string title;
      std::string spec;
-     std::vector <Student *> students;
+     std::vector <Student *> *students;
      Student *head;
      void addStudent(Student *st);
      void chooseHead();
@@ -29,7 +29,7 @@ class Group {
      bool containsStudent(std::string fio);
      bool containsStudent(unsigned id);
      double getAverageMark();
-     std::vector <Student *> getStudents() const;
+     std::vector <Student *> *getStudents() const;
 };
 
 #endif  // INCLUDE_GROUP_H_

@@ -7,14 +7,14 @@
 
 TEST(DeaneryTest, test1) {
     Deanery deanery{};
-    EXPECT_EQ(3, deanery.getGroups().size());
+    EXPECT_EQ(3, deanery.getGroups()->size());
 }
 
 TEST(DeaneryTest, test1_1) {
     Deanery deanery{};
     int n = 0;
     for (auto &group : deanery.getGroups()) {
-        n += group->getStudents().size();
+        n += group->getStudents()->size();
     }
     EXPECT_EQ(63, n);
 }
@@ -24,7 +24,7 @@ TEST(DeaneryTest, test2) {
     int st = 0;
     int n = 21;
     for (auto &group : deanery.getGroups()) {
-        EXPECT_EQ(n, group->getStudents().size());
+        EXPECT_EQ(n, group->getStudents()->size());
     }
 }
 
@@ -38,7 +38,7 @@ TEST(DeaneryTest, test3) {
     int st = 0;
     int n[]{ 20, 22, 21 };
     for (auto &group : deanery.getGroups()) {
-        EXPECT_EQ(n[st++], group->getStudents().size());
+        EXPECT_EQ(n[st++], group->getStudents()->size());
     }
 }
 
