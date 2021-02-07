@@ -2,7 +2,6 @@
 
 #include <gtest/gtest.h>
 #include <string>
-#include <iostream>
 #include <vector>
 #include "Deanary.h"
 #include "Student.h"
@@ -93,13 +92,11 @@ TEST(TestingDeanary, test9) {
   deanary.createGroups();
   deanary.hireStudent();
   std::vector<Group*> v = deanary.getGroup();
-  int i = 0;
-  std::vector<Student*> st = v[i]->getStudentsInGroup();
+  std::vector<Student*> st = v[0]->getStudentsInGroup();
   int size1 = st.size();
   deanary.fireStudent(0);
-  std::vector<Student*> st1 = v[i]->getStudentsInGroup();
+  std::vector<Student*> st1 = v[0]->getStudentsInGroup();
   int size2 = st1.size();
-  std::cout << st1.size << std::endl;
   EXPECT_EQ(size1 - 1, size2);
 }
 TEST(TestingDeanary, test10) {
