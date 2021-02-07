@@ -50,7 +50,7 @@ int main() {
 
   newDeanery.printToConsole(&(allGroups[0]->getStudent(123456)));
   newDeanery.printToConsole(
-  allGroups[0]->getStudent("Monicheva Arina Aleksandrovna"));
+  &(allGroups[0]->getStudent("Monicheva Arina Aleksandrovna")));
   std::cout << "Num in list: " << allGroups[0]->containsStudent(123456)
   << "Num in list: " <<
   allGroups[0]->containsStudent("Monicheva Arina Aleksandrovna") << std::endl;
