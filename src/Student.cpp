@@ -20,7 +20,7 @@ void Student::addToGroup(Group* destinationGroup) {
 void Student::addMarkToStudent(int newMark) {
   this->marks.push_back(newMark);
 }
-void Student::getInfo() {
+void Student::printInfoAboutStudent() {
   std::cout << "FIO = " << this->fio << std::endl;
   std::cout << "ID = " << this->id << std::endl;
   if (this->group != nullptr) {

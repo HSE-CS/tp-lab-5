@@ -27,6 +27,7 @@ class Group {
   std::string spec;
   std::vector<Student*> students;
   Student* head;
+  friend class Deanary;
 };
 
 #endif  // !INCLUDE_GROUP_H_

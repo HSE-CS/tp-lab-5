@@ -10,7 +10,7 @@ int main() {
   Group group((std::string)"19PMI");
   //that all work
   Student test1(0, (std::string) "Name Surname");
-  test1.getInfo();
+  test1.printInfoAboutStudent();
   delimiter();
   test1.printMarks();
   delimiter();
@@ -25,7 +25,7 @@ int main() {
   group.printInfoAboutGroup();  //working
   delimiter();
   group.addStudentToGroup(&test1);  // working
-  test1.getInfo();                  // working
+  test1.printInfoAboutStudent();                  // working
   delimiter();
   group.printInfoAboutGroup();  // working
   delimiter();
@@ -49,7 +49,7 @@ int main() {
   std::cout << "\n\n";
   std::cout << "===TEST OF .SETHEAD()\n";
   group.setHead(&test1);  
-  test1.getInfo();  // working
+  test1.printInfoAboutStudent();  // working
   delimiter();
   group.printInfoAboutGroup();  // working
   delimiter();
@@ -74,9 +74,9 @@ int main() {
   group.setHead(&test2);  //fully working
   group.printInfoAboutGroup();  // working
   delimiter();
-  test1.getInfo();  //working
+  test1.printInfoAboutStudent();  //working
   delimiter();
-  test2.getInfo();  //working
+  test2.printInfoAboutStudent();  //working
   delimiter();
   std::cout << "\n\n";
   std::cout << "===TEST OF .FIRESTUDENTFROMGROUP\n";
@@ -84,26 +84,26 @@ int main() {
   group.fireStudentFromGroup(0);
   group.printInfoAboutGroup();  // working
   delimiter();
-  test1.getInfo();  // working
+  test1.printInfoAboutStudent();  // working
   delimiter();
-  test2.getInfo();  // working
+  test2.printInfoAboutStudent();  // working
   delimiter();
   std::cout << "\n\n";
   group.addStudentToGroup(&test1);
   group.printInfoAboutGroup();  // working
   delimiter();
-  test1.getInfo();  // working
+  test1.printInfoAboutStudent();  // working
   delimiter();
-  test2.getInfo();  // working
+  test2.printInfoAboutStudent();  // working
   delimiter();
   std::cout << "\n";
   std::cout << "===Fire head of group\n";
   group.fireStudentFromGroup(1);
   group.printInfoAboutGroup();  // working
   delimiter();
-  test1.getInfo();  // working
+  test1.printInfoAboutStudent();  // working
   delimiter();
-  test2.getInfo();  // working
+  test2.printInfoAboutStudent();  // working
   delimiter();
 
 

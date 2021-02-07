@@ -15,7 +15,7 @@ class Student {
  public:
   Student(unsigned, std::string);
   ~Student();
-  void getInfo();
+  void printInfoAboutStudent();
   void printMarks();
   double getAverageMark();
 
@@ -30,6 +30,7 @@ class Student {
   void makeHead();
   void addMarkToStudent(int);
   void addToGroup(Group* destinationGroup);
+  friend class Deanary;
   friend class Group;
 };
 

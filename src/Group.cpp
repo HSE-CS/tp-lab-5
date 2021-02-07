@@ -4,7 +4,6 @@
 
 Group::Group(std::string title) { 
     this->title = title;
-    this->spec = (std::string) "spec"; 
     this->head = nullptr;
 }
 Group::~Group() { 
