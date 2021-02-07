@@ -13,19 +13,19 @@
 
 class Deanary {
  private:
-	 std::vector<Group> groups;
+     std::vector<Group> groups;
  public:
-	 void createGroups(std::string &filename);
-	 void AddGroup(std::string titl, std::string spec);
-	 void printGroups();
-	 void hireStudents(std::string& filename);
-	 void addMarksToAll();
-	 std::vector<float> getStatistics();                   //Average marks in every group
-	 void moveStudents(Student* st1, Group* gr2);
-	 void saveStaff(std::string &filename);
-	 void initHeads();
-	 Group getLastGroup();
-	 void fireStudents();
+     void createGroups(std::string &filename);
+     void AddGroup(std::string titl, std::string spec);
+     void printGroups();
+     void hireStudents(std::string& filename);
+     void addMarksToAll();
+     std::vector<float> getStatistics();                   //Average marks in every group
+     void moveStudents(Student* st1, Group* gr2);
+     void saveStaff(std::string &filename);
+     void initHeads();
+     Group getLastGroup();
+     void fireStudents();
 };
 
 #endif // !INCLUDE_DEANARY_H_

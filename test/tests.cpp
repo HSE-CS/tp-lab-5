@@ -14,13 +14,13 @@ TEST(Student, test1) {
 
 TEST(Student, test2) {
     Student st = Student(456, "Vasiya Pupkin");
-    EXPECT_EQ("No such Student", st.getFiofromId(465));
+    EXPECT_EQ("Vasiya Pupkin", st.getFiofromId(456));
 }
 
 TEST(Student, test3) {
     Student st = Student(456, "Vasiya Pupkin");
-	st.addmark(5);
-	st.addmark(4);
+    st.addmark(5);
+    st.addmark(4);
     EXPECT_EQ(4.5, st.getAveragemark());
 }
 
