@@ -25,30 +25,6 @@ TEST(TestStudent, check_st_name) {
   EXPECT_EQ(rez, student1->getStNamed());
 }
 
-TEST(TestStudent, check_st_spec) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  std::string rez = "PI";
-  EXPECT_EQ(rez, student1->getStSpec());
-}
-
-TEST(TestStudent, check_st_av_mark) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  float rez = 0.0;
-  EXPECT_EQ(rez, student1->getAverageMark());
-}
-
 TEST(TestStudent, finale_st) {
   UniqueID *newId1 = new UniqueID;
   Student *student1 = new Student("Mitchel Mia", newId1);
@@ -56,23 +32,7 @@ TEST(TestStudent, finale_st) {
   EXPECT_EQ(0, student1->getStId());
 }
 
-TEST(TestGroup, check_gr_head) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  UniqueID *newId2 = new UniqueID;
-  Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  newStudents.push_back(student2);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  ASSERT_TRUE(student1->isHeadOfGroup());
-}
-
 TEST(TestGroup, check_gr_empty) {
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   Group *newGr = new Group("PI", "1st",
                            newStudents, nullptr);
@@ -97,7 +57,6 @@ TEST(TestGroup, check_gr_spec) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
@@ -112,7 +71,6 @@ TEST(TestGroup, check_gr_title) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
@@ -128,7 +86,6 @@ TEST(TestGroup, check_sts_size_in_gr) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
@@ -144,7 +101,6 @@ TEST(TestGroup, check_get_st) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
@@ -160,7 +116,6 @@ TEST(TestGroup, check_gr_not_empty) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
@@ -175,7 +130,6 @@ TEST(TestGroup, check_get_st_name) {
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
   Student * student2 = new Student("Greich Mark", newId2);
-  Group *gr = nullptr;
   std::vector<Student *> newStudents;
   newStudents.push_back(student1);
   newStudents.push_back(student2);
