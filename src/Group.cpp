@@ -14,9 +14,15 @@ std::string Group::getSpec() {
 Student* Group::getHeadman() {
     return _head;
 }
+
+std::vector<Student*> Group::getStudents() {
+    return _students;
+}
+
 void Group::setTitle(std::string title) {
     _title = title;
 }
+
 void Group::setSpec(std::string spec) {
     _spec = spec;
 }
@@ -24,35 +30,45 @@ void Group::setSpec(std::string spec) {
 
 // }
 void Group::addStudentToGroup(Student* student) {
-    students.push_back(student);
+    student->setGroup(this);
+    _students.push_back(student);
 }
 
 void Group::chooseHeadman(Student* student) {
     _head = student;
 }
 
-Student* Group::findStudent(std::string fio) {
-    for (unsigned int i = 0; i < students.size(); i++) {
-        if (students[i]->getFio().compare(fio) == 0)
-            return students[i];
+Student* Group::findStudent(std::string fio = "", int id = -1) {
+    if (!fio.empty()) {
+        for (unsigned int i = 0; i < _students.size(); i++) {
+        if (_students[i]->getFio().compare(fio) == 0)
+            return _students[i];
+        }
+        return NULL;
+    } else {
+        for (unsigned int i = 0; i < _students.size(); i++) {
+        if (_students[i]->getId() == id)
+            return _students[i];
+        }
+        return NULL;
     }
-    return NULL;
 }
 
 float Group::calculateMeanMark() {
     float total = 0;
-    for (unsigned int i = 0; i < students.size(); i++) {
+    for (unsigned int i = 0; i < _students.size(); i++) {
         int sum = 0;
-        for (unsigned int j = 0; j < students[i]->getMarks().size(); j++)
-            sum += students[i]->getMarks()[j];
-        total += sum / students[i]->getMarks().size();
+        for (unsigned int j = 0; j < _students[i]->getMarks().size(); j++)
+            sum += _students[i]->getMarks()[j];
+        total += sum / _students[i]->getMarks().size();
     }
     return total;
 }
 bool Group::removeStudentFromGroup(Student* student) {
-    for (unsigned int i = 0; i < students.size(); i++) {
-        if (students[i]->getId() == student->getId()) {
-            students.erase(students.begin() + i);
+    for (unsigned int i = 0; i < _students.size(); i++) {
+        if (_students[i]->getId() == student->getId()) {
+            _students.erase(_students.begin() + i);
+            student->setGroup(NULL);
             return true;
         }
     }

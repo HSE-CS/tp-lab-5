@@ -5,31 +5,34 @@
 #include <string>
 #include "../include/Student.h"
 
+
 class Group{
  private:
     std::string _title;
     std::string _spec;
-    Student *_head;
+    Student* _head;
+    std::vector<Student*> _students;
 
  public:
-    std::vector<Student*> students;
+    
     Group(std::string title,
         std::string spec,
-        std::vector<Student*> _students = std::vector<Student*>(),
+        std::vector<Student*> students = std::vector<Student*>(),
         Student *head = NULL):
         _title(title),
         _spec(spec),
         _head(head),
-        students(_students) {}
+        _students(students) {}
     std::string getTitle();
     std::string getSpec();
     Student* getHeadman();
+    std::vector<Student*> getStudents();
     void setTitle(std::string title);
     void setSpec(std::string spec);
     Group createGroup(std::string title);
     void addStudentToGroup(Student* student);
     void chooseHeadman(Student* student);
-    Student* findStudent(std::string fio);
+    Student* findStudent(std::string fio, int id);
     float calculateMeanMark();
     bool removeStudentFromGroup(Student* student);
 };

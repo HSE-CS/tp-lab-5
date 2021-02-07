@@ -11,14 +11,25 @@ int Student::getId() {
 std::string Student::getFio() {
     return _fio;
 }
+
 std::vector<int> Student::getMarks() {
     return _marks;
 }
+
+Group* Student::getGroup() {
+    return _group;
+}
+
 void Student::setId(int id) {
     _id = id;
 }
+
 void Student::setFio(std::string fio) {
     _fio = fio;
+}
+
+void Student::setGroup(Group *group) {
+    _group = group;
 }
 
 void Student::addMark(int mark) {
@@ -26,10 +37,10 @@ void Student::addMark(int mark) {
 }
 
 float Student::calculateMeanMark() {
-    return std::accumulate(_marks.begin(), _marks.end(), 0) / _marks.size();
+    return static_cast<float>(std::accumulate(_marks.begin(),
+         _marks.end(), 0)) / static_cast<float>(_marks.size());
 }
 
 void Student::enrollInGroup(Group* group) {
-    _group = group;
     group->addStudentToGroup(this);
 }

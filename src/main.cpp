@@ -10,26 +10,18 @@
 #include "../include/Deanery.h"
 
 int main() {
-    // const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
-    // rapidjson::Document d;
-    // d.Parse(json);
-
-    // rapidjson::Value& s = d["stars"];
-    // s.SetInt(s.GetInt() + 1);
-
-    // rapidjson::StringBuffer buffer;
-    // rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
-    // d.Accept(writer);
-
-    // std::cout << buffer.GetString() << std::endl;
-    std::vector<int> marksOne = {4, 6, 12};
+    std::vector<int> marksOne = {1, 2, 3};
     Student *st = new Student(123, "JijA", marksOne);
-    std::string name = "Test";
-    std::string spec = "JiJA";
     std::vector<Student*> students;
     students.push_back(st);
-    Group gr = Group(name, spec, students);
-    std::cout << gr.calculateMeanMark() << std::endl;
-    // Deanery dnry = Deanery();
+    Group *gr = new Group("test", "JiJA");
+    st->enrollInGroup(gr);
+    st->addMark(1);
+    std::cout << st->calculateMeanMark() << std::endl;
+    Deanery dn = Deanery();
+    std::vector<Group*> groups = dn.createGroupsFromFile("test.json");
+    dn.setGroups(groups);
+    dn.printInfo();
+    dn.saveData("output.json");
     return 0;
 }

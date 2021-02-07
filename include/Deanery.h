@@ -11,10 +11,19 @@ class Deanery {
  private:
       std::vector<Group*> _groups;
  public:
-      explicit Deanery(std::vector<Group*> groups): _groups(groups) {}
-      std::vector<Student*> createStudentsFromFile(std::string fileName);
-      std::vector<Group*> createGroupsFromFile(std::string fileName);
-      bool saveData(std::string fileName);
+     explicit Deanery(
+          std::vector<Group*> groups = std::vector<Group*>()):
+          _groups(groups) {}
+     std::vector<Student*> createStudentsFromFile(std::string fileName);
+     std::vector<Group*> createGroupsFromFile(std::string fileName);
+     bool saveData(std::string fileName);
+     std::vector<Group*> getGroups();
+     void setGroups(std::vector<Group*> groups);
+     void printInfo();
+     std::vector<float> getStatistics(bool byGroup);
+     void moveStudents(Student *student, Group *newGroup);
+     void fireStudents();
+     void addMarksToAll();
 };
 
 #endif  // _INCLUDE_DEANERY_H
