@@ -11,6 +11,9 @@
 #include <sstream>
 #include <string>
 
+class Group;
+class Student;
+
 class Deanery {
  private:
      std::vector <Group *> groups{};
