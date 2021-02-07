@@ -15,8 +15,8 @@ class Group {
     std::string spec;
     std::vector<Student*> students;
     Student* head = nullptr;
- public:
 
+ public:
     Group(std::string name, std::string spec) {
         this->title = name;
         this->spec = spec;
