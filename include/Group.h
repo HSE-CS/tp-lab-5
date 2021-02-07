@@ -32,6 +32,6 @@ class Group {
     std::string get_students() {
         return students[0]->fio;
     }
-    friend  Student;
-    friend  Deanary;
+    friend class Student;
+    friend class Deanary;
 };
