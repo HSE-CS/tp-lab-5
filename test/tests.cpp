@@ -127,7 +127,7 @@ TEST(DeaneryTest, test10) {
   std::string title = "19PI-1";
   Group group(title, spec);
   group.addStudent(&student);
-  student1.addToGroup(&group);
+  student.addToGroup(&group);
   EXPECT_EQ(&student, group.getStudentByFio(Fio));
 }
 
