@@ -2,7 +2,6 @@
 #include<fstream>
 #include<ctime>
 #include<clocale>
-#include<windows.h>
 #include"Deanary.h"
 #include"Group.h"
 #include"Student.h"
