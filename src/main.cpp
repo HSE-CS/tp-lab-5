@@ -48,7 +48,7 @@ int main() {
   newDeanery.printToConsole(allGroups[0]);
   std::cout << newStudent->isHeadOfGroup() << std::endl;
 
-  newDeanery.printToConsole(allGroups[0]->getStudent(123456));
+  newDeanery.printToConsole(&(allGroups[0]->getStudent(123456)));
   newDeanery.printToConsole(
   allGroups[0]->getStudent("Monicheva Arina Aleksandrovna"));
   std::cout << "Num in list: " << allGroups[0]->containsStudent(123456)
