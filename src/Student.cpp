@@ -1,5 +1,5 @@
-//Copyright 2021 Sozinov Kirill
-#include "Student.h"
+// Copyright 2021 Sozinov Kirill
+#include <Student.h>
 
 Student::Student(unsigned id, std::string fio) {
     this->id = id;

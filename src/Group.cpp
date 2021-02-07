@@ -1,10 +1,11 @@
 // Copyright 2021 Sozinov Kirill
-#include "Group.h"
+#include <Group.h>
+#include <Student.h>
 #include <time.h>
 #include <cstdlib>
 
 
-Group::Group(std::string title,std::string spec) {
+Group::Group(std::string title, std::string spec) {
     this->title = title;
     this->spec = spec;
     this->head = nullptr;
@@ -27,7 +28,7 @@ void Group::chooseHead() {
         head->isHead = false;
         head = nullptr;
     }
-    unsigned choose = rand() % (students.size() - 1);
+    unsigned choose = std::rand() % (students.size() - 1);
     this->head = students[choose];
     students[choose]->isHead = true;
 }
@@ -83,10 +84,8 @@ void Group::removeStudent(Student *st) {
         }
     }
     if (ind == -1) {
-        //throw "No such student in group!";
         return;
-    }
-    else {
+    } else {
         students.erase(students.begin() + ind);
         st->group = nullptr;
     }

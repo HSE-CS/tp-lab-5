@@ -1,12 +1,13 @@
-//Copyright 2021 Sozinov Kirill
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+// Copyright 2021 Sozinov Kirill
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
-#include "Group.h"
+#include <Group.h>
 #include <cstdlib>
 #include <stdio.h>
 #include <utility>
-#include <Windows.h>
+#include <vector>
+#include <sstream>
 
 class Deanery {
  private:
@@ -36,4 +37,4 @@ class Deanery {
      std::vector<Group *> getGroups() const;
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_

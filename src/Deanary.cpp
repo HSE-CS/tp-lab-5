@@ -1,5 +1,5 @@
-//Copyright 2021 Sozinov Kirill
-#include "Deanary.h"
+// Copyright 2021 Sozinov Kirill
+#include <Deanary.h>
 #include <fstream>
 #include <iostream>
 #include <locale>
@@ -9,17 +9,16 @@ Deanery::Deanery() {
     createStudents();
     createGroups();
     hireStudents();
-
 }
 
 void Deanery::createStudents() {
     SetConsoleCP(1251);
-    std::ifstream in("students.txt");
+    std::ifstream in("D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\students.txt");
     std::string line;
     size_t i = 1;
-    if (in.is_open()){
-        while (getline(in, line)){
-            this->unalloc.push_back(std::make_pair(i,line));
+    if (in.is_open()) {
+        while (getline(in, line)) {
+            this->unalloc.push_back(std::make_pair(i, line));
             i++;
         }
     }
@@ -41,7 +40,7 @@ void Deanery::printAllStudents() {
 
 void Deanery::createGroups() {
     SetConsoleCP(1251);
-    std::ifstream in("groups.txt");
+    std::ifstream in("D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\groups.txt");
     std::string line1, line2;
     size_t i = 0;
     if (in.is_open()) {

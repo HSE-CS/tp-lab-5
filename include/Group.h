@@ -1,8 +1,9 @@
-//Copyright 2021 Sozinov Kirill
+// Copyright 2021 Sozinov Kirill
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
-#include "Student.h"
+#include <Student.h>
+#include <string>
 
 class Student;
 class Deanery;

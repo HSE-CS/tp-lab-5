@@ -1,10 +1,10 @@
-//Copyright 2021 Sozinov Kirill
+// Copyright 2021 Sozinov Kirill
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
 #include <string>
 #include <vector>
-#include "Group.h"
+#include <Group.h>
 
 class Student {
     friend class Group;
@@ -25,7 +25,6 @@ class Student {
     ~Student();
     bool isHeadOfGroup();
     double getAverageMark();
-    
 };
 
 
