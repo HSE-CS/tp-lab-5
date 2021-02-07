@@ -33,7 +33,7 @@ void Deanary::addGroups(std::string names_input, std::string groups_input) {
         int group_num = -1;
         for (unsigned int i = 0; i < groups.size(); i++) {
             if (groups[i]->getTitle() == current_str[1]) {
-       	        is_constructed = 1;
+                is_constructed = 1;
                 group_num = i;
             }
         }
