@@ -95,8 +95,8 @@ TEST(TestingDeanary, test9) {
   int i = 0;
   std::vector<Student*> st = v[i]->getStudentsInGroup();
   int size1 = st.size();
-  deanary.fireStudent(1);
-  std::vector<Student*> st1 = v[i]->getStudentsInGroup();
+  deanary.fireStudent(i);
+  std::vector<Student*> st1 = v[1]->getStudentsInGroup();
   int size2 = st1.size();
   EXPECT_EQ(19, size2);
 }
