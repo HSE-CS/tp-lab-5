@@ -4,6 +4,13 @@
 #include "Group.h"
 
 
+std::string get_header() {
+        return head->get_fio();
+    }
+std::string get_students() {
+        return students[0]->fio;
+    }
+
 void Group::add_student(Student* student) {
     this->students.push_back(student);
 }
