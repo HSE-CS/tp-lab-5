@@ -5,6 +5,7 @@
 
 #include "Group.h"
 #include <iostream>
+#include <string>
 #include <vector>
 #include <cstring>
 
@@ -21,7 +22,7 @@ class Student {
   void addMark(int iteration);
 
  public:
-  Student(const std::string& fio);
+  explicit Student(const std::string& fio);
   [[nodiscard]] size_t getId() const;
   double getAverageMark();
   [[nodiscard]] bool isHeadOfGroup() const;

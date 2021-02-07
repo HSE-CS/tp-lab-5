@@ -5,6 +5,7 @@
 
 #include "Student.h"
 #include <iostream>
+#include <string>
 #include <cstring>
 #include <vector>
 
@@ -21,7 +22,7 @@ class Group {
   bool delStudent(Student *st);
 
  public:
-  Group(const std::string& _title);
+  explicit Group(const std::string& _title);
   double getAverageMark();
   Student* getStudent(int _id);
   bool containsStudent(Student *st);
