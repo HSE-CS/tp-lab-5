@@ -38,7 +38,7 @@ TEST(DeaneryTest, test4) {
   auto *title = new std::string{"19PMI-2"};
   decan.moveStudent(*name, *title);
 
-  EXPECT_EQ(decan.groupByStudent("Титов Д.Д")->getTitle(), "19PMI-2");
+  EXPECT_EQ(decan.groupByStudent("Титов Д.Д").getTitle(), "19PMI-2");
 }
 
 TEST(DeaneryTest, test5) {
@@ -47,7 +47,7 @@ TEST(DeaneryTest, test5) {
   auto *title = new std::string{"19PMI-2"};
   decan.moveStudent(_id, * title);
 
-  EXPECT_EQ(decan.groupByStudent(_id), decan.getGroup("19PMI-2"));
+  EXPECT_EQ(decan.groupByStudent(_id).getTitle(), decan.getGroup("19PMI-2"));
 }
 
 TEST(DeaneryTest, test6) {
