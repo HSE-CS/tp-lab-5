@@ -1,7 +1,8 @@
 // Copyright 2021 dmitrycvetkov2000
 
-#ifndef STUDENT_H
-#define STUDENT_H
+
+#ifndef INCLUDE_STUDENT_H
+#define INCLUDE_STUDENT_H
 
 #include <string>
 #include <vector>
@@ -29,4 +30,4 @@ class Student {
     std::vector<int> marks;
 };
 
-#endif  // STUDENT_H
+#endif  // INCLUDE_STUDENT_H

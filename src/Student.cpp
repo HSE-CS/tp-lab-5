@@ -1,4 +1,4 @@
-// Copyright 2021 dmitrycvetkov2000
+//  Copyright 2021 dmitrycvetkov2000
 
 #include "Student.h"
 #include "Group.h"

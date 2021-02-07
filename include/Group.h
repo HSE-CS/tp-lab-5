@@ -1,7 +1,7 @@
 // Copyright 2021 dmitrycvetkov2000
 
-#ifndef GROUP_H
-#define GROUP_H
+#ifndef INCLUDE_GROUP_H
+#define INCLUDE_GROUP_H
 
 #include <string>
 #include <vector>
@@ -34,4 +34,4 @@ class Group {
     std::vector<Student*>::const_iterator findStudent(int id) const;
 };
 
-#endif  // GROUP_H
+#endif  // INCLUDE_GROUP_H
