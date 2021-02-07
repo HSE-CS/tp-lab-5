@@ -53,7 +53,9 @@ class Deanary {
   double getCurrentAmoutOfGroups();
   Student* getStudentAddress(unsigned);
   Group* getGroupAddress(unsigned);
-
+  void addStudentToGroup(Student*, Group*);
+  void addStudent(Student*);
+  void addGroup(Group*);
  private:
   std::vector<Student*> allStudents;
   std::vector<Group*> groups;

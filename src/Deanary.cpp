@@ -161,7 +161,6 @@ void Deanary::saveChanges() {
     }
   }
 }
-
 double Deanary::getCurrentAmountOfStudents() {
   return ((this->allStudents).size());
 }
@@ -171,4 +170,13 @@ Student* Deanary::getStudentAddress(unsigned index) {
 }
 Group* Deanary::getGroupAddress(unsigned index) {
     return (this->groups[index]); 
+}
+void Deanary::addStudent(Student* StudentObj) {
+  this->allStudents.push_back(StudentObj);
+}
+void Deanary::addGroup(Group* GroupObj) {
+    this->groups.push_back(GroupObj); 
+}
+void Deanary::addStudentToGroup(Student* StudentObj, Group* GroupObj) {
+  GroupObj->addStudentToGroup(StudentObj);
 }

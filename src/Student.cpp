@@ -59,3 +59,5 @@ double Student::getAverageMark() {
   return (averageMark / (double)this->marks.size());
 }
 void Student::makeHead() { this->isHead = true; }
+unsigned Student::getId() { return (this->id); }
+bool Student::isTheyHead() { return (this->isHead); }

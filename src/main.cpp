@@ -139,6 +139,5 @@ int main() {
   DeanaryObj.fireForAcademicFailure();
   DeanaryObj.printAllInfo();
   DeanaryObj.saveChanges();
-
   return 0;
 }
