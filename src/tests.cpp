@@ -36,18 +36,18 @@ EXPECT_EQ(res, student_1.average_mark());
 
 TEST(Group_Test, test6) {
 Group group_1("ФИ2", "Филология");
-EXPECT_EQ("Филология", group_1.get_spec());
+EXPECT_EQ("Economy", student_1.get_spec());
 }
 
 TEST(Group_Test, test7) {
 Group group_1("ФИ2", "Филология");
-EXPECT_EQ("ФИ2", group_1.get_title());
+EXPECT_EQ("EC", student_1.get_title());
 }
 
 TEST(Group_Test, test8) {
 Group group_1("Фи8", "Филология");
 double res = 0;
-EXPECT_EQ(res, group_1.average_mark());
+EXPECT_EQ(res, student_1.average_mark());
 }
 
 TEST(Deanary_Test, test9) {
