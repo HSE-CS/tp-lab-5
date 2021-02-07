@@ -1,12 +1,13 @@
-// Copyright 2020 LongaBonga
+// Copyright 2021 LongaBonga
 #ifndef INCLUDE_DEANERY_H_
 #define INCLUDE_DEANERY_H_
 
+#include "Group.h"
 #include <random>
 #include <string>
 #include <vector>
 
-#include "Group.h"
+
 
 class Student;
 class Group;
@@ -23,7 +24,8 @@ class Deanery {
   void addMarksToAll(int value);                                   // Done
   void getStatistics();                                            // Done
   void moveStudent(int student_id, const std::string& title);            // Done
-  void moveStudent(const std::string& student_fio, const std::string& title);  // Done
+  void moveStudent(const std::string&
+                  student_fio, const std::string& title);  // Done
   // void saveStaff();
   void initHeads();
   void saveStuff();                              // Done

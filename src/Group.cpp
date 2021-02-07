@@ -1,3 +1,4 @@
+// Copyright 2020 LongaBonga
 #include "Group.h"
 
 #include <iostream>
