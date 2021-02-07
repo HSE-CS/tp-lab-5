@@ -6,21 +6,21 @@
 
 
 TEST(DeanaryTest, test1) {
-  Student stud("Pernon", 100);
+  Student stud("Person", 100);
   unsigned expected = 0;
   unsigned result = stud.getId();
   EXPECT_EQ(expected, result);
 }
 
 TEST(DeanaryTest, test2) {
-  Student stud("Pernon", 100);
+  Student stud("Person", 100);
   std::string expected = "Person";
   std::string result = stud.getFio();
   EXPECT_EQ(expected, result);
 }
 
 TEST(DeanaryTest, test3) {
-  Student stud("Pernon", 100);
+  Student stud("Person", 100);
   stud.addMark(10);
   stud.addMark(0);
   double expected = 5.;
