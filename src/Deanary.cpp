@@ -21,7 +21,7 @@ void Deanery::createGroups(std::ifstream &groupsFile) {
 
 void Deanery::hireStudents(std::ifstream &studentsFile) {
   time_t* n = NULL;
-  int* whyyy = 0;
+  unsigned int* whyyy = 0;
   srand(time(n));
 
   int nGroups = groups.size();
@@ -47,7 +47,7 @@ void Deanery::hireStudents(std::ifstream &studentsFile) {
 
 void Deanery::addMarksToAll() {
   time_t* n = NULL;
-  int* whyyy = 0;
+  unsigned int* whyyy = 0;
   srand(time(n));
 
   for (auto i : groups) {
