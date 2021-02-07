@@ -1,4 +1,4 @@
-// Copyright 2021 Nikita Naumov
+//  Copyright 2021 Nikita Naumov
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
@@ -24,7 +24,7 @@ int main() {
   //std::cout << std::endl;
   //test1.addToGroup(&group);
   //=================================================
-  group.printInfoAboutGroup();  //working
+  group.printInfoAboutGroup();  //  working
   delimiter();
   group.addStudentToGroup(&test1);  // working
   test1.printInfoAboutStudent();                  // working
@@ -76,9 +76,9 @@ int main() {
   group.setHead(&test2);  //fully working
   group.printInfoAboutGroup();  // working
   delimiter();
-  test1.printInfoAboutStudent();  //working
+  test1.printInfoAboutStudent();  //  working
   delimiter();
-  test2.printInfoAboutStudent();  //working
+  test2.printInfoAboutStudent();  //  working
   delimiter();
   std::cout << "\n\n";
   std::cout << "===TEST OF .FIRESTUDENTFROMGROUP\n";
@@ -109,33 +109,33 @@ int main() {
   delimiter();
   */
   Deanary DeanaryObj;
-  DeanaryObj.createGroups();  //working
-  DeanaryObj.initialiseStudents();  //working
-  //DeanaryObj.printAllInfo();  //working
+  DeanaryObj.createGroups();  //  working
+  DeanaryObj.initialiseStudents();  //  working
+  //DeanaryObj.printAllInfo();  //  working
   delimiter();
-  DeanaryObj.initialiseElection();  //working
-  DeanaryObj.printAllInfo();  //working
+  DeanaryObj.initialiseElection();  //  working
+  DeanaryObj.printAllInfo();  //  working
   delimiter();
-  //std::cout << DeanaryObj.getCurrentAmountOfStudents() << std::endl;  //working
-  //std::cout << DeanaryObj.getCurrentAmoutOfGroups() << std::endl;  //working
+  //std::cout << DeanaryObj.getCurrentAmountOfStudents() << std::endl;  //  working
+  //std::cout << DeanaryObj.getCurrentAmoutOfGroups() << std::endl;  //  working
   for (size_t i = 0; i < DeanaryObj.getCurrentAmountOfStudents(); ++i) {
-    Student* tmp = DeanaryObj.getStudentAddress(i);  //working
-    DeanaryObj.addRandomMarks(tmp, 10);  //working
-    tmp->printMarks();  //working
-    std::cout << DeanaryObj.getStudentStatistic(tmp) << std::endl;  //working
+    Student* tmp = DeanaryObj.getStudentAddress(i);  //  working
+    DeanaryObj.addRandomMarks(tmp, 10);  //  working
+    tmp->printMarks();  //  working
+    std::cout << DeanaryObj.getStudentStatistic(tmp) << std::endl;  //  working
     delimiter();
   }
-  for (size_t i = 0; i < DeanaryObj.getCurrentAmoutOfGroups(); ++i) {  //working
-    Group* tmp = DeanaryObj.getGroupAddress(i);  //working
-    std::cout << DeanaryObj.getGroupStatistic(tmp) << std::endl;  //working
+  for (size_t i = 0; i < DeanaryObj.getCurrentAmoutOfGroups(); ++i) {  //  working
+    Group* tmp = DeanaryObj.getGroupAddress(i);  //  working
+    std::cout << DeanaryObj.getGroupStatistic(tmp) << std::endl;  //  working
     delimiter();
   }
   std::cout << "\n\n==================================================\n\n";
-  //DeanaryObj.printAllInfo();  //working
-  //Student* tmp_student = DeanaryObj.getStudentAddress(0);  //working
-  //Group* tmp_group = DeanaryObj.getGroupAddress(3);  //working
-  //DeanaryObj.moveStudent(tmp_student, tmp_group);  //working
-  DeanaryObj.printAllInfo();  //working
+  //DeanaryObj.printAllInfo();  //  working
+  //Student* tmp_student = DeanaryObj.getStudentAddress(0);  //  working
+  //Group* tmp_group = DeanaryObj.getGroupAddress(3);  //  working
+  //DeanaryObj.moveStudent(tmp_student, tmp_group);  //  working
+  DeanaryObj.printAllInfo();  //  working
   DeanaryObj.fireForAcademicFailure();
   DeanaryObj.printAllInfo();
   DeanaryObj.saveChanges();

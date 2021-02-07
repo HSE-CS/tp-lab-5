@@ -1,4 +1,4 @@
-// Copyright 2021 Nikita Naumov
+//  Copyright 2021 Nikita Naumov
 #include "Student.h"
 
 Student::Student(unsigned id, std::string fio) {

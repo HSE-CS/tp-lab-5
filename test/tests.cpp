@@ -6,7 +6,7 @@
 #include "Student.h"
 #include "Group.h"
 
-TEST(Student_test, test1) { 
+TEST(Student_test, test1) {
   Student StudentObj(0, "Name Surname");
   EXPECT_EQ(0, StudentObj.getId());
 }

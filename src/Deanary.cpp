@@ -1,4 +1,4 @@
-//Copyright 2021 Nikita Naumov
+//  Copyright 2021 Nikita Naumov
 #include "Deanary.h"
 #include "Student.h"
 #include "Group.h"
@@ -35,8 +35,6 @@ void Deanary::createGroups() {
     Group* group = new Group(groupName);
     (*group).spec = groupSpec;
     (this->groups).push_back(&(*group));
-    //groupName.clear();
-    //groupSpec.clear();
   }
   FileIn.close();
 }
@@ -67,7 +65,7 @@ void Deanary::initialiseStudents() {
   }
   std::string studentNameAndSurname;
   std::string studentNameAndSurname2;
-  while(!FileIn.eof()) {
+  while (!FileIn.eof()) {
     FileIn >> studentNameAndSurname;
     studentNameAndSurname += " ";
     FileIn >> studentNameAndSurname2;

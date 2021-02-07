@@ -1,4 +1,4 @@
-// Copyright 2021 Nikita Naumov
+//  Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
@@ -35,4 +35,4 @@ class Student {
   friend class Group;
 };
 
-#endif  // !INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

@@ -1,8 +1,8 @@
-﻿//Copyright 2021 Nikita Naumov
+﻿//  Copyright 2021 Nikita Naumov
 #include "Group.h"
 #include "Student.h"
 
-Group::Group(std::string title) { 
+Group::Group(std::string title) {
     this->title = title;
     this->head = nullptr;
 }
@@ -11,13 +11,13 @@ Group::~Group() {
     this->spec.clear();
     this->head = nullptr;
     this->students.clear();
-}  
+}
 void Group::addStudentToGroup(Student* studentToAdd) {
     studentToAdd->addToGroup(this);
     this->students.push_back(studentToAdd);
 }
 std::string Group::getTitle() { return this->title; }
-void Group::setHead(Student* newHead) { 
+void Group::setHead(Student* newHead) {
     if (this->head == nullptr) {
         (*newHead).makeHead();
         this->head = newHead;
@@ -38,7 +38,7 @@ void Group::setHead(Student* newHead) {
       this->head = newHead;
     }
 }
-bool Group::findStudentByID(unsigned id) { 
+bool Group::findStudentByID(unsigned id) {
     for (size_t i = 0; i < this->students.size(); ++i) {
         if ((this->students[i])->id == id) {
             return true;
@@ -62,12 +62,12 @@ double Group::getAverageGroupMark() {
   for (size_t i = 0; i < this->students.size(); ++i) {
     averageGroupMark += (this->students[i])->getAverageMark();
   }
-  return averageGroupMark / (double)this->students.size();
+  return averageGroupMark / static_cast<double>(this->students.size());
 }
-void Group::fireStudentFromGroup(unsigned id) { 
+void Group::fireStudentFromGroup(unsigned id) {
     bool isInGroup = findStudentByID(id);
     unsigned neededInd = -1;
-    if (!isInGroup) {    //Handle exception if student is not in the group
+    if (!isInGroup) {    //  Handle exception if student is not in the group
       std::cout << "This student is not in current group\n";
       return;
     }

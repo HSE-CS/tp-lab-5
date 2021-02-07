@@ -1,4 +1,4 @@
-﻿// Copyright 2021 Nikita Naumov
+﻿//  Copyright 2021 Nikita Naumov
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
@@ -12,7 +12,7 @@ class Student;
 
 class Group {
  public:
-  Group(std::string title);
+  explicit Group(std::string title);
   ~Group();
   void addStudentToGroup(Student*);
   void setHead(Student* newHead);
@@ -22,6 +22,7 @@ class Group {
   double getAverageGroupMark();
   void fireStudentFromGroup(unsigned);
   void printInfoAboutGroup();
+
  private:
   std::string title;
   std::string spec;
@@ -30,4 +31,4 @@ class Group {
   friend class Deanary;
 };
 
-#endif  // !INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_
