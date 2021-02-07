@@ -18,7 +18,7 @@ class Student {
 
  public:
   Group *group_{};
-  Student(int id_, std::string &fio_) : id(id_), fio(fio_){}
+  Student(int id_, std::string &fio_) : id(id_), fio(fio_) {}
   void addToGroup(Group *_group);
   void addMark(int mark);
   double getAverageMark();

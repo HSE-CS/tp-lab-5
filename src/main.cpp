@@ -1,6 +1,6 @@
 // Copyright 2021 Pavlova D.
-#include "../include/Deanary.h"
 #include <iostream>
+#include "../include/Deanary.h"
 
 int main() {
   Deanary den;

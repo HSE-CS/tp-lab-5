@@ -1,8 +1,8 @@
 // Copyright 2020 GHA Test Team
 
-#include "../include/Deanary.h"
 #include <gtest/gtest.h>
 #include <string>
+#include "../include/Deanary.h"
 
 TEST(DeanaryTest, test1) {
   Deanary den;
@@ -56,7 +56,7 @@ TEST(DeanaryTest, test4) {
 
   std::string fio = "Rainbow Dasha Pony";
   std::string title = "transformers";
-  Student newbie (666, fio);
+  Student newbie(666, fio);
 
   for (auto group : den.groups)
     if (group->getTitle() == title)
@@ -90,7 +90,7 @@ TEST(DeanaryTest, test6) {
   Group newgr(title, spec);
 
   std::string fio = "Rainbow Dasha Pony";
-  Student newbie (666, fio);
+  Student newbie(666, fio);
 
   newgr.addStudents(&newbie);
 
@@ -108,7 +108,7 @@ TEST(DeanaryTest, test7) {
   Group newgr(title, spec);
 
   std::string fio = "Rainbow Dasha Pony";
-  Student newbie (666, fio);
+  Student newbie(666, fio);
 
   newgr.addStudents(&newbie);
 
@@ -126,7 +126,7 @@ TEST(DeanaryTest, test8) {
 
   std::string title = "transformers";
   std::string fio = "Rainbow Dasha Pony";
-  Student newbie (666, fio);
+  Student newbie(666, fio);
 
   for (auto group : den.groups)
     if (group->getTitle() == title)
@@ -145,7 +145,7 @@ TEST(DeanaryTest, test9) {
   std::string title = "transformers";
   std::string fio = "Rainbow Dasha Pony";
   int id = 666;
-  Student newbie (id, fio);
+  Student newbie(id, fio);
   int count = 0;
   for (auto group : den.groups) {
     for (auto student : group->students)

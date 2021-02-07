@@ -17,7 +17,7 @@ class Group {
 
  public:
   std::vector<Student *> students;
-  Group(std::string title_, std::string spec_) : title(title_), spec(spec_){}
+  Group(std::string title_, std::string spec_) : title(title_), spec(spec_) {}
   void addStudents(Student *student);
   void chooseHead();
   double getAverageMark();

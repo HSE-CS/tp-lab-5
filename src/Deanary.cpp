@@ -44,7 +44,7 @@ void Deanary::addMarksToAll(int count) {
   for (auto group : this->groups) {
     for (auto student : group->students) {
       for (int i = 0; i < count; ++i)
-        student->addMark(rand() % 10);
+        student->addMark(rand_r() % 10);
     }
   }
 }
@@ -79,16 +79,20 @@ void Deanary::getStatistics() {
 }
 
 void Deanary::moveStudents(int id, const std::string &title) {
-  for (auto group_new : groups)
-    if (group_new->getTitle() == title)
-      for (auto group_old : groups)
-        for (auto student : group_old->students)
+  for (auto group_new : groups) {
+    if (group_new->getTitle() == title) {
+      for (auto group_old : groups) {
+        for (auto student : group_old->students) {
           if (student->getID() == id) {
             group_new->addStudents(student);
             group_old->removeStudent(id);
             std::cout << student->getFIO() << " was moved" << std::endl;
             return;
           }
+        }
+      }
+    }
+  }
 }
 
 void Deanary::saveStaff() {
