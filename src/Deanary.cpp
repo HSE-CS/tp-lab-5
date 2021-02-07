@@ -39,7 +39,7 @@ void Deanary::addMarksToAll(uint64_t mark, std::string name_group) {
   }
 }
 
-void Deanary::moveStudents(std::string stu, std::string gr_from, 
+void Deanary::moveStudents(std::string stu, std::string gr_from,
   std::string gr_to) {
   for (auto i : groups) {
     if (i->title == gr_from) {

@@ -18,8 +18,8 @@ class Deanary {
   explicit Deanary(std::ifstream file) {
     std::string gro, title, spec;
     while (getline(file, gro)) {
-      title = gro.substr(0, gro.find(', ') - 1);
-      spec = gro.substr(gro.find(', ') + 1);
+      title = gro.substr(0, gro.find(", ") - 1);
+      spec = gro.substr(gro.find(", ") + 1);
       groups.push_back(new Group (title, spec));
     }
   }
