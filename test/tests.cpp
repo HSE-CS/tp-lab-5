@@ -72,7 +72,8 @@ TEST(PostfixTest, test8) {
   Student stud2(13, fname2);
   stud2.addMark(7);
   dec.groups[1]->addStudent(&stud2);
-  dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(), dec.groups[0]->getTitle());
+  dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(),
+                   dec.groups[0]->getTitle());
   EXPECT_EQ(6.5, dec.groups[0]->getAveragemark_Gr());
 }
 
@@ -105,5 +106,6 @@ TEST(PostfixTest, test10) {
     Student stud2(13, fname2);
     stud2.addMark(7);
     dec.groups[1]->addStudent(&stud2);
-    dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(), dec.groups[0]->getTitle());
+    dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(),
+                     dec.groups[0]->getTitle());
   EXPECT_EQ(6, dec.groups[0]->getAveragemark_Gr());
