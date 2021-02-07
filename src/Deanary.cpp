@@ -43,6 +43,7 @@ void Deanary::getStatistics(std::string filename) {
   std::ofstream fout(filename);
   fout.precision(2);
   fout.setf(std::ios::fixed);
+  fout << "------------------Progress information------------------\n";
   for (auto g : groups) {
     fout << g->getSpec() << "\n" << g->getTitle() << "\n";
     fout << "Average mark: " << g->getAveragemark() << "\n";
@@ -52,6 +53,7 @@ void Deanary::getStatistics(std::string filename) {
       << s->getAveragemark() << "\n";
     }
   }
+  fout << "--------------------------------------------------------\n";
 }
 void Deanary::moveStudents(unsigned int id, std::string title) {
   Student* s = getStudent(id);
@@ -115,6 +117,7 @@ Student* Deanary::getStudent(unsigned int id) {
 void Deanary::printData() {
   std::cout.precision(2);
   std::cout << std::fixed;
+  std::cout << "------------------Progress information------------------\n";
   for (auto g : groups) {
     std::cout << g->getSpec() << "\n" << g->getTitle() << "\n";
     std::cout << "Average mark: " << g->getAveragemark() << "\n";
@@ -124,5 +127,6 @@ void Deanary::printData() {
       << s->getAveragemark() << "\n";
     }
   }
+  std::cout << "--------------------------------------------------------\n";
 }
 
