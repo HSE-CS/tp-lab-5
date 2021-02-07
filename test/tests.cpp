@@ -44,8 +44,8 @@ TEST(DeanaryTest, test6) {
   Deanary* deanary = new Deanary;
   std::vector<Student*> sts = deanary->hireStudents("students.txt");
   deanary->createGroups("spec.txt", sts);
-  EXPECT_EQ(true,
-            deanary->findGrS(deanary->findId(81))->containsStudent(deanary->findId(81));
+  EXPECT_EQ(true, deanary->findGrS(deanary->findId(81))->
+      containsStudent(deanary->findId(81)));
 }
 
 TEST(DeanaryTest, test7) {
@@ -54,7 +54,8 @@ TEST(DeanaryTest, test7) {
   deanary->createGroups("spec.txt", sts);
   deanary->moveStudents(deanary->findId(81), deanary->findGr("1", "Economics"));
   EXPECT_EQ(false,
-            deanary->findGr("1", "Management")->containsStudent(deanary->findId(81));
+            deanary->findGr("1", "Management")->
+      containsStudent(deanary->findId(81)));
 }
 
 TEST(DeanaryTest, test8) {
@@ -63,7 +64,8 @@ TEST(DeanaryTest, test8) {
   deanary->createGroups("spec.txt", sts);
   deanary->moveStudents(deanary->findId(81), deanary->findGr("1", "Economics"));
   EXPECT_EQ(true,
-            deanary->findGr("1", "Economics")->containsStudent(deanary->findId(81));
+            deanary->findGr("1", "Economics")->
+      containsStudent(deanary->findId(81)));
 }
 
 TEST(GroupTest, test9) {
@@ -79,7 +81,8 @@ TEST(GroupTest, test10) {
   deanary->createGroups("spec.txt", sts);
   deanary->initHeads();
   EXPECT_EQ(true,
-            deanary->findGr("1", "Management")->containsStudent(deanary->findGr("1", "Management")->getHead());
+            deanary->findGr("1", "Management")->
+      containsStudent(deanary->findGr("1", "Management")->getHead()));
 }
 
 TEST(GroupTest, test11) {
