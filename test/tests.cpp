@@ -106,7 +106,7 @@ TEST(GroupTest, test8) {
   EXPECT_EQ(true, group.isEmpty());
 }
 
-TEST(DeaneryDTest, test9) {
+TEST(DeaneryTest, test9) {
   unsigned int id = 12345678;
   std::string Fio = "Morozov Innokenty Sergeevich";
   Student student1(id, Fio);
@@ -119,7 +119,7 @@ TEST(DeaneryDTest, test9) {
   EXPECT_EQ(nullptr, group.getStudent(Fio));
 }
 
-TEST(DeaneryDTest, test9) {
+TEST(DeaneryTest, test10) {
   unsigned int id = 12345678;
   std::string Fio = "Morozov Innokenty Sergeevich";
   Student student1(id, Fio);
