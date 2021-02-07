@@ -74,7 +74,7 @@ bool Group::delStudent(Student *st) {
   for (size_t i = 0; i < students.size(); ++i) {
     if (st->getId() == students[i]->getId()) {
       if (students[i]->isHead) {
-        students.erase(students.begin() + i);
+        this->students.erase(students.begin() + i);
         st->group = nullptr;
         st->marks.clear();
         st->isHead = false;
@@ -83,7 +83,7 @@ bool Group::delStudent(Student *st) {
         chooseHeader();
         return true;
       } else {
-        students.erase(students.begin() + i);
+        this->students.erase(students.begin() + i);
         st->group = nullptr;
         st->marks.clear();
         return true;
