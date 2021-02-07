@@ -8,7 +8,7 @@ void Deanery::initHeads() {
     groups[i]->chooseHead();
 }
 
-Deanery::Deanery(std::vector<Group*> forAdd) {
+explicit Deanery::Deanery(std::vector<Group*> forAdd) {
   for (auto group : forAdd)
     this->groups.push_back(group);
 }
@@ -53,7 +53,8 @@ void Deanery::academicPerformance() {
   }
 }
 
-void Deanery::moveStudent(Student* forMove, std::string oldGroup, std::string newGroup) {
+void Deanery::moveStudent(Student* forMove,
+  std::string oldGroup, std::string newGroup) {
   getGroup(oldGroup)->removeStudent(forMove->getFio());
   if (forMove->isHeadOfGroup())
     getGroup(oldGroup)->chooseHead();
@@ -63,7 +64,7 @@ void Deanery::moveStudent(Student* forMove, std::string oldGroup, std::string ne
 void Deanery::fireWeakStudents() {
   if (groups.empty())
     throw "There are no groups";
-  for (auto group:groups)
+  for (auto group : groups)
     for (auto student : group->students)
       if ((student->getAverageMark() - 3.5) < 0.00001) {
         group->removeStudent(student->getFio());

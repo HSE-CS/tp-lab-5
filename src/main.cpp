@@ -33,7 +33,7 @@ int main() {
 
   D.addRandomMarks(10);
   D.initHeads();
-  //D.academicPerformance();
+  // D.academicPerformance();
   D.fireWeakStudents();
   D.printInfo();
   D.saveStaff("..\\..\\test\\archive\\archive_deanery.txt");

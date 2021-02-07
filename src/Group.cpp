@@ -67,12 +67,13 @@ void Group::removeStudent(int id) {
   int headFlag = 0;
   for (int i = 0; i < students.size(); i++)
     if (students[i]->getId() == id) {
-			if (students[i]->isHeadOfGroup())
-				headFlag = 1;
+      if (students[i]->isHeadOfGroup()) {
+        headFlag = 1;
+      }
       students.erase(students.cbegin() + i);
       break;
     }
-  if (headFlag==1)
+  if (headFlag == 1)
     chooseHead();
 }
 
@@ -80,8 +81,9 @@ void Group::removeStudent(std::string fio) {
   int headFlag = 0;
   for (int i = 0; i < students.size(); i++)
     if (students[i]->getFio() == fio) {
-      if (students[i]->isHeadOfGroup())
+      if (students[i]->isHeadOfGroup()) {
         headFlag = 1;
+      }
         students.erase(students.cbegin() + i);
         break;
     }

@@ -12,7 +12,7 @@ class Deanery {
 
  public:
   void initHeads();
-  Deanery(std::vector<Group*> groups);
+  explicit Deanery(std::vector<Group*> groups);
   void addRandomMarks(int n);
   Group* getGroup(std::string title);
   void academicPerformance();
