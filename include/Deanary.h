@@ -32,7 +32,7 @@ class Deanary {
       return this->title_vector;
     }
     void readFile() {
-      std::ifstream fin("groups.json");
+      std::ifstream fin("img/groups.json");
       json j = json::parse(fin);
       j["title"].get_to<std::vector<std::string>>(this->title_vector);
       fin.close();
@@ -55,7 +55,7 @@ class Deanary {
       return this->fio_student;
     }
     void readFile() {
-      std::ifstream oin("students.json");
+      std::ifstream oin("img/students.json");
       json j = json::parse(oin);
       j["fio"].get_to<std::vector<std::string>>(this->fio_student);
       oin.close();
