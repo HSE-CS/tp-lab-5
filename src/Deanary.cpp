@@ -74,10 +74,11 @@ void Deanary::initHeads() {
   }
 }
 void Deanary::addMarks2All(int numOfMarks) {
+  unsigned int seed = 234123;
   for (int i = 0; i < this->groups.size(); ++i) {
     for (int j = 0; j < this->groups[i]->getNumOfStudents(); ++j) {
       for (int k = 0; k < numOfMarks; ++k) {
-        this->groups[i]->getStudentByIndex(j)->addMark(rand() % 10);
+        this->groups[i]->getStudentByIndex(j)->addMark(rand_r(&seed) % 10);
       }
     }
   }

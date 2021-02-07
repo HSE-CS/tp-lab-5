@@ -14,5 +14,5 @@ int main() {
                  SE.getGroup(2));
   SE.hireStudent("Александров Александр Александрович", 4);
   std::cout << SE.getAverage();
-  //SE.saveState();
+  // SE.saveState();
 }
