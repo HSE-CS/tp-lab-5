@@ -70,8 +70,8 @@ void Deanery::getStatistics() {
     }
 }
 
-void Deanery::moveStudents(int id, 
-                           std::string title_from, 
+void Deanery::moveStudents(int id,
+                           std::string title_from,
                            std::string title_to) {
     for (int gri = 0; gri < groups.size(); gri++) {
         if (groups[gri]->getTitle() == title_from) {
