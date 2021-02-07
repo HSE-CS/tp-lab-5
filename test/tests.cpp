@@ -9,7 +9,7 @@
 TEST(Test, test1) {
   Student s1(1, "Ivan Petrov");
   s1.addMark(3);
-  s1.addmark(4);
+  s1.addMark(4);
   EXPECT_FLOAT_EQ(3.5, s1.getAverageMark());
 }
 
@@ -46,7 +46,7 @@ TEST(Test, test6) {
   d.hireStudent("Ivan Petrov", "19PI-2");
   d.hireStudent("Petr Sidorov", "19PI-2");
   Group *gr = d.getGroup("19PI-2");
-  EXPECT_TRUE(gr->containsStudentId(2));
+  EXPECT_TRUE(gr->containsStudentById(2));
 }
 
 TEST(Test, test7) {
