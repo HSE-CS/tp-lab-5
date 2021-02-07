@@ -1,7 +1,7 @@
 // Copyright 2021 Galex
 
-#ifndef TP_LAB_5_INCLUDE_GROUP_H_
-#define TP_LAB_5_INCLUDE_GROUP_H_
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include <string>
 #include <vector>
 #include "../include/Student.h"
@@ -28,4 +28,4 @@ class Group {
   std::string getName();
   Student* getHead();
 };
-#endif  // TP_LAB_5_INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

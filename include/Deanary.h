@@ -1,7 +1,7 @@
 // Copyright 2021 Galex
 
-#ifndef TP_LAB_5_INCLUDE_DEANARY_H_
-#define TP_LAB_5_INCLUDE_DEANARY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include <string>
 #include <vector>
 #include "../include/Group.h"
@@ -27,4 +27,4 @@ class Deanary {
   void saveState();
 };
 
-#endif  // TP_LAB_5_INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_
