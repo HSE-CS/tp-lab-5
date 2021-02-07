@@ -33,7 +33,7 @@ double Student::getAverageMark() {
   int sumMarks = 0;
   for (int mark : marks)
     sumMarks += mark;
-  return ((double)sumMarks / marks.size());
+  return (static_cast<double>(sumMarks) / marks.size());
 }
 
 bool Student::isHeadOfGroup() {
