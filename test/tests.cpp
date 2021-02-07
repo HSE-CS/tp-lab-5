@@ -88,7 +88,7 @@ TEST(quickTests, test7) {
 
   newDeanary.moveStudents(newStudent, newGroup2);
 
-  int itMustnt = newGroup->containsStudent(123456);
+  int itMustnt = newGroup->containsStudent("Monicheva Arina Aleksandrovna");
 
   EXPECT_EQ(-1, itMustnt);
 }
