@@ -12,7 +12,7 @@ int Student::get_id() {
     return this->id;
 }
 
-std::string get_group() {
+std::string Student::get_group() {
     return group->title;
 }
 
