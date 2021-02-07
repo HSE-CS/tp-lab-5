@@ -23,7 +23,8 @@ TEST(TestingDeanary, test3) {
   Deanary deanary;
   deanary.createGroups();
   std::string a = "15PMI-2";
-  std::string b = deanary.getTitleGroup(1);
+  int p = 1;
+  std::string b = deanary.getTitleGroup(p);
   EXPECT_EQ(a, b);
 }
 TEST(TastingDeanary, test4) {
