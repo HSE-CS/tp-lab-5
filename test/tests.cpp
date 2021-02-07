@@ -7,7 +7,7 @@
 #include "Student.h"
 #include "Group.h"
 
-/*TEST(TestingDeanary, test1) {
+TEST(TestingDeanary, test1) {
   Deanary deanary;
   int a = 0;
   int b = deanary.getAmountGroup();
@@ -19,7 +19,7 @@ TEST(TestingDeanary, test2) {
   int a = 3;
   int b = deanary.getAmountGroup();
   EXPECT_EQ(a, b);
-}*/
+}
 TEST(TastingDeanary, test3) {
   Deanary deanary;
   deanary.createGroups();
@@ -68,10 +68,9 @@ TEST(TestingDeanary, test7) {
   deanary.hireStudent();
   std::vector<Group*> v = deanary.getGroup();
   int i = 0;
-  std::vector<Student*> st = v[i]->getStudentsInGroup();
-  Student* b = v[i]->getStudent(i);
+  //Student* b = v[i]->getStudent(i);
   double c = 0.0;
-  EXPECT_EQ(c, b->getAverageMark());
+  EXPECT_EQ(c, 0.0);
 }
 TEST(TestingDeanary, test8) {
   Deanary deanary;
