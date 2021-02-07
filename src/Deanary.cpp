@@ -42,7 +42,8 @@ std::string Deanary::getStatisticsByStudent(std::string fio) {
     std::stringstream stream;
     for (int i = 0; i < students.size(); i++) {
         if (students[i].getFio() == fio) {
-            stream << "Fio: " << fio << ", group: " << students[i].getGroupTitle() << ", average mark: " 
+            stream << "Fio: " << fio << ", group: " << students[i].getGroupTitle()
+                << ", average mark: "
                 << students[i].getAverageMark() << "\n";
             return stream.str();
         }
@@ -54,7 +55,8 @@ std::string Deanary::getStatisticsByGroup(std::string title) {
     std::stringstream stream;
     for (int i = 0; i < groups.size(); i++) {
         if (groups[i].getTitle() == title) {
-            stream << "Title: " << groups[i].getTitle() << " spec: " << groups[i].getSpec() 
+            stream << "Title: " << groups[i].getTitle() << " spec: "
+                << groups[i].getSpec()
                 << " average mark: " << groups[i].getAverageMark() << "\n";
             return stream.str();
         }
@@ -101,7 +103,7 @@ void Deanary::saveStuff(std::string path) {
     fout.open(path);
     for (int i = 0; i < groups.size(); i++) {
         fout << "-------------Group--------------------" << std::endl;
-        fout << "Title: " << groups[i].getTitle() << ", spec: " 
+        fout << "Title: " << groups[i].getTitle() << ", spec: "
             << groups[i].getSpec() << std::endl;
         fout << "Head of group: " << groups[i].getHead()->getFio() << std::endl;
         for (int j = 0; j < groups[i].getStudents().size(); j++) {
@@ -115,7 +117,8 @@ void Deanary::printInfo() {
         std::cout << "-------Group---------" << std::endl;
         std::cout << getStatisticsByGroup(groups[i].getTitle()) << std::endl;
         for (int j = 0; j < groups[i].getStudents().size(); j++)  {
-            std::cout << getStatisticsByStudent(groups[i].getStudents()[j].getFio());
+            std::cout << getStatisticsByStudent(groups[i].
+                getStudents()[j].getFio());
         }
     }
 }

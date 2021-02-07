@@ -7,13 +7,11 @@
 class Student;
 
 class Group {
-
  private:
     std::string title;
     std::string spec;
     std::vector<Student> students;
     Student* head;
-
  public:
     Group(std::string title, std::string spec);
     void addStudent(const Student& student);

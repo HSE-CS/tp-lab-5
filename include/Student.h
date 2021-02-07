@@ -7,7 +7,6 @@
 class Group;
 
 class Student {
-
  private:
     int id;
     std::string fio;

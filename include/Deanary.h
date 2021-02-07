@@ -10,11 +10,9 @@ class Student;
 class Group;
 
 class Deanary {
-
  private:
     std::vector<Group> groups;
     std::vector<Student> students;
-
  public:
     void createGroups(std::string path);
     void hireStudents(std::string path);
