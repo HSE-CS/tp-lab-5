@@ -21,12 +21,12 @@ bool Student::isHeadOfGroup() {
 double Student::getAverageMark() {
   double average_mark = 0.0;
   for (const int& mark : marks) {
-    average_mark += (double)mark;
+    average_mark += static_cast<double>(mark);
   }
-  average_mark /= (double)marks.size();
+  average_mark /= static_cast<double>(marks.size());
   return average_mark;
 }
 
 int Student::getId() { return id; }
 
-std::string Student::getFio() { return fio; };
+std::string Student::getFio() { return fio; }

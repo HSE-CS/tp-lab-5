@@ -3,6 +3,8 @@
 #define INCLUDE_GROUP_H_
 
 #include <random>
+#include <string>
+#include <vector>
 
 #include "Student.h"
 
