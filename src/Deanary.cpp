@@ -28,9 +28,11 @@ void Deanary::initHeaders() {
   }
 }
 void Deanary::fireStudent(int _id) {
+  Student* fireStudent;
   for (size_t i = 0; i < groups.size(); ++i) {
-    if (groups[i]->getStudent(_id)) {
-      groups[i]->delStudent(groups[i]->getStudent(_id));
+    fireStudent = groups[i]->getStudent(_id);
+    if (fireStudent) {
+      groups[i]->delStudent(fireStudent);
       return;
     }
   }
@@ -81,4 +83,3 @@ void Deanary::fireBadStudents() {
 std::vector<Group*> Deanary::getGroup() {
   return groups;
 }
-

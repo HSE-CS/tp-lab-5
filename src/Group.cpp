@@ -29,6 +29,7 @@ Student* Group::removeStudent(Student *st) {
           st->group = nullptr;
           st->isHead = false;
           chooseHeader();
+          header = nullptr;
           return st;
         } else {
           students.erase(students.begin() + i);
