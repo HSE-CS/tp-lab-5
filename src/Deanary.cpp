@@ -93,12 +93,13 @@ Group* Deanary::getGroup(int _num) {
 }
 Deanary::~Deanary() {
   for (size_t i = 0; i < groups.size(); ++i) {
-    for (size_t j = 0; j < groups[i]->students.size(); ++j) 
+    for (size_t j = 0; j < groups[i]->students.size(); ++j) {
       delete groups[i]->students[j];
       groups[i]->students[j] = nullptr;
     }
-    delete groups[i]
+    delete groups[i];
     groups[i] = nullptr;
   }
 }
+
 
