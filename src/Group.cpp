@@ -1,5 +1,5 @@
 // Copyright 2021 Smirnov Grigory
-#include "..\include\Group.h"
+#include "Group.h"
 
 Group::Group(std::string title, std::string spec) {
 	this->title=std::move(title);
