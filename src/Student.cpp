@@ -4,6 +4,18 @@
 #include"Student.h"
 #include"Group.h"
 
+std::string get_fio() {
+    return fio;
+}
+
+int get_id() {
+    return id;
+}
+
+std::string get_group() {
+    return group->title;
+}
+
 void Student::add_to_group(Group * group) {
     this->group = group;
     group->add_student(this);
