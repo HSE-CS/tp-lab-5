@@ -65,6 +65,7 @@ void Group::RemoveStudent(Student* rm_student) {
 }
 
 void Group::ChooseHead() {
+  unsigned int SEED = 256;
   int index = rand_r(&SEED) % students.size();
   students[index]->isHead = true;
 }

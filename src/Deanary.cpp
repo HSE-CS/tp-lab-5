@@ -8,6 +8,7 @@ Deanary::Deanary(ReadGroup& reader, std::string spec) {
 }
 
 void Deanary::AddMarksToAll(int marks_number) {
+  unsigned int SEED = 256;
   for (auto group : groups) {
     for (auto student : group->students) {
       if (student->skill == ABILITY::OK) {

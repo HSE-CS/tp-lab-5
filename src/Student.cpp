@@ -2,6 +2,7 @@
 #include "../include/Deanary.h"
 
 Student::Student(int _id, std::string _fio, Group* _group) {
+  unsigned int SEED = 256;
   id = _id;
   fio = _fio;
   group = _group;
