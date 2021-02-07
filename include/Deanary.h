@@ -5,6 +5,7 @@
 #include "Group.h"
 #include "Student.h"
 #include <iostream>
+#include<time.h>
 #include <sstream>
 #include <string>
 #include <vector>

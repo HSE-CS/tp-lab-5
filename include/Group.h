@@ -4,6 +4,7 @@
 #ifdef GROUP_H
 #include <string>
 #include <vector>
+#include<time.h>
 #include <iostream>
 #include <cstdlib>
 
