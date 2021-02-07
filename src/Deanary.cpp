@@ -19,7 +19,7 @@ Deanary::~Deanary() {
   this->allStudents.clear();
   this->groups.clear();
 }
-void Deanary::createGroups(std::string) {
+void Deanary::createGroups() {
   std::string fileName;
   fileName = getFileName();
   std::ifstream FileIn;
@@ -31,13 +31,12 @@ void Deanary::createGroups(std::string) {
   std::string groupName;
   std::string groupSpec;
   while (!FileIn.eof()) {
-    FileIn >> groupName;
-    FileIn >> groupSpec;
-    Group group(groupName);
-    group.spec = groupSpec;
-    (this->groups).push_back(&group);
-    groupName.clear();
-    groupSpec.clear();
+    FileIn >> groupName >> groupSpec;
+    Group* group = new Group(groupName);
+    (*group).spec = groupSpec;
+    (this->groups).push_back(&(*group));
+    //groupName.clear();
+    //groupSpec.clear();
   }
   FileIn.close();
 }
@@ -57,7 +56,7 @@ void Deanary::addStudentToRandomGroup(Student* studentToAdd) {
       (this->groups[minInd])->addStudentToGroup(studentToAdd);
     }
 }
-void Deanary::initialiseStudents(std::string) {
+void Deanary::initialiseStudents() {
   std::string fileName;
   fileName = getFileName();
   std::ifstream FileIn;
@@ -67,13 +66,15 @@ void Deanary::initialiseStudents(std::string) {
     throw -1;
   }
   std::string studentNameAndSurname;
+  std::string studentNameAndSurname2;
   while(!FileIn.eof()) {
     FileIn >> studentNameAndSurname;
     studentNameAndSurname += " ";
-    FileIn >> studentNameAndSurname;
-    Student studentToAdd(this->numberOfStudents, studentNameAndSurname);
-    (this->allStudents).push_back(&studentToAdd);
-    addStudentToRandomGroup(&studentToAdd);
+    FileIn >> studentNameAndSurname2;
+    studentNameAndSurname += studentNameAndSurname2;
+    Student* studentToAdd = new Student(this->numberOfStudents, studentNameAndSurname);
+    (this->allStudents).push_back(&(*studentToAdd));
+    addStudentToRandomGroup(&(*studentToAdd));
     studentNameAndSurname.clear();
     (this->numberOfStudents) += 1;
   }
@@ -92,6 +93,10 @@ double Deanary::getGroupStatistic(Group* group) {
 }
 void Deanary::moveStudent(Student* studentToMove, Group* destination) {
   Group* source = (*studentToMove).group;
+  if (source == destination) {
+    std::cout << "Student is already in destination group!\n";
+    return;
+  }
   source->fireStudentFromGroup((*studentToMove).id);
   destination->addStudentToGroup(studentToMove);
 }
@@ -104,14 +109,16 @@ void Deanary::fireForAcademicFailure() {
       Group* currGroup = (this->allStudents[i])->group;
       currGroup->fireStudentFromGroup(currId);
       (this->allStudents).erase(allStudents.begin() + i);
+      i = 0;
     }
   }
 }
-void Deanary::initialisateElection() {
+void Deanary::initialiseElection() {
   for (size_t i = 0; i < (this->groups).size(); ++i) {
-    unsigned newHead = 0;
-    newHead = rand() % ((this->groups[i])->students.size());
-    (this->groups[i])->setHead((this->groups[i])->students[newHead]);
+    if ((this->groups[i])->students.size() != 0) {
+      unsigned newHead = rand() % ((this->groups[i])->students.size());
+      (this->groups[i])->setHead((this->groups[i])->students[newHead]);
+    }
   }
 }
 void Deanary::printAllInfo() {
@@ -153,4 +160,15 @@ void Deanary::saveChanges() {
       FileOut << "False" << "\n";
     }
   }
+}
+
+double Deanary::getCurrentAmountOfStudents() {
+  return ((this->allStudents).size());
+}
+double Deanary::getCurrentAmoutOfGroups() { return ((this->groups).size()); }
+Student* Deanary::getStudentAddress(unsigned index) {
+  return (this->allStudents[index]);
+}
+Group* Deanary::getGroupAddress(unsigned index) {
+    return (this->groups[index]); 
 }

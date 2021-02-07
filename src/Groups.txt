@@ -1,0 +1,4 @@
+19AMI Applied_Mathematics_and_Computer_Science
+19SE Software_Engineering
+19MF Mathematics
+19E Economics

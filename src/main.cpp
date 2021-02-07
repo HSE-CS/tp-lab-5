@@ -1,22 +1,24 @@
 // Copyright 2021 Nikita Naumov
 #include "Student.h"
 #include "Group.h"
+#include "Deanary.h"
 
 void delimiter() {
   std::cout << "=========================================\n";
 }
 
 int main() {
-  Group group((std::string)"19PMI");
+  srand(time(NULL));
+  /*Group group((std::string)"19PMI");
   //that all work
   Student test1(0, (std::string) "Name Surname");
   test1.printInfoAboutStudent();
   delimiter();
   test1.printMarks();
   delimiter();
- /* for (size_t i = 0; i < 5; ++i) {
+  for (size_t i = 0; i < 5; ++i) {
     test1.addMarkToStudent(rand()%11);
-  }*/
+  }
   //test1.printMarks();
   //std::cout << test1.getAverageMark() << std::endl;
   //std::cout << std::endl;
@@ -105,7 +107,38 @@ int main() {
   delimiter();
   test2.printInfoAboutStudent();  // working
   delimiter();
-
+  */
+  Deanary DeanaryObj;
+  DeanaryObj.createGroups();  //working
+  DeanaryObj.initialiseStudents();  //working
+  //DeanaryObj.printAllInfo();  //working
+  delimiter();
+  DeanaryObj.initialiseElection();  //working
+  DeanaryObj.printAllInfo();  //working
+  delimiter();
+  //std::cout << DeanaryObj.getCurrentAmountOfStudents() << std::endl;  //working
+  //std::cout << DeanaryObj.getCurrentAmoutOfGroups() << std::endl;  //working
+  for (size_t i = 0; i < DeanaryObj.getCurrentAmountOfStudents(); ++i) {
+    Student* tmp = DeanaryObj.getStudentAddress(i);  //working
+    DeanaryObj.addRandomMarks(tmp, 10);  //working
+    tmp->printMarks();  //working
+    std::cout << DeanaryObj.getStudentStatistic(tmp) << std::endl;  //working
+    delimiter();
+  }
+  for (size_t i = 0; i < DeanaryObj.getCurrentAmoutOfGroups(); ++i) {  //working
+    Group* tmp = DeanaryObj.getGroupAddress(i);  //working
+    std::cout << DeanaryObj.getGroupStatistic(tmp) << std::endl;  //working
+    delimiter();
+  }
+  std::cout << "\n\n==================================================\n\n";
+  //DeanaryObj.printAllInfo();  //working
+  //Student* tmp_student = DeanaryObj.getStudentAddress(0);  //working
+  //Group* tmp_group = DeanaryObj.getGroupAddress(3);  //working
+  //DeanaryObj.moveStudent(tmp_student, tmp_group);  //working
+  DeanaryObj.printAllInfo();  //working
+  DeanaryObj.fireForAcademicFailure();
+  DeanaryObj.printAllInfo();
+  DeanaryObj.saveChanges();
 
   return 0;
 }

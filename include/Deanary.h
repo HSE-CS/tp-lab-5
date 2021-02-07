@@ -39,16 +39,20 @@ class Deanary {
  public:
   Deanary();
   ~Deanary();
-  void initialiseStudents(std::string);
-  void createGroups(std::string);
+  void initialiseStudents();
+  void createGroups();
   void addRandomMarks(Student*, int);
   double getStudentStatistic(Student*);
   double getGroupStatistic(Group*);
   void moveStudent(Student*, Group*);
   void fireForAcademicFailure();
-  void initialisateElection();
+  void initialiseElection();
   void printAllInfo();
   void saveChanges();
+  double getCurrentAmountOfStudents();
+  double getCurrentAmoutOfGroups();
+  Student* getStudentAddress(unsigned);
+  Group* getGroupAddress(unsigned);
 
  private:
   std::vector<Student*> allStudents;

@@ -8,6 +8,7 @@ Group::Group(std::string title) {
 }
 Group::~Group() { 
     this->title.clear();
+    this->spec.clear();
     this->head = nullptr;
     this->students.clear();
 }  
