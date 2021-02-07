@@ -30,7 +30,8 @@ std::string Deanary::get_statistics() const {
     buf += "Overall statistics:\n";
     for (auto g : groups) {
         buf += g->title + ' '
-            + '(' + std::to_string(g->students.size()) + " students" + ')' + '\n';
+            + '(' + std::to_string(g->students.size()) +
+            " students" + ')' + '\n';
         for (auto s : g->students) {
             buf += std::to_string(s->id)
                 + '\t'
