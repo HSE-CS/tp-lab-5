@@ -5,7 +5,6 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
-#include <string>
 
 TEST(PostfixTest, test1) {
   std::string fname = "Shherbakov Aleksey";
