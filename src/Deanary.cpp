@@ -106,8 +106,8 @@ void Deanery::addMarksToAll() {
     srand(time(NULL));
     for (auto &group : groups) {
         for (auto &student : group->students) {
-            for (size_t i = 4; i < (rand() % 10 + 5); ++i) {
-                student->addmark(rand() % 5 + 2);
+            for (size_t i = 4; i < (std::rand() % 10 + 5); ++i) {
+                student->addmark(std::rand() % 5 + 2);
             }
         }
     }

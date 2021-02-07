@@ -3,16 +3,19 @@
 #define INCLUDE_DEANARY_H_
 
 #include <Group.h>
+#include <Student.h>
 #include <cstdlib>
-#include <stdio.h>
+#include <cstdio>
 #include <utility>
 #include <vector>
 #include <sstream>
+#include <string>
 
 class Deanery {
  private:
      std::vector <Group *> groups{};
      std::vector <std::pair<size_t, std::string>> unalloc;
+
  public:
      Deanery();
      void createStudents();
