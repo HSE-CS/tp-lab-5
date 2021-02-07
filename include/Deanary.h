@@ -26,4 +26,4 @@ class Deanery {
      void addMarksToAll();
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_
