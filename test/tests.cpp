@@ -10,25 +10,25 @@ TEST(DeanaryTest, test1) {
   den.hireStudents();
   den.initHeads();
 
-  int count = 0;
-  for (auto group : den.groups) {
-    count++;
-  }
-  EXPECT_EQ(3, count);
+  std::string title = "transformers";
+  std::string spec = "who knows";
+
+  Group newgr(title, spec);
+
+  EXPECT_EQ(0, newgr.students.size());
 }
 
 TEST(DeanaryTest, test2) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
+  std::string title = "transformers";
+  std::string spec = "who knows";
+  Group newgr(title, spec);
 
-  int count = 0;
-  for (auto group : den.groups) {
-    for (auto student : group->students)
-      count++;
-  }
-  EXPECT_EQ(31, count);
+  std::string fio = "Rainbow Dasha Pony";
+  Student newbie(666, fio);
+
+  newgr.addStudents(&newbie);
+
+  EXPECT_EQ(1, newgr.students.size());
 }
 
 TEST(DeanaryTest, test3) {
@@ -66,11 +66,6 @@ TEST(DeanaryTest, test4) {
 }
 
 TEST(DeanaryTest, test5) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
-
   std::string title = "transformers";
   std::string spec = "who knows";
 
@@ -80,11 +75,6 @@ TEST(DeanaryTest, test5) {
 }
 
 TEST(DeanaryTest, test6) {
-  Deanary den;
-  den.createGroups();
-  den.hireStudents();
-  den.initHeads();
-
   std::string title = "transformers";
   std::string spec = "who knows";
   Group newgr(title, spec);
