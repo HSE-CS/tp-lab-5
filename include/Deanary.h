@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include <iostream>
 #include <vector>
 #include <string>
