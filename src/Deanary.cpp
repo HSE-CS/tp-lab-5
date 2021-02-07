@@ -94,7 +94,7 @@ void Deanery::moveStudents(Student* toMove, Group* destination) {
   if (toMove->isHeadOfGroup()) {
     toMove->isHead = false;
   }
-  if (toMove->group) {
+  if (toMove->group != NULL) {
     toMove->group->removeStudent(toMove);
   }
   destination->addStudent(toMove);
