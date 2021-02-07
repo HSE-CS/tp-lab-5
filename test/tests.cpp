@@ -51,9 +51,7 @@ TEST(DeanaryTest, test6) {
     friends.add_student(&student1);
     friends.add_student(&student3);
     friends.add_student(&student9);
-
     friends.choose_header(&student9);
-  
     EXPECT_EQ("Manachinsky Anton", friends.get_header());
 }
 
@@ -65,7 +63,6 @@ TEST(DeanaryTest, test7) {
     friends.add_student(&student1);
     friends.add_student(&student3);
     friends.remove_student(&student3);
-    
     EXPECT_EQ("Tatsenko Ilya", friends.get_students());
 }
 
@@ -92,7 +89,6 @@ TEST(DeanaryTest, test9) {
     Group grup("HSSE", "PI");
     student1.add_to_group(&grup);
     grup.add_student(&student2);
-    
     EXPECT_EQ("Tatsenko Ilya", grup.get_students());
 }
 
