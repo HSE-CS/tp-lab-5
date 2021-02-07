@@ -12,7 +12,7 @@ int main() {
   std::ifstream groupsFile("groups.txt");
   newDeanery.createGroups(groupsFile);
   groupsFile.close();
-  
+
   std::ifstream studentsFile("students.txt");
   newDeanery.hireStudents(studentsFile);
   studentsFile.close();
@@ -21,7 +21,7 @@ int main() {
 
   std::vector<Group*> allGroups = newDeanery.getGroups();
   newDeanery.printToConsole(*(allGroups[0]));
-  // changing the value of the first item in vector 
+  // changing the value of the first item in vector
   allGroups[0] = newGroup;
   // printed result woulb be different
   newDeanery.printToConsole(*(allGroups[0]));
@@ -34,7 +34,7 @@ int main() {
 
   Student* newStudent = new Student(123456, "Monicheva Arina Aleksandrovna");
   for (int i = 0; i < 8; i++) {
-    newStudent->addMark(6 + rand() % 5);
+    newStudent->addMark(6 + rand_r(n) % 5);
   }
 
   std::cout << newStudent->getAverageMark() << std::endl;
@@ -51,7 +51,7 @@ int main() {
   newDeanery.printToConsole(
   allGroups[0]->getStudent("Monicheva Arina Aleksandrovna"));
   std::cout << "Num in list: " << allGroups[0]->containsStudent(123456)
-  << "Num in list: " << 
+  << "Num in list: " <<
   allGroups[0]->containsStudent("Monicheva Arina Aleksandrovna") << std::endl;
 
   newDeanery.moveStudents(*newStudent, *newGroup);
