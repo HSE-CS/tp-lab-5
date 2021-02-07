@@ -132,7 +132,7 @@ void Deanary::initHeads() {
   }
 }
 
-void Deanary::fireStudents(std::vector<Student *> &students) {
+void Deanary::fireStudents(const std::vector<Student *> &students) {
   for (Student *student : students) {
     student->group->removeStudent(student->id);
   }

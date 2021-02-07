@@ -1,7 +1,7 @@
 // Copyright 2021 Artem Danyaev
 #include "Group.h"
 
-Group::Group(std::string &t, std::string &s) : title(t), spec(s) {}
+Group::Group(const std::string &t, const std::string &s) : title(t), spec(s) {}
 
 void Group::addStudent(Student *student) {
   student->group = this;
@@ -20,7 +20,7 @@ void Group::chooseHead(unsigned int id) {
 std::string Group::getTitle() { return title; }
 std::string Group::getSpec() { return spec; }
 
-Student *Group::getStudentByFio(std::string fio) {
+Student *Group::getStudentByFio(const std::string fio) {
   for (Student *st : students) {
     if (st->fio == fio) {
       return st;
@@ -65,7 +65,7 @@ Student *Group::getStudentById(unsigned int id) {
   return res;
 }
 
-Student *Group::getStudentByFio(std::string &f) {
+Student *Group::getStudentByFio(const std::string &f) {
   Student *res = nullptr;
   for (Student *st : students) {
     if (st->fio == f) {

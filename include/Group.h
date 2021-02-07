@@ -18,13 +18,13 @@ class Group {
   void removeStudent(unsigned int id);
 
  public:
-  explicit Group(std::string &t, std::string &s);
+  explicit Group(const std::string &t, const std::string &s);
   std::string getTitle();
   std::string getSpec();
   Student *getStudentByFio(std::string fio);
   float getAverageMark();
   Student *getStudentById(unsigned int id);
-  Student *getStudentByFio(std::string &f);
+  Student *getStudentByFio(const std::string &f);
   bool containsStudentById(unsigned int id);
   bool containsStudentByFio(std::string f);
   bool isEmpty();

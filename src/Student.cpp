@@ -14,7 +14,7 @@ float Student::getAverageMark() {
   c /= marks.size();
   return c;
 }
-Student::Student(unsigned int i, std::string &f) : id(i), fio(f) {}
+Student::Student(unsigned int i, const std::string &f) : id(i), fio(f) {}
 
 bool Student::isHeadOfGroup() { return group->head->id == id; }
 

@@ -24,5 +24,5 @@ class Deanary {
   void moveStudent(Student *student, std::string name);
   void saveStuff(std::string path);
   void initHeads();
-  void fireStudents(std::vector<Student *> &students);
+  void fireStudents(const std::vector<Student *> &students);
 };

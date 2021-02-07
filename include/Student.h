@@ -16,7 +16,7 @@ class Student {
   void addToGroup(Group *gr);
 
  public:
-  explicit Student(unsigned int i, std::string &f);
+  explicit Student(unsigned int i, const std::string &f);
   void addMark(unsigned int mark);
   float getAverageMark();
   bool isHeadOfGroup();
