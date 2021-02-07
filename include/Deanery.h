@@ -4,8 +4,6 @@
 
 #include "Group.h"
 #include <random>
-#include <stdlib.h>
-#include <stdio.h>
 #include <string>
 #include <vector>
 

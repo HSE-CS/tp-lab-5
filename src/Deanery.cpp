@@ -1,13 +1,12 @@
 // Copyright 2021 LongaBonga
 #include "Deanery.h"
+#include <stdlib.h>
 #include <fstream>
 #include <nlohmann/json.hpp>
 #include <sstream>
 #include <string>
 #include <iostream>
 #include <random>
-#include <stdlib.h>
-#include <stdio.h>
 
 
 void Deanery::createGroups() {
@@ -26,6 +25,7 @@ void Deanery::createGroups() {
 }
 
 void Deanery::hireStudents() {
+  unsigned int seed = 42;
   std::string students_file_path = R"(./data/Students.json)";
   std::ifstream i(students_file_path);
   nlohmann::json j;
@@ -34,17 +34,18 @@ void Deanery::hireStudents() {
   auto students = j.get<std::vector<std::string>>();
   for (auto v : students) {
     auto *student = new Student(id++, v);
-    Group *g = groups->at(rand() % groups->size());
+    Group *g = groups->at(rand_r(&seed) % groups->size());
     g->addStudent(*student);
     student->addToGroup(g);
   }
 }
 
 void Deanery::addMarksToAll(int cnt) {
+  unsigned int seed = 42;
   for (int i = 0; i < cnt; i++) {
     for (auto group : *groups) {
       for (auto student : *group->students) {
-        student->addmark(rand() % 10 + 1);
+        student->addmark(rand_r(&seed) % 10 + 1);
       }
     }
   }
