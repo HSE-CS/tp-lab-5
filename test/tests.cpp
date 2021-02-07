@@ -82,7 +82,7 @@ TEST(TestGroup, check_gr_empty) {
 }
 
 
-TEST(TestGroup, check_sts_size_in_gr) {
+TEST(TestGroup, check_st_in_gr) {
   UniqueID *newId1 = new UniqueID;
   Student* student1 = new Student("Mitchel Mia", newId1);
   Group *gr = nullptr;
@@ -106,7 +106,7 @@ TEST(TestGroup, check_gr_spec) {
   Student *newHead = student1;
   Group *newGr = new Group("PI", "1st",
                            newStudents, newHead);
-  EXPECT_EQ(newGr->getSpec());
+  EXPECT_EQ("PI", newGr->getSpec());
 }
 
 TEST(TestGroup, check_gr_title) {
@@ -172,7 +172,7 @@ TEST(TestGroup, check_gr_not_empty) {
   ASSERT_FALSE(newGr->isEmpty());
 }
 
-TEST(TestGroup, check_get_st) {
+TEST(TestGroup, check_get_st_name) {
   UniqueID *newId1 = new UniqueID;
   Student *student1 = new Student("Mitchel Mia", newId1);
   UniqueID *newId2 = new UniqueID;
