@@ -39,7 +39,7 @@ void Deanery::hireStudents(std::ifstream &studentsFile) {
       fio = fio + temp + ' ';
     }
     Student* tempObj = new Student(id, fio);
-    int Where = rand() % nGroups;
+    int Where = rand_r(n) % nGroups;
     groups[Where]->students.push_back(tempObj);
   }
 }
@@ -50,9 +50,9 @@ void Deanery::addMarksToAll() {
 
   for (auto i : groups) {
     for (unsigned j = 0; j < i->students.size(); j++) {
-      int times = 5 + rand() % 5;
+      int times = 5 + rand_r(n) % 5;
       for (int k = 0; k <= times; k++) {
-          i->students[j]->addMark(1 + rand() % 10);
+          i->students[j]->addMark(1 + rand_r(n) % 10);
       }
     }
   }
@@ -82,7 +82,7 @@ stats& Deanery::getStatistics() {
     }
   }
   groupsAver /= counter;
-  stats* newStats = new stats{ currentBestGr, curGroupMark, 
+  stats* newStats = new stats{ currentBestGr, curGroupMark,
   currentBestSt, curStudMark, groupsAver };
 
   return *newStats;
@@ -133,8 +133,8 @@ void Deanery::initHeads(Group& Where) {
     }
     currentIndex++;
   }
-  //Where.students[index]->isHead = true;
-  //Where.head = Where.students[index];
+  // Where.students[index]->isHead = true;
+  // Where.head = Where.students[index];
   Where.chooseHead(Where.students[index]);
 }
 
@@ -187,7 +187,7 @@ void Deanery::addNewGroup(Group* newGroup) {
       notHere = false;
     }
   }
-  if (notHere){
+  if (notHere) {
     groups.push_back(newGroup);
   }
 }
