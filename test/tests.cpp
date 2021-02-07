@@ -19,7 +19,7 @@ TEST(TestingDeanary, test2) {
   int a = 3;
   int b = deanary.getAmountGroup();
   EXPECT_EQ(a, b);
-}*/
+}
 TEST(TastingDeanary, test3) {
   Deanary deanary;
   deanary.createGroups();
@@ -29,7 +29,7 @@ TEST(TastingDeanary, test3) {
   int a = 0;
   int b = st.size();
   EXPECT_EQ(a, b);
-}
+}*/
 TEST(TestingDeanary, test4) {
   Deanary deanary;
   deanary.createGroups();
