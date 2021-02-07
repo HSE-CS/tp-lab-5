@@ -1,6 +1,6 @@
 // Copyright 2021 Sozinov Kirill
 #include "Group.h"
-#include "Deanery.h"
+#include "Deanary.h"
 #include <time.h>
 #include <cstdlib>
 
