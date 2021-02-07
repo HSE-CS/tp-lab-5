@@ -18,7 +18,7 @@ Deanary::Deanary() {
 void Deanary::addGroups(std::string names_input, std::string groups_input) {
     std::ifstream file;
     file.open(groups_input, std::ios::in);
-    system("chcp 65001");
+    //system("chcp 65001");
     std::string buf;
     std::vector <std::string> current_str;
     while (getline(file, buf)) {
