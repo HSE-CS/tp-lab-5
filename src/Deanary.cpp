@@ -1,7 +1,9 @@
 // Copyright 2020 Uskova
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <algorithm>
+#include <cstdlib>
 #include "cmath"
 #include "Deanary.h"
 
@@ -39,9 +41,10 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
     while (i < students.size()) {
         int size = students.size() - i;
         counter += 1;
-        char num[5];
-        _itoa_s(counter, num, 10);
-        std::string number(num);
+        std::ostringstream stream;
+        std::string number;
+        stream << counter;
+        number = stream.str();
         for (int k = 0; k < s; ++k) {
             Group* group = new Group(number, groups[k]->spec);
             this->groups.push_back(group);
@@ -152,10 +155,10 @@ void Deanary::fireStudents() {
           }
         }
         out_file << "The worst student: " << groups[i]->students[min_ind]->id
-                 << '  ' << groups[i]->students[min_ind]->fio << ": "
+                 << "  " << groups[i]->students[min_ind]->fio << ": "
                  << groups[i]->students[min_ind]->getAverageMark() << '\n';
         out_file << "The best student: " << groups[i]->students[max_ind]->id
-                 << '  ' << groups[i]->students[max_ind]->fio << ": "
+                 << "  " << groups[i]->students[max_ind]->fio << ": "
                  << groups[i]->students[max_ind]->getAverageMark() << '\n';
         out_file << '\n' << '\n';
       }
@@ -171,7 +174,7 @@ void Deanary::fireStudents() {
                  << '\n';
         for (int j = 0; j < groups[i]->students.size(); ++j) {
           Student* st = groups[i]->students[j];
-          out_file << st->id << '  ' << st->fio << ": " << st->getAverageMark()
+          out_file << st->id << "  " << st->fio << ": " << st->getAverageMark()
                    << '\n';
         }
         out_file << '\n' << '\n';
