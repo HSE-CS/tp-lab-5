@@ -1,5 +1,6 @@
 ﻿// Copyright 2021 dmitrycvetkov2000
 
+
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
