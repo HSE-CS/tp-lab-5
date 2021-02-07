@@ -1,0 +1,42 @@
+-------------Group--------------------
+Title: First group, spec: Spec 1
+Head of group: Ralph Moore
+FIO: Ralph Moore
+FIO: Tina Ramos
+FIO: Matthew Mitchell
+FIO: Fred Roberts
+FIO: Alice Mathis
+FIO: Shawn Gonzales
+-------------Group--------------------
+Title: Second group, spec: Spec 2
+Head of group: Yolanda Gonzalez
+FIO: Lori Terry
+FIO: Audrey Lopez
+FIO: Arthur Woods
+FIO: Jeff Chandler
+FIO: Paul McKinney
+FIO: Yolanda Gonzalez
+FIO: Dennis Simmons
+FIO: David Meyer
+FIO: Julio Sutton
+FIO: Colleen Young
+FIO: Shirley Jensen
+FIO: David Olson
+-------------Group--------------------
+Title: Third group, spec: Spec 3
+Head of group: Danny Walker
+FIO: Lisa Wallace
+FIO: Fred Robinson
+FIO: Joseph Wong
+FIO: Danny Walker
+FIO: Rosemary Gonzalez
+FIO: Jeffrey Townsend
+FIO: Sarah Garcia
+FIO: George Quinn
+FIO: Paul Ray
+-------------Group--------------------
+Title: Fourth group, spec: Spec 4
+Head of group: Jean Hernandez
+FIO: Marilyn Benson
+FIO: John Morton
+FIO: Jean Hernandez
