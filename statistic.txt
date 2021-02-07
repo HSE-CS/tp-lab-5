@@ -1,0 +1,36 @@
+19PMI-1 Average mark: 0
+59077637 Maslov Andrey Olegovich: 0
+59077640 Medvedev Mikhail Semenovich: 0
+59077644 Bolshakov Modest Vladlenovich: 0
+59077646 Belozerov Leonty Avdeevich: 0
+59077651 Prokhorov Aristarkh Gennadievich: 0
+59077656 Emelyanov Artur Avksentievich: 0
+59077662 Potapov Gayane Veniaminovich: 0
+59077665 Ivanov Valery Stanislavovich: 0
+
+19PMI-2 Average mark: 0
+59077638 Volkov Benedict Martynovich: 0
+59077639 Shchukin Venedikt Rudolfovich: 0
+59077642 Arkhipov Tikhon Vladlenovich: 0
+59077647 Tsvetkov Vlas Yurievich: 0
+59077650 Kopylov Sergey Danilovich: 0
+59077652 Isakov, Justinian Gordeevich: 0
+59077654 Kapustin Vasily Grigorievich: 0
+59077657 Doronin Svyatoslav Lavrentievich: 0
+59077658 Savelyev Miron Petrovich: 0
+59077659 Baranov Maximilian Alexandrovich: 0
+59077661 Dmitriev Maxim Stepanovich: 0
+59077663 Melnikov Veloriy Aristarkhovich: 0
+59077664 Pavlov Demyan Proklovich: 0
+
+19PMI-3 Average mark: 0
+59077641 Bykov Osip Lukievich: 0
+59077643 Mikhailov Vladlen Kupriyanovich: 0
+59077645 Yudin Svyatoslav Romanovich: 0
+59077648 Samsonov Lavrenty Valerievich: 0
+59077649 Rodionov Roman Leonidovich: 0
+59077653 Rozhkov David Germanovich: 0
+59077655 Pestov Valery Alekseevich: 0
+59077660 Teterin Emelyan Lukyanovich: 0
+59077666 Lobanov Fyodor Mironovich: 0
+
