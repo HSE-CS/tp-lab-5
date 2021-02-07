@@ -51,7 +51,7 @@ TEST(InteractionTest, testGroupAverage) {
     s2->addMark(5);
     s2->addMark(4);
     s2->addMark(3);
-    s2.addMark(4);
+    s2->addMark(4);
     Group g("Test group");
     g.addStudent(s1);
     g.addStudent(s2);

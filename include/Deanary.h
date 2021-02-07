@@ -1,6 +1,5 @@
 ﻿// Copyright 2021 dmitrycvetkov2000
 
-
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
@@ -11,7 +10,7 @@
 #include <vector>
 
 class Deanary {
- public:
+   public:
     ~Deanary();
 
     void createGroups(std::ifstream& ifs);
@@ -24,7 +23,7 @@ class Deanary {
     void initHeads();
     void fireStudent(const std::string& groupName, const int studentId);
 
- private:
+    private:
     std::vector<Group*> groups;
 
     std::vector<Group*>::const_iterator findGroup(const std::string& name);

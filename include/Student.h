@@ -11,7 +11,7 @@ class Group;
 class Deanary;
 
 class Student {
-  public:
+    public:
     friend class Group;
     friend class Deanary;
 
@@ -23,7 +23,7 @@ class Student {
     double getAverageMark() const;
     bool isHeadOfGroup() const;
 
-  private:
+    private:
     int id;
     std::string name;
     Group* group;

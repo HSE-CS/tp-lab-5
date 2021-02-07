@@ -1,3 +1,5 @@
+// Copyright 2021 dmitrycvetkov2000
+
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
@@ -25,7 +27,7 @@ int main() {
     }
 
     deanary.getStatistics();
-    
+
     const std::string outputFilePath("./out.txt");
     std::ofstream outputStream(outputFilePath, std::ios::out);
     deanary.saveStaff(outputStream);

@@ -26,7 +26,7 @@ void Group::chooseHead(int id) {
 double Group::getAverageMark() const {
     size_t marksCount = 0;
     int sum = std::accumulate(std::begin(students), std::end(students),
-        0.0, [&marksCount](unsigned short a, Student* const student) {
+        0.0, [&marksCount](int a, Student* const student) {
         const std::vector<int> marks = student->marks;
         marksCount += marks.size();
         return  a + std::accumulate(std::begin(marks), std::end(marks), 0.0);
