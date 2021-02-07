@@ -42,7 +42,8 @@ std::string Deanary::getStatisticsByStudent(std::string fio) {
     std::stringstream stream;
     for (int i = 0; i < students.size(); i++) {
         if (students[i].getFio() == fio) {
-            stream << "Fio: " << fio << ", group: " << students[i].getGroupTitle()
+            stream << "Fio: " << fio << ", group: " <<
+                students[i].getGroupTitle()
                 << ", average mark: "
                 << students[i].getAverageMark() << "\n";
             return stream.str();
