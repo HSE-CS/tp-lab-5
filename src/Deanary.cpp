@@ -14,8 +14,8 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
     std::string line;
     std::ifstream in(file);
     std::string spec;
-    int j = 0;
     int i = 0;
+    int j = 0;
     if (in.is_open()) {
         while (getline(in, line)) {
             Group* group = new Group("1", line);
@@ -30,7 +30,7 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
     while (i < students.size() && j < groups.size()) {
         while (groups[j]->students.size() < size_of_gr && i < students.size()) {
             this->groups[j]->addStudent(students.at(i));
-            i += 1;                          
+            i += 1;
         }
         j += 1;
     }
