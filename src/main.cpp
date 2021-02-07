@@ -4,7 +4,7 @@
 
 int main() {
   srand(time(0));
-  std::vector<std::string> filenames = {"../First_group.txt", 
+  std::vector<std::string> filenames = {"../First_group.txt",
                           "../Second_group.txt", "../Third_group.txt"};
   ReadGroup reader(filenames);
   Deanary deanary(reader, "math");
