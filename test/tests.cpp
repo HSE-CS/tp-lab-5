@@ -49,7 +49,7 @@ TEST(TestGroup, check_st_in_gr) {
   Student *newHead = student1;
   Group *newGr = new Group("PI", "1st",
                            newStudents, newHead);
-  ASSERT_TRUE(newGr->containStudent(1));
+  ASSERT_FALSE(newGr->containStudent(1));
 }
 
 TEST(TestGroup, check_gr_spec) {
@@ -61,8 +61,8 @@ TEST(TestGroup, check_gr_spec) {
   newStudents.push_back(student1);
   newStudents.push_back(student2);
   Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
+  Group *newGr = new Group("1st", "PI",
+                         newStudents, newHead);
   EXPECT_EQ("PI", newGr->getSpec());
 }
 
@@ -75,7 +75,7 @@ TEST(TestGroup, check_gr_title) {
   newStudents.push_back(student1);
   newStudents.push_back(student2);
   Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
+  Group *newGr = new Group("1st", "PI",
                            newStudents, newHead);
   std::string rez = "1st";
   EXPECT_EQ(rez, newGr->getTitle());
@@ -92,7 +92,7 @@ TEST(TestGroup, check_sts_size_in_gr) {
   Student *newHead = student1;
   Group *newGr = new Group("PI", "1st",
                            newStudents, newHead);
-  int rez = 2;
+  int rez = 0;
   EXPECT_EQ(rez, newGr->getStudents().size());
 }
 
