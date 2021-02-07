@@ -3,8 +3,6 @@
 #define INCLUDE_READGROUP_H_
 
 #include <fstream>
-#include "Deanary.h"
-#include "Group.h"
 #include "Student.h"
 
 class ReadGroup {

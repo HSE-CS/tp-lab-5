@@ -3,8 +3,6 @@
 #define INCLUDE_DEANARY_H_
 
 #include "ReadGroup.h"
-#include "Group.h"
-#include "Student.h"
 
 class Deanary {
  private:

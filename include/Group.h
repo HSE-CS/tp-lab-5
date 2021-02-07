@@ -8,10 +8,6 @@
 #include <string>
 #include <vector>
 
-#include "ReadGroup.h"
-#include "Deanary.h"
-#include "Student.h"
-
 class Student;
 
 class Group {
