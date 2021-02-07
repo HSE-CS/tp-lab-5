@@ -1,4 +1,4 @@
-//Copyright 2021 Kartseva Masha
+// Copyright 2021 Kartseva Masha
 #include "Deanary.h"
 
 std::vector<std::string> split(const std::string& s, char delimiter) {
@@ -18,7 +18,6 @@ Deanary::Deanary() {
 void Deanary::addGroups(std::string names_input, std::string groups_input) {
     std::ifstream file;
     file.open(groups_input, std::ios::in);
-    //system("chcp 65001");
     std::string buf;
     std::vector <std::string> current_str;
     while (getline(file, buf)) {
@@ -34,9 +33,9 @@ void Deanary::addGroups(std::string names_input, std::string groups_input) {
         int group_num = -1;
         for (unsigned int i = 0; i < groups.size(); i++) {
             if (groups[i]->getTitle() == current_str[1]) {
-       	    is_constructed = 1;
-            group_num = i;
-        }
+       	        is_constructed = 1;
+                group_num = i;
+            }
         }
         if (!is_constructed) {
             Group* group = new Group(current_str[1], "");
@@ -51,8 +50,8 @@ void Deanary::addGroups(std::string names_input, std::string groups_input) {
 }
 
 void Deanary::set_random_marks(unsigned int number) {
-    for (Group* group : this->groups){
-        for (Student* student : group->getStudents()){
+    for (Group* group : this->groups) {
+        for (Student* student : group->getStudents()) {
             for (unsigned int i = 0; i < number; i++) {
                 student->addMark(rand() % 10 + 1);
             }
@@ -71,11 +70,13 @@ void Deanary::getStatistics() const {
                 index = i;
             }
         }
-        std::cout << "Best student : " << students[index]->getName() << std::endl;
+        std::cout << "Best student : " << 
+        students[index]->getName() << std::endl;
     }
 }
 
-void Deanary::changeGroup(std::string name, std::string oldGroup, std::string newGroup) {
+void Deanary::changeGroup(std::string name, 
+    std::string oldGroup, std::string newGroup) {
     Group* group1 = nullptr;
     Group* group2 = nullptr;
     for (Group* group : groups) {
@@ -102,23 +103,26 @@ void Deanary::expelStudents() {
     }
 }
 
-void Deanary::rewriteData(std::string names_output, std::string groups_output) const {
+void Deanary::rewriteData(std::string names_output, 
+    std::string groups_output) const {
     std::ofstream file;
     file.open(names_output, std::ios::out);
     if (file.is_open()) {
         for (Group* group : groups) {
             for (Student* student : group->getStudents()) {
-                std::cout << student->getName() << " : " << group->getTitle() << std::endl;
+                std::cout << student->getName() << " : " << 
+                    group->getTitle() << std::endl;
             }
         }
-    } else std::cout << "File can't be opened" << std::endl;
+    } else { std::cout << "File can't be opened" << std::endl; }
     file.close();
     file.open(groups_output, std::ios::out);
     if (file.is_open()) {
         for (Group* group : groups) {
-            std::cout << group->getTitle() << " : " << group->getSpec() << std::endl;
+            std::cout << group->getTitle() << " : " << 
+                group->getSpec() << std::endl;
         }
-    } else std::cout << "File can't be opened" << std:: endl;
+    } else { std::cout << "File can't be opened" << std::endl; }
     file.close();
 }
 

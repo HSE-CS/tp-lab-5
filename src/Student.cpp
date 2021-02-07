@@ -8,9 +8,9 @@ Student::Student(std::string newName, unsigned int newId) {
 
 unsigned int Student::AverageMark() const {
     int res = 0;
-    for (unsigned int i = 0; i < marks.size(); i++){
-	    res += marks[i];
-	}
+    for (unsigned int i = 0; i < marks.size(); i++) {
+        res += marks[i];
+    }
     res /= marks.size();
     return res;
 }
@@ -31,6 +31,6 @@ void Student::addMark(unsigned int newMark) {
     marks.push_back(newMark);
 }
 
-void Student::setGroup(Group* newGroup){
+void Student::setGroup(Group* newGroup) {
     group = newGroup;
 }
