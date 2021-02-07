@@ -24,7 +24,6 @@ int main() {
   Group* eco2 = groupReader("..\\..\\test\\groups_input\\eco2.txt");
   Group* prog1 = groupReader("..\\..\\test\\groups_input\\prog1.txt");
   Group* prog2 = groupReader("..\\..\\test\\groups_input\\prog2.txt");
-  //std::cout << eco2->getNumberOfStudents()<<std::endl<<eco2->getGroupInfo()<<std::endl;
   std::vector<Group*> groups(4);
   groups[0] = eco1;
   groups[1] = eco2;
@@ -35,8 +34,7 @@ int main() {
   D.addRandomMarks(10);
   D.initHeads();
   //D.academicPerformance();
-  D.fireBadStudents();
-  //D.academicPerformance();
+  D.fireWeakStudents();
   D.printInfo();
   D.saveStaff("..\\..\\test\\archive\\archive_deanery.txt");
 }

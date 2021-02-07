@@ -14,8 +14,8 @@ class Deanery {
   void addRandomMarks(int n);
   Group* getGroup(std::string title);
   void academicPerformance();
-  void moveStudent(Student* forMove, std::string oldGroup, std::string newGroup); //если перевели старосту - надо перевыбирать его
-  void fireBadStudents();
+  void moveStudent(Student* forMove, std::string oldGroup, std::string newGroup);
+  void fireWeakStudents();
   void saveStaff(std::string path);
   void printInfo();
 };

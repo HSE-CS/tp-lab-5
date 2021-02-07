@@ -56,12 +56,12 @@ void Deanery::moveStudent(Student* forMove, std::string oldGroup, std::string ne
   getGroup(newGroup)->addStudent(forMove);
 }
 
-void Deanery::fireBadStudents() {
+void Deanery::fireWeakStudents() {
   if (groups.empty())
     throw "There are no groups";
   for (auto group:groups)
     for (auto student : group->students)
-      if (student->getAverageMark() < 3.5) {
+      if ((student->getAverageMark() - 3.5) < 0.00001) {
         group->removeStudent(student->getFio());
         if (student->isHeadOfGroup())
           group->chooseHead();

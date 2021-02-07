@@ -108,6 +108,6 @@ Student* Group::getHead() {
 std::string Group::getGroupInfo() {
 	std::string result;
 	for (auto student : students)
-		result = result + student->getFio() + " " + std::to_string(student->getId()) + "\n"; //will replace to getInfo()
+		result = result + student->getFio() + " " + std::to_string(student->getId()) + "\n";
 	return result;
 }
