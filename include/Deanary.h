@@ -1,7 +1,7 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_DEANARY_H
-#define INCLUDE_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include "Group.h"
 #include <fstream>
@@ -24,4 +24,4 @@ class Deanary {
     ~Deanary();
 };
 
-#endif  // INCLUDE_DEANARY_H
+#endif  // INCLUDE_DEANARY_H_

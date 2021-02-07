@@ -1,7 +1,7 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef INCLUDE_GROUP_H
-#define INCLUDE_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include <vector>
 #include <string>
 #include "Student.h"
@@ -29,4 +29,4 @@ class Group {
     ~Group();
 };
 
-#endif  // INCLUDE_GROUP_H
+#endif  // INCLUDE_GROUP_H_
