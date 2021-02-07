@@ -110,3 +110,30 @@ TEST(TestDeanery, testMove) {
   EXPECT_EQ(2, g2.getNumberOfStudents());
 }
 
+TEST(TestDeanery, testMarks) {
+  std::string title = "SE1";
+  std::string spec = "Software Engineering";
+  Group g(title, spec);
+  std::string name = "Pupkin Egor Fedorovich";
+  Student s(100, name);
+  std::string name2 = "Pupkin Vasilii Fedorovich";
+  Student s1(112, name2);
+  g.addStudent(&s);
+  g.addStudent(&s1);
+
+  std::string title2 = "SE2";
+  std::string spec2 = "Software Engineering";
+  Group g2(title2, spec2);
+
+  std::vector<Group*> groups(2);
+  groups[0] = &g;
+  groups[1] = &g2;
+
+  Deanery D(groups);
+  D.moveStudent(&s1, title, title2);
+  D.addRandomMarks(7);
+  EXPECT_TRUE(s.getAverageMark());
+  EXPECT_TRUE(s1.getAverageMark());
+  ASSERT_LT(s1.getAverageMark(), 10);
+  ASSERT_GE(s.getAverageMark(), 0);
+}
