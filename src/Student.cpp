@@ -1,3 +1,5 @@
+// Copyright 2020 VladimirUspensky
+
 #include "Student.h"
 
 
@@ -12,7 +14,7 @@ void Student::addToGroup(Group *group) {
 }
 
 void Student::addMark(int mark) {
-    if (mark <= 10 and mark > 0) this->marks.push_back(mark);
+    if (mark <= 10 && mark > 0) this->marks.push_back(mark);
 }
 
 double Student::getAverageMark() {
@@ -21,7 +23,8 @@ double Student::getAverageMark() {
     for (int mark : this->marks) {
         sum += mark;
     }
-    return !this->marks.empty() ? sum / static_cast<double>(this->marks.size()) : 0;
+    return !this->marks.empty() ?
+    sum / static_cast<double>(this->marks.size()) : 0;
 }
 
 int Student::getId() const {

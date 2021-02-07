@@ -1,5 +1,7 @@
-#ifndef TP_LAB_5_GROUP_H
-#define TP_LAB_5_GROUP_H
+// Copyright 2020 VladimirUspensky
+
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include <string>
 #include <vector>
@@ -9,12 +11,12 @@ class Deanary;
 
 
 class Group {
-private:
+ private:
     std::string title;
     std::string spec;
     Student* head;
 
-public:
+ public:
     std::vector<Student*> students;
     std::string getTitle();
     explicit Group(std::string title);
@@ -26,5 +28,4 @@ public:
     double getAverageGroupMark();
 };
 
-
-#endif //TP_LAB_5_GROUP_H
+#endif // INCLUDE_GROUP_H_

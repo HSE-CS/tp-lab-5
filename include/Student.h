@@ -1,17 +1,19 @@
-#ifndef TP_LAB_5_STUDENT_H
-#define TP_LAB_5_STUDENT_H
+// Copyright 2020 VladimirUspensky
+
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include <string>
 #include <vector>
 #include "Group.h"
 
 class Student {
-private:
+ private:
     int id;
     std::string fio;
     std::vector<int> marks;
 
-public:
+ public:
     Group* group;
     int getId() const;
     std::string getName() const;
@@ -21,6 +23,4 @@ public:
     double getAverageMark();
 };
 
-
-
-#endif //TP_LAB_5_STUDENT_H
+#endif // INCLUDE_STUDENT_H_

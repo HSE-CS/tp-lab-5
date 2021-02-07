@@ -1,14 +1,16 @@
-#ifndef TP_LAB_5_DEANARY_H
-#define TP_LAB_5_DEANARY_H
+// Copyright 2020 VladimirUspensky
+
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <vector>
 #include "Group.h"
 
 class Deanery {
-private:
+ private:
     std::vector<Group*> groups;
 
-public:
+ public:
     void createGroups();
     void createStudents();
     void addRandomMarks();
@@ -20,5 +22,4 @@ public:
     void printData();
 };
 
-
-#endif //TP_LAB_5_DEANARY_H
+#endif  // INCLUDE_DEANARY_H_

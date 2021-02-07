@@ -1,3 +1,5 @@
+// Copyright 2020 VladimirUspensky
+
 #include "Group.h"
 #include "Student.h"
 #include <utility>

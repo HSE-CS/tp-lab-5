@@ -1,3 +1,5 @@
+// Copyright 2020 VladimirUspensky
+
 #include "Deanary.h"
 #include <fstream>
 #include <random>
@@ -31,7 +33,6 @@ void Deanery::createStudents() {
             } else {
                 group->addStudent(new Student(id++, std::string(fio)));
             }
-
         }
     }
 }
@@ -53,7 +54,8 @@ void Deanery::createGroups() {
 void Deanery::getStat() {
     for (auto group : this->groups) {
         for (auto student : group->students) {
-            std::cout << student->getName() << " " << student->getAverageMark() << std::endl;
+            std::cout << student->getName() <<
+            " " << student->getAverageMark() << std::endl;
         }
     }
 }
@@ -84,6 +86,7 @@ void Deanery::saveNewData() {
     for (auto group : this->groups) {
         fout << group->getTitle() << '\n';
     }
+
     for (auto group : this->groups) {
         std::fstream f_out(group->getTitle() + ".txt");
         for (auto student: group->students) {
