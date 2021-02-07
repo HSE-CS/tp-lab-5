@@ -1,0 +1,56 @@
+20-ABC-1	Management:
+1: Charles Rodgers
+3: Curtis Garcia
+4: Victor Wells
+5: Robert Casey
+8: Michael Henry
+10: Nicholas Thomas
+12: Dale Diaz
+14: Carl Gomez
+15: Sam Mendoza
+16: David Mann
+17: Tommy Garcia
+18: Charles Warner
+19: William Greene
+21: Michael Richardson
+
+20-ABC-2	Management:
+22: Neil Powell
+23: John James
+24: Edward Rodriguez
+25: John Cannon
+26: Jeremy Mitchell
+28: Ralph Banks
+29: Michael Lopez
+30: Mark Martin
+31: Ronald Myers
+32: Kevin Harris
+34: Christopher Brooks
+36: Mark Pearson
+38: Jim Peters
+39: Franklin James
+40: Matthew Jackson
+41: James Adams
+42: James Tucker
+
+20-DEF	Jurisprudence:
+44: Ronald Parker
+45: Glen Daniels
+47: Eric Williams
+48: Steven Sims
+49: Milton Jones
+50: Robert Holmes
+51: Michael Howard
+53: Ryan Walker
+54: Joseph Morris
+56: John Cook
+57: Hector Rogers
+59: Christopher Davis
+61: Jason Kelley
+63: David Young
+
+Average marks:
+20-ABC-1: 3.78571
+20-ABC-2: 4
+20-DEF: 4.07143
+
