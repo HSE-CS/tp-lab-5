@@ -4,11 +4,11 @@
 #include"Student.h"
 #include"Group.h"
 
-std::string get_fio() {
+std::string Student::get_fio() {
     return this->fio;
 }
 
-int get_id() {
+int Student::get_id() {
     return this->id;
 }
 
