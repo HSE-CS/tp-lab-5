@@ -3,6 +3,6 @@
 #include "Group.h"
 #include "Deanary.h"
 #include <string>
-int main() {
 
+int main() {
 }

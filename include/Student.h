@@ -9,14 +9,12 @@ class Group;
 
 class Student {
     friend class Deanary;
-private:
+ private:
     Group* group;
     unsigned int id;
     std::string fio;
     std::vector<int> marks;
-   
-
-public:
+ public:
     double average_mark();
     void add_mark(int newmark);
     void add_to_group(Group* group);
@@ -27,4 +25,5 @@ public:
     int get_id();
     std::string get_fio();
 };
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
+

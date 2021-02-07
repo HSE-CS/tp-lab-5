@@ -9,13 +9,13 @@ class Student;
 
 class Group {
     friend class Deanary;
-private:
+ private:
     std::string title;
     std::string spec;
     Student* head;
     std::vector<Student*> students;
-public:
-    Group (std::string newtitle, std::string newspec) {
+ public:
+    Group(std::string newtitle, std::string newspec) {
         title = newtitle;
         spec = newspec;
     }
@@ -29,4 +29,4 @@ public:
     std::string get_spec();
 };
 
-#endif // INCLUDE_GROUP_H_ 
+#endif  // INCLUDE_GROUP_H_

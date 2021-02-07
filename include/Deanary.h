@@ -10,10 +10,10 @@ class Student;
 class Group;
 
 class Deanary {
-private:
+ private:
     std::vector<Group> groups;
     std::vector<Student> students;
-public:
+ public:
     void add_st_file();
     void add_gr_file();
     void add_marks();
@@ -26,4 +26,4 @@ public:
     void output();
 };
 
-#endif // INCLUDE_DEANARY_H_ 
+#endif  // INCLUDE_DEANARY_H_

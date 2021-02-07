@@ -5,8 +5,6 @@
 #include <iostream>
 #include <fstream>
 
-
-
 void Deanary::add_st_file() {
     std::ifstream file("Students.txt");
     std::string fio;
