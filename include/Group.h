@@ -7,8 +7,8 @@
 #include "Student.h"
 #include "Deanary.h"
 
-class Deanary;
 class Student;
+class Deanary;
 
 class Group {
   friend class Deanary;
@@ -25,10 +25,7 @@ class Group {
     title = tit;
   }
   ~Group() {
-    for (auto st : *students) {
-      delete st;
-    }
-      students->clear();
+    students->clear();
   }
   void chooseHead();
   void removeStudent(unsigned st_id);

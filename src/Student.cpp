@@ -7,7 +7,7 @@ void Student::addToGroup(Group *gr) {
     group = gr;
 }
 
-void Student::addMark(int mark) { 
+void Student::addMark(int mark) {
     marks.push_back(mark);
 }
 
@@ -25,7 +25,7 @@ float Student::getAveragemark() {
     sum += i;
   }
   if (marks.size() == 0) return 0.0;
-  return (float)sum / marks.size();
+  return sum / marks.size();
 }
 
 bool Student::isHeadOfGroup() {

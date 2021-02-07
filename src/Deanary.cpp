@@ -1,7 +1,7 @@
 // Copyright 2020 me
 #include "../include/Deanary.h"
 
-unsigned getmark(unsigned short iq) {
+unsigned getmark(unsigned iq) {
   if (iq < 90) {
     return std::rand() % 5;
   }
