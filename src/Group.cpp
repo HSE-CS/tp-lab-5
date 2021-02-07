@@ -7,7 +7,7 @@ Group::Group(std::string newTitle = "") {
   head = NULL;
 }
 
-void Group::addStudent(Student& newStudent) {
+void Group::addStudent(const Student& newStudent) {
   if (containsStudent(newStudent.id) == -1) {
     students.push_back(&newStudent);
     newStudent.group = this;
@@ -73,7 +73,7 @@ double Group::getAverageMark() {
   return averageMark / j;
 }
 
-void Group::removeStudent(Student& removalOne) {
+void Group::removeStudent(const Student& removalOne) {
   int index = containsStudent(removalOne.id);
   if (index > -1) {
     if (removalOne.isHeadOfGroup()) {
