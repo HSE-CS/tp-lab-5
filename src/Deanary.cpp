@@ -10,8 +10,10 @@
 #include <random>
 #include <sstream>
 
-std::vector<Group*>::const_iterator Deanary::findGroup(const std::string& name) {
-    return std::find_if(std::begin(groups), std::end(groups), [&name](Group* const group) {
+std::vector<Group*>::const_iterator
+Deanary::findGroup(const std::string& name) {
+    return std::find_if(std::begin(groups), std::end(groups),
+        [&name](Group* const group) {
         return group->title == name;
         });
 }
@@ -68,8 +70,11 @@ void Deanary::addMarksToAll() {
         return dist(rd);
     };
 
-    std::for_each(std::begin(groups), std::end(groups), [&makeRandomMark](Group* const group) {
-        std::for_each(std::begin(group->students), std::end(group->students), [&makeRandomMark](Student* const student) {
+    std::for_each(std::begin(groups), std::end(groups),
+        [&makeRandomMark](Group* const group) {
+        std::for_each(std::begin(group->students),
+            std::end(group->students),
+            [&makeRandomMark](Student* const student) {
             student->addMark(makeRandomMark());
             });
         });
@@ -77,7 +82,8 @@ void Deanary::addMarksToAll() {
 
 void Deanary::getStatistics() const {
     std::cout << "Total groups: " << groups.size() << std::endl;
-    std::cout << "Total students: " << std::accumulate(std::begin(groups), std::end(groups), 0, [](auto a, const Group* const group) {
+    std::cout << "Total students: " << std::accumulate(std::begin(groups),
+        std::end(groups), 0, [](auto a, const Group* const group) {
         return a + group->students.size();
         }) << std::endl;
     std::cout << "Group info: " << std::endl;
@@ -85,25 +91,32 @@ void Deanary::getStatistics() const {
         std::cout << g->title << std::endl;
         if (g->isEmpty()) {
             std::cout << "Group has no students" << std::endl;
-        }
-        else {
-            std::cout << "Head: " << g->getStudent(g->headId)->name << std::endl;
+        } else {
+            std::cout << "Head: " << g->getStudent(g->headId)->name <<
+                std::endl;
             std::cout << "Avg: " << g->getAverageMark() << std::endl;
 
-            auto worst = std::min_element(std::begin(g->students), std::end(g->students), [](const Student* const lhs, const Student* const rhs) {
+            auto worst = std::min_element(std::begin(g->students),
+                std::end(g->students),
+                [](const Student* const lhs, const Student* const rhs) {
                 return lhs->getAverageMark() < rhs->getAverageMark();
                 });
-            std::cout << "Worst: " << (*worst)->name << ", avg: " << (*worst)->getAverageMark() << std::endl;
+            std::cout << "Worst: " << (*worst)->name << ", avg: " <<
+                (*worst)->getAverageMark() << std::endl;
 
-            auto best = std::max_element(std::begin(g->students), std::end(g->students), [](const Student* const lhs, const Student* const rhs) {
+            auto best = std::max_element(std::begin(g->students),
+                std::end(g->students),
+                [](const Student* const lhs, const Student* const rhs) {
                 return lhs->getAverageMark() < rhs->getAverageMark();
                 });
-            std::cout << "Best: " << (*best)->name << ", avg: " << (*best)->getAverageMark() << std::endl;
+            std::cout << "Best: " << (*best)->name << ", avg: " <<
+                (*best)->getAverageMark() << std::endl;
         }
     }
 }
 
-void Deanary::moveStudent(const std::string& groupName, const int studentId, const std::string& targetGroupName) {
+void Deanary::moveStudent(const std::string& groupName, const int studentId,
+    const std::string& targetGroupName) {
     auto srcIter = findGroup(groupName);
     auto dstIter = findGroup(targetGroupName);
     Student* student = (*srcIter)->getStudent(studentId);
@@ -116,8 +129,7 @@ void Deanary::saveStaff(std::ofstream& ofs) const {
         ofs << g->title << std::endl;
         if (g->isEmpty()) {
             ofs << "No students" << std::endl;
-        }
-        else {
+        } else {
             ofs << "Head: " << g->getStudent(g->headId)->name << std::endl;
             ofs << "Avg: " << g->getAverageMark() << std::endl;
             ofs << "Students:" << std::endl;
@@ -130,8 +142,7 @@ void Deanary::saveStaff(std::ofstream& ofs) const {
                         ofs << mark << " ";
                     }
                     ofs << "(" << student->getAverageMark() << ")" << std::endl;
-                }
-                else {
+                } else {
                     ofs << std::endl;
                 }
             }

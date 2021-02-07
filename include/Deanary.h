@@ -1,8 +1,8 @@
-﻿//  Copyright 2021 dmitrycvetkov2000
+﻿// Copyright 2021 dmitrycvetkov2000
 
 
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <Student.h>
 #include <Group.h>
@@ -30,4 +30,4 @@ class Deanary {
     std::vector<Group*>::const_iterator findGroup(const std::string& name);
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_

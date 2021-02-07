@@ -42,15 +42,15 @@ TEST(InteractionTest, testSetHead) {
 
 TEST(InteractionTest, testGroupAverage) {
     auto s1 = new Student(1, "Test name");
-    s1.addMark(4);
-    s1.addMark(3);
-    s1.addMark(5);
-    s1.addMark(3);
+    s1->addMark(4);
+    s1->addMark(3);
+    s1->addMark(5);
+    s1->addMark(3);
     auto s2 = new Student(2, "Another name");
-    s2.addMark(2);
-    s2.addMark(5);
-    s2.addMark(4);
-    s2.addMark(3);
+    s2->addMark(2);
+    s2->addMark(5);
+    s2->addMark(4);
+    s2->addMark(3);
     s2.addMark(4);
     Group g("Test group");
     g.addStudent(s1);
