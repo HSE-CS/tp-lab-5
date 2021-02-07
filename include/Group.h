@@ -26,12 +26,8 @@ class Group {
     Student* find_of_student(std::string fio, int id);
     double calculate_of_avarage_mark();
     void remove_student(Student* student);
-    std::string get_header() {
-        return head->get_fio();
-    }
-    std::string get_students() {
-        return students[0]->fio;
-    }
+    std::string get_header();
+    std::string get_students();
     friend class Student;
     friend class Deanary;
 };
