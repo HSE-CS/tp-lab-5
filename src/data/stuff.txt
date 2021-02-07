@@ -1,0 +1,28 @@
+Group: pony
+0. Twilight Sparkle Pony
+2. Flutter Shy Pony
+3. Flutter Shy Second
+4. Ra Rity Pony
+5. Pinkie Pie Pony
+8. Rainbow Dash Second
+9. S Pike Pony
+
+Group: pokemons
+10. Bulba Saur Poke
+12. Venu Saur Poke
+13. Venu Saur Second
+14. Char Mander Poke
+15. Char Mander Second
+17. Chari Zard Poke
+19. S Quirtle Second
+20. War Tortle Poke
+
+Group: transformers
+21. Bumble Bee Tr
+23. Wheel Jack Tr
+25. Prowl Empty Tr
+27. Iron Hide Tr
+28. Spring Er Tr
+30. Blur R Tr
+7. Rainbow Dash Pony
+
