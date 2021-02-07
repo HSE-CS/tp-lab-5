@@ -9,7 +9,7 @@ class ReadGroup {
 private:
   std::vector<std::string> filenames;
 public:
-  ReadGroup(std::vector<std::string>);
+  explicit ReadGroup(std::vector<std::string>);
   std::vector<std::string> GetFileNames() const;
   std::vector<Student*> CreateStudents(Group*, std::string);
   std::vector<Group*> CreateGroups(std::string);
