@@ -94,7 +94,7 @@ TEST(Deanary, test11) {
     Deanary deanary;
     deanary.createGroups("19PI2", "SE");
     deanary.hireStudents("19PI2", stud1);
-    deanary.initHeads();
+    deanary.initHeads(deanary.findGroup("19PI2"));
     EXPECT_EQ(true, deanary.findGroup("19PI2")->
         getStudent("Nikolaev I A")->isHeadOfGroup());
 }
