@@ -32,7 +32,6 @@ class Group {
   double average_mark();
   std::string get_title();
   std::string get_spec();
-
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

@@ -34,4 +34,4 @@ class Deanary {
   void print();
 };
 
-#endif // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

@@ -49,7 +49,7 @@ double Deanary::get_statistic_groups(const std::string& _spec) {
 
 void Deanary::move_student(const std::string& _name, const std::string& _spec) {
   for (auto & prewGroup : groups) {
-    for (auto & student: prewGroup.students) {
+    for (auto & student : prewGroup.students) {
       if (student->get_name() == _name) {
         for (auto & newGroup : groups) {
           if (newGroup.get_spec() == _spec) {

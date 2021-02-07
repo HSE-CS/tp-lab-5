@@ -7,7 +7,6 @@
 #include "Student.h"
 
 int main() {
-
   Deanary HSE;
 
   Student student_2(98, "Ксения Тарасова");

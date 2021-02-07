@@ -39,10 +39,8 @@ bool Group::find_student(int _id) {
 }
 
 bool Group::find_student(const std::string& _name) {
-  for (auto* student : students) {
-    if (student->name == _name)
-      return true;
- }
+  for (auto* student : students)
+    if (student->name == _name) return true;
   return false;
 }
 
