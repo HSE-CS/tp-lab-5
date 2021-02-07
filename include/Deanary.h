@@ -34,7 +34,6 @@ class Deanery {
   void printToConsole(stats* toPrint);
   const std::vector<Group*> getGroups();
   void addNewGroup(Group* newGroup);
-  ~Deanery();
 };
 
 #endif  // INCLUDE_DEANARY_H_
