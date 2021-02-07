@@ -98,7 +98,7 @@ void Deanery::moveStudents(Student* toMove, Group* destination) {
     toMove->group->removeStudent(toMove);
   }
   destination->addStudent(toMove);
-  toMove->addToGroup(&destination);
+  toMove->addToGroup(destination);
 }
 
 void Deanery::fireStudents() {
@@ -137,7 +137,7 @@ void Deanery::initHeads(Group* Where) {
   }
   // Where.students[index]->isHead = true;
   // Where.head = Where.students[index];
-  Where->chooseHead(Where.students[index]);
+  Where->chooseHead(Where->students[index]);
 }
 
 void Deanery::printToConsole(Student* toPrint) {
@@ -174,7 +174,7 @@ void Deanery::printToConsole(stats* toPrint) {
   std::cout << "Best student: " << toPrint->bestStudent->id << ' '
   << toPrint->bestStudent->fio << ", average "
   << toPrint->bestStAvMark << '\n';
-  std::cout << "Average in all groups: " << toPrintv->groupsAverage
+  std::cout << "Average in all groups: " << toPrint->groupsAverage
   << std::endl;
 }
 
