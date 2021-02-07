@@ -1,5 +1,6 @@
 // Copyright 2021 Kasyanov
 #include "../include/Deanary.h"
+#include <iostream>
 
 Deanary::Deanary(ReadGroup& reader, std::string spec) {
   groups = reader.CreateGroups(spec);
