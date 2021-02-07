@@ -109,3 +109,4 @@ TEST(PostfixTest, test10) {
     dec.moveStudents(stud2.getId(), dec.groups[1]->getTitle(),
                      dec.groups[0]->getTitle());
   EXPECT_EQ(6, dec.groups[0]->getAveragemark_Gr());
+}
