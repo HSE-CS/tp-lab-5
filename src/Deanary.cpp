@@ -34,12 +34,11 @@ void Deanary::hireStudents(std::string file) {
 void Deanary::addMarksToAll() {
   for (auto group : groups)
     for (auto student : group->students)
-      for (int i = 0; i < rand() % 15; ++i)
-        student->addmark(rand() / 11);
+      for (int i = 0; i < rand_r() % 15; ++i)
+        student->addmark(rand_r() / 11);
 }
 
-void Deanary::getStatistics(std::string file)
-{
+void Deanary::getStatistics(std::string file) {
   for (auto group : this->groups) {
     for (auto student : group->students)
       std::cout << student->getFio() <<
@@ -48,14 +47,12 @@ void Deanary::getStatistics(std::string file)
   }
 }
 
-void Deanary::moveStudents(Student* student, Group* group)
-{
+void Deanary::moveStudents(Student* student, Group* group) {
   student->group->removeStudent();
   group->addStudent(student);
 }
 
-void Deanary::saveStaff(std::string grFile, std::string stFile)
-{
+void Deanary::saveStaff(std::string grFile, std::string stFile) {
   std::ofstream oGrFile(grFile);
   std::ofstream oStFile(stFile);
   for (auto group : groups) {
@@ -65,16 +62,14 @@ void Deanary::saveStaff(std::string grFile, std::string stFile)
   }
 }
 
-void Deanary::initHeads()
-{
+void Deanary::initHeads() {
   for (auto group : groups)
     group->chooseHead();
 }
 
-void Deanary::fireStudents()
-{
+void Deanary::fireStudents() {
   for (auto& group : groups)
     for (auto& student : group->students)
-      if (student->averageMark() < 3.50) 
+      if (student->averageMark() < 3.50)
         group->removeStudent(student);
 }

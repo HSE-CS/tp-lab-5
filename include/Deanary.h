@@ -9,10 +9,10 @@
 #include "iostream"
 
 class Deanary {
-private:
+ private:
   std::vector<Group*> groups;
   int id;
-public:
+ public:
   Deanary();
   void createGroups(std::string file);
   void hireStudents(std::string file);

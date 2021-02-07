@@ -8,7 +8,7 @@
 
 class Group {
   friend class Deanary;
-private:
+ private:
   std::string title;
   std::string spec;
   std::vector<Student*> students;
@@ -18,7 +18,7 @@ private:
   void addStudent(Student*);
   void chooseHead();
   void removeStudent(Student *);
-public:
+ public:
   bool isEmpty();
   Student* getStudent(int);
   Student* getHead();

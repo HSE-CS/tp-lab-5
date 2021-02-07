@@ -1,6 +1,6 @@
 // Copyright 2020 Polina Lukicheva
-#ifndef INCLUDE_STUDENTS_H_
-#define INCLUDE_STUDENTS_H_
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include "string"
 #include "vector"
@@ -9,14 +9,14 @@
 class Student {
   friend class Deanary;
   friend class Group;
-private:
+ private:
   int id;
   std::string fio;
   Group* group;
   std::vector<int> marks;
   void add2Group(Group* group);
   void addmark(int mark);
-public:
+ public:
   Student(int id, std::string fio);
   ~Student();
   double averageMark();
@@ -25,5 +25,5 @@ public:
   int getId();
   std::string getFio();
 };
-#endif  // INCLUDE_STUDENTS_H_
+#endif  // INCLUDE_STUDENT_H_
 

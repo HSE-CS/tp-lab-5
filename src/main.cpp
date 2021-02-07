@@ -2,5 +2,5 @@
 
 #include "Deanary.h"
 
-int main(){
+int main() {
 }

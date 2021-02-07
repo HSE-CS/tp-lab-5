@@ -23,13 +23,13 @@ TEST(Test, test3) {
   Student student("1", "Lukicheva Polina Aleksandrovna");
   Group gr("SoftwareEngineering", "19SE1");
   gr.addStudent(student);
-  EXPECT_EQ(gr.getStudent(1), "Lukicheva Polina Aleksandrovna" );
+  EXPECT_EQ(gr.getStudent(1), "Lukicheva Polina Aleksandrovna");
 }
 
 TEST(Test, test4) {
   Student student("1", "Lukicheva Polina Aleksandrovna");
   student.addmark(7);
-  EXPECT_EQ(student.averageMark(),7);
+  EXPECT_EQ(student.averageMark(), 7);
 }
 
 TEST(Test, test5) {
