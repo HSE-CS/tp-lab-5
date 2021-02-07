@@ -8,10 +8,12 @@
 #include <fstream>
 #include <iostream>
 #include <utility>
+#include <random>
 
 class Deanary {
   friend class Group;
-
+ private:
+  std::minstd_rand simple_rand;
  public:
   std::vector<Group *> groups;
   void createGroups();
@@ -23,5 +25,6 @@ class Deanary {
   void initHeads();
   void fireStudents(int _id);
   void fireStudents();
+  int rand_int() { return simple_rand(); }
 };
 #endif  // INCLUDE_DEANARY_H_
