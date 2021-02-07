@@ -1,10 +1,8 @@
 // Copyright 2021 Kuznetsov Mikhail
 #include "Deanary.h"
 
-Deanary::Deanary(std::string filename) {
+Deanary::Deanary() {
   curr_id = 1;
-  createGroups(filename);
-  initHeads();
 }
 
 void Deanary::createGroups(std::string filename) {
@@ -27,9 +25,7 @@ void Deanary::hireStudents(std::string filename) {
   std::string input;
   while (getline(fin, input)) {
     Student* s = new Student(curr_id++, input);
-    std::mt19937 gen(time(0));
-    std::uniform_int_distribution<> uid(0, groups.size() - 1);
-    int ind = uid(gen);
+    int ind = std::rand() % groups.size();
     groups[ind]->addStudent(s);
     s->addToGroup(groups[ind]);
   }
@@ -38,9 +34,7 @@ void Deanary::hireStudents(std::string filename) {
 void Deanary::addMarksToAll() {
   for (auto g : groups) {
     for (auto s : g->containsStudents()) {
-      std::mt19937 gen(time(0));
-      std::uniform_int_distribution<> uid(0, 100);
-      int mark = uid(gen);
+      int mark = std::rand() % 101;
       s->addMark(mark);
     }
   }

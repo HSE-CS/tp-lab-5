@@ -17,7 +17,7 @@ class Deanary {
     std::vector <Group*> groups;
     unsigned int curr_id;
  public:
-    explicit Deanary(std::string filename);
+    Deanary();
     void createGroups(std::string filename);
     void hireStudents(std::string filename);
     void addMarksToAll();

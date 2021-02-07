@@ -5,7 +5,8 @@
 #include "Student.h"
 #include "Deanary.h"
 int main() {
-  Deanary deanary("../stats/Groups.txt");
+  Deanary deanary;
+  deanary.createGroups("../stats/Groups.txt");
   deanary.hireStudents("../stats/Students.txt");
   deanary.addMarksToAll();
   deanary.addMarksToAll();

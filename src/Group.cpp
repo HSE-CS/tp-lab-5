@@ -19,9 +19,7 @@ void Group::addStudent(Student* _student) {
 }
 
 void Group::chooseHead() {
-  std::mt19937 gen(time(0));
-  std::uniform_int_distribution<> uid(0, students.size() - 1);
-  head = students[uid(gen)];
+  head = students[std::rand() % students.size()];
 }
 
 float Group::getAveragemark() {
