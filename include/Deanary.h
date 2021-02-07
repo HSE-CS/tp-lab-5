@@ -3,7 +3,7 @@
 #define INCLUDE_DEANARY_H_
 
 #include <fstream>
-#include <nlohmann/json.hpp>
+#include "json/include/nlohmann/json.hpp"
 #include "Group.h"
 
 class Group;
