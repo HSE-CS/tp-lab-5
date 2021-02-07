@@ -16,12 +16,12 @@ void Student::addToGroup(Group* gr) {
 std::string Student::getFiofromId(int id) {
     Group gr = *(this->group);
     Student* st = gr.getStudent(id);
-    //Student stu = *st;
     if (st) {
         Student stu = *st;
         return stu.getFio();
     }
-    else return "No such Student";
+    else 
+		return "No such Student";
 }
 
 int Student::getId() {
@@ -38,7 +38,7 @@ void Student::addmark(int mark) {
 
 float Student::getAveragemark() {
     float i = 0;
-    for (int mark: this->marks) {
+    for (int mark : this->marks) {
         i += mark;
     }
     return (i / size(marks));
@@ -49,12 +49,10 @@ int Student::isHeadOfGroup() {
     Student* head = gr.gethead();
     Student st = *head;
     if (this->id == st.getId()) return 1;
-    else return 0;
+    else 
+		return 0;
 }
 
 Group* Student::getGroup() {
     return group;
 }
-
-
-

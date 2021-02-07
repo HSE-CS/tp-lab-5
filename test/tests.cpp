@@ -14,7 +14,7 @@ TEST(Student, test1) {
 
 TEST(Student, test2) {
     Student st = Student(456, "Vasiya Pupkin");
-    EXPECT_EQ("Vasiya Pupkin", st.getFiofromId(456));
+    EXPECT_EQ("Vasiya Pupkin", st.getFio()));
 }
 
 TEST(Student, test3) {

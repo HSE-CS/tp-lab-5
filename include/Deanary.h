@@ -6,7 +6,7 @@
 #include <vector>
 #include "Group.h"
 #include "Student.h"
-
+#include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -15,17 +15,17 @@ class Deanary {
  private:
      std::vector<Group> groups;
  public:
-     void createGroups(std::string &filename);
+     void createGroups(const std::string& filename);
      void AddGroup(std::string titl, std::string spec);
      void printGroups();
-     void hireStudents(std::string& filename);
+     void hireStudents(const std::string& filename);
      void addMarksToAll();
-     std::vector<float> getStatistics();                   //Average marks in every group
+     std::vector<float> getStatistics();
      void moveStudents(Student* st1, Group* gr2);
-     void saveStaff(std::string &filename);
+     void saveStaff(const std::string &filename);
      void initHeads();
      Group getLastGroup();
      void fireStudents();
 };
 
-#endif // !INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANARY_H_

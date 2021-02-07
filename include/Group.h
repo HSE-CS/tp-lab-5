@@ -13,12 +13,12 @@
 class Student;
 
 class Group {
-private:
+ private:
     std::string spec;
     std::string title;
     std::vector<Student*> students;
     Student* head;// {};
-public:
+ public:
     std::string gettitle();
     Group(std::string titl, std::string sp);
     void addStudent(Student* newstudent);
@@ -26,7 +26,7 @@ public:
     Student *getStudent(std::string fio);
     Student *chooseHead();
     Student* gethead();
-    float getAveragemark(); 
+    float getAveragemark();
     Student* containsStudent(std::string fio);
     Student* containsStudent(int id);
     void removeStudent(Student *stud);
@@ -34,5 +34,4 @@ public:
     bool isEmpty();
 };
 
-#endif // !INCLUDE_GROUP_H_
-
+#endif  // INCLUDE_GROUP_H_

@@ -2,8 +2,7 @@
 
 #include "Deanary.h"
 
-void Deanary::createGroups(std::string &filename) {
-
+void Deanary::createGroups(const std::string& filename) {
     std::ifstream groupFile(filename);
     std::string line;
     std::string line2;
@@ -26,12 +25,12 @@ void Deanary::AddGroup(std::string titl, std::string spec) {
 }
 
 void Deanary::printGroups() {
-    for (Group gr :groups) {
+    for (Group gr : groups) {
         std::cout << gr.gettitle() << std::endl;
     }
 }
 
-void Deanary::hireStudents(std::string& filename) {
+void Deanary::hireStudents(const std::string& filename) {
     std::ifstream groupFile(filename);
     std::string line;
     std::string line2;
@@ -81,13 +80,15 @@ void Deanary::moveStudents(Student* st1, Group* gr2) {
     st.addToGroup(gr2);
 }
 
-void Deanary::saveStaff(std::string& fileName) {
+void Deanary::saveStaff(const std::string& fileName) {
     std::ofstream outFile;
     outFile.open(fileName);
     std::string data = "";
     if (outFile.is_open()) {
         for (Group gr : groups) {
-            data = data + gr.gettitle() + " " + std::to_string(gr.getAveragemark()) + "\n";
+            data = data + gr.gettitle() + " ";
+			data = data + std::to_string(gr.getAveragemark());
+			data = data +  + "\n";
         }
         outFile << data;
         outFile.close();
@@ -95,7 +96,7 @@ void Deanary::saveStaff(std::string& fileName) {
 }
 
 void Deanary::initHeads() {
-    for (Group gr: groups) {
+    for (Group gr : groups) {
         gr.chooseHead();
     }
 }
@@ -103,7 +104,7 @@ void Deanary::initHeads() {
 void Deanary::fireStudents() {
     for (Group gr : groups) {
         for (Student* student : gr.getstudents()) {
-            Student st = *student; 
+            Student st = *student;
             if (st.getAveragemark() < 3.5) {
                 gr.removeStudent(student);
             }

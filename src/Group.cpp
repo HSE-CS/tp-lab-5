@@ -10,7 +10,7 @@ std::string Group::gettitle() {
 Group::Group(std::string titl, std::string sp) {
     this->title = titl;
     this->spec = sp;
-    //this->students = std::vector<Student*>();
+    this->students = std::vector<Student*>();
 }
 
 void Group::addStudent(Student* newstudent) {
@@ -43,7 +43,8 @@ Student* Group::chooseHead() {
 
 bool Group::isEmpty() {
     if (size(students) == 0) return 1;
-    else return 0;
+    else 
+		return 0;
 }
 
 Student* Group::containsStudent(int id) {
