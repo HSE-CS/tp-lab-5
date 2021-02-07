@@ -5,7 +5,9 @@
 #include <string>
 #include <vector>
 
+#include "Deanary.h"
 #include "Group.h"
+#include "ReadGroup.h"
 
 class ReadGroup;
 enum ABILITY { OK, GOOD, EXCELLENT };

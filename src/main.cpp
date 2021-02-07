@@ -1,6 +1,9 @@
 // Copyright 2021 Kasyanov
 #include <iostream>
-#include "Deanary.h"
+#include "../include/Deanary.h"
+#include "../include/ReadGroup.h"
+#include "../include/Group.h"
+#include "../include/Student.h"
 
 int main() {
   srand(time(0));
