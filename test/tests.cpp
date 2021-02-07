@@ -1,3 +1,5 @@
+// Copyright 2020 GHA Test Team
+
 #include <gtest/gtest.h>
 #include <string>
 #include "../include/Student.h"
@@ -70,3 +72,4 @@ TEST(PostfixTest, test10) {
 	student.addMark(10);
 	student.addMark(9);
 	EXPECT_EQ(9.5, student.calculateAverageMark());
+}
