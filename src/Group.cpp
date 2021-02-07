@@ -1,8 +1,8 @@
 //  Copyright 2020 GHA created by Klykov Anton
 
 #include "Group.h"
-#include <cstdlib>
-#include <ctime>
+#include <random>
+
 
 void Group::addStudent(Student* st) {
   students.push_back(st);
@@ -12,10 +12,10 @@ void Group::chooseHeader() {
   if (header != nullptr) {
     return;
   }
-  srand(static_cast<unsigned int>(time(nullptr)));
-  header = students.at(static_cast<unsigned int>((rand() % students.size())) );
+  std::random_device rd;
+  std::mt19937 mersenne(rd());
+  header = students.at(static_cast<unsigned int>((mersenne() % students.size())) );
   header->isHead = true;
-
 }
 Student* Group::removeStudent(Student *st) {
   if (st == nullptr) {

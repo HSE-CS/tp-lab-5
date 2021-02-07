@@ -1,10 +1,10 @@
 // Copyright 2020 GHA Test Team
 
+#include <gtest/gtest.h>
+#include <string>
 #include "Deanary.h"
 #include "Student.h"
 #include "Group.h"
-#include <string>
-#include <gtest/gtest.h>
 
 TEST(TestingDeanary, test1) {
   Deanary deanary;
