@@ -27,6 +27,7 @@ class Deanary {
      Student* findId(int);
      Group* findGr(std::string, std::string);
      Student* findFio(std::string);
+     Group* findGrS(Student* st);
 };
 
 

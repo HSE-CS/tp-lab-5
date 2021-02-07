@@ -23,6 +23,7 @@ class Student {
      float getAverageMark();
      bool isHeadOfGroup();
      std::string getFio();
+     int getId();
 };
 
 #endif  // INCLUDE_STUDENT_H_

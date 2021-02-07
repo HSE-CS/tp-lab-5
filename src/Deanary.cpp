@@ -179,9 +179,9 @@ void Deanary::fireStudents() {
         }
         out_file << '\n' << '\n';
       }
-      return 0;
+      return true;
     }
-    return 1;
+    return false;
   }
 
 
@@ -239,4 +239,14 @@ void Deanary::fireStudents() {
 
   int Deanary::return_gr_num() {
       return groups.size();
+  }
+
+  Group* Deanary::findGrS(Student* st) {
+    for (int i = 0; i < groups.size(); ++i) {
+      for (int j = 0; j < groups[i]->students.size(); ++j) {
+        if (groups[i]->students[j] == st) {
+          return groups[i];
+        }
+      }
+    }
   }

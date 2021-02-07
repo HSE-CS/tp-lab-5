@@ -28,6 +28,8 @@ class Group {
     bool containsStudent(Student*);
     bool isEmpty();
     Student* getHead();
+    std::string getTitle();
+    std::string getSpec();
     friend class Deanary;
 };
 

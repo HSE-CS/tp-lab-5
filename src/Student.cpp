@@ -45,3 +45,8 @@ bool Student::isHeadOfGroup() {
 std::string Student::getFio() {
     return this->fio;
 }
+
+
+int Student::getId() {
+    return this->id;
+}

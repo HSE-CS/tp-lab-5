@@ -109,3 +109,12 @@ bool Group::isEmpty() {
     }
     return true;
 }
+
+
+std::string Group::getTitle() {
+    return this->title;
+}
+
+std::string Group::getSpec() {
+    return this->spec;
+}
