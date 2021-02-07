@@ -102,6 +102,6 @@ TEST(Test, test11) {
   st.addToGroup(&gr);
   st2.addToGroup(&gr);
   de.addGroup(&gr);
-  de.initHeads("Dubova Tamara Nikolaevna");
-  EXPECT_EQ(de.getStudent("2")->isHeadGroup(), false);
+  de.initHeads("19E", "Dubova Tamara Nikolaevna");
+  EXPECT_EQ(de.getStudent("2", "19E")->isHeadGroup(), false);
 }
