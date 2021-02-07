@@ -14,8 +14,8 @@ void Deanary::createGroups(const char* file, std::vector <Student*> students) {
     std::string line;
     std::ifstream in(file);
     std::string spec;
-    int i = 0;
     int j = 0;
+    int i = 0;
     if (in.is_open()) {
         while (getline(in, line)) {
             Group* group = new Group("1", line);
