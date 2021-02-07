@@ -80,3 +80,18 @@ TEST(Deanary_test, test11) {
   DeanaryObj.addStudentToGroup(&StudentObj1, &GroupObj);
   EXPECT_EQ(2, DeanaryObj.getCurrentAmountOfStudents());
 }
+TEST(Deanary_test, test12) {
+  Deanary DeanaryObj;
+  Student StudentObj(0, "Name Surname");
+  Student StudentObj1(1, "Nam Surname");
+  Group GroupObj((std::string) "19AMI");
+  Group GroupObj1((std::string) "19SE");
+  DeanaryObj.addGroup(&GroupObj);
+  DeanaryObj.addGroup(&GroupObj1);
+  DeanaryObj.addStudent(&StudentObj);
+  DeanaryObj.addStudent(&StudentObj1);
+  DeanaryObj.addStudentToGroup(&StudentObj, &GroupObj);
+  DeanaryObj.addStudentToGroup(&StudentObj1, &GroupObj);
+  DeanaryObj.moveStudent(&StudentObj1, &GroupObj1);
+  EXPECT_EQ(2, DeanaryObj.getCurrentAmoutOfGroups());
+}
