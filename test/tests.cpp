@@ -28,7 +28,6 @@ TEST(DeaneryTest, test3) {
   int ans = 0;
   Deanery decan{};
   int cnt = decan.getGroups()->at(0)->getStudents()->size();
-;
   if (cnt > 0) ans = 1;
   EXPECT_EQ(1, ans);
 }

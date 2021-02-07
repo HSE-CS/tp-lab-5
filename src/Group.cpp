@@ -21,7 +21,7 @@ void Group::chooseHead() {
 
 void Group::removeStudent(Student& student) {
   for (int i = 0; i < students->size(); ++i) {
-    if (students->at(i)->getId() == student.getId())
+    if (students->at(i)->getId() == student.getId()) {
       if (student.isHead) {
         students->erase(students->begin() + i);
         chooseHead();
@@ -30,6 +30,7 @@ void Group::removeStudent(Student& student) {
       } else {
         students->erase(students->begin() + i);
       }
+    }
   }
 }
 
@@ -59,6 +60,6 @@ std::vector<Student *> *Group::getStudents() const {
 
 bool Group::isEmpty() { return students->empty(); }
 
-std::string Group::getTitle() { return title; };
+std::string Group::getTitle() { return title; }
 
 Student* Group::getHead() { return head; }
