@@ -1,4 +1,4 @@
-﻿// Copyright 2021 Nikolaev Ivan
+﻿  // Copyright 2021 Nikolaev Ivan
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -21,7 +21,8 @@ int main() {
     deanary.addMarksToAll();
     deanary.initHeads(deanary.findGroup("19PI1"));
     deanary.initHeads(deanary.findGroup("19PI2"));
-    deanary.moveStudents(deanary.findGroup("19PI1"), deanary.findGroup("19PI2"), deanary.findStudent(5));
+    deanary.moveStudents(deanary.findGroup("19PI1"),
+        deanary.findGroup("19PI2"), deanary.findStudent(5));
     deanary.fireStudents(deanary.findStudent(5));
     std::map<int, double> list = deanary.getStatistics();
     deanary.printStatistics(list);

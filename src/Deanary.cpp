@@ -1,3 +1,5 @@
+// Copyright 2021 Nikolaev Ivan
+
 #include <map>
 #include <iostream>
 #include <fstream>
@@ -13,8 +15,7 @@ void Deanary::createGroups(std::string title, std::string spec) {
 }
 void Deanary::hireStudents(std::string title, Student* student) {
     for (int i = 0; i < groups.size(); i++) {
-        if (groups[i]->title == title)
-        {
+        if (groups[i]->title == title) {
             groups[i]->addStudent(student);
         }
     }
@@ -26,7 +27,6 @@ void Deanary::addMarksToAll() {
             group->students[j]->addmark(2 + std::rand() % 4);
         }
     }
-
 }
 std::map<int, double> Deanary::getStatistics() {
     std::map<int, double> listOfStudents;
@@ -57,14 +57,14 @@ void Deanary::moveStudents(Group* from, Group *to, Student *student) {
 void Deanary::saveStaff() {
     std::ofstream out;
     out.open("groups.txt");
-    if (out.is_open())
-    {
+    if (out.is_open()) {
         for (int i = 0; i < groups.size(); i++) {
             Group* group = groups[i];
             out << "Group:" << group->title << std::endl;
             out << "Spec:" << group->spec << std::endl;
             for (int j = 0; j < group->students.size(); j++) {
-                out << group->students[j]->getFio() << group->spec << std::endl;
+                out << group->students[j]->getFio()
+                    << group->spec << std::endl;
             }
         }
     }
@@ -72,7 +72,8 @@ void Deanary::saveStaff() {
 void Deanary::initHeads(Group* group) {
     std::cout << group->students.size() << std::endl;
     if (group->students.size() > 0) {
-        group->chooseHead(group->students[std::rand() % group->students.size()]);
+        group->chooseHead(
+            group->students[std::rand() % group->students.size()]);
     }
 }
 void Deanary::fireStudents(Student* student) {
@@ -94,10 +95,8 @@ void Deanary::readFile() {
     std::string spec;
 
     std::ifstream in(path);
-    if (in.is_open())
-    {
-        while (getline(in, line))
-        {
+    if (in.is_open()) {
+        while (getline(in, line)) {
             if (line.find("Group:") != -1) {
                 int end = line.find('\0');
                 title = line.substr(6, end - 7);
@@ -137,8 +136,8 @@ Student* Deanary::findStudent(int id) {
 }
 
 void Deanary::printStatistics(std::map<int, double> list) {
-    for (auto& student : list)
-    {
-        std::cout << findStudent(student.first)->getFio() << " : " << student.second << std::endl;
+    for (auto& student : list) {
+        std::cout << findStudent(student.first)->getFio() <<
+            " : " << student.second << std::endl;
     }
 }

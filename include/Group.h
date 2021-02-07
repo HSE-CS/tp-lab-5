@@ -30,7 +30,6 @@ class Group {
      void addStudent(Student *student);
      void chooseHead(Student *student);
      void removeStudent(Student *student);
-
 };
 
 #endif  // INCLUDE_GROUP_H_

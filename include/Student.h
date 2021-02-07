@@ -1,9 +1,8 @@
 // Copyright 2021 Nikolaev Ivan
 
-#ifndef INCLUDE_STUDENT_H_ 
+#ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 #include <iostream>
-#include <string>
 #include <string>
 #include <vector>
 #include "Group.h"
@@ -34,4 +33,4 @@ class Student {
      void addmark(int mark);
 };
 
-#endif  // INCLUDE_MYSTACK_H_
+#endif  // INCLUDE_STUDENT_H_

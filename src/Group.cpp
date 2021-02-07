@@ -1,3 +1,5 @@
+// Copyright 2021 Nikolaev Ivan
+
 #include "Group.h"
 
 Group::Group(std::string title, std::string spec) {

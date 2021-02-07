@@ -5,6 +5,7 @@
 #include <map>
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Group.h"
 
 class Group;

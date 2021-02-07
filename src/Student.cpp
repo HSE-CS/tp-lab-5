@@ -1,3 +1,5 @@
+  // Copyright 2021 Nikolaev Ivan
+
 #include "Student.h"
 
 double Student::getAveragemark() {
@@ -10,8 +12,7 @@ double Student::getAveragemark() {
 bool Student::isHeadOfGroup() {
     if (this->group->head->id == this->id) {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
@@ -36,7 +37,8 @@ Student::Student(int id, std::string fio, std::vector<int> marks) {
     this->group = group;
     this->marks = marks;
 }
-Student::Student(int id, std::string fio, Group* group, std::vector<int> marks) {
+Student::Student(int id, std::string fio, Group* group,
+    std::vector<int> marks) {
     this->id = id;
     this->fio = fio;
     this->group = group;
