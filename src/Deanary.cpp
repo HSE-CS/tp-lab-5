@@ -1,11 +1,8 @@
 // Copyright 2021 Pavlova D.
-#include "Deanary.h"
-#include <fstream>
-#include <iostream>
-#include <utility>
+#include "../include/Deanary.h"
 
 void Deanary::createGroups() {
-  std::ifstream group_data("../../src/data/groups.txt");
+  std::ifstream group_data("../src/data/groups.txt");
 
   std::string group_name;
   std::string spec_name;
@@ -20,7 +17,7 @@ void Deanary::createGroups() {
 }
 
 void Deanary::hireStudents() {
-  std::ifstream students_data("../../src/data/students.txt");
+  std::ifstream students_data("../src/data/students.txt");
   std::string tmp;
   std::string group_name;
   std::string student_name;
@@ -81,7 +78,7 @@ void Deanary::getStatistics() {
   }
 }
 
-void Deanary::moveStudents(int id, std::string &title) {
+void Deanary::moveStudents(int id, const std::string &title) {
   for (auto group_new : groups)
     if (group_new->getTitle() == title)
       for (auto group_old : groups)
@@ -95,7 +92,7 @@ void Deanary::moveStudents(int id, std::string &title) {
 }
 
 void Deanary::saveStaff() {
-  std::ofstream data("../../src/data/stuff.txt");
+  std::ofstream data("../src/data/stuff.txt");
   for (auto group : this->groups) {
     data << "Group: " << group->getTitle() << std::endl;
     for (auto student : group->students) {

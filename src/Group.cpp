@@ -1,5 +1,5 @@
 // Copyright 2021 Pavlova D.
-#include "Group.h"
+#include "../include/Group.h"
 #include <cstdlib>
 
 void Group::addStudents(Student *student) { this->students.push_back(student); }
@@ -17,7 +17,7 @@ double Group::getAverageMark() {
     sum += student->getAverageMark();
   }
 
-  return double(sum) / students.size();
+  return static_cast<double>(sum) / students.size();
 }
 
 int Group::containsStudent(Student student) {
@@ -34,7 +34,7 @@ void Group::removeStudent(int _id) {
   for (auto &student : students) {
     if (_id == student->getID()) {
       if (student == this->head) {
-        this->head == nullptr;
+        this->head = nullptr;
         chooseHead();
       }
       students.erase(students.begin() + indexst);

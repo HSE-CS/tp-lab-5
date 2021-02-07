@@ -1,5 +1,5 @@
 // Copyright 2021 Pavlova D.
-#include "Deanary.h"
+#include "../include/Deanary.h"
 #include <iostream>
 
 int main() {

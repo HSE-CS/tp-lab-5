@@ -3,20 +3,22 @@
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 #include "Group.h"
+#include <vector>
 #include <string>
+
 class Group;
 
 class Student {
   friend class Group;
 
-private:
+ private:
   int id;
   std::string fio;
-
-public:
-  Group *group_{};
   std::vector<int> marks;
-  Student(int id_, std::string &fio_) : id(id_), fio(fio_){};
+
+ public:
+  Group *group_{};
+  Student(int id_, std::string &fio_) : id(id_), fio(fio_){}
   void addToGroup(Group *_group);
   void addMark(int mark);
   double getAverageMark();
@@ -24,4 +26,4 @@ public:
   int getID() { return id; }
   std::string getFIO() { return fio; }
 };
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
