@@ -4,37 +4,52 @@
 
 #ifndef TP_LAB_5_DEANARY_H
 #define TP_LAB_5_DEANARY_H
+
+#include <vector>
+#include <string>
+
+#include "Student.h"
+#include "Group.h"
+
+using namespace std;
+
 //Разработать класс Deanery
 class Deanery {
+    friend class Student;
+    friend class Group;
 private:
     /* data */
 //Примерный перечень полей:
 
     //groups - массив групп
+    vector <Group *> groups = {};
 
 public:
     //Deanery (arguments);
     //virtual ~Deanery ();
+
     //Обеспечить класс следующими методами:
 
+    //Deanery();
+
     //создание студентов на основе данных из файла
-    hireStudents();
+    void hireStudents();
     //создание групп на основе данных из файла
-    createGroups();
+    void createGroups();
     //добавление случайных оценок студентам
-    addMarksToAll();
+    void addMarksToAll();
     //получение статистики по успеваемости студентов и групп
-    getStatistics();
+    void getStatistics();
     //перевод студентов из группы в группу
-    moveStudents();
+    void moveStudents();
     //отчисление студентов за неуспеваемость
-    fireStudents();
+    void fireStudents();
     //сохранение обновленных данных в файлах
-    saveStuff();
+    void saveStuff();
     //инициация выборов старост в группах
-    initHeads();
+    void initHeads();
     //вывод данных на консоль
-    output();
+    void output();
 
 };
 
