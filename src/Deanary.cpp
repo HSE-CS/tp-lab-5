@@ -114,7 +114,7 @@ void Deanary::save() {
         for (num_gr = 0; num_gr < groups.size(); num_gr++) {
             f_groups << groups[num_gr].get_spec() << " ";
             f_groups << groups[num_gr].get_title() <<"\n";
-            for (num_stud = 0; 
+            for (num_stud = 0;
                 num_stud < groups[num_gr].students.size();
                 num_stud++) {
                 f_stud << groups[num_gr].students[num_stud]->get_fio() << "\n";
