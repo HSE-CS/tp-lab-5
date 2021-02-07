@@ -18,7 +18,7 @@ class Deanary {
  public:
   void createGroups();
   void addGroup(const Group& group);
-  std::vector<Group> getGroups(); 
+  std::vector<Group> getGroups();
   void addStudent(const Student& student);
   void hireStudents();
   void addMarks();

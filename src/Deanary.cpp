@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <time.h>
+
 
 void Deanary::createGroups() {
   std::string s;
@@ -51,7 +51,7 @@ std::string Deanary::getStatisticsByStudent(std::string fio) {
   std::stringstream stream;
   for (int i = 0; i < students.size(); i++) {
     if (students[i].getFio() == fio) {
-      stream << "FIO: " << fio << ", average mark: " 
+      stream << "FIO: " << fio << ", average mark: "
           << students[i].getAverageMark() << "\n";
       return stream.str();
     }
