@@ -11,18 +11,18 @@ class Group {
  private:
   std::string title;
   std::string spec;
-  std::vector<Student*> students;
+  std::vector<Student *> students;
   Student* head;
   Group(std::string, std::string);
   ~Group();
-  void addStudent(Student*);
+  void addStudent(Student *);
   void chooseHead();
   void removeStudent(Student *);
  public:
   bool isEmpty();
-  Student* getStudent(int);
-  Student* getHead();
-  bool containsStudent(Student*);
+  Student *getStudent(int);
+  Student *getHead();
+  bool containsStudent(Student *);
   float getAverageMark();
 };
 #endif  // INCLUDE_GROUP_H_
