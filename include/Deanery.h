@@ -2,12 +2,14 @@
 #ifndef INCLUDE_DEANERY_H_
 #define INCLUDE_DEANERY_H_
 #include <fstream>
+#include <vector>
+#include <string>
 #include "Group.h"
 
 class Deanery {
  private:
   std::vector<Group*> groups;
-  
+ 
  public:
   void initHeads();
   Deanery(std::vector<Group*> groups);

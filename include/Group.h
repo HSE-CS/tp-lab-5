@@ -3,6 +3,8 @@
 #define INCLUDE_GROUP_H_
 #include <random>
 #include <cmath>
+#include <vector>
+#include <string>
 #include "Student.h"
 
 class Group {
@@ -14,7 +16,7 @@ class Group {
 
  public:
   Group(std::string title, std::string spec);
-  //~Group();
+  // ~Group();
   std::string getTitle();
   std::string getSpec();
   void addStudent(Student* newPerson);

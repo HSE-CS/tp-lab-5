@@ -3,8 +3,8 @@
 #include "Group.h"
 
 Student::Student(int id, std::string fio) {
-	this->id = id;
-	this->fio = std::move(fio);
+  this->id = id;
+  this->fio = std::move(fio);
 }
 
 int Student::getId() {
@@ -16,24 +16,24 @@ std::string Student::getFio() {
 }
 
 void Student::addMark(int mark) {
-	if (mark < 0)
-		mark = 0;
-	if (mark > 10)
-		mark = 10;
+  if (mark < 0)
+    mark = 0;
+  if (mark > 10)
+    mark = 10;
   this->marks.push_back(mark);
 }
 
 void Student::addToGroup(Group* new_group) {
-	this->group = new_group;
+  this->group = new_group;
 }
 
 double Student::getAverageMark() {
-	if (marks.empty())
-		throw "Student does not have marks";
-	int sumMarks = 0;
-	for (int mark : marks)
-		sumMarks += mark;
-	return ((double)sumMarks / marks.size());
+  if (marks.empty())
+    throw "Student does not have marks";
+  int sumMarks = 0;
+  for (int mark : marks)
+    sumMarks += mark;
+  return ((double)sumMarks / marks.size());
 }
 
 bool Student::isHeadOfGroup() {
@@ -42,6 +42,6 @@ bool Student::isHeadOfGroup() {
 
 std::string Student::getInfo() {
   return std::to_string(getId()) + " " + getFio() + " "
-	  + group->getSpec() + " " + group->getTitle()
-	  + " Average Mark: " + std::to_string(getAverageMark());
+    + group->getSpec() + " " + group->getTitle()
+    + " Average Mark: " + std::to_string(getAverageMark());
 }
