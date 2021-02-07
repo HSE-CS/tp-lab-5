@@ -1,3 +1,5 @@
+// Copyright 2021 TimurZaytsev
+
 #include <gtest/gtest.h>
 #include <string>
 
