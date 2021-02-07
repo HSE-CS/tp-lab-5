@@ -40,8 +40,8 @@ TEST(DeanaryTest, test6) {
 
 TEST(DeanaryTest, test7) {
   Deanary dean;
-  dean.createGroups("GroupsForTest.txt");
-  dean.fireStudents("NamesForTest.txt");
+  dean.createGroups(static_cast<std::string>("GroupsForTest.txt"));
+  dean.fireStudents(static_cast<std::string>("NamesForTest.txt"));
   dean.initHeads();
   EXPECT_EQ("TomKing",
             dean.getGroup("FundamentalMathematics")->getHead()->getFio());
@@ -49,8 +49,8 @@ TEST(DeanaryTest, test7) {
 
 TEST(DeanaryTest, test8) {
   Deanary dean;
-  dean.createGroups("GroupsForTest.txt");
-  dean.fireStudents("NamesForTest.txt");
+  dean.createGroups(static_cast<std::string>("GroupsForTest.txt"));
+  dean.fireStudents(static_cast<std::string>("NamesForTest.txt"));
   dean.initHeads();
   EXPECT_EQ(
       "DonBarrett",
@@ -59,8 +59,8 @@ TEST(DeanaryTest, test8) {
 
 TEST(DeanaryTest, test9) {
   Deanary dean;
-  dean.createGroups("GroupsForTest.txt");
-  dean.fireStudents("NamesForTest.txt");
+  dean.createGroups(static_cast<std::string>("GroupsForTest.txt"));
+  dean.fireStudents(static_cast<std::string>("NamesForTest.txt"));
   dean.initHeads();
   dean.MoveStudents(1, "AppliedMathematicsAndInformatics");
   EXPECT_EQ(true, dean.getGroup("FundamentalMathematics")->isEmpty());
@@ -68,16 +68,16 @@ TEST(DeanaryTest, test9) {
 
 TEST(DeanaryTest, test10) {
   Deanary dean;
-  dean.createGroups("GroupsForTest.txt");
-  dean.fireStudents("NamesForTest.txt");
+  dean.createGroups(static_cast<std::string>("GroupsForTest.txt"));
+  dean.fireStudents(static_cast<std::string>("NamesForTest.txt"));
   EXPECT_EQ("TomKing",
             dean.getGroup("FundamentalMathematics")->getStudent(1)->getFio());
 }
 
 TEST(DeanaryTest, test11) {
   Deanary dean;
-  dean.createGroups("GroupsForTest.txt");
-  dean.fireStudents("NamesForTest.txt");
+  dean.createGroups(static_cast<std::string>("GroupsForTest.txt"));
+  dean.fireStudents(static_cast<std::string>("NamesForTest.txt"));
   EXPECT_EQ("DonBarrett", dean.getGroup("AppliedMathematicsAndInformatics")
                               ->getStudent(1)
                               ->getFio());
