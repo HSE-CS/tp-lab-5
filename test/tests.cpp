@@ -50,7 +50,7 @@ TEST(DeanaryTest, test6) {
   gr.addStudent(&st);
   gr.chooseHead();
   Student* expected = &st;
-  Student* result = &gr.getHead();
+  Student* result = gr.getHead();
   EXPECT_EQ(expected, result);
 }
 
