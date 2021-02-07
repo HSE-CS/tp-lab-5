@@ -1,7 +1,7 @@
 // Copyright 2021 Tatsenko Ilya
 #include<fstream>
-#include<time.h>
-#include<locale.h>
+#include<ctime>
+#include<clocale>
 #include<Windows.h>
 #include"Deanary.h"
 #include"Group.h"
