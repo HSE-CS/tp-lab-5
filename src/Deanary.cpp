@@ -44,7 +44,7 @@ void Deanary::addMarksToAll(int count) {
   for (auto group : this->groups) {
     for (auto student : group->students) {
       for (int i = 0; i < count; ++i)
-        student->addMark(rand_r() % 10);
+        student->addMark(rand_int() % 10);
     }
   }
 }
