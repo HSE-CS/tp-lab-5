@@ -1,52 +1,56 @@
 Group:19PI1
 Spec:Software Engineering
-Турова Бронислава ВладиленовнаSoftware EngineeringSoftware Engineering
-Чайка Матвей ФомевичSoftware EngineeringSoftware Engineering
-Топоркова Алиса КарповнаSoftware EngineeringSoftware Engineering
-Яковиченко Христина ЕлисеевнаSoftware EngineeringSoftware Engineering
-Фильченков Эрнст ЕлизаровичSoftware EngineeringSoftware Engineering
-Лобанова Юнона ПавеловнаSoftware EngineeringSoftware Engineering
-Габулов Руслан ДемьяновичSoftware EngineeringSoftware Engineering
-Кимаск Феликс ЕпифановичSoftware EngineeringSoftware Engineering
-Репина Екатерина ФедоровнаSoftware EngineeringSoftware Engineering
-Сабитов Владлен ТихоновичSoftware EngineeringSoftware Engineering
-Собаков Клавдий НазаровичSoftware EngineeringSoftware Engineering
-Гибазов Валентин ИгнатиевичSoftware EngineeringSoftware Engineering
-Сарайкина Ева ВиталиевнаSoftware EngineeringSoftware Engineering
-Тимашёв Эммануил ЕлизаровичSoftware EngineeringSoftware Engineering
-Набадчиков Рубен ЭдуардовичSoftware EngineeringSoftware Engineering
-Комягина Альбина ИгоревнаSoftware EngineeringSoftware Engineering
-Яклашкина Анфиса СерафимовнаSoftware EngineeringSoftware Engineering
-Этуша Людмила ДавидовнаSoftware EngineeringSoftware Engineering
-Кузин Артём АндрониковичSoftware EngineeringSoftware Engineering
-Бондарева Лидия ВячеславовнаSoftware EngineeringSoftware Engineering
-Янаева Лилия ЯновнаSoftware EngineeringSoftware Engineering
-Михальченкова Мирослава ТихоновнаSoftware EngineeringSoftware Engineering
-Курчатова Всеслава ЛеонидовнаSoftware EngineeringSoftware Engineering
+Анисимова Диана Максимовна
+Баранов Михаил Денисович
+Беспалов Виктор Даниилович
+Блинова Елизавета Андреевна
+Большаков Антон Артемьевич
+Данилова Алиса Михайловна
+Егоров Александр Глебович
+Егорова Полина Романовна
+Иванов Максим Маратович
+Климов Денис Петрович
+Козин Демид Артемьевич
+Козлова Алина Фёдоровна
+Козырева Ульяна Андреевна
+Крылов Арсений Фёдорович
+Лаврентьева Ольга Матвеевна
+Лебедев Лев Иванович
+Лыков Даниил Степанович
+Орлова Дарья Андреевна
+Петухова Мария Львовна
+Родионова Мирослава Романовна
+Романова Вера Елисеевна
+Седова Дарья Тимуровна
+Семенов Мирон Андреевич
+Семенов Лев Глебович
+Сотникова Вероника Тимофеевна
+Уваров Дмитрий Елисеевич
 Group:19PI2
 Spec:Software Engineering
-Салтыкова Зоя АлександровнаSoftware EngineeringSoftware Engineering
-Воронова Фаина ИосифовнаSoftware EngineeringSoftware Engineering
-Щавельский Харитон СамуиловичSoftware EngineeringSoftware Engineering
-Труфанов Лев ЛевовичSoftware EngineeringSoftware Engineering
-Галкина Софья ЕлисеевнаSoftware EngineeringSoftware Engineering
-Просвирнина Марианна ФомевнаSoftware EngineeringSoftware Engineering
-Рыжкова Инесса НикитевнаSoftware EngineeringSoftware Engineering
-Иноземцев Петр ЕлизаровичSoftware EngineeringSoftware Engineering
-Вязьмитина Наталия ЗахаровнаSoftware EngineeringSoftware Engineering
-Лобова Владлена ИгоревнаSoftware EngineeringSoftware Engineering
-Нырцева Ярослава ЕфимовнаSoftware EngineeringSoftware Engineering
-Чупахин Владилен ЛеонидовичSoftware EngineeringSoftware Engineering
-Курчин Владимир МартьяновичSoftware EngineeringSoftware Engineering
-Воеводин Юлий ЕлизаровичSoftware EngineeringSoftware Engineering
-Цуцкова Ангелина ИгнатиевнаSoftware EngineeringSoftware Engineering
-Якушевича Каролина ТрофимовнаSoftware EngineeringSoftware Engineering
-Травкина Дина СтепановнаSoftware EngineeringSoftware Engineering
-Костина Ольга ДанилевнаSoftware EngineeringSoftware Engineering
-Злобин Ярослав ИпатовичSoftware EngineeringSoftware Engineering
-Анисимов Иван ФедоровичSoftware EngineeringSoftware Engineering
-Ахматов Вячеслав ПрокловичSoftware EngineeringSoftware Engineering
-Корнейчука Зоя ГлебовнаSoftware EngineeringSoftware Engineering
-Машарин Георгий КазимировичSoftware EngineeringSoftware Engineering
-Туров Яков ЗиновиевичSoftware EngineeringSoftware Engineering
-Дворников Серафим УльяновичSoftware EngineeringSoftware Engineering
+Белов Константин Владимирович
+Богомолов Дмитрий Васильевич
+Болдырева Дарья Арсеньевна
+Борисова Валерия Максимовна
+Васильев Даниил Максимович
+Волкова Арина Максимовна
+Воронков Егор Михайлович
+Гончарова Елизавета Александровна
+Зайцев Тимофей Степанович
+Иванова Таисия Александровна
+Кравцов Константин Максимович
+Кузнецов Дмитрий Никитич
+Кузьмин Савва Львович
+Лазарева Вера Кирилловна
+Матвеева Варвара Никитична
+Некрасова Александра Алексеевна
+Никитин Матвей Николаевич
+Петрова Вера Ильинична
+Плотников Иван Тимурович
+Прохоров Владимир Фёдорович
+Родионов Илья Артёмович
+Синицына Василиса Александровна
+Смирнов Лука Романович
+Сорокина Мария Дмитриевна
+Судакова Диана Тимофеевна
+Ульянова Ксения Сергеевна

@@ -63,8 +63,7 @@ void Deanary::saveStaff() {
             out << "Group:" << group->title << std::endl;
             out << "Spec:" << group->spec << std::endl;
             for (int j = 0; j < group->students.size(); j++) {
-                out << group->students[j]->getFio()
-                    << group->spec << std::endl;
+                out << group->students[j]->getFio() << std::endl;
             }
         }
     }
