@@ -113,7 +113,6 @@ void Deanary::fireStudents() {
   }
 }
 
-
 int Deanary::randomId() {
   std::srand(time(0));
   int id = 10000000 + std::rand() % 90000000;
