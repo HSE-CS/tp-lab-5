@@ -1,4 +1,4 @@
-﻿// Copyright 2021 ArinaMonicheva
+// Copyright 2021 ArinaMonicheva
 
 #include "Student.h"
 
@@ -25,7 +25,7 @@ double Student::getAverageMark() {
     j++;
   }
 
-  return (double)averageMark / j;
+  return (static_cast<double>averageMark) / j;
 }
 
 bool Student::isHeadOfGroup() {
