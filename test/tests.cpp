@@ -6,33 +6,33 @@
 #include <string>
 #include <vector>
 
-Test(StudentTest, test1) {
+TEST(Test, test1) {
   Student s1(1, "Ivan Petrov");
   s1.addMark(3);
   s1.addmark(4);
   EXPECT_FLOAT_EQ(3.5, s1.getAverageMark());
 }
 
-Test(StudentTest, test2) {
+TEST(Test, test2) {
   Group gr("19PI-2", "pi");
   EXPECT_TRUE(gr.isEmpty());
 }
 
-Test(StudentTest, test3) {
+TEST(Test, test3) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   Group *gr = d.getGroup("19PI-2");
   EXPECT_EQ("pi", gr->getSpec());
 }
 
-Test(StudentTest, test4) {
+TEST(Test, test4) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   Group *gr = d.getGroup("19PI-2");
   EXPECT_EQ("pi", gr->getSpec());
 }
 
-Test(StudentTest, test5) {
+TEST(Test, test5) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -40,7 +40,7 @@ Test(StudentTest, test5) {
   EXPECT_TRUE(gr->containsStudentByFio("Ivan Petrov"));
 }
 
-Test(StudentTest, test6) {
+TEST(Test, test6) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -49,7 +49,7 @@ Test(StudentTest, test6) {
   EXPECT_TRUE(gr->containsStudentId(2));
 }
 
-Test(StudentTest, test7) {
+TEST(Test, test7) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -62,7 +62,7 @@ Test(StudentTest, test7) {
   EXPECT_TRUE(gr->isEmpty());
 }
 
-Test(StudentTest, test8) {
+TEST(Test, test8) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -76,7 +76,7 @@ Test(StudentTest, test8) {
   EXPECT_TRUE(gr->containsStudentByFio("Boris Britva"));
 }
 
-Test(StudentTest, test9) {
+TEST(Test, test9) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -96,7 +96,7 @@ Test(StudentTest, test9) {
   EXPECT_FLOAT_EQ(3.0, gr->getAverageMark());
 }
 
-Test(StudentTest, test10) {
+TEST(Test, test10) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.hireStudent("Ivan Petrov", "19PI-2");
@@ -118,7 +118,7 @@ Test(StudentTest, test10) {
   EXPECT_TRUE(s->isHeadOfGroup());
 }
 
-Test(StudentTest, test11) {
+TEST(Test, test11) {
   Deanary d;
   d.createGroup("19PI-2", "pi");
   d.createGroup("19PI-1", "pi");
