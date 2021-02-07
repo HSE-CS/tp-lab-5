@@ -9,10 +9,8 @@
 class Student;
 class Group;
 class Deanery {
- private:
-     std::vector<Group*> groups;
-
  public:
+     std::vector<Group*> groups;
      void hireStudents();
      void distribStud(std::vector<Student*> new_students);
      void createGroups();
