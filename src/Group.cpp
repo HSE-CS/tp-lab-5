@@ -4,7 +4,7 @@
 Group::Group(const std::string &t, const std::string &s) : title(t), spec(s) {}
 
 void Group::addStudent(Student *student) {
-  student->group = this;
+  student->addToGroup(this);
   students.push_back(student);
 }
 

@@ -3,7 +3,7 @@
 #include "Group.h"
 #include <string>
 #include <vector>
-
+class Group;
 class Student {
   friend class Group;
   friend class Deanary;
