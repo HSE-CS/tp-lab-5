@@ -96,35 +96,8 @@ TEST(TestGroup, check_sts_size_in_gr) {
   EXPECT_EQ(rez, newGr->getStudents().size());
 }
 
-TEST(TestGroup, check_gr_not_empty) {
-  UniqueID *newId1 = new UniqueID;
-  Student *student1 = new Student("Mitchel Mia", newId1);
-  UniqueID *newId2 = new UniqueID;
-  Student * student2 = new Student("Greich Mark", newId2);
-  std::vector<Student *> newStudents;
-  newStudents.push_back(student1);
-  newStudents.push_back(student2);
-  Student *newHead = student1;
-  Group *newGr = new Group("PI", "1st",
-                           newStudents, newHead);
-  ASSERT_FALSE(newGr->isEmpty());
-}
-
 TEST(TestDeanary, check_empty_dean_size) {
   Deanary* d = new Deanary;
   int rez = 0;
-  EXPECT_EQ(rez, d->getGrsSize());
-}
-
-TEST(TestDeanary, check_groups_creation) {
-  Reader *r = new Reader;
-  std::ifstream f("groups.json");
-  nlohmann::json jf = nlohmann::json::parse(f);
-  f.close();
-  std::map<std::string, std::string> nameGrSp = r->parseGrSp(jf);
-  std::vector<std::vector<std::string>> namesFI = r->parseFI(jf);
-  Deanary *d = new Deanary;
-  d->createGroups(nameGrSp, namesFI);
-  int rez = 3;
   EXPECT_EQ(rez, d->getGrsSize());
 }
