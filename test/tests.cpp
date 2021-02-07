@@ -10,25 +10,25 @@ TEST(DeaneryTest, test1) {
     EXPECT_EQ(3, deanery.getGroups()->size());
 }
 
-TEST(DeaneryTest, test1_1) {
+TEST(DeaneryTest, test2) {
     Deanery deanery{};
     int n = 0;
-    for (auto &group : deanery.getGroups()) {
+    for (auto &group : *deanery.getGroups()) {
         n += group->getStudents()->size();
     }
     EXPECT_EQ(63, n);
 }
 
-TEST(DeaneryTest, test2) {
+TEST(DeaneryTest, test3) {
     Deanery deanery{};
     int st = 0;
     int n = 21;
-    for (auto &group : deanery.getGroups()) {
+    for (auto &group : *deanery.getGroups()) {
         EXPECT_EQ(n, group->getStudents()->size());
     }
 }
 
-TEST(DeaneryTest, test3) {
+/*TEST(DeaneryTest, test3) {
     Deanery deanery{};
     auto *fio = new std::string{ "Michael Young" };
     auto *title = new std::string{ "20-ABC-1" };
@@ -42,7 +42,7 @@ TEST(DeaneryTest, test3) {
     }
 }
 
-/*TEST(DeaneryTest, test4) {
+TEST(DeaneryTest, test4) {
     Deanery deanery{};
     auto *title = new std::string{ "19FM-1" };
     deanery.moveStudents(56, *title);
