@@ -66,7 +66,7 @@ std::stringbuf Deanery::getNameOfGroups() {
 }
 
 void Deanery::hireStudents() {
-    size_t sizeOfGroup = unalloc.size() / groups->size();
+    int sizeOfGroup = (unalloc.size() / groups->size());
     for (auto &group : *groups) {
         for (size_t i = 0; i < sizeOfGroup; ++i) {
             Student *st_ptr = new Student(unalloc[0].first, unalloc[0].second);
