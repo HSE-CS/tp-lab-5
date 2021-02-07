@@ -67,7 +67,6 @@ class Deanary {
   };
 
  public:
-  ~Deanary();
   void createGroups();
   void hireStudent();
   void addMarksToAll();
