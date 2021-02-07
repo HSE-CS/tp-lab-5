@@ -1,0 +1,372 @@
+{
+  "First Group-PI": [
+    {
+      "name": "Gen",
+      "surname": "Levin"
+    },
+    {
+      "name": "Isabella",
+      "surname": "Scott"
+    },
+    {
+      "name": "Chloe",
+      "surname": "Woods"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Richardson"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Dorn"
+    },
+    {
+      "name": "Ella",
+      "surname": "Brown"
+    },
+    {
+      "name": "Elizabeth",
+      "surname": "Scott"
+    },
+    {
+      "name": "Peter",
+      "surname": "Johnson"
+    },
+    {
+      "name": "Randy",
+      "surname": "Martin"
+    },
+    {
+      "name": "Michael",
+      "surname": "Phillips"
+    },
+    {
+      "name": "Ed",
+      "surname": "Garretti"
+    },
+    {
+      "name": "Luis",
+      "surname": "Richardson"
+    },
+    {
+      "name": "Ed",
+      "surname": "Johnson"
+    },
+    {
+      "name": "Gavin",
+      "surname": "Garcia"
+    },
+    {
+      "name": "Taylor",
+      "surname": "Howard"
+    },
+    {
+      "name": "Orlando",
+      "surname": "Mareo"
+    },
+    {
+      "name": "Chloe",
+      "surname": "Taylor"
+    },
+    {
+      "name": "Jacob",
+      "surname": "Hill"
+    },
+    {
+      "name": "Paula",
+      "surname": "Gazz"
+    },
+    {
+      "name": "Lily",
+      "surname": "Miller"
+    },
+    {
+      "name": "Alexander",
+      "surname": "Kondratiev"
+    },
+    {
+      "name": "Katerina",
+      "surname": "Tyulina"
+    },
+    {
+      "name": "Alexey",
+      "surname": "Fellow"
+    },
+    {
+      "name": "Artem",
+      "surname": "Roganov"
+    },
+    {
+      "name": "Aleksandra",
+      "surname": "Galetskaya"
+    },
+    {
+      "name": "Viktoria",
+      "surname": "Bogdasarova"
+    },
+    {
+      "name": "Artem",
+      "surname": "Shulga"
+    },
+    {
+      "name": "Elisaveta",
+      "surname": "Lobanova"
+    },
+    {
+      "name": "Andrey",
+      "surname": "Khvostantsev"
+    },
+    {
+      "name": "Daria",
+      "surname": "Lee"
+    }
+  ],
+  "Second Group-BI": [
+    {
+      "name": "Olechka",
+      "surname": "Tikhonova"
+    },
+    {
+      "name": "Nikita",
+      "surname": "Ryndov"
+    },
+    {
+      "name": "Egor",
+      "surname": "Gerasimov"
+    },
+    {
+      "name": "Julia",
+      "surname": "Vasina"
+    },
+    {
+      "name": "Dasha",
+      "surname": "Prokofieva"
+    },
+    {
+      "name": "Camilla",
+      "surname": "Marieva"
+    },
+    {
+      "name": "Natalia",
+      "surname": "Kogan"
+    },
+    {
+      "name": "Viktoria",
+      "surname": "Zubareva"
+    },
+    {
+      "name": "Inga",
+      "surname": "Zhukova"
+    },
+    {
+      "name": "Julia",
+      "surname": "Samodurova"
+    },
+    {
+      "name": "Nikita",
+      "surname": "Voynov"
+    },
+    {
+      "name": "Tanya",
+      "surname": "Termeneva"
+    },
+    {
+      "name": "Victoria",
+      "surname": "Sahakian"
+    },
+    {
+      "name": "Victoria",
+      "surname": "Myxina"
+    },
+    {
+      "name": "Alexey",
+      "surname": "Osipov"
+    },
+    {
+      "name": "Kristina",
+      "surname": "Lapina"
+    },
+    {
+      "name": "Darya",
+      "surname": "Filatkina"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Kuznetsov"
+    },
+    {
+      "name": "Elena",
+      "surname": "Ivashechkina"
+    },
+    {
+      "name": "Roman",
+      "surname": "Nemchenko"
+    },
+    {
+      "name": "Victoria",
+      "surname": "Zubareva"
+    },
+    {
+      "name": "Anya",
+      "surname": "Galanova"
+    },
+    {
+      "name": "Nastya",
+      "surname": "Morozova"
+    },
+    {
+      "name": "Sergey",
+      "surname": "Sedov"
+    },
+    {
+      "name": "Anna",
+      "surname": "Parfenova"
+    },
+    {
+      "name": "Valeria",
+      "surname": "Tikhonova"
+    },
+    {
+      "name": "Darya",
+      "surname": "Sukhorukova"
+    },
+    {
+      "name": "Natasha",
+      "surname": "Grebenkova"
+    },
+    {
+      "name": "Polina",
+      "surname": "Ratnikova"
+    },
+    {
+      "name": "Alexander",
+      "surname": "Tumanov"
+    },
+    {
+      "name": "Oxana",
+      "surname": "Zhernovaya"
+    }
+  ],
+  "Third Group-PMI": [
+    {
+      "name": "Danil",
+      "surname": "Dubrovsky"
+    },
+    {
+      "name": "Nastya",
+      "surname": "Kabaeva"
+    },
+    {
+      "name": "Nikita",
+      "surname": "Tolbuzov"
+    },
+    {
+      "name": "Marat",
+      "surname": "Fatekhov"
+    },
+    {
+      "name": "Anna",
+      "surname": "Vorobyeva"
+    },
+    {
+      "name": "Vadim",
+      "surname": "Adyasov"
+    },
+    {
+      "name": "Daria",
+      "surname": "Smirnova"
+    },
+    {
+      "name": "Angelika",
+      "surname": "Va"
+    },
+    {
+      "name": "Masha",
+      "surname": "Burmagina"
+    },
+    {
+      "name": "Natalia",
+      "surname": "Adyasova"
+    },
+    {
+      "name": "Alena",
+      "surname": "Karzakova"
+    },
+    {
+      "name": "Daniel",
+      "surname": "Ivanov"
+    },
+    {
+      "name": "Nadja",
+      "surname": "Lindh"
+    },
+    {
+      "name": "Dmitry",
+      "surname": "Degtev"
+    },
+    {
+      "name": "Alexander",
+      "surname": "Borisov"
+    },
+    {
+      "name": "Ekaterina",
+      "surname": "Markovskaya"
+    },
+    {
+      "name": "Ekaterina",
+      "surname": "Ezhova"
+    },
+    {
+      "name": "Tatyana",
+      "surname": "Chistopolskaya"
+    },
+    {
+      "name": "Ekaterina",
+      "surname": "Voronkova"
+    },
+    {
+      "name": "Roma",
+      "surname": "Prytov"
+    },
+    {
+      "name": "Nikolay",
+      "surname": "Barabanov"
+    },
+    {
+      "name": "Kristina",
+      "surname": "Stockova"
+    },
+    {
+      "name": "Arina",
+      "surname": "Bolshova"
+    },
+    {
+      "name": "Elizaveta",
+      "surname": "Yavorskaya"
+    },
+    {
+      "name": "Vittorio",
+      "surname": "Bianchi"
+    },
+    {
+      "name": "Dario",
+      "surname": "Gianluca"
+    },
+    {
+      "name": "Masha",
+      "surname": "Bukovina"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Bocharov"
+    },
+    {
+      "name": "Anton",
+      "surname": "Vinogradov"
+    },
+    {
+      "name": "Lina",
+      "surname": "Danilina"
+    }
+  ]
+}
