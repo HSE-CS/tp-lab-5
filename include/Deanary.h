@@ -9,8 +9,8 @@ class Deanary {
  private:
     std::vector<Group*> groups;
     std::vector<Student*> students;
- public:
 
+ public:
     void create_students_from_file(std::string file_name);
     void creative_groups_from_file(std::string filemname);
     void add_marks_to_all();
