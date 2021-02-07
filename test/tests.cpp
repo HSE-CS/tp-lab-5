@@ -68,9 +68,10 @@ TEST(TestingDeanary, test7) {
   deanary.hireStudent();
   std::vector<Group*> v = deanary.getGroup();
   int i = 0;
-  //Student* b = v[i]->getStudent(i);
-  double c = 0.0;
-  EXPECT_EQ(c, 0.0);
+  std::vector<Student*> st = v[i]->getStudentsInGroup();
+  Student* b = st[i];
+  int c = 0;
+  EXPECT_EQ(c, b->getAmountMark());
 }
 TEST(TestingDeanary, test8) {
   Deanary deanary;
@@ -95,7 +96,8 @@ TEST(TestingDeanary, test9) {
   std::vector<Student*> st = v[i]->getStudentsInGroup();
   int size1 = st.size();
   deanary.fireStudent(0);
-  int size2 = st.size();
+  std::vector<Student*> st1 = v[i]->getStudentsInGroup();
+  int size2 = st1.size();
   EXPECT_EQ(size1 - 1, size2);
 }
 TEST(TestingDeanary, test10) {
@@ -108,7 +110,8 @@ TEST(TestingDeanary, test10) {
   std::vector<Student*> st = v[p]->getStudentsInGroup();
   int size1 = st.size();
   deanary.moveStudent(i, p);
-  int size2 = st.size();
+  std::vector<Student*> st1 = v[p]->getStudentsInGroup();
+  int size2 = st1.size();
   EXPECT_EQ(size2 - 1, size1);
 }
 
