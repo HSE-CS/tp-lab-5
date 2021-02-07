@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _INCLUDE_DEANERY_H
-#define _INCLUDE_DEANERY_H
+#ifndef INCLUDE_DEANERY_H_
+#define INCLUDE_DEANERY_H_
 #include <iostream>
 #include <vector>
 #include <string>
@@ -26,4 +26,4 @@ class Deanery {
      void addMarksToAll();
 };
 
-#endif  // _INCLUDE_DEANERY_H
+#endif  // INCLUDE_DEANERY_H_

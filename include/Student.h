@@ -1,6 +1,6 @@
 // Copyright 2021 Bogomazov
-#ifndef _INCLUDE_STUDENT_H
-#define _INCLUDE_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_ 
+#define INCLUDE_STUDENT_H_ 
 #include <vector>
 #include <string>
 // #include "../include/Group.h"
@@ -36,4 +36,4 @@ class Student {
     void setFio(std::string fio);
 };
 
-#endif  // _INCLUDE_STUDENT_H
+#endif  //  INCLUDE_STUDENT_H_

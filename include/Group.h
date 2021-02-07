@@ -1,10 +1,9 @@
 // Copyright 2021 Bogomazov
-#ifndef _INCLUDE_GROUP_H
-#define _INCLUDE_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include <vector>
 #include <string>
 #include "../include/Student.h"
-
 
 class Group{
  private:
@@ -14,7 +13,6 @@ class Group{
     std::vector<Student*> _students;
 
  public:
-    
     Group(std::string title,
         std::string spec,
         std::vector<Student*> students = std::vector<Student*>(),
@@ -39,4 +37,4 @@ class Group{
 };
 
 
-#endif  // _INCLUDE_GROUP_H
+#endif  //  INCLUDE_GROUP_H_
