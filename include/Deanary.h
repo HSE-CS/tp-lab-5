@@ -25,13 +25,13 @@ class Deanery {
   void hireStudents(std::ifstream &studentsFile);
   void addMarksToAll();
   stats& getStatistics();
-  void moveStudents(const Student& toMove, const Group& destination);
+  void moveStudents(Student* toMove, Group* destination);
   void fireStudents();
   void safeStaff(std::ofstream &groupFile, std::ofstream &studentFile);
-  void initHeads(const Group& Where);
-  void printToConsole(const Student& toPrint);
-  void printToConsole(const Group& toPrint);
-  void printToConsole(const stats& toPrint);
+  void initHeads(Group* Where);
+  void printToConsole(Student* toPrint);
+  void printToConsole(Group* toPrint);
+  void printToConsole(stats* toPrint);
   const std::vector<Group*> getGroups();
   void addNewGroup(Group* newGroup);
   ~Deanery();
