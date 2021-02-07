@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include <Group.h>
-#include <Deanery.h>
+#include <Deanary.h>
 
 class Student {
     friend class Group;
