@@ -23,8 +23,8 @@ class Student {
   double getAverageMark();
   bool isHeadOfGroup();
 
- friend class Group;
- friend class Deanery;
+  friend class Group;
+  friend class Deanery;
 };
 
 #endif  // INCLUDE_STUDENT_H_
