@@ -1,13 +1,14 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef DEANARY_H
-#define DEANARY_H
+#ifndef INCLUDE_DEANARY_H
+#define INCLUDE_DEANARY_H
 
 #include "Group.h"
 #include <fstream>
+#include <vector>
+#include <string>
 
-class Deanary
-{
+class Deanary {
  private:
     std::vector<Group*> groups;
  public:
@@ -23,4 +24,4 @@ class Deanary
     ~Deanary();
 };
 
-#endif // DEANARY_H
+#endif  // INCLUDE_DEANARY_H

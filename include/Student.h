@@ -1,15 +1,14 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef STUDENT_H
-#define STUDENT_H 
+#ifndef INCLUDE_STUDENT_H
+#define INCLUDE_STUDENT_H
 
 #include <iostream>
 #include <string>
 #include <vector>
 
 class Group;
-class Student
-{
+class Student {
  private:
     unsigned int Id;
     std::string FIO;
@@ -26,4 +25,4 @@ class Student
     ~Student();
 };
 
-#endif // STUDENT_H
+#endif  // INCLUDE_STUDENT_H

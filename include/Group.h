@@ -1,12 +1,12 @@
 // Copyright 2021 Stifeev Nikita
 
-#ifndef GROUP_H
-#define GROUP_H
-
+#ifndef INCLUDE_GROUP_H
+#define INCLUDE_GROUP_H
+#include <vector>
+#include <string>
 #include "Student.h"
 class Student;
-class Group
-{
+class Group {
  private:
     std::string title;
     std::string spec;
@@ -29,4 +29,4 @@ class Group
     ~Group();
 };
 
-#endif // GROUP_H
+#endif  // INCLUDE_GROUP_H

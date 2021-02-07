@@ -2,8 +2,7 @@
 
 #include "Deanary.h"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     std::string fileGroups = "groups.txt";
     std::string fileStudents = "students.txt";
     Deanary dean;
@@ -14,6 +13,6 @@ int main(int argc, char* argv[])
     for (int i = 0; i < res.size(); i++) {
         std::cout << res[i] << " ";
     }
-    dean.save("res.txt");
+    dean.save("result.txt");
     return 0;
 }
