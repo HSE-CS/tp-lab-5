@@ -1,10 +1,10 @@
 // Copyright 2021 Schenikova
 
-#include <gtest/gtest.h>
 #include <string>
 #include "Group.h"
 #include "Student.h"
 #include "Deanary.h"
+#include "gtest/gtest.h"
 
 TEST(StudentTest, test1) {
   unsigned int id = 12345678;
