@@ -24,7 +24,7 @@ TEST(TestingDeanary, test3) {
   deanary.createGroups();
   std::string a = "15PMI-2";
   std::string b = deanary.getTitleGroup(1);
-  EXPECT_STREQ(a, b);
+  EXPECT_EQ(a, b);
 }
 TEST(TastingDeanary, test4) {
   Deanary deanary;
@@ -45,7 +45,7 @@ TEST(TestingDeanary, test6) {
   deanary.createGroups();
   deanary.hireStudent();
   bool a = false;
-  bool b = deanary.getGroups(1);
+  bool b = deanary.getGroup(1);
   EXPECT_EQ(a, b);
 }
 TEST(TestingDeanary, test7) {
