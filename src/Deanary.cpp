@@ -53,7 +53,7 @@ void Deanary::set_random_marks(unsigned int number) {
     for (Group* group : this->groups) {
         for (Student* student : group->getStudents()) {
             for (unsigned int i = 0; i < number; i++) {
-                student->addMark(rand_r() % 10 + 1);
+                student->addMark(rand() % 10 + 1);
             }
         }
     }
