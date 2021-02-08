@@ -1,5 +1,7 @@
-#ifndef Group_h
-#define Group_h
+// Copyright [2020] <Olesya Nikolaeva>
+
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include "Deanary.h"
 #include "Student.h"
@@ -9,15 +11,16 @@ class Student;
 class Group {
     friend class Deanary;
     friend class Student;
-private:
+
+ private:
     std::string title;
     std::string spec;
     std::vector <Student*> students;
     Student* head;
-public:
+
+ public:
     Group() {}
-    Group(std::string name);
-    void addSpeciality(std::string speciality);
+    Group(std::string name, std::string speciality);
     void addStudent(Student* newStudent);
     void chooseHead();
     Student* find(std::string key);
@@ -25,4 +28,4 @@ public:
     void goodbyeStudent(std::string id);
 };
 
-#endif /* Group_h */
+#endif // INCLUDE_GROUP_H_

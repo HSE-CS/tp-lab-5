@@ -1,16 +1,13 @@
+// Copyright [2020] <Olesya Nikolaeva>
+
 #include "Group.h"
 #include <sstream>
 
 
-Group::Group(std::string name) {
+Group::Group(std::string name, std::string speciality) {
     this->title = new char[name.length() + 1];
-    //snprintf(this->title, name.length() + 1, "%s", name.c_str());
     this->title = name;
-}
-
-void Group::addSpeciality(std::string speciality) {
     this->spec = new char[speciality.length() + 1];
-    //snprintf(this->spec, speciality.length() + 1, "%s", speciality.c_str());
     this->spec = speciality;
 }
 
@@ -20,7 +17,6 @@ void Group::addStudent(Student* newStudent) {
 }
 
 void Group::chooseHead() {
-    srand(0);
     int index = rand() % this->students.size();
     this->head = this->students[index];
 }

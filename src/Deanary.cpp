@@ -1,13 +1,13 @@
-#include "Daenary.h"
+// Copyright [2020] <Olesya Nikolaeva>
+
+#include "Deanary.h"
 
 void Deanary::createGroups(std::ifstream file) {
     std::string str, name, speciality;
     while (getline(file, str)) {
-        name = str.substr(0, str.find(" ") - 1);
+        name = str.substr(0, str.find(" "));
         speciality = str.substr(str.find(" ") + 1);
-        Group newOne(name);
-        newOne.addSpeciality(speciality);
-        this->groups.push_back(&newOne);
+        groups.push_back(new Group(name, speciality));
     }
 }
 
@@ -17,8 +17,7 @@ void Deanary::readStudents(std::ifstream file) {
         groupName = str.substr(0, str.find("ID:") - 1);
         ID = str.substr(str.find("ID:") + 3, str.find("FIO:") - 1);
         FIO = str.substr(str.find("FIO:") + 4);
-        Student newOne(ID, FIO);
-        addStudents(&newOne, groupName);
+        findGroup(groupName)->addStudent(new Student(ID, FIO));
     }
 }
 
@@ -45,7 +44,7 @@ void Deanary::addMarksToAll() {
 void Deanary::getStatistic() {
     for (auto i : groups) {
         std::cout << i->title << "'s average mark is "
-        << i->averageGroupMark() << "/n" << std::endl;
+        << i->averageGroupMark() << "\n" << std::endl;
         for (auto j : i->students) {
             std::cout << j->fio << "'s average mark is " <<
             j->averageMark() << std::endl;
@@ -59,22 +58,52 @@ void Deanary::moveStudents(Student* student, std::string groupName) {
     addStudents(student, groupName);
 }
 
-void saveStaff();
+void Deanary::saveStaff() {
+    std::ofstream file("output.txt");
+    if (file.is_open()) {
+        for (auto i : groups) {
+            file << "\n" << i->title << "'s average mark is "
+            << i->averageGroupMark() << "\n" << std::endl;
+            file << i->head->fio << " is a head of a group\n"
+            << std::endl;
+            for (auto j : i->students) {
+                file << j->fio << "'s average mark is " <<
+                j->averageMark() << std::endl;
+            }
+        }
+    }
+    file.close();
+}
 
-void Deanary::initHeads(std::string, std::string) {
+void Deanary::initHeads() {
     for (auto group : groups) {
         group->chooseHead();
     }
 }
 
-void fireStudents(std::string, std::string);
+void Deanary::fireStudents(Student* unlucky) {
+    auto index = std::find(unlucky->group->students.begin(),
+                           unlucky->group->students.end(), unlucky);
+    unlucky->group->students.erase(index);
+}
 
-Student* getStudent(std::string, std::string);
-
-Group* Deanary::getGroup(std::string name) {
-    for (auto i : groups) {
+Group* Deanary::findGroup(std::string name) {
+    for (auto i : this->groups) {
         if (i->title == name) {
             return i;
+        }
+    }
+    return 0;
+}
+
+Student* Deanary::findStudent(std::string name) {
+    for (auto i : this->groups) {
+        for (auto j : i->students) {
+            if (j->fio == name) {
+                while (i->head->fio == name)
+                    i->chooseHead();
+                return j;
+            }
         }
     }
     return 0;

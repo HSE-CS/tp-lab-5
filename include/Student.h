@@ -1,5 +1,7 @@
-#ifndef Student_h
-#define Student_h
+// Copyright [2020] <Olesya Nikolaeva>
+
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include "Group.h"
 
@@ -8,17 +10,20 @@ class Group;
 class Student {
     friend class Deanary;
     friend class Group;
-private:
+
+ private:
     std::string id;
     std::string fio;
     Group* group;
     std::vector <uint64_t> marks;
-public:
+
+ public:
     Student() {}
     Student(std::string ID, std::string FIO);
     void groupIs(Group* G);
     void addMark(uint64_t mark);
-    float averageMark();
+    int averageMark();
+    std::string getGroup();
 };
 
-#endif /* Student_h */
+#endif // INCLUDE_STUDENT_H_
