@@ -4,6 +4,7 @@
 #define INCLUDE_DEANARY_H_
 #include <vector>
 #include <fstream>
+#include <string>
 #include "Group.h"
 #include "Student.h"
 

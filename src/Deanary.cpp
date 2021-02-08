@@ -55,8 +55,7 @@ bool Deanary::createStudentsFromFile(std::string path) {
         Group* g = getGroupByTitle(groupTitle);
         if (g) {
             createStudent(fio, g);
-        }
-        else {
+        } else {
             std::cout << groupTitle;
             return EXIT_FAILURE;
         }
