@@ -36,7 +36,7 @@ student_1.add_mark(5);
 student_1.add_mark(4);
 student_1.add_mark(3);
 student_1.add_mark(2);
-double res = 2;
+double res = 5.5;
 EXPECT_EQ(res, student_1.get_average_mark());
 }
 
