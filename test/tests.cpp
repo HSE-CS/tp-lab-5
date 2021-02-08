@@ -43,8 +43,8 @@ TEST(test, test3) {
 }
 
 TEST(test, test4) {
-    auto slist = Deanary::createStudents(3);
-    EXPECT_EQ(slist[0]->getGroup(), nullptr);
+    Student s1(0, "Steve Rambo");
+    EXPECT_EQ(s1, nullptr);
 }
 
 TEST(test, test5) {
