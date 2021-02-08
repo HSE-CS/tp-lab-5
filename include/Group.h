@@ -53,7 +53,7 @@ class Group {
 
     unsigned int getTitle() const;
 
-    bool containsStudent(const std::string &name) const;
+    bool containsStudent(std::string name);
 
     bool isEmpty() const;
 };

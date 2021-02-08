@@ -35,22 +35,22 @@ TEST(test, test4) {
 
 TEST(test, test5) {
     Deanary d;
-    Group* g = d.createGroup("english language", 24);
-    d.hireStudent(300, "Шарунов Евгений Вадимович", "Programming", 24);
-    EXPECT_EQ(g->containsStudent(300), true);
+    Group* g = d.createGroup("english language", 90);
+    d.hireStudent(302, "Шафин Евгений Вадимович", "english language", 90);
+    EXPECT_EQ(g->containsStudent(302), true);
 }
 
 TEST(test, test6) {
     Deanary d;
-    Group* g = d.createGroup("english language", 24);
-    d.hireStudent(300, "Шарунов Евгений Вадимович", "Programming", 24);
-    EXPECT_EQ(g->containsStudent("Шарунов Евгений Вадимович"), true);
+    Group* g = d.createGroup("english language", 19);
+    d.hireStudent(300, "Шарунов Евгений Вадимович", "english language", 24);
+    EXPECT_EQ(g->containsStudent("Шарунов Евгений Вадимович"), false);
 }
 
 TEST(test, test7) {
-Deanary d;
-    Group* g = d.createGroup("english language", 23);
-    d.hireStudent(300, "Шарунов Евгений Вадимович", "Programming", 24);
-    d.transferStudent(300, 23);
+    Deanary d;
+    Group* g = d.createGroup("english language", 21);
+    d.hireStudent(303, "Шаломов Евгений Вадимович", "Programming", 25);
+    d.transferStudent(303, 25);
     EXPECT_EQ(g->containsStudent(300), true);
 }

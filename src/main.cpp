@@ -17,6 +17,9 @@ int main() {
     d.transferStudent(22, 4);
     d.transferStudent(60, 1);
     d.saveStaff("Dataset.txt");
+    Group *g2 = d.createGroup("english language", 90);
+    d.hireStudent(302, "Шафин fy tt", "english language", 90);
+    std::cout << g2->containsStudent(302);
     std::cout << d.getStat();
     return 0;
 }

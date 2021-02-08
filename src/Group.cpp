@@ -53,7 +53,7 @@ bool Group::isEmpty() const {
     return students.empty();
 }
 
-bool Group::containsStudent(const std::string &name) const {
+bool Group::containsStudent(std::string name)  {
     return getStudent(name) != nullptr;
 }
 
