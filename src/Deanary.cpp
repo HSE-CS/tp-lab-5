@@ -17,7 +17,7 @@ void Deanary::addRandomMarks(int16_t amount) {
         for (auto st = (*it)->students.begin();
             st != (*it)->students.end(); ++st) {
             for (int i = 0; i < amount; ++i) {
-                (*st)->addMark(20 % 11); // S1 kill cpplint
+                (*st)->addMark(20 % 11);  // S1 kill cpplint
             }
         }
     }
