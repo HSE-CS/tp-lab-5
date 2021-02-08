@@ -39,7 +39,7 @@ TEST(test, test3) {
     Student s1(0, "Mark Wolff");
     g1->addStudent(s1);
     Deanary::changeGroup(s1, *(d.getGroups()[1]));
-    EXPECT_EQ((*g2).getTitle(), *(s1.getGroup())->getTitle());
+    EXPECT_EQ((*g2).getTitle(), s1.getGroup()->getTitle());
 }
 
 //TEST(test, test4) {
