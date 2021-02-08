@@ -6,6 +6,8 @@
 #include "vector"
 #include "Group.h"
 
+class Group;
+
 class Student {
   friend class Group;
   friend class Deanary;
