@@ -6,6 +6,8 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
+#include <vector>
+#include <string>
 #include "Student.h"
 
 
@@ -19,19 +21,20 @@ class Group {
     std::vector<Student *> students;
     std::string spec;
     Student *head;
-    Student *getStudent(const std::string& name) const;
+
+    Student *getStudent(const std::string &name) const;
 
     Student *getStudent(unsigned int id) const;
 
-    Student* createStudent(unsigned int id,std::string name);
+    Student *createStudent(unsigned int id, std::string name);
 
     void chooseHead();
 
     void removeStudent(Student *);
 
     Group(std::string valSpec, int valTitle);
-    void addStudent(Student *);
 
+    void addStudent(Student *);
 
 
  public:
@@ -49,10 +52,10 @@ class Group {
     std::string getSpec() const;
 
     unsigned int getTitle() const;
-    bool containsStudent(const std::string& name) const;
+
+    bool containsStudent(const std::string &name) const;
 
     bool isEmpty() const;
 };
-
 
 #endif  // INCLUDE_GROUP_H_

@@ -27,10 +27,7 @@ class Deanary {
     void saveStaff(const std::string&) const;
     void initHeads();
     Group* createGroup(std::string valSpec, int valTitle);
-    Student* hireStudent(unsigned int id,std::string,std::string,int);
-
-
-
+    Student* hireStudent(unsigned int id, std::string, std::string, int);
 };
 
 #endif  // INCLUDE_DEANARY_H_

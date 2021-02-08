@@ -14,18 +14,27 @@ class Student {
  private:
     unsigned int id;
     std::string fio;
-    Group* group;
+    Group *group;
     bool isHead;
-    std::vector <int> marks;
-    Student(unsigned int id, std::string,std::vector <int>, Group* = nullptr);
-    Student(unsigned int id, std::string, Group* = nullptr);
-    void addToGroup(Group* group);
+    std::vector<int> marks;
+
+    Student(unsigned int id, std::string, std::vector<int>, Group * = nullptr);
+
+    Student(unsigned int id, std::string, Group * = nullptr);
+
+    void addToGroup(Group *group);
+
     void addMark(int);
+
     void addHead();
+
  public:
     double getAvrMark() const;
+
     bool isHeadGroup() const;
+
     friend class Group;
+
     friend class Deanary;
 };
 

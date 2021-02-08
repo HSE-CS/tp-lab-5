@@ -4,7 +4,7 @@
 //
 #include <iostream>
 #include <algorithm>
-#include <stdlib.h>
+#include <cstdlib>
 #include "Deanary.h"
 #include "Group.h"
 #include "Student.h"
