@@ -52,6 +52,6 @@ TEST(DeaneryTest, test9) {
 }
 TEST(DeaneryTest, test10) {
   Deanary D;
-  D.createGroups("../src/groups.txt");
+  D.createGroups("src/groups.txt");
   EXPECT_EQ(8, D.getCntGroups());
 }
