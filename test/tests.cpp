@@ -22,7 +22,7 @@ EXPECT_EQ("Никита Мушка", student_1.get_fio());
 TEST(Student_Test, test4) {
 Student student_1(1, "Мияги Эндшпиль");
 double res = 0;
-EXPECT_EQ(res, student_1.average_mark());
+EXPECT_EQ(res, student_1.get_average_mark());
 }
 
 TEST(Student_Test, test5) {
@@ -36,7 +36,7 @@ student_1.add_mark(4);
 student_1.add_mark(3);
 student_1.add_mark(2);
 double res = 2;
-EXPECT_EQ(res, student_1.average_mark());
+EXPECT_EQ(res, student_1.get_average_mark());
 }
 
 TEST(Group_Test, test6) {
@@ -52,7 +52,7 @@ EXPECT_EQ("БИ3", group_1.get_title());
 TEST(Group_Test, test8) {
 Group group_1("ПИ0", "прикладная математика и информатика");
 double res = 0;
-EXPECT_EQ(res, group_1.average_mark());
+EXPECT_EQ(res, group_1.average_mark_group());
 }
 
 TEST(Deanary_Test, test9) {
