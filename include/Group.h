@@ -3,6 +3,8 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
+#include <vector>
+#include <string>
 #include "Deanary.h"
 #include "Student.h"
 
@@ -27,5 +29,6 @@ class Group {
     float averageGroupMark();
     void goodbyeStudent(std::string id);
 };
+
 
 #endif // INCLUDE_GROUP_H_

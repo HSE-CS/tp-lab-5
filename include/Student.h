@@ -3,6 +3,8 @@
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
+#include <vector>
+#include <string>
 #include "Group.h"
 
 class Group;
@@ -25,5 +27,6 @@ class Student {
     int averageMark();
     std::string getGroup();
 };
+
 
 #endif // INCLUDE_STUDENT_H_

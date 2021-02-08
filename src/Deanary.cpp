@@ -37,7 +37,7 @@ void Deanary::addStudents(Student* newOne, std::string groupName) {
 void Deanary::addMarksToAll() {
     for (auto group : this->groups) {
         for (auto student : group->students)
-            student->addMark(rand() % 11);
+            student->addMark(rand_r() % 11);
     }
 }
 

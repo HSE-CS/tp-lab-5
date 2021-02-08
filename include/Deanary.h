@@ -1,17 +1,17 @@
 // Copyright [2020] <Olesya Nikolaeva>
 
-#ifndef INCLUDE_DAENARY_H_
-#define INCLUDE_DAENARY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <string.h>
-#include <vector>
-#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <vector>
+#include <fstream>
 #include "Group.h"
 
 class Group;
@@ -39,4 +39,5 @@ class Deanary {
     Student* findStudent(std::string name);
 };
 
-#endif // INCLUDE_DAENARY_H_
+
+#endif // INCLUDE_DEANARY_H_

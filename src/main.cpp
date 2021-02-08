@@ -4,15 +4,15 @@
 
 int main() {
     srand(0);
-    std::ifstream file("/Users/lesyanikolaeva/Documents/lab5/lab5/groups_list.txt");
+    std::ifstream file("groups_list.txt");
     Deanary newDea;
     newDea.createGroups(std::move(file));
     Student A("002", "Pavlov I. V.");
     A.addMark(10);
     A.addMark(10);
     newDea.addStudents(&A, "17FM");
-    std::ifstream fileWithStudents("/Users/lesyanikolaeva/Documents/lab5/lab5/students_list_1.txt");
-    std::ifstream fileWithStudents2("/Users/lesyanikolaeva/Documents/lab5/lab5/students_list_2.txt");
+    std::ifstream fileWithStudents("students_list_1.txt");
+    std::ifstream fileWithStudents2("students_list_2.txt");
     newDea.readStudents(std::move(fileWithStudents));
     newDea.readStudents(std::move(fileWithStudents2));
     for (int i = 0; i < 5; i++)

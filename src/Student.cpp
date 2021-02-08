@@ -27,5 +27,5 @@ int Student::averageMark() {
 }
 
 std::string Student::getGroup() {
-    return name->group->title;
+    return this->group->title;
 }
