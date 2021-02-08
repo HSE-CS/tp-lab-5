@@ -9,7 +9,7 @@ TEST(DeaneryTest, test1) {
     Deanery deanery{};
     deanery.createStudent(1, "Ivan Ivanov");
     deanery.createGroup("19PMI-2", "PMI");
-    deanery.hireStudents();
+    deanery.hireStudent(0);
     EXPECT_EQ(1, deanery.getGroups()->size());
 }
 
@@ -18,7 +18,8 @@ TEST(DeaneryTest, test2) {
     deanery.createStudent(1, "Ivan Ivanov");
     deanery.createStudent(2, "Petr Petrov");
     deanery.createGroup("19PMI-2", "PMI");
-    deanery.hireStudents();
+    deanery.hireStudent(0);
+    deanery.hireStudent(1);
     int n = 0;
     for (auto &group : *deanery.getGroups()) {
         n += group->getStudents()->size();
@@ -31,10 +32,11 @@ TEST(DeaneryTest, test3) {
     deanery.createStudent(1, "Ivan Ivanov");
     deanery.createStudent(2, "Petr Petrov");
     deanery.createGroup("19PMI-2", "PMI");
-    deanery.hireStudents();
-    int n = 2;
+    deanery.createGroup("19PMI-1", "PMI");
+    deanery.hireStudent(0);
+    deanery.hireStudent(1);
     for (auto &group : *deanery.getGroups()) {
-        EXPECT_EQ(2, group->getStudents()->size());
+        EXPECT_EQ(1, group->getStudents()->size());
     }
 }
 
@@ -47,7 +49,10 @@ TEST(DeaneryTest, test4) {
     deanery.createGroup("19PMI-1", "PMI");
     deanery.createGroup("19PMI-2", "PMI");
     deanery.createGroup("19PMI-3", "PMI");
-    deanery.hireStudents();
+    deanery.hireStudent(0);
+    deanery.hireStudent(1);
+    deanery.hireStudent(2);
+    deanery.hireStudent(2);
     int st = 0;
     int n[]{ 1, 1, 2 };
     for (auto &group : *deanery.getGroups()) {
