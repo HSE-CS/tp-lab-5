@@ -30,7 +30,7 @@ TEST(Test, test4) {
   Student* student = new Student(1, "Lukicheva Polina Aleksandrovna");
   Group* gr = new Group("SoftwareEngineering", "19SE1");
   gr->addStudent(student);
-  EXPECT_EQ(gr->containsStudent(student), student);
+  EXPECT_EQ(gr->containsStudent(student), true);
 }
 
 TEST(Test, test5) {
