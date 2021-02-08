@@ -15,14 +15,14 @@ TEST(Test, test1) {
 TEST(Test, test2) {
   Student st1(1, "Lukicheva Polina Aleksandrovna");
   Group gr("SoftwareEngineering", "19SE1");
-  gr.addStudent(st1);
+  gr.addStudent(&st1);
   EXPECT_EQ(containsStudent(st1*), true);
 }
 
 TEST(Test, test3) {
   Student student(1, "Lukicheva Polina Aleksandrovna");
   Group gr("SoftwareEngineering", "19SE1");
-  gr.addStudent(student);
+  gr.addStudent(&student);
   EXPECT_EQ(gr.getStudent(1), "Lukicheva Polina Aleksandrovna");
 }
 
@@ -38,8 +38,8 @@ TEST(Test, test5) {
   Student student2(2, "Katanova Evgeniya Ilinichna");
   student.addmark(7);
   Group gr("SoftwareEngineering", "19SE1");
-  gr.addStudent(student1);
-  gr.addStudent(student2);
+  gr.addStudent(&student1);
+  gr.addStudent(&student2);
   EXPECT_EQ(gr.getAverageMark(), 7);
 }
 
@@ -51,7 +51,7 @@ TEST(Test, test6) {
 TEST(Test, test7) {
   Student student(1, "Lukicheva Polina Aleksandrovna");
   Group gr("SoftwareEngineering", "19SE1");
-  gr.addStudent(student);
+  gr.addStudent(&student);
   EXPECT_EQ(gr.isEmpty, false);
 }
 
@@ -59,15 +59,15 @@ TEST(Test, test8) {
   Deanary deanary;
   Student student(1, "Lukicheva Polina Aleksandrovna");
   Group gr("SoftwareEngineering", "19SE1");
-  gr.addStudent(student);
-  deanary.addGroup(*gr);
+  gr.addStudent(&student);
+  deanary.addGroup(&gr);
   EXPECT_EQ(deanary.getGroup("19SE1")->isEmpty(), false);
 }
 
 TEST(Test, test9) {
   Deanary deanary;
   Group gr("SoftwareEngineering", "19SE1");
-  deanary.addGroup(*gr);
+  deanary.addGroup(&gr);
   EXPECT_EQ(deanary.getGroup("19SE1")->isEmpty(), true);
 }
 
