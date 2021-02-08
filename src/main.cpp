@@ -3,7 +3,6 @@
 #include "Deanary.h"
 
 int main() {
-    srand(0);
     std::ifstream file("groups_list.txt");
     Deanary newDea;
     newDea.createGroups(std::move(file));

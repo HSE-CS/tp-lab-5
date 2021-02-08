@@ -17,7 +17,8 @@ void Group::addStudent(Student* newStudent) {
 }
 
 void Group::chooseHead() {
-    int index = rand_r() % this->students.size();
+    std::srand(time(nullptr));
+    int index = rand() % this->students.size();
     this->head = this->students[index];
 }
 
