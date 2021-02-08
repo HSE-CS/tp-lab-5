@@ -1,6 +1,7 @@
 // Copyright 2020 GHA Test Team
 
 #include <gtest/gtest.h>
+#include "Deanary.h"
 #include <string>
 
 TEST(Student_Test, test1) {
