@@ -25,7 +25,6 @@ class Student {
   double get_average_mark();
   int get_id();
   std::string get_fio();
-
 };
 
 #endif  // INCLUDE_STUDENT_H_

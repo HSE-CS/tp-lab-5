@@ -11,7 +11,7 @@ Group::Group(std::string title, std::string spec) {
 
 double Group::get_avarage_mark() {
   int res{0};
-  for (auto tmp: students){
+  for (auto tmp : students) {
     res += tmp->get_average_mark();
   }
   return is_empty() ? 0 : res / students.size();
@@ -19,7 +19,8 @@ double Group::get_avarage_mark() {
 
 void Group::remove_student(Student *student) {
   if (contains_student(student->id))
-    students.erase(std::remove(students.begin(), students.end(), student), students.end());
+    students.erase(std::remove(students.begin(),
+                   students.end(), student), students.end());
 }
 
 bool Group::is_empty() {
@@ -32,7 +33,7 @@ void Group::choose_head() {
 }
 
 bool Group::contains_student(int id) {
-  for (auto tmp: students) {
+  for (auto tmp : students) {
     if (tmp->get_id() == id)
       return true;
   }
@@ -53,7 +54,7 @@ std::string Group::get_spec() {
 }
 
 Student* Group::get_student(int id) {
-  for (auto tmp: students) {
+  for (auto tmp : students) {
     if (tmp->get_id() == id)
       return tmp;
   }

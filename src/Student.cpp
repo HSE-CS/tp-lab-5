@@ -10,7 +10,7 @@ Student::Student(int id, std::string fio, Group* group) {
 
 double Student::get_average_mark() {
   int res{0};
-  for (int tmp: marks){
+  for (int tmp: marks) {
     res += tmp;
   }
   return marks.empty() ? 0 : res / marks.size();

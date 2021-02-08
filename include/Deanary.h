@@ -3,6 +3,7 @@
 #define INCLUDE_DEANARY_H_
 
 #include <vector>
+#include <string>
 #include "Group.h"
 
 class Deanary {

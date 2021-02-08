@@ -1,4 +1,4 @@
-// Copyright 2021 
+// Copyright 2021
 
 #include "Deanary.h"
 #include "Student.h"
@@ -20,35 +20,36 @@ void Deanary::create_group_from_file(std::string file_name) {
     create_group(title, spec);
     while (getline(input_file, fio, ' ')) {
       getline(input_file, id);
-      groups[groups.size() - 1]->add_student(new Student(atoi(id.c_str()), fio));
+      groups[groups.size() - 1]->
+             add_student(new Student(atoi(id.c_str()), fio));
     }
   }
 }
 
 void Deanary::add_marks_to_all() {
-  for (auto group: groups) {
-    for (auto student: group->students) {
+  for (auto group : groups) {
+    for (auto student : group->students) {
       student->add_mark(std::rand() % 11);
     }
   }
 }
 
 void Deanary::init_heads() {
-  for (auto group: groups) {
+  for (auto group : groups) {
       group->choose_head();
   }
 }
 
 void Deanary::hire_student(Student* student, std::string title) {
-  for (auto group: groups) {
-    if (group->title == title) 
+  for (auto group : groups) {
+    if (group->title == title)
       group->add_student(student);
   }
 }
 
 void Deanary::fire_student(Student* stud) {
-  for (auto group: groups) {
-    for (auto student: group->students) {
+  for (auto group : groups) {
+    for (auto student : group->students) {
       if (student->get_id() == stud->get_id())
         group->remove_student(student);
     }
@@ -69,7 +70,7 @@ void Deanary::move_student(int id, std::string title) {
 }
 
 Group* Deanary::get_group(std::string title) {
-  for (auto group: groups) {
+  for (auto group : groups) {
     if (group->get_title() == title)
       return group;
   }
@@ -81,10 +82,10 @@ bool comp(Student* st1, Student* st2) {
 }
 
 void Deanary::get_statistics() {
-  for (auto group: groups) {
+  for (auto group : groups) {
     sort(group->students.begin(), group->students.end(), comp);
     for (auto student: group->students) {
-      std::cout << student->fio << '\t' << 
+      std::cout << student->fio << '\t' <<
       student->get_average_mark() << std::endl;
     }
     std::cout << std::endl;
