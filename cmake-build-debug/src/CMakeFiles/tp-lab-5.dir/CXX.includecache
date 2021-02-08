@@ -39,6 +39,14 @@ vector
 -
 
 /home/toliman/Projects/HSE-CS/tp-lab-5/src/Deanary.cpp
+random
+-
 ../include/Deanary.h
 /home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
+
+/home/toliman/Projects/HSE-CS/tp-lab-5/src/Group.cpp
+../include/Group.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+../include/Student.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
 

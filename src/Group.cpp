@@ -75,8 +75,27 @@ void Group::deleteStudent(Student &student) {
 void Group::str() {
     std::string out = "==========\nGroup: " + this->getTitle() + '\n';
     for (auto s : this->students) {
+        if (s == this->getHead()) {
+            out += "<super> ";
+        }
         out += s->getFio() + '\n';
     }
     out += "==========\n";
     std::cout << out;
+}
+
+std::vector<Student *> Group::getStudents() {
+    return this->students;
+}
+
+void Group::setFileName(std::string file) {
+    this->fileName = std::move(file);
+}
+
+std::string Group::getFileName() {
+    return this->fileName;
+}
+
+Student *Group::getHead() {
+    return this->head;
 }

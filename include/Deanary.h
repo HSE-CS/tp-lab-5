@@ -23,6 +23,22 @@ private:
 public:
     static std::vector<Student *> createStudents(int count);
 
+    void createGroup(const std::string &groupFile);
+
+    std::vector<Group *> getGroups();
+
+    static void addMark(Student &student, int count);
+
+    void getStats();
+
+    static void changeGroup(Student &student, Group &group);
+
+    void removeFoolStudents();
+
+    void save();
+
+    void initializeHeadChoose();
+
 };
 
 

@@ -23,16 +23,16 @@ signed main() {
 //    print(s.getGroup()->getTitle());
 
     Student s1(0, "Steve Rambo");
-    Student s2(1, "Mark Wolff");
-    Student s3(2, "Billy Harrington");
-    Student s4(3, "Van Darkholme");
-
-    Group g1("Dungeon");
-    Group g2("GYM");
-    Group g3("Leatherclub");
-
-    Deanary d1;
-    auto s = Deanary::createStudents(5);
+//    Student s2(1, "Mark Wolff");
+//    Student s3(2, "Billy Harrington");
+//    Student s4(3, "Van Darkholme");
+//
+//    Group g1("Dungeon");
+//    Group g2("GYM");
+//    Group g3("Leatherclub");
+//
+//    Deanary d1;
+//    auto s = Deanary::createStudents(5);
 //    s[0]->str();
 //    print(s[1]);
 //    print(s[2]);
@@ -52,6 +52,20 @@ signed main() {
 //    g1.deleteStudent(s1);
 //    g1.str();
 //    print(s1.getGroup()->getTitle());
+
+    auto d = new Deanary();
+    d->createGroup("group-1.txt");
+    d->createGroup("group-2.txt");
+//
+//    auto s = d->getGroups()[0]->getStudents()[0];
+//    print(s->getGroup()->getTitle());
+//    d->changeGroup(*s, *d->getGroups()[1]);
+//    print(s->getGroup()->getTitle());
+//    d->getStats();
+    d->initializeHeadChoose();
+    d->getGroups()[0]->str();
+//    d->save();
+
 
     return 0;
 }

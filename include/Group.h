@@ -15,6 +15,7 @@ class Group {
 private:
     std::string title;
     std::string spec;
+    std::string fileName;
     std::vector<Student *> students;
     Student *head;
 public:
@@ -26,9 +27,15 @@ public:
 
     void setTitle(std::string titleParam);
 
+    void setFileName(std::string file);
+
+    std::string getFileName();
+
     void addStudent(Student &student);
 
     void chooseHead();
+
+    Student *getHead();
 
     Student *searchStudent(const std::string &fioField);
 
@@ -37,6 +44,8 @@ public:
     float getMiddleMark();
 
     void deleteStudent(Student &student);
+
+    std::vector<Student *> getStudents();
 
     void str();
 };
