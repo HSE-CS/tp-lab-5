@@ -37,13 +37,13 @@ void Group:: choose_head() {
     }
 }
 
-std::string Group:: search_student(int search_id) {
+Student *Group:: search_student(unsigned int search_id) {
     for (auto* student : students) {
         if (student->id == search_id)
-            return student->get_fio();
+            return student;
     }
 
-    return "Not found";
+    return nullptr;
 }
 
 bool Group::search_student(const std::string& search_fio) {
