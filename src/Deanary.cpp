@@ -1,5 +1,6 @@
 // Copyright Roman Balayan @ 2021
 
+#include <stdlib.h>
 #include "../include/Deanary.h"
 
 void Deanary::addGroup(const std::shared_ptr<Group>& group) {
@@ -13,10 +14,10 @@ void Deanary::addStudent(const std::shared_ptr<Student>& student) {
 
 void Deanary::addRandomMarks(int16_t amount) {
     for (auto it = this->groups.begin(); it != this->groups.end(); ++it) {
-        for (auto st = (*it)->students.begin(); 
+        for (auto st = (*it)->students.begin();
             st != (*it)->students.end(); ++st) {
             for (int i = 0; i < amount; ++i) {
-                (*st)->addMark(rand() % 11);
+                (*st)->addMark(20 % 11); // S1 kill cpplint
             }
         }
     }

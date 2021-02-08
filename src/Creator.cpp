@@ -2,7 +2,7 @@
 
 #include "../include/Creator.h"
 
-std::unique_ptr<Deanary> Creator::fabricMethod(const std::string filename) {
+std::unique_ptr<Deanary> Creator::fabricMethod(std::string filename) {
     std::ifstream inp(filename);
     std::unique_ptr<Deanary> deanary(new Deanary);
     std::string line;

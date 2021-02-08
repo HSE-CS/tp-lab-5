@@ -7,7 +7,7 @@
 int main() {
     std::cout << "Hello" << std::endl;
     Creator creator;
-    auto deanary = creator.fabricMethod();
+    auto deanary = creator.fabricMethod("./data.txt");
 
     deanary->printStatistics();
     deanary->addRandomMarks();
