@@ -42,17 +42,26 @@ TEST(test, test3) {
     EXPECT_EQ((*g2).getTitle(), s1.getGroup()->getTitle());
 }
 
-//TEST(test, test4) {
-//
-//}
-//
-//TEST(test, test5) {
-//
-//}
-//
-//TEST(test, test6) {
-//
-//}
+TEST(test, test4) {
+    auto slist = Deanary::createStudents(3);
+    EXPECT_EQ(slist[0]->getGroup(), nullptr);
+}
+
+TEST(test, test5) {
+    Deanary d;
+    d.createGroup("group-1.txt");
+    auto g1 = d.getGroups()[0];
+    float m = g1->getMiddleMark();
+    EXPECT_GE(m, 0);
+}
+
+TEST(test, test6) {
+    Deanary d;
+    d.createGroup("group-1.txt");
+    auto g1 = d.getGroups()[0];
+    float m = g1->getMiddleMark();
+    EXPECT_LE(m, 0);
+}
 //
 //TEST(test, test7) {
 //
