@@ -16,7 +16,7 @@ EXPECT_EQ(228, student_1.get_id());
 
 TEST(Student_Test, test3) {
 Student student_1(322, "Никита Мушка");
-EXPECT_EQ("Никита Мушка", student_1.get_name());
+EXPECT_EQ("Никита Мушка", student_1.get_fio());
 }
 
 TEST(Student_Test, test4) {
