@@ -52,7 +52,7 @@ TEST(DeaneryTest, test4) {
     deanery.hireStudents();
     int st = 0;
     int n[]{ 1, 1, 2 };
-    for (auto &group : deanery.getGroups()) {
+    for (auto &group : *deanery.getGroups()) {
         EXPECT_EQ(n[st++], group->getStudents()->size());
     }
 }
