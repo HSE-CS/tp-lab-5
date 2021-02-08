@@ -16,7 +16,6 @@ TEST(test, test1) {
     std::string c1, c2;
     oldSave >> s1;
     newSave >> s2;
-
     for (int i = 0; i < s1 + 1; i++) {
         std::getline(oldSave, c1);
         std::getline(newSave, c2);
@@ -24,14 +23,25 @@ TEST(test, test1) {
     EXPECT_EQ(c1, c2);
 }
 
-//TEST(test, test2) {
-//
-//}
-//
-//TEST(test, test3) {
-//
-//}
-//
+TEST(test, test2) {
+    Student s1(0, "Van Darkholme");
+    Group g1("Dungeon");
+    g1.addStudent(s1);
+    EXPECT_EQ(g1, *(s1.getGroup()));
+}
+
+TEST(test, test3) {
+    Deanary d;
+    d.createGroup("group-1.txt");
+    d.createGroup("group-2.txt");
+    auto g1 = d.getGroups()[0];
+    auto g2 = d.getGroups()[1];
+    Student s1(0, "Mark Wolff");
+    g1->addStudent(s1);
+    Deanary::changeGroup(s1, *(d.getGroups()[1]));
+    EXPECT_EQ(g2, s1.getGroup());
+}
+
 //TEST(test, test4) {
 //
 //}
