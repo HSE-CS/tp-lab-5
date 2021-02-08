@@ -2,7 +2,7 @@
 
 #include "../include/Creator.h"
 
-std::unique_ptr<Deanary> Creator::fabricMethod(const std::string filename) const {
+std::unique_ptr<Deanary> Creator::fabricMethod(const std::string filename) {
     std::ifstream inp(filename);
     std::unique_ptr<Deanary> deanary(new Deanary);
     std::string line;
@@ -24,7 +24,7 @@ std::unique_ptr<Deanary> Creator::fabricMethod(const std::string filename) const
 
         std::string stName = getName(line);
         std::vector<int16_t> stMarks = getMarks(line);
-        std::shared_ptr<Student> student = 
+        std::shared_ptr<Student> student =
             std::make_shared<Student>(stName, stMarks);
         student->setGroup(group);
         group->addStudent(student);
@@ -38,7 +38,8 @@ std::string Creator::getName(std::string str, std::string delimiter) const {
     return str.substr(0, str.find(delimiter));
 }
 
-std::vector<int16_t> Creator::getMarks(std::string str, std::string delimiter) const {
+std::vector<int16_t> Creator::getMarks(std::string str,
+    std::string delimiter) const {
     std::vector<int16_t> res;
     std::string num;
     for (int i = str.find(delimiter) + 1; str[i] != '\0'; ++i) {

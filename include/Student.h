@@ -12,7 +12,7 @@ class Group;
 using u_int = unsigned int;
 class Student {
  public:
-    Student(const std::string name);
+    explicit Student(const std::string name);
     Student(const std::string name, const std::vector<int16_t>& marks);
     Student(const std::string name, const std::shared_ptr<Group>& group);
     Student(const std::string name, const std::shared_ptr<Group>& group,
