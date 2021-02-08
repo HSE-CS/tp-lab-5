@@ -90,3 +90,4 @@ std::string Group::getSpec() const {
 unsigned int Group::getTitle() const {
     return this->title;
 }
+
