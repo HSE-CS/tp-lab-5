@@ -10,9 +10,6 @@
 #include <fstream>
 #include <vector>
 
-//#include "Group.h"
-//#include "../include/Deanary.h"
-
 class Group;
 
 class Student {
@@ -35,6 +32,10 @@ public:
     void addMark(int mark);
 
     float getMiddleMark();
+
+    void str();
+
+    void leaveGroup();
 };
 
 

@@ -7,11 +7,25 @@
 #IncludeRegexTransform: 
 
 /home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
+vector
+-
+iostream
+-
+fstream
+-
+string
+-
+../include/Group.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+../include/Student.h
+/home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
 
 /home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
 string
 -
 vector
+-
+random
 -
 
 /home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
@@ -25,10 +39,6 @@ vector
 -
 
 /home/toliman/Projects/HSE-CS/tp-lab-5/src/main.cpp
-../include/Student.h
-/home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
-../include/Group.h
-/home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
 ../include/Deanary.h
 /home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
 

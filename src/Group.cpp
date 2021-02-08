@@ -4,7 +4,7 @@
 
 #include "../include/Group.h"
 
-#include "Student.h"
+#include "../include/Student.h"
 
 
 Group::Group(std::string titleParam) {
@@ -26,6 +26,7 @@ void Group::setSpec(std::string specParam) {
 
 void Group::addStudent(Student &student) {
     this->students.push_back(&student);
+    student.setGroup(*this);
 }
 
 void Group::chooseHead() {
@@ -42,9 +43,40 @@ Student *Group::searchStudent(const std::string &fioField) {
 }
 
 Student *Group::searchStudent(int idField) {
-    for (auto s : students) {
+    for (auto s : this->students) {
         if (s->getId() == idField)
             return s;
     }
     return nullptr;
+}
+
+float Group::getMiddleMark() {
+    float middle(.0);
+    for (auto s : students) {
+        middle += s->getMiddleMark();
+    }
+    if (!(this->students.empty()))
+        middle /= (float) (this->students.size());
+    return middle;
+}
+
+void Group::deleteStudent(Student &student) {
+    int index = 0;
+    for (auto s : this->students) {
+        if (s->getId() == student.getId()) {
+            this->students.erase(this->students.begin() + index);
+            s->leaveGroup();
+            return;
+        }
+        index++;
+    }
+}
+
+void Group::str() {
+    std::string out = "==========\nGroup: " + this->getTitle() + '\n';
+    for (auto s : this->students) {
+        out += s->getFio() + '\n';
+    }
+    out += "==========\n";
+    std::cout << out;
 }

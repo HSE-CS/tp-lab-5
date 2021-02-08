@@ -30,9 +30,15 @@ public:
 
     void chooseHead();
 
-    Student *searchStudent(const std::string& fioField);
+    Student *searchStudent(const std::string &fioField);
 
     Student *searchStudent(int idField);
+
+    float getMiddleMark();
+
+    void deleteStudent(Student &student);
+
+    void str();
 };
 
 

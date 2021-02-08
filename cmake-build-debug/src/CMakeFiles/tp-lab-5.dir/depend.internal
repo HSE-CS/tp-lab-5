@@ -3,10 +3,12 @@
 
 src/CMakeFiles/tp-lab-5.dir/Deanary.cpp.o
  /home/toliman/Projects/HSE-CS/tp-lab-5/include/Deanary.h
+ /home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+ /home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
  /home/toliman/Projects/HSE-CS/tp-lab-5/src/Deanary.cpp
 src/CMakeFiles/tp-lab-5.dir/Group.cpp.o
- ../include/Student.h
  /home/toliman/Projects/HSE-CS/tp-lab-5/include/Group.h
+ /home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
  /home/toliman/Projects/HSE-CS/tp-lab-5/src/Group.cpp
 src/CMakeFiles/tp-lab-5.dir/Student.cpp.o
  /home/toliman/Projects/HSE-CS/tp-lab-5/include/Student.h
