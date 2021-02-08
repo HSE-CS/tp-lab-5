@@ -74,7 +74,7 @@ TEST(Deanary_Test, test10) {
 Deanary HSE;
 
 Student student_1(1, "Гош аН");
-Student student_2(1, "мУ Шка");
+Student student_2(2, "мУ Шка");
 student_1.add_mark(9);
 
 student_2.add_mark(5);
