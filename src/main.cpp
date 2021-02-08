@@ -1,3 +1,4 @@
+// Copyright 2021 kostinandrey
 #include <string>
 #include <fstream>
 

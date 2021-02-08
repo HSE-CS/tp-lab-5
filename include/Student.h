@@ -10,6 +10,7 @@ class Deanary;
 
 class Student {
 public:
+
     friend class Group;
     friend class Deanary;
 
@@ -22,6 +23,7 @@ public:
     std::string get_fio();
 
 private:
+    
     int id;
     std::string fio;
     Group* group;

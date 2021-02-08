@@ -31,19 +31,19 @@ void Group::remove_student(Student* student) {
     }
 }
 
-void Group:: choose_head(){
+void Group:: choose_head() {
     if (!students.empty()) {
         head = students[std::rand() % students.size()];
     }
 }
-std::string Group:: search_student(int search_id){
+
+std::string Group:: search_student(int search_id) {
     for (auto* student : students) {
         if (student->id == search_id)
             return student->get_fio();
     }
 
     return "Not found";
-
 }
 
 bool Group::search_student(const std::string& search_fio) {

@@ -65,11 +65,11 @@ void Deanary::add_student(std::ifstream& students_stream) {
 void Deanary::add_group(std::ifstream& groupsStream) {
     std::string title;
     std::string spec;
-    while(!groupsStream.eof()) {
+    while (!groupsStream.eof()) {
         std::getline(groupsStream, title, ' ');
         std::getline(groupsStream, spec, ' ');
         Group *group = new Group(title, spec);
-        groups.push_back(new Group(title,spec));
+        groups.push_back(new Group(title, spec));
     }
 }
 
@@ -126,22 +126,22 @@ void Deanary::choice_head() {
 
 void Deanary::print() {
     for (auto & group : groups) {
-        std::cout << "*************************************************" << std::endl;
-        std::cout << "*************************************************" << std::endl;
-        std::cout << "*************************************************" << std::endl;
+        std::cout << "**************************" << std::endl;
+        std::cout << "**************************" << std::endl;
+        std::cout << "**************************" << std::endl;
         std::cout << "Специальность группы: " << group->get_spec() << std::endl;
-        std::cout << "*************************************************" << std::endl;
+        std::cout << "**************************" << std::endl;
         std::cout << "Название группы: " << group->get_title() << std::endl;
-        std::cout << "*************************************************" << std::endl;
+        std::cout << "**************************" << std::endl;
         std::cout << "Староста: " << group->head->get_fio() << std::endl;
-        std::cout << "*************************************************" << std::endl;
+        std::cout << "**************************" << std::endl;
         std::cout << "Список студентов: " << std::endl;
         for (auto & student : group->students) {
             std::cout << "  * " << student->get_fio() << std::endl;
         }
-        std::cout << "*************************************************" << std::endl;
-        std::cout << "*************************************************" << std::endl;
-        std::cout << "*************************************************" << std::endl;
+        std::cout << "**************************" << std::endl;
+        std::cout << "**************************" << std::endl;
+        std::cout << "**************************" << std::endl;
     }
 }
 
@@ -183,7 +183,7 @@ void Deanary::groups_from_file(std::string path) {
     while (getline(file, spec)) {
         getline(file, title);
         Group *group = new Group(title, spec);
-        groups.push_back(new Group(title,spec));
+        groups.push_back(new Group(title, spec));
     }
 }
 

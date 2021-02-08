@@ -12,6 +12,7 @@ class Student;
 
 class Deanary {
 public:
+
     void add_student(std::ifstream& students_stream);
     void add_group(std::ifstream& groupsStream);
     void add_random_marks();
@@ -25,11 +26,11 @@ public:
     void students_from_file(std::string path);
     void groups_from_file(std::string path);
 private:
+
     std::vector<Group*> groups;
     std::vector<Student> Students;
     Group *find_group(std::string title);
     Student* find_student(unsigned int id);
-
 };
 
 #endif  // INCLUDE_DEANARY_H_
