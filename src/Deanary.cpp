@@ -62,6 +62,13 @@ void Deanary::add_student(std::ifstream& students_stream) {
     }
 }
 
+void Deanary::add_student(Student* _student, const std::string& _spec) {
+    for (auto & group : groups) {
+        if (group.get_spec() == _spec)
+            group.add_student(_student);
+    }
+}
+
 void Deanary::add_group(std::ifstream& groupsStream) {
     std::string title;
     std::string spec;

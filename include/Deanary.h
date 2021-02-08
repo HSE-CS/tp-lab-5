@@ -13,6 +13,7 @@ class Student;
 class Deanary {
  public:
     void add_student(std::ifstream& students_stream);
+    void add_student(Student* _student, const std::string& _spec);
     void add_group(std::ifstream& groupsStream);
     void add_random_marks();
     double get_statistic_students(const std::string& name);

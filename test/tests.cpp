@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include "Deanary.h"
 #include <string>
+#include <fstream>
 
 TEST(Student_Test, test1) {
 Student student_1(69, "Витя Кэнг");
@@ -62,7 +63,7 @@ Student student_1(1, "Виктор КЭнг");
 student_1.add_mark(9);
 
 Group group_1("ПИДО", "прикладная математика и информатика");
-HSE.add_group(group_1);
+HSE.add_group();
 HSE.add_student(& student_1, "прикладная математика и информатика");
 
 double res = 9;
@@ -79,7 +80,9 @@ student_1.add_mark(9);
 student_2.add_mark(5);
 
 Group Fil("ПИ2", "тима кенгов");
-HSE.add_group(Fil);
+const std::string groupsFilePath("./groups.txt");
+std::ifstream groupsStream(groupsFilePath, std::ios::in);
+HSE.add_group(groupsStream);
 HSE.add_student(&student_1, "тима кенгов");
 HSE.add_student(&student_2, "тима кенгов");
 
