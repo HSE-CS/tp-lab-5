@@ -3,19 +3,27 @@
 #ifndef INCLUDE_DEANARY_H
 #define INCLUDE_DEANARY_H
 #include <vector>
+#include <fstream>
 #include "Group.h"
+#include "Student.h"
+
 
 class Deanary {
  private:
+    int studentsId = 1;
     std::vector<Group*> groups;
+
  public:
-    void createGroupsFromFile(std::string path);
-    void createStudentsFromFile(std::string path);
+    void createGroup(std::string title, std::string spec);
+    void createStudent(std::string fio, Group* group);
+    Group* getGroupByTitle(const std::string& groupName);
+    bool createGroupsFromFile(const std::string& path);
+    bool createStudentsFromFile(std::string path);
     void addRandomMarks();
     std::string getStatistics();
     void moveStudent(Student* student, Group* new_group);
-    void kickStudentsForBadMarks(int BadMark);
-    void saveToFile(std::string path);
+    void kickStudentsForBadMarks(float BadMark);
+    bool saveToFile(std::string path);
     void initHeads();
 };
 

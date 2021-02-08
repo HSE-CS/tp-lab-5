@@ -18,15 +18,17 @@ class Group {
     Student* head = nullptr;
 
  public:
-    explicit Group(std::string title);
+    explicit Group(std::string title, std::string spec);
     void addStudent(Student* student);
-    void delStudent(Student* student);
-    void appointHead(Student* student);
-    Student* findStudentById(int student_id);
-    Student* findStudentByFio(std::string student_name);
+    void kickStudent(Student* student);
+    void chooseHead(Student* student);
+    Student* getStudentById(int student_id);
+    Student* getStudentByFio(std::string student_name);
     float getAverageMark();
     std::string getTitle();
     std::string getSpec();
+    Student* getHead();
+    bool isEmpty();
 };
 
 

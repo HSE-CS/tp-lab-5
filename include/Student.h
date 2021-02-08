@@ -22,6 +22,8 @@ class Student {
     void addToGroup(Group *group);
     void rate(int mark);
     float getAverageMark();
+    int getId();
+    std::string getFio();
 };
 
 
