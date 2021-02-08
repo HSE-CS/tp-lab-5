@@ -41,19 +41,21 @@ EXPECT_EQ(res, student_1.get_average_mark());
 }
 
 TEST(Group_Test, test6) {
-Group group_1("ПИ228", "прикладная математика и информатика");
+Group *group_1("ПИ228", "прикладная математика и информатика");
 EXPECT_EQ("прикладная математика и информатика", group_1.get_spec());
 }
 
 TEST(Group_Test, test7) {
-Group group_1("БИ3", "прикладная математика и информатика");
+Group *group_1("БИ3", "прикладная математика и информатика");
 EXPECT_EQ("БИ3", group_1.get_title());
 }
 
 TEST(Group_Test, test8) {
-Group group_1("ПИ0", "прикладная математика и информатика");
+Group *group_1("ПИ0", "прикладная математика и информатика");
 double res = 0;
-EXPECT_EQ(res, group_1.average_mark_group());
+EXPECT_EQ(res
+Group *group_1
+.average_mark_group());
 }
 
 TEST(Deanary_Test, test9) {
@@ -63,7 +65,7 @@ Student student_1(1, "Виктор КЭнг");
 student_1.add_mark(9);
 
 Group group_1("ПИДО", "прикладная математика и информатика");
-HSE.add_group();
+HSE.add_group(group_1);
 HSE.add_student(& student_1, "прикладная математика и информатика");
 
 double res = 9;

@@ -75,11 +75,14 @@ void Deanary::add_group(std::ifstream& groupsStream) {
     while (!groupsStream.eof()) {
         std::getline(groupsStream, title, ' ');
         std::getline(groupsStream, spec, ' ');
-        Group *group = new Group(title, spec);
         groups.push_back(new Group(title, spec));
     }
 }
-
+void Deanary::add_group(Group group) {
+    std::string title = group.get_title();
+    std::string spec = group.get_spec();
+    groups.push_back(new Group(title, spec));
+}
 void Deanary::add_random_marks() {
     for (auto & group : groups) {
         for (auto & student : group->students) {
