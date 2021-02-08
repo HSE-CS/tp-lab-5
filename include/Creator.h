@@ -3,7 +3,7 @@
 #include <memory>
 #include <fstream>
 
-#include "Deanary.h"
+#include "../include/Deanary.h"
 
 class Creator {
 

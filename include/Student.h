@@ -5,7 +5,7 @@
 #include <memory>
 #include <vector>
 #include <numeric>
-#include "Group.h"
+#include "../include/Group.h"
 
 class Group;
 

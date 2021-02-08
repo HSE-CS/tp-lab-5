@@ -6,9 +6,10 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <algorithm>
 
-#include "Student.h"
-#include "Deanary.h"
+#include "../include/Student.h"
+#include "../include/Deanary.h"
 
 class Student;
 

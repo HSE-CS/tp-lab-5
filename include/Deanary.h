@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Group.h"
+#include "../include/Group.h"
 
 class Group;
 class Student;

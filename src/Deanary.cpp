@@ -1,6 +1,6 @@
-#include "Deanary.h"
-
 // Copyright Roman Balayan @ 2021
+
+#include "../include/Deanary.h"
 
 void Deanary::addGroup(std::shared_ptr<Group>& group)
 {

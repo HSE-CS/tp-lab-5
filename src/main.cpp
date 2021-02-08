@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "Creator.h"
-#include "Deanary.h"
+#include "../include/Creator.h"
+#include "../include/Deanary.h"
 
 int main() {
     std::cout << "Hello" << std::endl;

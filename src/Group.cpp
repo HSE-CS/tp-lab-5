@@ -1,6 +1,6 @@
-#include "Group.h"
-
 // Copyright Roman Balayan @ 2021
+
+#include "../include/Group.h"
 
 Group::Group(const std::string title) : title(title)
 {

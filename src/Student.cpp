@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "../include/Student.h"
 
 // Copyright Roman Balayan @ 2021
 
