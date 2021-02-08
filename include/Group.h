@@ -2,16 +2,17 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
-#include "Student.h"
 #include <string>
 #include <vector>
+#include "Student.h"
+
+class Student;
 
 class Group {
-  friend class Deanary;
  private:
   std::string title;
   std::string spec;
-  std::vector<Student *> students;
+  std::vector<Student*> students;
   Student* head;
   Group(std::string, std::string);
   ~Group();
@@ -24,6 +25,7 @@ class Group {
   Student *getHead();
   bool containsStudent(Student *);
   float getAverageMark();
+  friend class Deanary;
 };
 #endif  // INCLUDE_GROUP_H_
 

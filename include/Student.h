@@ -7,8 +7,8 @@
 #include "Group.h"
 
 class Student {
-  friend class Deanary;
   friend class Group;
+  friend class Deanary;
  private:
   int id;
   std::string fio;
@@ -20,7 +20,6 @@ class Student {
   Student(int id, std::string fio);
   ~Student();
   double averageMark();
-  void add2Group(Group* group);
   bool isHeadOfGroup();
   int getId();
   std::string getFio();

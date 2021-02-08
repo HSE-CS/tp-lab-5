@@ -34,8 +34,8 @@ void Deanary::hireStudents(std::string file) {
 void Deanary::addMarksToAll() {
   for (auto group : groups)
     for (auto student : group->students)
-      for (int i = 0; i < rand_r() % 15; ++i)
-        student->addmark(rand_r() / 11);
+      for (int i = 0; i < rand() % 15; ++i)
+        student->addmark(rand() / 11);
 }
 
 void Deanary::getStatistics(std::string file) {
@@ -48,7 +48,7 @@ void Deanary::getStatistics(std::string file) {
 }
 
 void Deanary::moveStudents(Student* student, Group* group) {
-  student->group->removeStudent();
+  student->group->removeStudent(student);
   group->addStudent(student);
 }
 

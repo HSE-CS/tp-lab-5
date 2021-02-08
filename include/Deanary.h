@@ -7,6 +7,7 @@
 #include "string"
 #include "fstream"
 #include "iostream"
+#include "cstdlib"
 
 class Deanary {
  private:
