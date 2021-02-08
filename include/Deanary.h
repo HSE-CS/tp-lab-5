@@ -25,9 +25,10 @@ public:
     void students_from_file(std::string path);
     void groups_from_file(std::string path);
 private:
-    std::vector<Group> groups;
-    std::vector<Group*>::const_iterator findGroup(const std::string& name);
+    std::vector<Group*> groups;
     std::vector<Student> Students;
+    Group *find_group(std::string title);
+    Student* find_student(unsigned int id);
 
 };
 
