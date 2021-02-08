@@ -9,8 +9,8 @@ void Deanary::addGroup(std::shared_ptr<Group>& group)
 
 void Deanary::addStudent(std::shared_ptr<Student>& student)
 {
-    auto gr = std::find(this->groups.begin(), this->groups.end(), student->getGroup());
-    (*gr)->addStudent(student);
+    //auto gr = std::find(this->groups.begin(), this->groups.end(), );
+    //(*gr)->addStudent(student);
 }
 
 void Deanary::addRandomMarks(short amount)
@@ -36,7 +36,7 @@ void Deanary::printStatistics()
 
 bool Deanary::changeGroup(std::shared_ptr<Student>& student, std::shared_ptr<Group>& newGroup)
 {
-    student->setGroup(newGroup);
+    return student->setGroup(newGroup);
 }
 
 // TO DO
@@ -53,4 +53,5 @@ bool Deanary::removeBadStudents(double minAverageScore)
                 (*it)->removeStudent(*st);
         }
     }
+    return true;
 }
