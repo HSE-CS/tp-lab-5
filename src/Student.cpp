@@ -2,6 +2,14 @@
 
 // Copyright 2020 Polina Lukicheva
 
+Student::Student() {
+  this->id = 0;
+  this->fio = "";
+  this->group = NULL;
+  std::vector<int> marks_;
+  this->marks = marks_;
+}
+
 Student::Student(int id, std::string fio) {
   this->fio = fio;
   this->id = id;

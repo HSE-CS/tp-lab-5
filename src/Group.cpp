@@ -2,6 +2,18 @@
 
 // Copyright 2020 Polina Lukicheva
 
+Group::Group() {
+  this->title = "";
+  this->spec = "";
+  this->head = nullptr;
+}
+
+Group::Group(std::string title) {
+  this->title = title;
+  this->spec = "";
+  this->head = nullptr;
+}
+
 Group::Group(std::string title, std::string spec) {
   this->title = title;
   this->spec = spec;
