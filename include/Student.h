@@ -1,10 +1,10 @@
 // Copyright Nikita Demashow 2021
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
+#include<stdlib.h>
 #include<string>
 #include<iostream>
 #include<sstream>
-#include<stdlib.h>
 #include<vector>
 
 class Group;
@@ -25,7 +25,7 @@ class Student {
   explicit Student(const std::string newFio, const unsigned int id = s_id++);
   double getAverageMark() const;
   bool isHeadOfGroup() const;
-  ~Student(){}
+  ~Student() {}
 
   std::string getMarks() const;
   unsigned int getId() const;

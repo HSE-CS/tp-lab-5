@@ -44,7 +44,7 @@ TEST(DeaneryTest, test7) {
 }
 TEST(DeaneryTest, test8) {
   Group gr("CarskoeSelo", "literature");
-  EXPECT_EQ(NULL, gr.getStudentByFio("Пушкин"));
+  EXPECT_EQ(NULL, gr.getStudentByFio("Pushkin"));
 }
 TEST(DeaneryTest, test9) {
   Group gr("CarskoeSelo", "literature");

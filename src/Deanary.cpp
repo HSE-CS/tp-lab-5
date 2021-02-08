@@ -61,9 +61,9 @@ void Deanary::hireStudents(const std::string& dir) {
 void Deanary::addMarksToAll() {
   for (auto group : groups) {
     for (auto student : group->students) {
-      int mark{rand() % 11};
+      int mark {std::rand() % 11};
       if (student->iq >= 110 && mark < 6 || student->iq < 110 && mark >= 6) {
-        mark = rand() % 11;
+        mark = std::rand() % 11;
       }
       student->addMark(mark);
     }
@@ -136,7 +136,7 @@ void Deanary::moveStudets(const unsigned int id, const std::string title) {
       gr->addStudent(st);
     }
   }
- }
+  }
 void Deanary::saveStaff(const std::string dir) {
     std::ofstream file(dir);
   for (auto group : this->groups) {

@@ -6,11 +6,11 @@
 #include<random>
 #include<iostream>
 
+const static unsigned int limit{5};
 class Student;
 class Deanary;
 
 class Group {
-  const static unsigned int limit{5};
  private:
   std::string title;
   std::string spec;
