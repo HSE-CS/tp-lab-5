@@ -1,0 +1,13 @@
+head of grouP g1 id: 1 fIo: Aroslankin Artem  marks: 5 5 5
+Group: g1 id: 2 fiO: Sedunov Ilya      marks:   5 5 5
+Group: g2 id: 3 fIo: Stokes Jeffry marks: 1 1 1
+Group: g2 id: 4 fiO: Simon John      marks:   5 5 5
+Group: g2 id: 5 fIo:              Neal Steven marks: 6 6 6
+Group: g2 id: 6 fiO: Walters Elmer      marks:   5 5 5
+Group: g1 id: 7 fIo:              Perkins Steven marks: 6 6 6
+Group: g4 id: 8 fiO: Farmer Collin      marks:   5 5 5
+Group: g1 id: 9 fIo:              Reed Hector marks: 6 6 6
+Group: g1 id: 10 fiO Porter Randall      marks:   5 5 5
+Group: g1 id: 11 fIo:              Park Ronald marks: 6 6 6
+Group: g1 id: 12 fiO: Gregory Percival      marks:   5 5 5
+Group: g1 id: 13 fIo:              Price Brian marks: 6 6 6
