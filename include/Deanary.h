@@ -11,8 +11,7 @@ class Group;
 class Student;
 
 class Deanary {
-public:
-
+ public:
     void add_student(std::ifstream& students_stream);
     void add_group(std::ifstream& groupsStream);
     void add_random_marks();
@@ -25,8 +24,7 @@ public:
     void save_staff(std::string path);
     void students_from_file(std::string path);
     void groups_from_file(std::string path);
-private:
-
+ private:
     std::vector<Group*> groups;
     std::vector<Student> Students;
     Group *find_group(std::string title);

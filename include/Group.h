@@ -9,8 +9,7 @@
 class Student;
 
 class Group {
-public:
-
+ public:
     friend class Deanary;
 
     explicit Group(std::string title, std::string spec);
@@ -22,8 +21,7 @@ public:
     std::string search_student(int search_id);
     bool search_student(const std::string& search_fio);
     double average_mark_group();
-private:
-
+ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
