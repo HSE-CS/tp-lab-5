@@ -21,10 +21,9 @@ TEST(deanary_test, test3) {
 }
 
 TEST(deanary_test, test4) {
-  Student st(1, "Ivanov Ivan Ivanovich");
-  st.add_mark(10);
-  st.add_mark(2);
-  EXPECT_EQ(6, st.get_average_mark());
+  Deanary d;
+  d.create_group("test_title", "test_spec");
+  EXPECT_EQ(true, d.groups[0].is_empty());
 }
 
 TEST(deanary_test, test5) {
@@ -43,11 +42,8 @@ TEST(deanary_test, test7) {
 }
 
 TEST(deanary_test, test8) {
-  Group g("test_title", "test_spec");
-  Student st(1, "Ivanov Ivan Ivanovich");
-  g.add_student(&st);
-  g.choose_head();
-  EXPECT_EQ(true, st.is_head_of_group());
+  Student st(12134124, "Ivanov Ivan Ivanovich");
+  EXPECT_EQ(12134124, st.get_id());
 }
 
 TEST(deanary_test, test9) {
