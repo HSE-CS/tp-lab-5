@@ -18,11 +18,8 @@ TEST(test, test2) {
 Deanary d;
 Student* s = d.hireStudent(1, "Шарунов Евгений Александрович", "Programming", 4);
 d.addMarks();
-
 ASSERT_NE(s->getAvrMark(), 0);
 }
-
-
 
 TEST(test, test3) {
 Deanary d;
@@ -55,5 +52,5 @@ Deanary d;
 Group* g = d.createGroup("english language",23);
 d.hireStudent(300, "Шарунов Евгений Вадимович", "Programming", 40);
 d.transferStudent(300, 1);
-EXPECT_EQ(g->contains_student(300), true);
+EXPECT_EQ(g->containsStudent(300), true);
 }

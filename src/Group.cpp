@@ -65,24 +65,28 @@ void Group::chooseHead() {
     }
 }
 
-Student* Group::createStudent(unsigned int id,std::string name) {
+Student *Group::createStudent(unsigned int id, std::string name) {
     return students.emplace_back(new Student(id, std::move(name), this));
 }
+
 void Group::removeStudent(Student *s) {
     auto n = std::find(students.begin(), students.end(), s);
     if (n != students.end())
         students.erase(n);
-    if(s->isHead){
+    if (s->isHead) {
         chooseHead();
     }
     s->group = nullptr;
 }
+
 int Group::getGSize() {
     return students.size();
 }
+
 std::string Group::getSpec() const {
     return this->spec;
 }
+
 unsigned int Group::getTitle() const {
     return this->title;
 }

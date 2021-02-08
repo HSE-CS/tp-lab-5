@@ -28,10 +28,8 @@ Student *Deanary::hireStudent(unsigned int id, std::string fio,
     if (g == nullptr) {
         g = createGroup(std::move(spec), title);
     }
-
-    return  g->createStudent(id,std::move(fio));
+    return g->createStudent(id, std::move(fio));
 }
-
 
 std::string Deanary::getStat() const {
     std::string stat;
@@ -40,12 +38,12 @@ std::string Deanary::getStat() const {
                 + std::to_string(gr->title)
                 + " Spec: "
                 + gr->spec
-                +" Size "
+                + " Size "
                 + std::to_string(gr->students.size())
                 + "\nStudents:\n";
         for (auto st : gr->students) {
             stat += std::to_string(st->id)
-                    +" "
+                    + " "
                     + st->fio
                     + '\n';
         }
@@ -97,13 +95,13 @@ Student *Deanary::findStudent(unsigned int id) {
 void Deanary::readFile(const std::string &filename) {
     std::ifstream f(filename);
     if (!f.is_open()) {
-        std::cout<<"GG";
+        std::cout << "GG";
         return;
     }
-    std::string res,trash;
-    f>>res;
-    std::cout<<res;
-    while (res=="Group:") {
+    std::string res, trash;
+    f >> res;
+    std::cout << res;
+    while (res == "Group:") {
         if (res == "Group:") {
             f >> res;
             int title = std::stoi(res);
@@ -114,22 +112,22 @@ void Deanary::readFile(const std::string &filename) {
             f >> res;
             f >> res;
             int numberOfStudents = std::stoi(res);
-            int count=0;
-            f>>res;
-            while (count<numberOfStudents) {
+            int count = 0;
+            f >> res;
+            while (count < numberOfStudents) {
                 f >> res;
                 unsigned int id = std::stoi(res);
                 count++;
                 std::string fio;
-                f>>res;
-                fio+=res+' ';
-                f>>res;
-                fio+=res+' ';
-                f>>res;
-                fio+=res+' ';
-                hireStudent(id,fio,spec,title);
+                f >> res;
+                fio += res + ' ';
+                f >> res;
+                fio += res + ' ';
+                f >> res;
+                fio += res + ' ';
+                hireStudent(id, fio, spec, title);
             }
-            f>>res;
+            f >> res;
         }
     }
     f.close();

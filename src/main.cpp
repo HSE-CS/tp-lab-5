@@ -9,19 +9,14 @@
 
 int main() {
     Deanary d;
-
     d.readFile("Dataset.txt");
-
     d.addMarks();
     d.addMarks();
     d.addMarks();
-    d.transferStudent(2,3);
-    d.transferStudent(22,4);
-    d.transferStudent(60,1);
-
+    d.transferStudent(2, 3);
+    d.transferStudent(22, 4);
+    d.transferStudent(60, 1);
     d.saveStaff("Dataset.txt");
-
     std::cout << d.getStat();
-
     return 0;
 }

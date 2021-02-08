@@ -14,6 +14,7 @@ Student::Student(unsigned int id, std::string fio,
     this->isHead = false;
     this->marks = std::move(marks);
 }
+
 Student::Student(unsigned int id, std::string fio, Group *group) {
     this->fio = std::move(fio);
     this->id = id;
@@ -45,7 +46,7 @@ void Student::addMark(int mark) {
 }
 
 void Student::addHead() {
-    this->isHead= true;
+    this->isHead = true;
 }
 
 
