@@ -9,20 +9,20 @@
 TEST(DeanaryTest, test1) {
   setlocale(LC_ALL, "Russian");
   unsigned int id = 666;
-  std::string fio = "Булгаков Михаил Афанасьевич";
-  Student student(id, fio);
-  EXPECT_EQ("Булгаков Михаил Афанасьевич", student.getFio());
+  std::string fio = "Bulgakov";
+  Student student(fio, id);
+  EXPECT_EQ("Bulgakov", student.getFio());
 }
 TEST(DeanaryTest, test2) {
   setlocale(LC_ALL, "Russian");
   unsigned int id = 666;
-  std::string fio = "Булгаков Михаил Афанасьевич";
-  Student student(id, fio);
+  std::string fio = "Bulgakov";
+  Student student(fio, id);
   EXPECT_EQ(666, student.getId());
 }
 TEST(DeaneryTest, test3) {
- Group gr("CarskoeSelo", "literature");
- EXPECT_EQ(false, gr.isFull());
+  Group gr("CarskoeSelo", "literature");
+  EXPECT_EQ(false, gr.isFull());
 }
 TEST(DeaneryTest, test4) {
   Group gr("CarskoeSelo", "literature");
@@ -32,7 +32,7 @@ TEST(DeaneryTest, test5) {
   Deanary D;
   Group gr("CarskoeSelo", "literature");
   D.addGroup(&gr);
-  EXPECT_EQ(1, D.getCntGroups);
+  EXPECT_EQ(1, D.getCntGroups());
 }
 TEST(DeaneryTest, test6) {
   Group gr("CarskoeSelo", "literature");

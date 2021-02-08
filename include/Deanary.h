@@ -20,7 +20,7 @@ class Deanary {
   void saveStaff(const std::string dir);
   void fireStudent(Student* st);
 
-  size_t getCntGroups();
+  int getCntGroups();
   void addGroup(Group*);
 };
 

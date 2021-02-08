@@ -114,7 +114,7 @@ void Deanary::moveStudets(const unsigned int id, const std::string title) {
     if (group->title == title) {
       gr = group;
       if (group->isFull()) {
-        std::cout << "Group " << title << " id full" <<  std::endl;
+        std::cout << "Group " << title << " id full" << std::endl;
         break;
       }
     }
@@ -147,4 +147,4 @@ void Deanary::saveStaff(const std::string dir) {
   }
 }
 void Deanary::addGroup(Group* gr) { groups.push_back(gr); }
-size_t Deanary::getCntGroups() { return groups.size(); }
+int Deanary::getCntGroups() { return groups.size(); }

@@ -22,9 +22,9 @@ class Group {
   void removeStudent(std::string);
 
  public:
-  Group(){}
+  Group() {}
   explicit Group(const std::string newTitle, const std::string newSpec):
-  title(newTitle), spec(newSpec) {};
+  title(newTitle), spec(newSpec) {}
   Student* getHead() const;
   double getAverageMark();
   Student* getStudentById(const unsigned int id);

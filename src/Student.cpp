@@ -4,8 +4,8 @@
 Student::Student(const std::string newFio, const unsigned int newId) {
   fio = newFio;
   id = newId;
-  srand(rand());
-  iq = rand() % 40 + 90;
+  srand(std::rand());
+  iq = std::rand() % 40 + 90;
   }
 double Student::getAverageMark() const {
   double sum{0};
