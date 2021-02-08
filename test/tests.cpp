@@ -50,3 +50,8 @@ TEST(DeaneryTest, test9) {
   Group gr("CarskoeSelo", "literature");
   EXPECT_EQ(NULL, gr.getStudentById(10));
 }
+TEST(DeaneryTest, test10) {
+  Deanary D;
+  D.createGroups("../src/groups.txt");
+  EXPECT_EQ(8, D.getCntGroups());
+}
