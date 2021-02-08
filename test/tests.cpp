@@ -54,12 +54,6 @@ TEST(Test, test8) {
   EXPECT_EQ(student2->getFio(), "Uskova Elena Maksimovna");
 }
 
-//TEST(Test, test9) {
-//  Student* student1 = new Student(1, "Lukicheva Polina Aleksandrovna");
-//  Student* student2 = new Student(2, "Uskova Elena Maksimovna");
-//  EXPECT_EQ(student2->isHeadOfGroup(), false);
-//}
-
 TEST(Test, test10) {
   Student* student = new Student(1, "Lukicheva Polina Aleksandrovna");
   EXPECT_EQ(student->averageMark(), 0.0);
