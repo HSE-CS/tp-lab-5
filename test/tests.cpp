@@ -81,7 +81,7 @@ d.createStudent("Ваня Ургант", gr);
 
 gr->kickStudent(gr->getStudentById(1));
 gr->kickStudent(gr->getStudentById(2));
-EXPECT_TRUE(3, gr->getStudentByFio("Ваня Ургант")->getId());
+EXPECT_EQ(3, gr->getStudentByFio("Ваня Ургант")->getId());
 }
 
 TEST(Test, test9) {
