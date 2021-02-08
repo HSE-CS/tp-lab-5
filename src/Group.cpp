@@ -4,7 +4,8 @@
 
 #include <utility>
 
-Group::Group(std::string ti, std::string sp) : title(std::move(ti)), spec(std::move(sp)) {}
+Group::Group(std::string ti, std::string sp) :
+title(std::move(ti)), spec(std::move(sp)) {}
 
 void Group::addStudent(Student *student) {
     student->addToGroup(this);

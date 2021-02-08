@@ -13,7 +13,7 @@ float Student::getAverageMark() {
 
     float sum = 0;
     for (auto m : marks)
-        sum += (float) m;
+        sum += static_cast<float>(m);
 
     return sum / marks.size();
 }

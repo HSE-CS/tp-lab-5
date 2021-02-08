@@ -1,7 +1,7 @@
 // Copyright 2021 Shatilov Victor
 
-#ifndef INCLUDE_GROUP_H
-#define INCLUDE_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include <string>
 #include <vector>
 #include <Student.h>
@@ -32,4 +32,4 @@ class Group {
 };
 
 
-#endif //INCLUDE_5_GROUP_H
+#endif  // INCLUDE_GROUP_H_

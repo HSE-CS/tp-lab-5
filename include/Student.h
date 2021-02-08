@@ -1,7 +1,7 @@
 // Copyright 2021 Shatilov Victor
 
-#ifndef INCLUDE_STUDENT_H
-#define INCLUDE_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 #include <string>
 #include <vector>
 #include "Group.h"
@@ -27,4 +27,4 @@ class Student {
 };
 
 
-#endif //INCLUDE_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_

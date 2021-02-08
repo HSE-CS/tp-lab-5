@@ -56,7 +56,7 @@ d.createGroup("19ПИ-2", "Программная инженерия");
 Group *gr = d.getGroupByTitle("19ПИ-2");
 d.createStudent("Лол Кеков", gr);
 d.createStudent("Кек Лолов", gr);
-EXPECT_EQ("Кек Лолов", gr->getStudentById(2));
+EXPECT_EQ("Кек Лолов", gr->getStudentById(2)->getFio());
 }
 
 TEST(Test, test7) {

@@ -1,7 +1,7 @@
 // Copyright 2021 Shatilov Victor
 
-#ifndef INCLUDE_DEANARY_H
-#define INCLUDE_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include <vector>
 #include <fstream>
 #include "Group.h"
@@ -28,4 +28,4 @@ class Deanary {
 };
 
 
-#endif //INCLUDE_DEANARY_H
+#endif  // INCLUDE_DEANARY_H_

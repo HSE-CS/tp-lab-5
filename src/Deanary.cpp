@@ -12,8 +12,8 @@ void Deanary::createStudent(std::string fio, Group* group) {
     studentsId++;
 }
 
-Group* Deanary::getGroupByTitle(const std::string& groupName){
-    for(Group* g : groups){
+Group* Deanary::getGroupByTitle(const std::string& groupName) {
+    for (Group* g : groups) {
         if (g->title == groupName)
             return g;
     }
@@ -23,7 +23,7 @@ Group* Deanary::getGroupByTitle(const std::string& groupName){
 
 bool Deanary::createGroupsFromFile(const std::string& path) {
     std::ifstream file(path);
-    if (!file){
+    if (!file) {
         std::cerr << "Error: " << strerror(errno);
         return EXIT_FAILURE;
     }
@@ -41,7 +41,7 @@ bool Deanary::createGroupsFromFile(const std::string& path) {
 
 bool Deanary::createStudentsFromFile(std::string path) {
     std::ifstream file(path);
-    if (!file){
+    if (!file) {
         std::cerr << "Error: " << strerror(errno);
         return EXIT_FAILURE;
     }
@@ -53,8 +53,9 @@ bool Deanary::createStudentsFromFile(std::string path) {
         std::string groupTitle = s.substr(pos + 1);
         std::cout << fio << ":" << groupTitle << std::endl;
         Group* g = getGroupByTitle(groupTitle);
-        if (g)
+        if (g) {
             createStudent(fio, g);
+        }
         else {
             std::cout << groupTitle;
             return EXIT_FAILURE;
@@ -78,12 +79,15 @@ void Deanary::addRandomMarks() {
 std::string Deanary::getStatistics() {
     std::string s;
     for (Group *group : groups) {
-        s += "Группа: " + group->title + " Специализация: " + group->spec + '\n';
+        s += "Группа: " + group->title + " Специализация: "
+                + group->spec + '\n';
         if (group->head)
             s += "Староста: " + group->head->fio + '\n';
-        s += "Средняя оценка в группе: " + std::to_string(group->getAverageMark()) + '\n';
+        s += "Средняя оценка в группе: "
+                + std::to_string(group->getAverageMark()) + '\n';
         for (Student *student : group->students)
-            s += student->fio + " - " + std::to_string(student->getAverageMark()) + '\n';
+            s += student->fio + " - "
+                    + std::to_string(student->getAverageMark()) + '\n';
     }
     return s;
 }
@@ -95,7 +99,7 @@ void Deanary::moveStudent(Student* student, Group* group) {
 
 bool Deanary::saveToFile(std::string path) {
     std::ofstream file(path);
-    if (!file){
+    if (!file) {
         std::cerr << "Error: " << strerror(errno);
         return EXIT_FAILURE;
     }
