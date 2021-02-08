@@ -14,11 +14,11 @@ class Student {
 
 public:
     Student(const std::string name);
-    Student(const std::string name, std::vector<short>& marks);
+    Student(const std::string name, std::vector<int16_t>& marks);
     Student(const std::string name, std::shared_ptr<Group>& group);
-    Student(const std::string name, std::shared_ptr<Group>& group, std::vector<short>& marks);
+    Student(const std::string name, std::shared_ptr<Group>& group, std::vector<int16_t>& marks);
     bool setGroup(std::shared_ptr<Group>& group);
-    void addMark(const short mark);
+    void addMark(const int16_t mark);
     void printStudent() const;
     float getAverageMark() const;
     std::string getName() const;
@@ -29,7 +29,7 @@ private:
     u_int id;
     std::string name;
     std::weak_ptr<Group> group;
-    std::vector<short> marks;
+    std::vector<int16_t> marks;
 
     friend class Group;
 };

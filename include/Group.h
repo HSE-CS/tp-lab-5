@@ -21,11 +21,11 @@ public:
     void addStudent(std::shared_ptr<Student> student);
     bool selectHead(std::shared_ptr<Student> newHead);
     std::shared_ptr<Student> findStudent(const std::string name) const;
-    std::shared_ptr<Student> findStudent(short id) const;
+    std::shared_ptr<Student> findStudent(int16_t id) const;
     double getAverageScore() const;
     bool removeStudent(std::shared_ptr<Student> student);
     bool removeStudent(const std::string name);
-    bool removeStudent(short id);
+    bool removeStudent(int16_t id);
     void printStudents() const;
 
 private:

@@ -29,7 +29,7 @@ std::shared_ptr<Student> Group::findStudent(const std::string name) const
     return nullptr;
 }
 
-std::shared_ptr<Student> Group::findStudent(short id) const
+std::shared_ptr<Student> Group::findStudent(int16_t id) const
 {
     auto result = std::find_if(this->students.begin(), this->students.end(), [id](std::shared_ptr<Student> st) {return st->getId() == id; });
     return *result;
@@ -57,7 +57,7 @@ bool Group::removeStudent(const std::string name)
     return this->removeStudent(this->findStudent(name)); 
 }
 
-bool Group::removeStudent(short id)
+bool Group::removeStudent(int16_t id)
 {
     return this->removeStudent(this->findStudent(id));
 }

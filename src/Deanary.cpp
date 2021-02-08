@@ -2,18 +2,18 @@
 
 #include "../include/Deanary.h"
 
-void Deanary::addGroup(std::shared_ptr<Group>& group)
+void Deanary::addGroup(const std::shared_ptr<Group>& group)
 {
     this->groups.push_back(group);
 }
 
-void Deanary::addStudent(std::shared_ptr<Student>& student)
+void Deanary::addStudent(const std::shared_ptr<Student>& student)
 {
     //auto gr = std::find(this->groups.begin(), this->groups.end(), );
     //(*gr)->addStudent(student);
 }
 
-void Deanary::addRandomMarks(short amount)
+void Deanary::addRandomMarks(int16_t amount)
 {
     for (auto it = this->groups.begin(); it != this->groups.end(); ++it) {
         for (auto st = (*it)->students.begin(); st != (*it)->students.end(); ++st) {
@@ -40,7 +40,7 @@ bool Deanary::changeGroup(std::shared_ptr<Student>& student, std::shared_ptr<Gro
 }
 
 // TO DO
-bool Deanary::changeGroup(short studentID, std::string newGroupTitle)
+bool Deanary::changeGroup(int16_t studentID, std::string newGroupTitle)
 {
     return false;
 }
