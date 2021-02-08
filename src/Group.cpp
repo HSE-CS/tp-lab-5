@@ -4,6 +4,7 @@
 //
 #include <algorithm>
 #include <utility>
+#include <random>
 #include "Group.h"
 
 Group::Group(std::string valSpec, int valTitle) {
@@ -58,7 +59,10 @@ bool Group::containsStudent(const std::string &name) const {
 
 void Group::chooseHead() {
     if (!students.empty()) {
-        int headId = rand() % students.size();
+        std::random_device r;
+        std::default_random_engine e1(r());
+        std::uniform_int_distribution<int> k(0, students.size());
+        int headId = k(e1);
         head = students[headId];
         students[headId]->addHead();
     }
