@@ -5,7 +5,7 @@
 #include <string>
 
 TEST(Student_Test, test1) {
-Student student_1(69, "Витя Кэнг);
+Student student_1(69, "Витя Кэнг");
 EXPECT_EQ(69, student_1.get_id());
 }
 
