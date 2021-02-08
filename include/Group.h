@@ -23,8 +23,8 @@ class Group {
   explicit Group(const std::string, const std::string);
   ~Group();
   bool isEmpty();
-  Student *getStudent(int);
-  Student *getHead();
+  Student* getStudent(int);
+  Student* getHead();
   bool containsStudent(Student *);
   float getAverageMark();
   friend class Deanary;
