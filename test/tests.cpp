@@ -46,5 +46,5 @@ TEST(test, test7) {
     Group* g = d.createGroup("english language", 21);
     d.hireStudent(303, "Шаломов Евгений Вадимович", "Programming", 25);
     d.transferStudent(303, 21);
-    EXPECT_EQ(g->containsStudent(300), true);
+    EXPECT_EQ(g->containsStudent(303), true);
 }
