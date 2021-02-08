@@ -4,6 +4,8 @@
 
 #include "../include/Creator.h"
 
+class Creator;
+
 int main() {
     std::cout << "Hello" << std::endl;
     Creator * creator = new Creator;
