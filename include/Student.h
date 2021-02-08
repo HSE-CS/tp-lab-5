@@ -20,7 +20,7 @@ class Student {
   void addmark(int mark);
  public:
   Student();
-  explicit Student(int id, std::string fio);
+  explicit Student(int id, const std::string fio);
   ~Student();
   double averageMark();
   bool isHeadOfGroup();

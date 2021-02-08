@@ -10,7 +10,7 @@ Student::Student() {
   this->marks = marks_;
 }
 
-Student::Student(int id, std::string fio) {
+Student::Student(int id, const std::string fio) {
   this->fio = fio;
   this->id = id;
   this->marks = std::vector<int>();

@@ -8,13 +8,13 @@ Group::Group() {
   this->head = nullptr;
 }
 
-Group::Group(std::string title) {
+Group::Group(const std::string title) {
   this->title = title;
   this->spec = "";
   this->head = nullptr;
 }
 
-Group::Group(std::string title, std::string spec) {
+Group::Group(const std::string title, const std::string spec) {
   this->title = title;
   this->spec = spec;
   this->students = std::vector<Student*>();

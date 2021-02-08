@@ -19,8 +19,8 @@ class Group {
   void removeStudent(Student *);
  public:
   Group();
-  explicit Group(std::string);
-  explicit Group(std::string, std::string);
+  explicit Group(const std::string);
+  explicit Group(const std::string, const std::string);
   ~Group();
   bool isEmpty();
   Student *getStudent(int);
