@@ -9,8 +9,7 @@ class Group;
 class Deanary;
 
 class Student {
-public:
-
+ public:
     friend class Group;
     friend class Deanary;
 
@@ -22,8 +21,7 @@ public:
     [[nodiscard]] int get_id() const;
     std::string get_fio();
 
-private:
-    
+ private:
     int id;
     std::string fio;
     Group* group;
