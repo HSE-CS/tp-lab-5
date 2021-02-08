@@ -80,8 +80,8 @@ student_1.add_mark(9);
 student_2.add_mark(5);
 
 Group Fil("ПИ2", "тима кенгов");
-const char*  groupsFilePath("./groups.txt");
-std::ifstream groupsStream(groupsFilePath);
+const char*  groupsFilePath[] = {"./groups.txt"};
+std::ifstream groupsStream(reinterpret_cast<const char *>(groupsFilePath));
 HSE.add_group(groupsStream);
 HSE.add_student(&student_1, "тима кенгов");
 HSE.add_student(&student_2, "тима кенгов");
