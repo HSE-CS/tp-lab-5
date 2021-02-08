@@ -6,12 +6,12 @@
 #include<random>
 #include<iostream>
 
-const static unsigned int limit{5};
 class Student;
 class Deanary;
 
 class Group {
  private:
+  static const unsigned int limit{5};
   std::string title;
   std::string spec;
   std::vector<Student*> students;
