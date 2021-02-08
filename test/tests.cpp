@@ -40,21 +40,24 @@ TEST(DeaneryTest, test3) {
     }
 }
 
-/*TEST(DeaneryTest, test3) {
+TEST(DeaneryTest, test4) {
     Deanery deanery{};
-    auto *fio = new std::string{ "Michael Young" };
-    auto *title = new std::string{ "20-ABC-1" };
-    deanery.moveStudents(std::vector<Student *>
-    {deanery.getGroup(0)->getStudent("Pedro Smith")},
-        deanery.getGroup(1));
+    deanery.createStudent(1, "Ivan Ivanov");
+    deanery.createStudent(2, "Petr Petrov");
+    deanery.createStudent(3, "Kirill Sozinov");
+    deanery.createStudent(4, "Mark Markov");
+    deanery.createGroup("19PMI-1", "PMI");
+    deanery.createGroup("19PMI-2", "PMI");
+    deanery.createGroup("19PMI-3", "PMI");
+    deanery.hireStudents();
     int st = 0;
-    int n[]{ 20, 22, 21 };
+    int n[]{ 1, 1, 2 };
     for (auto &group : deanery.getGroups()) {
         EXPECT_EQ(n[st++], group->getStudents()->size());
     }
 }
 
-TEST(DeaneryTest, test4) {
+/* TEST(DeaneryTest, test4) {
     Deanery deanery{};
     auto *title = new std::string{ "19FM-1" };
     deanery.moveStudents(56, *title);
