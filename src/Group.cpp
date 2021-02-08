@@ -5,7 +5,7 @@
 Group::Group(const std::string title) : title(title) {
 }
 
-Group::Group(const std::string title, const std::string spec) : 
+Group::Group(const std::string title, const std::string spec) :
     title(title), spec(spec) {
 }
 
@@ -19,7 +19,7 @@ bool Group::selectHead(std::shared_ptr<Student> newHead) {
 }
 
 std::shared_ptr<Student> Group::findStudent(const std::string name) const {
-    auto result = std::find_if(this->students.begin(), this->students.end(), 
+    auto result = std::find_if(this->students.begin(), this->students.end(),
         [name](std::shared_ptr<Student> st) {return st->getName() == name; });
     return *result;
     return nullptr;
@@ -48,7 +48,7 @@ bool Group::removeStudent(std::shared_ptr<Student> student) {
 }
 
 bool Group::removeStudent(const std::string name) {
-    return this->removeStudent(this->findStudent(name)); 
+    return this->removeStudent(this->findStudent(name));
 }
 
 bool Group::removeStudent(int16_t id) {

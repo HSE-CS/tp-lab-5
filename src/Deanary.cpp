@@ -13,7 +13,8 @@ void Deanary::addStudent(const std::shared_ptr<Student>& student) {
 
 void Deanary::addRandomMarks(int16_t amount) {
     for (auto it = this->groups.begin(); it != this->groups.end(); ++it) {
-        for (auto st = (*it)->students.begin(); st != (*it)->students.end(); ++st) {
+        for (auto st = (*it)->students.begin(); 
+            st != (*it)->students.end(); ++st) {
             for (int i = 0; i < amount; ++i) {
                 (*st)->addMark(rand() % 11);
             }
@@ -23,7 +24,8 @@ void Deanary::addRandomMarks(int16_t amount) {
 
 void Deanary::printStatistics() {
     for (auto it = this->groups.begin(); it != this->groups.end(); ++it) {
-        std::cout << "Group: " << (*it)->title << "\nAverage score: " << (*it)->getAverageScore() << "\n";
+        std::cout << "Group: " << (*it)->title
+            << "\nAverage score: " << (*it)->getAverageScore() << "\n";
         std::cout << "Students amount: " << (*it)->students.size() << "\n";
         (*it)->printStudents();
         std::cout << "\n";
@@ -42,7 +44,8 @@ bool Deanary::changeGroup(int16_t studentID, std::string newGroupTitle) {
 
 bool Deanary::removeBadStudents(double minAverageScore) {
     for (auto it = this->groups.begin(); it != this->groups.end(); ++it) {
-        for (auto st = (*it)->students.begin(); st != (*it)->students.end(); ++st) {
+        for (auto st = (*it)->students.begin();
+            st != (*it)->students.end(); ++st) {
             if ((*st)->getAverageMark() < minAverageScore)
                 (*it)->removeStudent(*st);
         }

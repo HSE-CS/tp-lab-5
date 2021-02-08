@@ -3,12 +3,11 @@
 #include <iostream>
 
 #include "../include/Creator.h"
-#include "../include/Deanary.h"
 
 int main() {
     std::cout << "Hello" << std::endl;
     Creator creator;
-    std::unique_ptr<Deanary> deanary = creator.fabricMethod();
+    auto deanary = creator.fabricMethod();
 
     deanary->printStatistics();
     deanary->addRandomMarks();
