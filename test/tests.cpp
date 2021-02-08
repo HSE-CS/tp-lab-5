@@ -29,10 +29,10 @@ TEST(DeaneryTest, test2) {
 
 TEST(DeaneryTest, test3) {
     Deanery deanery{};
-    createStudent(1, "Ivan Ivanov");
-    createStudent(2, "Petr Petrov");
-    hireStudent(0);
-    hireStudent(0);
+    deanery.createStudent(1, "Ivan Ivanov");
+    deanery.createStudent(2, "Petr Petrov");
+    deanery.hireStudent(0);
+    deanery.hireStudent(0);
     int n = 2;
     for (auto &group : *deanery.getGroups()) {
         EXPECT_EQ(2, group->getStudents()->size());

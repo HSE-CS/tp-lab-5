@@ -8,14 +8,13 @@
 
 Deanery::Deanery() {
     groups = new std::vector<Group *>();
-    
     /* createStudents();
     createGroups();
     hireStudents(); */
 }
 
 void Deanery::createStudents() {
-    std::ifstream in(/*"D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\students.txt"*/ "students.txt");
+    std::ifstream in("students.txt");
     std::string line;
     size_t i = 1;
     if (in.is_open()) {
@@ -45,7 +44,7 @@ void Deanery::printAllStudents() {
 }
 
 void Deanery::createGroups() {
-    std::ifstream in(/*"D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\groups.txt"*/ "groups.txt");
+    std::ifstream in("groups.txt");
     std::string line1, line2;
     size_t i = 0;
     if (in.is_open()) {
@@ -123,8 +122,8 @@ void Deanery::addMarksToAll() {
     srand(time(NULL));
     for (auto &group : *groups) {
         for (auto &student : *group->students) {
-            for (size_t i = 4; i < (rand() % 10 + 5); ++i) {
-                student->addmark(rand() % 5 + 2);
+            for (size_t i = 4; i < (std::rand() % 10 + 5); ++i) {
+                student->addmark(std::rand() % 5 + 2);
             }
         }
     }
@@ -170,7 +169,7 @@ void Deanery::fireStudents(double min_avg) {
 }
 
 void Deanery::saveStaff() {
-    std::ofstream out(/*"D:\\Projects_C_C++\\tp-lab5\\tp-lab5\\stats.txt"*/"stats.txt");
+    std::ofstream out("stats.txt");
     out << getGroupsWithStudents().str();
     out << makeStatistics().str();
     out.close();
