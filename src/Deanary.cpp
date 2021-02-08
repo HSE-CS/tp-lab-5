@@ -84,7 +84,7 @@ bool comp(Student* st1, Student* st2) {
 void Deanary::get_statistics() {
   for (auto group : groups) {
     sort(group->students.begin(), group->students.end(), comp);
-    for (auto student: group->students) {
+    for (auto student : group->students) {
       std::cout << student->fio << '\t' <<
       student->get_average_mark() << std::endl;
     }
