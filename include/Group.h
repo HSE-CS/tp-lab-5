@@ -14,9 +14,8 @@
 class Student;
 
 class Group {
-
-public:
-    Group(const std::string title);
+ public:
+    explicit Group(const std::string title);
     Group(const std::string title, const std::string spec);
     void addStudent(std::shared_ptr<Student> student);
     bool selectHead(std::shared_ptr<Student> newHead);
@@ -27,8 +26,7 @@ public:
     bool removeStudent(const std::string name);
     bool removeStudent(int16_t id);
     void printStudents() const;
-
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<std::shared_ptr<Student> > students;

@@ -20,11 +20,10 @@ class Deanary {
     void addStudent(const std::shared_ptr<Student>& student);
     void addRandomMarks(int16_t amount = 5);
     void printStatistics();
-    bool changeGroup(std::shared_ptr<Student>& student, 
-                     std::shared_ptr<Group>& newGroup);
+    bool changeGroup(const std::shared_ptr<Student>& student,
+                     const std::shared_ptr<Group>& newGroup);
     bool changeGroup(int16_t studentID, std::string newGroupTitle);
     bool removeBadStudents(double minAverageScore = 2.5);
  private:
     std::vector<std::shared_ptr<Group> > groups;
-
 };

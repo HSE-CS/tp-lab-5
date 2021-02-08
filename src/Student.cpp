@@ -7,22 +7,22 @@ Student::Student(const std::string name) : name(name)
     this->id = id_generator++;
 }
 
-Student::Student(const std::string name, std::vector<int16_t>& marks) : name(name), marks(marks)
+Student::Student(const std::string name, const std::vector<int16_t>& marks) : name(name), marks(marks)
 {
     this->id = id_generator++;
 }
 
-Student::Student(const std::string name, std::shared_ptr<Group>& group) : name(name), group(group)
+Student::Student(const std::string name, const std::shared_ptr<Group>& group) : name(name), group(group)
 {
     this->id = id_generator++;
 }
 
-Student::Student(const std::string name, std::shared_ptr<Group>& group, std::vector<int16_t>& marks) : name(name), group(group), marks(marks)
+Student::Student(const std::string name, const std::shared_ptr<Group>& group, const std::vector<int16_t>& marks) : name(name), group(group), marks(marks)
 {
     this->id = id_generator++;
 }
 
-bool Student::setGroup(std::shared_ptr<Group>& group)
+bool Student::setGroup(const std::shared_ptr<Group>& group)
 {
     this->group = group;
     return true;
