@@ -14,7 +14,6 @@ class Group {
   std::string spec;
   std::vector<Student*> students;
   Student* head;
-  void addStudent(Student *);
   void chooseHead();
   void removeStudent(Student *);
  public:
@@ -23,8 +22,9 @@ class Group {
   explicit Group(const std::string, const std::string);
   ~Group();
   bool isEmpty();
-  Student* getStudent(int);
-  Student* getHead();
+  void addStudent(Student*);
+  Student *getStudent(int);
+  Student *getHead();
   bool containsStudent(Student *);
   float getAverageMark();
   friend class Deanary;
