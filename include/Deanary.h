@@ -40,6 +40,10 @@ class Deanery {
      std::stringbuf getHeads();
      void printHeads();
      std::vector<Group *> *getGroups() const;
+     // just for unit tests
+     void createStudent(size_t id, std::string fio);
+     void createGroup(std::string title, std::string spec);
+     void hireStudent(size_t num);
 };
 
 #endif  // INCLUDE_DEANARY_H_
