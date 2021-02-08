@@ -4,7 +4,6 @@
 //
 #include <iostream>
 #include <algorithm>
-#include <cstdlib>
 #include "Deanary.h"
 #include "Group.h"
 #include "Student.h"
@@ -17,7 +16,7 @@ Group *Deanary::createGroup(std::string valSpec, int valTitle) {
 void Deanary::addMarks() {
     for (auto gr : groups) {
         for (auto st : gr->students) {
-            st->addMark((int) std::rand() % 10);
+            st->addMark(rand() % 10);
         }
     }
 }

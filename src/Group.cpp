@@ -4,7 +4,6 @@
 //
 #include <algorithm>
 #include <utility>
-#include <stdlib.h>
 #include "Group.h"
 
 Group::Group(std::string valSpec, int valTitle) {
