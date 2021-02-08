@@ -14,12 +14,14 @@ class Group {
   std::string spec;
   std::vector<Student*> students;
   Student* head;
-  Group(std::string, std::string);
-  ~Group();
   void addStudent(Student *);
   void chooseHead();
   void removeStudent(Student *);
  public:
+  Group();
+  explicit Group(std::string);
+  explicit Group(std::string, std::string);
+  ~Group();
   bool isEmpty();
   Student *getStudent(int);
   Student *getHead();

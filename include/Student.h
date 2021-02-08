@@ -19,7 +19,8 @@ class Student {
   void add2Group(Group* group);
   void addmark(int mark);
  public:
-  Student(int id, std::string fio);
+  Student();
+  explicit Student(int id, std::string fio);
   ~Student();
   double averageMark();
   bool isHeadOfGroup();
