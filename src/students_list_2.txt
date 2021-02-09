@@ -1,0 +1,16 @@
+19D ID:1107 FIO:Pulyaev K. A.
+18SE ID:0087 FIO:Paseneva V. D.
+17FM ID:0707 FIO:Porotov N. V.
+19D ID:8707 FIO:Plesnova N. S.
+17SE ID:0027 FIO:Prestakova N. G.
+17SE ID:1047 FIO:Pushkin A. K.
+17FM ID:1197 FIO:Tachkin K. M.
+19D ID:2137 FIO:Pasnov L. O.
+19D ID:1106 FIO:Dochkin K. A.
+18SE ID:0086 FIO:Synochkin V. D.
+19D ID:1106 FIO:Synichkin K. A.
+18SE ID:0086 FIO:Umnova V. D.
+17SE ID:1042 FIO:Pustechkin B. K.
+17FM ID:1192 FIO:Tachkin P. M.
+17SE ID:1027 FIO:Pachkin K. K.
+17FM ID:1127 FIO:Sudachkin L. E.
