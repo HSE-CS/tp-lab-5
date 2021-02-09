@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <cstring>
