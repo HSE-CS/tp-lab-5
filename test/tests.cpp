@@ -30,7 +30,7 @@ TEST(Test, test3) {
     newDea.addGroup(new Group("20SE", "Software Engineering"));
     EXPECT_EQ(newDea.getStudentsNumber("19SE"), 1);
 }
- 
+
 TEST(Test, test4) {
     Deanary newDea;
     Student A("002", "Pavlov I. V.");

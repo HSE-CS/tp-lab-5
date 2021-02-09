@@ -101,8 +101,6 @@ Student* Deanary::findStudent(std::string name) {
     for (auto i : this->groups) {
         for (auto j : i->students) {
             if (j->fio == name) {
-                while (i->head->fio == name)
-                    i->chooseHead();
                 return j;
             }
         }
