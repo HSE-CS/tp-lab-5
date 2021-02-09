@@ -39,6 +39,7 @@ class Deanary {
     void fireStudents(Student* unluckyStudent);
     Group* findGroup(std::string name);
     Student* findStudent(std::string name);
+    int getStudentsNumber(std::string groupName);
 };
 
 

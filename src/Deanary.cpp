@@ -109,3 +109,8 @@ Student* Deanary::findStudent(std::string name) {
     }
     return 0;
 }
+
+int Deanary::getStudentsNumber(std::string groupName) {
+    Group* tmp = findGroup(groupName);
+    return tmp->students.size();
+}
