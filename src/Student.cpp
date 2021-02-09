@@ -18,10 +18,12 @@ void Student::addmark(int mark) {
 
 float Student::getAveragemark() {
   double res = 0.0;
+  int count = 0;
   for (auto i : marks) {
     res += i;
+    count++;
   }
-  return res;
+  return res / count;
 }
 
 bool Student::isHeadOfGroup() {
