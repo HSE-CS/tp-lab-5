@@ -1,6 +1,6 @@
 // Copyright 2021 Shirokov Alexander
 
-#include "Student.h";
+#include "Student.h"
 #include "Group.h"
 
 Group::Group(const std::string& t, const std::string& s) {

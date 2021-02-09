@@ -63,7 +63,7 @@ void Deanary::getStatistics() {
   }
 }
 
-void Deanary::moveStudents(Group* from, Group* to, 
+void Deanary::moveStudents(Group* from, Group* to,
 std::vector<Student*> students) {
   for (Student* st : students) {
     from->removeStudent(st);
