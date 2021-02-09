@@ -21,7 +21,8 @@ class Deanary {
   void addMarksToAll();
   void getStatistics();
   void moveStudents(Group* from, Group* to, std::vector<Student*> students);
-  void saveStaff(const std::string& studentsPath, const std::string& groupsPath);
+  void saveStaff(const std::string& studentsPath,
+  const std::string& groupsPath);
   void initHeads();
   void fireStudents(std::vector<Student*> students);
   std::vector<Group*> getGroups();

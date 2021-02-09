@@ -1,7 +1,7 @@
 // Copyright 2021 Shirokov Alexander
 
-#include "Student.h";
-#include "Group.h";
+#include "Student.h"
+#include "Group.h"
 
 Student::Student(int ID, const std::string& FIO) {
   id = ID;

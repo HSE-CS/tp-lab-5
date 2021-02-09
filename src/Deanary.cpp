@@ -63,14 +63,16 @@ void Deanary::getStatistics() {
   }
 }
 
-void Deanary::moveStudents(Group* from, Group* to, std::vector<Student*> students) {
+void Deanary::moveStudents(Group* from, Group* to, 
+std::vector<Student*> students) {
   for (Student* st : students) {
     from->removeStudent(st);
     to->addStudent(st);
   }
 }
 
-void Deanary::saveStaff(const std::string& studentsPath, const std::string& groupsPath) {
+void Deanary::saveStaff(const std::string& studentsPath,
+const std::string& groupsPath) {
   std::ofstream file1(studentsPath);
 
   for (auto gr : groups) {
