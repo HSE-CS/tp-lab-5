@@ -9,7 +9,7 @@ void print(T value) {
 signed main() {
     Student s(0, "Obiwan Kenobi");
     Group g("19SE-2");
-    s.setGroup(g);
+    s.setGroup(&g);
     print(s.getGroup()->getTitle());
     g.setTitle("19SE-1");
     print(s.getGroup()->getTitle());
