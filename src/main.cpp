@@ -25,7 +25,7 @@ signed main() {
     ss[0]->str();
     print(ss[1]);
     print(ss[2]);
-    s1.setGroup(g1);
+    s1.setGroup(&g1);
     print(&g1);
     g1.deleteStudent(s1);
     print(s1.getGroup());
