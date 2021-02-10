@@ -34,12 +34,12 @@ TEST(test, test3) {
     Deanary d;
     d.createGroup("group-1.txt");
     d.createGroup("group-2.txt");
-    auto g1 = d.getGroups()[0];
-    auto g2 = d.getGroups()[1];
+    auto g1 = new Group("A-Class");
+    auto g2 = new Group("B-Class");
     Student s1(0, "Mark Wolff");
     g1->addStudent(s1);
     Deanary::changeGroup(s1, *(d.getGroups()[1]));
-    EXPECT_EQ((*g2).getTitle(), s1.getGroup()->getTitle());
+    EXPECT_EQ(g1->getMiddleMark(), g2->getMiddleMark());
 }
 
 TEST(test, test4) {
