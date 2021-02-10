@@ -10,7 +10,7 @@ Student::Student(int idParam, std::string fioParam) {
     this->group = nullptr;
 }
 
-void Student::setGroup(Group &groupParam) {
+void Student::setGroup(Group groupParam) {
     this->group = &groupParam;
 }
 
@@ -23,7 +23,7 @@ float Student::getMiddleMark() {
     for (auto x : this->marks)
         middle += x;
     if (!(this->marks.empty()))
-        middle /= (float) (this->marks.size());
+        middle /= static_cast<float>(this->marks.size());
     return middle;
 }
 

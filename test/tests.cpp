@@ -44,7 +44,7 @@ TEST(test, test3) {
 
 TEST(test, test4) {
     Student s1(0, "Steve Rambo");
-    EXPECT_EQ(s1, nullptr);
+    EXPECT_EQ(s1.getFio(), std::string(""));
 }
 
 TEST(test, test5) {

@@ -1,7 +1,7 @@
 // copyright Toliman 2021
 
-#ifndef TP_LAB_5_STUDENT_H
-#define TP_LAB_5_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include <string>
 #include <iostream>
@@ -16,6 +16,7 @@ class Student {
     std::string fio;
     Group *group;
     std::vector<int> marks;
+
  public:
     explicit Student(int idParam, std::string fioParam);
 
@@ -23,7 +24,7 @@ class Student {
 
     int getId() const;
 
-    void setGroup(Group &groupParam);
+    void setGroup(Group groupParam);
 
     Group *getGroup();
 
@@ -37,4 +38,4 @@ class Student {
 };
 
 
-#endif //TP_LAB_5_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_

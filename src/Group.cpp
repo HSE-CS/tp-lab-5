@@ -22,7 +22,7 @@ void Group::setSpec(std::string specParam) {
     this->spec = std::move(specParam);
 }
 
-void Group::addStudent(Student &student) {
+void Group::addStudent(Student student) {
     this->students.push_back(&student);
     student.setGroup(*this);
 }
@@ -54,11 +54,11 @@ float Group::getMiddleMark() {
         middle += s->getMiddleMark();
     }
     if (!(this->students.empty()))
-        middle /= (float) (this->students.size());
+        middle /= static_cast<float>(this->students.size());
     return middle;
 }
 
-void Group::deleteStudent(Student &student) {
+void Group::deleteStudent(Student student) {
     int index = 0;
     for (auto s : this->students) {
         if (s->getId() == student.getId()) {

@@ -1,7 +1,7 @@
 // copyright Toliman 2021
 
-#ifndef TP_LAB_5_GROUP_H
-#define TP_LAB_5_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include <string>
 #include <vector>
@@ -16,6 +16,7 @@ class Group {
   std::string fileName;
   std::vector<Student *> students;
   Student *head;
+
  public:
     explicit Group(std::string titleParam);
 
@@ -29,7 +30,7 @@ class Group {
 
     std::string getFileName();
 
-    void addStudent(Student &student);
+    void addStudent(Student student);
 
     void chooseHead();
 
@@ -41,11 +42,11 @@ class Group {
 
     float getMiddleMark();
 
-    void deleteStudent(Student &student);
+    void deleteStudent(Student student);
 
     std::vector<Student *> getStudents();
 
     void str();
 };
 
-#endif  // TP_LAB_5_GROUP_H
+#endif  // INCLUDE_GROUP_H_

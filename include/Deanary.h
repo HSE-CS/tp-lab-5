@@ -14,6 +14,7 @@
 class Deanary {
  private:
   std::vector<Group *> groups;
+
  public:
     static std::vector<Student *> createStudents(int count);
 

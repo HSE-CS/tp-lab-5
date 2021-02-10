@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/tp-lab-5.info.dir/main.cpp.o  -o tp-lab-5.info  -Wl,-rpath,/home/toliman/Projects/HSE-CS/tp-lab-5/cmake-build-debug/src: libtp-lab-5.so -lpthread 

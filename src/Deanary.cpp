@@ -1,6 +1,4 @@
-//
-// Created by toliman on 03.02.2021.
-//
+// copyright Toliman 2021
 
 #include <random>
 
@@ -71,7 +69,8 @@ void Deanary::getStats() {
         stats += std::to_string(group->getMiddleMark());
         stats += '\n';
         for (auto s : group->getStudents()) {
-            stats += s->getFio() + " - " + std::to_string(s->getMiddleMark()) + '\n';
+            stats += s->getFio() + " - " +
+                    std::to_string(s->getMiddleMark()) + '\n';
         }
     }
     stats += "=====";

@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libtp-lab-5.so -o libtp-lab-5.so CMakeFiles/tp-lab-5.dir/Student.cpp.o CMakeFiles/tp-lab-5.dir/Group.cpp.o CMakeFiles/tp-lab-5.dir/Deanary.cpp.o  -lpthread 
