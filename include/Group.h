@@ -10,14 +10,14 @@
 class Student;
 
 class Group {
-private:
-    std::string title;
-    std::string spec;
-    std::string fileName;
-    std::vector<Student *> students;
-    Student *head;
-public:
-    Group(std::string titleParam);
+ private:
+  std::string title;
+  std::string spec;
+  std::string fileName;
+  std::vector<Student *> students;
+  Student *head;
+ public:
+    explicit Group(std::string titleParam);
 
     std::string getTitle();
 
@@ -48,5 +48,4 @@ public:
     void str();
 };
 
-
-#endif //TP_LAB_5_GROUP_H
+#endif  // TP_LAB_5_GROUP_H

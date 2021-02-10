@@ -23,8 +23,8 @@ signed main() {
     Deanary d1;
     auto ss = Deanary::createStudents(5);
     ss[0]->str();
-    print(s[1]);
-    print(s[2]);
+    print(ss[1]);
+    print(ss[2]);
     s1.setGroup(g1);
     print(&g1);
     g1.deleteStudent(s1);

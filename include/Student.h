@@ -11,12 +11,12 @@
 class Group;
 
 class Student {
-private:
+ private:
     int id;
     std::string fio;
     Group *group;
     std::vector<int> marks;
-public:
+ public:
     explicit Student(int idParam, std::string fioParam);
 
     std::string getFio();

@@ -45,7 +45,7 @@ void Deanary::createGroup(const std::string &groupFile) {
     input.close();
 }
 
-void Deanary::addMark(Student &student, int count) {
+void Deanary::addMark(Student student, int count) {
     std::random_device generator;
     std::mt19937 gen(generator());
     std::normal_distribution<float> nd(7, 3.5);
@@ -82,7 +82,7 @@ std::vector<Group *> Deanary::getGroups() {
     return this->groups;
 }
 
-void Deanary::changeGroup(Student &student, Group &group) {
+void Deanary::changeGroup(Student student, Group group) {
     student.getGroup()->deleteStudent(student);
     group.addStudent(student);
 }

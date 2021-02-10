@@ -40,7 +40,8 @@ int Student::getId() const {
 }
 
 void Student::str() {
-    std::cout << this->getFio() + " (id: " + std::to_string(this->getId()) + ")";
+    std::cout << this->getFio() +
+    " (id: " + std::to_string(this->getId()) + ")";
 }
 
 void Student::leaveGroup() {
