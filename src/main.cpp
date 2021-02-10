@@ -21,8 +21,8 @@ signed main() {
     Group g2("GYM");
     Group g3("Leatherclub");
     Deanary d1;
-    auto s = Deanary::createStudents(5);
-    s[0]->str();
+    auto ss = Deanary::createStudents(5);
+    ss[0]->str();
     print(s[1]);
     print(s[2]);
     s1.setGroup(g1);
@@ -39,20 +39,16 @@ signed main() {
     g1.deleteStudent(s1);
     g1.str();
     print(s1.getGroup()->getTitle());
-
     auto d = new Deanary();
     d->createGroup("group-1.txt");
     d->createGroup("group-2.txt");
-
-    auto s = d->getGroups()[0]->getStudents()[0];
-    print(s->getGroup()->getTitle());
-    d->changeGroup(*s, *d->getGroups()[1]);
-    print(s->getGroup()->getTitle());
+    auto sss = d->getGroups()[0]->getStudents()[0];
+    print(sss->getGroup()->getTitle());
+    Deanary::changeGroup(*sss, *d->getGroups()[1]);
+    print(sss->getGroup()->getTitle());
     d->getStats();
     d->initializeHeadChoose();
     d->getGroups()[0]->str();
     d->save();
-
-
     return 0;
 }
