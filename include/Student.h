@@ -24,7 +24,7 @@ class Student {
 
     int getId() const;
 
-    void setGroup(Group groupParam);
+    void setGroup(Group *groupParam);
 
     Group *getGroup();
 

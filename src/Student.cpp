@@ -10,8 +10,8 @@ Student::Student(int idParam, std::string fioParam) {
     this->group = nullptr;
 }
 
-void Student::setGroup(Group groupParam) {
-    this->group = &groupParam;
+void Student::setGroup(Group *groupParam) {
+    this->group = groupParam;
 }
 
 void Student::addMark(int mark) {
