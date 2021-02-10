@@ -53,7 +53,7 @@ void Deanary::AddEvalsToAll() {
 void Deanary::InitHeads() {
     srand(time(0));
     for (auto& x : groups) {
-        x->ChooseHeader(x->students[rand_r() % x->students.size()]);
+        x->ChooseHeader(x->students[rand() % x->students.size()]);
     }
 }
 
