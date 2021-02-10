@@ -42,9 +42,9 @@ void Deanary::AddEvalsToAll() {
     srand(time(0));
 
     for (auto& x : students) {
-      int random = rand() % 9 + 1;
+      int random = std::rand() % 9 + 1;
         for (int i = 0; i != random; i++) {
-            x->AddEval(rand() % 10 + 1);
+            x->AddEval(std::rand() % 10 + 1);
         }
     }
 }
