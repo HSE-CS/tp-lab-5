@@ -1,4 +1,4 @@
-// Copyright 2021 Tatsenko Ilyas
+// Copyright 2021 Tatsenko Alexey
 #pragma once
 #include<vector>
 #include<string>

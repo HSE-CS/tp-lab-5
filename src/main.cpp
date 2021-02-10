@@ -1,3 +1,4 @@
+// Copyright 2021 Tatsenko Alexey
 #include <iostream>
 #include "Group.h"
 #include "Student.h"

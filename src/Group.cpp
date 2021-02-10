@@ -1,4 +1,4 @@
-// Copyright 2021 Tatsenko Ilya
+// Copyright 2021 Tatsenko Alexey
 #include <iostream>
 #include<vector>
 #include "Group.h"

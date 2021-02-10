@@ -1,4 +1,4 @@
-// Copyright 2021 tatsenko Ilya
+// Copyright 2021 Tatsenko Alexey's
 #include"Student.h"
 #include"Group.h"
 

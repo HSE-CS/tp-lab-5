@@ -1,5 +1,6 @@
-// Copyright 2021 Tatsenko Ilya
+// Copyright 2021 Tatsenko Alexey
 #include<fstream>
+#include<stdlib.h>
 #include<ctime>
 #include<clocale>
 #include"Deanary.h"
@@ -18,7 +19,7 @@ void Deanary::HireStudents(std::string name) {
         std::getline(file, string);
         Student* student = new Student(id, string);
         this->students.push_back(student);
-        student->AddToGroup(this->groups[std::rand() % groups.size()]);
+        student->AddToGroup(this->groups[rand_r() % groups.size()]);
     }
 
     file.close();
@@ -52,7 +53,7 @@ void Deanary::AddEvalsToAll() {
 void Deanary::InitHeads() {
     srand(time(0));
     for (auto& x : groups) {
-        x->ChooseHeader(x->students[rand() % x->students.size()]);
+        x->ChooseHeader(x->students[rand_r() % x->students.size()]);
     }
 }
 

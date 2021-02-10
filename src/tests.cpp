@@ -1,3 +1,4 @@
+// Copyright 2021 Tatsenko Alexey
 #include <gtest/gtest.h>
 #include <string>
 #include "Group.h"

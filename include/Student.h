@@ -1,4 +1,4 @@
-// Copyright 2021 Tatsenko Ilya
+// Copyright 2021 Tatsenko Alexey
 #pragma once
 #include <vector>
 #include<string>
@@ -8,13 +8,13 @@ class Group;
 class Deanary;
 
 class Student {
-  private:
+   private:
     std::string id;
     std::string fi;
     std::vector<int> evals;
     Group* group;
 
-  public:
+   public:
     friend Group;
     friend Deanary;
     Student() : group{nullptr} {}

@@ -1,4 +1,4 @@
-// Copyright 2021 Tatsenko Ilya
+// Copyright 2021 Tatsenko Alexey
 #pragma once
 
 #include <iostream>
@@ -19,7 +19,8 @@ class Group {
  public:
   friend Student;
   friend Deanary;
-  Group(std::string name, std::string spec) : title(name), spec(spec), head(nullptr) {}
+  Group(std::string name, std::string spec) 
+	  : title(name), spec(spec), head(nullptr) {}
   void AddStudent(Student* student);
   void ChooseHeader(Student* student);
   Student* GetStudent(std::string fi);
