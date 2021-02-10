@@ -1,6 +1,5 @@
 // Copyright 2021 Tatsenko Alexey
 #include<fstream>
-#include<stdlib.h>
 #include<ctime>
 #include<clocale>
 #include"Deanary.h"
@@ -70,7 +69,6 @@ void Deanary::MoveStudents(std::string name , std::string grup) {
       }
     }
   }
-
 }
 
 void Deanary::FireStudent(std::string name) {
