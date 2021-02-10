@@ -5,7 +5,7 @@
 
 
 std::string Group::GetTitle() { return this->title; }
-std::string Group :: GetSpec() { return this->spec; }
+std::string Group::GetSpec() { return this->spec; }
 
 std::string Group::GetHeader() {
         return this->head->GetFi();
