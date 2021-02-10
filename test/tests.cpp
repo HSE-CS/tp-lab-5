@@ -60,21 +60,20 @@ TEST(test, test6) {
     d.createGroup("group-1.txt");
     auto g1 = d.getGroups()[0];
     float m = g1->getMiddleMark();
-    EXPECT_LE(m, 0);
+    EXPECT_LE(m, 10);
 }
-//
-//TEST(test, test7) {
-//
-//}
-//
-//TEST(test, test8) {
-//
-//}
-//
-//TEST(test, test9) {
-//
-//}
-//
-//TEST(test, test10) {
-//
-//}
+
+TEST(test, test7) {
+    Group g("GYM");
+    Student s1(1946729, "Boss of this gym");
+    Student s2(0, "Leatherman");
+    Student s3(97346, "Jabroni");
+    Student s4(32434, "College boy");
+    g.addStudent(s1);
+    g.addStudent(s2);
+    g.addStudent(s3);
+    g.addStudent(s4);
+    Deanary::addMark(s1, 3);
+    Deanary::addMark(s3, 5);
+    EXPECT_GE(g.getMiddleMark(), 0);
+}

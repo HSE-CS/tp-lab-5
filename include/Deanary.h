@@ -1,6 +1,4 @@
-//
-// Created by toliman on 03.02.2021.
-//
+// copyright Toliman 2021
 
 #ifndef TP_LAB_5_DEANARY_H
 #define TP_LAB_5_DEANARY_H
@@ -12,10 +10,6 @@
 
 #include "../include/Group.h"
 #include "../include/Student.h"
-
-//class Student;
-//
-//class Group;
 
 class Deanary {
 private:
@@ -42,4 +36,4 @@ public:
 };
 
 
-#endif //TP_LAB_5_DEANARY_H
+#endif // TP_LAB_5_DEANARY_H

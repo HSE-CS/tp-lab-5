@@ -1,6 +1,4 @@
-//
-// Created by toliman on 03.02.2021.
-//
+// copyright Toliman 2021
 
 #include "../include/Student.h"
 
