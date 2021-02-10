@@ -19,7 +19,7 @@ void Deanary::HireStudents(std::string name) {
         std::getline(file, string);
         Student* student = new Student(id, string);
         this->students.push_back(student);
-        student->AddToGroup(this->groups[rand_r() % groups.size()]);
+        student->AddToGroup(this->groups[rand() % groups.size()]);
     }
 
     file.close();
