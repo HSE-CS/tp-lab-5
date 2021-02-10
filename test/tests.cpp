@@ -27,7 +27,7 @@ TEST(test, test2) {
     Student s1(0, "Van Darkholme");
     Group g1("Dungeon");
     g1.addStudent(s1);
-    EXPECT_EQ(g1.getTitle(), s1.getGroup()->getTitle());
+    EXPECT_EQ(true, g1.searchStudent(0));
 }
 
 TEST(test, test3) {

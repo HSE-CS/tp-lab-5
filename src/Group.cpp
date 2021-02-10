@@ -24,7 +24,7 @@ void Group::setSpec(std::string specParam) {
 
 void Group::addStudent(Student student) {
     this->students.push_back(&student);
-    student.setGroup(this);
+//    student.setGroup(this);
 }
 
 void Group::chooseHead() {
