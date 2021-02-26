@@ -11,7 +11,7 @@ Group::Group(std::string title, std::string spec) {
 
 void Group::addStudent(Student student) {
     students.push_back(student);
-    if(&student.getGroup() != this){
+    if (&student.getGroup() != this) {
         students.back().addGroup(*this);
     }
 }
@@ -21,17 +21,19 @@ void Group::chooseHead(Student student) {
 }
 
 Student Group::search_student(unsigned int id) {
-    for (auto & student : students){
+    for (auto &student : students) {
         if (student.id == id) {
-            return  student;
+            return student;
         }
     }
     throw;
 }
 
 Student Group::search_student(std::string fio) {
-    for (auto & student : students){
-        if (student.fio == fio) return student;
+    for (auto &student : students) {
+        if (student.fio == fio) {
+            return student;
+        }
     }
     throw;
 }
@@ -45,16 +47,17 @@ double Group::groupMiddleMark() {
 }
 
 void Group::removeStudent(unsigned int id) {
-    for(int i = 0; i < students.size(); i++) {
-        if(students[i].id == id) {
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i].id == id) {
             students.erase(students.begin() + i);
             students[i].group = nullptr;
         }
     }
 }
+
 void Group::removeStudent(std::string fio) {
-    for(int i = 0; i < students.size(); i++) {
-        if(students[i].fio == fio) {
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i].fio == fio) {
             students.erase(students.begin() + i);
             students[i].group = nullptr;
         }
@@ -66,5 +69,5 @@ std::string Group::getGroupName() {
 }
 
 std::string Group::getHead() {
-        return head->getFio();
+    return head->getFio();
 }

@@ -10,10 +10,10 @@
 #include "Group.h"
 #include "Student.h"
 class Deanary {
-private:
+ private:
     std::vector<Group> groups;
     std::vector<Student> heads;
-public:
+ public:
     const std::vector<Group> &getGroups() const;
     void createStudents(std::fstream&);
     void addRandomMarks();
@@ -23,6 +23,5 @@ public:
     void initHeads();
     void printInformation();
 };
-
 
 #endif // INCLUDE_DEANERY_H

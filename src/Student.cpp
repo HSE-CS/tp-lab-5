@@ -15,8 +15,6 @@ Student::Student(std::string fio) {
 void Student::addGroup(Group group) {
     this->group = &group;
     group.addStudent(*this);
-
-
 }
 
 void Student::addMark(int mark) {
@@ -56,4 +54,3 @@ const std::vector<int> &Student::getMarks() const {
 void Student::setMarks(const std::vector<int> &myMarks) {
     Student::marks = myMarks;
 }
-

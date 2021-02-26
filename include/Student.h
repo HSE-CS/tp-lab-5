@@ -6,20 +6,24 @@
 #include <string>
 #include <vector>
 #include "Group.h"
+
 class Group;
+
 class Deanary;
 
 class Student {
 
-private:
+ private:
     int id;
     std::string fio;
-    Group* group{};
+    Group *group{};
     std::vector<int> marks;
 
-public:
+ public:
     friend class Group;
+
     friend class Deanary;
+
     static int userId;
 
     explicit Student(std::string);
