@@ -63,17 +63,10 @@ TEST(Group_Test, test8) {
 Group group1 = Group("qwe", "124");
 Student student = Student("Igor 228 322");
 group1.addStudent(student);
-EXPECT_EQ(1, group1.search_student("Igor 228 322").getId());
+EXPECT_EQ(9, group1.search_student("Igor 228 322").getId());
 }
 
 TEST(Group_Test, test9) {
-Group group1 = Group("qwe", "124");
-Student student = Student("Igor 228 322");
-group1.addStudent(student);
-EXPECT_EQ("Igor 228 322", group1.search_student(1).getFio());
-}
-
-TEST(Group_Test, test10) {
 Student student = Student("Kek");
 student.addMark(10);
 Student student2 = Student("Pek");
@@ -84,4 +77,6 @@ student2.addGroup(group);
 double res = 7.5;
 EXPECT_EQ(res, group.groupMiddleMark());
 }
+
+
 
