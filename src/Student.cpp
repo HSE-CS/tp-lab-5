@@ -5,15 +5,18 @@
 #include <numeric>
 
 int Student::userId = 1;
-Student::Student(int id, std::string fio) {
-    this->id = id;
+
+Student::Student(std::string fio) {
+    this->id = userId;
     this->fio = fio;
     Student::userId++;
 }
 
-void Student::addGroup(Group* group) {
-    this->group = group;
-    group->addStudent(*this);
+void Student::addGroup(Group group) {
+    this->group = &group;
+    group.addStudent(*this);
+
+
 }
 
 void Student::addMark(int mark) {

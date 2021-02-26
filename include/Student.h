@@ -22,7 +22,7 @@ public:
     friend class Deanary;
     static int userId;
 
-    explicit Student(int, std::string);
+    explicit Student(std::string);
 
     void addMark(int mark);
 
@@ -38,11 +38,12 @@ public:
 
     [[nodiscard]] const Group &getGroup() const;
 
-    void addGroup(Group* group);
+    void addGroup(Group group);
 
     [[nodiscard]] const std::vector<int> &getMarks() const;
 
     void setMarks(const std::vector<int> &myMarks);
+
 };
 
 
