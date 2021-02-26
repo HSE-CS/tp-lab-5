@@ -72,8 +72,8 @@ student.addMark(10);
 Student student2 = Student("Pek");
 student2.addMark(5);
 Group group = Group("hse", "000");
-student.addGroup(group);
-student2.addGroup(group);
+group.addStudent(student);
+group.addStudent(student2);
 double res = 7.5;
 EXPECT_EQ(res, group.groupMiddleMark());
 }
