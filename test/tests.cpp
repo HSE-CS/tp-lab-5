@@ -53,6 +53,8 @@ Student student1 = Student("qwe");
 student1.addMark(5);
 Student student2 = Student("qwe");
 student2.addMark(3);
+group1.addStudent(student1);
+group1.addStudent(student2);
 double res = 4;
 EXPECT_EQ(res, group1.groupMiddleMark());
 }
