@@ -48,5 +48,4 @@ class Student {
     void setMarks(const std::vector<int> &myMarks);
 };
 
-
-#endif //  INCLUDE_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_
