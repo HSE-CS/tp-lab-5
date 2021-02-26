@@ -1,7 +1,7 @@
 // Copyright 2021 Stolbov Yaroslav
 
-#ifndef INCLUDE_STUDENT_H
-#define INCLUDE_5_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include <string>
 #include <vector>
@@ -12,7 +12,6 @@ class Group;
 class Deanary;
 
 class Student {
-
  private:
     int id;
     std::string fio;
@@ -47,8 +46,7 @@ class Student {
     [[nodiscard]] const std::vector<int> &getMarks() const;
 
     void setMarks(const std::vector<int> &myMarks);
-
 };
 
 
-#endif // INCLUDE_STUDENT_H
+#endif //  INCLUDE_STUDENT_H

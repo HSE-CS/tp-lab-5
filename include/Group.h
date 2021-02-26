@@ -1,9 +1,8 @@
 // Copyright 2021 Stolbov Yaroslav
 
-#ifndef INCLUDE_GROUP_H
-#define INCLUDE_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
-//#include "Student.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,6 +15,7 @@ class Group {
     std::string title;
     std::string spec;
     Student *head{};
+
  public:
     std::vector<Student> students;
 
@@ -43,4 +43,4 @@ class Group {
 };
 
 
-#endif // INCLUDE_GROUP_H
+#endif //  INCLUDE_GROUP_H_

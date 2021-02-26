@@ -20,7 +20,6 @@ void Deanary::createStudents(std::fstream &studentsStream) {
                                          str.size() - 1);
         bool flagFindGroup = false;
         for (Group gr : groups) {
-
             if (gr.getGroupName() == number + " " + special) {
                 flagFindGroup = true;
             }
@@ -32,7 +31,6 @@ void Deanary::createStudents(std::fstream &studentsStream) {
             this->groups.push_back(group);
         } else {
             for (int i = 0; i < groups.size(); i++) {
-                //std::cout << "kek ";
                 if (groups[i].getGroupName() == number + " " + special) {
                     groups[i].addStudent(student);
                 }
@@ -45,7 +43,7 @@ void Deanary::addRandomMarks() {
     for (int i = 0; i < groups.size(); i++) {
         for (int j = 0; j < groups[i].students.size(); j++) {
             for (int k = 0; k < 10; k++)
-                groups[i].students[j].addMark(rand() % 10 + 1);
+                groups[i].students[j].addMark(std::rand() % 10 + 1);
         }
     }
 }
@@ -59,14 +57,11 @@ void Deanary::getStatistic() {
             << " statistics: " << st.getMiddleMark() << "\n";
         }
     }
-
 }
 
 void Deanary::swapGroup(Student student, Group groupTo) {
     student.group->removeStudent(student.getFio());
     student.addGroup(groupTo);
-
-
 }
 
 const std::vector<Group> &Deanary::getGroups() const {
@@ -80,7 +75,8 @@ void Deanary::studentExpulsion(std::fstream &studentsStream) {
                 groups[i].removeStudent(groups[i].students[j].getFio());
                 std::string str;
                 while (std::getline(studentsStream, str)) {
-                    if (str.find(groups[i].students[j].getFio()) != -1) str.clear();
+                    if (str.find(groups[i].students[j].getFio())
+                    != -1) str.clear();
                 }
             }
         }
@@ -89,10 +85,9 @@ void Deanary::studentExpulsion(std::fstream &studentsStream) {
 
 void Deanary::initHeads() {
     for (int i = 0; i < groups.size(); i++) {
-        int randomHead = rand() % groups[i].students.size() + 1;
+        int randomHead = std::rand() % groups[i].students.size() + 1;
         groups[i].chooseHead(groups[i].students[randomHead]);
         heads.push_back(groups[i].students[randomHead]);
-        //std::cout << heads[i].getFio() << "\n";
     }
 }
 

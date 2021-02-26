@@ -1,7 +1,7 @@
 // Copyright 2021 Stolbov Yaroslav
 
-#ifndef INCLUDE_DEANERY_H
-#define INCLUDE_DEANERY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <iostream>
 #include <vector>
@@ -24,4 +24,4 @@ class Deanary {
     void printInformation();
 };
 
-#endif // INCLUDE_DEANERY_H
+#endif //  INCLUDE_DEANARY_H_

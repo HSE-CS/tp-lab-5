@@ -3,6 +3,6 @@
 #include <fstream>
 #include <Deanary.h>
 #include "Group.h"
-int main(){
+int main() {
     return 0;
 }
