@@ -12,7 +12,7 @@ EXPECT_EQ(1, student1.getId());
 TEST(Student_Test, test2) {
 Student student1 = Student("Игорь Тюлин");
 Student student2 = Student("Кто-то какой-то");
-EXPECT_EQ(2, student2.getId());
+EXPECT_EQ("Кто-то какой-то", student2.getFio());
 }
 
 TEST(Student_Test, test3) {
@@ -63,14 +63,14 @@ TEST(Group_Test, test8) {
 Group group1 = Group("qwe", "124");
 Student student = Student("Igor 228 322");
 group1.addStudent(student);
-EXPECT_EQ("Igor 228 322", group1.search_student(1).getFio());
+EXPECT_EQ(1, group1.search_student("Igor 228 322").getId());
 }
 
 TEST(Group_Test, test9) {
 Group group1 = Group("qwe", "124");
 Student student = Student("Igor 228 322");
 group1.addStudent(student);
-EXPECT_EQ(1, group1.search_student("Igor 228 322").getId());
+EXPECT_EQ("Igor 228 322", group1.search_student(1).getFio());
 }
 
 TEST(Group_Test, test10) {
