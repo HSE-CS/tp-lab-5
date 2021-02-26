@@ -10,7 +10,7 @@ class Group;
 class Deanary;
 
 class Student {
-
+//
 private:
     int id;
     std::string fio;
