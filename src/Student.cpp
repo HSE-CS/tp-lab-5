@@ -16,8 +16,7 @@ void Student::AddGroup(Group *group) {
     for (auto &student : group->students) {
         if (student.id != this->id) {
             continue;
-        }
-        else {
+        } else {
             error = true;
             std::cout
             << "There is a student with the same ID. Change student's ID";

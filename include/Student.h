@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
-#ifndef TP_LAB_5_STUDENT_H_
-#define TP_LAB_5_STUDENT_H_
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include <string>
 #include <vector>
@@ -46,4 +46,4 @@ class Student {
     const std::vector<int> &getMarks() const;
 };
 
-#endif  // TP_LAB_5_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
-#ifndef TP_LAB_5_GROUP_H_
-#define TP_LAB_5_GROUP_H_
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include "Student.h"
 #include <string>
@@ -47,4 +47,4 @@ class Group {
     std::vector<Student> *getStudents();
 };
 
-#endif  // TP_LAB_5_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

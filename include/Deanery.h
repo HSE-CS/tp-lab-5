@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
-#ifndef TP_LAB_5_DEANERY_H_
-#define TP_LAB_5_DEANERY_H_
+#ifndef INCLUDE_DEANERY_H_
+#define INCLUDE_DEANERY_H_
 
 #include "Group.h"
 #include <fstream>
@@ -31,4 +31,4 @@ class Deanery {
     void GetInfo();
 };
 
-#endif  // TP_LAB_5_DEANERY_H_
+#endif  // INCLUDE_DEANERY_H_
