@@ -88,23 +88,3 @@ TEST(Group_Test, test6) {
     group.KickStudent(student2);
     EXPECT_DOUBLE_EQ(5, group.CalcAverageMarkInGroup());
 }
-
-TEST(Deanery_Test, test1) {
-    Deanery deanery;
-    deanery.CreateStudentsFromFile();
-    EXPECT_EQ(0, deanery.getGroups()->back().getStudents()->size());
-}
-
-TEST(Deanery_Test, test3) {
-    Deanery deanery;
-    deanery.CreateStudentsFromFile();
-    deanery.CreateGroupsFromFile();
-    deanery.ChangeGroup(&deanery.getGroups()->front().getStudents()->back(), &deanery.getGroups()->operator[](1));
-    EXPECT_EQ(1, deanery.getGroups()->operator[](1).getStudents()->size());
-}
-
-TEST(Deanery_Test, test4) {
-    Deanery deanery;
-    deanery.CreateStudentsFromFile();
-    EXPECT_EQ(30, deanery.getGroups()->back().getStudents()->size());
-}
