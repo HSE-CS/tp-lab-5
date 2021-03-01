@@ -8,10 +8,10 @@ Group::Group(std::string title) {
 void Group::AddStudent(const Student &student) {
     bool error = false;
     for (auto &i : students) {
-        if (i.id != student.id)
+        if (i.id != student.id) {
             continue;
-        else
-        {
+        }
+        else {
             error = true;
             std::cout
             << "There is a student with the same ID. Change student's ID";

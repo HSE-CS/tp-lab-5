@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
 #ifndef TP_LAB_5_DEANERY_H_
-#define TP_LAB_5_DEANERY_H
+#define TP_LAB_5_DEANERY_H_
 
 #include "Group.h"
 #include <fstream>

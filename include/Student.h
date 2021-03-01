@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
 #ifndef TP_LAB_5_STUDENT_H_
-#define TP_LAB_5_STUDENT_H
+#define TP_LAB_5_STUDENT_H_
 
 #include <string>
 #include <vector>
@@ -19,6 +19,7 @@ class Student {
     std::string fio;
     std::vector<int> marks;
     Group *group;
+
  public:
     Student(int id, std::string fio);
 

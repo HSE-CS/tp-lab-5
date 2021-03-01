@@ -1,6 +1,6 @@
 // Copyright [2021] <Ziganshin Nikita>
 #ifndef TP_LAB_5_GROUP_H_
-#define TP_LAB_5_GROUP_H
+#define TP_LAB_5_GROUP_H_
 
 #include "Student.h"
 #include <string>
