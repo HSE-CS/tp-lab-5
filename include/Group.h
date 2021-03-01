@@ -1,24 +1,28 @@
-#ifndef TP_LAB_5_GROUP_H
+// Copyright [2021] <Ziganshin Nikita>
+#ifndef TP_LAB_5_GROUP_H_
 #define TP_LAB_5_GROUP_H
 
 #include "Student.h"
+#include <string>
+#include <vector>
 
 class Student;
 
 class Group {
     friend class Student;
 
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student> students;
     Student *head;
-public:
+
+ public:
     Student *getHead() const;
 
     void setHead(Student *head);
 
-    Group(std::string title);
+    explicit Group(std::string title);
 
     ~Group();
 
@@ -30,7 +34,7 @@ public:
 
     double CalcAverageMarkInGroup();
 
-    void KickStudent(Student &student);
+    void KickStudent(Student *student);
 
     std::string getTitle() const;
 
@@ -43,4 +47,4 @@ public:
     std::vector<Student> *getStudents();
 };
 
-#endif //TP_LAB_5_GROUP_H
+#endif  // TP_LAB_5_GROUP_H_

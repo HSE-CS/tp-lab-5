@@ -1,6 +1,5 @@
+// Copyright [2021] <Ziganshin Nikita>
 #include "Deanery.h"
-
-using namespace std;
 
 int main() {
     Deanery deanery1;

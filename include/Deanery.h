@@ -1,13 +1,15 @@
-#ifndef TP_LAB_5_DEANERY_H
+// Copyright [2021] <Ziganshin Nikita>
+#ifndef TP_LAB_5_DEANERY_H_
 #define TP_LAB_5_DEANERY_H
 
 #include "Group.h"
 #include <fstream>
+#include <vector>
 
 class Deanery {
-private:
+ private:
     std::vector<Group> groups;
-public:
+ public:
     void CreateStudentsFromFile();
 
     [[nodiscard]] std::vector<Group> *getGroups();
@@ -29,4 +31,4 @@ public:
     void GetInfo();
 };
 
-#endif //TP_LAB_5_DEANERY_H
+#endif  // TP_LAB_5_DEANERY_H_

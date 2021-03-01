@@ -1,3 +1,4 @@
+// Copyright [2021] <Ziganshin Nikita>
 #include "Deanery.h"
 
 void Deanery::CreateStudentsFromFile() {
@@ -33,7 +34,7 @@ void Deanery::RandMarks() {
     for (auto &group : groups) {
         for (int j = 0; j < group.getStudents()->size(); j++) {
             for (int k = 0; k < 10; k++) {
-                group.getStudents()->operator[](j).AddMark(rand() % 10);
+                group.getStudents()->operator[](j).AddMark(std::rand() % 10);
             }
         }
     }
@@ -41,12 +42,15 @@ void Deanery::RandMarks() {
 
 void Deanery::GetStat() {
     for (auto &group : groups) {
-        std::cout << "Group: " << group.getTitle() << "(average mark: " << group.CalcAverageMarkInGroup() << ")"
-                  << std::endl;
+        std::cout << "Group: " << group.getTitle() << "(average mark: "
+                  << group.CalcAverageMarkInGroup() << ")" << std::endl;
         for (int j = 0; j < group.getStudents()->size(); j++) {
-            std::cout << "Student" << group.getStudents()->operator[](j).getId() << ": "
-                      << group.getStudents()->operator[](j).getFio() << "(average mark: "
-                      << group.getStudents()->operator[](j).CalcAverageMark() << ")" << std::endl;
+            std::cout << "Student"
+                      << group.getStudents()->operator[](j).getId() << ": "
+                      << group.getStudents()->operator[](j).getFio()
+                      << "(average mark: "
+                      << group.getStudents()->operator[](j).CalcAverageMark()
+                      << ")" << std::endl;
         }
     }
 }
@@ -89,16 +93,20 @@ void Deanery::RefreshFiles() {
 
 void Deanery::SetHead() {
     for (auto &group : groups) {
-        group.setHead(&group.getStudents()->operator[](rand() % group.getStudents()->size()));
+        group.setHead(&group.getStudents()->
+        operator[](std::rand() % group.getStudents()->size()));
     }
 }
 
 void Deanery::GetInfo() {
     for (auto &group : groups) {
-        std::cout << "Group: " << group.getTitle() << std::endl << "Head: " << group.getHead()->getFio() << std::endl
+        std::cout << "Group: " << group.getTitle()
+                  << std::endl << "Head: "
+                  << group.getHead()->getFio() << std::endl
                   << "Students:" << std::endl;
         for (int j = 0; j < group.getStudents()->size(); j++) {
-            std::cout << group.getStudents()->operator[](j).getFio() << std::endl;
+            std::cout << group.getStudents()->operator[](j).getFio()
+            << std::endl;
         }
     }
 }

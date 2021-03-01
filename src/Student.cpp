@@ -1,3 +1,4 @@
+// Copyright [2021] <Ziganshin Nikita>
 #include <Student.h>
 
 Student::Student(int id, std::string fio) {
@@ -15,9 +16,11 @@ void Student::AddGroup(Group *group) {
     for (auto &student : group->students) {
         if (student.id != this->id)
             continue;
-        else {
+        else
+        {
             error = true;
-            std::cout << "There is a student with the same ID. Change student's ID";
+            std::cout
+            << "There is a student with the same ID. Change student's ID";
         }
     }
     if (!error) {

@@ -1,3 +1,4 @@
+// Copyright [2021] <Ziganshin Nikita>
 #include "Group.h"
 
 Group::Group(std::string title) {
@@ -9,9 +10,11 @@ void Group::AddStudent(const Student &student) {
     for (auto &i : students) {
         if (i.id != student.id)
             continue;
-        else {
+        else
+        {
             error = true;
-            std::cout << "There is a student with the same ID. Change student's ID";
+            std::cout
+            << "There is a student with the same ID. Change student's ID";
         }
     }
     if (!error) {
@@ -47,13 +50,13 @@ double Group::CalcAverageMarkInGroup() {
     return average;
 }
 
-void Group::KickStudent(Student &student) {
+void Group::KickStudent(Student *student) {
     for (int i = 0; i < students.size(); i++) {
-        if (students[i].id == student.id) {
+        if (students[i].id == student->id) {
             students.erase(students.begin() + i);
         }
     }
-    student.group = nullptr;
+    student->group = nullptr;
 }
 
 std::string Group::getTitle() const {

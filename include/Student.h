@@ -1,4 +1,5 @@
-#ifndef TP_LAB_5_STUDENT_H
+// Copyright [2021] <Ziganshin Nikita>
+#ifndef TP_LAB_5_STUDENT_H_
 #define TP_LAB_5_STUDENT_H
 
 #include <string>
@@ -13,12 +14,12 @@ class Student {
 
     friend class Deanery;
 
-private:
+ private:
     int id;
     std::string fio;
     std::vector<int> marks;
     Group *group;
-public:
+ public:
     Student(int id, std::string fio);
 
     explicit Student(Student *student);
@@ -44,4 +45,4 @@ public:
     const std::vector<int> &getMarks() const;
 };
 
-#endif //TP_LAB_5_STUDENT_H
+#endif  // TP_LAB_5_STUDENT_H_

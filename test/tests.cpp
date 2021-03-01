@@ -85,6 +85,6 @@ TEST(Group_Test, test6) {
     student2.AddMark(10);
     group.AddStudent(student1);
     group.AddStudent(student2);
-    group.KickStudent(student2);
+    group.KickStudent(&student2);
     EXPECT_DOUBLE_EQ(5, group.CalcAverageMarkInGroup());
 }
