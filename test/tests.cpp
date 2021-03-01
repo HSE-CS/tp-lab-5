@@ -92,13 +92,7 @@ TEST(Group_Test, test6) {
 TEST(Deanery_Test, test1) {
     Deanery deanery;
     deanery.CreateStudentsFromFile();
-    EXPECT_EQ(30, deanery.getGroups()->back().getStudents()->size());
-}
-
-TEST(Deanery_Test, test2) {
-    Deanery deanery;
-    deanery.CreateGroupsFromFile();
-    EXPECT_EQ("19PMI-2", deanery.getGroups()->back().getTitle());
+    EXPECT_EQ(0, deanery.getGroups()->back().getStudents()->size());
 }
 
 TEST(Deanery_Test, test3) {
