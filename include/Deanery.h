@@ -10,7 +10,7 @@ private:
 public:
     void CreateStudentsFromFile();
 
-    [[nodiscard]] const std::vector<Group>* getGroups();
+    [[nodiscard]] std::vector<Group> *getGroups();
 
     void CreateGroupsFromFile();
 
@@ -23,6 +23,10 @@ public:
     void KickStudents();
 
     void RefreshFiles();
+
+    void SetHead();
+
+    void GetInfo();
 };
 
 #endif //TP_LAB_5_DEANERY_H

@@ -4,34 +4,34 @@ Group::Group(std::string title) {
     this->title = title;
 }
 
-void Group::AddStudent(const Student& student) {
+void Group::AddStudent(const Student &student) {
     bool error = false;
-    for(auto & i : students) {
-        if(i.id != student.id)
+    for (auto &i : students) {
+        if (i.id != student.id)
             continue;
         else {
             error = true;
             std::cout << "There is a student with the same ID. Change student's ID";
         }
     }
-    if(!error) {
+    if (!error) {
         students.emplace_back(student);
         students.back().group = this;
     }
 }
 
-Student* Group::FindStudent(const std::string& fio) {
-    for(auto & student : students) {
-        if(student.fio == fio) {
+Student *Group::FindStudent(const std::string &fio) {
+    for (auto &student : students) {
+        if (student.fio == fio) {
             return &student;
         }
     }
     throw "There is no student with such name";
 }
 
-Student* Group::FindStudent(int id) {
-    for(auto & student : students) {
-        if(student.id == id) {
+Student *Group::FindStudent(int id) {
+    for (auto &student : students) {
+        if (student.id == id) {
             return &student;
         }
     }
@@ -40,7 +40,7 @@ Student* Group::FindStudent(int id) {
 
 double Group::CalcAverageMarkInGroup() {
     double average = 0;
-    for(auto & student : students) {
+    for (auto &student : students) {
         average += student.CalcAverageMark();
     }
     average = average / students.size();
@@ -48,8 +48,8 @@ double Group::CalcAverageMarkInGroup() {
 }
 
 void Group::KickStudent(Student &student) {
-    for(int i = 0; i < students.size(); i++) {
-        if(students[i].id == student.id) {
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i].id == student.id) {
             students.erase(students.begin() + i);
         }
     }
@@ -80,7 +80,7 @@ void Group::setHead(Student *head) {
     this->head = head;
 }
 
-std::vector<Student>* Group::getStudents() {
+std::vector<Student> *Group::getStudents() {
     return &students;
 }
 

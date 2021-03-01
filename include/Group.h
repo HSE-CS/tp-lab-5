@@ -7,6 +7,7 @@ class Student;
 
 class Group {
     friend class Student;
+
 private:
     std::string title;
     std::string spec;
@@ -21,11 +22,11 @@ public:
 
     ~Group();
 
-    void AddStudent(const Student& student);
+    void AddStudent(const Student &student);
 
-    Student* FindStudent(const std::string &fio);
+    Student *FindStudent(const std::string &fio);
 
-    Student* FindStudent(int id);
+    Student *FindStudent(int id);
 
     double CalcAverageMarkInGroup();
 
@@ -39,7 +40,7 @@ public:
 
     void setSpec(const std::string &spec);
 
-    std::vector<Student>* getStudents();
+    std::vector<Student> *getStudents();
 };
 
 #endif //TP_LAB_5_GROUP_H

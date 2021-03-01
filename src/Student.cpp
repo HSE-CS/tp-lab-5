@@ -12,7 +12,7 @@ Student::Student(Student *student) {
 
 void Student::AddGroup(Group *group) {
     bool error = false;
-    for (auto & student : group->students) {
+    for (auto &student : group->students) {
         if (student.id != this->id)
             continue;
         else {
