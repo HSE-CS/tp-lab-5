@@ -39,8 +39,7 @@ int main() {
     std::cout << "Statistic Matsovkin Artem Demyanovich  = "
         << FIMIKN.student_statistic("Matsovkin Artem Demyanovich") << std::endl;
     std::cout << "Statistic Efremova Yulia Vissarionovna  = "
-        << FIMIKN.student_statistic("Efremova Yulia Vissarionovna")
-        << std::endl;
+        << FIMIKN.student_statistic("Efremova Yulia Vissarionovna") << std::endl;
     std::cout << "Statistic Greshnev Eduard Emilevich  = "
         << FIMIKN.student_statistic("Greshnev Eduard Emilevich") << std::endl;
     std::cout << "Statistic Pudina Yunona Pakhomovna  = "
