@@ -7,11 +7,10 @@
 //
 
 #ifndef INCLUDE_STUDENT_H_
-#define INCLUDE_STUDENT_H_
-#include <vector>
-#include <string>
-// #include "../include/Group.h"
-
+ #define INCLUDE_STUDENT_H_
+ #include <vector>
+ #include <string>
+ #include "../include/Group.h"
 class Group;
 class Student {
  private:
@@ -20,7 +19,6 @@ class Student {
     Group *_group;
     std::vector<int> _marks;
     bool _isHead;
-
  public:
     Student(int id, std::string fio,
             std::vector<int> marks = std::vector<int>(),
@@ -42,5 +40,4 @@ class Student {
     void setId(int id);
     void setFio(std::string fio);
 };
-
 #endif  //  INCLUDE_STUDENT_H_
