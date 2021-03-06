@@ -6,65 +6,74 @@
 //  Copyright © 2021 Anastasiya Rogozyan. All rights reserved.
 //
 
-#include<iostream>
-#include<string>
-#include "../include/Group.h"
-#include "../include/Student.h"
-std::string Group::getTitle() {
-    return _title;
-}
-std::string Group::getSpec() {
-    return _spec;
-}
-Student* Group::getHeadman() {
-    return _head;
-}
-std::vector<Student*> Group::getStudents() {
-    return _students;
-}
-void Group::setTitle(std::string title) {
-    _title = title;
-}
- void Group::setSpec(std::string spec) {
-     _spec = spec;
- }
+#include "Group.h"
 
- void Group::addStudentToGroup(Student* student) {
-     student->setGroup(this);
-     _students.push_back(student);
+
+void Group::student_choice_head() {
+    int number = std::rand() % students.size();
+    head = students[number];
 }
-void Group::chooseHeadman(Student* student) {
-    _head = student;
-}
-Student* Group::findStudent(std::string fio, int id) {
-    if (!fio.empty()) {
-        for (unsigned int i = 0; i < _students.size(); i++) {
-        if (_students[i]->getFio().compare(fio) == 0)
-            return _students[i];
+
+void Group::student_remove(Student* student) {
+    for (size_t i = 0; i < students.size(); i++) {
+        if (students[i]->student_FIO() == student->student_FIO()) {
+            for (int j = i + 1; j < students.size(); j++) {
+                students[j - 1] = students[j];
+            }
+            students.pop_back();
+            break;
         }
-        return NULL;
-    } else {
-        for (unsigned int i = 0; i < _students.size(); i++) {
-        if (_students[i]->getId() == id)
-            return _students[i];
-        }
-        return NULL;
     }
 }
-float Group::calculateMeanMark() {
-    float total = 0;
-    for (unsigned int i = 0; i < _students.size(); i++) {
-        int sum = 0;
-        for (unsigned int j = 0; j < _students[i]->getMarks().size(); j++)
-            sum += _students[i]->getMarks()[j];
-        total += sum / _students[i]->getMarks().size();
-    }
-    total /= static_cast<float>(_students.size());
-    return total;
+
+void Group::student_add(Student* student) {
+    students.push_back(student);
+    student->group = this;
 }
-bool Group::removeStudentFromGroup(Student* student) {
-    for (unsigned int i = 0; i < _students.size(); i++) {
-        if (_students[i]->getId() == student->getId()) {
-            _students.erase(_students.begin() + i);
-            student->setGroup(NULL);
+
+bool Group::student_search_ID(int ID) {
+    for (size_t i = 0; i < students.size(); i++) {
+        if (students[i]->student_ID() == ID) {
             return true;
+        }
+    }
+    return false;
+}
+
+bool Group::student_search_FIO(std::string FIO) {
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i]->student_FIO() == FIO) {
+            return true;
+        }
+    }
+    return false;
+}
+
+double Group::mark_avarage() {
+    double sum = 0;
+    int count = 0;
+    int res = 0;
+    for (auto* student : students) {
+        sum += student->student_mark_avarage();
+        count++;
+    }
+    if (sum != 0) {
+        res = sum / count;
+    } else {
+        res = 0;
+    }
+    return res;
+}
+
+Group::Group(std::string title, std::string spec) {
+    this->title = title;
+    this->spec = spec;
+}
+
+std::string Group::get_spec() {
+    return spec;
+}
+
+std::string Group::get_title() {
+    return title;
+}

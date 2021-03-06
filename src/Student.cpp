@@ -6,48 +6,43 @@
 //  Copyright © 2021 Anastasiya Rogozyan. All rights reserved.
 //
 
-#include <vector>
-#include <numeric>
-#include "../include/Student.h"
-#include "../include/Group.h"
+#include "Student.h"
 
-int Student::getId() {
-    return _id;
+Student::Student(int ID, std::string FIO) {
+    this->ID = ID;
+    this->FIO = FIO;
+    this->marks = std::vector<int>();
+    this->group = 0;
 }
 
-std::string Student::getFio() {
-    return _fio;
+int Student::student_ID() {
+    return ID;
 }
 
-std::vector<int> Student::getMarks() {
-    return _marks;
+std::string Student::student_FIO() {
+    return FIO;
 }
 
-Group* Student::getGroup() {
-    return _group;
+void Student::student_group(Group* group) {
+    this->group = group;
 }
 
-void Student::setId(int id) {
-    _id = id;
+void Student::add_mark(int mark) {
+        marks.push_back(mark);
 }
 
-void Student::setFio(std::string fio) {
-    _fio = fio;
-}
-
-void Student::setGroup(Group *group) {
-    _group = group;
-}
-
-void Student::addMark(int mark) {
-    _marks.push_back(mark);
-}
-
-float Student::calculateMeanMark() {
-    return static_cast<float>(std::accumulate(_marks.begin(),
-         _marks.end(), 0)) / static_cast<float>(_marks.size());
-}
-
-void Student::enrollInGroup(Group* group) {
-    group->addStudentToGroup(this);
+double Student::student_mark_avarage() {
+    int sum = 0;
+    int count = 0;
+    int res = 0;
+    for (size_t i = 0; i < marks.size(); i++) {
+        sum += marks[i];
+        count++;
+    }
+    if (sum != 0) {
+        res = sum / count;
+    } else {
+        res = 0;
+    }
+    return res;
 }

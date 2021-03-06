@@ -7,37 +7,32 @@
 //
 
 #ifndef INCLUDE_STUDENT_H_
- #define INCLUDE_STUDENT_H_
- #include <vector>
- #include <string>
- #include "../include/Group.h"
+#define INCLUDE_STUDENT_H_
+
+#include <vector>
+#include <string>
+#include <iostream>
+
+#include "Deanary.h"
+#include "Group.h"
+
 class Group;
+class Deanary;
+
 class Student {
  private:
-    int _id;
-    std::string _fio;
-    Group *_group;
-    std::vector<int> _marks;
-    bool _isHead;
+    int ID;
+    std::string FIO;
+    Group* group;
+    std::vector<int> marks;
  public:
-    Student(int id, std::string fio,
-            std::vector<int> marks = std::vector<int>(),
-            Group* group = NULL,
-            bool isHead = false):
-        _id(id),
-        _fio(fio),
-        _group(group),
-        _marks(marks),
-        _isHead(isHead) {}
-    void addMark(int mark);
-    float calculateMeanMark();
-    void enrollInGroup(Group* group);
-    int getId();
-    Group*  getGroup();
-    void setGroup(Group *group);
-    std::string getFio();
-    std::vector<int> getMarks();
-    void setId(int id);
-    void setFio(std::string fio);
+    Student(int ID, std::string FIO);
+    int student_ID();
+    std::string student_FIO();
+    void student_group(Group* group);
+    void add_mark(int mark);
+    double student_mark_avarage();
+    friend class Group;
+    friend class Deanary;
 };
-#endif  //  INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_

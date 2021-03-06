@@ -8,37 +8,37 @@
 
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
-#include <vector>
-#include <string>
-#include "../include/Student.h"
-class Group{
- private:
-    std::string _title;
-    std::string _spec;
-    Student* _head;
-    std::vector<Student*> _students;
 
-  public:
-     Group(std::string title,
-         std::string spec = "",
-         std::vector<Student*> students = std::vector<Student*>(),
-         Student *head = NULL):
-         _title(title),
-        _spec(spec),
-        _head(head),
-        _students(students) {}
-    std::string getTitle();
-    std::string getSpec();
-    Student* getHeadman();
-    std::vector<Student*> getStudents();
-    void setTitle(std::string title);
-    void setSpec(std::string spec);
-    Group createGroup(std::string title);
-    void addStudentToGroup(Student* student);
-    void chooseHeadman(Student* student);
-    Student* findStudent(std::string fio = "", int id = -1);
-    float calculateMeanMark();
-    bool removeStudentFromGroup(Student* student);
-    bool isEmpty();
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "Deanary.h"
+#include "Student.h"
+
+class Student;
+class Deanary;
+
+class Group {
+ private:
+    std::string spec;
+    std::string title;
+    std::vector<Student*> students;
+    Student* head;
+
+ public:
+    void student_choice_head();
+    void student_remove(Student* student);
+    void student_add(Student* student);
+    bool student_search_ID(int ID);
+    bool student_search_FIO(std::string FIO);
+    double mark_avarage();
+    Group(std::string number_groups, std::string programm);
+    std::string get_spec();
+    std::string get_title();
+    friend class Deanary;
+    friend class Student;
 };
-#endif  //  INCLUDE_GROUP_H_
+
+
+#endif  // INCLUDE_GROUP_H_
