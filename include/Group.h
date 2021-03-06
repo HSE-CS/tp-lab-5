@@ -6,41 +6,39 @@
 //  Copyright © 2021 Anastasiya Rogozyan. All rights reserved.
 //
 
-#ifndef INCLUDE_STUDENT_H_
-#define INCLUDE_STUDENT_H_
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 #include <vector>
 #include <string>
-// #include "../include/Group.h"
-
-class Group;
-class Student {
+#include "../include/Student.h"
+class Group{
  private:
-    int _id;
-    std::string _fio;
-    Group *_group;
-    std::vector<int> _marks;
-    bool _isHead;
+    std::string _title;
+    std::string _spec;
+    Student* _head;
+    std::vector<Student*> _students;
 
- public:
-    Student(int id, std::string fio,
-            std::vector<int> marks = std::vector<int>(),
-            Group* group = NULL,
-            bool isHead = false):
-        _id(id),
-        _fio(fio),
-        _group(group),
-        _marks(marks),
-        _isHead(isHead) {}
-    void addMark(int mark);
+  public:
+     Group(std::string title,
+         std::string spec = "",
+         std::vector<Student*> students = std::vector<Student*>(),
+         Student *head = NULL):
+         _title(title),
+        _spec(spec),
+        _head(head),
+        _students(students) {}
+    std::string getTitle();
+    std::string getSpec();
+    Student* getHeadman();
+    std::vector<Student*> getStudents();
+    void setTitle(std::string title);
+    void setSpec(std::string spec);
+    Group createGroup(std::string title);
+    void addStudentToGroup(Student* student);
+    void chooseHeadman(Student* student);
+    Student* findStudent(std::string fio = "", int id = -1);
     float calculateMeanMark();
-    void enrollInGroup(Group* group);
-    int getId();
-    Group*  getGroup();
-    void setGroup(Group *group);
-    std::string getFio();
-    std::vector<int> getMarks();
-    void setId(int id);
-    void setFio(std::string fio);
+    bool removeStudentFromGroup(Student* student);
+    bool isEmpty();
 };
-
-#endif  //  INCLUDE_STUDENT_H_
+#endif  //  INCLUDE_GROUP_H_
