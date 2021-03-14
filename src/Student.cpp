@@ -1,6 +1,7 @@
 // Copyright 2021 Grachev Alexander
 
 #include "../include/Student.h"
+#include "../include/Group.h"
 
 Student::Student(unsigned int id, const std::string& name) {
     this->id = id;
@@ -31,4 +32,13 @@ double Student::getMidMark() {
     double result = 0;
     for (double mark : marks) result += mark;
     return marks.empty() ? 0 : result / marks.size();
+}
+
+void Student::addGroup(Group group) {
+    this->group = &group;
+    group.addStudent(*this);
+}
+
+Group &Student::getGroup() {
+    return* group;
 }

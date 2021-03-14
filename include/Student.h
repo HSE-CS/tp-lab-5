@@ -13,6 +13,7 @@ class Student {
     unsigned int id;
     std::string name;
     std::vector<int> marks;
+    Group *group{};
 
  public:
     friend class Group;
@@ -26,6 +27,8 @@ class Student {
     std::string getName();
     void addMark(int mark);
     double getMidMark();
+    void addGroup(Group group);
+    Group &getGroup();
 };
 
 #endif  // INCLUDE_STUDENT_H_

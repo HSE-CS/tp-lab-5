@@ -38,6 +38,56 @@ TEST(StudentTest, test5) {
     EXPECT_EQ(8, student.getMidMark());
 }
 
+TEST(GroupTest, test6) {
+    Group group("19PI", "PI");
+    EXPECT_EQ("19PI", group.getTitle());
+}
+
+TEST(GroupTest, test7) {
+    Group group("19PI", "PI");
+    EXPECT_EQ("PI", group.getSpec());
+}
+
+TEST(GroupTest, test8) {
+    Student a(2312, "Grachev A.E.");
+    Student b(1111, "Ivanov I.I.");
+    Group group("19PI", "PI");
+    group.addStudent(a);
+    group.addStudent(b);
+    group.chooseLeader(a);
+    EXPECT_EQ("Grachev Alexander", group.getLeader());
+}
+
+//std::cout << gA.searchStudent(1111).getName() << std::endl;
+//std::cout << gA.searchStudent("Ivanov I.I.").getId() << std::endl;
+
+TEST(GroupTest, test9) {
+    Student a(2312, "Grachev A.E.");
+    Student b(1111, "Ivanov I.I.");
+    Group group("19PI", "PI");
+    group.addStudent(a);
+    group.addStudent(b);
+    EXPECT_EQ("Ivanov I.I.", group.searchStudent(1111));
+}
+
+TEST(GroupTest, test10) {
+    Student a(2312, "Grachev A.E.");
+    Student b(1111, "Ivanov I.I.");
+    Group group("19PI", "PI");
+    group.addStudent(a);
+    group.addStudent(b);
+    EXPECT_EQ("Grachev A.E.", group.searchStudent(2312));
+}
+
+TEST(GroupTest, test11) {
+    Student a(2312, "Grachev A.E.");
+    Student b(1111, "Ivanov I.I.");
+    Group group("19PI", "PI");
+    group.addStudent(a);
+    group.addStudent(b);
+    EXPECT_EQ(1111, group.searchStudent("Ivanov I.I."));
+}
+
 
 
 
