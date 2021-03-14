@@ -55,7 +55,7 @@ TEST(GroupTest, test8) {
     group.addStudent(a);
     group.addStudent(b);
     group.chooseLeader(a);
-    EXPECT_EQ("Grachev Alexander", group.getLeader());
+    EXPECT_EQ("Grachev A.E.", group.getLeader());
 }
 
 TEST(GroupTest, test9) {
