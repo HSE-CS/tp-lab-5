@@ -1,12 +1,11 @@
 // Copyright 2021 Grachev Alexander
 
+#include <iostream>
 #include "../include/Deanary.h"
 #include "../include/Group.h"
 #include "../include/Student.h"
-#include <iostream>
 
 int main() {
-
     Student a(2312, "Grachev A.E.");
 
     std::cout << a.getId() << std::endl;

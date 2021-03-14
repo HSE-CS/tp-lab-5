@@ -25,7 +25,7 @@ TEST(StudentTest, test3) {
 
 TEST(StudentTest, test4) {
     Student student(2311, "Alex B.B.");
-    student.setName("Alex A.E.")
+    student.setName("Alex A.E.");
     EXPECT_EQ("Alex A.E.", student.getName());
 }
 
