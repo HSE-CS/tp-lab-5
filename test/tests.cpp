@@ -58,9 +58,6 @@ TEST(GroupTest, test8) {
     EXPECT_EQ("Grachev Alexander", group.getLeader());
 }
 
-//std::cout << gA.searchStudent(1111).getName() << std::endl;
-//std::cout << gA.searchStudent("Ivanov I.I.").getId() << std::endl;
-
 TEST(GroupTest, test9) {
     Student a(2312, "Grachev A.E.");
     Student b(1111, "Ivanov I.I.");
