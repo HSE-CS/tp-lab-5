@@ -64,7 +64,7 @@ TEST(GroupTest, test9) {
     Group group("19PI", "PI");
     group.addStudent(a);
     group.addStudent(b);
-    EXPECT_EQ("Ivanov I.I.", group.searchStudent(1111));
+    EXPECT_EQ("Ivanov I.I.", group.searchStudent(1111).getName());
 }
 
 TEST(GroupTest, test10) {
@@ -73,7 +73,7 @@ TEST(GroupTest, test10) {
     Group group("19PI", "PI");
     group.addStudent(a);
     group.addStudent(b);
-    EXPECT_EQ("Grachev A.E.", group.searchStudent(2312));
+    EXPECT_EQ("Grachev A.E.", group.searchStudent(2312).getName());
 }
 
 TEST(GroupTest, test11) {
@@ -82,7 +82,7 @@ TEST(GroupTest, test11) {
     Group group("19PI", "PI");
     group.addStudent(a);
     group.addStudent(b);
-    EXPECT_EQ(1111, group.searchStudent("Ivanov I.I."));
+    EXPECT_EQ(1111, group.searchStudent("Ivanov I.I.").getId());
 }
 
 
