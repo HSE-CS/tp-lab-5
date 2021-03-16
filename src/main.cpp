@@ -48,5 +48,18 @@ int main() {
     gA.removeStudent(2112);
     gA.removeStudent("Ivanov I.I.");
 
+
+    // Deanary
+    Deanary dA;
+//    dA.addStudents(list.txt);
+//    dA.addRandMarks();
+//    dA.getStatistic();
+//    dA.moveStudent(a, gA);
+//    dA.expelStudents(list.txt);
+//    dA.saveStaff();
+//    dA.initLeaders();
+//    dA.info();
+
+
     return 0;
 }
