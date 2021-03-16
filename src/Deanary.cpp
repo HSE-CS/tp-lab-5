@@ -2,9 +2,9 @@
 
 #include "../include/Deanary.h"
 
-void Deanary::addStudents(std::fstream& fileName) {
-
-}
+// void Deanary::addStudents(std::fstream& fileName) {
+//
+// }
 
 void Deanary::addRandMarks() {
     for (int i = 0; i < groups.size(); i++) {
@@ -17,9 +17,11 @@ void Deanary::addRandMarks() {
 
 void Deanary::getStatistic() {
     for (auto groupIndex : groups) {
-        std::cout << "Group " << groupIndex.getTitle() << " statistics: " << groupIndex.getMidMark() << std::endl;
+        std::cout << "Group " << groupIndex.getTitle()
+        << " statistics: " << groupIndex.getMidMark() << std::endl;
         for (auto studentIndex : groupIndex.students) {
-            std::cout << "Student " << studentIndex.getName() << " statistics: " << studentIndex.getMidMark() << std::endl;
+            std::cout << "Student " << studentIndex.getName()
+            << " statistics: " << studentIndex.getMidMark() << std::endl;
         }
     }
 }
@@ -44,9 +46,9 @@ void Deanary::expelStudents(std::fstream& fileName) {
     }
 }
 
-void Deanary::saveStaff() {
-
-}
+// void Deanary::saveStaff() {
+//
+// }
 
 void Deanary::initLeaders() {
     for (int i = 0; i < groups.size(); i++) {
