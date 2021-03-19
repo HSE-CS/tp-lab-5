@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/mushka/Desktop/tp-lab-5/include/Deanary.h
+Group.h
+C:/Users/mushka/Desktop/tp-lab-5/include/Group.h
+Student.h
+C:/Users/mushka/Desktop/tp-lab-5/include/Student.h
+iostream
+-
+vector
+-
+
+C:/Users/mushka/Desktop/tp-lab-5/include/Group.h
+string
+-
+vector
+-
+
+C:/Users/mushka/Desktop/tp-lab-5/include/Student.h
+string
+-
+vector
+-
+
+C:/Users/mushka/Desktop/tp-lab-5/src/main.cpp
+../include/Deanary.h
+C:/Users/mushka/Desktop/tp-lab-5/include/Deanary.h
+iostream
+-
+
