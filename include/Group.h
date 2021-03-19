@@ -9,29 +9,29 @@
 
 
 class Group {
-private:
- std::string title;
- std::string specialization;
- std::vector<Student*> students;
- Student* head;
+ private:
+    std::string title;
+    std::string specialization;
+    std::vector<Student*> students;
+    Student* head;
 
-public:
- Group(std::string title, std::string specialization);
- void chooseHead(Student* head);
- void addStudent(Student* student);
- double calculateAverageMark();
- void removeStudent(Student* student);
+ public:
+    Group(std::string title, std::string specialization);
+    void chooseHead(Student* head);
+    void addStudent(Student* student);
+    double calculateAverageMark();
+    void removeStudent(Student* student);
 
- Student* getStudent(std::string stId);
- Student* getHead() const;
+    Student* getStudent(std::string stId);
+    Student* getHead() const;
 
- void setTitle(const std::string& title);
- void setSpecialization(const std::string& specialization);
- const std::vector<Student*>& getStudents() const;
- const std::string& getSpecialization() const;
- const std::string& GetTitle() const;
+    void setTitle(const std::string& title);
+    void setSpecialization(const std::string& specialization);
+    const std::vector<Student*>& getStudents() const;
+    const std::string& getSpecialization() const;
+    const std::string& GetTitle() const;
 
- virtual ~Group();
+    virtual ~Group();
 };
 
 #endif  // INCLUDE_GROUP_H_
