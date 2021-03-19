@@ -129,13 +129,13 @@ void Deanary::saveStaff() {
             out << "Head: " << this->getGroups().at(i)->getHead()->
                 getFio() << std::endl;
             out << "{" << std::endl;
-        for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
-          std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
+    for (int j = 0; j < this->getGroups().at(i)->getStudents().size(); ++j) {
+      std::string id = this->getGroups().at(i)->getStudents().at(j)->getId();
           std::string name = this->getGroups().at(i)->getStudents().at(j)->
                     getFio();
                 double avr = this->getGroups().at(i)->getStudents().at(j)->
                     calculateAverageMark();
-            out << id << " --- " << name << " --- average: " << avr << std::endl;
+        out << id << " --- " << name << " --- average: " << avr << std::endl;
             }
             out << "}" << std::endl;
         }
