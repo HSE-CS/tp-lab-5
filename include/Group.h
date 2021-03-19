@@ -1,6 +1,6 @@
 // Copyright 7.02.2021 Golovanov
 
-#ifndef INCLUDE_GROUP_H
+#ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
 #include <string>
