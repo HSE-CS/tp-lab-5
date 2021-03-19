@@ -101,7 +101,7 @@ int main() {
     deanary1.addRandomMarksToAll();
     deanary1.addRandomMarksToAll();
     for (int i = 0; i < deanary1.getGroups().size(); ++i) {
-        for (int j = 0; j < deanary1.getGroups().at(i)->getStudents().size(); ++j) {
+    for (int j = 0; j < deanary1.getGroups().at(i)->getStudents().size(); ++j) {
             std::cout << deanary1.getGroups().at(i)->
                 getStudents().at(j)->getMarks().at(0) << std::endl;
         }
