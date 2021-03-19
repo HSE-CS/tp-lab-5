@@ -1,3 +1,5 @@
+// Copyright 7.02.2021 Golovanov
+
 #include <gtest/gtest.h>
 #include <string>
 #include "../include/Student.h"
