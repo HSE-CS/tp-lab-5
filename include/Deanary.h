@@ -11,10 +11,10 @@
 #include <string>
 
 class Deanary {
-private:
+ private:
     std::vector<Group *> groups;
 
-public:
+ public:
     void CreateGroup(std::string title, std::string spec);
 
     static void CreateStudent(int new_id, std::string fio, Group *group);

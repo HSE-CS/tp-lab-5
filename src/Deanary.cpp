@@ -1,6 +1,6 @@
-//
-// Created by mushka on 19.03.2021.
-//
+// Copyright Mushka Nikita, 2021
+
+
 
 #include "../include/Deanary.h"
 #include <ctime>
@@ -71,7 +71,6 @@ std::string Deanary::GetStats() {
         stats += " - " + to_string(group->CountAvgMark()) + '\n';
         stats+= "Leader - " + to_string(group->GetLeader()->id)
                 + ", " + group->GetLeader()->GetFio() + "\n\n";
-
     }
     return stats;
 }
@@ -96,7 +95,6 @@ bool Deanary::File_CreateGroups(const std::string &path) {
 }
 
 bool Deanary::File_CreateStudents(const std::string &path) {
-
     std::ifstream data(path);
     if (!data) {
         std::cout << "\nfile is not found\n";
@@ -135,13 +133,10 @@ bool Deanary::File_SaveDeanary(std::string path) {
         file << "Group: " << group->title << " ( " << group->spec << " )\n";
 
         for (Student *student : group->students) {
-
             file << " - " << student->id;
-
             if (group->leader == student) {
                 file << " ( LEADER )";
             }
-
             file << ' ' << student->fio << ' ';
             for (int mark : student->marks) {
                 file << mark << ' ';
