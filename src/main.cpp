@@ -4,7 +4,7 @@
 #include "../include/Deanary.h"
 
 int main() {
-    Student s = Student(1, "a s");
+    Student s = Student(1, "ass ass");
     Student *s1 = &s;
 
     Group g = Group("PI", "programming");
