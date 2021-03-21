@@ -1,33 +1,37 @@
-//
-// Created by mushka on 19.03.2021.
-//
+// Copyright Mushka Nikita, 2021
 
-#ifndef TP_LAB_5_STUDENT_H
-#define TP_LAB_5_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
+
 #include <string>
 #include <vector>
 
 class Group;
+
 class Student {
     friend class Group;
+
     friend class Deanary;
 
-private:
+ private:
     int id;
     std::string fio;
     std::vector<int> marks;
     Group *group{};
 
-public:
+ public:
     explicit Student(int id, std::string fio);
 
     void AddToGroup(Group *group);
+
     void AddMark(int mark);
+
     float CountAvgMark();
 
     int GetId() const;
+
     std::string GetFio();
 };
 
 
-#endif //TP_LAB_5_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_
