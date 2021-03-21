@@ -12,5 +12,15 @@ int main() {
     Group g = Group("PI","programming");
     Group * g1 = &g;
     g.ChooseLeader(s1);
-    cout << g.GetHead()->GetFio();
+    cout << g.GetLeader()->GetFio() << '\n';
+
+    Deanary d;
+    d.File_CreateGroups("data_groups.txt");
+    d.File_CreateStudents("data_students.txt");
+    d.FillMarks();
+    d.ChooseLeaders();
+    //d.RemoveFailingStudents();
+    std::cout << d.GetStats();
+    d.File_SaveDeanary("save_file.txt");
+
 }

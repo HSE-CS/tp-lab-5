@@ -7,6 +7,7 @@
 
 #include "Group.h"
 #include "Student.h"
+#include <fstream>
 #include <iostream>
 #include <vector>
 
@@ -15,21 +16,20 @@ using namespace std;
 
 class Deanary {
 private:
-    int studentsNum = 0;
     std::vector<Group*> groups;
 
 public:
     void CreateGroup(std::string title, std::string spec);
-    void CreateStudent(std::string fio, Group* group);
+    static void CreateStudent(int new_id, std::string fio, Group* group);
     Group* GroupByTitle(const std::string& groupName);
-    bool createGroupsFromFile(const std::string& path);
-    bool createStudentsFromFile(std::string path);
-    void addRandomMarks();
-    std::string getStatistics();
-    void moveStudent(Student* student, Group* new_group);
-    void kickStudentsForBadMarks(float BadMark);
-    bool saveToFile(std::string path);
-    void initHeads();
+    void FillMarks();
+    std::string GetStats();
+    static void MoveStudent(Student* student, Group* new_group);
+    void RemoveFailingStudents();
+    bool File_CreateGroups(const std::string& path);
+    bool File_CreateStudents(const std::string& path);
+    bool File_SaveDeanary(std::string path);
+    void ChooseLeaders();
 };
 
 

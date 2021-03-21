@@ -24,21 +24,19 @@ void Group::RemoveStudent(Student *student_toRemove) {
 
     int toRemove_id = student_toRemove->id;
 
-    if (head && head->id == toRemove_id) head = nullptr;
-
     for (int i = 0; i < students.size(); i++) {
         if (students[i]->id == toRemove_id) {
             students.erase(students.begin() + i);
-            return;
+            break;
         }
     }
 }
 
 void Group::ChooseLeader(Student *new_head) {
-    head = new_head;
+    leader = new_head;
 }
 
-float Group::CountAverageMark() {
+float Group::CountAvgMark() {
     float sum = 0;
     unsigned int len = students.size();
 
@@ -82,8 +80,8 @@ std::string Group::GetSpec() {
     return spec;
 }
 
-Student *Group::GetHead() {
-    return head;
+Student *Group::GetLeader() {
+    return leader;
 }
 
 bool Group::IsEmpty() {

@@ -17,7 +17,7 @@ private:
     std::string title;
     std::string spec;
     std::vector<Student*> students;
-    Student* head = nullptr;
+    Student* leader = nullptr;
 
 public:
     explicit Group(std::string title, std::string spec);
@@ -25,7 +25,7 @@ public:
     void AddStudent(Student* student);
     void RemoveStudent(Student* student);
     void ChooseLeader(Student* student);
-    float CountAverageMark();
+    float CountAvgMark();
 
     Student* GetById(int student_id);
     Student* GetByFio(const std::string& student_name);
@@ -33,7 +33,7 @@ public:
 
     std::string GetTitle();
     std::string GetSpec();
-    Student* GetHead();
+    Student* GetLeader();
     bool IsEmpty();
 };
 
