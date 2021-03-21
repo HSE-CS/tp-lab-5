@@ -1,6 +1,4 @@
-//
-// Created by mushka on 19.03.2021.
-//
+// Copyright Mushka Nikita, 2021
 
 #include "../include/Group.h"
 #include <../include/Student.h>
@@ -21,9 +19,7 @@ void Group::AddStudent(Student *student_toAdd) {
 }
 
 void Group::RemoveStudent(Student *student_toRemove) {
-
     int toRemove_id = student_toRemove->id;
-
     for (int i = 0; i < students.size(); i++) {
         if (students[i]->id == toRemove_id) {
             students.erase(students.begin() + i);
@@ -60,7 +56,6 @@ Student *Group::GetById(int id_toFind) {
 }
 
 Student *Group::GetByFio(const std::string &fio_toFind) {
-
     for (auto &student : students) {
         if (student->fio == fio_toFind) {
             return student;
