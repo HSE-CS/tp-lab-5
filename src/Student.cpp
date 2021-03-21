@@ -1,6 +1,4 @@
-//
-// Created by mushka on 19.03.2021.
-//
+// Copyright Mushka Nikita, 2021
 
 #include "../include/Student.h"
 
