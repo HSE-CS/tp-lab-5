@@ -68,8 +68,8 @@ std::string Deanary::GetStats() {
     std::string stats;
     for (Group *group : groups) {
         stats += ("Group: " + group->title + " ( " + group->spec + " )");
-        stats += " - " + to_string(group->CountAvgMark()) + '\n';
-        stats+= "Leader - " + to_string(group->GetLeader()->id)
+        stats += " - " + std::to_string(group->CountAvgMark()) + '\n';
+        stats+= "Leader - " + std::to_string(group->GetLeader()->id)
                 + ", " + group->GetLeader()->GetFio() + "\n\n";
     }
     return stats;
