@@ -1,24 +1,20 @@
-//
-// Created by mushka on 19.03.2021.
-//
+// Copyright Mushka Nikita, 2021
 
-#ifndef TP_LAB_5_DEANARY_H
-#define TP_LAB_5_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include "Group.h"
 #include "Student.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
-
-using namespace std;
-
+#include <string>
 
 class Deanary {
-private:
+ private:
     std::vector<Group*> groups;
 
-public:
+ public:
     void CreateGroup(std::string title, std::string spec);
     static void CreateStudent(int new_id, std::string fio, Group* group);
     Group* GroupByTitle(const std::string& groupName);
@@ -33,4 +29,4 @@ public:
 };
 
 
-#endif //TP_LAB_5_DEANARY_H
+#endif  // INCLUDE_DEANARY_H_
