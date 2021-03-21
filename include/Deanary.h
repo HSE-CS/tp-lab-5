@@ -11,20 +11,30 @@
 #include <string>
 
 class Deanary {
- private:
-    std::vector<Group*> groups;
+private:
+    std::vector<Group *> groups;
 
- public:
+public:
     void CreateGroup(std::string title, std::string spec);
-    static void CreateStudent(int new_id, std::string fio, Group* group);
-    Group* GroupByTitle(const std::string& groupName);
+
+    static void CreateStudent(int new_id, std::string fio, Group *group);
+
+    Group *GroupByTitle(const std::string &groupName);
+
     void FillMarks();
+
     std::string GetStats();
-    static void MoveStudent(Student* student, Group* new_group);
+
+    static void MoveStudent(Student *student, Group *new_group);
+
     void RemoveFailingStudents();
-    bool File_CreateGroups(const std::string& path);
-    bool File_CreateStudents(const std::string& path);
+
+    bool File_CreateGroups(const std::string &path);
+
+    bool File_CreateStudents(const std::string &path);
+
     bool File_SaveDeanary(std::string path);
+
     void ChooseLeaders();
 };
 
