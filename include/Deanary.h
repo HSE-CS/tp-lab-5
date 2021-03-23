@@ -7,6 +7,7 @@
 #include "Group.h"
 #include "Student.h"
 
+#include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
