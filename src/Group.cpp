@@ -10,6 +10,7 @@ std::string Group::gettitle() {
 Group::Group(std::string titl, std::string sp) {
     this->title = titl;
     this->spec = sp;
+    this->students = std::vector<Student*>();
 }
 
 void Group::addStudent(Student* newstudent) {
