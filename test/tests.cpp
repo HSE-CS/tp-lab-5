@@ -1,6 +1,7 @@
 // Copyright 2021 Vadukk
 
 
+#include <gtest/gtest.h>
 #include <string>
 #include "../include/Student.h"
 #include "../include/Group.h"

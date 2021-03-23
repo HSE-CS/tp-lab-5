@@ -1,8 +1,8 @@
 // Copyright 2021 Vadukk
 
-#include "../include/Deanary.h"
-#include "../include/Group.h"
-#include "../include/Student.h"
+#include "Deanary.h"
+#include "Group.h"
+#include "Student.h"
 
 int main() {
     Deanary deanary;

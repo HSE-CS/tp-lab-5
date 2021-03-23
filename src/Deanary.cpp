@@ -1,6 +1,6 @@
 // Copyright 2021 Vadukk
 
-#include "../include/Deanary.h"
+#include "Deanary.h"
 
 void Deanary::createGroups(std::string &filename) {
     std::ifstream groupFile(filename);
