@@ -13,12 +13,12 @@
 class Student;
 
 class Group {
-private:
+ private:
      std::string spec;
      std::string title;
      std::vector<Student*> students;
      Student* head;
-public:
+ public:
      std::string gettitle();
      Group(std::string titl, std::string sp);
      void addStudent(Student* newstudent);

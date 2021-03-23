@@ -14,13 +14,13 @@ TEST(Student, test1) {
 
 TEST(Student, test2) {
     Student st = Student(456, "Godjopov Ivan");
-    EXPECT_EQ("Godjopov Ivan", st.getFiofromId(465));
+EXPECT_EQ("Godjopov Ivan", st.getFiofromId(465));
 }
 
 TEST(Student, test3) {
     Student st = Student(456, "Godjopov Ivan");
-	st.addmark(5);
-	st.addmark(4);
+    st.addmark(5);
+    st.addmark(4);
     EXPECT_EQ(4.5, st.getAveragemark());
 }
 
@@ -117,4 +117,4 @@ TEST(Deanary, test10) {
     deanary.addMarksToAll();
     gr = deanary.getLastGroup();
     EXPECT_EQ(1, gr.isEmpty());
-} 
+}

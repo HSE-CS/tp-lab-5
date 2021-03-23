@@ -15,12 +15,12 @@ class Deanary {
  private:
      std::vector<Group> groups;
  public:
-     void createGroups(std::string &filename);
+     void createGroups(const std::string& filename);
      void AddGroup(std::string titl, std::string spec);
      void printGroups();
-     void hireStudents(std::string& filename);
+     void hireStudents(const std::string& filename);
      void addMarksToAll();
-     std::vector<float> getStatistics();                   //Average marks in every group
+     std::vector<float> getStatistics();
      void moveStudents(Student* st1, Group* gr2);
      void saveStaff(const std::string &filename);
      void initHeads();
