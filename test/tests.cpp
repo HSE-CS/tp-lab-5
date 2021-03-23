@@ -3,9 +3,9 @@
 
 #include <gtest/gtest.h>
 #include <string>
-#include "../include/Student.h"
-#include "../include/Group.h"
-#include "../include/Deanary.h"
+#include "Student.h"
+#include "Group.h"
+#include "Deanary.h"
 
 TEST(Student, test1) {
     Student st = Student(456, "Godjopov Ivan");
