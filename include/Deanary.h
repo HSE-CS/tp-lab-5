@@ -22,7 +22,7 @@ class Deanary {
      void addMarksToAll();
      std::vector<float> getStatistics();
      void moveStudents(Student* st1, Group* gr2);
-     void saveStaff(const std::string &filename);
+     void saveStaff(const std::string& filename);
      void initHeads();
      Group getLastGroup();
      void fireStudents();

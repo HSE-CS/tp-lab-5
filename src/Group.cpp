@@ -18,7 +18,7 @@ void Group::addStudent(Student* newstudent) {
 
 Student* Group::getStudent(int id) {
     for (Student* st : this->students) {
-	    Student stu = *st;
+        Student stu = *st;
         if (stu.getId() == id) return st;
     }
     throw "No Students in this group";
@@ -26,7 +26,7 @@ Student* Group::getStudent(int id) {
 
 Student* Group::getStudent(std::string fio) {
     for (Student* st : this->students) {
-	    Student stu = *st;
+        Student stu = *st;
         if (stu.getFio() == fio) return st;
     }
     throw "No Students in this group";
@@ -42,7 +42,7 @@ Student* Group::chooseHead() {
 
 bool Group::isEmpty() {
     if (size(students) == 0) return 1;
-    else 
+    else
         return 0;
 }
 
@@ -57,7 +57,7 @@ Student* Group::containsStudent(std::string fio) {
 void Group::removeStudent(Student* stud) {
     int index = 0;
     for (Student* st : students) {
-	    index++;
+        index++;
         if (st == stud) break;
     }
     students.erase(students.begin() + index-1);
@@ -70,8 +70,8 @@ std::vector<Student*> Group::getstudents() {
 float Group::getAveragemark() {
     float i = 0;
     for (Student* st : students) {
-	    Student stu = *st;
-	    i += stu.getAveragemark();
+        Student stu = *st;
+        i += stu.getAveragemark();
     }
     return (i / size(students));
 }
