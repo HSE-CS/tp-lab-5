@@ -1,6 +1,6 @@
 // Copyright 2021 Vadukk
 
-#include "Student.h"
+#include "../include/Student.h"
 
 Student::Student(int id_new, std::string fio_new) {
     this->id = id_new;

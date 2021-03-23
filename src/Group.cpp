@@ -1,6 +1,6 @@
 // Copyright 2021 Vadukk
 
-#include "Group.h"
+#include "../include/Group.h"
 
 
 std::string Group::gettitle() {
