@@ -1,7 +1,7 @@
 // Copyright 2021 Tyulin Igor
 
-#ifndef TP_LAB_5_STUDENT_H
-#define TP_LAB_5_STUDENT_H
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include "Group.h"
 #include <string>
@@ -13,12 +13,12 @@ class Deanary;
 class Student {
     friend class Group;
     friend class Deanary;
-private:
+ private:
     int id;
     std::string fio;
     Group* group;
     std::vector<int> marks;
-public:
+ public:
     Student(int id, std::string fio);
     int stud_id();
     std::string stud_fio();
@@ -27,4 +27,4 @@ public:
     double average_mark();
 };
 
-#endif //TP_LAB_5_STUDENT_H
+#endif  // INCLUDE_STUDENT_H_
