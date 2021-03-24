@@ -1,137 +1,156 @@
-#include "Student.h"
-#include "Group.h"
 #include "Deanary.h"
 
-void Deanary::createGroups(const std::string& path) 
+#include <string>
+#include <iostream>
+#include <fstream>
+
+void Deanary::add_student(Student* _student, const std::string& _spec) 
 {
-	std::ifstream file(path);
-	std::string TITLE;
-	std::string SPEC;
-	while (file >> TITLE) 
+	for (auto& group : groups) 
 	{
-		std::getline(file, SPEC);
-		Group* g = new Group(TITLE, SPEC);
-		groups.push_back(g);
+		if (group.get_spec() == _spec)
+			group.add_student(_student);
 	}
-	file.close();
 }
 
-void Deanary::hireStudents(const std::string& path) 
+void Deanary::add_group(const Group& _group) 
 {
-	std::ifstream file(path);
-	std::string name;
-	int id;
-	std::vector <Student*> students;
+	groups.push_back(_group);
+}
 
-	while (file >> id) 
+void Deanary::distribution_of_students() 
+{
+	for (auto& student : Students)
+		groups[std::rand() % groups.size()].add_student(&student);
+}
+
+void Deanary::add_marks() 
+{
+	for (auto& group : groups) 
 	{
-		std::getline(file, name);
-		Student* s = new Student(id, name);
-		students.push_back(s);
-		if (groups.size() > 0) 
+		for (auto& student : group.students) 
 		{
-			int index = 0;
-			int min = 37;
-			for (int i = 0; i < groups.size(); i++) 
+			for (int i = 0; i < 15; i++)
+				student->add_mark(std::rand() % 10 + 1);
+		}
+	}
+}
+
+double Deanary::get_statistic_students(const std::string& _name) 
+{
+	for (auto& group : groups) 
+	{
+		for (auto& student : group.students) 
+		{
+			if (student->get_name() == _name)
+				return student->average_mark();
+		}
+	}
+}
+
+double Deanary::get_statistic_groups(const std::string& _spec) 
+{
+	for (auto& group : groups) 
+	{
+		if (group.get_spec() == _spec)
+			return group.average_mark();
+	}
+}
+
+void Deanary::move_student(const std::string& _name, const std::string& _spec) 
+{
+	for (auto& prewGroup : groups) 
+	{
+		for (auto& student : prewGroup.students) 
+		{
+			if (student->get_name() == _name) 
 			{
-				if (groups[i]->students.size() < min) 
+				for (auto& newGroup : groups) 
 				{
-					min = groups[i]->students.size();
-					index = i;
+					if (newGroup.get_spec() == _spec) 
+					{
+						newGroup.add_student(student);
+						prewGroup.remove_student(student);
+					}
 				}
 			}
-			groups[index]->addStudent(s);
 		}
 	}
-	file.close();
 }
 
-void Deanary::addMarksToAll() 
+void Deanary::student_expulsion(const std::string& _name) 
 {
-	std::srand(time(0));
-	for (Group* g : groups) 
+	for (auto& group : groups) 
 	{
-		for (Student* s : g->students) 
+		for (auto& student : group.students) 
 		{
-			s->addmark(std::rand() % 10 + 1);
+			if (student->get_name() == _name) 
+			{
+				group.remove_student(student);
+			}
 		}
 	}
 }
 
-void Deanary::getStatistics() 
+void Deanary::choice_headman() 
 {
-	for (Group* g : groups) 
+	for (auto& group : groups)
+		group.choose_headman();
+}
+
+void Deanary::print() 
+{
+	for (auto& group : groups) 
 	{
-		std::cout << g->title << ", " << g->spec << '\n';
-		std::cout << "Head: " << g->head->fio << '\n';
-		std::cout << "Average mark of group: " << g->getAveragemark() << '\n';
-		for (Student* s : g->students) 
+		std::cout << "Специальность группы: " << group.get_spec() << std::endl;
+		std::cout << "Название группы: " << group.get_title() << std::endl;
+		std::cout << "Староста: " << group.headman->get_name() << std::endl;
+		std::cout << "Список студентов: " << std::endl;
+		for (auto& student : group.students) 
 		{
-			std::cout << "ID: " << s->getId() << ", name:" << s->getName() << ", ";
-			std::cout << "average mark: " << s->getAveragemark() << '\n';
-		}
-		std::cout << '\n';
-	}
-}
-
-void Deanary::moveStudents(Group* from, Group* to,
-	std::vector<Student*> students) 
-{
-	for (Student* st : students) 
-	{
-		from->removeStudent(st);
-		to->addStudent(st);
-	}
-}
-
-void Deanary::saveStaff(const std::string& studentsPath,
-	const std::string& groupsPath) 
-{
-	std::ofstream file1(studentsPath);
-
-	for (auto gr : groups) 
-	{
-		for (auto st : gr->students) 
-		{
-			file1 << st->getId() << " " << st->getName() << '\n';
-		}
-	}
-	file1.close();
-
-	std::ofstream file2(groupsPath);
-
-	for (auto gr : groups) 
-	{
-		file2 << gr->title << " " << gr->spec << ":\n";
-		for (auto st : gr->students) 
-		{
-			file2 << st->getId() << " " << st->getName() << '\n';
-		}
-	}
-	file2.close();
-}
-
-void Deanary::initHeads() 
-{
-	std::srand(time(0));
-	for (auto g : groups) 
-	{
-		g->chooseHead(g->students[std::rand() % g->students.size()]);
-	}
-}
-
-void Deanary::fireStudents(std::vector<Student*> students) 
-{
-	for (Group* g : groups) 
-	{
-		for (Student* st : students) 
-		{
-			g->removeStudent(st);
+			std::cout << "  * " << student->get_name() << std::endl;
 		}
 	}
 }
 
-std::vector<Group*> Deanary::getGroups() 
+void Deanary::save_to_file() ъ
 {
-	return groups;
+	std::ofstream fout;
+	fout.open("output.txt");
+
+	for (auto& group : groups) 
+	{
+		fout << group.get_title() << std::endl;
+		fout << group.get_spec() << std::endl;
+		fout << std::endl;
+		for (auto& student : group.students)
+			fout << student->get_name() << student->average_mark() << std::endl;
+		fout << std::endl;
+	}
+	fout.close();
+}
+
+void Deanary::students_from_file() 
+{
+	std::string name;
+	std::ifstream file("students.txt");
+	int id = 0;
+	while (getline(file, name)) 
+	{
+		id++;
+		Student student_new(id, name);
+		Students.push_back(student_new);
+	}
+}
+void Deanary::groups_from_file() 
+{
+	std::string spec;
+	std::string title;
+	std::ifstream file("groups.txt");
+	while (getline(file, spec)) 
+	{
+		getline(file, title);
+		Group group_new(title, spec);
+		groups.push_back(group_new);
+	}
 }

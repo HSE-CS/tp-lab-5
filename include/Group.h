@@ -1,25 +1,36 @@
-#pragma once
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+
+#include "Deanary.h"
+#include "Student.h"
 
 class Student;
-class Group {
+
+class Group 
+{
 	friend class Deanary;
-	friend class Student;
+
 private:
 	std::string title;
 	std::string spec;
-	std::vector <Student*> students;
-	Student* head;
+	std::vector<Student*> students;
+	Student* headman{};
+
 public:
-	explicit Group(const std::string& t, const std::string& s);
-	void addStudent(Student* student);
-	void chooseHead(Student* student);
-	double getAveragemark();
-	Student* getStudent(const std::string& f);
-	Student* getStudent(int id);
-	void removeStudent(Student* student);
-	bool isEmpty();
+	explicit Group(std::string title, std::string spec);
+
+	void choose_headman();
+	void add_student(Student* student);
+	void remove_student(Student* student);
+	bool find_student(int id);
+	bool find_student(const std::string& name);
+	double average_mark();
+	std::string get_title();
+	std::string get_spec();
 };
+
+#endif

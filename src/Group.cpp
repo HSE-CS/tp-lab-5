@@ -1,67 +1,72 @@
-#include "Student.h"
 #include "Group.h"
 
-Group::Group(const std::string& t, const std::string& s) 
+#include <numeric>
+#include <utility>
+
+Group::Group(std::string _title, std::string _spec) 
 {
-	title = t;
-	spec = s;
+	this->title = std::move(_title);
+	this->spec = std::move(_spec);
 }
 
-void Group::addStudent(Student* student) 
+void Group::choose_headman() 
 {
-	students.push_back(student);
-	student->addToGroup(this);
-}
-void Group::chooseHead(Student* student) 
-{
-	head = student;
-}
-
-double Group::getAveragemark() 
-{
-	int count = students.size();
-	double res = 0.0;
-	for (auto student : students) 
+	if (!students.empty()) 
 	{
-		res += student->getAveragemark();
+		headman = students[std::rand() % students.size()];
 	}
-	return res / count;
 }
 
-Student* Group::getStudent(int id) 
+void Group::add_student(Student* _student) 
 {
-	for (auto s : students) 
-	{
-		if (s->getId() == id)
-			return s;
-	}
-	return nullptr;
+	students.push_back(_student);
+	_student->group = this;
 }
 
-Student* Group::getStudent(const std::string& fio) 
+void Group::remove_student(Student* _student) 
 {
-	for (auto s : students) 
+	for (size_t index = 0; index < students.size(); ++index) 
 	{
-		if (s->getName() == fio)
-			return s;
-	}
-	return nullptr;
-}
-
-void Group::removeStudent(Student* student) 
-{
-	if (student == head)
-		head = nullptr;
-	for (int i = 0; i < students.size(); i++) 
-	{
-		if (students[i] == student) 
+		if (_student->id == students[index]->get_id()) 
 		{
-			students.erase(students.begin() + i);
+			students.erase(students.begin() + index);
+			break;
 		}
 	}
 }
 
-bool Group::isEmpty() 
+bool Group::find_student(int _id) 
 {
-	return students.size() == 0;
+	for (auto* student : students) 
+	{
+		if (student->id == _id)
+			return true;
+	}
+	return false;
+}
+
+bool Group::find_student(const std::string& _name) 
+{
+	for (auto* student : students)
+		if (student->name == _name) return true;
+	return false;
+}
+
+double Group::average_mark() 
+{
+	double sum = 0;
+	for (auto* student : students)
+		sum += student->average_mark();
+	if (!students.empty())
+		return sum / students.size();
+	return 0;
+}
+
+std::string Group::get_title() 
+{
+	return title;
+}
+std::string Group::get_spec() 
+{
+	return spec;
 }

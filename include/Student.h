@@ -1,24 +1,32 @@
-#pragma once
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
+#include "Group.h"
 #include <vector>
 #include <string>
 #include <iostream>
 
 class Group;
-class Student {
+
+class Student 
+{
 	friend class Group;
 	friend class Deanary;
+
 private:
 	int id;
-	std::string fio;
+	std::string name;
 	Group* group;
 	std::vector<int> marks;
+
 public:
-	explicit Student(int ID, const std::string& FIO);
-	void addToGroup(Group* gr);
-	void addmark(int mark);
-	float getAveragemark();
-	bool isHeadOfGroup();
-	int getId();
-	std::string getName();
+	explicit Student(int id, std::string name);
+
+	void add_to_group(Group* group);
+	void add_mark(int mark);
+	double average_mark();
+	[[nodiscard]] int get_id() const;
+	std::string get_name();
 };
+
+#endif

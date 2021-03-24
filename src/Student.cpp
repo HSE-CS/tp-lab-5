@@ -1,45 +1,39 @@
 #include "Student.h"
-#include "Group.h"
 
-Student::Student(int ID, const std::string& FIO) 
+#include <utility>
+#include <numeric>
+
+Student::Student(int _id, std::string _name) 
 {
-	id = ID;
-	fio = FIO;
+	this->id = _id;
+	this->name = std::move(_name);
+	this->group = nullptr;
+	this->marks = std::vector<int>();
 }
 
-void Student::addToGroup(Group* gr) 
+void Student::add_to_group(Group* _group) 
 {
-	group = gr;
+	this->group = _group;
 }
 
-void Student::addmark(int mark) 
-{
-	marks.push_back(mark);
+void Student::add_mark(int _mark) {
+	marks.push_back(_mark % 11);
 }
 
-float Student::getAveragemark() 
+double Student::average_mark() 
 {
-	double res = 0.0;
-	int count = 0;
-	for (auto i : marks) 
-	{
-		res += i;
-		count++;
-	}
-	return res / count;
+	double sum = std::accumulate(marks.begin(), marks.end(), 0);
+	if (!marks.empty())
+		return sum / marks.size();
+	return 0;
 }
 
-bool Student::isHeadOfGroup() 
-{
-	return group->head == this;
-}
 
-int Student::getId() 
+int Student::get_id() const 
 {
 	return id;
 }
-
-std::string Student::getName() 
+std::string Student::get_name() 
 {
-	return fio;
+	return name;
 }
