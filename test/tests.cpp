@@ -22,7 +22,8 @@ EXPECT_EQ("Vasya Nia", student_1.stud_fio());
 TEST(Student_Test, test4) {
 Student student_1(1, "Vasya Nia");
 student_1.mark_add(6);
-EXPECT_EQ(6, student_1.average_mark());
+double res = 6;
+EXPECT_EQ(res, student_1.average_mark());
 }
 
 TEST(Student_Test, test5) {
@@ -40,7 +41,8 @@ Group se("19pi-1", "software engineering");
 Student student_1(9, "Michail Volkov");
 student_1.group_add(&se);
 student_1.mark_add(6);
-EXPECT_EQ(6, se.studavermarks());
+double res = 6;
+EXPECT_EQ(res, se.studavermarks());
 }
 
 TEST(Student_Test, test8) {
@@ -51,7 +53,8 @@ student_1.mark_add(6);
 Student student_2(3, "Max Has");
 student_2.group_add(&se);
 student_2.mark_add(10);
-EXPECT_EQ(8, se.studavermarks());
+double res = 8;
+EXPECT_EQ(res, se.studavermarks());
 }
 
 TEST(Student_Test, test9) {
