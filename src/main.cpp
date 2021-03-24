@@ -4,6 +4,6 @@
 #include "Group.h"
 #include "Student.h"
 
-int main() {
-
+int main() { 
+	return 0; 
 }
