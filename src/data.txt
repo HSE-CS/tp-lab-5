@@ -1,0 +1,12 @@
+group
+TestTitle:TestSpec
+Roman Ya:10,10,9,10,9,10
+Ivan Ping:7,8,6,9,8
+Arseniy Gikov:5,7,9,4
+Alexander Nikov:9,8,10,9,5
+Gerasim Memov:9,10,10,4,5
+group
+19-SE-1:Social Enginering
+Name:1,2,3,4,5
+Nikita Nesin:8,3,4,5,5
+Mark Dva:2,2,2,2,2
