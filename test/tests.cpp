@@ -73,7 +73,7 @@ club.createGroups(se);
 club.hireStudents(&student_1,"software engineering");
 Student student_2(2, "Ya Zdes");
 student_2.group_add(&se);
-student_2.mark_add(1);
+student_2.mark_add(2);
 club.hireStudents(&student_2,"software engineering");
-EXPECT_EQ("Group 19pi-1 statistics: 3.5\nStudent Michail Volkov statistics: 6\nStudent Ya Zdes statistics: 1", se.studavermarks());
+EXPECT_EQ("Group 19pi-1 statistics: 4\nStudent Michail Volkov statistics: 6\nStudent Ya Zdes statistics: 2", se.studavermarks());
 }
