@@ -25,6 +25,7 @@ public:
     Student* findstud(std::string fio);
     double studavermarks();
     void sethead(Student *head);
+    std::string gethead();
     Group(std::string title, std::string spec);
     std::string getspec();
     std::string getitle();

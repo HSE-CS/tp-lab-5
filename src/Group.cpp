@@ -1,5 +1,6 @@
 // Copyright 2021 Tyulin Igor
 
+#include <iostream>
 #include "Group.h"
 
 Group::Group(std::string title,std::string spec) {
@@ -10,6 +11,10 @@ Group::Group(std::string title,std::string spec) {
 
 void Group::sethead(Student *head) {
     this->head = head;
+}
+
+std::string Group::gethead() {
+    return head->stud_fio();
 }
 
 std::string Group::getitle() {
@@ -50,9 +55,9 @@ void Group::kickstud(Student *student) {
 }
 
 double Group::studavermarks() {
-double sum = 0;
+double res = 0;
     for (auto student : students) {
-        sum += student->average_mark();
+        res += student->average_mark();
     }
-    return sum/students.size();
+    return res/students.size();
 }

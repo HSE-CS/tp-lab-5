@@ -33,7 +33,7 @@ EXPECT_EQ("software engineering", se.getspec());
 
 TEST(Student_Test, test6) {
 Group se("19pi-1", "software engineering");
-EXPECT_EQ("software engineering", se.getitle());
+EXPECT_EQ("19pi-1", se.getitle());
 }
 
 TEST(Student_Test, test7) {
@@ -41,6 +41,7 @@ Group se("19pi-1", "software engineering");
 Student student_1(9, "Michail Volkov");
 student_1.group_add(&se);
 student_1.mark_add(6);
+se.addstud(&student_1);
 double res = 6;
 EXPECT_EQ(res, se.studavermarks());
 }
@@ -53,30 +54,28 @@ student_1.mark_add(6);
 Student student_2(3, "Max Has");
 student_2.group_add(&se);
 student_2.mark_add(10);
+se.addstud(&student_1);
+se.addstud(&student_2);
 double res = 8;
 EXPECT_EQ(res, se.studavermarks());
 }
 
-/*TEST(Student_Test, test9) {
-Deanary club;
+TEST(Student_Test, test9) {
 Group se("19pi-1", "software engineering");
 Student student_1(9, "Michail Volkov");
 student_1.mark_add(6);
-club.createGroups(se);
-club.hireStudents(&student_1,"software engineering");
-EXPECT_EQ("Group 19pi-1 statistics: 6\nStudent Michail Volkov statistics: 6", se.studavermarks());
+se.addstud(&student_1);
+se.sethead(&student_1);
+EXPECT_EQ("Michail Volkov", se.gethead());
 }
 
 TEST(Student_Test, test10) {
-Deanary club;
 Group se("19pi-1", "software engineering");
 Student student_1(9, "Michail Volkov");
-student_1.mark_add(6);
-club.createGroups(se);
-club.hireStudents(&student_1,"software engineering");
-Student student_2(2, "Ya Zdes");
-student_2.group_add(&se);
-student_2.mark_add(2);
-club.hireStudents(&student_2,"software engineering");
-EXPECT_EQ("Group 19pi-1 statistics: 4\nStudent Michail Volkov statistics: 6\nStudent Ya Zdes statistics: 2", se.studavermarks());
-}*/
+se.addstud(&student_1);
+se.sethead(&student_1);
+Student student_2(1, "MAX HAS");
+se.addstud(&student_2);
+se.sethead(&student_2);
+EXPECT_EQ("MAX HAS", se.gethead());
+}

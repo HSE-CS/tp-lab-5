@@ -31,5 +31,12 @@ int main() {
     student_2.mark_add(1);
     club.hireStudents(&student_2,"software engineering");
     club.getStatistics();
+    student_1.mark_add(6);
+    student_2.mark_add(6);
+    se.addstud(&student_1);
+    se.addstud(&student_2);
+    std::cout << se.studavermarks() << std::endl;
+    se.sethead(&student_1);
+    std::cout << se.gethead();
     return 0;
 }
