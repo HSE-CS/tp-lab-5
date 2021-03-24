@@ -1,33 +1,35 @@
 // Copyright 2021 Vadukk
-
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_
 
-#include "Group.h"
-#include <vector>
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
+#include <vector>
 
-class Group;
+#include "Group.h"
+
+class ReadGroup;
+enum ABILITY { OK, GOOD, EXCELLENT };
 
 class Student {
  private:
-     int id;
-     std::string fio;
-     Group *group;
-     std::vector<int> marks;
+  int id;
+  std::string fio;
+  Group* group;
+  std::vector<int> marks;
+  ABILITY skill;
+  bool isHead;
+  void AddToGroup(Group*);
+  void AddMark(int);
+
  public:
-     Student(int id_new, std::string fio_new);
-     void addToGroup(Group *gr);
-     void addmark(int mark);
-     float getAveragemark();
-     int isHeadOfGroup();
-     std::string getFiofromId(int id);
-     int getId();
-     std::string getFio();
-     Group* getGroup();
+  Student(int, std::string, Group*);
+  double GetAverageMark() const;
+  bool IsHeadOfGroup() const;
+  std::string GetName() const;
+
+  friend class Group;
+  friend class ReadGroup;
+  friend class Deanary;
 };
 
 #endif  // INCLUDE_STUDENT_H_

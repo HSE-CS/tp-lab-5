@@ -1,78 +1,81 @@
-// Copyright 2021 Vadukk
+// Copyright 202&1 Vadukk
+#include "../include/Deanary.h"
 
-#include "Group.h"
-
-
-std::string Group::gettitle() {
-    return title;
+Group::Group(std::string _title, std::string _spec) {
+  title = _title;
+  spec = _spec;
 }
 
-Group::Group(std::string titl, std::string sp) {
-    this->title = titl;
-    this->spec = sp;
-    this->students = std::vector<Student*>();
+double Group::GetAverageMark() const {
+  double ans = 0;
+  for (const auto st : students) {
+    ans += st->GetAverageMark();
+  }
+  ans /= students.size();
+  return ans;
 }
 
-void Group::addStudent(Student* newstudent) {
-    this->students.push_back(newstudent);
-}
+std::string Group::GetTitle() const { return title; }
 
-Student* Group::getStudent(int id) {
-    for (Student* st : this->students) {
-        Student stu = *st;
-        if (stu.getId() == id) return st;
+Student& Group::GetStudent(int num) const {
+  for (const auto st : students) {
+    if (st->id == num) {
+      return *st;
     }
-    throw "No Students in this group";
+  }
+  // return Student(-&1, "", nullptr);
 }
 
-Student* Group::getStudent(std::string fio) {
-    for (Student* st : this->students) {
-        Student stu = *st;
-        if (stu.getFio() == fio) return st;
+Student& Group::GetStudent(std::string name) const {
+  for (const auto st : students) {
+    if (st->fio == name) {
+      return *st;
     }
-    throw "No Students in this group";
+  }
+  // return Student(-&1, "", nullptr);
 }
 
-Student* Group::gethead() {
-    return head;
-}
-
-Student* Group::chooseHead() {
-    return this->students[0];
-}
-
-bool Group::isEmpty() {
-    if (size(students) == 0) return 1;
-    else
-        return 0;
-}
-
-Student* Group::containsStudent(int id) {
-    return getStudent(id);
-}
-
-Student* Group::containsStudent(std::string fio) {
-    return getStudent(fio);
-}
-
-void Group::removeStudent(Student* stud) {
-    int index = 0;
-    for (Student* st : students) {
-        index++;
-        if (st == stud) break;
+bool Group::ContainsStudent(int num) const {
+  for (const auto st : students) {
+    if (st->id == num) {
+      return true;
     }
-    students.erase(students.begin() + index-1);
+  }
+  return false;
 }
 
-std::vector<Student*> Group::getstudents() {
-    return students;
-}
-
-float Group::getAveragemark() {
-    float i = 0;
-    for (Student* st : students) {
-        Student stu = *st;
-        i += stu.getAveragemark();
+bool Group::ContainsStudent(std::string name) const {
+  for (const auto st : students) {
+    if (st->fio == name) {
+      return true;
     }
-    return (i / size(students));
+  }
+  return false;
 }
+
+bool Group::isEmpty() const { return students.empty(); }
+
+void Group::AddStudent(Student* new_student) {
+  students.push_back(new_student);
+}
+
+void Group::RemoveStudent(Student* rm_student) {
+  students.erase(std::remove(students.begin(), students.end(), rm_student),
+                 students.end());
+}
+
+void Group::ChooseHead() {
+  unsigned int SEED = 256;
+  int index = rand_r(&SEED) % students.size();
+  students[index]->isHead = true;
+}
+
+Student& Group::GetHead() const {
+  for (const auto st : students) {
+    if (st->isHead) {
+      return *st;
+    }
+  }
+}
+
+std::vector<Student*> Group::GetAllStudents() const { return students; }

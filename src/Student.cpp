@@ -1,60 +1,36 @@
 // Copyright 2021 Vadukk
+#include "../include/Deanary.h"
 
-#include "Student.h"
-
-Student::Student(int id_new, std::string fio_new) {
-    this->id = id_new;
-    this->fio = fio_new;
-    this->marks = std::vector<int>();
+Student::Student(int _id, std::string _fio, Group* _group) {
+  unsigned int SEED = 256;
+  id = _id;
+  fio = _fio;
+  group = _group;
+  isHead = false;
+  int i = rand_r(&SEED) % 101 + 1;
+  if (i <= 30) {
+    skill = ABILITY::OK;
+  } else if (i > 30 && i <= 70) {
+    skill = ABILITY::GOOD;
+  } else {
+    skill = ABILITY::EXCELLENT;
+  }
+  AddToGroup(_group);
 }
 
-
-void Student::addToGroup(Group* gr) {
-    this->group = gr;
+double Student::GetAverageMark() const {
+  double ans = 0;
+  for (auto m : marks) {
+    ans += m;
+  }
+  ans /= marks.size();
+  return ans;
 }
 
-std::string Student::getFiofromId(int id) {
-    Group gr = *(this->group);
-    Student* st = gr.getStudent(id);
-    if (st) {
-        Student stu = *st;
-        return stu.getFio();
-    } else {
-        return "No such Student";
-    }
-}
+bool Student::IsHeadOfGroup() const { return isHead; }
 
-int Student::getId() {
-    return this->id;
-}
+void Student::AddMark(int m) { marks.push_back(m); }
 
-std::string Student::getFio() {
-    return this->fio;
-}
+void Student::AddToGroup(Group* group) { group->students.push_back(this); }
 
-void Student::addmark(int mark) {
-    this->marks.push_back(mark);
-}
-
-float Student::getAveragemark() {
-    float i = 0;
-    for (int mark : this->marks) {
-        i += mark;
-    }
-    return (i / size(marks));
-}
-
-int Student::isHeadOfGroup() {
-    Group gr = *(this->group);
-    Student* head = gr.gethead();
-    Student st = *head;
-    if (this->id == st.getId()) return 1;
-    else
-        return 0;
-}
-
-Group* Student::getGroup() {
-    return group;
-}
-
-
+std::string Student::GetName() const { return fio; }

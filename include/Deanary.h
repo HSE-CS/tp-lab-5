@@ -3,30 +3,24 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
+#include "ReadGroup.h"
 #include <vector>
-#include "Group.h"
-#include "Student.h"
-
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
 class Deanary {
  private:
-     std::vector<Group> groups;
+  std::vector<Group*> groups;
+
  public:
-     void createGroups(const std::string& filename);
-     void AddGroup(std::string titl, std::string spec);
-     void printGroups();
-     void hireStudents(const std::string& filename);
-     void addMarksToAll();
-     std::vector<float> getStatistics();
-     void moveStudents(Student* st1, Group* gr2);
-     void saveStaff(const std::string& filename);
-     void initHeads();
-     Group getLastGroup();
-     void fireStudents();
+  Deanary(ReadGroup&, std::string);
+  void AddMarksToAll(int);
+  void GetStatistics() const;
+  void MoveStudent(int, std::string);
+  void SaveStaff(const ReadGroup&) const;
+  void InitHead();
+  void FireStudent(int);
+  Group* GetGroup(std::string);
+  void HireStudent(int, std::string, std::string, ABILITY);
 };
 
 #endif  // INCLUDE_DEANARY_H_

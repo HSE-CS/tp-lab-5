@@ -1,37 +1,23 @@
 // Copyright 2021 Vadukk
-
+#include <iostream>
 #include "Deanary.h"
-#include "Group.h"
-#include "Student.h"
 
 int main() {
-    Deanary deanary;
-    std::string filename("groupstitles.txt");
-    deanary.createGroups(filename);
-    deanary.printGroups();
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    gr.addStudent(&st);
-    deanary.fireStudents();
-    deanary.addMarksToAll();
-    gr = deanary.getLastGroup();
-    std::cout << gr.isEmpty()<< "\n";
-    deanary.AddGroup("19pmi-2", "imics");
-    deanary.printGroups();
-    gr = deanary.getLastGroup();
-    std::cout << gr.gettitle();
-    std::string filename2("students.txt");
-    deanary.hireStudents(filename2);
-    st = Student(456, "Godjopov Ivan");
-    std::cout << st.getId()<< std::endl;
-    st.addmark(5);
-    st.addmark(4);
-    std::cout << st.getAveragemark();
-
-    return 0;
+  srand(time(0));
+  std::vector<std::string> filenames = {"../First_group.txt",
+                          "../Second_group.txt", "../Third_group.txt"};
+  ReadGroup reader(filenames);
+  Deanary deanary(reader, "math");
+  deanary.FireStudent(15);
+  deanary.HireStudent(15, "Нагаев Дмитрий Федорович", "Group 1", ABILITY::GOOD);
+  deanary.AddMarksToAll(10);
+  deanary.MoveStudent(18, "Group 2");
+  deanary.GetStatistics();
+  std::cout << "Head of Group 1 is "
+            << deanary.GetGroup("Group 1")->GetHead().GetName() << '\n';
+  std::cout << "Head of Group 2 is "
+            << deanary.GetGroup("Group 2")->GetHead().GetName() << '\n';
+  std::cout << "Head of Group 3 is "
+            << deanary.GetGroup("Group 3")->GetHead().GetName() << '\n';
+  return 0;
 }

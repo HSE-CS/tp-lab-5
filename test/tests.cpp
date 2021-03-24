@@ -1,120 +1,76 @@
 // Copyright 2021 Vadukk
 
-
 #include <gtest/gtest.h>
 #include <string>
-#include "Student.h"
-#include "Group.h"
 #include "Deanary.h"
+#include "Group.h"
+#include "ReadGroup.h"
+#include "Student.h"
 
-TEST(Student, test1) {
-    Student st = Student(456, "Godjopov Ivan");
-    EXPECT_EQ(456, st.getId());
+TEST(DeanaryTest, test1) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  std::string expected = "Test_name Test_surname";
+  EXPECT_EQ(expected, st.GetName());
 }
 
-TEST(Student, test2) {
-    Student st = Student(456, "Godjopov Ivan");
-EXPECT_EQ("Godjopov Ivan", st.getFio());
+TEST(DeanaryTest, test2) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  bool expected = false;
+  EXPECT_EQ(expected, st.IsHeadOfGroup());
 }
 
-TEST(Student, test3) {
-    Student st = Student(456, "Godjopov Ivan");
-    st.addmark(5);
-    st.addmark(4);
-    EXPECT_EQ(4.5, st.getAveragemark());
+TEST(DeanaryTest, test3) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  bool expected = false;
+  EXPECT_EQ(expected, group.isEmpty());
 }
 
-TEST(Deanary, test4) {
-    Deanary d;
-    d.AddGroup("19pmi-2", "imics");
-    Group gr = d.getLastGroup();
-    EXPECT_EQ("19pmi-2", gr.gettitle());
+TEST(DeanaryTest, test4) {
+  Group group("Group", "IT");
+  bool expected = false;
+  EXPECT_EQ(expected, group.ContainsStudent(101));
 }
 
-TEST(Deanary, test5) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    gr.addStudent(&st);
-    deanary.fireStudents();
-    gr = deanary.getLastGroup();
-    EXPECT_EQ(1, gr.isEmpty());
+TEST(DeanaryTest, test5) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  bool expected = true;
+  EXPECT_EQ(expected, group.ContainsStudent("Test_name Test_surname"));
 }
 
-TEST(Deanary, test6) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    st.addmark(10);
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    st.addmark(10);
-    gr.addStudent(&st);
-    EXPECT_EQ(10, gr.getAveragemark());
+TEST(DeanaryTest, test6) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  std::string expected = "Test_name Test_surname";
+  EXPECT_EQ(expected, group.GetStudent("Test_name Test_surname").GetName());
 }
 
-TEST(Deanary, test7) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    st.addmark(10);
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    st.addmark(10);
-    st.addmark(8);
-    gr.addStudent(&st);
-    EXPECT_EQ(9, st.getAveragemark());
+TEST(DeanaryTest, test7) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  std::string expected = "Test_name Test_surname";
+  EXPECT_EQ(expected, group.GetStudent(101).GetName());
 }
 
-TEST(Deanary, test8) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    gr.addStudent(&st);
-    EXPECT_EQ(0, gr.isEmpty());
+TEST(DeanaryTest, test8) {
+  Group group("Group", "IT");
+  Student st(101, "Test_name Test_surname", &group);
+  std::vector<Student*> expected = {&st};
+  EXPECT_EQ(expected, group.GetAllStudents());
 }
 
-TEST(Group, test9) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    gr.addStudent(&st);
-    st = Student(543, "Vadim Tumanov");
-    gr.addStudent(&st);
-    Student* stud = gr.containsStudent("Vadim Tumanov");
-    Student st1 = *stud;
-    EXPECT_EQ(543, st1.getId());
+TEST(DeanaryTest, test9) {
+  Group group("Group", "IT");
+  bool expected = true;
+  EXPECT_EQ(expected, group.isEmpty());
 }
 
-TEST(Deanary, test10) {
-    Deanary deanary;
-    deanary.AddGroup("19pmi-2", "imics");
-    Group gr = deanary.getLastGroup();
-    Student st = Student(345, "Godjopov Ivan");
-    gr.addStudent(&st);
-    deanary.AddGroup("18pmi-2", "imics");
-    gr = deanary.getLastGroup();
-    st = Student(543, "Vadim Tumanov");
-    gr.addStudent(&st);
-    deanary.fireStudents();
-    deanary.addMarksToAll();
-    gr = deanary.getLastGroup();
-    EXPECT_EQ(1, gr.isEmpty());
+TEST(DeanaryTest, test10) {
+  ReadGroup reader({"Test1.txt", "Test2.txt"});
+  std::vector<std::string> expected = {"Test1.txt", "Test2.txt"};
+  EXPECT_EQ(expected, reader.GetFileNames());
 }
+

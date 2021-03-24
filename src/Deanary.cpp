@@ -1,113 +1,141 @@
 // Copyright 2021 Vadukk
+#include "../include/Deanary.h"
+#include <iostream>
 
-#include "Deanary.h"
+Deanary::Deanary(ReadGroup& reader, std::string spec) {
+  groups = reader.CreateGroups(spec);
+  InitHead();
+}
 
-void Deanary::createGroups(std::string &filename) {
-    std::ifstream groupFile(filename);
-    std::string line;
-    std::string line2;
-    if (groupFile) {
-        while (std::getline(groupFile, line)) {
-            std::getline(groupFile, line2);
-            AddGroup(line, line2);
+void Deanary::AddMarksToAll(int marks_number) {
+  unsigned int SEED = 256;
+  for (auto group : groups) {
+    for (auto student : group->students) {
+      if (student->skill == ABILITY::OK) {
+        for (int i = 0; i < marks_number; ++i) {
+          int prob = rand_r(&SEED) % 101 + 1;
+          if (prob <= 20) {
+            student->AddMark(2);
+          } else if (prob > 20 && prob <= 70) {
+            student->AddMark(3);
+          } else if (prob > 70 && prob <= 90) {
+            student->AddMark(4);
+          } else {
+            student->AddMark(5);
+          }
         }
-        groupFile.close();
-    }
-}
-
-Group Deanary::getLastGroup() {
-    return groups.back();
-}
-
-void Deanary::AddGroup(std::string titl, std::string spec) {
-    Group newgroup = Group(titl, spec);
-    this->groups.push_back(newgroup);
-}
-
-void Deanary::printGroups() {
-    for (Group gr : groups) {
-        std::cout << gr.gettitle() << std::endl;
-    }
-}
-
-void Deanary::hireStudents(const std::string& filename) {
-    std::ifstream groupFile(filename);
-    std::string line;
-    std::string line2;
-    std::string line3;
-    if (groupFile) {
-        while (std::getline(groupFile, line)) {
-            std::getline(groupFile, line2);
-            std::getline(groupFile, line3);
-            for (Group gr : groups) {
-                if (line3 == gr.gettitle()) {
-                    Student newst = Student(std::stoi(line), line2);
-                    gr.addStudent(&newst);
-                    newst.addToGroup(&gr);
-                }
-            }
+      }
+      if (student->skill == ABILITY::GOOD) {
+        for (int i = 0; i < marks_number; ++i) {
+          int prob = rand_r(&SEED) % 101 + 1;
+          if (prob <= 5) {
+            student->AddMark(2);
+          } else if (prob > 5 && prob <= 15) {
+            student->AddMark(3);
+          } else if (prob > 15 && prob <= 75) {
+            student->AddMark(4);
+          } else {
+            student->AddMark(5);
+          }
         }
-        groupFile.close();
-    }
-}
-
-void Deanary::addMarksToAll() {
-    std::srand(12);
-    for (Group group : groups) {
-        for (Student* student : group.getstudents()) {
-            Student st = *student;
-            for (int i = 0; i < 10; i++) {
-                st.addmark(std::rand() % 10 + 1);
-            }
+      }
+      if (student->skill == ABILITY::EXCELLENT) {
+        for (int i = 0; i < marks_number; ++i) {
+          int prob = rand_r(&SEED) % 101 + 1;
+          if (prob <= 1) {
+            student->AddMark(2);
+          } else if (prob > 1 && prob <= 6) {
+            student->AddMark(3);
+          } else if (prob > 6 && prob <= 26) {
+            student->AddMark(4);
+          } else {
+            student->AddMark(5);
+          }
         }
+      }
     }
+  }
 }
 
-std::vector<float> Deanary::getStatistics() {
-    std::vector<float> statistic;
-    for (Group gr : groups) {
-        statistic.push_back(gr.getAveragemark());
+void Deanary::GetStatistics() const {
+  for (auto group : groups) {
+    auto students = group->GetAllStudents();
+    for (auto student : students) {
+      std::cout << "Student name - " << student->GetName() << '\n';
+      std::cout << group->GetTitle() << '\n';
+      std::cout << "Average mark - " << student->GetAverageMark() << '\n';
+      std::cout << '\n' << '\n' << '\n';
     }
-    return statistic;
+    std::cout << '\n' << '\n';
+  }
 }
 
-void Deanary::moveStudents(Student* st1, Group* gr2) {
-    Group gr = *gr2;
-    gr.addStudent(st1);
-    Student st = *st1;
-    Group gr1 = *(st.getGroup());
-    gr1.removeStudent(st1);
-    st.addToGroup(gr2);
+void Deanary::MoveStudent(int id, std::string new_group_name) {
+  Student* st;
+  Group* old_group;
+  Group* new_group = GetGroup(new_group_name);
+  for (auto group : groups) {
+    for (auto student : group->students) {
+      if (student->id == id) {
+        st = student;
+        old_group = group;
+      }
+    }
+  }
+  old_group->RemoveStudent(st);
+  if (st->IsHeadOfGroup()) {
+    st->isHead = false;
+    old_group->ChooseHead();
+  }
+  st->AddToGroup(new_group);
 }
 
-void Deanary::saveStaff(const std::string& fileName) {
-    std::ofstream outFile;
-    outFile.open(fileName);
-    std::string data = "";
-    if (outFile.is_open()) {
-        for (Group gr : groups) {
-            data = data + gr.gettitle() + " ";
-            data = data + std::to_string(gr.getAveragemark());
-            data = data +  + "\n";
-        }
-        outFile << data;
-        outFile.close();
+void Deanary::SaveStaff(const ReadGroup& reader) const {
+  for (int i = 0; i < groups.size(); ++i) {
+    std::ofstream output(reader.filenames[i]);
+    for (auto student : groups[i]->students) {
+      output << student->id << " " << student->fio << '\n';
     }
+    output.close();
+  }
 }
 
-void Deanary::initHeads() {
-    for (Group gr : groups) {
-        gr.chooseHead();
-    }
+void Deanary::InitHead() {
+  for (auto group : groups) {
+    group->ChooseHead();
+  }
 }
 
-void Deanary::fireStudents() {
-    for (Group gr : groups) {
-        for (Student* student : gr.getstudents()) {
-            Student st = *student;
-            if (st.getAveragemark() < 3.5) {
-                gr.removeStudent(student);
-            }
-        }
+void Deanary::FireStudent(int id) {
+  Group* gr;
+  Student* st;
+  for (auto group : groups) {
+    for (auto student : group->students) {
+      if (student->id == id) {
+        st = student;
+        gr = group;
+        break;
+      }
     }
+  }
+  gr->RemoveStudent(st);
+  if (st->IsHeadOfGroup()) {
+    gr->ChooseHead();
+  }
+  delete st;
+}
+
+Group* Deanary::GetGroup(std::string group_name) {
+  for (auto group : groups) {
+    if (group->title == group_name) {
+      return group;
+    }
+  }
+}
+
+void Deanary::HireStudent(int id, std::string name, std::string group_name,
+                          ABILITY skill) {
+  Group* group = GetGroup(group_name);
+  Student* new_student = new Student(id, name, group);
+  new_student->skill = skill;
 }
