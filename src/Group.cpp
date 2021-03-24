@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Group.h"
 
-Group::Group(std::string title,std::string spec) {
+Group::Group(std::string title, std::string spec) {
     this->title = title;
     this->spec = spec;
 }

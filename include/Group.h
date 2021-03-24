@@ -1,7 +1,7 @@
 // Copyright 2021 Tyulin Igor
 
-#ifndef TP_LAB_5_GROUP_H
-#define TP_LAB_5_GROUP_H
+#ifndef INCLUDE_GROUP_H_
+#define INCLUDE_GROUP_H_
 
 #include "Student.h"
 #include <string>
@@ -13,12 +13,12 @@ class Deanary;
 class Group {
     friend class Student;
     friend class Deanary;
-private:
+ private:
     std::string title;
     std::string spec;
     std::vector<Student *> students;
     Student *head;
-public:
+ public:
     void addstud(Student *stud);
     void kickstud(Student *student);
     Student* findstud(int id);
@@ -30,4 +30,4 @@ public:
     std::string getspec();
     std::string getitle();
 };
-#endif //TP_LAB_5_GROUP_H
+#endif  // INCLUDE_GROUP_H_

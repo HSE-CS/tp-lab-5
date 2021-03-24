@@ -1,7 +1,7 @@
 // Copyright 2021 Tyulin Igor
 
-#ifndef TP_LAB_5_DEANARY_H
-#define TP_LAB_5_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <iostream>
 #include <string>
@@ -17,10 +17,10 @@ class Deanary {
 
     friend class Student;
 
-private:
+ private:
     std::vector<Group *> groups;
     std::vector<Student> Students;
-public:
+ public:
     void createGroups(Group group);
     void createGroups(std::ifstream& students_file);
     void hireStudents(Student *stud, std::string ng);
@@ -30,7 +30,7 @@ public:
     void initHeads();
     void moveStudents(Student* student, std::string groupName);
     void saveStaff(std::string str);
-    void fireStudent(std::vector<Student *> &students);
+    void fireStudent(const std::vector<Student *> &students);
 };
 
-#endif //TP_LAB_5_DEANARY_H
+#endif  // INCLUDE_DEANARY_H_

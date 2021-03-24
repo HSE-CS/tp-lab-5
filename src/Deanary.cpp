@@ -8,7 +8,7 @@ void Deanary::hireStudents(Student* stud, std::string ng) {
         if (groups[i]->getspec() == ng)
             groups[i]->addstud(stud);
     }
-};
+}
 
 void Deanary::hireStudents(std::string path) {
     std::ifstream fin(path);
@@ -82,7 +82,7 @@ void Deanary::saveStaff(std::string str) {
     file.close();
 }
 
-void Deanary::fireStudent(std::vector<Student *> &students) {
+void Deanary::fireStudent(const std::vector<Student *> &students) {
     for (Student *student : students) {
         student->group->kickstud(student);
     }
