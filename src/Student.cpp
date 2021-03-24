@@ -1,37 +1,45 @@
 #include "Student.h"
 #include "Group.h"
 
-Student::Student(int ID, const std::string& FIO) {
+Student::Student(int ID, const std::string& FIO) 
+{
 	id = ID;
 	fio = FIO;
 }
 
-void Student::addToGroup(Group* gr) {
+void Student::addToGroup(Group* gr) 
+{
 	group = gr;
 }
 
-void Student::addmark(int mark) {
+void Student::addmark(int mark) 
+{
 	marks.push_back(mark);
 }
 
-float Student::getAveragemark() {
+float Student::getAveragemark() 
+{
 	double res = 0.0;
 	int count = 0;
-	for (auto i : marks) {
+	for (auto i : marks) 
+	{
 		res += i;
 		count++;
 	}
 	return res / count;
 }
 
-bool Student::isHeadOfGroup() {
+bool Student::isHeadOfGroup() 
+{
 	return group->head == this;
 }
 
-int Student::getId() {
+int Student::getId() 
+{
 	return id;
 }
 
-std::string Student::getName() {
+std::string Student::getName() 
+{
 	return fio;
 }

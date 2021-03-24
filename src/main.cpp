@@ -3,7 +3,8 @@
 #include "Group.h"
 #include "Deanary.h"
 
-int main() {
+int main() 
+{
 	Student s1 = Student(0, "Ivan Ivanov");
 	Student s2 = Student(1, "Petr Petrov");
 	Student s3 = Student(2, "Eric Ericov");
