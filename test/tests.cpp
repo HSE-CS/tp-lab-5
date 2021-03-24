@@ -6,23 +6,23 @@
 
 TEST(Student_Test, test1) {
 Student student_1(11, "Max Has");
-EXPECT_EQ(11, student_1.get_id());
+EXPECT_EQ(11, student_1.stud_id());
 }
 
 TEST(Student_Test, test2) {
 Student student_1(5, "Igi Bugi");
-EXPECT_EQ(5, student_1.get_id());
+EXPECT_EQ(5, student_1.stud_id());
 }
 
 TEST(Student_Test, test3) {
 Student student_1(1, "Vasya Nia");
-EXPECT_EQ("Vasya Nia", student_1.get_fio());
+EXPECT_EQ("Vasya Nia", student_1.stud_fio());
 }
 
 TEST(Student_Test, test4) {
 Student student_1(1, "Vasya Nia");
 student_1.mark_add(6);
-EXPECT_EQ(6, student_1.get_average_mark());
+EXPECT_EQ(6, student_1.average_mark());
 }
 
 TEST(Student_Test, test5) {
