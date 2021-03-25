@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Group.h"
 
 class Group;
@@ -16,6 +17,7 @@ class Student {
     std::string fio;
     Group *group;
     std::vector<int> marks;
+
  public:
     Student(int id, const std::string fio) {
         this->id = id;
@@ -37,7 +39,7 @@ class Student {
 
     double getAveragemark() {
         double sum = 0;
-        for (auto el: marks) {
+        for (auto el : marks) {
             sum += el;
         }
         return sum / marks.size();
