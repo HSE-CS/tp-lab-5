@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
-#include "student.h"
+#include "Student.h"
 
 
 class Group {
