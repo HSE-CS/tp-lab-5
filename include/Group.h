@@ -20,7 +20,7 @@ class Group {
     Student *head;
 
  public:
-    Group(string title, string spec) {
+    Group(std::string title, std::string spec) {
         this->title = title;
         this->spec = spec;
     }
