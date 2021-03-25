@@ -9,8 +9,6 @@
 #include <string>
 #include "Group.h"
 
-class Group;
-
 class Student {
  private:
     int id;
