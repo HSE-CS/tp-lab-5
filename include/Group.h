@@ -10,6 +10,8 @@
 #include <string>
 #include "Student.h"
 
+class Student;
+
 class Group {
  private:
     std::string title;
