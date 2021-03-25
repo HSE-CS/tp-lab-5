@@ -8,9 +8,11 @@
 #include <string>
 #include "Group.h"
 
+class Group;
+
 class Deanery {
  private:
-    vector<Group *> groups;
+    std::vector<Group *> groups;
     int global_id;
 
  public:
