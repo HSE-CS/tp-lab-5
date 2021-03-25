@@ -8,9 +8,6 @@
 #include <vector>
 #include <ctime>
 #include <string>
-
-class Student;
-
 #include "Student.h"
 
 class Group {
@@ -54,7 +51,7 @@ class Group {
     double getAveragemark() {
         double sum = 0;
         for (auto &el : this->students) {
-            sum += el->getAveragemark();
+            sum += el.getAveragemark();
         }
         return sum / this->students.size();
     }
