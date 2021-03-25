@@ -3,7 +3,7 @@
 #ifndef INCLUDE_DEANERY_H_
 #define INCLUDE_DEANERY_H_
 
-#include "group.h"
+#include "Group.h"
 #include "fstream"
 
 class Deanery {
