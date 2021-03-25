@@ -3,10 +3,10 @@
 #ifndef INCLUDE_DEANARY_H_
 #define INCLUDE_DEANARY_H_
 
-#include "Group.h"
-#include "fstream"
+#include <fstream>
 #include <vector>
 #include <string>
+#include "Group.h"
 
 class Deanery {
  private:
