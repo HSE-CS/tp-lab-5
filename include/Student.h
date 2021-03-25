@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <vector>
-#include "group.h"
+#include "Group.h"
 
 class Group;
 
