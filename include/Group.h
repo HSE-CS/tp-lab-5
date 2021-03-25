@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include <string>
 #include "Student.h"
 
 
@@ -16,8 +17,8 @@ class Group {
     std::string spec;
     std::vector<Student *> students;
     Student *head;
- public:
 
+ public:
     Group(string title, string spec) {
         this->title = title;
         this->spec = spec;
@@ -50,7 +51,7 @@ class Group {
 
     double getAveragemark() {
         double sum = 0;
-        for (auto &el: this->students) {
+        for (auto &el : this->students) {
             sum += el->getAveragemark();
         }
         return sum / this->students.size();
@@ -78,7 +79,8 @@ class Group {
         student->addToGroup(nullptr);
         this->students.erase(
                 std::remove(this->students.begin(),
-                            this->students.end(), student), this->students.end());
+                            this->students.end(), student),
+         this->students.end());
     }
 
     bool isEmpty() {
