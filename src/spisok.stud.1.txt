@@ -1,0 +1,31 @@
+19IS ID:465 FIO:Stepanova A.T.
+19AMCS ID:286 FIO:Tsvetkov T.D.
+19AMCS ID:333 FIO:Makarova E.M.
+20AMCS ID:468 FIO:Ageev S.A.
+17AL ID:071 FIO:Mironov A.S.
+19AMCS ID:222 FIO:Mikhailov M.V.
+19IS ID:444 FIO:Kuznetsov I. B.
+20AMCS ID:579 FIO:Andrianova A.M.
+19AMCS ID:974 FIO:Korshunov M.A.
+19AMCS ID:272 FIO:Sveshnikova K.G.
+17AL ID:088 FIO:Karpova P.A.
+17AL ID:170 FIO:Ovchinnikova S.M.
+19AMCS ID:670 FIO:Avdeev G.S.
+20AMCS ID:202 FIO:Semenova V.D.
+19IS ID:134 FIO:Koroleva A. S.
+19AMCS ID:273 FIO:Makarov A.K.
+19AMCS ID:568 FIO:Popov R.A.
+20AMCS ID:098 FIO:Lebedeva V.S.
+19IS ID:072 FIO:Prokofiev N. A.
+19AMCS ID:879 FIO:Dolgov D.M.
+17AL ID:462 FIO:Morozova M.S.
+20AMCS ID:194 FIO:Kozlovsky L.A.
+19IS ID:019 FIO:Romanov A. S.
+19AMCS ID:263 FIO:Alexandrov L. D.
+19IS ID:115 FIO:Kuznetsova N.M.
+19IS ID:608 FIO:Stepanov D.D.
+17AL ID:670 FIO:Goryunov L. D
+19IS ID:671 FIO:Ageev N. S.
+20AMCS ID:022 FIO:Sedov A.R.
+19IS ID:507 FIO:Shchukin M.D.
+19IS ID:114 FIO:Ustinova E.G.
