@@ -26,7 +26,7 @@ TEST(test, test3) {
     Student student(id, fio);
     student.addmark(5);
     student.addmark(3);
-    EXPECT_EQ(4, int(student.getAveragemark()));
+    EXPECT_EQ(4, static_cast<int>(student.getAveragemark()));
 }
 
 TEST(test, test4) {
@@ -98,5 +98,5 @@ TEST(test, test10) {
     gr.addStudent(&s1);
     gr.addStudent(&s2);
     gr.chooseHead(1);
-    EXPECT_EQ(41, int(gr.getAveragemark() * 10));
+    EXPECT_EQ(41, static_cast<int>(gr.getAveragemark() * 10));
 }
