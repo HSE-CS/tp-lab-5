@@ -8,9 +8,10 @@
 #include <vector>
 #include <ctime>
 #include <string>
-#include "Student.h"
 
 class Student;
+
+#include "Student.h"
 
 class Group {
  private:
