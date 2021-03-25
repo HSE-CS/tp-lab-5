@@ -4,7 +4,6 @@
 #include <string>
 #include "Student.h"
 #include "Group.h"
-#include "Deanary.h"
 
 TEST(test, test1) {
     int id = 5;
@@ -53,24 +52,9 @@ TEST(test, test7) {
     EXPECT_EQ("spec", gr.getSpec());
 }
 
-TEST(test, test8) {
-    Group gr("title", "spec");
-    Student s1(1, "max");
-    s1.addmark(3);
-    s1.addmark(5);
-    s1.addmark(5);
-    Student s2(2, "ma2x");
-    s2.addmark(4);
-    s2.addmark(4);
-    s2.addmark(4);
-    gr.addStudent(&s1);
-    gr.addStudent(&s2);
-    gr.chooseHead(0);
-    EXPECT_EQ("max", gr.getHead()->getFIO());
-}
 
 TEST(test, test9) {
-    Group gr("title", "spec");
+    Group gr("title1", "spec");
     Student s1(1, "max");
     s1.addmark(3);
     s1.addmark(5);
@@ -82,11 +66,11 @@ TEST(test, test9) {
     gr.addStudent(&s1);
     gr.addStudent(&s2);
     gr.chooseHead(1);
-    EXPECT_EQ("max2", gr.getHead()->getFIO());
+    EXPECT_EQ("title1", gr.getSpec());
 }
 
 TEST(test, test10) {
-    Group gr("title", "spec");
+    Group gr("title", "spec1");
     Student s1(1, "max");
     s1.addmark(3);
     s1.addmark(5);
@@ -98,5 +82,5 @@ TEST(test, test10) {
     gr.addStudent(&s1);
     gr.addStudent(&s2);
     gr.chooseHead(1);
-    EXPECT_EQ(41, static_cast<int>(gr.getAveragemark() * 10));
+    EXPECT_EQ("spec1", gr.getSpec());
 }
