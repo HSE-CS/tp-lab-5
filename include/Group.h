@@ -25,7 +25,7 @@ class Group {
         this->spec = spec;
     }
 
-    string getTitle() {
+    std::string getTitle() {
         return this->title;
     }
 
@@ -33,7 +33,7 @@ class Group {
         return this->students;
     }
 
-    string getSpec() {
+    std::string getSpec() {
         return this->spec;
     }
 
