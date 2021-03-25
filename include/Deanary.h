@@ -1,15 +1,18 @@
 // Copyright 2021 by Maxim
 
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include "Group.h"
 #include "fstream"
+#include <vector>
+#include <string>
 
 class Deanery {
  private:
     vector<Group *> groups;
     int global_id;
+
  public:
     Deanery() {
         global_id = 0;
@@ -134,4 +137,4 @@ class Deanery {
     }
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_
