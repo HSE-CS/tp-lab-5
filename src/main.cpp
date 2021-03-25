@@ -2,9 +2,9 @@
 
 #include <iostream>
 #include <string>
-#include "Group.h"
-#include "Student.h"
-#include "Deanary.h"
+// #include "Group.h"
+// #include "Student.h"
+// #include "Deanary.h"
 
 
 int main() {
