@@ -12,7 +12,7 @@ int main() {
     deanery.hireStudents("data_students.txt");
     deanery.createGroups("data_groups.txt");
     deanery.initHeads();
-    for (int i = 0; i < 20; i++){
+    for (int i = 0; i < 20; i++) {
         deanery.addMarksToAll();
     }
     deanery.fireStudents();
