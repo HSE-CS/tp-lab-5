@@ -2,7 +2,6 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
-#include <stdlib.h>
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -15,7 +14,7 @@ void Group::addStudent(Student* Groupmember) {
 }
 
 Student* Group::electHead() {
-  int i = rand_r() % (num - 1) + 0;
+  int i = std::rand() % (num - 1) + 0;
   head = students[i];
   return students[i];
 }

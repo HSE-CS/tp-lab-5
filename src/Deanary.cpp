@@ -2,7 +2,6 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
-#include <stdlib.h>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -55,7 +54,7 @@ void Deanery::addMarks() {
   int mark;
   for (int i = 0; i < numSt; i++) {
     for (int n = 0; n < 8; n++) {
-      mark = rand_r() % 10 + 1;
+      mark = std::rand() % 10 + 1;
       students[i]->addMark(mark);
     }
   }
