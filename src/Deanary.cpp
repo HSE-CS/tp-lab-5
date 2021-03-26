@@ -5,65 +5,87 @@
 #include "Deanary.h"
 
 // Разработать класс Deanery
-/*
-class Deanery {
- private:
-    */
-/* data */
-/*
 
-// Примерный перечень полей:
-
-    groups - массив групп
-
- public:
-    // Deanery (arguments);
-    // virtual ~Deanery ();
-    // Обеспечить класс следующими методами:
-*/
-
-
-
-//создание студентов на основе данных из файла
-void Deanery::hireStudents() {
-
-
-};
-
-//создание групп на основе данных из файла
+// создание групп на основе данных из файла
 void Deanery::createGroups() {
+    ifstream grData;
+    grData.open("../data/departments.txt");
+
+    string grName;
+    string depName;
+
+    if (grData.is_open()) {
+        for (int i = 0; i < 4; ++i) {
+            grData >> grName;
+            grData >> depName;
+            Group *n = new Group(grName,depName);
+            groups.push_back(n);
+        }
+    }
 
 };
 
-//добавление случайных оценок студентам
+// создание студентов на основе данных из файла
+void Deanery::hireStudents() {
+    ifstream stData;
+    stData.open("../data/id&fio.txt");
+
+    string f;
+    string i;
+    string o;
+
+    string fio;
+    srand(time(0));
+    if (stData.is_open()) {
+        for (int j = 0; j < 40; ++j) {
+            stData >> f;
+            stData >> i;
+            stData >> o;
+            fio = f + " " + i + " " + o;
+            Student *st = new Student(j++, fio);
+            this -> groups[rand() % 3 + 1] -> addStudent(st);
+
+        }
+    }
+};
+
+
+
+// добавление случайных оценок студентам
 void Deanery::addMarksToAll() {
-
+    srand(time(0));
+    for (auto &group : groups) {
+        for (auto &st : group -> students) {
+            for (int i = 0; i < 5; ++i) {
+                st -> addMark(rand() % 5 + 0);
+            }
+        }
+    }
 };
 
-//получение статистики по успеваемости студентов и групп
+// получение статистики по успеваемости студентов и групп
 void Deanery::getStatistics() {
-    int n = 0;
     for (auto &group : groups) {
-        cout << "Group " << n << " statistic : " << endl;
+        cout << "Group " << group->title << " statistic : " << endl;
         int mark1 = 0;
         int mark2 = 0;
         int mark3 = 0;
         int mark4 = 0;
         int mark5 = 0;
         for (auto &student : group->students) {
-            if (student->getAverageMark() == 1) {
+            if (ceil(student->getAverageMark()) == 1) {
                 mark1++;
             }
-            if (student->getAverageMark() == 2) {
+            if (ceil(student->getAverageMark()) == 2) {
                 mark2++;
             }
-            if (student->getAverageMark() == 3) {
+            if (ceil(student->getAverageMark()) == 3) {
                 mark3++;
             }
-            if (student->getAverageMark() == 4) {
+            if (ceil(student->getAverageMark()) == 4) {
                 mark4++;
             }
-            if (student->getAverageMark() == 5) {
+            if (ceil(student->getAverageMark()) == 5) {
                 mark5++;
             }
         }
@@ -82,29 +104,57 @@ void Deanery::getStatistics() {
     }
 };
 
-//перевод студентов из группы в группу
+// перевод студентов из группы в группу
 void Deanery::moveStudents() {
 
 };
 
-//отчисление студентов за неуспеваемость
+// отчисление студентов за неуспеваемость
 void Deanery::fireStudents() {
+    double togo = 3.0;
+    for (auto &group : groups) {
+        for (auto &student : group->students) {
+            if (student->getAverageMark() < togo) {
+                if (student->group != nullptr) {
+                    student->group->removeStudent(student->id);
+                }
+            }
+        }
+    }
 
 };
 
-//сохранение обновленных данных в файлах
+// сохранение обновленных данных в файлах
 void Deanery::saveStuff() {
+    ofstream out;
+    out.open("../data/upd.txt");
+    if (out.is_open()) {
+        for (auto &gr : groups) {
+            out << "department: " << gr->spec << "\n group: " << gr->title << "\n";
+            for (auto &st : gr->students) {
+
+                out << "\t id: " << st->id << "\n \t fio: " << st->fio;
+                if (st->isHeadOfGroup()) {
+                    out << "\tgroup head\n";
+                }
+                out << "\taverage: " << st->getAverageMark() << "\n";
+
+            }
+            out << "\n";
+        }
+
+    }
 
 };
 
-//инициация выборов старост в группах
+// инициация выборов старост в группах
 void Deanery::initHeads() {
     for (auto &group : groups) {
         group -> chooseHead();
     }
 };
 
-//вывод данных на консоль
+// вывод данных на консоль
 void Deanery::output() {
     cout << endl;
     for(auto &group : groups) {
@@ -124,4 +174,3 @@ void Deanery::output() {
 
 };
 
-//};
