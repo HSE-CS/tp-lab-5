@@ -7,12 +7,12 @@
 // зачисление в группу
 void Student::addToGroup(Group* hisGroup) {
     this -> group = hisGroup;
-};
+}
 
 // добавление оценки
 void Student::addMark(int mark) {
     this -> marks.push_back(mark);
-};
+}
 
 // вычисление средней оценки
 double Student::getAverageMark() {
@@ -23,14 +23,13 @@ double Student::getAverageMark() {
     }
 
     return sum / num;
-};
+}
 
 bool Student::isHeadOfGroup() {
-    if ( group != NULL && id == group->head->id) {
+    if (group != NULL && id == group->head->id) {
         return true;
     } else {
         return false;
     }
-
-};
+}
 

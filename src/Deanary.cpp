@@ -3,38 +3,40 @@
 #include <fstream>
 
 #include "Deanary.h"
+#include <random>
+#include <ctime>
 
 // Разработать класс Deanery
 
 // создание групп на основе данных из файла
 void Deanery::createGroups() {
-    ifstream grData;
+    std::ifstream grData;
     grData.open("../data/departments.txt");
 
-    string grName;
-    string depName;
+    std::string grName;
+    std::string depName;
 
     if (grData.is_open()) {
         for (int i = 0; i < 4; ++i) {
             grData >> grName;
             grData >> depName;
-            Group *n = new Group(grName,depName);
+            Group *n = new Group(grName, depName);
             groups.push_back(n);
         }
     }
 
-};
+}
 
 // создание студентов на основе данных из файла
 void Deanery::hireStudents() {
-    ifstream stData;
+    std::ifstream stData;
     stData.open("../data/id&fio.txt");
 
-    string f;
-    string i;
-    string o;
+    std::string f;
+    std::string i;
+    std::string o;
 
-    string fio;
+    std::string fio;
     srand(time(0));
     if (stData.is_open()) {
         for (int j = 0; j < 40; ++j) {
@@ -44,10 +46,9 @@ void Deanery::hireStudents() {
             fio = f + " " + i + " " + o;
             Student *st = new Student(j++, fio);
             this -> groups[rand() % 3 + 1] -> addStudent(st);
-
         }
     }
-};
+}
 
 
 
@@ -61,12 +62,12 @@ void Deanery::addMarksToAll() {
             }
         }
     }
-};
+}
 
 // получение статистики по успеваемости студентов и групп
 void Deanery::getStatistics() {
     for (auto &group : groups) {
-        cout << "Group " << group->title << " statistic : " << endl;
+        std::cout << "Group " << group->title << " statistic : " << std::endl;
         int mark1 = 0;
         int mark2 = 0;
         int mark3 = 0;
@@ -89,25 +90,24 @@ void Deanery::getStatistics() {
                 mark5++;
             }
         }
-        cout << "Average mark 5 amount of people: " << mark5 << endl;
-        cout << "Average mark 4 amount of people: " << mark4 << endl;
-        cout << "Average mark 3 amount of people: " << mark3 << endl;
-        cout << "Average mark 2 amount of people: " << mark2 << endl;
-        cout << "Average mark 1 amount of people: " << mark1 << endl;
+        std::cout << "Average mark 5 amount of people: " << mark5 << std::endl;
+        std::cout << "Average mark 4 amount of people: " << mark4 << std::endl;
+        std::cout << "Average mark 3 amount of people: " << mark3 << std::endl;
+        std::cout << "Average mark 2 amount of people: " << mark2 << std::endl;
+        std::cout << "Average mark 1 amount of people: " << mark1 << std::endl;
 
         mark1 = 0;
         mark2 = 0;
         mark3 = 0;
         mark4 = 0;
         mark5 = 0;
-
     }
-};
+}
 
 // перевод студентов из группы в группу
 void Deanery::moveStudents() {
 
-};
+}
 
 // отчисление студентов за неуспеваемость
 void Deanery::fireStudents() {
@@ -121,12 +121,11 @@ void Deanery::fireStudents() {
             }
         }
     }
-
-};
+}
 
 // сохранение обновленных данных в файлах
 void Deanery::saveStuff() {
-    ofstream out;
+    std::ofstream out;
     out.open("../data/upd.txt");
     if (out.is_open()) {
         for (auto &gr : groups) {
@@ -138,39 +137,35 @@ void Deanery::saveStuff() {
                     out << "\tgroup head\n";
                 }
                 out << "\taverage: " << st->getAverageMark() << "\n";
-
             }
             out << "\n";
         }
-
     }
-
-};
+}
 
 // инициация выборов старост в группах
 void Deanery::initHeads() {
     for (auto &group : groups) {
         group -> chooseHead();
     }
-};
+}
 
 // вывод данных на консоль
 void Deanery::output() {
-    cout << endl;
+    std::cout << std::endl;
     for(auto &group : groups) {
-        cout << "\t" << "Title : " << group->title << endl;
-        cout << "\t" << "Specification : " << group->spec << endl << endl;
+        std::cout << "\t" << "Title : " << group->title << std::endl;
+        std::cout << "\t" << "Specification : " << group->spec << std::endl << std::endl;
 
-        cout << endl;
+        std::cout << std::endl;
         for (auto &student : group -> students) {
-            cout << "ID : " << student->id << endl;
-            cout << "Name :" << student->fio << endl;
+            std::cout << "ID : " << student->id << std::endl;
+            std::cout << "Name :" << student->fio << std::endl;
             if (student->isHeadOfGroup()) {
-                cout << "Head of the group" << endl;
+                std::cout << "Head of the group" << std::endl;
             }
-            cout << "Average : " << student->getAverageMark() << endl;
+            std::cout << "Average : " << student->getAverageMark() << std::endl;
         }
     }
-
-};
+}
 

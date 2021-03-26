@@ -1,7 +1,7 @@
 // Copyright 2021 milalupehina
 
-#ifndef TP_LAB_5_DEANARY_H
-#define TP_LAB_5_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <iostream>
 #include <vector>
@@ -13,19 +13,17 @@
 #include "Student.h"
 #include "Group.h"
 
-using namespace std;
+// using namespace std;
 
 // Разработать класс Deanery
 class Deanery {
     friend class Student;
     friend class Group;
  private:
-
     // groups - массив групп
-    vector <Group *> groups;
+    std::vector <Group *> groups;
 
  public:
-
     // Обеспечить класс следующими методами:
 
     // создание студентов на основе данных из файла
@@ -47,7 +45,6 @@ class Deanery {
 
     // вывод данных на консоль
     void output();
-
 };
 
-#endif // TP_LAB_5_DEANARY_H
+#endif // INCLUDE_DEANARY_H_
