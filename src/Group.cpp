@@ -13,7 +13,7 @@ void Group::addStudent(Student *neW) {
 void Group::chooseHead() {
     if (students.size() == 0) return;
     std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(1,students.size());
+    std::uniform_int_distribution<int> distribution(1, students.size());
     int num = distribution(generator);
     this -> head = students[num];
 }
