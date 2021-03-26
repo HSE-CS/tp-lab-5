@@ -4,7 +4,6 @@
 #include "Student.h"
 
 int main() {
-
     Deanery deanery("Students.txt", "Group.txt");
     deanery.CreateStudents();
     deanery.CreateGroups();

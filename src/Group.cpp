@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 Group::Group(std::string name) { title = name; }
 
@@ -14,7 +15,7 @@ void Group::addStudent(Student* Groupmember) {
 }
 
 Student* Group::electHead() {
-  int i = rand() % (num - 1) + 0;
+  int i = rand_r() % (num - 1) + 0;
   head = students[i];
   return students[i];
 }

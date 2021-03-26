@@ -97,13 +97,15 @@ void Deanery::electGhead() {
 void Deanery::getStatistics(std::string name) {
   for (int i = 0; i < numSt; i++) {
     StStat.push_back(
-        std::pair<float,std::string>(students[i]->averageMark(), students[i]->fio));
+        std::pair<float,std::string>(students[i]->averageMark(), 
+            students[i]->fio));
   }
   sort(StStat.begin(), StStat.end());
 
   for (int j = 0; j < numGr; j++) {
     GrStat.push_back(
-        std::pair<float, std::string>(groups[j]->averageGroup(), groups[j]->title));
+        std::pair<float, std::string>(groups[j]->averageGroup(), 
+            groups[j]->title));
   }
   sort(GrStat.begin(), GrStat.end());
 

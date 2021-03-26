@@ -9,7 +9,7 @@
 class Group;
 
 class Student {
-  friend class Group;  
+  friend class Group;
   friend class Deanery;
  private:
   int id;
@@ -19,7 +19,7 @@ class Student {
   int num;
  public:
   Student(int, std::string);
-  void enterGroup(Group*); 
+  void enterGroup(Group*);
   void addMark(int);
   float averageMark();
 };

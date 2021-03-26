@@ -16,7 +16,7 @@ class Group {
   int num;
   Student *head;
  public:
-  Group(std::string);
+  explicit Group(std::string);
   Student *electHead();
   void addStudent(Student *);
   Student *searchSfio(std::string);

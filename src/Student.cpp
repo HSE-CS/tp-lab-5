@@ -9,8 +9,8 @@ Student::Student(int nid, std::string name) {
   fio = name;
 }
 
-void Student::enterGroup(Group* group) { 
-    this->group = group; 
+void Student::enterGroup(Group* group) {
+    this->group = group;
 }
 
 void Student::addMark(int mark) {
