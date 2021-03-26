@@ -15,8 +15,8 @@ class Group {
 
  public:
   explicit Group(std::string title, std::string spec);
-  std::string get_title() const;         
-  std::string get_spec() const;       
+  std::string get_title() const;     
+  std::string get_spec() const;     
   std::string get_name_of_head() const;
   std::vector<Student*> get_students() const;
   void add_student(Student* student);

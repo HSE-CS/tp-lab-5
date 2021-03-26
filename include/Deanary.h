@@ -1,6 +1,6 @@
 // Copyright 2021 shaidi
-#ifndef INCLUDE_DEANARY_H
-#define INCLUDE_DEANARY_H
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 #include <time.h>
 #include <iostream>
 #include "Group.h"
@@ -24,10 +24,10 @@ class Deanary {
   void add_groups(std::string fios_input, std::string groups_input);
   void change_group(std::string fio, std::string previous_group,
                     std::string new_group);
-  void heads_choice();        
+  void heads_choice();
   void set_random_marks(unsigned int num);
   void get_statistics() const;
   void remove_students();
   void new_data(std::string students, std::string groups) const;
 };
-#endif  // DEANARY_H
+#endif  // INCLUDE_DEANARY_H_
