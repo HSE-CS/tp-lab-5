@@ -33,8 +33,8 @@ Student* Group::getStudent(std::string param) const {
                 return student;
             }
         }
-        std::cout << "Извините, студента " << param
-            << " нет в этой группе." << std::endl;
+        std::cout << "Sorry, stundent " << param
+            << " is not in the group." << std::endl;
     } else {
         std::cout << "There are no students in this group" << std::endl;
     }
