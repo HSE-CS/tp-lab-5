@@ -2,7 +2,7 @@
 
 #include <ctime>
 #include <set>
-#include "Group.hpp"
+#include "Group.h"
 
 
 /*

@@ -6,8 +6,8 @@
 #include <fstream>
 #include <algorithm>
 #include <numeric>
-#include "Student.hpp"
-#include "Group.hpp"
+#include "Student.h"
+#include "Group.h"
 #include "Deanary.h"
 
 void printVec(std::vector<std::string> arr) {
