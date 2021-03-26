@@ -15,7 +15,7 @@ class Student {
     friend class Deanery;
     friend class Group;
  private:
-    /* data */
+
 // Примерный перечень полей:
     int id; // - идентификационный номер
     string fio; // - фамилия и инициалы

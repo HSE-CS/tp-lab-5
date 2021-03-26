@@ -4,8 +4,12 @@
 #define TP_LAB_5_GROUP_H
 // Разработать класс Group для хранения информации об учебной группе
 
-#include <string>
+#include <iostream>
 #include <vector>
+#include <string>
+#include <fstream>
+#include <random>
+#include <ctime>
 
 class Deanery;
 class Student;
@@ -16,7 +20,7 @@ class Group {
     friend class Deanery;
     friend class Student;
  private:
-    /* data */
+
 // Примерный перечень полей:
     string title; // - название группы
     string spec; // - специальность

@@ -3,8 +3,12 @@
 #ifndef TP_LAB_5_DEANARY_H
 #define TP_LAB_5_DEANARY_H
 
+#include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
+#include <random>
+#include <ctime>
 
 #include "Student.h"
 #include "Group.h"
@@ -16,19 +20,13 @@ class Deanery {
     friend class Student;
     friend class Group;
  private:
-    /* data */
-// Примерный перечень полей:
 
     // groups - массив групп
-    vector <Group *> groups = {};
+    vector <Group *> groups;
 
  public:
-    // Deanery (arguments);
-    // virtual ~Deanery ();
 
     // Обеспечить класс следующими методами:
-
-    // Deanery();
 
     // создание студентов на основе данных из файла
     void hireStudents();
