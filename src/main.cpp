@@ -4,7 +4,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 
 void test(std::string &&str) {}
 

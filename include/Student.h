@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include "../include/Group.h"
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 
 #ifndef INCLUDE_STUDENT_H_
 #define INCLUDE_STUDENT_H_

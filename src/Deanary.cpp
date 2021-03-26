@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 #include "../include/Student.h"
 
 Deanery::Deanery(std::initializer_list <std::string> filesList) {

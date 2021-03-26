@@ -1,7 +1,7 @@
 // Copyright [2021] <Nikita Semaev>
 #include <string>
 #include <vector>
-#include "../include/Deanery.h"
+#include "../include/Deanary.h"
 
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
