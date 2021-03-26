@@ -1,10 +1,8 @@
-//
-// Created by mila on 27.01.2021.
-//
+// Copyright 2021 milalupehina
 
 #ifndef TP_LAB_5_GROUP_H
 #define TP_LAB_5_GROUP_H
-//Разработать класс Group для хранения информации об учебной группе
+// Разработать класс Group для хранения информации об учебной группе
 
 #include <string>
 #include <vector>
@@ -17,21 +15,21 @@ using namespace std;
 class Group {
     friend class Deanery;
     friend class Student;
-private:
+ private:
     /* data */
-//Примерный перечень полей:
+// Примерный перечень полей:
     string title; // - название группы
     string spec; // - специальность
     vector <Student *> students; // - вектор ссылок на студентов
     Student *head; // - ссылка на старосту (из членов группы)
 
 
-public:
-    //Group (arguments);
-    //virtual ~Group ();
+ public:
+    // Group (arguments);
+    // virtual ~Group ();
 //  Обеспечить класс следующими методами:
 
-    //создание группы с указанием названия
+    // создание группы с указанием названия
     Group(string title, string spec) {
         this -> title = title;
         this -> spec = spec;
@@ -40,16 +38,16 @@ public:
     }
 
 
-    //добавление студента
+    // добавление студента
     void addStudent(Student *);
 
-    //избрание старосты
+    // избрание старосты
     void chooseHead();
 
-    //вычисление соеднего балла в группе
+    // вычисление соеднего балла в группе
     double getAverageMark();
 
-    //исключение студента из группы
+    // исключение студента из группы
     void removeStudent(const int&);
 
     Student *getStudent(const int&);
@@ -59,4 +57,4 @@ public:
 
 };
 
-#endif //TP_LAB_5_GROUP_H
+#endif // TP_LAB_5_GROUP_H

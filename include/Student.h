@@ -1,10 +1,8 @@
-//
-// Created by mila on 27.01.2021.
-//
+// Copyright 2021 milalupehina
 
 #ifndef TP_LAB_5_STUDENT_H
 #define TP_LAB_5_STUDENT_H
-//Разработать класс Student для хранения информации о студенте.
+// Разработать класс Student для хранения информации о студенте.
 #include <string>
 #include <vector>
 
@@ -16,20 +14,20 @@ using namespace std;
 class Student {
     friend class Deanery;
     friend class Group;
-private:
+ private:
     /* data */
-//Примерный перечень полей:
+// Примерный перечень полей:
     int id; // - идентификационный номер
     string fio; // - фамилия и инициалы
     Group *group; // - ссылка на группу (объект Group)
     vector <int> marks; // - вектор оценок
 
-public:
-//Обеспечить класс следующими методами:
-    //Student (arguments);
-    //virtual Students ();
+ public:
+// Обеспечить класс следующими методами:
+    // Student (arguments);
+    // virtual Students ();
 
-    //создание студента с указанием ИД и ФИО
+    // создание студента с указанием ИД и ФИО
     Student(int id, string fio) {
         this -> id = id;
         this -> fio = fio;
@@ -37,17 +35,17 @@ public:
         this -> marks = {};
     };
 
-    //зачисление в группу
+    // зачисление в группу
     void addToGroup(Group *);
 
-    //добавление оценки
+    // добавление оценки
     void addMark(int);
 
-    //вычисление средней оценки
+    // вычисление средней оценки
     double getAverageMark();
 
     bool isHeadOfGroup();
 
 };
 
-#endif //TP_LAB_5_STUDENT_H
+#endif // TP_LAB_5_STUDENT_H

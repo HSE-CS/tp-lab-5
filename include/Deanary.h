@@ -1,6 +1,4 @@
-//
-// Created by mila on 27.01.2021.
-//
+// Copyright 2021 milalupehina
 
 #ifndef TP_LAB_5_DEANARY_H
 #define TP_LAB_5_DEANARY_H
@@ -13,45 +11,45 @@
 
 using namespace std;
 
-//Разработать класс Deanery
+// Разработать класс Deanery
 class Deanery {
     friend class Student;
     friend class Group;
-private:
+ private:
     /* data */
-//Примерный перечень полей:
+// Примерный перечень полей:
 
-    //groups - массив групп
+    // groups - массив групп
     vector <Group *> groups = {};
 
-public:
-    //Deanery (arguments);
-    //virtual ~Deanery ();
+ public:
+    // Deanery (arguments);
+    // virtual ~Deanery ();
 
-    //Обеспечить класс следующими методами:
+    // Обеспечить класс следующими методами:
 
-    //Deanery();
+    // Deanery();
 
-    //создание студентов на основе данных из файла
+    // создание студентов на основе данных из файла
     void hireStudents();
-    //создание групп на основе данных из файла
+    // создание групп на основе данных из файла
     void createGroups();
-    //добавление случайных оценок студентам
+    // добавление случайных оценок студентам
     void addMarksToAll();
-    //получение статистики по успеваемости студентов и групп
+    // получение статистики по успеваемости студентов и групп
     void getStatistics();
-    //перевод студентов из группы в группу
+    // перевод студентов из группы в группу
     void moveStudents();
-    //отчисление студентов за неуспеваемость
+    // отчисление студентов за неуспеваемость
     void fireStudents();
-    //сохранение обновленных данных в файлах
+    // сохранение обновленных данных в файлах
     void saveStuff();
-    //инициация выборов старост в группах
+    // инициация выборов старост в группах
     void initHeads();
 
-    //вывод данных на консоль
+    // вывод данных на консоль
     void output();
 
 };
 
-#endif //TP_LAB_5_DEANARY_H
+#endif // TP_LAB_5_DEANARY_H
