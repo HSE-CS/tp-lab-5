@@ -40,3 +40,18 @@ TEST(lab5, task4) {
   Student* st1 = new Student("Sharibzhanova Diana", 10);
   EXPECT_EQ(10, st1->get_id());
 }
+
+TEST(lab5, task5) {
+  Student* st1 = new Student("Sharibzhanova Diana", 10);
+  EXPECT_EQ("Sharibzhanova Diana", st1->get_fio());
+}
+
+TEST(lab5, task7) {
+  Group gr("PMI-1", "Prikladnaya Matematica");
+  EXPECT_EQ("Prikladnaya Matematica", gr.get_spec());
+}
+
+TEST(lab5, task8) {
+  Group gr("PMI-1", "Prikladnaya Matematica");
+  EXPECT_EQ("PMI-1", gr.get_title());
+}
