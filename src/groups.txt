@@ -1,0 +1,4 @@
+19PI1:Ptogramnaya Ingeneria
+19PI2:Ptogramnaya Ingeneria
+19PMI1:Prikladnaya matematika i informatika
+19PMI2:Prikladnaya matematika i informatika
