@@ -57,6 +57,7 @@ TEST(TestDeanary, Test6) {
 }
 
 TEST(TestDeanary, Test7) {
+	Deanary groups;
     groups.createGroup();
     groups.hireStudents();
     groups.addMarksToAll();
