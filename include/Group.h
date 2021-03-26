@@ -1,5 +1,5 @@
-#ifndef group_hpp
-#define group_hpp
+#ifndef INCLUDE_GROUP_HPP_
+#define INCLUDE_GROUP_HPP_
 
 #include <iostream>
 #include <string>
@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <numeric>
 #include <map>
-#include "student.hpp"
+#include "Student.hpp"
 
 class Student;
 
@@ -44,4 +44,4 @@ public:
     std::vector<Student*> get_students() { return students; }
     float get_group_mean() { return group_mean; }
 };
-#endif group_hpp
+#endif  // INCLUDE_GROUP_HPP_

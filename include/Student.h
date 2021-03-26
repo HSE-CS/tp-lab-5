@@ -1,5 +1,5 @@
-#ifndef student_hpp
-#define student_hpp
+#ifndef INCLUDE_STUDENT_HPP_
+#define INCLUDE_STUDENT_HPP_
 
 #include <iostream>
 #include <string>
@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <numeric>
 #include <map>
-#include "group.hpp"
+#include "Group.h"
 #define NUMBERS_SET "0123456789"
 
 class Group;
@@ -40,4 +40,4 @@ public:
     bool is_group_head() {return is_head;}
 };
 
-#endif student_hpp
+#endif  // INCLUDE_STUDENT_HPP_
