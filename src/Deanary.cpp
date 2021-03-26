@@ -10,7 +10,10 @@ speciality = str.substr(str.find(" ") + 1);
 groups.push_back(new Group(name, speciality));}}
 
 void Deanary::hireStudents(std::ifstream file) {
-std::string str, groupName, ID, FIO;
+std::string str;
+std::string groupName;
+std::string ID;
+std::string FIO;
 while (getline(file, str)) {
 groupName = str.substr(0, str.find("ID:") - 1);
 ID = str.substr(str.find("ID:") + 3, str.find("FIO:") - 1);

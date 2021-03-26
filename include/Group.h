@@ -23,7 +23,7 @@ Student* containsStudent(std::string key);
 float getAveragemark();
 void removeStudent(std::string id);
 
-private:
+ private:
 std::string title;
 std::string spec;
 std::vector <Student*> students;
