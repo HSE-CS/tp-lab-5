@@ -1,5 +1,5 @@
-#ifndef INCLUDE_STUDENT_HPP_
-#define INCLUDE_STUDENT_HPP_
+#ifndef INCLUDE_STUDENT_H_
+#define INCLUDE_STUDENT_H_
 
 #include <iostream>
 #include <string>
@@ -40,4 +40,4 @@ public:
     bool is_group_head() {return is_head;}
 };
 
-#endif  // INCLUDE_STUDENT_HPP_
+#endif  // INCLUDE_STUDENT_H_

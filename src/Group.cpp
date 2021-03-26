@@ -1,14 +1,8 @@
-//
-//  group.cpp
-//  lab5
-//
-//  Created by Иван Сафронов on 03.11.2019.
-//  Copyright © 2019 Иван Сафронов. All rights reserved.
-//
+// Copyright 2021 by Sid
 
 #include <ctime>
 #include <set>
-#include "group.hpp"
+#include "Group.hpp"
 
 
 /*

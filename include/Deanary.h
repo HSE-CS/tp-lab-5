@@ -1,5 +1,5 @@
-#ifndef deanery_h
-#define deanery_h 
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 #include <iostream>
 #include <string>
@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <numeric>
 #include <map>
-#include "group.hpp"
+#include "Group.h"
 
 class Deanery {
 private:
@@ -26,4 +26,4 @@ public:
     void calculate_means();
 };
 
-#endif deanery_h
+#endif  // INCLUDE_DEANARY_H_

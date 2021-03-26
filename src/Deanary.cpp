@@ -1,7 +1,7 @@
 // Copyright 2021 by Sid
 
 #include <fstream>
-#include "Deanery.h"
+#include "Deanary.h"
 #define BUF_SIZE 200
 
 /*
