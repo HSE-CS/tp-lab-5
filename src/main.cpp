@@ -2,8 +2,7 @@
 #include "Deanary.h"
 #include "Group.h"
 #include "Student.h"
-#include <Windows.h>
-
+//#include "Windows.h"
 
 int main() {
     SetConsoleCP(1251);
