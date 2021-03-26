@@ -1,4 +1,4 @@
-law
-art
-medicine
-technology
+groupSuits LawDep
+groupWhiteCollar ArtDep
+groupClinic MedicineDep
+groupStartUp TechnologyDep
