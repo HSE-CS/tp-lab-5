@@ -34,7 +34,7 @@ TEST(TestDeanary, Test4) {
     groups.addMarksToAll();
     groups.initHeads();
     EXPECT_EQ("Silvester Rogers",
-        groups.getgroups()[1]->getStudent("19E_3_00002")->getFio());
+        groups.getgroups()[3]->getStudent("19E_3_00002")->getFio());
 }
 
 TEST(TestDeanary, Test5) {
@@ -57,7 +57,7 @@ TEST(TestDeanary, Test6) {
 }
 
 TEST(TestDeanary, Test7) {
-	Deanary groups;
+    Deanary groups;
     groups.createGroup();
     groups.hireStudents();
     groups.addMarksToAll();
