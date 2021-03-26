@@ -36,7 +36,7 @@ TEST(TestDeanary, Test4) {
     group.addStudent(&student2);
     group.addStudent(&student3);
     EXPECT_EQ("Silvester Rogers",
-        group->getStudent("19E_3_00002")->getFio());
+        group.getStudent("19E_3_00002")->getFio());
 }
 
 TEST(TestDeanary, Test5) {
@@ -59,14 +59,15 @@ TEST(TestDeanary, Test6) {
 }
 
 TEST(TestDeanary, Test7) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    groups.getgroups()[2]->removeStudent("19E_3_00003");
-    EXPECT_EQ(false,
-        groups.getgroups()[3]->containsStudent("Irma Wright"));
+    Group group;
+    Student student1("19E_3_00001", "Miles Smith", &group);
+    Student student2("19E_3_00002", "Silvester Rogers", &group);
+    Student student3("19E_3_00003", "Irma Wright", &group);
+    group.addStudent(&student1);
+    group.addStudent(&student2);
+    group.addStudent(&student3);
+    group.removeStudent("19E_3_00003");
+    EXPECT_EQ(false, group.containsStudent("Irma Wright"));
 }
 
 TEST(TestDeanary, Test8) {
