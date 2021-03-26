@@ -36,7 +36,7 @@ TEST(TestDeanary, Test4) {
     group.addStudent(&student2);
     group.addStudent(&student3);
     EXPECT_EQ("Silvester Rogers",
-        groups.getgroups()[3]->getStudent("19E_3_00002")->getFio());
+        group->getStudent("19E_3_00002")->getFio());
 }
 
 TEST(TestDeanary, Test5) {
