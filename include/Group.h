@@ -21,10 +21,10 @@ class Group {
     friend class Student;
  private:
 // Примерный перечень полей:
-    std::string title; //  название группы
-    std::string spec; //  специальность
-    std::vector <Student *> students; //  вектор ссылок на студентов
-    Student *head; //  ссылка на старосту (из членов группы)
+    std::string title;  //  название группы
+    std::string spec;  //  специальность
+    std::vector <Student *> students;  //  вектор ссылок на студентов
+    Student *head;  //  ссылка на старосту (из членов группы)
 
 
  public:
@@ -58,4 +58,4 @@ class Group {
     bool isEmpty();
 };
 
-#endif // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_H_

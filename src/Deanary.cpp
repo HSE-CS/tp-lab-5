@@ -1,10 +1,11 @@
 // Copyright 2021 milalupehina
 #include <iostream>
 #include <fstream>
-
-#include "Deanary.h"
 #include <random>
 #include <ctime>
+
+#include "Deanary.h"
+
 
 // Разработать класс Deanery
 
@@ -24,7 +25,6 @@ void Deanery::createGroups() {
             groups.push_back(n);
         }
     }
-
 }
 
 // создание студентов на основе данных из файла
@@ -106,7 +106,6 @@ void Deanery::getStatistics() {
 
 // перевод студентов из группы в группу
 void Deanery::moveStudents() {
-
 }
 
 // отчисление студентов за неуспеваемость
@@ -129,9 +128,9 @@ void Deanery::saveStuff() {
     out.open("../data/upd.txt");
     if (out.is_open()) {
         for (auto &gr : groups) {
-            out << "department: " << gr->spec << "\n group: " << gr->title << "\n";
+            out << "department: " << gr->spec << "\n ";
+            out << "group: " << gr->title << "\n";
             for (auto &st : gr->students) {
-
                 out << "\t id: " << st->id << "\n \t fio: " << st->fio;
                 if (st->isHeadOfGroup()) {
                     out << "\tgroup head\n";
@@ -153,9 +152,9 @@ void Deanery::initHeads() {
 // вывод данных на консоль
 void Deanery::output() {
     std::cout << std::endl;
-    for(auto &group : groups) {
+    for (auto &group : groups) {
         std::cout << "\t" << "Title : " << group->title << std::endl;
-        std::cout << "\t" << "Specification : " << group->spec << std::endl << std::endl;
+        std::cout << "\t" << "Specification : " << group->spec << "\n";
 
         std::cout << std::endl;
         for (auto &student : group -> students) {

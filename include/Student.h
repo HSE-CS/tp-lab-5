@@ -10,16 +10,16 @@
 
 class Group;
 
-//using namespace std;
+// using namespace std;
 class Student {
     friend class Deanery;
     friend class Group;
  private:
 // Примерный перечень полей:
-    int id; //  идентификационный номер
-    std::string fio; //  фамилия и инициалы
-    Group *group; //  ссылка на группу (объект Group)
-    std::vector <int> marks; //  вектор оценок
+    int id;  //  идентификационный номер
+    std::string fio;  //  фамилия и инициалы
+    Group *group;  //  ссылка на группу (объект Group)
+    std::vector <int> marks;  //  вектор оценок
 
  public:
 // Обеспечить класс следующими методами:
@@ -46,4 +46,4 @@ class Student {
     bool isHeadOfGroup();
 };
 
-#endif // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_H_
