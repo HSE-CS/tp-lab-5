@@ -12,7 +12,9 @@ void Group::addStudent(Student *neW) {
 // избрание старосты
 void Group::chooseHead() {
     if (students.size() == 0) return;
-    int num = rand() % students.size() + 0;
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(1,students.size());
+    int num = distribution(generator);
     this -> head = students[num];
 }
 

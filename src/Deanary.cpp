@@ -58,7 +58,9 @@ void Deanery::addMarksToAll() {
     for (auto &group : groups) {
         for (auto &st : group -> students) {
             for (int i = 0; i < 5; ++i) {
-                st -> addMark(rand() % 5 + 0);
+                std::default_random_engine generator;
+                std::uniform_int_distribution<int> distribution(1,5);
+                st->addMark(distribution(generator));
             }
         }
     }
