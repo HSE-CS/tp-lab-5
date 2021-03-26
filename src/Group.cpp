@@ -22,7 +22,7 @@ double Group::getAveragemark() {
         }
         return averagemark / students.size();
     } else {
-        std::cout << "В этой группе нет студентов" << std::endl;
+        std::cout << "There are no students in this group" << std::endl;
     }
 }
 
@@ -36,7 +36,7 @@ Student* Group::getStudent(std::string param) const {
         std::cout << "Извините, студента " << param
             << " нет в этой группе." << std::endl;
     } else {
-        std::cout << "В этой группе нет студентов" << std::endl;
+        std::cout << "There are no students in this group" << std::endl;
     }
 }
 
@@ -49,7 +49,7 @@ bool Group::containsStudent(std::string param) const {
         }
         return false;
     } else {
-        std::cout << "В этой группе нет студентов" << std::endl;
+        std::cout << "There are no students in this group" << std::endl;
     }
 }
 
@@ -70,7 +70,7 @@ void Group::removeStudent(std::string id) {
             }
         }
     } else {
-        std::cout << "В этой группе нет студентов" << std::endl;
+        std::cout << "There are no students in this group" << std::endl;
     }
 }
 

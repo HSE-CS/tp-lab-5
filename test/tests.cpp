@@ -92,7 +92,7 @@ TEST(TestDeanary, Test10) {
     Student student("345", "Ivan Ivanov", &group);
     int marks[10] = { 4, 6, 5, 7, 6, 5, 4, 6, 3, 4 };
     for (int mark : marks) {
-	    student.addmark(mark);
+        student.addmark(mark);
     }
     EXPECT_EQ(5, student.getAveragemark());
 }

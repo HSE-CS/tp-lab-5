@@ -18,7 +18,7 @@ void Student::addToGroup(Group* new_group) {
 bool Student::isHeadOfGroup() const {
     return group->getHead() == this;
 }
-void Student::addmark (int mark) {
+void Student::addmark(int mark) {
     marks.push_back(mark);
 }
 

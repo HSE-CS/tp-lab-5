@@ -31,7 +31,7 @@ void Deanary::hireStudents() {
                     break;
                 }
             }
-			std::string size;
+            std::string size;
             size = std::to_string(groups[index]->getStudents().size() + 1);
             size_t n = size.size();
             for (int i = 0; i < 5 - n; i++) {
@@ -53,18 +53,18 @@ void Deanary::addMarksToAll() {
         for (auto& student : group->getStudents()) {
             size_t n = 5 + rand_r(&seed) % 16;
             for (int i = 0; i < n; i++) {
-				student->addmark(rand_r(&seed) % 11);
+                student->addmark(rand_r(&seed) % 11);
             }
         }
     }
 }
 
 void Deanary::getStatistics() const {
-    std::cout << "Статистика\n";
+    std::cout << "Statistics\n";
     for (auto group : groups) {
-        std::cout << "\nСредняя оценка группы " << group->getTitle()
+        std::cout << "\nAverage score of the group " << group->getTitle()
             << '\t' << group->getAveragemark() << std::endl;
-        std::cout << "\nСредние оценки студентов\n";
+        std::cout << "\nAverage student grades\n";
         for (auto student : group->getStudents()) {
             std::cout << student->getFio() << '\t'
                 << student->getAveragemark() << std::endl;
