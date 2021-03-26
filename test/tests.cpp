@@ -33,7 +33,8 @@ TEST(TestDeanary, Test4) {
     groups.hireStudents();
     groups.addMarksToAll();
     groups.initHeads();
-    EXPECT_EQ("Романова Евгения Эмировна", groups.getgroups()[1]->getStudent("20Э_2_00002")->getFio());
+    EXPECT_EQ("Романова Евгения Эмировна",
+        groups.getgroups()[1]->getStudent("20Э_2_00002")->getFio());
 }
 
 TEST(TestDeanary, Test5) {
@@ -51,7 +52,8 @@ TEST(TestDeanary, Test6) {
     groups.hireStudents();
     groups.addMarksToAll();
     groups.initHeads();
-    EXPECT_EQ(true, groups.getgroups()[1]->containsStudent("Гончарова Эмилия Яковлевна"));
+    EXPECT_EQ(true,
+        groups.getgroups()[1]->containsStudent("Гончарова Эмилия Яковлевна"));
 }
 
 TEST(TestDeanary, Test7) {
@@ -60,7 +62,8 @@ TEST(TestDeanary, Test7) {
     groups.addMarksToAll();
     groups.initHeads();
     groups.getgroups()[2]->removeStudent("19ФИЛ_1_00007");
-    EXPECT_EQ(false, groups.getgroups()[2]->containsStudent("Королева Елизавета Мироновна"));
+    EXPECT_EQ(false,
+        groups.getgroups()[2]->containsStudent("Королева Елизавета Мироновна"));
 }
 
 TEST(TestDeanary, Test8) {

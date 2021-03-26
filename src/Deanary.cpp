@@ -3,7 +3,7 @@
 
 Deanary::Deanary() {}
 Deanary::~Deanary() {
-	groups.clear();
+    groups.clear();
 }
 void Deanary::createGroup() {
     std::string title;
@@ -20,10 +20,10 @@ void Deanary::createGroup() {
 
 void Deanary::hireStudents() {
     std::string line;
-    std::ifstream in("students.txt"); 
-    if (in.is_open()) {	
+    std::ifstream in("students.txt");
+    if (in.is_open()) {
         size_t index = 0;
-        while (getline(in, line)) {	
+        while (getline(in, line)) {
             for (size_t i = 0; i < groups.size(); i++) {
                 if (groups[i]->getTitle() == line) {
                     index = i;
@@ -31,12 +31,14 @@ void Deanary::hireStudents() {
                     break;
                 }
             }
-            std::string size = std::to_string(groups[index]->getStudents().size() + 1);
+			std::string size;
+            size = std::to_string(groups[index]->getStudents().size() + 1);
             size_t n = size.size();
             for (int i = 0; i < 5 - n; i++) {
                 size = '0' + size;
             }
-            Student* student = new Student(groups[index]->getTitle() + '_' + size, line, groups[index]);
+            Student* student = new Student(groups[index]->getTitle()
+                + '_' + size, line, groups[index]);
             groups[index]->addStudent(student);
         }
     }
@@ -46,11 +48,12 @@ void Deanary::hireStudents() {
 void Deanary::addMarksToAll() {
     size_t n;
     srand(time(0));
+    unsigned int seed = 54321;
     for (auto group : groups) {
         for (auto& student : group->getStudents()) {
-            size_t n = 5 + rand() % 16;
+            size_t n = 5 + rand_r(&seed) % 16;
             for (int i = 0; i < n; i++) {
-                student->addmark(rand() % 11);
+				student->addmark(rand_r(&seed) % 11);
             }
         }
     }
@@ -59,10 +62,12 @@ void Deanary::addMarksToAll() {
 void Deanary::getStatistics() const {
     std::cout << "Статистика\n";
     for (auto group : groups) {
-        std::cout << "\nСредняя оценка группы " << group->getTitle() << '\t' << group->getAveragemark() << std::endl;
+        std::cout << "\nСредняя оценка группы " << group->getTitle()
+            << '\t' << group->getAveragemark() << std::endl;
         std::cout << "\nСредние оценки студентов\n";
         for (auto student : group->getStudents()) {
-            std::cout << student->getFio() << '\t' << student->getAveragemark() << std::endl;
+            std::cout << student->getFio() << '\t'
+                << student->getAveragemark() << std::endl;
         }
     }
 }

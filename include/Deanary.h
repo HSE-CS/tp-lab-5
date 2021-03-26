@@ -27,7 +27,7 @@ class Deanary {
     void initHeads();
     void fireStudents();
     std::vector<Group*> getgroups() const;
-	
+
  private:
     std::vector<Group*> groups;
 };

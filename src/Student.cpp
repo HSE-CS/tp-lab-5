@@ -1,7 +1,7 @@
 // Copyright 2021 Bekina Svetlana
 #include "Student.h"
 
-Student::Student () {}
+Student::Student() {}
 Student::~Student() {
     marks.clear();
 }
@@ -23,10 +23,11 @@ void Student::addmark (int mark) {
 }
 
 double Student::getAveragemark() const {
-    return (double) std::accumulate(marks.begin(), marks.end(), 0) / marks.size();
+    return static_cast<double>(std::accumulate(marks.begin(),
+        marks.end(), 0) / marks.size());
 }
 
-std::string Student::getFio() const{
+std::string Student::getFio() const {
     return fio;
 }
 
