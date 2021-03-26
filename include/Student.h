@@ -22,6 +22,6 @@ class Student {
   Student(int id, std::string fio);
   double averageMark() const;
   const std::string& getFio() const { return fio; }
-  const std::string& getId() const { return fio; }
+  int getId() const { return id; }
   const std::vector<int>& getMarks() const { return marks; }
 };

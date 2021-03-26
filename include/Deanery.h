@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <string>
+#include <vector>
 
 #include "Group.h"
 #include "Student.h"
@@ -21,6 +22,6 @@ class Deanery {
   void moveStudent(int id, const std::string& from_title,
                    const std::string& to_title);
   void saveToFile(std::ofstream file) const;
-  std::vector<Group>& getGroups() { return groups; };
+  std::vector<Group>& getGroups() { return groups; }
   void reelectHeads();
 };
