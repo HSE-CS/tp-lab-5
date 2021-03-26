@@ -40,22 +40,25 @@ TEST(TestDeanary, Test4) {
 }
 
 TEST(TestDeanary, Test5) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    EXPECT_EQ(false, groups.getgroups()[1]->containsStudent("20E_2_00220"));
+    Group group;
+    Student student1("19E_3_00001", "Miles Smith", &group);
+    Student student2("19E_3_00002", "Silvester Rogers", &group);
+    Student student3("19E_3_00003", "Irma Wright", &group);
+    group.addStudent(&student1);
+    group.addStudent(&student2);
+    group.addStudent(&student3);
+    EXPECT_EQ(false, group.containsStudent("20E_2_00220"));
 }
 
 TEST(TestDeanary, Test6) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    EXPECT_EQ(true,
-        groups.getgroups()[3]->containsStudent("Elvin Gibson"));
+    Group group;
+    Student student1("19E_3_00001", "Miles Smith", &group);
+    Student student2("19E_3_00002", "Silvester Rogers", &group);
+    Student student3("19E_3_00003", "Irma Wright", &group);
+    group.addStudent(&student1);
+    group.addStudent(&student2);
+    group.addStudent(&student3);
+    EXPECT_EQ(true, group.containsStudent("Miles Smith"));
 }
 
 TEST(TestDeanary, Test7) {
@@ -71,24 +74,19 @@ TEST(TestDeanary, Test7) {
 }
 
 TEST(TestDeanary, Test8) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    EXPECT_EQ("19E_3", groups.getgroups()[3]->getTitle());
+    Group group("18E_2", "Economy");
+    EXPECT_EQ("18E_2", group.getTitle());
 }
 
 TEST(TestDeanary, Test9) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    groups.getStatistics();
-    Student student("345", "Ivan Ivanov", groups.getgroups()[0]);
-    groups.getgroups()[0]->addStudent(&student);
-    EXPECT_EQ(false, student.isHeadOfGroup());
+    Group group;
+    Student student1("19E_3_00001", "Miles Smith", &group);
+    Student student2("19E_3_00002", "Silvester Rogers", &group);
+    Student student3("19E_3_00003", "Irma Wright", &group);
+    group.addStudent(&student1);
+    group.addStudent(&student2);
+    group.addStudent(&student3);
+    EXPECT_EQ(false, student2.isHeadOfGroup());
 }
 
 TEST(TestDeanary, Test10) {
