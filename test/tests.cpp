@@ -40,4 +40,3 @@ TEST(lab5, task4) {
   Student* st1 = new Student("Sharibzhanova Diana", 10);
   EXPECT_EQ(10, st1->get_id());
 }
-
