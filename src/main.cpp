@@ -1,59 +1,48 @@
-#include <iostream>
-#include "deanery.h"
+// Copyright 2021 Krayushkina
+#include<iostream>
+#include<random>
+#include<string>
+using namespace std;
+#include "Student.h"
+#include "Deanery.h"
+#include "Group.h"
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	Student a(38, "Егорова Кристина Олеговна");
 
-int main() {
-
-    Student s1(1,"Aroslankin A.D.");
-
-    Student s4(12,"Aroslankin A.D.");
-
-    s1.addmark(5);
-
-
-    s4.addmark(5);
-    Group g1("PMI");
-    Student s2(5,"Kuklin M.I.", &g1);
-    s2.addmark(9);
-    s2.attend(&g1);
-    s1.attend(&g1);
-
-    cout << s1.getavg() << " " << s2.getavg() << endl;
-    g1.voting();
-    cout << g1.get_head()->getfio() << endl;
-    s2.attend(&g1);
-    s4.attend(&g1);
-    g1.voting();
-    g1.exclude(&s4);
-    g1.print();
-
-    cout << endl;
-    //g1.print();
-    string  input= "/Users/artemaroslankin/Documents/Progacpp/deanary/groups.txt";
-    string  output= "/Users/artemaroslankin/Documents/Progacpp/deanary/output.txt";
+	Group H("New");
+	random_device ran;
+	for (int i = 0; i < 5; i++)
+	{
+		a.AddMark(ran() % 10 + 1);
+	}
+	a.AverageMark();
+	H.AddStudent(&a, &H);
+	H.AverageInGroup();
+	H.HeadElection();
 
 
-
-
-        Deanery balya(input);
-        balya.print_groups();
-        balya.print_students();
-        balya.auto_exclude();
-        //balya.exclude(1);
-        cout <<"num of groups "<< balya.get_numOFgroups() << endl;
-        balya.voting("g1");
-        cout <<"num of st "<<  balya.get_numOFst() << endl;
-        balya.transfer(1,"g2");
-        balya.add_random_marks();
-        balya.voting("g1");
-        //balya.voting("g2");
-        cout << "sad" <<endl;
-        balya.refresh_file(output);
-        cout << "sad" << endl;
-
-
-
-
-
-
-    return 0;
+	Deanery dean;
+	for (int i = 0; i < 30; i++)
+	{
+		dean.CreateStudentsFromFile();
+	}
+	for (int j = 0; j < 3; j++)
+	{
+		dean.CreateGroupsFromFile();
+	}
+	for (int k = 0; k < 5; k++)
+	{
+		dean.AddMarks();
+	}
+	dean.ChooseHeads();
+	dean.StudentDeduction();
+	dean.GetStatistic("12");
+	dean.StudentTransferToGroup(12, "КДС");
+	dean.GetStatistic("12");
+	dean.GetStatistic("КДС");
+	dean.SaveDataInFiles();
+	system("pause");
+	return 0;
 }

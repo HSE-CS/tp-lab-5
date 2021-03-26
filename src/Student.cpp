@@ -1,60 +1,29 @@
-//
-// Created by Краюшкина Екатерина on 08.02.2021.
-//
-
+// Copyright 2021 Krayushkina
+#include <vector>
+#include<string>
 #include "Student.h"
 
-
-    Student::Student(int a, string f) {
-        this->fio = f;
-        this->id = a;
-    }
-    Student::Student() = default;
-
-    void Student::addMark(int m) {
-        num++;
-        Marks.insert(Marks.end(), m);
-    }
-
-    void Student::show() {
-        cout << "ID" << id << ": " << fio << " | Marks: ";
-        printMarks();
-        cout << " | Avr: " << average();
-        cout << endl;
-    }
-
-    double Student::average() {
-        double sum = 0;
-        for (int i = 0; i < num; i++)
-            sum = sum + Marks[i];
-        return sum / num;
-    };
-
-    string Student::getFio() {
-        return fio;
-    }
-    void Student::printMarks() {
-        for (int i = 0; i < num; i++)
-            cout << Marks[i] << " ";
-    }
-
-
-    /*void Student::printGroup(){
-        cout << group->getGroup() << endl;
-    }*/
-
-    void Student::setGroup(Group *g) {
-        this->group = g;
-    }
-
-Group *Student::getGroup() {
-    return group;
+void Student::CreateStudent(int id, string fio)
+{
+	this->id = id;
+	this->fio = fio;
+}
+void Student::AddMark(unsigned int mark)
+{
+	marks.push_back(mark);
+	num++;
+}
+float Student::AverageMark()
+{
+	float sum = 0;
+	for (int i = 0; i < num; i++)
+	{
+		sum += marks[i];
+	}
+	return sum / num;
 }
 
-double Student::getAvr() {
-    return avr;
-}
-
-void Student::setAvr(double) {
-        avr = this->average();
+void Student::GroupEnrollment(Group *group)
+{
+	this->group = group;
 }

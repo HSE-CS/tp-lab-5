@@ -1,38 +1,31 @@
-#ifndef LAB5_GROUP_H
-#define LAB5_GROUP_H
+// Copyright 2021 Krayushkina
+#pragma once
 
-#include "Student.h"
-#include <iostream>
-#include <string>
-#include <cstring>
 #include <vector>
-#include <time.h>
-
+#include<string>
+#include <iostream>
+#include "Student.h"
+#include<random>
 using namespace std;
-
-
-class Group {
+class Group 
+{
 private:
-    string title;
-    int numS;
-    vector<Student*> students;
-    Student *head;
-    int searchStudent(int a);
-    int searchStudent(string h);
-    void printStudent(int a);
+	string title;
+	vector<Student*>students;
+	int num;
+	Student *head;
 public:
-    Student *getStudent(int i);
-    Group(string a);
-    void addStudent(Student *a);
-    void printAll();
-    string getGroup();
-    double groupAverage();
-    void election();
-    void exclude(string h);
-    void exclude(int n);
-    Student* getHead();
+	Group(string title)
+	{
+		this->title = title;
+		num = 0;
+	}
+	void CreateGroup(string title);
+	void AddStudent(Student *,Group *);
+	Student* HeadElection();
+	Student* FindStudent(int id);
+	float AverageInGroup();
+	void StudentException(int id);
+	friend Deanery;
 
 };
-
-
-#endif //LAB5_GROUP_H

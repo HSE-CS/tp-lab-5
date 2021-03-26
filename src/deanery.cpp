@@ -1,178 +1,250 @@
-#include <utility>
-#include <fstream>
-#include "Dinary.h"
-
-
-void Dinary::addStudentFromFile(string f) {
-
-    string line;
-    f = "..\\"+f;
-    ifstream file(f);
-
-    if (file.is_open())
-        while (getline(file, line))
-            {
-                students.push_back(new Student(id, line));
-                id++;
-            }
-    file.close();
-
-}
-
-void Dinary::createGroupFromFile(string f){
-    int prevId = id;
-
-    addStudentFromFile(f);
-
-    size_t lastindex = f.find_last_of('.');
-    string rawname = f.substr(0, lastindex);
-    groups.push_back(new Group(rawname));
-    int n = groups.size()-1;
-
-    for (int i = prevId; i<id; i++) {
-        groups[n]->addStudent(students[i]);
-    }
-}
-
-void Dinary::addRandomMarks() {
-    srand(time(NULL));
-    for (auto st : this->students) {
-        int num = rand() % 3 + 3;
-        for (int i = 0; i < num; i++)
-        {
-            int mark = rand()%10;
-            st->addMark(mark);
-        }
-        st->setAvr(st->average());
-    }
-    //this->printGroup("19PMI");
+// Copyright 2021 Krayushkina
+#include <vector>
+#include<string>
+#include<cstring>
+#include "Deanery.h"
+ifstream FileStudents("students.txt");
+ifstream FileGroups("groups.txt");
+ofstream FileNew("data.txt");
+void Deanery::CreateStudentsFromFile()
+{
+	if (!FileStudents.is_open())
+	{
+		FileStudents.open("students.txt");
+		return;
+	}
+	else
+	{
+		string fio_f = "";
+		string id_f="";
+		char buffer[80];
+		FileStudents.getline(buffer, 80);
+		int len = strlen(buffer);
+		if (buffer[0] == ' ')
+		{
+			FileStudents.close();
+			return;
+		}
+		for (int i = 0; i < len; i++)
+		{
+				if (buffer[i] >= '0' && buffer[i] <= '9')
+				{
+					id_f += buffer[i];
+				}
+				else
+				{
+					fio_f += buffer[i];
+				}
+		}
+		int idf = std::stoi(id_f);
+		students.push_back(new Student(idf, fio_f));
+		num_students++;
+	}
 
 }
+void Deanery::CreateGroupsFromFile()
+{
+	if (!FileGroups.is_open())
+	{
+		FileGroups.open("groups.txt");
+		return;
+	}
+	else
+	{
+		string group_f = "";
 
-void Dinary::printGroup(string f){
-    cout << "\t\t" << f << endl;
-    int k = findPos(move(f));
-    groups[k]->printAll();
-    cout << "\n";
+		char buffer[8];
+		FileGroups.getline(buffer, 8);
+		int len = strlen(buffer);
+		if (buffer[0] == ' ')
+		{
+			FileGroups.close();
+			return;
+		}
+		for (int i = 0; i < len; i++)
+		{
+					group_f += buffer[i];
+		}
+		groups.push_back(new Group(group_f));
+		for (int i = num_groups*10; i < num_groups*10+10; i++)
+		{
+			groups[num_groups]->AddStudent(students[i], groups[num_groups]);
+		}
+		num_groups++;
+	}
 }
+void Deanery::GetStatistic(string thing)
+{
+	if (thing[0] >= '0' && thing[0] <= '9')
+	{
+		int th=std::stoi(thing);
+		for (int i = 0; i < num_students; i++)
+		{
+			if (students[i]->id == th)
+			{
+				
+				cout << "ID: "<<students[i]->id << " -- " << students[i]->fio << endl;
+				cout << "Number of marks: " << students[i]->num << endl;
+				cout << "Marks: ";
+				for (int j = 0; j < students[i]->num; j++)
+				{
+					cout << students[i]->marks[j]<<" ";
+				}
+				cout << endl;
+				cout << "Average Mark: " << students[i]->AverageMark() << endl;
 
-
-int Dinary::findPos(string f){
-    int i = 0;
-    for (auto gr: groups)
-    {
-        if (gr->getGroup() == f)
-            return i;
-        i++;
-    }
-
+				cout << "Group :" << students[i]->group->title << endl;
+				cout << endl;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < num_groups; i++)
+		{
+			if (groups[i]->title == thing)
+			{
+				cout << "Group: " << groups[i]->title << endl;
+				cout << "Average in group: " << groups[i]->AverageInGroup() << endl;
+				cout << endl;
+				cout << "Head: "<<groups[i]->head->fio<<endl;
+				cout << "Students: " << endl;
+				for (int j = 0; j < groups[i]->num; j++)
+				{
+					cout << "ID: " << groups[i]->students[j]->id << " -- " << groups[i]->students[j]->fio << endl;
+					cout << "Number of marks: " << groups[i]->students[j]->num << endl;
+					cout << "Average Mark: " << groups[i]->students[j]->AverageMark() << endl;
+					cout << endl;
+				}
+			}
+		}
+	}
 }
+void Deanery::StudentTransferToGroup(int id, string group)
+{
 
+	for (int i = 0; i < num_groups; i++)
+	{
+		for (int j = 0; j < groups[i]->num; j++)
+		{
+			if (groups[i]->students[j]->id == id)
+			{
+				if (groups[i]->head != students[j])
+				{
+					for (int n = 0; n < num_groups; n++)
+					{
+						if (groups[n]->title == group)
+						{
+							students[j]->group->title = group;
+							groups[n]->AddStudent(groups[i]->students[j], groups[n]);
+							break;
+						}
+					}
+					groups[i]->StudentException(groups[i]->students[j]->id);
+					return;
+				}
+				else
+				{
+					for (int n = 0; n < num_groups; n++)
+					{
+						if (groups[n]->title == group)
+						{
+							students[j]->group->title = group;
+							groups[n]->AddStudent(groups[i]->students[j], groups[n]);
+							break;
+						}
+					}
+					groups[i]->StudentException(groups[i]->students[j]->id);
+					ChooseHeads();
+					return;
+				}
 
-void Dinary::Statistics(){
-    for (auto gr : groups) {
-        cout << gr->getGroup() << endl;
-            for (auto st : students)
-                if (st->getGroup() == gr)
-                {
-                    st->show();
-                }
-        cout << "Group avr: "<< gr->groupAverage() << endl;
-        cout << "Head: " << gr->getHead()->getFio() << endl << endl;
-        }
-    }
-
-
-void Dinary::moveFromGroup(string st, string gr) {
-    int index = findStudent(st);
-
-    for (auto i : groups)
-        if (i->getGroup() == gr)
-            i->addStudent(students[index]);
-
-    (students[index]->getGroup())->exclude(st);
+			}
+		}
+	}
 }
-
-int Dinary::findStudent(string st){
-    int index = 0;
-    for (auto i : students)
-    {
-        if (i->getFio() == st)
-            return index;
-        index++;
-    }
-    return -1;
+void Deanery::StudentDeduction()
+{
+	for (int i = 0; i < num_groups; i++)
+	{
+		for (int j = 0; j < groups[i]->num; j++)
+		{
+			if (groups[i]->students[j]->AverageMark() < 3.5)
+			{
+				if (groups[i]->head != students[j])
+				{
+					groups[i]->StudentException(groups[i]->students[j]->id);
+					num_students--;
+					j--;
+				}
+				else
+				{
+					groups[i]->StudentException(groups[i]->students[j]->id);
+					num_students--;
+					j--;
+					ChooseHeads();
+				}
+			}
+		}
+	}
 }
+void Deanery::SaveDataInFiles()
+{
+	FileNew.clear();
+	for (int i = 0; i < num_groups; i++)
+	{
+		for (int j = 0; j < groups[i]->num; j++)
+		{
+			FileNew << "ID: " << groups[i]->students[j]->id << " -- " << groups[i]->students[j]->fio << "\n";
+			FileNew << "Number of marks: " << groups[i]->students[j]->num << "\n";
+			FileNew << "Marks: ";
+			for (int k = 0; k < groups[i]->students[j]->num; k++)
+			{
+				FileNew << groups[i]->students[j]->marks[k] << " ";
+			}
+			FileNew << "\n";
+			FileNew << "Average Mark: " << groups[i]->students[j]->AverageMark() << "\n";
 
-void Dinary::moveFromGroup(int numId, string gr) {
-    int index = findStudent(numId);
-    Group* prev;
-    prev = students[index]->getGroup();
-    for (auto i : groups)
-        if (i->getGroup() == gr)
-            i->addStudent(students[index]);
-
-    prev->exclude(numId);
+			FileNew << "Group :" << groups[i]->students[j]->group->title << "\n";
+		}
+	}
+	FileNew.close();
 }
-
-int Dinary::findStudent(int numId){
-    int index = 0;
-    for (auto i : students) {
-        if (i->id == numId) {
-            cout << "founded\n";
-            return index;
-        }
-        index++;
-    }
-    return -1;
+void Deanery::ChooseHeads()
+{
+	for (int i = 0; i < num_groups; i++)
+	{
+		groups[i]->HeadElection();
+	}
 }
+void Deanery::DataOutput()
+{
+	for (int i = 0; i < num_groups; i++)
+	{
+		for (int j = 0; j < groups[i]->num; j++)
+		{
+			cout << "ID: " << groups[i]->students[j]->id << " -- " << groups[i]->students[j]->fio << endl;
+			cout << "Number of marks: " << groups[i]->students[j]->num << endl;
+			cout << "Marks: ";
+			for (int k = 0; k < groups[i]->students[j]->num; k++)
+			{
+				cout << groups[i]->students[j]->marks[k] << " ";
+			}
+			cout << "\n";
+			cout << "Average Mark: " << groups[i]->students[j]->AverageMark() << endl;
 
-void Dinary::removeDvoechnik(){
-    int n = students.size();
-    for (int i = 0; i < n; i++)
-    {
-        if (students[i]->getAvr()<4)
-        {
-            (students[i]->getGroup())->exclude(students[i]->id);
-            students.erase(students.begin()+i);
-            i--;
-            n--;
-        }
-    }
+			cout << "Group :" << groups[i]->students[j]->group->title << endl;
+		}
+	}
 }
-
-void Dinary::writeToNewFile(string f){
-    std::ofstream out;          // поток для записи
-    string k = "../" + f;
-    out.open(k);
-
-    size_t lastindex = f.find_last_of('.');
-    string rawname = f.substr(3, lastindex-3);
-    cout << rawname << endl;
-    if (out.is_open())
-    {
-        cout << "OK";
-
-        for (auto gr : groups) {
-            if (gr->getGroup() == rawname){
-                for (auto st : students)
-                    if (st->getGroup() == gr)
-                    {
-                        st->show();
-                        out << st->getFio() << " -- " <<st->getAvr() << endl;
-                    }
-
-                break;
-            }
-
-        }
-
-    }
-}
-
-void Dinary::makeHead(){
-    for (auto i : groups)
-    {
-        i->election();
-    }
+void Deanery::AddMarks()
+{
+	random_device ran;
+	for (int i = 0; i < num_groups; i++)
+	{
+		for (int j = 0; j < groups[i]->num; j++)
+		{
+			groups[i]->students[j]->AddMark(ran() % 10 + 1);
+		}
+	}
 }

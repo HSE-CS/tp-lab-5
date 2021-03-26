@@ -1,36 +1,31 @@
-#ifndef LAB5_STUDENT_H
-#define LAB5_STUDENT_H
+// Copyright 2021 Krayushkina
+#pragma once
 
-#include <iostream>
-#include <string>
-#include <cstring>
 #include <vector>
-
+#include<string>
+#include <iostream>
 using namespace std;
-
 class Group;
-
-class Student{
+class Deanery;
+class Student 
+{
 private:
-    int num = 0;
-    Group *group;
-    string fio;
-    vector<int> Marks;
-    double avr = average();
-
+	int id;
+	string fio;
+	Group *group;
+	vector<unsigned int> marks;
+	int num;
 public:
-    int id;
-    Student(int a, string f);
-    Student();
-    void addMark(int m);
-    void show();
-    double average();
-    string getFio();
-    void printMarks();
-    void setGroup(Group *g);
-    Group* getGroup();
-    double getAvr();
-    void setAvr(double a);
+	Student(int id, string fio)
+	{
+		this->id = id;
+		this->fio = fio;
+		num = 0;
+	}
+	void CreateStudent(int id, string fio);
+	void GroupEnrollment(Group *group);
+	void AddMark(unsigned int mark);
+	float AverageMark();
+	friend Group;
+	friend Deanery;
 };
-
-#endif //LAB5_STUDENT_H
