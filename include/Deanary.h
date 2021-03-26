@@ -4,8 +4,8 @@
 #include <vector>
 #include <iostream>
 
-#ifndef INCLUDE_DEANERY_H_
-#define INCLUDE_DEANERY_H_
+#ifndef INCLUDE_DEANARY_H_
+#define INCLUDE_DEANARY_H_
 
 class Group;
 
@@ -19,4 +19,4 @@ class Deanery {
     std::vector <Group*> groups;
 };
 
-#endif  // INCLUDE_DEANERY_H_
+#endif  // INCLUDE_DEANARY_H_
