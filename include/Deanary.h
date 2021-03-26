@@ -18,29 +18,25 @@
 
 class Group;
 class Student;
-
 class Deanary {
-	friend class Group;
+friend class Group;
+ public:
+Deanary() {}
+void createGroups(std::ifstream file);
+void hireStudents(std::ifstream file);
+void addMarksToAll();
+void getStatistics();
+void moveStudents(Student* student, std::string groupName);
+void addStudents(Student* newOne, std::string groupName);
+void saveStaff();
+void initHeads();
+void fireStudents(Student* unluckyStudent);
+Group* findGroup(std::string name);
+Student* findStudent(std::string name);
+int getStudentsNumber(std::string groupName);
+void addGroup(Group* name);
 
-public:
-	Deanary() {}
-	void createGroups(std::ifstream file);
-	void hireStudents(std::ifstream file);
-	void addMarksToAll();
-	void getStatistics();
-	void moveStudents(Student* student, std::string groupName);
-	void addStudents(Student* newOne, std::string groupName);
-	void saveStaff();
-	void initHeads();
-	void fireStudents(Student* unluckyStudent);
-	Group* findGroup(std::string name);
-	Student* findStudent(std::string name);
-	int getStudentsNumber(std::string groupName);
-	void addGroup(Group* name);
-
-private:
-	std::vector<Group*> groups;
+ private:
+std::vector<Group*> groups;
 };
-
-
 #endif   // INCLUDE_DEANARY_H_
