@@ -15,7 +15,7 @@ class Deanery {
   Deanery();
   void addGroup(Group& group);
   static void addStudentToGroup(Group* group, const Student& student);
-  static void addMarkToStudent(Student& student, int mark);
+  static void addMarkToStudent(Student* student, int mark);
   void initFromFile(std::ifstream file);
   void printInfo() const;
   void removeFailingStudents();

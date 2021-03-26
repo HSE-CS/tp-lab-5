@@ -134,6 +134,6 @@ void Deanery::addGroup(Group& group) {
 void Deanery::addStudentToGroup(Group* group, const Student& student) {
   group->addStudent(student);
 }
-void Deanery::addMarkToStudent(Student& student, int mark) {
-  student.addMark(mark);
+void Deanery::addMarkToStudent(Student* student, int mark) {
+  student->addMark(mark);
 }

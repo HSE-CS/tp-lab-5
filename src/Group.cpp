@@ -57,5 +57,9 @@ double Group::averageMark() const {
     // loosing all accuracy here...
     sum += s.averageMark();
   }
-  return sum / static_cast<double>(students.size());
+  if (students.empty()) {
+    return 0.0;
+  } else {
+    return sum / static_cast<double>(students.size());
+  }
 }
