@@ -72,7 +72,7 @@ TEST(TestDeanary, Test8) {
     groups.hireStudents();
     groups.addMarksToAll();
     groups.initHeads();
-    EXPECT_EQ("19E_3", groups.getgroups()[3]->getTitle();
+    EXPECT_EQ("19E_3", groups.getgroups()[3]->getTitle());
 }
 
 TEST(TestDeanary, Test9) {
