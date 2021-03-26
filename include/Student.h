@@ -1,6 +1,6 @@
 // Copyright 2021 Shaidi
 #ifndef INCLUDE_STUDENT_H_
-#define INCLUDE_STUDENT_H_ 
+#define INCLUDE_STUDENT_H_
 #include <string>
 #include <vector>
 

@@ -129,7 +129,8 @@ void Deanary::new_data(std::string names_output,
   file.open(groups_output, std::ios::out);
   if (file.is_open()) {
     for (Group* group : groups) {
-      std::cout << group->get_title() << " : " << group->get_spec() << std::endl;
+      std::cout << group->get_title() << " : " << group->get_spec()
+                << std::endl;
     }
   } else {
     std::cout << "File can't be opened" << std::endl;
