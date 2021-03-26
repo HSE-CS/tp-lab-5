@@ -22,13 +22,15 @@ EXPECT_EQ(0, student.CountAvgMark());
 TEST(Deanary, test4) {
 Deanary deanary;
 deanary.CreateGroup("123", "123");
-deanary.CreateStudent(1, "1 2 3", deanary.GroupByTitle("123"));
+Group * group = deanary.GroupByTitle("123");
+deanary.CreateStudent(1, "1 2 3", group);
 EXPECT_EQ(0, deanary.GroupByTitle("19PI")->IsEmpty());
 }
 
 TEST(Deanary, test5) {
 Deanary deanary;
 deanary.CreateGroup("123", "123");
-deanary.CreateStudent(1, "1 2 3", deanary.GroupByTitle("123"));
+Group * group = deanary.GroupByTitle("123");
+deanary.CreateStudent(1, "1 2 3", group);
 EXPECT_EQ(0, deanary.GroupByTitle("123")->CountAvgMark());
 }
