@@ -6,7 +6,6 @@
 
 #include "Deanary.h"
 
-
 // Разработать класс Deanery
 
 // создание групп на основе данных из файла
@@ -107,7 +106,23 @@ void Deanery::getStatistics() {
 }
 
 // перевод студентов из группы в группу
-void Deanery::moveStudents() {
+void Deanery::moveStudents(int id, std::string name) {
+    for (auto &gr : groups) {
+        if (gr->title == name) {
+            for (auto grPre : groups) {
+                for (auto st : grPre->students) {
+                    if (st->id == id) {
+                        gr->addStudent(st);
+                        grPre->removeStudent(id);
+                        std::cout << st->id << " transferred to " << st->group << std::endl;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+
 }
 
 // отчисление студентов за неуспеваемость

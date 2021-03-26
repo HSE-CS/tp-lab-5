@@ -11,5 +11,19 @@
 #include "Deanary.h"
 
 int main() {
-    Deanery den;
+    Deanery fe;
+    fe.createGroups();
+    fe.hireStudents();
+    fe.initHeads();
+
+    fe.addMarksToAll();
+    fe.getStatistics();
+
+
+    fe.moveStudents(24, "groupSuits");
+    fe.fireStudents();
+    fe.saveStuff();
+
+
+
 }

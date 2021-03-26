@@ -23,8 +23,6 @@ class Student {
 
  public:
 // Обеспечить класс следующими методами:
-    // Student (arguments);
-    // virtual Students ();
 
     // создание студента с указанием ИД и ФИО
     Student(int id, std::string fio) {

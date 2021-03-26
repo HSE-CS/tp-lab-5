@@ -2,8 +2,6 @@
 
 #include "Student.h"
 
-
-
 // зачисление в группу
 void Student::addToGroup(Group* hisGroup) {
     this -> group = hisGroup;

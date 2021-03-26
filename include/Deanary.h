@@ -35,7 +35,7 @@ class Deanery {
     // получение статистики по успеваемости студентов и групп
     void getStatistics();
     // перевод студентов из группы в группу
-    void moveStudents();
+    void moveStudents(int, std::string);
     // отчисление студентов за неуспеваемость
     void fireStudents();
     // сохранение обновленных данных в файлах
