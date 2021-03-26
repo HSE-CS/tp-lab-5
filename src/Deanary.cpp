@@ -98,7 +98,7 @@ void Deanery::electGhead() {
 void Deanery::getStatistics(std::string name) {
   for (int i = 0; i < numSt; i++) {
     StStat.push_back(
-        std::pair<float, std::string>(students[i]->averageMark(),
+        std::pair<float, std::string>(students[i]->averageMark(), 
             students[i]->fio));
   }
   sort(StStat.begin(), StStat.end());
@@ -131,8 +131,8 @@ void Deanery::update(std::string name) {
     file << "Number of students is  " << numSt << std::endl;
     for (int i = 0; i < numGr; i++) {
       file << "In " << groups[i]->title << " " << groups[i]->num << " people. "
-           << " Average score of the group: " << groups[i]->averageGroup()
-           << std::endl;
+           << " Average score of the group: " 
+          << groups[i]->averageGroup() << std::endl;
       file << "Average score of the group: " << groups[i]->head->fio 
           << std::endl;
       for (int j = 0; j < groups[i]->students.size(); j++) {
@@ -155,8 +155,8 @@ void Deanery::printinfo() {
   for (int i = 0; i < numGr; i++) {
     std::cout << "In " << groups[i]->title << " " << groups[i]->num
               << " people. "
-              << " Average score of the group: " << groups[i]->averageGroup()
-              << std::endl;
+              << " Average score of the group: " 
+        << groups[i]->averageGroup() << std::endl;
     std::cout << "Average score of the group: " << groups[i]->head->fio 
         << std::endl;
     for (int j = 0; j < groups[i]->students.size(); j++) {
