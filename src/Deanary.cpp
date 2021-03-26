@@ -114,15 +114,14 @@ void Deanery::moveStudents(int id, std::string name) {
                     if (st->id == id) {
                         gr->addStudent(st);
                         grPre->removeStudent(id);
-                        std::cout << st->id << " transferred to " << st->group << std::endl;
+                        std::cout << st->id << " transferred to ";
+                        std::cout << "\n\t" << st->group << "\n";
                         break;
                     }
                 }
             }
         }
     }
-
-
 }
 
 // отчисление студентов за неуспеваемость

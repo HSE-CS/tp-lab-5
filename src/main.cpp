@@ -23,7 +23,4 @@ int main() {
     fe.moveStudents(24, "groupSuits");
     fe.fireStudents();
     fe.saveStuff();
-
-
-
 }
