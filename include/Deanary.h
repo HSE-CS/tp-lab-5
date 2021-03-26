@@ -6,27 +6,26 @@
 #include <string>
 #include <vector>
 #include<iostream>
-using namespace std;
 
 class Deanery {
  private:
-  vector<Student*> students;
-  vector<Group*> groups;
-  string fileStudents;
-  string fileGroups;
+  std::vector<Student*> students;
+  std::vector<Group*> groups;
+  std::string fileStudents;
+  std::string fileGroups;
   int numSt;
   int numGr;
-  vector<pair<float, string>> StStat;
-  vector<pair<float, string>> GrStat;
+  std::vector<std::pair<float, std::string>> StStat;
+  std::vector<std::pair<float, std::string>> GrStat;
  public:
-  Deanery(string, string);
+  Deanery(std::string, std::string);
   void CreateStudents();
   void CreateGroups();
   void addMarks();
-  void getStatistics(string);
-  void changeGroup(string, string);
+  void getStatistics(std::string);
+  void changeGroup(std::string, std::string);
   void exceptionStudent();
-  void update(string);  // update info in file
+  void update(std::string);  // update info in file
   void electGhead();
   void printinfo();
 };

@@ -6,8 +6,6 @@
 #include <iostream>
 #include "Group.h"
 
-using namespace std;
-
 class Group;
 
 class Student {
@@ -15,12 +13,12 @@ class Student {
   friend class Deanery;
  private:
   int id;
-  string fio;
+  std::string fio;
   Group* group;
-  vector<int> marks;
+  std::vector<int> marks;
   int num;
  public:
-  Student(int, string);
+  Student(int, std::string);
   void enterGroup(Group*); 
   void addMark(int);
   float averageMark();

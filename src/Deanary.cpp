@@ -1,3 +1,4 @@
+// Copyright 2021 PaninaPolina
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
@@ -6,14 +7,14 @@
 #include <iostream>
 #include <string>
 
-Deanery::Deanery(string NameStudents, string NameGroups) {
+Deanery::Deanery(std::string NameStudents, std::string NameGroups) {
   fileStudents = NameStudents;
   fileGroups = NameGroups;
 }
 
 void Deanery::CreateStudents() {
-  ifstream file(fileStudents);
-  string fioStudent;
+  std::ifstream file(fileStudents);
+  std::string fioStudent;
   int id = 100;
   while (getline(file, fioStudent)) {
     id++;
@@ -24,8 +25,8 @@ void Deanery::CreateStudents() {
 }
 
 void Deanery::CreateGroups() {
-  ifstream file(fileGroups);
-  string nameGroup;
+  std::ifstream file(fileGroups);
+  std::string nameGroup;
   while (getline(file, nameGroup)) {
     groups.push_back(new Group(nameGroup));
   }
@@ -59,7 +60,7 @@ void Deanery::addMarks() {
   }
 }
 
-void Deanery::changeGroup(string nameSt, string nameNewGr) {
+void Deanery::changeGroup(std::string nameSt, std::string nameNewGr) {
   for (int i = 0; i < numSt; i++) {
     if (students[i]->fio == nameSt) {
       for (int k = 0; k < numGr; k++) {
@@ -93,80 +94,83 @@ void Deanery::electGhead() {
   }
 }
 
-void Deanery::getStatistics(string name) {
+void Deanery::getStatistics(std::string name) {
   for (int i = 0; i < numSt; i++) {
     StStat.push_back(
-        pair<float, string>(students[i]->averageMark(), students[i]->fio));
+        std::pair<float,std::string>(students[i]->averageMark(), students[i]->fio));
   }
   sort(StStat.begin(), StStat.end());
 
   for (int j = 0; j < numGr; j++) {
     GrStat.push_back(
-        pair<float, string>(groups[j]->averageGroup(), groups[j]->title));
+        std::pair<float, std::string>(groups[j]->averageGroup(), groups[j]->title));
   }
   sort(GrStat.begin(), GrStat.end());
 
-  ofstream file;
+  std::ofstream file;
   file.open(name);
   if (file.is_open()) {
     for (int j = 0; j < StStat.size(); j++) {
-      file << StStat[j].second << "-" << StStat[j].first << endl;
+      file << StStat[j].second << "-" << StStat[j].first << std::endl;
     }
     for (int i = 0; i < GrStat.size(); i++) {
-      file << GrStat[i].second << "  -  " << GrStat[i].first << endl;
+      file << GrStat[i].second << "  -  " << GrStat[i].first << std::endl;
     }
   }
   file.close();
 }
 
-void Deanery::update(string name) {
-  ofstream file;
+void Deanery::update(std::string name) {
+  std::ofstream file;
   file.open(name);
 
   if (file.is_open()) {
-    file << "Number students is  " << numSt << endl;
+    file << "Number students is  " << numSt << std::endl;
     for (int i = 0; i < numGr; i++) {
       file << "В " << groups[i]->title << " " << groups[i]->num << " человек. "
-           << " Средний балл по группе " << groups[i]->averageGroup() << endl;
-      file << "Староста группы " << groups[i]->head->fio << endl;
+           << " Средний балл по группе " << groups[i]->averageGroup()
+           << std::endl;
+      file << "Староста группы " << groups[i]->head->fio << std::endl;
       for (int j = 0; j < groups[i]->students.size(); j++) {
         file << groups[i]->students[j]->fio << "-"
              << groups[i]->students[j]->averageMark() << "   ";
         for (int h = 0; h < groups[i]->students[j]->marks.size(); h++) {
           file << groups[i]->students[j]->marks[h] << " ";
         }
-        file << endl;
+        file << std::endl;
       }
-      file << endl;
+      file << std::endl;
     }
   }
   file.close();
 }
 
 void Deanery::printinfo() {
-  cout << "Number students is  " << numSt << endl;
+  std::cout << "Number students is  " << numSt << std::endl;
 
   for (int i = 0; i < numGr; i++) {
-    cout << "В " << groups[i]->title << " " << groups[i]->num << " человек. "
-         << " Средний балл по группе " << groups[i]->averageGroup() << endl;
-    cout << "Староста группы " << groups[i]->head->fio << endl;
+    std::cout << "В " << groups[i]->title << " " << groups[i]->num
+              << " человек. "
+              << " Средний балл по группе " << groups[i]->averageGroup()
+              << std::endl;
+    std::cout << "Староста группы " << groups[i]->head->fio << std::endl;
     for (int j = 0; j < groups[i]->students.size(); j++) {
-      cout << groups[i]->students[j]->fio << "-"
+      std::cout << groups[i]->students[j]->fio << "-"
            << groups[i]->students[j]->averageMark() << "    ";
       for (int h = 0; h < groups[i]->students[j]->marks.size(); h++) {
-        cout << groups[i]->students[j]->marks[h] << " ";
+        std::cout << groups[i]->students[j]->marks[h] << " ";
       }
-      cout << endl;
+      std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
   }
 
-  cout << endl << "Statistics" << endl;
+  std::cout << std::endl << "Statistics" << std::endl;
   for (int j = 0; j < StStat.size(); j++) {
-    cout << StStat[j].second << "-" << StStat[j].first << endl;
+    std::cout << StStat[j].second << "-" << StStat[j].first << std::endl;
   }
 
   for (int i = 0; i < GrStat.size(); i++) {
-    cout << GrStat[i].second << "  -  " << GrStat[i].first << endl;
+    std::cout << GrStat[i].second << "  -  " << GrStat[i].first << std::endl;
   }
 }

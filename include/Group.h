@@ -6,24 +6,23 @@
 #include <vector>
 #include "Student.h"
 
-using namespace std;
 class Student;
 class Dean;
 class Group {
   friend class Deanery;
  private:
-  string title;
-  vector<Student *> students;
+  std::string title;
+  std::vector<Student *> students;
   int num;
   Student *head;
  public:
-  Group(string);
+  Group(std::string);
   Student *electHead();
   void addStudent(Student *);
-  Student *searchSfio(string);
+  Student *searchSfio(std::string);
   Student *searchSid(int);
   float averageGroup();
-  void exceptionStudent(string);
+  void exceptionStudent(std::string);
 };
 
 #endif  // INCLUDE_GROUP_H_

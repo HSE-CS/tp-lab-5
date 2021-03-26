@@ -1,9 +1,10 @@
+// Copyright 2021 PaninaPolina
 #include "Student.h"
 #include "Group.h"
 #include <iostream>
 #include <string>
 
-Student::Student(int nid, string name) {
+Student::Student(int nid, std::string name) {
   id = nid;
   fio = name;
 }

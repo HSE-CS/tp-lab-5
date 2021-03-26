@@ -1,3 +1,4 @@
+// Copyright 2021 PaninaPolina
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
@@ -5,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-Group::Group(string name) { title = name; }
+Group::Group(std::string name) { title = name; }
 
 void Group::addStudent(Student* Groupmember) {
   students.push_back(Groupmember);
@@ -18,7 +19,7 @@ Student* Group::electHead() {
   return students[i];
 }
 
-Student* Group::searchSfio(string name) {
+Student* Group::searchSfio(std::string name) {
   for (int i = 0; i < num; i++) {
     if (students[i]->fio == name) {
       return students[i];
@@ -42,7 +43,7 @@ float Group::averageGroup() {
   return sum / num;
 }
 
-void Group::exceptionStudent(string name) {
+void Group::exceptionStudent(std::string name) {
   for (int i = 0; i < num; i++) {
     if (students[i]->fio == name) {
       if (students[i] == head) {
