@@ -4,9 +4,6 @@
 #include "../include/Student.h"
 #include "../include/Group.h"
 
-//class Student;
-//class Group;
-
 Student* Group::findStudent(const uint16_t id) {
     Student *result = nullptr;
     for (auto student : this->students) {
