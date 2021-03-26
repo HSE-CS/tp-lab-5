@@ -93,7 +93,7 @@ TEST(group1, test8) {
   d.addGroup(g);
   Deanery::addStudentToGroup(&g, s);
   auto x = g.getStudentByFio(s.getFio());
-  ASSERT_EQ(x.front(), s);
+  ASSERT_EQ(&x.front(), &s);
 }
 TEST(group1, test9) {
   Deanery d;
