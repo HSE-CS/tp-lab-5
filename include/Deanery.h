@@ -14,7 +14,7 @@ class Deanery {
  public:
   Deanery();
   void addGroup(Group& group);
-  static void addStudentToGroup(Group* group, const Student& student);
+  static void addStudentToGroup(Group* group, Student student);
   static void addMarkToStudent(Student* student, int mark);
   void initFromFile(std::ifstream file);
   void printInfo() const;

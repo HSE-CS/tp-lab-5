@@ -55,8 +55,8 @@ TEST(group1, test6) {
   Student s1(0, "");
   Student s2(1, "");
   Student s3(2, "");
-  Group g("", "");
   Student s4(3, "");
+  Group g("", "");
   Deanery::addMarkToStudent(&s1, 10);
   Deanery::addMarkToStudent(&s2, 0);
   Deanery::addMarkToStudent(&s3, 4);
@@ -69,7 +69,8 @@ TEST(group1, test6) {
   d.addGroup(g);
   ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 0. + 4. + (8. + 3.) / 2.) / 4.);
   d.removeFailingStudents();
-  ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 4. + (8. + 3.) / 2.) / 3.);
+  ASSERT_DOUBLE_EQ(d.getGroups().front().averageMark(),
+                   (10. + 4. + (8. + 3.) / 2.) / 3.);
 }
 TEST(group1, test7) {
   Deanery d;

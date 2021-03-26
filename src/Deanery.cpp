@@ -83,11 +83,13 @@ void Deanery::printInfo() const {
 }
 void Deanery::removeFailingStudents() {
   for (auto& g : groups) {
+    std::vector<Student> stay;
     for (auto& s : g.students) {
-      if (s.averageMark() < 4.0) {
-        s.group->removeStudent(s.id);
+      if (s.averageMark() >= 4.0) {
+        stay.push_back(*s.group->getStudentById(s.id));
       }
     }
+    g.students = stay;
   }
 }
 void Deanery::moveStudent(int id, const std::string& from_title,
@@ -129,9 +131,13 @@ void Deanery::saveToFile(std::ofstream file) const {
 }
 void Deanery::addGroup(Group& group) {
   groups.push_back(group);
+  for (auto& s : groups.back().students) {
+    s.group = &groups.back();
+  }
   reelectHeads();
 }
-void Deanery::addStudentToGroup(Group* group, const Student& student) {
+void Deanery::addStudentToGroup(Group* group, Student student) {
+  student.group = group;
   group->addStudent(student);
 }
 void Deanery::addMarkToStudent(Student* student, int mark) {
