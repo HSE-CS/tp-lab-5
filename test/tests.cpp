@@ -27,15 +27,15 @@ TEST(TestDeanary, Test3) {
     EXPECT_TRUE(group.isEmpty());
 }
 
-TEST(TestDeanary, Test4) {
-    Deanary groups;
-    groups.createGroup();
-    groups.hireStudents();
-    groups.addMarksToAll();
-    groups.initHeads();
-    EXPECT_EQ("Silvester Rogers",
-        groups.getgroups()[3]->getStudent("19E_3_00002")->getFio());
-}
+//TEST(TestDeanary, Test4) {
+//    Deanary groups;
+//    groups.createGroup();
+//    groups.hireStudents();
+//    groups.addMarksToAll();
+//    groups.initHeads();
+//    EXPECT_EQ("Silvester Rogers",
+//        groups.getgroups()[3]->getStudent("19E_3_00002")->getFio());
+//}
 
 TEST(TestDeanary, Test5) {
     Deanary groups;
