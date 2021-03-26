@@ -1,0 +1,122 @@
+Group: 19_PE-1 ( Program Engineering )
+ - 1 Bakurskij Andrej Sergeevich 9 0 1 2 3 
+ - 2 Balayan Roman Karenovich 4 4 0 
+ - 4 Boryaev Sergej Sergeevich 3 4 0 9 
+ - 5 Burcev Roman Andreevich 1 5 5 3 
+ - 6 Vargin Dmitrij Aleksandrovich 3 8 6 9 
+ - 7 Votinova Kseniya Konstantinovna 3 1 4 6 
+ - 8 Gerasimov Aleksej Aleksandrovich 6 4 9 2 2 
+ - 9 Grachev Aleksandr Evgen'evich 4 8 6 1 
+ - 10 Dolgopolov Aleksej Gennad'evich 7 4 7 2 3 4 
+ - 12 Emshanov Pavel Andreevich 1 1 1 9 3 
+ - 14 Klimov Aleksej Sergeevich 6 2 8 2 0 
+ - 15 Lukicheva Polina Aleksandrovna 0 2 3 1 
+ - 16 Lupekhina Lyudmila Evgen'evna 1 1 6 2 0 
+ - 17 Makarov Vadim Dmitrievich 4 1 4 
+ - 18 Murzinov Mihail Denisovich 8 2 4 0 1 2 
+ - 19 Nikolaeva Olesya Igorevna 5 0 1 
+ - 20 Osmanov Islam Ramilevich 3 8 2 0 3 5 
+ - 21 ( LEADER ) Pavlova Dar'ya Andreevna 3 9 7 9 7 8 
+ - 22 Sapozhnikov Andrej Mihajlovich 4 0 8 6 3 6 
+ - 23 Safronov Ivan Dmitrievich 3 2 3 0 0 8 6 
+ - 24 Smirnov Grigorij Andreevich 3 7 8 3 5 1 
+ - 25 Stoyanov Stanislav Stepanovich 6 9 9 2 
+ - 26 Truhin Egor Sergeevich 3 9 4 8 2 
+ - 27 Uskova Elena Maksimovna 8 4 3 6 8 
+ - 28 Uspenskij Vladimir Ivanovich 1 5 1 3 
+ - 29 Horoshilova Marina Aleksandrovna 5 2 4 2 3 7 0 
+ - 41 Monicheva Arina Aleksandrovna 4 8 9 6 
+ - 50 Tacenko Aleksej Mihajlovich 3 3 0 3 
+ - 51 Tacenko Il'ya Mihajlovich 6 7 4 6 1 5 9 
+
+Group: 19_PE-2 ( Program Engineering )
+ - 3 Bekina Svetlana Sergeevna 4 4 1 4 4 
+ - 11 Dumarevskaya Tat'yana Nikolaevna 2 0 2 5 7 
+ - 13 Igumnova Natal'ya Dmitrievna 7 8 0 
+ - 30 Baranov Il'ya Andreevich 3 8 6 3 8 
+ - 31 Bekusov Mihail Aleksandrovich 8 5 9 3 
+ - 32 Bodrov Egor Alekseevich 4 7 5 
+ - 33 Bredihin Maksim Vladimirovich 3 5 7 1 
+ - 34 Danyaev Artem Andreevich 1 7 6 6 1 6 
+ - 35 Dyryaev Daniil Aleksandrovich 8 4 1 4 
+ - 36 Ziganshin Nikita Ruslanovich 6 5 3 0 6 8 
+ - 37 Konina Tat'yana Dmitrievna 4 3 5 
+ - 38 Kostin Andrej Olegovich 6 5 1 7 5 
+ - 39 Mingboev Hudajberdi Abduhakim ugli 9 4 6 
+ - 40 Moiseev Roman Mihajlovich 8 1 1 0 3 1 
+ - 42 Mushka Nikita Andreevich 4 3 0 9 
+ - 43 Nikolaev Ivan Aleksandrovich 5 9 2 1 9 
+ - 44 Ozhiganova Polina Maksimovna 7 3 5 
+ - 45 Ryzhova Irina Igorevna 3 5 9 8 7 
+ - 46 Salahov Ramazan Maratovich 9 2 5 7 3 
+ - 47 Semaev Nikita YUr'evich 9 2 5 4 4 9 
+ - 48 Skugarevskij Aleksandr Sergeevich 8 1 4 3 8 0 
+ - 49 Stolbov YAroslav Vladislavovich 3 9 8 4 6 
+ - 52 Tyulin Igor' Viktorovich 4 5 4 4 
+ - 53 Fatin Maksim Romanovich 5 2 7 
+ - 54 Horoshavina Ekaterina Andreevna 6 9 4 7 9 4 
+ - 55 Cvetkov Dmitrij Alekseevich 1 0 3 3 
+ - 56 SHarunov Evgenij Aleksandrovich 1 1 2 
+ - 57 ( LEADER ) SHatilov Viktor Alekseevich 8 5 9 
+ - 58 SHirokov Aleksandr Anatol'evich 7 7 4 6 4 9 9 
+ - 59 Stifeev Nikita Andreevich 6 2 7 5 
+
+Group: 19_AMaCS-1 ( Applied Math and Computer Science )
+ - 62 Barinov Daniil Sergeevich 3 1 1 
+ - 63 Bogomazov Mihail Vasil'evich 0 3 7 3 7 
+ - 64 ( LEADER ) Bugrov Lev Valer'evich 9 8 9 
+ - 65 Buzanov Egor Andreevich 5 9 3 
+ - 66 Varlachyov Valerij Maksimovich 6 9 3 
+ - 67 Golovanov Denis Maksimovich 2 4 4 9 5 
+ - 68 Drobot Elizaveta Denisovna 3 0 1 5 8 
+ - 69 ZHaravina Polina Dmitrievna 6 6 5 5 6 
+ - 70 Zajcev Timur Olegovich 8 5 7 9 3 1 
+ - 71 Kabanov Denis Sergeevich 5 5 7 0 
+ - 72 Kanev Vladislav Olegovich 4 3 2 9 
+ - 73 Karceva Mariya Dmitrievna 2 3 3 9 4 3 
+ - 74 Kas'yanov Nikita YUr'evich 9 9 8 7 
+ - 75 Kozlova Dar'ya Andreevna 2 7 2 6 8 0 9 
+ - 76 Kuznecov Mihail Dmitrievich 3 4 7 
+ - 77 Lavrov Artyom Romanovich 7 9 3 6 
+ - 78 Matveev Andrej Sergeevich 9 6 4 0 9 1 
+ - 79 Mashanova Karina Alekseevna 8 7 2 3 8 
+ - 80 Naumov Nikita Aleksandrovich 8 2 6 5 7 7 
+ - 81 Neshchetkin Gleb Maksimovich 8 4 6 2 7 
+ - 82 Pasmanik Irina Dmitrievna 1 5 4 2 2 8 
+ - 83 Rogozyan Anastasiya Timofeevna 0 7 9 1 1 5 
+ - 84 Sobolev Danil Aleksandrovich 4 0 9 7 5 
+ - 85 Sofronov Valerij Aleksandrovich 7 7 9 6 3 
+ - 86 Trutnev Aleksej Igorevich 4 2 1 8 
+ - 87 Tumakov Vadim Sergeevich 1 6 0 5 6 
+ - 88 Frolova Ol'ga Mihajlovna 2 1 4 3 
+ - 89 SHaribzhanova Diana Rashidovna 1 1 6 2 6 
+ - 90 SHCHenikova Anna YUr'evna 2 9 0 8 5 7 
+
+Group: 19_AMaCS-2 ( Applied Math and Computer Science )
+ - 60 Malinin Dmitrij Dmitrievich 8 8 0 2 1 
+ - 61 Baklanov Aleksej Aleksandrovich 1 6 1 7 0 6 5 
+ - 91 Androsov Vadim Dmitrievich 7 8 2 3 
+ - 92 Birina Elizaveta Sergeevna 8 7 8 2 3 
+ - 93 Bulatov Dmitrij Aleksandrovich 2 9 6 4 
+ - 94 Demashov Nikita Aleksandrovich 0 9 9 9 0 
+ - 95 Dobryaev Ivan Aleksandrovich 0 5 5 3 5 5 
+ - 96 Drozhzhachih Evgenij Valer'evich 4 3 2 0 7 
+ - 97 Egorova Kristina Olegovna 8 6 0 5 8 1 4 0 
+ - 98 Zagoskin Vladislav Andreevich 5 3 7 
+ - 99 Zarubina Irina Mihajlovna 8 2 8 1 1 
+ - 100 Ivanov Daniil Andreevich 2 2 1 6 7 
+ - 101 Klykov Anton Romanovich 2 7 2 3 
+ - 102 Korolev Denis Vital'evich 3 3 9 
+ - 103 Krayushkina Ekaterina Alekseevna 9 9 1 5 
+ - 104 Nazarov Vyacheslav Andreevich 3 1 4 2 6 
+ - 105 Olenev Dmitrij Sergeevich 2 7 8 8 
+ - 106 Panina Polina Sergeevna 3 9 8 5 
+ - 107 Prygaev Denis Alekseevich 3 6 6 
+ - 108 Rogov Andrej Dmitrievich 0 9 2 9 6 4 
+ - 109 ( LEADER ) Simonova Arina Valer'evna 9 5 9 6 
+ - 110 Sozinov Kirill Igorevich 7 2 3 0 
+ - 111 Titova Nina Ivanovna 9 6 4 4 6 
+ - 112 Urtyukov Il'ya Alekseevich 8 5 7 8 
+ - 113 Horev Egor Alekseevich 0 5 5 7 6 2 
+ - 114 SHabarshin Leonid Georgievich 3 9 7 3 9 0 
+
