@@ -42,8 +42,8 @@ std::vector<Student> Group::getStudentByFio(const std::string& fio) const {
   }
   return with_fio;
 }
-const Student* Group::getStudentById(int id) const {
-  for (const auto& s : students) {
+Student* Group::getStudentById(int id) {
+  for (auto& s : students) {
     if (s.id == id) {
       return &s;
     }

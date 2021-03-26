@@ -41,14 +41,14 @@ TEST(group1, test5) {
   const std::string spec = "SPECIALITY";
   Group g(title, spec);
   Student s(0, "");
-  d.addGroup(g);
   Deanery::addMarkToStudent(&s, 10);
   Deanery::addStudentToGroup(&g, s);
+  d.addGroup(g);
   ASSERT_DOUBLE_EQ(g.averageMark(), 10.0);
   ASSERT_DOUBLE_EQ(s.averageMark(), 10.0);
-  Deanery::addMarkToStudent(&s, 0);
-  ASSERT_DOUBLE_EQ(g.averageMark(), 5.0);
-  ASSERT_DOUBLE_EQ(s.averageMark(), 5.0);
+  Deanery::addMarkToStudent(d.getGroups().front().getStudentById(0), 0);
+  ASSERT_DOUBLE_EQ(d.getGroups().front().averageMark(), 5.0);
+  ASSERT_DOUBLE_EQ(d.getGroups().front().getStudentById(0)->averageMark(), 5.0);
 }
 TEST(group1, test6) {
   Deanery d;
@@ -67,9 +67,9 @@ TEST(group1, test6) {
   Deanery::addStudentToGroup(&g, s3);
   Deanery::addStudentToGroup(&g, s4);
   d.addGroup(g);
-  ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 0. + 4. + (8. + 3.)/2.) / 4.);
+  ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 0. + 4. + (8. + 3.) / 2.) / 4.);
   d.removeFailingStudents();
-  ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 4. + (8. + 3.)/2.) / 3.);
+  ASSERT_DOUBLE_EQ(g.averageMark(), (10. + 4. + (8. + 3.) / 2.) / 3.);
 }
 TEST(group1, test7) {
   Deanery d;

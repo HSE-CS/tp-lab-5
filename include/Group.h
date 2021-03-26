@@ -21,7 +21,7 @@ class Group {
  public:
   Group(std::string title, std::string speciality);
   std::vector<Student> getStudentByFio(const std::string& fio) const;
-  const Student* getStudentById(int id) const;
+  Student* getStudentById(int id);
   const Student* getHead() const;
   const std::string& getTitle() const { return title; }
   const std::string& getSpeciality() const { return speciality; }
