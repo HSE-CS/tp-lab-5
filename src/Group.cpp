@@ -14,7 +14,7 @@ void Group::addStudent(Student* student) {
     students.push_back(student);
 }
 
-double Group::getAveragemark() {
+double Group::getAveragemark() const {
     if (!isEmpty()) {
         double averagemark = 0;
         for (auto student : students) {
@@ -90,7 +90,7 @@ std::vector<Student*> Group::getStudents() const {
     return students;
 }
 
-void Group::chooseHead() const {
+void Group::chooseHead() {
     head = students[rand() % students.size()];
 }
 
