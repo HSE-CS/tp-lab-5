@@ -2,6 +2,7 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
+#include <stdlib.h>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -54,7 +55,7 @@ void Deanery::addMarks() {
   int mark;
   for (int i = 0; i < numSt; i++) {
     for (int n = 0; n < 8; n++) {
-      mark = rand() % 10 + 1;
+      mark = rand_r() % 10 + 1;
       students[i]->addMark(mark);
     }
   }
@@ -97,14 +98,14 @@ void Deanery::electGhead() {
 void Deanery::getStatistics(std::string name) {
   for (int i = 0; i < numSt; i++) {
     StStat.push_back(
-        std::pair<float,std::string>(students[i]->averageMark(), 
+        std::pair<float,std::string>(students[i]->averageMark(),
             students[i]->fio));
   }
   sort(StStat.begin(), StStat.end());
 
   for (int j = 0; j < numGr; j++) {
     GrStat.push_back(
-        std::pair<float, std::string>(groups[j]->averageGroup(), 
+        std::pair<float, std::string>(groups[j]->averageGroup(),
             groups[j]->title));
   }
   sort(GrStat.begin(), GrStat.end());
@@ -127,12 +128,12 @@ void Deanery::update(std::string name) {
   file.open(name);
 
   if (file.is_open()) {
-    file << "Number students is  " << numSt << std::endl;
+    file << "Number of students is  " << numSt << std::endl;
     for (int i = 0; i < numGr; i++) {
-      file << "В " << groups[i]->title << " " << groups[i]->num << " человек. "
-           << " Средний балл по группе " << groups[i]->averageGroup()
+      file << "In " << groups[i]->title << " " << groups[i]->num << " people. "
+           << " Average score of the group: " << groups[i]->averageGroup()
            << std::endl;
-      file << "Староста группы " << groups[i]->head->fio << std::endl;
+      file << "Average score of the group: " << groups[i]->head->fio << std::endl;
       for (int j = 0; j < groups[i]->students.size(); j++) {
         file << groups[i]->students[j]->fio << "-"
              << groups[i]->students[j]->averageMark() << "   ";
@@ -148,14 +149,14 @@ void Deanery::update(std::string name) {
 }
 
 void Deanery::printinfo() {
-  std::cout << "Number students is  " << numSt << std::endl;
+  std::cout << "Number of students is  " << numSt << std::endl;
 
   for (int i = 0; i < numGr; i++) {
-    std::cout << "В " << groups[i]->title << " " << groups[i]->num
-              << " человек. "
-              << " Средний балл по группе " << groups[i]->averageGroup()
+    std::cout << "In " << groups[i]->title << " " << groups[i]->num
+              << " people. "
+              << " Average score of the group: " << groups[i]->averageGroup()
               << std::endl;
-    std::cout << "Староста группы " << groups[i]->head->fio << std::endl;
+    std::cout << "Average score of the group: " << groups[i]->head->fio << std::endl;
     for (int j = 0; j < groups[i]->students.size(); j++) {
       std::cout << groups[i]->students[j]->fio << "-"
            << groups[i]->students[j]->averageMark() << "    ";

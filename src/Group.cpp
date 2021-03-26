@@ -2,10 +2,10 @@
 #include "Student.h"
 #include "Group.h"
 #include "Deanary.h"
+#include <stdlib.h>
 #include <algorithm>
 #include <iostream>
 #include <string>
-#include <stdlib.h>
 
 Group::Group(std::string name) { title = name; }
 
